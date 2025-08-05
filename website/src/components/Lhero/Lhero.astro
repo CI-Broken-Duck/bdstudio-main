@@ -1,0 +1,68 @@
+---
+import "./Lhero.css";
+---
+
+<section id="hero" class="hero">
+
+  <div class="star-overlay">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+
+      <h2 class="hero-superheading">YouTube Creators Studio</h2>
+
+      <h1 class="hero-text-logo">
+        A space for content creators in Chiang Mai
+        <span>Create, grow, connect and collaborate with people who get it.</span>
+      </h1>
+
+      <img src="/assets/images/cm.png" alt="Chiangmai" class="hero-portrait" />
+
+    </div>
+  </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hero = document.getElementById('hero');
+      if (!hero) return;
+
+      hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        hero.style.setProperty('--cursor-x', `${e.clientX - rect.left}px`);
+        hero.style.setProperty('--cursor-y', `${e.clientY - rect.top}px`);
+      });
+    });
+  </script>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cta = document.querySelector('.cta-button');
+      if (!cta) return;
+
+      cta.addEventListener('mousemove', (e) => {
+        const rect = cta.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        cta.style.setProperty('--x', `${x}px`);
+        cta.style.setProperty('--y', `${y}px`);
+      });
+
+      cta.addEventListener('mouseleave', () => {
+        cta.style.setProperty('--x', `50%`);
+        cta.style.setProperty('--y', `50%`);
+      });
+    });
+  </script>
+
+</section>

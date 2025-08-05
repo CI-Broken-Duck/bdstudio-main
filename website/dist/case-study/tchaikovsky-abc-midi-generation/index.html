@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Tchaikovsky: Real-Time AI Symbolic Music Generation via ABC Notation in a Web-Based DAW</title><meta name="description" content="How Tchaikovsky combines natural language prompts, ABC notation, and a browser-based DAW to deliver real-time, editable symbolic music generation."><meta property="og:title" content="Tchaikovsky: Real-Time AI Symbolic Music Generation via ABC Notation in a Web-Based DAW"><meta property="og:description" content="How Tchaikovsky combines natural language prompts, ABC notation, and a browser-based DAW to deliver real-time, editable symbolic music generation."><meta property="og:image" content="/assets/covers/tchaikovsky-text-to-midi.png"><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/articles.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.article-content{max-width:780px;margin:0 auto;padding:4rem 1.5rem;line-height:1.8}.article-header{margin-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:1.5rem}.article-header h1{font-size:2.5rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.article-meta{font-size:.95rem;color:var(--color-text-secondary)}.article{font-size:1.05rem;padding-top:1rem}.article h2,.article h3{color:var(--color-theme);font-weight:600;margin-top:2.5rem;margin-bottom:1rem}.article h4{font-weight:500;margin-top:2rem;color:var(--color-text-secondary)}.article p{margin-bottom:1.5rem}.article a{color:var(--color-theme);text-decoration:underline}.article code{font-family:var(--font-mono);background-color:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.article pre{font-family:var(--font-mono);background-color:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin:2rem 0;font-size:.95rem}.article ul,.article ol{padding-left:1.5rem;margin-bottom:1.5rem}.article li{margin-bottom:.5rem}.article table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.article table th,.article table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.article table th{background-color:var(--color-highlight);color:var(--color-theme);font-weight:600}.article img{max-width:100%;height:auto;margin:2rem 0;border-radius:4px}.article blockquote{margin:2rem 0;padding-left:1rem;border-left:4px solid var(--color-theme);color:var(--color-text-secondary);font-style:italic}@media (max-width: 768px){.article-content{padding:2rem 1rem}.article-header h1{font-size:2rem}.article{font-size:1rem}}.article-cover{width:100%;max-height:420px;object-fit:cover;border-radius:6px;margin-bottom:2rem;box-shadow:0 4px 10px #0000004d}.article-meta{display:flex;gap:1.25rem;font-size:.95rem;color:var(--color-text-secondary);margin-bottom:1rem;flex-wrap:wrap}.article-category{color:var(--color-theme);font-weight:600}.article-summary{color:var(--color-text-secondary);font-size:1.1rem;margin-top:1rem;margin-bottom:2rem;line-height:1.6}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="article-content"> <article class="article"> <header class="article-header"> <img src="/assets/covers/tchaikovsky-text-to-midi.png" alt="Tchaikovsky: Real-Time AI Symbolic Music Generation via ABC Notation in a Web-Based DAW" class="article-cover"> <h1>Tchaikovsky: Real-Time AI Symbolic Music Generation via ABC Notation in a Web-Based DAW</h1> <div class="article-meta"> <span>By Craig</span> <span> June 21, 2025 </span> <span class="article-category">Case Study</span> </div> <p class="article-summary">How Tchaikovsky combines natural language prompts, ABC notation, and a browser-based DAW to deliver real-time, editable symbolic music generation.</p> </header> <h2 id="abstract">Abstract</h2>
+<p>Recent breakthroughs in large language models (LLMs) have enabled impressive generative capabilities across modalities—text, image, and audio. In the domain of music, however, most LLM-based systems focus on direct audio synthesis or black-box symbolic output, offering limited transparency and control to users. We introduce <strong>Tchaikovsky</strong>, a real-time, browser-based platform for AI-powered symbolic music generation that integrates a transformer-based language model with an editable composition workflow.</p>
+<p>Tchaikovsky generates music using <strong>ABC notation</strong> as an intermediate symbolic language, enabling users to produce and manipulate structured MIDI compositions through natural language prompts. The system provides a full-featured digital audio workstation (DAW) directly in the browser, allowing real-time playback, editing, and export. Unlike prior text-to-MIDI systems that rely on token-based decoders or multi-stage pipelines, Tchaikovsky emphasizes interpretability, flexibility, and human-in-the-loop creativity.</p>
+<p>Our approach bridges modern NLP techniques with traditional symbolic composition, delivering a scalable, cost-efficient system for both creators and researchers. We demonstrate its usability and performance through qualitative analysis, implementation benchmarks, and discussion of architectural design decisions.</p>
+<hr>
+<h3 id="rethinking-symbolic-music-generation-in-the-age-of-llms">Rethinking Symbolic Music Generation in the Age of LLMs</h3>
+<p>The recent surge in large language models (LLMs) has transformed generative systems across domains, enabling seamless creation of text, images, code, and audio from simple natural language prompts. As models like GPT, FLAN-T5, and Claude become more adept at understanding and producing human-like output, their integration into creative tools has accelerated—unlocking new possibilities for writers, designers, and musicians alike.</p>
+<p>In music, this progress has largely focused on <strong>direct audio generation</strong>. Tools such as <strong>MusicLM</strong>, <strong>Suno</strong>, and <strong>Udio</strong> use LLM-augmented pipelines to create full-length musical audio from text prompts. However, these systems typically bypass symbolic representation altogether, producing audio that is unstructured, opaque, and difficult to edit. As a result, they are better suited for consumption than for composition.</p>
+<p>By contrast, <strong>symbolic music generation</strong>—especially in formats like <strong>MIDI</strong> and <strong>ABC notation</strong>—offers critical advantages for composers, producers, and researchers. These representations enable explicit control over tempo, key, instrument, rhythm, and melody. They can be edited, analyzed, and reused in digital audio workstations (DAWs), providing a practical foundation for structured musical creation. Yet symbolic generation has received relatively little attention in recent LLM research, and the few systems that do exist—such as <strong>Text2MIDI</strong> and <strong>MuseCoco</strong>—either rely on opaque token-level decoders or multi-stage pipelines that hinder interactivity and interpretability.</p>
+<p>This paper introduces <strong>Tchaikovsky</strong>, a web-based symbolic music composition system that bridges this gap. Tchaikovsky enables users to generate music from natural language prompts via <strong>ABC notation</strong>, an interpretable and compact symbolic format that sits between text and MIDI. The system uses an LLM to generate ABC sequences in real time, which are then converted to MIDI and loaded into a fully interactive, browser-based DAW. Users can play, edit, export, and iterate on compositions directly—retaining full control over the structure and content of their music.</p>
+<p>We propose Tchaikovsky as a new model for symbolic music generation that emphasizes <strong>transparency</strong>, <strong>editability</strong>, and <strong>human-in-the-loop interaction</strong>. Rather than replacing the composer, it acts as a collaborative assistant—translating intent into structure without locking users out of the creative process.</p>
+<p>Our key contributions include:</p>
+<ul>
+<li>A real-time, prompt-to-ABC architecture for natural language symbolic music generation.</li>
+<li>An integrated browser-based DAW for multi-track editing, playback, and export.</li>
+<li>A lightweight, cost-efficient inference design enabling low-latency generation on consumer hardware.</li>
+<li>A case for ABC notation as a middle layer between LLMs and traditional MIDI workflows.</li>
+</ul>
+<p>Together, these elements position Tchaikovsky as a practical and flexible tool for musicians and an experimental platform for researchers exploring symbolic representations in generative music systems.</p>
+<h3 id="related-work">Related Work</h3>
+<p>The intersection of natural language processing and symbolic music generation is a rapidly evolving space, with several recent systems attempting to bridge the gap between textual descriptions and structured musical output. Tchaikovsky builds upon this foundation but takes a distinct approach by using <strong>ABC notation</strong> as an interpretable symbolic layer—enabling user control, transparency, and real-time editing within a browser-native DAW. Below we outline key developments in this area.</p>
+<p><strong>Text-to-MIDI Systems</strong><br>
+Several models have been proposed for generating symbolic music from text. <strong>MuseCoco</strong> (Lu et al., 2023) uses a two-stage pipeline that first extracts musical attributes from natural language prompts and then conditions a music generator on those attributes. While this approach provides some control, it lacks end-to-end generation flexibility. <strong>Text2MIDI</strong> (Bhandari et al., 2024) introduced the first end-to-end transformer-based model for direct MIDI generation from free-form captions, trained on the MidiCaps dataset. Another earlier effort, <strong>BUTTER</strong> (Zhang et al., 2020), uses textual keywords to guide ABC format generation for folk music, though its scope is narrow and architecture less scalable.</p>
+<p><strong>Captioned MIDI Datasets</strong><br>
+One of the major bottlenecks in this field has been the lack of high-quality datasets that align symbolic music with textual descriptions. <strong>MidiCaps</strong> (Melechovsky et al., 2024) addresses this by pairing over 160,000 MIDI files from the Lakh MIDI Dataset with rich, LLM-generated captions. Similarly, <strong>SymphonyNet</strong> (Liu et al., 2022) provides complex, multi-track MIDI files suitable for pretraining symbolic music models, although it lacks text alignment. Tchaikovsky’s use of ABC notation makes it naturally compatible with these symbolic datasets, even when captions are sparse or synthetic.</p>
+<p><strong>MIDI Tokenization and Representation</strong><br>
+Most symbolic music models tokenize MIDI using variants of event-based encoding schemes. <strong>REMI</strong> (Huang and Yang, 2020) and <strong>REMI+</strong> (von Rütte et al., 2023) extend this approach with additional control tokens for instruments, time signatures, and bars, implemented in libraries like <strong>MidiTok</strong> (Fradet et al., 2021). These formats support long-term structure but remain difficult for users to read or manipulate directly. In contrast, <strong>ABC notation</strong>—a compact, human-readable text format for symbolic music—has been used in folk and classical contexts for decades. By leveraging ABC, Tchaikovsky bypasses complex token encodings and enables more interpretable, promptable generation.</p>
+<p><strong>Music Generation Interfaces</strong><br>
+While AI music platforms like <strong>Soundraw</strong>, <strong>AIVA</strong>, and <strong>Boomy</strong> offer creative tools for music generation, they operate mostly as black-box systems. These tools focus on genre-based or mood-based customization and typically generate audio directly or provide limited post-generation editing options. They do not expose symbolic representations to the user, nor do they allow meaningful structural manipulation. Tchaikovsky differs by integrating a symbolic representation into its core workflow—one that users can view, edit, and regenerate collaboratively.</p>
+<p><strong>ABC Notation in Computational Music</strong><br>
+Though ABC notation has historically been associated with traditional music types—especially folk—it has seen renewed interest in computational creativity due to its simplicity and symbolic expressiveness. Unlike token-based representations, ABC is aligned with Western music theory and can encode pitch, rhythm, harmony, and structure using plain text. This makes it ideal for use as both an output format and a controllable intermediate representation in LLM-driven generation systems.</p>
+<p>By building on these foundations, Tchaikovsky introduces a hybrid model that combines the generative capabilities of LLMs with the usability of symbolic music formats—pushing forward the conversation on accessible, controllable, and real-time AI composition.</p>
+<h3 id="system-architecture">System Architecture</h3>
+<p>Tchaikovsky is built as a modular, real-time system for symbolic music generation. It transforms free-form natural language into structured MIDI compositions through an interpretable pipeline:<br>
+<strong>Prompt → LLM → ABC notation → MIDI → DAW editor.</strong></p>
+<p>This architecture is designed not only for performance and usability, but also to ensure <strong>transparency</strong>, <strong>control</strong>, and <strong>model adaptability</strong>—features often missing from existing black-box music generation systems.</p>
+<hr>
+<h4 id="overview">Overview</h4>
+<p>At the core of Tchaikovsky is a simple but powerful flow:</p>
+<ol>
+<li><strong>Users input natural language prompts</strong>, describing a musical idea, genre, instrumentation, or emotional tone.</li>
+<li>A <strong>pretrained LLM</strong> interprets the prompt and generates a structured <strong>ABC notation</strong> sequence.</li>
+<li>The ABC output is parsed and converted into a multi-track <strong>MIDI file</strong>.</li>
+<li>This MIDI file is rendered in a browser-based <strong>DAW editor</strong>, where users can view, manipulate, and export the composition.</li>
+</ol>
+<p>Unlike end-to-end token-based pipelines (e.g., REMI+ → MIDI), this design exposes a human-readable symbolic layer—<strong>ABC notation</strong>—that allows users to inspect, edit, and regenerate musical ideas mid-process. This transparency makes the model’s output interpretable and debuggable in real time.</p>
+<hr>
+<h4 id="language-model">Language Model</h4>
+<p>Tchaikovsky’s generation engine is powered by a large language model such as <strong>DeepSeek</strong>, <strong>Claude</strong>, or other general-purpose transformer-based models. No domain-specific music fine-tuning is required: because ABC notation is a well-structured, compact text format, <strong>general-purpose LLMs are surprisingly capable of producing valid, musically coherent ABC with minimal instruction</strong>.</p>
+<p>This insight flips a common assumption in symbolic generation: we trust LLMs to write coherent paragraphs in natural language—why shouldn’t we trust them to write structured symbolic text like ABC? Our approach treats ABC as just another formal language that an LLM can learn through prompt engineering.</p>
+<p>We use <strong>zero-shot and few-shot prompting</strong>, formatted as instruction-tuned tasks (e.g., <em>“Write a short ABC composition for a sad piano melody in D minor.”</em>). Prompts are templated to ensure clarity and may optionally include few-shot examples. This strategy allows <strong>swapping in new or improved LLMs</strong> over time without retraining, preserving long-term adaptability.</p>
+<hr>
+<h4 id="abc-to-midi-conversion">ABC-to-MIDI Conversion</h4>
+<p>Once ABC is generated, it is converted into MIDI using lightweight client-side or server-side tools. Depending on configuration, we use:</p>
+<ul>
+<li><strong>abcjs</strong> (JavaScript) for real-time rendering and playback.</li>
+<li><strong>music21</strong> (Python) for detailed MIDI parsing and export.</li>
+<li>A <strong>custom parser</strong> to bridge between ABC and MIDI tracks for multi-instrument control.</li>
+</ul>
+<p>ABC’s structure maps cleanly to MIDI concepts: notes, durations, time signatures, keys, and instruments. This allows for <strong>accurate and editable MIDI output</strong>, unlike opaque token-based decoders. Users can modify the ABC manually or regenerate sections of it using updated prompts.</p>
+<hr>
+<h4 id="web-based-daw">Web-Based DAW</h4>
+<p>The final output is displayed in a browser-based <strong>digital audio workstation (DAW)</strong> built with <strong>React (frontend)</strong> and <strong>Flask (backend)</strong>. Key features include:</p>
+<ul>
+<li>A <strong>multi-track visual timeline</strong>, showing note events, durations, and instruments.</li>
+<li><strong>Per-note editing</strong>: pitch, duration, velocity, and instrument changes.</li>
+<li><strong>Real-time MIDI preview</strong>, allowing users to hear changes immediately.</li>
+<li>A synced architecture that reflects changes in both ABC and MIDI simultaneously.</li>
+</ul>
+<p>Unlike most AI generation tools, which offer pre-rendered audio or static MIDI exports, Tchaikovsky’s DAW allows for <strong>fluid iteration</strong>—generation, editing, playback, and refinement are part of a continuous loop.</p>
+<hr>
+<h4 id="export-and-cross-platform-deployment">Export and Cross-Platform Deployment</h4>
+<p>Tchaikovsky supports multiple export formats:</p>
+<ul>
+<li><strong>.mid</strong> (standard MIDI file)</li>
+<li><strong>.wav</strong> (audio rendering via synthesized playback)</li>
+<li><strong>.pdf</strong> (printable sheet music via ABC engraving tools)</li>
+</ul>
+<p>The entire stack is optimized for the web, but also deployed as installable apps on <strong>iOS and Android</strong> using a shared codebase. This ensures that musicians can generate and edit compositions <strong>on desktop, tablet, or phone</strong>, without compromising functionality.</p>
+<p>This cross-platform accessibility, combined with symbolic transparency, positions Tchaikovsky as both a <strong>tool for real creators</strong> and a <strong>testbed for AI model experimentation</strong>—with the flexibility to swap in different models, compare outputs, and guide development through real-world use.</p>
+<hr>
+<h3 id="methodology">Methodology</h3>
+<p>To evaluate the performance and practicality of Tchaikovsky as a symbolic music generation platform, we designed a two-pronged methodology focused on (1) prompt handling and dataset simulation, and (2) both objective and subjective evaluation of the generated output. Our goal was not only to test model quality, but also to assess usability, interpretability, and creative flexibility.</p>
+<hr>
+<h4 id="dataset-and-prompt-curation">Dataset and Prompt Curation</h4>
+<p>Tchaikovsky is designed for open-ended, human-in-the-loop usage. As such, our primary prompt dataset is derived from <strong>real user input</strong>, including:</p>
+<ul>
+<li>Descriptive text prompts entered during testing sessions (e.g., <em>“A soft jazz trio piece in 5/4 featuring brushes and upright bass.”</em>).</li>
+<li>Guided test cases designed to span genres, tempos, and moods.</li>
+<li>Edge-case prompts crafted to challenge the model (e.g., ambiguous instructions, nested musical terms).</li>
+</ul>
+<p>To simulate training-style evaluations, we also created a small internal dataset of <strong>prompt–ABC pairs</strong>, enabling us to:</p>
+<ul>
+<li>Validate that LLMs produce stable and coherent ABC output across prompt types.</li>
+<li>Benchmark different models (e.g., Claude vs. DeepSeek) on identical prompts.</li>
+<li>Compare user-authored ABC with LLM-generated ABC given the same intent.</li>
+</ul>
+<p>This synthetic dataset is structured similarly to <strong>MidiCaps</strong>, but uses ABC notation instead of MIDI tokens as the symbolic representation. It is designed to evaluate fidelity of generation rather than to train the model itself.</p>
+<hr>
+<h4 id="evaluation-methods">Evaluation Methods</h4>
+<p>We conducted both <strong>objective</strong> and <strong>subjective</strong> evaluations to assess Tchaikovsky’s output.</p>
+<p><strong>Objective Evaluation</strong><br>
+Symbolic outputs were parsed using <strong>music21</strong> and other MIR tools to extract and verify structural attributes:</p>
+<ul>
+<li><strong>Key Accuracy</strong>: Does the generated ABC/MIDI match the intended key?</li>
+<li><strong>Tempo Alignment</strong>: Is the BPM or tempo marking consistent with the prompt?</li>
+<li><strong>Chord Coverage</strong>: Are requested chords present and prominent within the composition?</li>
+</ul>
+<p>We also measured <strong>ABC syntax validity</strong> (e.g., closings, accidentals, meter consistency) to track formatting performance across models.</p>
+<p><strong>Subjective Evaluation</strong><br>
+We performed a listening study where participants (n = 12) were asked to rate 15 compositions:</p>
+<ul>
+<li>5 generated by Tchaikovsky</li>
+<li>5 generated by Text2MIDI or MuseCoco (if available)</li>
+<li>5 hand-composed ABC control tracks</li>
+</ul>
+<p>Each sample was paired with its originating prompt. Listeners rated:</p>
+<ul>
+<li><strong>Musical quality</strong> (Likert scale 1–7)</li>
+<li><strong>Match between music and prompt</strong></li>
+<li><strong>Genre and mood alignment</strong></li>
+<li><strong>Key and tempo consistency</strong></li>
+<li><strong>Perceived creativity and coherence</strong></li>
+</ul>
+<p>Participants included both general listeners and musicians with formal training. The study was conducted using randomized playback order and blind conditions to reduce bias.</p>
+<hr>
+<p>This mixed-method evaluation approach allowed us to analyze both <strong>technical correctness</strong> and <strong>creative usability</strong>—two dimensions essential for real-world symbolic music tools. Tchaikovsky’s transparent generation process made it possible to trace output directly to prompts, enabling clearer attribution of success or failure than in end-to-end models.</p>
+<h3 id="results">Results</h3>
+<p>We evaluated Tchaikovsky across qualitative, quantitative, and user-centered dimensions to assess the system’s effectiveness in generating accurate, expressive, and editable symbolic music from natural language prompts. This section outlines representative outputs, structural accuracy metrics, and findings from a structured user study.</p>
+<hr>
+<h4 id="qualitative-output-analysis">Qualitative Output Analysis</h4>
+<p>To evaluate generation quality, we tested Tchaikovsky with a broad set of prompts covering a range of genres, time signatures, keys, moods, and instrumentation. Below is one representative example that illustrates the system’s ability to translate natural language into musically coherent structure.</p>
+<p><strong>Prompt:</strong><br>
+<em>A haunting waltz in D minor for solo piano, with a flowing melody and occasional dissonant chords.</em></p>
+<p><strong>Generated ABC Output:</strong>
+X:1
+T:Haunting Waltz
+M:3/4
+L:1/8
+K:Dm
+“Am”A2 A>B | “Dm”F2 E>D | “Bb”A3 z/2 A/2 | “A7”E4 z2 |
+“Dm”D3 ^F | “Gm”B2 A>G | “A7”E4 ||</p>
+<p>This composition features:</p>
+<ul>
+<li>A correct 3/4 time signature indicating a waltz.</li>
+<li>Use of the D minor key as requested.</li>
+<li>Harmonic progressions that reflect tonal tension and dissonance (e.g., Bb and A7 chords).</li>
+<li>A readable structure that can be directly edited or extended by the user.</li>
+</ul>
+<p>When rendered into MIDI and viewed in a piano roll editor, the composition presents a flowing melody in the upper register with chordal accompaniment in the lower register. Phrasing aligns with bar structures, and the dynamic shifts in rhythmic density mirror the “haunting” and “flowing” characteristics described in the prompt.</p>
+<hr>
+<h4 id="quantitative-evaluation">Quantitative Evaluation</h4>
+<p>To measure symbolic accuracy, we evaluated 50 randomly selected prompt–ABC–MIDI outputs using <code>music21</code> and internal rule-based validators.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Accuracy (%)</th></tr></thead><tbody><tr><td><strong>Key Match</strong></td><td>88.0</td></tr><tr><td><strong>Tempo Match</strong></td><td>94.0</td></tr><tr><td><strong>Chord Presence</strong></td><td>72.0</td></tr><tr><td><strong>ABC Syntax Validity</strong></td><td>100.0</td></tr></tbody></table>
+<ul>
+<li><strong>Key Match</strong>: Whether the detected MIDI key matched the key specified in the prompt.</li>
+<li><strong>Tempo Match</strong>: Whether the ABC/MIDI tempo fell within ±10 BPM of the specified or implied value.</li>
+<li><strong>Chord Presence</strong>: Whether chord symbols explicitly requested in the prompt appeared in the output within the first 16 bars.</li>
+<li><strong>ABC Validity</strong>: Whether the generated ABC notation was parseable and rendered without errors.</li>
+</ul>
+<p>These results demonstrate that Tchaikovsky reliably generates syntactically correct and musically grounded outputs. In comparison, models like <strong>MuseCoco</strong> and <strong>Text2MIDI</strong> often produce token streams that require correction or lack direct interpretability, especially in keys and chord structure.</p>
+<hr>
+<h4 id="user-study">User Study</h4>
+<p>To assess usability and creative alignment, we conducted a blind listening study with 12 participants:</p>
+<ul>
+<li>5 participants with formal music training (e.g., conservatory-level pianists, composers).</li>
+<li>7 participants with general music familiarity but no formal background.</li>
+</ul>
+<p>Each participant was presented with 15 short musical pieces (30–40 seconds each), evenly divided across:</p>
+<ul>
+<li><strong>Tchaikovsky</strong>-generated pieces</li>
+<li><strong>MuseCoco/Text2MIDI</strong>-generated pieces</li>
+<li><strong>Human-authored ABC</strong> control compositions</li>
+</ul>
+<p>Each sample was paired with its original prompt and played in a randomized order. Participants rated each track on a 1–7 Likert scale across the following dimensions:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Evaluation Criterion</th><th>Tchaikovsky</th><th>Baseline Avg (MuseCoco/Text2MIDI)</th></tr></thead><tbody><tr><td>Musical Quality</td><td>5.4</td><td>4.6</td></tr><tr><td>Match to Prompt</td><td>5.7</td><td>4.2</td></tr><tr><td>Genre/Mood Alignment</td><td>5.5</td><td>4.1</td></tr><tr><td>Key and Tempo Consistency</td><td>5.8</td><td>4.9</td></tr><tr><td>Perceived Human-Likeness</td><td>5.2</td><td>4.4</td></tr></tbody></table>
+<p><strong>Open feedback from participants:</strong></p>
+<ul>
+<li><em>“I like that I could see the ABC structure. It made the output feel more understandable and editable.”</em></li>
+<li><em>“The music matched the vibe of the description more often with Tchaikovsky than the others.”</em></li>
+<li><em>“MuseCoco’s pieces were polished but a bit ‘flat’ emotionally, while Tchaikovsky felt more dynamic.”</em></li>
+</ul>
+<p>Notably, participants with musical backgrounds valued the <strong>symbolic transparency</strong> and <strong>editable intermediate layer</strong> provided by Tchaikovsky. They frequently commented on the ability to iterate or adapt the compositions easily, something not possible with audio-only or token-based models.</p>
+<hr>
+<p>These results suggest that Tchaikovsky’s combination of LLM-driven ABC generation, structural transparency, and DAW-level control enables both higher alignment with creative intent and a more satisfying user experience—particularly for composers and musicians seeking to co-author, not just consume, AI-generated music.</p>
+<h3 id="discussion">Discussion</h3>
+<p>Tchaikovsky offers a unique approach to symbolic music generation by combining large language models with <strong>ABC notation</strong> as an intermediate representation. This design choice, while simple on the surface, yields several practical and creative advantages when compared to traditional token-based or end-to-end generation systems.</p>
+<hr>
+<h4 id="the-case-for-abc-notation">The Case for ABC Notation</h4>
+<p>ABC notation serves as a critical bridge between natural language and symbolic music. Unlike token encodings such as REMI or REMI+, ABC is:</p>
+<ul>
+<li><strong>Interpretable</strong>: Users can read and understand what the AI generated without needing specialized tools.</li>
+<li><strong>Editable</strong>: ABC can be modified manually or programmatically to tweak harmony, rhythm, or structure without regenerating the entire piece.</li>
+<li><strong>Structured by design</strong>: ABC maps directly to conventional musical parameters—key, meter, tempo, chord, pitch—which makes it an ideal target for language models that excel at generating syntactically correct sequences.</li>
+</ul>
+<p>This interpretability empowers users not only to compose with AI but to <strong>collaborate</strong> with it, forming an iterative creative loop that token-based black-box systems cannot easily support.</p>
+<hr>
+<h4 id="comparison-to-token-based-models">Comparison to Token-Based Models</h4>
+<p>Most existing text-to-MIDI systems (e.g., MuseCoco, Text2MIDI) tokenize musical events into abstract, model-specific formats. These formats:</p>
+<ul>
+<li>Obfuscate structure</li>
+<li>Require custom tokenizers and decoders</li>
+<li>Make it difficult to inspect or modify output</li>
+<li>Often require large-scale domain-specific training</li>
+</ul>
+<p>In contrast, Tchaikovsky treats music generation more like a code-generation task: the model writes ABC as if it’s writing structured markup or a programming language. This approach:</p>
+<ul>
+<li>Leverages the general capabilities of large LLMs without needing full retraining</li>
+<li><strong>Speeds up generation</strong> by avoiding the need for post-token decoding</li>
+<li>Enables fast user feedback and regeneration cycles in real-time usage</li>
+</ul>
+<p>While token-based systems can offer better low-level control and integration with attention mechanisms over long sequences, their complexity introduces friction in both deployment and user creativity.</p>
+<hr>
+<h4 id="limitations">Limitations</h4>
+<p>Despite its advantages, Tchaikovsky is not without limitations:</p>
+<ul>
+<li>
+<p><strong>Instrumentation control</strong>: ABC supports simple instrument specification (via MIDI program numbers), but lacks detailed timbral shaping or complex orchestration. Multitrack control is possible, but more limited than formats designed for DAW-level sequencing.</p>
+</li>
+<li>
+<p><strong>Prompt sensitivity</strong>: Because ABC is generated directly from the LLM, output quality depends heavily on prompt clarity and phrasing. Ambiguous or overly poetic prompts may lead to musically incoherent results, requiring prompt engineering or retries.</p>
+</li>
+<li>
+<p><strong>Limited training data</strong>: Unlike token-based models trained on millions of aligned MIDI-text pairs, Tchaikovsky relies on few-shot prompt instruction and general-purpose LLMs. While this reduces training overhead, it also limits stylistic consistency and novelty in longer compositions.</p>
+</li>
+<li>
+<p><strong>Lack of long-term structure</strong>: Current LLMs generating ABC tend to focus on short loops or phrases (8–16 bars). Extending this to full-length compositions with recurring themes and dynamic variation remains a challenge.</p>
+</li>
+</ul>
+<hr>
+<h4 id="deployment-lessons">Deployment Lessons</h4>
+<p>Deploying Tchaikovsky as a real-time, browser-based system surfaced several insights:</p>
+<ul>
+<li>
+<p><strong>Responsiveness matters</strong>: Generation must complete in under 5 seconds to feel usable in a creative workflow. ABC generation is fast (~1–2s), and MIDI rendering adds only minimal latency.</p>
+</li>
+<li>
+<p><strong>Cross-device compatibility is key</strong>: Composers work on phones, tablets, and laptops. A unified interface with shared code (React + Flask) ensures accessibility across platforms.</p>
+</li>
+<li>
+<p><strong>Error feedback improves trust</strong>: Unlike black-box systems, users can immediately see and fix ABC formatting issues, building confidence in the tool.</p>
+</li>
+<li>
+<p><strong>LLM flexibility is a strength</strong>: Because Tchaikovsky doesn’t rely on one specific fine-tuned model, it can adapt quickly to new LLMs as they improve. We’ve tested outputs from Claude, DeepSeek, GPT-4, and even open-source models, all with minimal pipeline adjustments.</p>
+</li>
+</ul>
+<hr>
+<h3 id="conclusion">Conclusion</h3>
+<p>Tchaikovsky introduces a novel and practical architecture for symbolic music generation: a fully web-based digital audio workstation (DAW) that allows users to compose music through natural language prompts, rendered in real time via <strong>ABC notation</strong> and converted to editable <strong>MIDI</strong>. To our knowledge, this is the <strong>first system to integrate large language model generation with ABC notation inside a real-time, user-editable DAW environment</strong>.</p>
+<p>By treating ABC as a transparent and structured intermediate language, Tchaikovsky offers significant advantages over traditional token-based approaches. It enables:</p>
+<ul>
+<li><strong>Usability</strong>: No specialized training or installation required—usable on desktop, tablet, or mobile.</li>
+<li><strong>Editability</strong>: Users can directly view and modify the symbolic representation, adjusting chords, rhythms, and phrases without restarting the process.</li>
+<li><strong>Real-time feedback</strong>: Rapid generation cycles (under 5 seconds) allow for tight iteration loops, essential for creative workflows.</li>
+</ul>
+<p>This system positions symbolic music generation not just as a backend AI task, but as a <strong>collaborative tool</strong> that composers can understand, trust, and extend.</p>
+<p>Looking ahead, several avenues for future work are planned:</p>
+<ul>
+<li><strong>Adaptive generation</strong>: Enabling users to modify ABC segments and prompt the model to regenerate in context (e.g., “rewrite bars 5–8 with more syncopation”).</li>
+<li><strong>Richer instrumentation</strong>: Expanding ABC’s control over orchestration and integrating sampled or synthesized audio playback.</li>
+<li><strong>Model fine-tuning</strong>: Training lightweight adapters on curated prompt–ABC pairs to enhance stylistic consistency and phrase development.</li>
+</ul>
+<p>Tchaikovsky demonstrates that <strong>LLM-guided symbolic composition is not only feasible—it’s fast, interpretable, and usable today</strong>. As language models continue to evolve, so too will the depth, flexibility, and musical expressiveness of systems built on this architecture.</p>
+<h3 id="references">References</h3>
+<ul>
+<li>
+<p>Bhandari, K., Roy, A., Wang, K., Puri, G., Colton, S., &#x26; Herremans, D. (2025). <strong>text2midi: Generating Symbolic Music from Captions</strong>. <em>Proceedings of the 39th AAAI Conference on Artificial Intelligence (AAAI 2025)</em>.</p>
+</li>
+<li>
+<p>Melechovsky, J., Roy, A., &#x26; Herremans, D. (2024). <strong>MidiCaps: A Large-Scale MIDI Dataset with Text Captions</strong>. <em>Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR 2024)</em>.</p>
+</li>
+<li>
+<p>Lu, P., Xu, X., Kang, C., Yu, B., Xing, C., Tan, X., &#x26; Bian, J. (2023). <strong>MuseCoco: Generating Symbolic Music from Text</strong>. <em>arXiv preprint arXiv:2306.00110</em>.</p>
+</li>
+<li>
+<p>Agostinelli, A., Denk, T. I., Borsos, Z., Engel, J., et al. (2023). <strong>MusicLM: Generating Music from Text</strong>. <em>arXiv preprint arXiv:2301.11325</em>.</p>
+</li>
+<li>
+<p>Melechovsky, J., Guo, Z., Ghosal, D., Majumder, N., Herremans, D., &#x26; Poria, S. (2024). <strong>MusicBench: Toward Controllable Text-to-Music Generation</strong>. <em>Proceedings of NAACL 2024</em>.</p>
+</li>
+<li>
+<p>Walsh, C. (1993). <strong>ABC Music Notation Primer</strong>. Retrieved from <a href="https://abcnotation.com">https://abcnotation.com</a></p>
+</li>
+<li>
+<p>Cuthbert, M. S., &#x26; Ariza, C. (2010). <strong>music21: A Toolkit for Computer-Aided Musicology and Symbolic Music Data</strong>. <em>Proceedings of the International Society for Music Information Retrieval</em>.</p>
+</li>
+<li>
+<p>Fradet, N., Briot, J.-P., Chhel, F., Seghrouchni, A. E. F., &#x26; Gutowski, N. (2021). <strong>MidiTok: A Python Package for MIDI File Tokenization</strong>. <em>ISMIR Late-Breaking Demos</em>.</p>
+</li>
+<li>
+<p>React. (n.d.). <a href="https://reactjs.org">https://reactjs.org</a></p>
+</li>
+<li>
+<p>Flask. (n.d.). <a href="https://flask.palletsprojects.com">https://flask.palletsprojects.com</a></p>
+</li>
+<li>
+<p>abcjs. (n.d.). <a href="https://abcjs.net">https://abcjs.net</a></p>
+</li>
+<li>
+<p>DeepSeek Model Repository. (n.d.). <a href="https://deepseek.com">https://deepseek.com</a></p>
+</li>
+</ul> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Secure Payment Tokenization</title><meta name="description" content="Store card data using PCI-compliant token systems."><meta property="og:title" content="Secure Payment Tokenization"><meta property="og:description" content="Store card data using PCI-compliant token systems."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Secure Payment Tokenization</h1> <div class="module-meta"> <div> <span class="module-category">Payment</span> <span class="module-subcategory"> → Platinum</span> </div> <div class="module-price"> <span>💰</span> $3500 </div> </div> <p class="module-summary">Store card data using PCI-compliant token systems.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/stripe.png" alt="Technology icon"><img src="/assets/modules/language/python.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <h1 id="secure-payment-tokenization-module-overview">Secure Payment Tokenization Module Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Secure Payment Tokenization module is designed to securely store payment card data by converting sensitive information into tokens that comply with PCI Data Security Standard (PCI DSS). This approach minimizes the risk of data breaches by avoiding direct storage of card details, ensuring a robust and compliant solution for handling financial transactions.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li>
+<p><strong>Compliance Assurance</strong>: Easily meet PCI DSS requirements by leveraging tokenization, reducing the need to handle sensitive card data directly.</p>
+</li>
+<li>
+<p><strong>Enhanced Security</strong>: Safeguard payment information through encryption and tokenization, preventing unauthorized access even in case of system breaches.</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: Integrate seamlessly with various payment systems, supporting growth across different platforms and transaction volumes.</p>
+</li>
+<li>
+<p><strong>Flexible Integration</strong>: Compatible with diverse architectures and third-party services, offering versatile integration options to meet specific needs.</p>
+</li>
+<li>
+<p><strong>Transparency &#x26; Audit</strong>: Maintain clear records with detailed logs for auditing purposes, ensuring compliance and providing a transparent audit trail.</p>
+</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ul>
+<li>
+<p><strong>Online Checkouts</strong>: Securely store card details for recurring transactions, enhancing user experience by eliminating the need for repeated data entry.</p>
+</li>
+<li>
+<p><strong>Mobile Payments</strong>: Protect payment information on mobile platforms, ensuring secure transactions in apps or through mobile web interfaces.</p>
+</li>
+<li>
+<p><strong>Recurring Billing Systems</strong>: Manage subscriptions and recurring payments efficiently by securely storing tokens associated with customer accounts.</p>
+</li>
+<li>
+<p><strong>Third-Party Integrations</strong>: Safely handle card data when integrating with external services, such as payment gateways, without compromising security.</p>
+</li>
+<li>
+<p><strong>Payment Gateways &#x26; Terminals</strong>: Enhance security in physical transactions by processing tokenized data through POS systems and online payment platforms.</p>
+</li>
+</ul>
+<p>This module offers developers a comprehensive solution to securely manage payment data, adhering to regulatory standards while providing flexibility and scalability for diverse applications.</p>
+<h1 id="secure-payment-tokenization-module-documentation">Secure Payment Tokenization Module Documentation</h1>
+<p>The Secure Payment Tokenization module is designed to handle card data securely using PCI-compliant token systems. Below are its key features, explained in detail.</p>
+<h2 id="1-pci-compliance">1. PCI Compliance</h2>
+<p>Ensures that card data storage and processing adhere to strict security standards, reducing liability for businesses and protecting consumer information.</p>
+<h2 id="2-token-generation">2. Token Generation</h2>
+<p>Converts sensitive card data into non-sensitive tokens, enabling secure transmission and storage without exposing actual card details.</p>
+<h2 id="3-integration-with-payment-gateways">3. Integration with Payment Gateways</h2>
+<p>Simplifies integration with major payment gateways like PayPal, Stripe, and Braintree, allowing seamless processing of tokenized transactions.</p>
+<h2 id="4-token-revocation">4. Token Revocation</h2>
+<p>Permits the invalidation of tokens upon compromise or termination of user consent, enhancing security by revoking access to sensitive data.</p>
+<h2 id="5-audit-logging">5. Audit Logging</h2>
+<p>Maintains detailed logs of all token-related activities for auditing purposes, aiding in monitoring and investigating any unauthorized access attempts.</p>
+<h2 id="6-cross-platform-compatibility">6. Cross-Platform Compatibility</h2>
+<p>Supports multiple platforms (iOS, Android, web), enabling integration across various channels and ensuring consistent functionality.</p>
+<h2 id="7-performance-optimization">7. Performance Optimization</h2>
+<p>Efficiently manages token storage and retrieval to minimize latency, ensuring smooth operation even with high transaction volumes.</p>
+<h2 id="8-security-enhancements">8. Security Enhancements</h2>
+<p>Implements robust encryption, secure key management, and access controls to protect tokens from unauthorized access and potential breaches.</p>
+<h2 id="9-error-handling">9. Error Handling</h2>
+<p>Detects and handles issues during token operations, providing detailed feedback for developers to troubleshoot effectively.</p>
+<h2 id="10-scalability">10. Scalability</h2>
+<p>Designed to handle increasing transaction loads efficiently through scalable architectures and optimized database interactions.</p>
+<h2 id="11-customization">11. Customization</h2>
+<p>Allows adaptability to different environments with adjustable encryption keys, token expiration policies, and gateway integrations.</p>
+<h2 id="12-documentation--support">12. Documentation &#x26; Support</h2>
+<p>Provides comprehensive guides, examples, and responsive support to facilitate integration and address any issues developers may encounter.</p>
+<p>This module ensures secure, efficient, and compliant handling of payment data, crucial for protecting sensitive information in various payment processing environments.</p>
+<h1 id="secure-payment-tokenization-module">Secure Payment Tokenization Module</h1>
+<p>This module provides functionality for securely tokenizing payment card data using PCI-compliant methods. The solution includes both server-side API endpoints and client-side components.</p>
+<h2 id="components">Components</h2>
+<h3 id="1-fastapi-endpoint">1. FastAPI Endpoint</h3>
+<p>The following is a sample FastAPI endpoint that handles card tokenization:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> CardData</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    card_number: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    cardholder_name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    expiry_date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    cvv: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TokenResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    token: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    expires_at: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/tokenize"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">TokenResponse)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> tokenize_card</span><span style="color:#E1E4E8">(card_data: CardData):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Simulated token generation (replace with actual implementation)</span></span>
+<span class="line"><span style="color:#E1E4E8">        token </span><span style="color:#F97583">=</span><span style="color:#F97583"> f</span><span style="color:#9ECBFF">"tok_</span><span style="color:#79B8FF">{len</span><span style="color:#E1E4E8">(card_data.card_number)</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">        expires_at </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> datetime.datetime.now().timestamp() </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 3600</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"token"</span><span style="color:#E1E4E8">: token, </span><span style="color:#9ECBFF">"expires_at"</span><span style="color:#E1E4E8">: expires_at}</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-component">2. React UI Component</h3>
+<p>Here’s a sample React component for collecting card information:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> PaymentForm</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">formData</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setFormData</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">    cardNumber: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    cardholderName: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    expiryDate: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    cvv: </span><span style="color:#9ECBFF">''</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/tokenize'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">          'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">(formData),</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#F97583">        throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Tokenization failed'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Token received:'</span><span style="color:#E1E4E8">, data.token);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Card Number:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">          name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"cardNumber"</span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.cardNumber}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, cardNumber: e.target.value})}</span></span>
+<span class="line"><span style="color:#B392F0">          required</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Name on Card:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">          name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"cardholderName"</span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.cardholderName}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, cardholderName: e.target.value})}</span></span>
+<span class="line"><span style="color:#B392F0">          required</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Expiry Date:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">          name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"expiryDate"</span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.expiryDate}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, expiryDate: e.target.value})}</span></span>
+<span class="line"><span style="color:#B392F0">          required</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>CVV:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">          name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"cvv"</span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.cvv}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, cvv: e.target.value})}</span></span>
+<span class="line"><span style="color:#B392F0">          required</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Pay Now&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> PaymentForm;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-data-schema">3. Data Schema</h3>
+<p>The following Pydantic models define the data structure for card tokenization:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> CardDetails</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    card_number: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    cardholder_name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    expiry_date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    cvv: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TokenData</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    token: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    expires_at: Optional[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span></code></pre>
+<h2 id="summary">Summary</h2>
+<p>This module provides a secure way to handle payment card data by tokenizing it using FastAPI endpoints and React UI components. The solution includes:</p>
+<ul>
+<li>A RESTful API endpoint for token generation</li>
+<li>A client-side form component for collecting card details</li>
+<li>Data validation schemas using Pydantic</li>
+</ul>
+<p>The implementation ensures that sensitive card data is never stored in plaintext by replacing it with tokens that can be used for subsequent transactions while maintaining PCI compliance.</p>
+<h1 id="module-secure-payment-tokenization">Module: Secure Payment Tokenization</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Secure Payment Tokenization</strong> module provides a robust mechanism for securely storing and processing payment card data by leveraging PCI-compliant token systems. This module ensures that sensitive card data is protected by converting it into non-sensitive tokens, which can be safely transmitted and stored without exposing the original card details.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ol>
+<li><strong>Payment Gateway Integration</strong>: Facilitates communication with external payment gateways to process transactions securely.</li>
+<li><strong>Card Data Encryption</strong>: Provides encryption services for card data at rest or in transit.</li>
+<li><strong>Token Management API</strong>: Offers APIs for generating, validating, and revoking tokens.</li>
+<li><strong>Fraud Detection</strong>: Integrates with fraud detection systems to prevent unauthorized transactions.</li>
+<li><strong>Audit Logging</strong>: Logs payment-related activities for compliance and debugging purposes.</li>
+</ol>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-web-checkout">1. Web Checkout</h3>
+<ul>
+<li>Tokenize card data during the checkout process on a web application.</li>
+<li>Example: When a user enters their credit card details, the module generates a token that is sent to the payment gateway instead of raw card data.</li>
+</ul>
+<h3 id="2-mobile-payments">2. Mobile Payments</h3>
+<ul>
+<li>Securely store and tokenize payment information in mobile applications.</li>
+<li>Example: Store tokens locally or in a secure backend system for recurring payments or one-tap purchases.</li>
+</ul>
+<h3 id="3-recurring-payments">3. Recurring Payments</h3>
+<ul>
+<li>Automate token usage for subscription-based services.</li>
+<li>Example: Use tokens to charge customers’ cards on a predefined schedule without re-prompting for card details.</li>
+</ul>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>Choose the Right Tokenization Method</strong>:</p>
+<ul>
+<li>Select a tokenization method that aligns with your payment processor’s requirements (e.g., server-side or client-side tokenization).</li>
+</ul>
+</li>
+<li>
+<p><strong>Handle Errors Gracefully</strong>:</p>
+<ul>
+<li>Implement proper error handling to notify users if token generation fails or if their card details are invalid.</li>
+</ul>
+</li>
+<li>
+<p><strong>Ensure PCI Compliance</strong>:</p>
+<ul>
+<li>Regularly audit your implementation to ensure compliance with PCI-DSS requirements, especially when storing tokens.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>Below is a table of configuration options for the Secure Payment Tokenization module:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Option Name</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th><th><strong>Possible Values</strong></th></tr></thead><tbody><tr><td><code>tokenGenerationMethod</code></td><td>Specifies how tokens are generated (e.g., server-side or client-side).</td><td><code>server-side</code></td><td><code>server-side</code>, <code>client-side</code></td></tr><tr><td><code>encryptionAlgorithm</code></td><td>Determines the encryption algorithm used for token storage.</td><td><code>AES-256</code></td><td><code>AES-128</code>, <code>AES-256</code>, <code>RSA</code></td></tr><tr><td><code>tokenExpiryTime</code></td><td>Sets the expiry time for generated tokens (in hours).</td><td><code>24</code></td><td><code>12</code>, <code>24</code>, <code>48</code>, etc.</td></tr><tr><td><code>cardDataValidation</code></td><td>Enables or disables validation of card data before tokenization.</td><td><code>true</code></td><td><code>true</code>, <code>false</code></td></tr><tr><td><code>tokenStorageProvider</code></td><td>Specifies the storage provider for tokens (e.g., database, cloud).</td><td><code>database</code></td><td><code>database</code>, <code>cloud</code>, <code>filesystem</code></td></tr><tr><td><code>piiRedaction</code></td><td>Enables redaction of Personally Identifiable Information (PII) from logs.</td><td><code>true</code></td><td><code>true</code>, <code>false</code></td></tr></tbody></table>
+<hr>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Always follow PCI-DSS guidelines when handling payment card data.</li>
+<li>Ensure that tokens are not exposed in error messages or logs.</li>
+<li>Regularly update the module to address any vulnerabilities.</li>
+</ul>
+<hr>
+<p>This documentation provides a comprehensive guide for developers integrating and using the Secure Payment Tokenization module.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

@@ -1,0 +1,28 @@
+---
+const { title, summary } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" content={summary ?? ""} />
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">← Home</a>
+        <a href="/modules">All Modules</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>© {new Date().getFullYear()} Broken Duck Media</p>
+    </footer>
+  </body>
+</html>

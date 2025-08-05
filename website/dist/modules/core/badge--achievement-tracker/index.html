@@ -1,0 +1,342 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Badge &amp; Achievement Tracker</title><meta name="description" content="Gamified milestone system."><meta property="og:title" content="Badge &#38; Achievement Tracker"><meta property="og:description" content="Gamified milestone system."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Badge &amp; Achievement Tracker</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Gamified milestone system.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="badge--achievement-tracker-overview">Badge &#x26; Achievement Tracker Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Badge &#x26; Achievement Tracker module is designed to enhance user engagement by implementing a gamified system that rewards users with badges for reaching specific milestones. This system fosters a sense of progression and accomplishment, encouraging continued interaction within the application.</p>
+<p>By leveraging gamification principles, this module aims to increase user retention and satisfaction. It allows developers to create customizable achievements that align with their app’s goals, providing immediate feedback to users on their progress.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Achievement Tracking</strong>: Customize achievements with specific conditions and criteria, offering rewards like badges or points.</li>
+<li><strong>Dynamic Rules Engine</strong>: Adjust achievement rules in real-time without backend intervention, adapting to user behavior.</li>
+<li><strong>Visual Indicators</strong>: Display achievements through visual elements like badges, icons, or progress bars for recognition.</li>
+<li><strong>Progression System</strong>: Enable users to unlock higher-tier achievements as they meet lower ones, creating a ladder of accomplishments.</li>
+<li><strong>Data Analytics</strong>: Track achievement completions and progression trends to gain insights into user behavior and engagement.</li>
+</ul>
+<h2 id="benefits">Benefits</h2>
+<ol>
+<li><strong>Enhanced Engagement</strong>: Badges and achievements motivate users to return frequently, fostering loyalty.</li>
+<li><strong>Personalized Experience</strong>: Tailored achievements cater to individual user behaviors and preferences, making the experience unique.</li>
+<li><strong>Increased Retention</strong>: By rewarding milestones, users are encouraged to continue using the app to unlock more rewards.</li>
+<li><strong>Improved User Experience</strong>: Visual feedback on progress adds a layer of satisfaction, enhancing overall UX.</li>
+</ol>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ul>
+<li><strong>Social Media Apps</strong>: Reward users for active participation with badges like “Top Commenter” or “Engagement Star.”</li>
+<li><strong>Gaming Platforms</strong>: Offer in-game achievements to players as they unlock new levels or complete challenges.</li>
+<li><strong>E-commerce Stores</strong>: Recognize loyal customers with badges such as “100 Purchases” or “VIP Status.”</li>
+<li><strong>Fitness Trackers</strong>: Encourage regular activity by awarding achievements like “7-Day Streak” or “First Marathon Completion.”</li>
+</ul>
+<h2 id="integrations">Integrations</h2>
+<p>The Badge &#x26; Achievement Tracker seamlessly integrates with various technologies and frameworks:</p>
+<ul>
+<li><strong>Authentication Systems</strong>: Sync achievements with user profiles for personalized tracking.</li>
+<li><strong>Notification Services</strong>: Send push notifications when users earn new badges.</li>
+<li><strong>Analytics Tools</strong>: Integrate with platforms like Google Analytics to monitor achievement-related metrics.</li>
+</ul>
+<p>By incorporating the Badge &#x26; Achievement Tracker, developers can elevate their app’s engagement and satisfaction levels, ensuring a more dynamic and rewarding user experience.</p>
+<h2 id="feature-name-achievement-definitions">Feature Name: Achievement Definitions</h2>
+<p>The module allows administrators or developers to define custom achievements and badges with specific criteria for earning them. Achievements can be created programmatically or via an admin interface.</p>
+<h2 id="feature-name-badge-earning-mechanisms">Feature Name: Badge Earning Mechanisms</h2>
+<p>Users automatically earn badges based on predefined rules (e.g., completing tasks, reaching milestones) or manually by admins after reviewing user activity.</p>
+<h2 id="feature-name-visual-display-of-badges">Feature Name: Visual Display of Badges</h2>
+<p>Earned badges are displayed in a visually appealing format on user profiles, dashboards, or public pages to encourage engagement and recognition.</p>
+<h2 id="feature-name-progress-tracking">Feature Name: Progress Tracking</h2>
+<p>Users can track their progress toward unlocking new achievements, with real-time updates and visual indicators showing how close they are to the next milestone.</p>
+<h2 id="feature-name-notifications--alerts">Feature Name: Notifications &#x26; Alerts</h2>
+<p>Automated notifications inform users when they earn a badge or unlock an achievement. Admins can also be alerted for manual badge assignments.</p>
+<h2 id="feature-name-system-integration">Feature Name: System Integration</h2>
+<p>The module integrates with other core systems like user profiles, activity tracking, and leaderboards to provide a seamless gamified experience.</p>
+<h3 id="module-name-badge--achievement-tracker">Module Name: Badge &#x26; Achievement Tracker</h3>
+<h4 id="category-core">Category: Core</h4>
+<h4 id="summary-gamified-milestone-system-to-track-achievements-and-badges-for-users">Summary: Gamified milestone system to track achievements and badges for users.</h4>
+<p>This module provides a gamified system to track user achievements, milestones, and badges. It includes endpoints to create, read, update, and delete achievements, as well as calculate progress towards earning badges.</p>
+<h3 id="code-samples">Code Samples</h3>
+<h4 id="1-fastapi-endpoint-create-achievement">1. FastAPI Endpoint (Create Achievement)</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> schemas</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> models</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/achievements/"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">schemas.AchievementResponse)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> create_achievement</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    achievement: schemas.AchievementCreate,</span></span>
+<span class="line"><span style="color:#E1E4E8">    db: Session </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends(get_db),</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Create a new achievement.</span></span>
+<span class="line"><span style="color:#9ECBFF">    </span></span>
+<span class="line"><span style="color:#9ECBFF">    Args:</span></span>
+<span class="line"><span style="color:#9ECBFF">        achievement (AchievementCreate): Achievement data to create.</span></span>
+<span class="line"><span style="color:#9ECBFF">        </span></span>
+<span class="line"><span style="color:#9ECBFF">    Returns:</span></span>
+<span class="line"><span style="color:#9ECBFF">        AchievementResponse: Created achievement with all fields.</span></span>
+<span class="line"><span style="color:#9ECBFF">        </span></span>
+<span class="line"><span style="color:#9ECBFF">    Raises:</span></span>
+<span class="line"><span style="color:#9ECBFF">        HTTPException(422): If validation fails.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        db_achievement </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> models.Achievement(</span><span style="color:#F97583">**</span><span style="color:#E1E4E8">achievement.dict())</span></span>
+<span class="line"><span style="color:#E1E4E8">        db.add(db_achievement)</span></span>
+<span class="line"><span style="color:#E1E4E8">        db.commit()</span></span>
+<span class="line"><span style="color:#E1E4E8">        db.refresh(db_achievement)</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> db_achievement</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h4 id="2-react-ui-snippet-achievement-list">2. React UI Snippet (Achievement List)</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Badge } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'components/ui/Badge'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> Achievement</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  title</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  description</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  points</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  criteria</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">[];</span></span>
+<span class="line"><span style="color:#FFAB70">  status</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 'unlocked'</span><span style="color:#F97583"> |</span><span style="color:#9ECBFF"> 'locked'</span><span style="color:#F97583"> |</span><span style="color:#9ECBFF"> 'in-progress'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> AchievementList</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">achievements</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setAchievements</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">Achievement</span><span style="color:#E1E4E8">[]>([]);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">loading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">error</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setError</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  React.</span><span style="color:#B392F0">useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/achievements/'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">res</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> res.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#F97583"> =></span><span style="color:#B392F0"> setAchievements</span><span style="color:#E1E4E8">(data))</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">err</span><span style="color:#F97583"> =></span><span style="color:#B392F0"> setError</span><span style="color:#E1E4E8">(err))</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">finally</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (loading) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>Loading achievements...&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>;</span></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (error) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>Error loading achievements: {error}&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"space-y-4"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      {achievements.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">achievement</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{achievement.id} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"bg-white p-4 rounded-lg shadow-sm"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"flex items-center justify-between mb-2"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text-lg font-semibold"</span><span style="color:#E1E4E8">>{achievement.title}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#79B8FF">Badge</span><span style="color:#B392F0"> status</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{achievement.status}></span></span>
+<span class="line"><span style="color:#E1E4E8">              {achievement.status </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 'unlocked'</span><span style="color:#F97583"> ?</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#9ECBFF">                'Unlocked'</span></span>
+<span class="line"><span style="color:#E1E4E8">              ) </span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> achievement.status </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 'locked'</span><span style="color:#F97583"> ?</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#9ECBFF">                'Locked'</span></span>
+<span class="line"><span style="color:#E1E4E8">              ) </span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#9ECBFF">                'In Progress'</span></span>
+<span class="line"><span style="color:#E1E4E8">              )}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#79B8FF">Badge</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text-sm text-gray-600 mb-2"</span><span style="color:#E1E4E8">>{achievement.description}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">ul</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"list-disc pl-5 space-y-1"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {achievement.criteria.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">criteria</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">index</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{index} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text-sm"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                {criteria}</span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h4 id="3-pydantic-data-schema-achievement">3. Pydantic Data Schema (Achievement)</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel, Field, validator</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional, List</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> enum </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Enum</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> AchievementStatus</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">Enum</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    UNLOCKED</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "unlocked"</span></span>
+<span class="line"><span style="color:#79B8FF">    LOCKED</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "locked"</span></span>
+<span class="line"><span style="color:#79B8FF">    IN_PROGRESS</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "in-progress"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> AchievementBase</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    points: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    criteria: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: AchievementStatus</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> AchievementCreate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">AchievementBase</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: Optional[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> AchievementResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">AchievementBase</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: datetime</span></span>
+<span class="line"><span style="color:#E1E4E8">    updated_at: datetime</span></span>
+<span class="line"></span></code></pre>
+<h3 id="description">Description</h3>
+<ul>
+<li><strong>Badge &#x26; Achievement Tracker</strong> provides a gamified system to track user milestones and achievements.</li>
+<li>The module includes core functionality for creating, reading, updating, and deleting achievements.</li>
+<li>Achievements can be used to incentivize users by providing points and status indicators.</li>
+<li>The React component example shows how achievements can be displayed in a user-friendly manner with loading states and error handling.</li>
+</ul>
+<h3 id="usage">Usage</h3>
+<ol>
+<li>Use the FastAPI endpoint to create new achievements.</li>
+<li>Display achievements in your React application using the AchievementList component.</li>
+<li>Track progress and update achievement statuses as users complete milestones.</li>
+</ol>
+<h1 id="badge--achievement-tracker-module-documentation">Badge &#x26; Achievement Tracker Module Documentation</h1>
+<h2 id="summary">Summary</h2>
+<p>The <strong>Badge &#x26; Achievement Tracker</strong> module is a gamified milestone system designed to track user achievements and award badges based on predefined criteria. This module is ideal for adding engagement and motivation to user interactions by recognizing milestones and accomplishments.</p>
+<h2 id="target-user">Target User</h2>
+<ul>
+<li>Developers integrating gamification elements into their applications.</li>
+<li>Game developers, educators, or app builders looking to reward user progress.</li>
+</ul>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ol>
+<li>
+<p><strong>User Profiles Module</strong></p>
+<ul>
+<li>Manages user data and preferences, essential for tracking achievement progress per user.</li>
+</ul>
+</li>
+<li>
+<p><strong>Activity Tracking Module</strong></p>
+<ul>
+<li>Logs user actions and events, providing the foundation for triggering achievements and badges.</li>
+</ul>
+</li>
+<li>
+<p><strong>Notifications Module</strong></p>
+<ul>
+<li>Sends alerts or rewards when users earn badges or achieve milestones.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analytics Module</strong></p>
+<ul>
+<li>Provides insights into achievement completion rates and badge redemption trends.</li>
+</ul>
+</li>
+<li>
+<p><strong>Rewards System Module</strong></p>
+<ul>
+<li>Integrates with external reward systems, such as points, discounts, or virtual currency.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-track-user-progress-in-learning-platforms">1. Track User Progress in Learning Platforms</h3>
+<ul>
+<li><strong>Scenario</strong>: A user completes a course module.</li>
+<li><strong>Action</strong>: The system awards a “Level Up” badge and notifies the user.</li>
+</ul>
+<h3 id="2-reward-first-time-purchasers">2. Reward First-Time Purchasers</h3>
+<ul>
+<li><strong>Scenario</strong>: A user makes their first purchase on an e-commerce platform.</li>
+<li><strong>Action</strong>: The system triggers a “Welcome Badge” achievement and sends a congratulatory message.</li>
+</ul>
+<h3 id="3-recognize-fitness-milestones">3. Recognize Fitness Milestones</h3>
+<ul>
+<li><strong>Scenario</strong>: A user in a fitness app completes 100 days of consistent workout tracking.</li>
+<li><strong>Action</strong>: The system awards a “Golden Fit” badge and unlocks exclusive features.</li>
+</ul>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>Event Listeners for Achievement Tracking</strong></p>
+<ul>
+<li>Use the <code>trackEvent</code> function to log user actions (e.g., completing a task, reaching a milestone).</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Example: Track purchase completion</span></span>
+<span class="line"><span style="color:#E1E4E8">BadgeTracker.</span><span style="color:#B392F0">trackEvent</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'purchase_completed'</span><span style="color:#E1E4E8">, { userId: </span><span style="color:#9ECBFF">'user_123'</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Automated Badges</strong></p>
+<ul>
+<li>Configure rules for automatic badge issuance based on user activity or predefined criteria.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#85E89D">achievement_rules</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  - </span><span style="color:#85E89D">rule_name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"FirstPurchase"</span></span>
+<span class="line"><span style="color:#85E89D">    condition</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">event == "purchase_completed"</span></span>
+<span class="line"><span style="color:#85E89D">    award_badge</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#85E89D">    badge_id</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"welcome-badge"</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>UI Integration</strong></p>
+<ul>
+<li>Display badges and achievements in user profiles or leaderboards using the provided API endpoints.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- Example: Show achievement progress --></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"achievement-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"achievement-name"</span><span style="color:#E1E4E8">>Welcome Badge&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"progress-bar"</span><span style="color:#B392F0"> style</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"width: 75%"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>API Integration for Custom Use Cases</strong></p>
+<ul>
+<li>Use the REST or GraphQL API to fetch achievement data and update user progress programmatically.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Option Name</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th><th><strong>Example Usage</strong></th></tr></thead><tbody><tr><td><code>enable_achievements</code></td><td>Enable or disable the achievement tracking feature.</td><td><code>true</code></td><td>Set to <code>false</code> to disable achievements.</td></tr><tr><td><code>badge_level_threshold</code></td><td>Define thresholds for badge levels (e.g., bronze, silver, gold).</td><td><code>[100, 250, 500]</code></td><td>Custom thresholds: <code>[50, 100, 200]</code>.</td></tr><tr><td><code>track_event_types</code></td><td>List of events to track for achievements.</td><td><code>["login", "purchase"]</code></td><td>Add custom events like <code>"task_completed"</code>.</td></tr><tr><td><code>notification_type</code></td><td>Type of notification for achievement alerts (e.g., email, in-app, push).</td><td><code>"in-app"</code></td><td>Set to <code>"email"</code> for email notifications.</td></tr><tr><td><code>points_per_badge</code></td><td>Points awarded per badge (optional if using a rewards system).</td><td><code>0</code></td><td>Set to <code>100</code> for premium badges.</td></tr><tr><td><code>api_access</code></td><td>Enable or disable API access for third-party integrations.</td><td><code>"disabled"</code></td><td>Set to <code>"enabled"</code> for custom integrations.</td></tr></tbody></table>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <strong>Badge &#x26; Achievement Tracker</strong> module is a powerful tool for enhancing user engagement and motivation by recognizing milestones and accomplishments. By leveraging its integration tips, configuration options, and related modules, developers can seamlessly incorporate gamification into their applications.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

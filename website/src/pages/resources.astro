@@ -1,0 +1,126 @@
+---
+import { getCollection } from 'astro:content';
+import Header from '../components/Header/Header.astro';
+import Footer from '../components/Footer/Footer.astro';
+import '../styles/global.css';
+import '../styles/resources.css';
+
+const blog = await getCollection('blog');
+const caseStudy = await getCollection('case-study');
+const company = await getCollection('company');
+const external = await getCollection('external');
+const press = await getCollection('press');
+
+const posts = [...blog, ...caseStudy, ...company, ...external, ...press];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Resources – Broken Duck Media</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <Header />
+
+    <main class="resources">
+      <div class="resources-inner">
+        <header class="resources-header">
+          <h1 class="resources-title">Resources</h1>
+          <p class="resources-subtitle">Insights, case studies, updates and external links from our team at Broken Duck Media.</p>
+
+          <nav class="resources-filter">
+            <a href="#" class="filter-btn active" data-filter="all">All</a>
+            <a href="#" class="filter-btn" data-filter="Blog">Blog</a>
+            <a href="#" class="filter-btn" data-filter="Case Study">Case Study</a>
+            <a href="#" class="filter-btn" data-filter="Company">Company</a>
+            <a href="#" class="filter-btn" data-filter="External">External</a>
+            <a href="#" class="filter-btn" data-filter="Press">Press</a>
+          </nav>
+        </header>
+
+        <div class="resource-grid" id="resource-grid">
+          {posts.map((post) => {
+            const category = post.data.category || 'Uncategorized';
+            const collection = post.collection;
+            const description = post.data.meta_description || post.data.summary || '';
+
+            return (
+              <article class="resource-card" data-category={category}>
+                <a href={`/${collection}/${post.slug}/`}>
+                  <img src={post.data.cover || '/assets/images/temp.png'} alt={post.data.title} class="resource-cover" />
+                </a>
+                <div class="resource-meta">
+                  <span class="resource-category">{category}</span>
+                  <time class="resource-date">
+                    {new Date(post.data.pubDate).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric'
+                    })}
+                  </time>
+                </div>
+                <a href={`/${collection}/${post.slug}/`} class="resource-title">{post.data.title}</a>
+                <p class="resource-summary">{description}</p>
+              </article>
+            );
+          })}
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <button id="show-more-btn">Show More Posts</button>
+        </div>
+      </div>
+    </main>
+
+    <Footer />
+
+    <script is:inline>
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const showMoreBtn = document.getElementById("show-more-btn");
+      let currentFilter = "all";
+      let visibleCount = 9;
+
+      function updateGrid() {
+        const cards = document.querySelectorAll(".resource-card");
+        let count = 0;
+
+        cards.forEach(card => {
+          const cat = card.getAttribute("data-category");
+          const match = currentFilter === "all" || cat === currentFilter;
+          if (match && count < visibleCount) {
+            card.style.display = "flex";
+            count++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        const remaining = Array.from(cards).filter(c =>
+          currentFilter === "all" || c.getAttribute("data-category") === currentFilter
+        );
+        showMoreBtn.style.display = count < remaining.length ? "inline-block" : "none";
+      }
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener("click", e => {
+          e.preventDefault();
+          filterButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentFilter = btn.getAttribute("data-filter");
+          visibleCount = 9;
+          updateGrid();
+        });
+      });
+
+      showMoreBtn.addEventListener("click", () => {
+        visibleCount += 9;
+        updateGrid();
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(updateGrid, 10);
+      });
+    </script>
+  </body>
+</html>

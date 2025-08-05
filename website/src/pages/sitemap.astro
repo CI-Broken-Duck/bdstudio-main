@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+
+const site = 'https://www.brokenduckmedia.com'; // or use ENV variable
+const staticRoutes = [
+  '/',
+  '/about',
+  '/services',
+  '/contact',
+  '/resources',
+  '/support',
+  '/faq',
+  '/blog',
+  '/case',
+  '/privacy',
+  '/terms',
+  '/cookies',
+  '/gdpr',
+  '/ccpa',
+  '/license',
+  '/products',
+  '/team',
+  '/company',
+  '/press',
+];
+
+const modules = await getCollection('modules');
+const blog = await getCollection('blog');
+const company = await getCollection('company');
+const caseStudies = await getCollection('case-study');
+const press = await getCollection('press');
+const external = await getCollection('external');
+
+const dynamicRoutes = [
+  ...modules.map(p => `/modules/${p.slug}`),
+  ...blog.map(p => `/blog/${p.slug}`),
+  ...company.map(p => `/company/${p.slug}`),
+  ...caseStudies.map(p => `/case-study/${p.slug}`),
+  ...press.map(p => `/press/${p.slug}`),
+  ...external.map(p => `/external/${p.slug}`),
+];
+---
+
+<head>
+  <title>Sitemap</title>
+</head>
+<body>
+  <pre>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{staticRoutes.map(path => `<url><loc>${site}${path}</loc></url>`).join('\n')}
+{dynamicRoutes.map(path => `<url><loc>${site}${path}</loc></url>`).join('\n')}
+</urlset>
+  </pre>
+</body>

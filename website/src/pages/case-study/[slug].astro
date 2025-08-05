@@ -1,0 +1,77 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content';
+import Header from '../../components/Header/Header.astro';
+import Footer from '../../components/Footer/Footer.astro';
+import '../../styles/global.css';
+import '../../styles/articles.css';
+import { AstroError } from 'astro/errors';
+
+// ✅ Required for static builds
+export async function getStaticPaths() {
+  const entries = await getCollection('case-study');
+
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+  }));
+}
+
+const slugParam = Astro.params.slug;
+const slug = Array.isArray(slugParam) ? slugParam.join('/') : slugParam;
+
+const entry = await getEntryBySlug('case-study', slug);
+if (!entry) throw new AstroError(`Case Study not found for slug: ${slug}`);
+
+const { Content } = await entry.render();
+const data = entry.data;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{data.title}</title>
+    <meta name="description" content={data.meta_description ?? ''} />
+    <meta property="og:title" content={data.title} />
+    <meta property="og:description" content={data.meta_description ?? ''} />
+    {data.cover && <meta property="og:image" content={data.cover} />}
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/styles/articles.css" />
+  </head>
+
+  <body>
+    <Header />
+
+    <main class="article-content">
+      <article class="article">
+        <header class="article-header">
+          {data.cover && (
+            <img src={data.cover} alt={data.title} class="article-cover" />
+          )}
+
+          <h1>{data.title}</h1>
+
+          <div class="article-meta">
+            {data.author && <span>By {data.author}</span>}
+            {data.pubDate && (
+              <span>
+                {new Date(data.pubDate).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </span>
+            )}
+            {data.category && <span class="article-category">{data.category}</span>}
+          </div>
+
+          {data.meta_description && (
+            <p class="article-summary">{data.meta_description}</p>
+          )}
+        </header>
+
+        <Content />
+      </article>
+    </main>
+
+    <Footer />
+  </body>
+</html>

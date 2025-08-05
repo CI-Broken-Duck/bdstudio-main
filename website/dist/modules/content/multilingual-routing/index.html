@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Multilingual Routing</title><meta name="description" content="Serve translated versions of your site with language-based URLs."><meta property="og:title" content="Multilingual Routing"><meta property="og:description" content="Serve translated versions of your site with language-based URLs."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Multilingual Routing</h1> <div class="module-meta"> <div> <span class="module-category">Content</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Serve translated versions of your site with language-based URLs.</p> <div class="module-icons"> <img src="/assets/modules/frontend/tailwind.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/cloudservices/segment.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-of-multilingual-routing-module">Overview of Multilingual Routing Module</h1>
+<p>In today’s globalized digital landscape, supporting multiple languages on your website isn’t just a nice-to-have; it’s a necessity. The Multilingual Routing module is designed to streamline this process, ensuring that users receive content in their preferred language through intuitive, SEO-friendly URLs.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary function of the Multilingual Routing module is to manage and serve translated content based on the user’s language preferences. By utilizing language-specific URL structures, the module simplifies the delivery of localized content without complicating your site’s architecture.</p>
+<h2 id="key-benefits">Key Benefits</h2>
+<ul>
+<li><strong>Enhanced SEO:</strong> Language-based URLs improve search engine visibility by targeting specific regions with relevant content.</li>
+<li><strong>Improved User Experience:</strong> Users are directed to content in their preferred language, enhancing engagement and satisfaction.</li>
+<li><strong>Simplified Implementation:</strong> The module abstracts the complexities of multilingual routing, allowing developers to focus on other aspects of their application.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Automatic Language Detection:</strong> Detect and route users based on their browser language settings or regional preferences.</li>
+<li><strong>Multiple Language Support:</strong> Easily manage content across various languages with a single, integrated solution.</li>
+<li><strong>Translation Service Integration:</strong> Seamlessly integrate with translation services for dynamic content delivery.</li>
+<li><strong>Fallback Mechanism:</strong> Provide default language content when the user’s preferred language isn’t supported.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Multilingual Routing module is an essential tool for developers aiming to create inclusive and accessible websites in a multilingual environment. By leveraging its features, you can enhance both SEO performance and user satisfaction, ensuring your site resonates with a global audience effectively.</p>
+<h2 id="language-based-urls">Language-Based URLs</h2>
+<p>The Multilingual Routing module generates URLs based on the language of the content. For example, an article about “FAQ” might be served as <code>/about/faq</code> in English or <code>/acerca/de-faq</code> in Spanish. This improves SEO and user experience by making it clear what language the page is in.</p>
+<h2 id="automatic-translation">Automatic Translation</h2>
+<p>The module integrates with translation services like Google Cloud Translation to automatically translate content into multiple languages. Developers can specify supported languages, and the module handles the rest, saving time and effort in creating multilingual content.</p>
+<h2 id="language-routing-configuration">Language Routing Configuration</h2>
+<p>Define how each language maps to different routes using configuration files. This feature allows developers to set up custom URL structures for each language, ensuring consistency and alignment with site branding or SEO strategies.</p>
+<h2 id="fallback-languages">Fallback Languages</h2>
+<p>Specify fallback languages when a user’s preferred language isn’t supported. For example, if Spanish is the preferred language but not available, the module can serve content in English as a default, ensuring all users have access to content regardless of availability.</p>
+<h2 id="translation-caching">Translation Caching</h2>
+<p>Store translated content locally to reduce translation service calls and improve performance. This caching mechanism ensures faster load times for repeated requests, enhancing user experience without sacrificing content accuracy.</p>
+<h2 id="seo-optimization">SEO Optimization</h2>
+<p>The module generates hreflang tags automatically for each language version of a page. These tags inform search engines about the language and region targeting of your pages, improving local SEO and search rankings in target regions.</p>
+<h2 id="language-detection-and-redirects">Language Detection and Redirects</h2>
+<p>Detect the user’s browser language or geolocation and redirect them to the appropriate language version of the site. This feature enhances user experience by providing content in their preferred language without requiring manual selection from users.</p>
+<h2 id="regional-variants-support">Regional Variants Support</h2>
+<p>Support multiple regional variants, such as different dialects or local languages, ensuring that content can be tailored specifically for various markets or regions, enhancing global reach and relevance.</p>
+<h3 id="multilingual-routing-implementation">Multilingual Routing Implementation</h3>
+<p>This documentation provides code examples to implement multilingual routing using FastAPI (Python) and Node.js, along with a React UI snippet for language selection.</p>
+<hr>
+<h4 id="1-fastapi-endpoint">1. <strong>FastAPI Endpoint</strong></h4>
+<p>The following FastAPI endpoint demonstrates serving content based on the detected or specified language:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># main.py</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FastAPI, Request</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> FastAPI()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@app.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/</span><span style="color:#79B8FF">{lang}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> serve_translated_page</span><span style="color:#E1E4E8">(request: Request, lang: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#6A737D">    # Simulate translation logic</span></span>
+<span class="line"><span style="color:#E1E4E8">    translations </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">        "en"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"greeting"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Hello"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"welcome"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Welcome"</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#9ECBFF">        "es"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"greeting"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Hola"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"welcome"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Bienvenido"</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#9ECBFF">        "fr"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"greeting"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Bonjour"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"welcome"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Bienvenue"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    # Detect or use provided language</span></span>
+<span class="line"><span style="color:#E1E4E8">    content </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> translations.get(lang, translations[</span><span style="color:#9ECBFF">"en"</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">        "language"</span><span style="color:#E1E4E8">: lang,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "content"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "greeting"</span><span style="color:#E1E4E8">: content[</span><span style="color:#9ECBFF">"greeting"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">            "welcome"</span><span style="color:#E1E4E8">: content[</span><span style="color:#9ECBFF">"welcome"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> __name__</span><span style="color:#F97583"> ==</span><span style="color:#9ECBFF"> "__main__"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    uvicorn.run(app, </span><span style="color:#FFAB70">host</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"0.0.0.0"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">port</span><span style="color:#F97583">=</span><span style="color:#79B8FF">8000</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<p>This endpoint serves translated content based on the language parameter in the URL.</p>
+<hr>
+<h4 id="2-nodejs-alternative">2. <strong>Node.js Alternative</strong></h4>
+<p>A Node.js implementation using Express:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// app.js</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> express</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'express'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> app</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> express</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> port</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 3000</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/:lang"</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> translations</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        en: { greeting: </span><span style="color:#9ECBFF">"Hello"</span><span style="color:#E1E4E8">, welcome: </span><span style="color:#9ECBFF">"Welcome"</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">        es: { greeting: </span><span style="color:#9ECBFF">"Hola"</span><span style="color:#E1E4E8">, welcome: </span><span style="color:#9ECBFF">"Bienvenido"</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">        fr: { greeting: </span><span style="color:#9ECBFF">"Bonjour"</span><span style="color:#E1E4E8">, welcome: </span><span style="color:#9ECBFF">"Bienvenue"</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> content</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> translations[req.params.lang] </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> translations.en;</span></span>
+<span class="line"><span style="color:#E1E4E8">    res.</span><span style="color:#B392F0">send</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        language: req.params.lang,</span></span>
+<span class="line"><span style="color:#E1E4E8">        content: {</span></span>
+<span class="line"><span style="color:#E1E4E8">            greeting: content.greeting,</span></span>
+<span class="line"><span style="color:#E1E4E8">            welcome: content.welcome</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">listen</span><span style="color:#E1E4E8">(port, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`App running at http://localhost:${</span><span style="color:#E1E4E8">port</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="3-react-ui-snippet">3. <strong>React UI Snippet</strong></h4>
+<p>A React component for language selection:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// LanguageSelector.js</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useTranslation } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-i18next'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> LanguageSelector</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">t</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useTranslation</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">currentLang</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setCurrentLang</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> React.</span><span style="color:#B392F0">useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'en'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> languages</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">'en'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'es'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'fr'</span><span style="color:#E1E4E8">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleLanguageChange</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">lang</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        setCurrentLang</span><span style="color:#E1E4E8">(lang);</span></span>
+<span class="line"><span style="color:#E1E4E8">        i18n.</span><span style="color:#B392F0">changeLanguage</span><span style="color:#E1E4E8">(lang);</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>{</span><span style="color:#B392F0">t</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'select_language'</span><span style="color:#E1E4E8">)}&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                {languages.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">lang</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{lang}></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">button</span></span>
+<span class="line"><span style="color:#B392F0">                            onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> handleLanguageChange</span><span style="color:#E1E4E8">(lang)}</span></span>
+<span class="line"><span style="color:#B392F0">                            style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ backgroundColor: currentLang </span><span style="color:#F97583">===</span><span style="color:#E1E4E8"> lang </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> '#4CAF50'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'white'</span><span style="color:#E1E4E8"> }}</span></span>
+<span class="line"><span style="color:#E1E4E8">                        ></span></span>
+<span class="line"><span style="color:#E1E4E8">                            {</span><span style="color:#B392F0">t</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`language.${</span><span style="color:#E1E4E8">lang</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">)}</span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> LanguageSelector;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="4-data-schema-pydantic">4. <strong>Data Schema (Pydantic)</strong></h4>
+<p>Define a Pydantic model for translation data:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># models.py</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Translation</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    source_language: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    target_language: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    text: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    translated_text: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "source_language"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"en"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "target_language"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"es"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Hello"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "translated_text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Hola"</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><strong>FastAPI Endpoint</strong>: Serves translated content based on the language parameter.</li>
+<li><strong>Node.js Alternative</strong>: Offers a similar functionality using Express.</li>
+<li><strong>React UI</strong>: Provides language selection with i18next for internationalization.</li>
+<li><strong>Data Schema</strong>: Uses Pydantic to validate translation data.</li>
+</ul>
+<p>These examples provide a foundation for implementing multilingual routing in your application.</p>
+<h1 id="multilingual-routing-module-documentation">Multilingual Routing Module Documentation</h1>
+<h2 id="module-overview">Module Overview</h2>
+<p>The <strong>Multilingual Routing</strong> module enables developers to serve translated versions of their web applications based on language-specific URLs. This allows users to access content in their preferred language by appending a language code (e.g., <code>/en/</code>, <code>/es/</code>) to the URL.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<p>Here are some modules that complement the <strong>Multilingual Routing</strong> module:</p>
+<ol>
+<li>
+<p><strong>Translation Management</strong></p>
+<ul>
+<li>Manages translations for all supported languages.</li>
+<li>Integrates with translation APIs and local files.</li>
+<li>Example: <code>@example/translation-management</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Content Delivery</strong></p>
+<ul>
+<li>Delivers content dynamically based on language and region.</li>
+<li>Works seamlessly with routing systems.</li>
+<li>Example: <code>@example/content-delivery</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Language Detection</strong></p>
+<ul>
+<li>Detects the user’s language using cookies, headers, or URLs.</li>
+<li>Triggers automatic language redirects.</li>
+<li>Example: <code>@example/language-detection</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>SEO Optimization</strong></p>
+<ul>
+<li>Ensures SEO-friendly URL structures for multilingual sites.</li>
+<li>Handles canonical URLs and language alternation tags.</li>
+<li>Example: <code>@example/seo-optimization</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analytics</strong></p>
+<ul>
+<li>Tracks user behavior across different languages and regions.</li>
+<li>Provides insights into popular languages and content usage.</li>
+<li>Example: <code>@example/analytics</code>.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li>
+<p><strong>Simple Multilingual Website</strong></p>
+<ul>
+<li>A website that serves translated pages based on the language code in the URL.</li>
+<li>Example:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/en/home</span></span>
+<span class="line"><span>/es/casa</span></span>
+<span class="line"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Dynamic Content with APIs</strong></p>
+<ul>
+<li>Integrates with external translation APIs to fetch and display content dynamically.</li>
+<li>Example:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/fr/api-driven-content</span></span>
+<span class="line"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Fallback Languages</strong></p>
+<ul>
+<li>If a page is not available in the user’s language, it redirects to a fallback language (e.g., English).</li>
+<li>Example:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/de/404 -> /en/404</span></span>
+<span class="line"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Language Negotiation</strong></p>
+<ul>
+<li>Uses language negotiation to determine the best-matching language for the user.</li>
+<li>Example:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Accept-Language: de,fr;q=0.8,en;q=0.7</span></span>
+<span class="line"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>SEO and Canonicalization</strong></p>
+<ul>
+<li>Ensures that each language version of a page has proper canonical URLs and hreflang tags.</li>
+<li>Example:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;link rel="canonical" href="/en/home"></span></span>
+<span class="line"><span>&#x3C;link rel="alternate" hreflang="es" href="/es/casa"></span></span>
+<span class="line"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>URL Structure</strong>: Define consistent URL patterns for language codes (e.g., <code>/en/</code>, <code>en/</code>).</li>
+<li><strong>Fallback Handling</strong>: Always provide a fallback language to handle missing translations.</li>
+<li><strong>Caching</strong>: Implement caching strategies to improve performance, especially for frequently accessed pages.</li>
+<li><strong>Testing</strong>: Test all language routes and redirects thoroughly to avoid broken links or 404 errors.</li>
+</ul>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>Below is a table of configuration options for the <strong>Multilingual Routing</strong> module:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Parameter</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th></tr></thead><tbody><tr><td><code>enabled</code></td><td>Enables multilingual routing.</td><td><code>true</code></td></tr><tr><td><code>default_language</code></td><td>Sets the default language for the application.</td><td><code>en</code></td></tr><tr><td><code>supported_languages</code></td><td>Lists all supported languages (e.g., <code>['en', 'es', 'fr']</code>).</td><td><code>[]</code></td></tr><tr><td><code>route_prefix_format</code></td><td>Defines the format for language prefixes in URLs (e.g., <code>/lang/</code>, <code>lang/</code>).</td><td><code>/lang/</code></td></tr><tr><td><code>fallback_language</code></td><td>Sets the fallback language when a translation is missing.</td><td><code>en</code></td></tr><tr><td><code>seo_duplicates</code></td><td>Enables or disables SEO duplicate content handling.</td><td><code>true</code></td></tr><tr><td><code>cache_duration</code></td><td>Specifies the cache duration for translated routes (in seconds).</td><td><code>3600</code> (1 hour)</td></tr></tbody></table>
+<hr>
+<h2 id="conclusion-1">Conclusion</h2>
+<p>The <strong>Multilingual Routing</strong> module is a powerful tool for developers looking to create multilingual web applications. By leveraging language-based URLs, it enhances user experience and SEO while ensuring seamless integration with other modules in your stack.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

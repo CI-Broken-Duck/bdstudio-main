@@ -1,0 +1,89 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Facilities | Broken Duck Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <Header />
+
+    <main class="container" style="padding: 4rem 1.5rem; max-width: 1000px; margin: 0 auto;">
+      <h1 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem;">Studio Facilities</h1>
+      <p style="font-size: 1.1rem; color: #ccc; margin-bottom: 3rem;">
+        Broken Duck Studio offers a complete production and community space for YouTube creators. Members get access to professional rooms, flexible booking, and quiet areas for focused work and collaboration.
+      </p>
+
+      <!-- Facility Block 1 -->
+      <section style="margin-bottom: 3rem;">
+        <img src="/assets/images/placehold.png" alt="Voiceover Booths" style="width: 100%; max-width: 640px; margin-bottom: 1rem; border-radius: 10px;" />
+        <h2 style="font-size: 1.5rem;">Voiceover Booths (2)</h2>
+        <p>Sound-isolated spaces designed for narration, voiceovers, podcasting, and clean audio work.</p>
+      </section>
+
+      <!-- Facility Block 2 -->
+      <section style="margin-bottom: 3rem;">
+        <img src="/assets/images/placehold.png" alt="Recording Studios" style="width: 100%; max-width: 640px; margin-bottom: 1rem; border-radius: 10px;" />
+        <h2 style="font-size: 1.5rem;">Recording Studios (2)</h2>
+        <p>Multi-use rooms for video production, audio recording, and live or scripted content workflows.</p>
+      </section>
+
+      <!-- Facility Block 3 -->
+      <section style="margin-bottom: 3rem;">
+        <img src="/assets/images/placehold.png" alt="Shared Office" style="width: 100%; max-width: 640px; margin-bottom: 1rem; border-radius: 10px;" />
+        <h2 style="font-size: 1.5rem;">Shared Office (10-seat)</h2>
+        <p>A quiet coworking space for editing, planning, channel management, and collaboration.</p>
+      </section>
+
+      <!-- Facility Block 4 -->
+      <section style="margin-bottom: 3rem;">
+        <img src="/assets/images/placehold.png" alt="Meeting Room" style="width: 100%; max-width: 640px; margin-bottom: 1rem; border-radius: 10px;" />
+        <h2 style="font-size: 1.5rem;">Private Meeting Room (10-seat)</h2>
+        <p>Bookable room for team meetings, client calls, livestreams, or one-on-one collaborations.</p>
+      </section>
+
+      <!-- Facility Block 5 -->
+      <section style="margin-bottom: 3rem;">
+        <img src="/assets/images/placehold.png" alt="Event Spaces" style="width: 100%; max-width: 640px; margin-bottom: 1rem; border-radius: 10px;" />
+        <h2 style="font-size: 1.5rem;">Indoor & Outdoor Event Areas</h2>
+        <p>Two 20-seat spaces for screenings, workshops, community events, and casual meetups.</p>
+      </section>
+
+      <!-- Facility Block 6 -->
+      <section style="margin-bottom: 3rem;">
+        <img src="/assets/images/placehold.png" alt="Amenities" style="width: 100%; max-width: 640px; margin-bottom: 1rem; border-radius: 10px;" />
+        <h2 style="font-size: 1.5rem;">Amenities</h2>
+        <ul style="padding-left: 1.25rem; line-height: 1.8;">
+          <li>High-speed internet with backup connection</li>
+          <li>Personal locker for every member</li>
+          <li>Unlimited filtered water</li>
+          <li>2 bathrooms, accessible 24/7</li>
+          <li>4 guest passes per month</li>
+          <li>Discounts on equipment rentals via Green Light Studio</li>
+        </ul>
+      </section>
+
+      <!-- Booking Info -->
+      <section style="margin-top: 4rem;">
+        <h2 style="font-size: 1.5rem;">Access and Booking</h2>
+        <p style="margin-top: 1rem;">Members receive 24/7 self-access via secure code or keycard. All rooms and studios can be booked using our online platform, following a fair-use model that balances access across peak and off-peak hours.</p>
+        <ul style="padding-left: 1.25rem; margin-top: 1rem; line-height: 1.8;">
+          <li>Peak hours: Monday–Saturday, 10:00–18:00 (weighted 1.5x)</li>
+          <li>Off-peak: all other times (weighted 1.0x)</li>
+          <li>Video & voice rooms: 12 hours/month each</li>
+          <li>Meeting room: 4 hours/month</li>
+          <li>Max: 2 hrs/day peak, 4 hrs/day off-peak</li>
+          <li>Bookings open 14 days in advance (released daily at 07:00)</li>
+        </ul>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

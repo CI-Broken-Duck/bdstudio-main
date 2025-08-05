@@ -1,0 +1,381 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Customizable Homepage</title><meta name="description" content="Personalized dashboard layout per role."><meta property="og:title" content="Customizable Homepage"><meta property="og:description" content="Personalized dashboard layout per role."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Customizable Homepage</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Personalized dashboard layout per role.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/frontend/tailwind.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <h1 id="customizable-homepage-overview">Customizable Homepage Overview</h1>
+<p>The <strong>Customizable Homepage</strong> module provides a dynamic and personalized dashboard interface that adapts to the specific needs of users based on their role within the system. This module allows users to tailor their workspace to suit their preferences, ensuring a seamless and efficient user experience.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary purpose of this module is to offer flexibility and customization options for users, enabling them to create a personalized dashboard that aligns with their responsibilities and workflow. By allowing users to define their own layout, the module aims to enhance productivity and reduce cognitive load by presenting only relevant information and tools.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Role-Based Customization</strong>: Users can configure their homepage based on their role, ensuring they see only the information and features pertinent to their tasks.</li>
+<li><strong>Enhanced Productivity</strong>: By displaying key metrics, quick access links, and frequently used tools in a user-defined layout, this module streamlines workflows and accelerates decision-making.</li>
+<li><strong>Improved Efficiency</strong>: Customizable widgets allow users to prioritize important data points and tools, making it easier to navigate and use the system effectively.</li>
+<li><strong>Consistency Across Teams</strong>: The ability to save and share configurations ensures that team members can collaborate efficiently and maintain consistent setups.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Accessing the Homepage</strong>: Users can access their customizable homepage through a dedicated portal or application entry point, typically upon logging in or navigating to the dashboard section.</li>
+<li><strong>Widget Management</strong>: Users can add, remove, and configure widgets to display relevant information such as task lists, project updates, system status, or quick-access links.</li>
+<li><strong>Layout Customization</strong>: The module allows users to reorder widgets, adjust their size, and organize them in a grid or list format to suit their preferences.</li>
+<li><strong>User Preferences</strong>: Users can save multiple configurations for different roles or contexts, ensuring they can switch between setups as needed.</li>
+</ol>
+<p>By leveraging the <strong>Customizable Homepage</strong> module, developers can create a tailored workspace that enhances user experience and drives productivity across diverse teams and roles.</p>
+<h1 id="customizable-homepage-module-documentation">Customizable Homepage Module Documentation</h1>
+<h2 id="module-overview">Module Overview</h2>
+<p><strong>Category</strong>: Core<br>
+<strong>Summary</strong>: The Customizable Homepage module allows users to create a personalized dashboard layout based on their roles, enhancing productivity and user experience.<br>
+<strong>Target Audience</strong>: Developers integrating or extending the module in web applications.<br>
+<strong>Key Benefits</strong>:</p>
+<ul>
+<li><strong>Enhanced User Experience</strong>: Users can customize their dashboards according to their preferences and roles.</li>
+<li><strong>Improved Productivity</strong>: Organized workspace tailored to specific tasks.</li>
+<li><strong>Scalability</strong>: Easily adapt to different roles within an organization.</li>
+</ul>
+<p><strong>Prerequisites</strong>: Basic understanding of web development, familiarity with the framework (React/Angular), HTML/CSS knowledge, and API/library usage.</p>
+<hr>
+<h2 id="features">Features</h2>
+<h3 id="role-based-customization">Role-Based Customization</h3>
+<p>Users can customize their homepage based on their role, ensuring relevant content is displayed.</p>
+<h3 id="drag-and-drop-layout-editor">Drag-and-Drop Layout Editor</h3>
+<p>Intuitive interface for users to arrange widgets and sections without coding.</p>
+<h3 id="widget-management">Widget Management</h3>
+<p>Add, remove, or resize widgets to suit individual needs.</p>
+<h3 id="responsive-design">Responsive Design</h3>
+<p>Dashboard adapts to various screen sizes, ensuring usability across devices.</p>
+<h3 id="integration-capabilities">Integration Capabilities</h3>
+<p>Seamless integration with external systems like user management APIs.</p>
+<h3 id="access-control">Access Control</h3>
+<p>Define permissions for different roles to access specific widgets or sections.</p>
+<h3 id="data-driven-widgets">Data-Driven Widgets</h3>
+<p>Widgets display dynamic data based on user role and organization structure.</p>
+<h3 id="backup--restore">Backup &#x26; Restore</h3>
+<p>Option to save and restore custom layouts, preventing accidental changes.</p>
+<hr>
+<h2 id="key-functionality">Key Functionality</h2>
+<h3 id="authentication--authorization">Authentication &#x26; Authorization</h3>
+<p>Determines user roles and permissions upon login.</p>
+<h3 id="dynamic-content-loading">Dynamic Content Loading</h3>
+<p>Content adapts based on user role and organizational hierarchy.</p>
+<h3 id="layout-persistence">Layout Persistence</h3>
+<p>Saves layout preferences using localStorage or cookies for consistent viewing.</p>
+<h3 id="real-time-updates">Real-Time Updates</h3>
+<p>Widgets update in real-time, reflecting the latest data dynamically.</p>
+<hr>
+<h2 id="technical-details">Technical Details</h2>
+<h3 id="configuration-options">Configuration Options</h3>
+<ul>
+<li><strong>Allowed Widgets</strong>: Specify widgets available to each role.</li>
+<li><strong>Default Layouts</strong>: Set default configurations for roles.</li>
+<li><strong>Permission Levels</strong>: Define access permissions for widgets and sections.</li>
+<li><strong>Customization Restrictions</strong>: Limit customization options for specific roles.</li>
+</ul>
+<h3 id="integration-points">Integration Points</h3>
+<ul>
+<li>Hooks into user management systems (e.g., LDAP, Active Directory).</li>
+<li>API integration for dynamic data fetching.</li>
+</ul>
+<h3 id="dependencies">Dependencies</h3>
+<ul>
+<li><strong>React/Redux</strong> or similar framework/library.</li>
+<li>Additional libraries for drag-and-drop functionality and state management.</li>
+</ul>
+<h3 id="known-issues">Known Issues</h3>
+<ul>
+<li>Potential performance lag with a large number of widgets.</li>
+<li>Compatibility issues with older browsers like IE11.</li>
+</ul>
+<hr>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="installation">Installation</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> clone</span><span style="color:#9ECBFF"> https://github.com/organization/customizable-homepage.git</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> customizable-homepage</span></span>
+<span class="line"></span></code></pre>
+<h3 id="setup">Setup</h3>
+<ol>
+<li><strong>Initialize Configuration</strong>: Set up roles and permissions in the config file.</li>
+<li><strong>Install Dependencies</strong>: Run <code>npm install</code> to get required packages.</li>
+<li><strong>Integrate with Systems</strong>: Connect with user management APIs.</li>
+</ol>
+<h3 id="usage">Usage</h3>
+<ul>
+<li><strong>State Initialization</strong>: Start with default states based on roles.</li>
+<li><strong>Connect APIs</strong>: Link widgets to data sources.</li>
+<li><strong>Render Components</strong>: Integrate the module into your application.</li>
+</ul>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="widget-not-loading">Widget Not Loading</h3>
+<p><strong>Error</strong>: “Widget failed to load.”<br>
+<strong>Solution</strong>: Check widget configuration and API connectivity.</p>
+<h3 id="layout-not-saving">Layout Not Saving</h3>
+<p><strong>Issue</strong>: Layout doesn’t persist after session.<br>
+<strong>Fix</strong>: Ensure localStorage is enabled or cookies are not blocked.</p>
+<h3 id="role-based-access-denied">Role-Based Access Denied</h3>
+<p><strong>Error</strong>: “Access denied for this role.”<br>
+<strong>Resolution</strong>: Verify permissions in the config file.</p>
+<hr>
+<h2 id="references">References</h2>
+<ul>
+<li><strong>Documentation</strong>: <a href="https://docs.example.com/custom-homepage">Customizable Homepage Docs</a></li>
+<li><strong>API Reference</strong>: <a href="https://api.example.com/widgets">Widget API</a></li>
+<li><strong>Community Forum</strong>: <a href="https://forums.example.com">Developer Forums</a></li>
+<li><strong>Support</strong>: <a href="mailto:support@example.com">Support Channel</a></li>
+</ul>
+<hr>
+<p>This documentation provides a comprehensive guide for developers to integrate and extend the Customizable Homepage module, ensuring efficient and personalized user dashboards.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># FastAPI Endpoint for Updating Dashboard Layout</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional, List, Dict</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> WidgetConfig</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    widget_type: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    data_source: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    visible: </span><span style="color:#79B8FF">bool</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> True</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> DashboardLayout</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    layout_sections: Dict[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, List[WidgetConfig]]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/dashboard/</span><span style="color:#79B8FF">{user_id}</span><span style="color:#9ECBFF">/layout"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">DashboardLayout)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> update_layout</span><span style="color:#E1E4E8">(user_id: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, layout: DashboardLayout):</span></span>
+<span class="line"><span style="color:#6A737D">    # Implementation logic here</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> layout</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// React UI Component for Customizable Dashboard</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState, useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> WidgetConfig</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  widgetType</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  title</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  dataSource</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  visible</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> DashboardLayout</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  sections</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Record</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">string</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">WidgetConfig</span><span style="color:#E1E4E8">[]>;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> Dashboard</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">layout</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLayout</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">DashboardLayout</span><span style="color:#E1E4E8">>();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/dashboard/'</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> localStorage.</span><span style="color:#B392F0">getItem</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'userId'</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">+</span><span style="color:#9ECBFF"> '/layout'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">response</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setLayout</span><span style="color:#E1E4E8">(data))</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">error</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error:'</span><span style="color:#E1E4E8">, error));</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> renderWidgets</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">widgets</span><span style="color:#F97583">:</span><span style="color:#B392F0"> WidgetConfig</span><span style="color:#E1E4E8">[]) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> widgets.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">widget</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">index</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{index}></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>{widget.title}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Widget Type: {widget.widgetType}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Data Source: {widget.dataSource}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        {widget.visible </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>Visible&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    ));</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"dashboard-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">header</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"dashboard-header"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        {layout?.sections.header </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#B392F0"> renderWidgets</span><span style="color:#E1E4E8">(layout.sections.header)}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">header</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">main</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"dashboard-main"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        {layout?.sections.main </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#B392F0"> renderWidgets</span><span style="color:#E1E4E8">(layout.sections.main)}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">main</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">aside</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"dashboard-sidebar"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        {layout?.sections.sidebar </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#B392F0"> renderWidgets</span><span style="color:#E1E4E8">(layout.sections.sidebar)}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">aside</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">footer</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"dashboard-footer"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        {layout?.sections.footer </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#B392F0"> renderWidgets</span><span style="color:#E1E4E8">(layout.sections.footer)}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">footer</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> Dashboard;</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Pydantic Data Schema for Customizable Homepage</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional, List, Dict</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> WidgetConfig</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    widget_type: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    data_source: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    visible: </span><span style="color:#79B8FF">bool</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> True</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> DashboardLayout</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    layout_sections: Dict[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, List[WidgetConfig]]</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    updated_at: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span></code></pre>
+<p>These code samples provide a complete implementation of a customizable homepage feature with:</p>
+<ol>
+<li>A FastAPI endpoint to manage dashboard layouts</li>
+<li>A React component for rendering the dynamic dashboard UI</li>
+<li>Pydantic models for data validation and serialization</li>
+</ol>
+<p>The system allows users to:</p>
+<ul>
+<li>Update their dashboard layout via API</li>
+<li>Render widgets based on configuration</li>
+<li>Customize visibility and widget types per section</li>
+</ul>
+<h1 id="technical-documentation-customizable-homepage-module">Technical Documentation: Customizable Homepage Module</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Customizable Homepage</strong> module allows users to tailor their dashboard layout based on their role within the system. This feature provides a personalized experience, enhancing productivity and user satisfaction by presenting relevant information in an organized manner.</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><strong>Name:</strong> Customizable Homepage</li>
+<li><strong>Category:</strong> Core</li>
+<li><strong>Summary:</strong> Personalized dashboard layout per role.</li>
+</ul>
+<h2 id="related-modules">Related Modules</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Module Name</th><th>Description</th></tr></thead><tbody><tr><td>User Management</td><td>Handles user creation, roles, and permissions.</td></tr><tr><td>Role-Based Access Control</td><td>Enforces security policies based on user roles.</td></tr><tr><td>Navigation Menu</td><td>Manages the application’s navigation structure.</td></tr><tr><td>Analytics Dashboard</td><td>Provides customizable data visualization tools.</td></tr><tr><td>Notifications</td><td>Manages system alerts and notifications for users.</td></tr></tbody></table>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-role-based-customization">1. Role-Based Customization</h3>
+<ul>
+<li><strong>Description:</strong> Users with different roles (e.g., Admin, Developer, User) access a tailored dashboard.</li>
+<li><strong>Example:</strong> An Admin sees security metrics, while a Developer views project progress.</li>
+</ul>
+<h3 id="2-dynamic-content-display">2. Dynamic Content Display</h3>
+<ul>
+<li><strong>Description:</strong> Dashboards dynamically display content based on user preferences and role.</li>
+<li><strong>Example:</strong> A User might see recent tasks, whereas an Admin sees system health stats.</li>
+</ul>
+<h3 id="3-cross-departmental-variations">3. Cross-Departmental Variations</h3>
+<ul>
+<li><strong>Description:</strong> Departments (e.g., Sales, IT) have distinct dashboard configurations.</li>
+<li><strong>Example:</strong> Sales views pipeline reports; IT views infrastructure status.</li>
+</ul>
+<h3 id="4-persistent-layout-preferences">4. Persistent Layout Preferences</h3>
+<ul>
+<li><strong>Description:</strong> Users save their preferred layout for future sessions.</li>
+<li><strong>Example:</strong> A Developer saves their tools panel position for next login.</li>
+</ul>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>RBAC &#x26; User Management:</strong></p>
+<ul>
+<li>Integrate with Role-Based Access Control to enforce role-specific dashboards.</li>
+<li>Use User Management to handle permissions and roles dynamically.</li>
+</ul>
+</li>
+<li>
+<p><strong>API Interactions:</strong></p>
+<ul>
+<li>Utilize RESTful APIs for data fetching and configuration updates.</li>
+<li>Implement WebSockets for real-time layout adjustments without page refreshes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Database Considerations:</strong></p>
+<ul>
+<li>Store user-specific configurations in the database with unique keys per user or role.</li>
+<li>Index frequently accessed fields (e.g., user ID, role) for efficient querying.</li>
+</ul>
+</li>
+<li>
+<p><strong>Performance Optimization:</strong></p>
+<ul>
+<li>Implement caching strategies to reduce repeated data fetching.</li>
+<li>Optimize layout rendering to ensure quick load times.</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Handling:</strong></p>
+<ul>
+<li>Include try-catch blocks when saving configurations to handle errors gracefully.</li>
+<li>Log errors for debugging and notify admins of critical issues.</li>
+</ul>
+</li>
+</ol>
+<h2 id="configuration-options-1">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Data Type</th><th>Default Value</th></tr></thead><tbody><tr><td>layout_template</td><td>Path to the default dashboard template.</td><td>String</td><td>”/dashboard/default”</td></tr><tr><td>enable_customization</td><td>Allow users to customize their dashboard.</td><td>Boolean</td><td>true</td></tr><tr><td>max_dashboard_components</td><td>Maximum number of customizable components per user.</td><td>Integer</td><td>10</td></tr><tr><td>role_based_layouts</td><td>Map of roles to predefined layouts.</td><td>JSON Object</td><td>{}</td></tr><tr><td>theme</td><td>Default color scheme for dashboards.</td><td>String</td><td>”light”</td></tr><tr><td>save_frequency</td><td>Frequency (minutes) at which layouts are saved automatically.</td><td>Integer</td><td>60</td></tr></tbody></table>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Customizable Homepage module empowers users with personalized dashboard experiences, enhancing their interaction with the system. By integrating seamlessly with related modules and following provided tips, developers can ensure efficient and secure implementation.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

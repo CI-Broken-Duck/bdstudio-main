@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Auto-Save &amp; Draft Mode</title><meta name="description" content="Prevent loss while building content."><meta property="og:title" content="Auto-Save &#38; Draft Mode"><meta property="og:description" content="Prevent loss while building content."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Auto-Save &amp; Draft Mode</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Prevent loss while building content.</p> <div class="module-icons"> <img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"> </div> </section> <article> <h1 id="auto-save--draft-mode-module-overview">Auto-Save &#x26; Draft Mode Module Overview</h1>
+<h2 id="summary">Summary</h2>
+<p>The <strong>Auto-Save &#x26; Draft Mode</strong> module ensures data integrity by automatically saving content as it’s being created or modified. It also provides a draft versioning system to track changes and collaborate effectively without overwriting work.</p>
+<h2 id="purpose">Purpose</h2>
+<ul>
+<li>To prevent data loss due to unexpected interruptions, such as network issues or application crashes.</li>
+<li>To allow developers to manage multiple drafts of content, enabling version control and collaboration.</li>
+<li>To provide a seamless user experience by saving progress in real-time and offering draft management features.</li>
+</ul>
+<h2 id="benefits">Benefits</h2>
+<ol>
+<li><strong>Real-Time Auto-Save</strong>: Content is saved automatically at regular intervals without requiring manual intervention, ensuring that no work is lost.</li>
+<li><strong>Draft Versioning</strong>: Multiple versions of content can be saved and managed, allowing for easy tracking of changes over time.</li>
+<li><strong>Collaboration Support</strong>: Enables multiple users to view and edit drafts simultaneously while maintaining individual progress and preventing overwrites.</li>
+</ol>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<h3 id="scenario-1-building-a-complex-feature">Scenario 1: Building a Complex Feature</h3>
+<ul>
+<li>A developer is working on a feature that requires multiple steps and wants to ensure that each step’s progress is saved automatically.</li>
+<li><strong>How the Module Helps</strong>: The auto-save functionality ensures that each completed part of the feature is saved, so if something goes wrong, the developer doesn’t lose all their work.</li>
+</ul>
+<h3 id="scenario-2-version-control-for-content-creators">Scenario 2: Version Control for Content Creators</h3>
+<ul>
+<li>A content creator is editing a document and wants to save different versions as they iterate on the content.</li>
+<li><strong>How the Module Helps</strong>: The draft mode allows saving multiple versions, making it easy to revert to previous states if needed.</li>
+</ul>
+<h3 id="scenario-3-collaborative-editing-in-a-team-environment">Scenario 3: Collaborative Editing in a Team Environment</h3>
+<ul>
+<li>A team of developers is working together on a project and needs to edit the same document without interfering with each other’s work.</li>
+<li><strong>How the Module Helps</strong>: The draft mode allows each developer to work on their own version (draft) of the document, which can be merged or compared later.</li>
+</ul>
+<h3 id="scenario-4-handling-unpredictable-edits">Scenario 4: Handling Unpredictable Edits</h3>
+<ul>
+<li>A user is editing a form or configuration and wants to ensure that their changes are saved even if they navigate away from the page.</li>
+<li><strong>How the Module Helps</strong>: The auto-save feature ensures that their progress is saved periodically, so they don’t lose any entered data.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <strong>Auto-Save &#x26; Draft Mode</strong> module is essential for developers who want to build reliable and user-friendly applications where content creation and management are critical. It provides peace of mind by safeguarding against data loss and offers robust version control features for effective collaboration.</p>
+<h2 id="real-time-auto-save">Real-Time Auto-Save</h2>
+<p>Automatically saves content as it is being created or edited, preventing data loss due to accidental actions, system crashes, or unexpected interruptions.</p>
+<h2 id="draft-mode-activation">Draft Mode Activation</h2>
+<p>Enables users to explicitly save their work in progress as drafts, allowing them to return to their previous state without completing the final version.</p>
+<h2 id="version-control-for-drafts">Version Control for Drafts</h2>
+<p>Maintains multiple versions of saved drafts, enabling users to revert to any previous state if needed. Each draft is timestamped and labeled for easy identification.</p>
+<h2 id="conflict-resolution">Conflict Resolution</h2>
+<p>Detects and resolves conflicts when multiple instances or users edit the same content simultaneously, ensuring data integrity and consistency.</p>
+<h2 id="optimistic-saving">Optimistic Saving</h2>
+<p>Saves changes locally first (optimistically) and propagates them to the server asynchronously. If the server save fails, it rolls back the local changes to ensure data consistency.</p>
+<h2 id="draft-restoration">Draft Restoration</h2>
+<p>Restores the latest draft automatically in case of system failures, crashes, or other unexpected events, ensuring minimal downtime and data loss.</p>
+<h2 id="integration-with-version-control-systems-vcs">Integration with Version Control Systems (VCS)</h2>
+<p>Coordinates with external VCS tools to tag commits with draft status, allowing developers to track changes more effectively during iterative development.</p>
+<h1 id="auto-save--draft-mode-documentation">Auto-Save &#x26; Draft Mode Documentation</h1>
+<p>This module provides auto-save functionality and draft management capabilities, ensuring content safety during creation.</p>
+<h2 id="fastapi-endpoint-example">FastAPI Endpoint Example</h2>
+<p>The following FastAPI endpoint demonstrates how to create a draft, retrieve drafts, update a draft, and delete a draft.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> sqlite3</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Database setup (simplified for example)</span></span>
+<span class="line"><span style="color:#E1E4E8">conn </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> sqlite3.connect(</span><span style="color:#9ECBFF">"drafts.db"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">conn.execute(</span><span style="color:#9ECBFF">"""</span></span>
+<span class="line"><span style="color:#9ECBFF">    CREATE TABLE IF NOT EXISTS drafts (</span></span>
+<span class="line"><span style="color:#9ECBFF">        id INTEGER PRIMARY KEY AUTOINCREMENT,</span></span>
+<span class="line"><span style="color:#9ECBFF">        title TEXT,</span></span>
+<span class="line"><span style="color:#9ECBFF">        content TEXT,</span></span>
+<span class="line"><span style="color:#9ECBFF">        version INTEGER,</span></span>
+<span class="line"><span style="color:#9ECBFF">        created_at DATETIME,</span></span>
+<span class="line"><span style="color:#9ECBFF">        updated_at DATETIME</span></span>
+<span class="line"><span style="color:#9ECBFF">    )</span></span>
+<span class="line"><span style="color:#9ECBFF">"""</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Pydantic Models (defined below)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/drafts"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">List[Draft])</span></span>
+<span class="line"><span style="color:#F97583">async def</span><span style="color:#E1E4E8"> get_d drafts():</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Get all drafts."""</span></span>
+<span class="line"><span style="color:#E1E4E8">    cursor </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> conn.execute(</span><span style="color:#9ECBFF">"SELECT * FROM drafts"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> [Draft(</span><span style="color:#FFAB70">id</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">row[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">], </span><span style="color:#FFAB70">title</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">row[</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">], </span><span style="color:#FFAB70">content</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">row[</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">], </span><span style="color:#FFAB70">version</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">row[</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">], </span><span style="color:#FFAB70">created_at</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">row[</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">], </span><span style="color:#FFAB70">updated_at</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">row[</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">]) </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> row </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> cursor]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/drafts"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Draft)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> create_draft</span><span style="color:#E1E4E8">(draft: DraftCreate):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Create a new draft."""</span></span>
+<span class="line"><span style="color:#E1E4E8">    cursor </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> conn.execute(</span></span>
+<span class="line"><span style="color:#9ECBFF">        "INSERT INTO drafts (title, content, version, created_at, updated_at) VALUES (?, ?, ?, ?, ?)"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        (draft.title, draft.content, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, datetime.now(), datetime.now())</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#E1E4E8">    conn.commit()</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> Draft(</span><span style="color:#FFAB70">id</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">cursor.lastrowid, </span><span style="color:#F97583">**</span><span style="color:#E1E4E8">draft.dict())</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/drafts/</span><span style="color:#79B8FF">{draft_id}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">Draft)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> update_draft</span><span style="color:#E1E4E8">(draft_id: </span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">, draft: DraftUpdate):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Update an existing draft."""</span></span>
+<span class="line"><span style="color:#E1E4E8">    updated_at </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> datetime.now()</span></span>
+<span class="line"><span style="color:#E1E4E8">    cursor </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> conn.execute(</span></span>
+<span class="line"><span style="color:#9ECBFF">        "UPDATE drafts SET title=?, content=?, version=?, updated_at=? WHERE id=?"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        (draft.title, draft.content, draft.version </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">, updated_at, draft_id)</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> cursor.rowcount </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">404</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Draft not found"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    conn.commit()</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"id"</span><span style="color:#E1E4E8">: draft_id, </span><span style="color:#9ECBFF">"title"</span><span style="color:#E1E4E8">: draft.title, </span><span style="color:#9ECBFF">"content"</span><span style="color:#E1E4E8">: draft.content, </span><span style="color:#9ECBFF">"version"</span><span style="color:#E1E4E8">: draft.version </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"updated_at"</span><span style="color:#E1E4E8">: updated_at}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.delete</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/drafts/</span><span style="color:#79B8FF">{draft_id}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> delete_draft</span><span style="color:#E1E4E8">(draft_id: </span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Delete a draft."""</span></span>
+<span class="line"><span style="color:#E1E4E8">    cursor </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> conn.execute(</span><span style="color:#9ECBFF">"DELETE FROM drafts WHERE id=?"</span><span style="color:#E1E4E8">, (draft_id,))</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> cursor.rowcount </span><span style="color:#F97583">==</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">404</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Draft not found"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    conn.commit()</span></span>
+<span class="line"></span></code></pre>
+<h2 id="react-ui-example">React UI Example</h2>
+<p>The following React component demonstrates a simple draft management interface.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useState, useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> Draft</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">    id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    title</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    content</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    version</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    created_at</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    updated_at</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> DraftManager</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [ </span><span style="color:#79B8FF">drafts</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setDrafts</span><span style="color:#E1E4E8"> ] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">Draft</span><span style="color:#E1E4E8">[]>([]);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [ </span><span style="color:#79B8FF">newTitle</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setNewTitle</span><span style="color:#E1E4E8"> ] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [ </span><span style="color:#79B8FF">newContent</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setNewContent</span><span style="color:#E1E4E8"> ] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [ </span><span style="color:#79B8FF">selectedDraft</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setSelectedDraft</span><span style="color:#E1E4E8"> ] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">Draft</span><span style="color:#F97583"> |</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">>(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">        // Fetch drafts from API on mount</span></span>
+<span class="line"><span style="color:#B392F0">        fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/drafts'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">res</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> res.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#F97583"> =></span><span style="color:#B392F0"> setDrafts</span><span style="color:#E1E4E8">(data))</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">error</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error fetching drafts:'</span><span style="color:#E1E4E8">, error));</span></span>
+<span class="line"><span style="color:#E1E4E8">    }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> createDraft</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">newTitle) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">        fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/drafts'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">            method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            },</span></span>
+<span class="line"><span style="color:#E1E4E8">            body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">                title: newTitle,</span></span>
+<span class="line"><span style="color:#E1E4E8">                content: newContent</span></span>
+<span class="line"><span style="color:#E1E4E8">            })</span></span>
+<span class="line"><span style="color:#E1E4E8">        })</span></span>
+<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">res</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> res.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">data</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">            setDrafts</span><span style="color:#E1E4E8">([</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">drafts, data]);</span></span>
+<span class="line"><span style="color:#B392F0">            setNewTitle</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">            setNewContent</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        })</span></span>
+<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">error</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error creating draft:'</span><span style="color:#E1E4E8">, error));</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> updateDraft</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">draft</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Draft</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`/api/drafts/${</span><span style="color:#E1E4E8">draft</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">id</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">            method: </span><span style="color:#9ECBFF">'PUT'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            },</span></span>
+<span class="line"><span style="color:#E1E4E8">            body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">                title: draft.title,</span></span>
+<span class="line"><span style="color:#E1E4E8">                content: draft.content</span></span>
+<span class="line"><span style="color:#E1E4E8">            })</span></span>
+<span class="line"><span style="color:#E1E4E8">        })</span></span>
+<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">res</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> res.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">updatedDraft</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">            setDrafts</span><span style="color:#E1E4E8">(drafts.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">d</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> d.id </span><span style="color:#F97583">===</span><span style="color:#E1E4E8"> updatedDraft.id </span><span style="color:#F97583">?</span><span style="color:#E1E4E8"> updatedDraft </span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> d));</span></span>
+<span class="line"><span style="color:#E1E4E8">        })</span></span>
+<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">error</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error updating draft:'</span><span style="color:#E1E4E8">, error));</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> deleteDraft</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">window.</span><span style="color:#B392F0">confirm</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Are you sure?'</span><span style="color:#E1E4E8">)) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">        fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`/api/drafts/${</span><span style="color:#E1E4E8">id</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">            method: </span><span style="color:#9ECBFF">'DELETE'</span></span>
+<span class="line"><span style="color:#E1E4E8">        })</span></span>
+<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">res</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (res.ok) {</span></span>
+<span class="line"><span style="color:#B392F0">                setDrafts</span><span style="color:#E1E4E8">(drafts.</span><span style="color:#B392F0">filter</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">d</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> d.id </span><span style="color:#F97583">!==</span><span style="color:#E1E4E8"> id));</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        })</span></span>
+<span class="line"><span style="color:#E1E4E8">        .</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">error</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error deleting draft:'</span><span style="color:#E1E4E8">, error));</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>Draft Manager&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"new-draft"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{newTitle}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setNewTitle</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                    placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Enter title"</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">textarea</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{newContent}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setNewContent</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                    placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Start writing..."</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{createDraft}>Create Draft&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"draft-list"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                {drafts.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">draft</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{draft.id} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"draft-item"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>{draft.title}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Version: {draft.version}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Last updated: {draft.updated_at.</span><span style="color:#B392F0">toLocaleString</span><span style="color:#E1E4E8">()}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSelectedDraft</span><span style="color:#E1E4E8">(draft)}>Edit&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> deleteDraft</span><span style="color:#E1E4E8">(draft.id)}>Delete&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            {selectedDraft </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"editing-draft"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>Editing: {selectedDraft.title}&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                        type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{selectedDraft.title}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSelectedDraft</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">selectedDraft, title: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">textarea</span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{selectedDraft.content}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSelectedDraft</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">selectedDraft, content: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> updateDraft</span><span style="color:#E1E4E8">(selectedDraft)}>Save Changes&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            )}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> DraftManager;</span></span>
+<span class="line"></span></code></pre>
+<h2 id="pydantic-data-schema">Pydantic Data Schema</h2>
+<p>The following Pydantic models define the draft data structure.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Draft</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    version: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: datetime</span></span>
+<span class="line"><span style="color:#E1E4E8">    updated_at: datetime</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> DraftCreate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> DraftUpdate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">Draft</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: Optional[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span></code></pre>
+<h2 id="summary-1">Summary</h2>
+<ul>
+<li><strong>FastAPI Endpoint</strong>: Implements CRUD operations for drafts using a simple SQLite database.</li>
+<li><strong>React UI</strong>: Provides an interactive interface for creating, viewing, updating, and deleting drafts.</li>
+<li><strong>Pydantic Schema</strong>: Defines the data structure for drafts, ensuring proper validation and serialization.</li>
+</ul>
+<p>This module ensures content safety by automatically saving progress and managing multiple draft versions.</p>
+<h1 id="module-auto-save--draft-mode">Module: Auto-Save &#x26; Draft Mode</h1>
+<h2 id="summary-2">Summary</h2>
+<p>The <strong>Auto-Save &#x26; Draft Mode</strong> module ensures that content created by users is preserved while they are building it. This prevents data loss due to unexpected events such as network issues, device failures, or accidental closure of the application. The module also provides a draft mode, allowing users to save and review their work before finalizing.</p>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Content Management System (CMS):</strong> Integrates with content storage and retrieval.</li>
+<li><strong>Session Management:</strong> Handles user sessions and tracks progress.</li>
+<li><strong>Validation &#x26; Error Handling:</strong> Ensures data integrity before saving.</li>
+<li><strong>UI/UX Components:</strong> Provides feedback to users about the auto-save status.</li>
+<li><strong>Notifications:</strong> Alerts users when an auto-save is successful or fails.</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Real-time Collaboration:</strong>
+<ul>
+<li>Multiple users edit a document simultaneously, with auto-saves ensuring all changes are preserved.</li>
+</ul>
+</li>
+<li><strong>Draft Management:</strong>
+<ul>
+<li>Users can save their work as drafts and revisit them later for review or editing.</li>
+</ul>
+</li>
+<li><strong>Offline Mode:</strong>
+<ul>
+<li>Content is saved locally and synced with the server when back online.</li>
+</ul>
+</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>Synchronization:</strong> Ensure that auto-save intervals on the client side match those on the server side to avoid version conflicts.</li>
+<li><strong>Concurrency Handling:</strong> Implement checks to handle simultaneous saves by multiple users (e.g., using timestamps or server-side locking).</li>
+<li><strong>Feedback Mechanism:</strong> Provide visual cues (e.g., a spinner or success message) when an auto-save occurs.</li>
+</ul>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Option</strong></th><th><strong>Data Type</strong></th><th><strong>Default Value</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td><code>enabled</code></td><td>Boolean</td><td>true</td><td>Enables the auto-save functionality.</td></tr><tr><td><code>save_interval</code></td><td>Number</td><td>60</td><td>The interval (in seconds) at which content is automatically saved.</td></tr><tr><td><code>draft_mode_enabled</code></td><td>Boolean</td><td>false</td><td>Enables draft mode, allowing users to save work as drafts without finalizing.</td></tr><tr><td><code>auto_save_onBlur</code></td><td>Boolean</td><td>true</td><td>Triggers an auto-save when the user blurs out of a field or component.</td></tr><tr><td><code>auto_save_onIdle</code></td><td>Boolean</td><td>false</td><td>Triggers an auto-save after a period of inactivity (e.g., 5 minutes).</td></tr><tr><td><code>draft_save_confirmation</code></td><td>Boolean</td><td>true</td><td>Shows a confirmation dialog before saving as a draft.</td></tr><tr><td><code>max_drafts_to_keep</code></td><td>Number</td><td>10</td><td>The maximum number of drafts to retain for each piece of content.</td></tr></tbody></table>
+<h2 id="example-configuration">Example Configuration</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#9ECBFF">  "enabled"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">  "save_interval"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// Save every 30 seconds</span></span>
+<span class="line"><span style="color:#9ECBFF">  "draft_mode_enabled"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">  "auto_save_onBlur"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">  "auto_save_onIdle"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">  "draft_save_confirmation"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">  "max_drafts_to_keep"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">20</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h2 id="notes-for-developers">Notes for Developers</h2>
+<ul>
+<li><strong>Error Handling:</strong> Implement robust error handling to manage cases where an auto-save fails (e.g., network issues).</li>
+<li><strong>Versioning:</strong> Consider version control for drafts to allow users to revert to previous versions.</li>
+<li><strong>Performance:</strong> Monitor the performance impact of frequent auto-saves, especially on slower networks or devices.</li>
+</ul>
+<p>This module ensures that user content is preserved and managed efficiently, providing a seamless experience while building and reviewing content.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

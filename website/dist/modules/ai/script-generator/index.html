@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Script Generator</title><meta name="description" content="Generates lesson scripts from brief prompts."><meta property="og:title" content="Script Generator"><meta property="og:description" content="Generates lesson scripts from brief prompts."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Script Generator</h1> <div class="module-meta"> <div> <span class="module-category">AI</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Generates lesson scripts from brief prompts.</p> <div class="module-icons"> <img src="/assets/modules/ai/openai.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-script-generator-module">Overview: Script Generator Module</h1>
+<p>The <strong>Script Generator</strong> is a powerful AI-driven module designed to automate the creation of lesson scripts from brief prompts. This tool leverages advanced natural language processing (NLP) algorithms to generate structured, engaging, and educational content tailored to your needs.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary purpose of the Script Generator is to simplify the process of creating lesson plans or teaching materials by converting concise input prompts into detailed, well-organized scripts. Whether you’re developing training programs, online courses, or workshop materials, this module saves time while ensuring high-quality output.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Time-Saving</strong>: Automates the creation of lesson scripts, reducing the manual effort required to draft content.</li>
+<li><strong>Customization</strong>: Generates tailored content based on specific topics, audience levels, and teaching objectives.</li>
+<li><strong>Scalability</strong>: Quickly produces multiple scripts for different subjects or scenarios, ideal for large-scale educational initiatives.</li>
+<li><strong>Adaptability</strong>: Easily adjusts to various formats (e.g., workshops, e-learning modules) and learning styles.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<p>The Script Generator is versatile and can be applied in numerous contexts:</p>
+<ol>
+<li><strong>Content Creation</strong>: Develop lesson plans, tutorials, or training materials for diverse subjects.</li>
+<li><strong>Instructional Design</strong>: Automate the generation of teaching scripts for online courses or workshops.</li>
+<li><strong>Personalized Learning</strong>: Create customized learning paths for individual students or groups.</li>
+<li><strong>Rapid Prototyping</strong>: Quickly generate draft content to test ideas or concepts before finalizing.</li>
+</ol>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Real-Time Generation</strong>: Instantly converts prompts into detailed lesson scripts.</li>
+<li><strong>Customizable Templates</strong>: Supports pre-defined templates for different lesson structures and formats.</li>
+<li><strong>Integration Capabilities</strong>: Seamlessly integrates with other modules for a comprehensive educational workflow.</li>
+</ul>
+<p>By streamlining the creation of educational content, the Script Generator empowers developers to focus on innovation and delivery while ensuring consistent quality in their teaching materials.</p>
+<h3 id="key-features-of-the-script-generator-module">Key Features of the Script Generator Module</h3>
+<h4 id="1-ai-powered-script-generation">1. AI-Powered Script Generation</h4>
+<p>The module leverages advanced AI models to create detailed lesson scripts from user-provided prompts. This feature automates the content creation process, saving developers significant time and effort.</p>
+<h4 id="2-natural-language-understanding-nlu">2. Natural Language Understanding (NLU)</h4>
+<p>Incorporates NLU technology to interpret user prompts accurately. It ensures that even vague or ambiguous requests are translated into coherent lesson plans, enhancing usability for non-technical users.</p>
+<h4 id="3-customizable-output-format">3. Customizable Output Format</h4>
+<p>Users can choose between formats like Markdown and JSON, making it easy to integrate generated scripts into various applications and systems.</p>
+<h4 id="4-multi-language-support">4. Multi-Language Support</h4>
+<p>Supports multiple languages, allowing developers to create content for diverse audiences without additional configuration.</p>
+<h4 id="5-integration-with-apis">5. Integration with APIs</h4>
+<p>Facilitates integration with third-party services via APIs, enabling features like embedding videos or interactive elements directly into lesson plans.</p>
+<h4 id="6-version-control-tracking">6. Version Control Tracking</h4>
+<p>Tracks changes in script versions, aiding collaboration and understanding of content evolution over time.</p>
+<h4 id="7-interactive-editing">7. Interactive Editing</h4>
+<p>Provides an interface for direct editing of generated scripts, offering flexibility and allowing users to refine content without starting from scratch.</p>
+<h3 id="summary">Summary</h3>
+<p>Each feature is designed to address specific needs in educational software development, providing efficiency, customization, and scalability. These features collectively make the Script Generator a versatile tool for developers aiming to quickly create and adapt lesson plans across various platforms and languages.</p>
+<h1 id="script-generator-documentation">Script Generator Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Script Generator is an AI-powered tool designed to automate the creation of lesson scripts based on user-provided prompts. This documentation provides code examples for integrating the Script Generator into your applications.</p>
+<hr>
+<h2 id="endpoints">Endpoints</h2>
+<h3 id="fastapi-endpoint-example">FastAPI Endpoint Example</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FastAPI, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi.middleware.cors </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> CORSMiddleware</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> logging</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> FastAPI()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Configure CORS</span></span>
+<span class="line"><span style="color:#E1E4E8">app.add_middleware(</span></span>
+<span class="line"><span style="color:#E1E4E8">    CORSMiddleware,</span></span>
+<span class="line"><span style="color:#FFAB70">    allow_origins</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"*"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#FFAB70">    allow_methods</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"*"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#FFAB70">    allow_headers</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"*"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Set up logging</span></span>
+<span class="line"><span style="color:#E1E4E8">logging.basicConfig(</span><span style="color:#FFAB70">level</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">logging.</span><span style="color:#79B8FF">INFO</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">logger </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> logging.getLogger(</span><span style="color:#79B8FF">__name__</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ScriptRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> |</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    prompt: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@app.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/generate-script"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> generate_script</span><span style="color:#E1E4E8">(request_data: ScriptRequest, db_session: Session </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends(get_db)):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Generates a lesson script based on the provided prompt.</span></span>
+<span class="line"><span style="color:#9ECBFF">    </span></span>
+<span class="line"><span style="color:#9ECBFF">    Args:</span></span>
+<span class="line"><span style="color:#9ECBFF">        request_data (ScriptRequest): The request body containing the prompt and optional ID.</span></span>
+<span class="line"><span style="color:#9ECBFF">        </span></span>
+<span class="line"><span style="color:#9ECBFF">    Returns:</span></span>
+<span class="line"><span style="color:#9ECBFF">        dict: Generated script data with id and content.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        logger.info(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Generating script for prompt: </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">request_data.prompt</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#6A737D">        # Simulated script generation</span></span>
+<span class="line"><span style="color:#E1E4E8">        script_content </span><span style="color:#F97583">=</span><span style="color:#F97583"> f</span><span style="color:#9ECBFF">"Lesson Script: </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">request_data.prompt</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "id"</span><span style="color:#E1E4E8">: request_data.id </span><span style="color:#F97583">if</span><span style="color:#E1E4E8"> request_data.id </span><span style="color:#F97583">else</span><span style="color:#79B8FF"> str</span><span style="color:#E1E4E8">(uuid.uuid4()),</span></span>
+<span class="line"><span style="color:#9ECBFF">            "content"</span><span style="color:#E1E4E8">: script_content</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#E1E4E8">        logger.error(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Error generating script: </span><span style="color:#79B8FF">{str</span><span style="color:#E1E4E8">(e)</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#79B8FF"> __name__</span><span style="color:#F97583"> ==</span><span style="color:#9ECBFF"> "__main__"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    uvicorn.run(app, </span><span style="color:#FFAB70">host</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"0.0.0.0"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">port</span><span style="color:#F97583">=</span><span style="color:#79B8FF">8000</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="react-ui-example">React UI Example</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> ScriptGenerator</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">prompt</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setPrompt</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">result</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setResult</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/generate-script'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">          'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({ prompt }),</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#F97583">        throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to generate script'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">      setResult</span><span style="color:#E1E4E8">(data.content);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(error);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>Script Generator&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">textarea</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{prompt}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setPrompt</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">          placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Enter your prompt here..."</span></span>
+<span class="line"><span style="color:#B392F0">          className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"input"</span></span>
+<span class="line"><span style="color:#B392F0">          rows</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"btn"</span><span style="color:#E1E4E8">>Generate Script&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">      {result </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"output"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>Generated Script:&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">pre</span><span style="color:#E1E4E8">>{result}&#x3C;/</span><span style="color:#85E89D">pre</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      )}</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> ScriptGenerator;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="data-schema">Data Schema</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional, Union</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ScriptRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    prompt: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"123"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "prompt"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Create a 5-minute lesson on basic Python syntax"</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Example usage:</span></span>
+<span class="line"><span style="color:#E1E4E8">request_data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ScriptRequest(</span></span>
+<span class="line"><span style="color:#FFAB70">    id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"456"</span><span style="color:#E1E4E8">, </span></span>
+<span class="line"><span style="color:#FFAB70">    prompt</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Develop a step-by-step tutorial for AI basics"</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="examples">Examples</h2>
+<h3 id="api-call">API Call</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -X</span><span style="color:#9ECBFF"> POST</span><span style="color:#9ECBFF"> "http://localhost:8000/generate-script"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">     -H</span><span style="color:#9ECBFF"> "Content-Type: application/json"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">     -d</span><span style="color:#9ECBFF"> '{"prompt": "Create a 10-minute lesson on React fundamentals"}'</span></span>
+<span class="line"></span></code></pre>
+<h3 id="expected-response">Expected Response</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"789"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "content"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Lesson Script: Create a 10-minute lesson on React fundamentals"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="summary-1">Summary</h2>
+<p>The Script Generator provides an efficient way to automate lesson script creation. The FastAPI endpoint handles the generation logic, while the React component offers a user-friendly interface. The Pydantic model ensures data validation and documentation clarity.</p>
+<h1 id="script-generator-module-documentation">Script Generator Module Documentation</h1>
+<h2 id="overview-1">Overview</h2>
+<p>The <strong>Script Generator</strong> module leverages AI to create lesson scripts from user prompts. Designed for developers, it offers flexibility in integrating with other modules and provides robust configuration options.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ol>
+<li><strong>Prompt Parser</strong>: Analyzes input prompts and refines them for clarity.</li>
+<li><strong>Content Generator</strong>: Produces various content types like text, images, or code snippets.</li>
+<li><strong>Data Storage</strong>: Manages storage solutions such as local files or cloud databases.</li>
+<li><strong>User Interface</strong>: Facilitates interaction through dashboards or APIs.</li>
+<li><strong>Module Logger</strong>: Logs interactions for debugging and tracking.</li>
+</ol>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Lesson Script Creation</strong>: Generate tailored lesson scripts based on user input.</li>
+<li><strong>Multimedia Integration</strong>: Create scripts that include images, videos, or audio.</li>
+<li><strong>Interactive Learning</strong>: Develop dynamic content with embedded quizzes and exercises.</li>
+<li><strong>Bulk Generation</strong>: Produce multiple scripts simultaneously for different topics.</li>
+<li><strong>Third-Party Content Integration</strong>: Source content from external APIs within generated scripts.</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li><strong>Environment Setup</strong>: Use environment variables or configuration files to set API keys and preferences.</li>
+<li><strong>Code Examples</strong>:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> script_generator </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> ScriptGenerator</span></span>
+<span class="line"><span style="color:#E1E4E8">sg </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ScriptGenerator(</span><span style="color:#FFAB70">api_key</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">'your_key'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">script </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> sg.generate_script(</span><span style="color:#FFAB70">prompt</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">'Explain quantum computing.'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(script)</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li><strong>Error Handling</strong>: Implement try-except blocks to manage generation failures.</li>
+<li><strong>Asynchronous Processing</strong>:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> generate_scripts</span><span style="color:#E1E4E8">(prompts):</span></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#E1E4E8"> asyncio.gather(</span><span style="color:#F97583">*</span><span style="color:#E1E4E8">[generate_script(prompt) </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> prompt </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> prompts])</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li><strong>Resource Management</strong>: Optimize memory usage and ensure efficient resource allocation.</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Description</th><th>Default Value</th><th>Constraints</th></tr></thead><tbody><tr><td><code>api_key</code></td><td>API key for authentication.</td><td>None</td><td>Required</td></tr><tr><td><code>script_format</code></td><td>Output format (text, markdown, HTML).</td><td>text</td><td>Valid formats: text, markdown, HTML</td></tr><tr><td><code>max_retries</code></td><td>Number of retry attempts for failed generations.</td><td>3</td><td>Range: 1-10</td></tr><tr><td><code>temperature</code></td><td>Controls randomness in generation (0-1 scale).</td><td>0.7</td><td>Range: 0-1</td></tr><tr><td><code>output_directory</code></td><td>Path to store generated scripts.</td><td>’./scripts’</td><td>Valid directory path</td></tr><tr><td><code>cache_enabled</code></td><td>Enable caching of generated scripts.</td><td>False</td><td>Boolean</td></tr><tr><td><code>max_cache_size</code></td><td>Maximum number of cached scripts.</td><td>100</td><td>Range: 1-1000</td></tr><tr><td><code>async_mode</code></td><td>Enable asynchronous script generation.</td><td>False</td><td>Boolean</td></tr></tbody></table>
+<hr>
+<h2 id="performance-considerations">Performance Considerations</h2>
+<ul>
+<li><strong>Caching</strong>: Use <code>cache_enabled</code> and <code>max_cache_size</code> to optimize repeated requests.</li>
+<li><strong>Resource Usage</strong>: Monitor memory and CPU usage, especially during bulk operations.</li>
+</ul>
+<p>This documentation provides a comprehensive guide for developers integrating the Script Generator module.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

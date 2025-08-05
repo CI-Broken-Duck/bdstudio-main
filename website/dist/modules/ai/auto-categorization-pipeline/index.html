@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Auto-Categorization Pipeline</title><meta name="description" content="Organizes content automatically by predefined types or topics."><meta property="og:title" content="Auto-Categorization Pipeline"><meta property="og:description" content="Organizes content automatically by predefined types or topics."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Auto-Categorization Pipeline</h1> <div class="module-meta"> <div> <span class="module-category">AI</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Organizes content automatically by predefined types or topics.</p> <div class="module-icons"> <img src="/assets/modules/ai/openai.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="auto-categorization-pipeline-overview">Auto-Categorization Pipeline Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The <strong>Auto-Categorization Pipeline</strong> is a powerful AI-driven module designed to automatically organize content into predefined types or topics. It leverages machine learning algorithms and natural language processing (NLP) techniques to analyze text, images, or other forms of data and assign them to appropriate categories with high accuracy.</p>
+<p>This module aims to streamline the process of content management by reducing manual effort and improving categorization efficiency. It is particularly useful for applications that handle large volumes of unstructured data, such as document classification, email routing, or topic tagging in customer support systems.</p>
+<h2 id="benefits">Benefits</h2>
+<p>The Auto-Categorization Pipeline offers several key benefits:</p>
+<ul>
+<li><strong>Improved Efficiency</strong>: Automates the tedious task of manually sorting content into categories, saving time and reducing human error.</li>
+<li><strong>Enhanced Accuracy</strong>: Uses advanced AI models to achieve high precision in categorizing data, even for complex or nuanced topics.</li>
+<li><strong>Scalability</strong>: Handles large datasets efficiently, making it suitable for enterprise-level applications.</li>
+<li><strong>Customizability</strong>: Allows users to define custom categories and adapt the pipeline to specific business needs.</li>
+<li><strong>Real-Time Processing</strong>: Processes data on-the-fly, enabling real-time categorization in live systems.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<p>The Auto-Categorization Pipeline can be applied in a variety of scenarios:</p>
+<ol>
+<li>
+<p><strong>Document Classification</strong>:</p>
+<ul>
+<li>Automatically classify documents into predefined folders or archives based on their content (e.g., invoices, receipts, contracts).</li>
+</ul>
+</li>
+<li>
+<p><strong>Email Routing</strong>:</p>
+<ul>
+<li>Categorize incoming emails into appropriate folders or queues based on their subject, body, or sender information.</li>
+</ul>
+</li>
+<li>
+<p><strong>Content Moderation</strong>:</p>
+<ul>
+<li>Detect and categorize inappropriate or sensitive content in social media platforms, forums, or customer reviews.</li>
+</ul>
+</li>
+<li>
+<p><strong>Topic Tagging</strong>:</p>
+<ul>
+<li>Assign relevant tags to articles, blog posts, or news stories for easier search and retrieval.</li>
+</ul>
+</li>
+<li>
+<p><strong>Customer Support Ticket Sorting</strong>:</p>
+<ul>
+<li>Automatically route support tickets to the appropriate team based on their content and context.</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Preprocessing for Machine Learning</strong>:</p>
+<ul>
+<li>Organize raw data into structured categories to facilitate downstream analysis and model training.</li>
+</ul>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Auto-Categorization Pipeline is an essential tool for developers looking to automate and enhance content organization in their applications. By leveraging cutting-edge AI technologies, it delivers unparalleled accuracy, scalability, and flexibility, making it a valuable asset for any system that deals with large volumes of unstructured data.</p>
+<h2 id="automated-tagging">Automated Tagging</h2>
+<p>The Auto-Categorization Pipeline automatically assigns tags or labels to content based on predefined categories or topics. This feature leverages AI models to classify text, images, videos, or other data types accurately and efficiently.</p>
+<hr>
+<h2 id="predefined-categories">Predefined Categories</h2>
+<p>Content can be organized into a set of predefined categories or themes. These categories are customizable and can be tailored to meet specific use cases, such as organizing articles by topic (e.g., “Technology,” “Politics,” “Entertainment”).</p>
+<hr>
+<h2 id="batch-processing">Batch Processing</h2>
+<p>The module supports batch processing, allowing it to handle large volumes of data efficiently. This feature is ideal for scenarios where content needs to be categorized in bulk, such as processing logs or documents.</p>
+<hr>
+<h2 id="data-sources">Data Sources</h2>
+<p>It supports multiple data sources, including text files, databases, APIs, and more. The pipeline can adapt to different input formats and structures, ensuring flexibility in integration with existing systems.</p>
+<hr>
+<h2 id="real-time-categorization">Real-Time Categorization</h2>
+<p>The module enables real-time categorization of content as it is generated or received. This feature is useful for applications requiring immediate classification, such as live sentiment analysis or automated routing.</p>
+<hr>
+<h2 id="dynamic-adaptation">Dynamic Adaptation</h2>
+<p>The AI models used in the pipeline can be trained and updated dynamically to adapt to changing data patterns or user requirements. This ensures that the categorization remains accurate over time.</p>
+<hr>
+<h2 id="customizable-rules">Customizable Rules</h2>
+<p>Users can define custom rules or mappings to override or adjust the default categorization logic. This feature provides flexibility for specific business or operational needs.</p>
+<hr>
+<h2 id="scalability">Scalability</h2>
+<p>The pipeline is designed to scale horizontally, allowing it to handle increasing workloads efficiently. It can be deployed in distributed environments to manage large-scale data processing.</p>
+<hr>
+<h2 id="integration-capabilities">Integration Capabilities</h2>
+<p>The module integrates seamlessly with other systems and tools, such as databases, cloud storage, messaging queues, and third-party APIs. This makes it easy to incorporate into existing workflows or pipelines.</p>
+<hr>
+<h2 id="performance-and-accuracy">Performance and Accuracy</h2>
+<p>The Auto-Categorization Pipeline is optimized for performance and accuracy. It uses advanced machine learning algorithms to ensure high precision in categorization while maintaining low latency.</p>
+<h3 id="module-auto-categorization-pipeline">Module: Auto-Categorization Pipeline</h3>
+<p>This module provides an API for automatically categorizing text content into predefined types or topics. It uses machine learning models under the hood to analyze and classify text inputs.</p>
+<hr>
+<h4 id="1-fastapi-endpoint"><strong>1. FastAPI Endpoint</strong></h4>
+<p>Here’s a sample FastAPI endpoint that accepts text input and returns category predictions:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Dict, AnyStr</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TextInput</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    text: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/categorize"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> categorize</span><span style="color:#E1E4E8">(text_input: TextInput) -> Dict[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, Dict]:</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Mock categorization logic (replace with actual model)</span></span>
+<span class="line"><span style="color:#E1E4E8">        categories </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "category_1"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.85</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#9ECBFF">            "category_2"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.15</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#9ECBFF">            "category_3"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"score"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.0</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"categories"</span><span style="color:#E1E4E8">: categories, </span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="2-react-ui-snippet"><strong>2. React UI Snippet</strong></h4>
+<p>Here’s a simple React component that interacts with the FastAPI endpoint:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> AutoCategorizer</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">inputText</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setInputText</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">result</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setResult</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">any</span><span style="color:#E1E4E8">>(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleCategorize</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">inputText.</span><span style="color:#B392F0">trim</span><span style="color:#E1E4E8">()) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'http://localhost:8000/categorize'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">                method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                    'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                },</span></span>
+<span class="line"><span style="color:#E1E4E8">                body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({ text: inputText }),</span></span>
+<span class="line"><span style="color:#E1E4E8">            });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">            setResult</span><span style="color:#E1E4E8">(data);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">textarea</span></span>
+<span class="line"><span style="color:#B392F0">                value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{inputText}</span></span>
+<span class="line"><span style="color:#B392F0">                onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setInputText</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Enter text to categorize..."</span></span>
+<span class="line"><span style="color:#B392F0">                style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ width: </span><span style="color:#9ECBFF">'100%'</span><span style="color:#E1E4E8">, height: </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8"> }}</span></span>
+<span class="line"><span style="color:#E1E4E8">            /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleCategorize} </span><span style="color:#B392F0">style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ marginTop: </span><span style="color:#9ECBFF">'1rem'</span><span style="color:#E1E4E8"> }}></span></span>
+<span class="line"><span style="color:#E1E4E8">                Categorize</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {result </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ marginTop: </span><span style="color:#9ECBFF">'2rem'</span><span style="color:#E1E4E8">, padding: </span><span style="color:#9ECBFF">'1rem'</span><span style="color:#E1E4E8">, border: </span><span style="color:#9ECBFF">'1px solid #ccc'</span><span style="color:#E1E4E8"> }}></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>Categories:&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    {Object.</span><span style="color:#B392F0">entries</span><span style="color:#E1E4E8">(result.categories).</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(([</span><span style="color:#FFAB70">category</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">scores</span><span style="color:#E1E4E8">]) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{category}></span></span>
+<span class="line"><span style="color:#E1E4E8">                            &#x3C;</span><span style="color:#85E89D">strong</span><span style="color:#E1E4E8">>{category}&#x3C;/</span><span style="color:#85E89D">strong</span><span style="color:#E1E4E8">>: {scores.score.</span><span style="color:#B392F0">toFixed</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">)}</span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            )}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> AutoCategorizer;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="3-data-schema-pydantic"><strong>3. Data Schema (Pydantic)</strong></h4>
+<p>Here’s the Pydantic schema for the API request and response:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> CategorizationInput</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    text: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> CategoryScore</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    score: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> CategorizationResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    categories: Dict[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, CategoryScore]</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # Can be "success" or "error"</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="summary">Summary</h3>
+<ul>
+<li>The FastAPI endpoint (<code>/categorize</code>) accepts text input and returns category predictions with confidence scores.</li>
+<li>The React component provides a simple UI for users to input text and view categorization results.</li>
+<li>Pydantic models ensure type safety and data validation for both request and response bodies.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Auto-Categorization Pipeline</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Module Name:**</span><span style="color:#E1E4E8"> Auto-Categorization Pipeline  </span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Category:**</span><span style="color:#E1E4E8"> AI  </span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Summary:**</span><span style="color:#E1E4E8"> Organizes content automatically by predefined types or topics.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Overview</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">The Auto-Categorization Pipeline is a machine learning-based module designed to classify and organize content into predefined categories or topics. It leverages natural language processing (NLP) techniques to analyze text data and assign relevant tags, labels, or categories based on training data.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Related Modules</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Preprocessing Module**</span><span style="color:#E1E4E8">: Handles data cleaning and normalization before feeding it into the categorization pipeline.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Machine Learning Model**</span><span style="color:#E1E4E8">: Trains and applies custom models for accurate categorization tasks.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Rule-Based Engine**</span><span style="color:#E1E4E8">: Provides an alternative to machine learning by using predefined rules for classification.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Reporting Module**</span><span style="color:#E1E4E8">: Generates insights and visualizations based on categorization results.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Use Cases</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Document Classification**</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">   Automatically categorizes documents (e.g., emails, articles) into predefined folders or tags.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Sentiment Analysis**</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">   Classifies customer feedback as positive, negative, or neutral for sentiment analysis.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Topic Tagging**</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">   Assigns relevant topics to articles, blog posts, or news items for better content organization.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Email Routing**</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">   Routes emails to specific teams or folders based on their content and context.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">5.</span><span style="color:#E1E4E8;font-weight:bold"> **Content Filtering**</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#E1E4E8">   Filters out unwanted or irrelevant content from a stream of data (e.g., spam detection).</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration Tips</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Preprocess Data**</span><span style="color:#E1E4E8">: Ensure the input data is clean and normalized before feeding it into the pipeline.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Train Custom Models**</span><span style="color:#E1E4E8">: Fine-tune models with domain-specific data for better accuracy.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Use Predefined Taxonomies**</span><span style="color:#E1E4E8">: Leverage existing taxonomies or create custom ones to suit your needs.</span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Monitor Performance**</span><span style="color:#E1E4E8">: Regularly evaluate model performance and adjust parameters as needed.</span></span>
+<span class="line"><span style="color:#FFAB70">5.</span><span style="color:#E1E4E8;font-weight:bold"> **Handle Edge Cases**</span><span style="color:#E1E4E8">: Define fallback mechanisms for ambiguous or uncertain classifications.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Configuration Options</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">Below is a table of configuration options for the Auto-Categorization Pipeline:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">| Parameter                  | Description                                                                 | Data Type       | Default Value | Example Values                     |</span></span>
+<span class="line"><span style="color:#E1E4E8">|----------------------------|-----------------------------------------------------------------------------|-----------------|--------------|------------------------------------|</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`enable_auto_categorization`</span><span style="color:#E1E4E8"> | Enables or disables automatic categorization.                              | Boolean         | true          | true, false                         |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`model_type`</span><span style="color:#E1E4E8">               | Specifies the type of machine learning model to use (e.g., TF-IDF, SVM).   | String          | "tfidf"       | "tfidf", "svm", "random_forest"    |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`preprocessing_steps`</span><span style="color:#E1E4E8">     | List of preprocessing steps to apply before categorization.                  | Array           | [</span><span style="color:#DBEDFF;text-decoration:underline">"lowercase"</span><span style="color:#E1E4E8">] | ["remove_punctuation", "lemmatize"]|</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`taxonomy_map`</span><span style="color:#E1E4E8">             | Mapping of categories to predefined taxonomies.                              | Object          | {}            | {"category1": "topicA", ...}        |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`confidence_threshold`</span><span style="color:#E1E4E8">     | Minimum confidence score required for a classification to be considered valid.| Float           | 0.75          | 0.5, 0.8, 0.9                       |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`async_mode`</span><span style="color:#E1E4E8">               | Enables asynchronous processing for large-scale data pipelines.              | Boolean         | false         | true, false                         |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`batch_size`</span><span style="color:#E1E4E8">               | Number of items processed in each batch during categorization.              | Integer         | 100           | 50, 200                              |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`logging_level`</span><span style="color:#E1E4E8">            | Sets the logging level for debugging purposes.                               | String          | "INFO"        | "DEBUG", "WARNING", "ERROR"          |</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## API Reference</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### Endpoints</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">#### </span><span style="color:#79B8FF;font-weight:bold">`/api/v1/categorization/train`</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Method:**</span><span style="color:#E1E4E8"> POST</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Parameters:**</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#79B8FF"> `training_data`</span><span style="color:#E1E4E8">: Array of training examples.</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#79B8FF"> `model_config`</span><span style="color:#E1E4E8">: Configuration for the machine learning model.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description:**</span><span style="color:#E1E4E8"> Trains a new categorization model using provided data.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">#### </span><span style="color:#79B8FF;font-weight:bold">`/api/v1/categorization/predict`</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Method:**</span><span style="color:#E1E4E8"> POST</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Parameters:**</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#79B8FF"> `input_text`</span><span style="color:#E1E4E8">: Text to be categorized.</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#79B8FF"> `model_id`</span><span style="color:#E1E4E8">: ID of the pre-trained model to use.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description:**</span><span style="color:#E1E4E8"> Predicts categories for the given text based on a trained model.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">#### </span><span style="color:#79B8FF;font-weight:bold">`/api/v1/categorization/health`</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Method:**</span><span style="color:#E1E4E8"> GET</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Parameters:**</span><span style="color:#E1E4E8"> None</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description:**</span><span style="color:#E1E4E8"> Checks the health and status of the categorization pipeline.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">#### </span><span style="color:#79B8FF;font-weight:bold">`/api/v1/categorization/metadata`</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Method:**</span><span style="color:#E1E4E8"> GET</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Parameters:**</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#79B8FF"> `model_id`</span><span style="color:#E1E4E8">: ID of the model to retrieve metadata for.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description:**</span><span style="color:#E1E4E8"> Returns metadata about a trained model, including accuracy metrics and category mappings.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Conclusion</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">The Auto-Categorization Pipeline is a powerful tool for automating content organization tasks. By leveraging AI and machine learning, it enables developers to efficiently classify and manage text-based data with minimal manual intervention.</span></span>
+<span class="line"></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

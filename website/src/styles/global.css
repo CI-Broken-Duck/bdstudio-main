@@ -1,0 +1,134 @@
+/* global.css */
+
+/* 1. Root Variables */
+:root {
+    --font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;
+    --font-mono: "Roboto Mono", monospace;
+    --font-canvas: "PT Sans", Arial, sans-serif;
+  
+    --color-theme: #DEB126;              /* Primary Yellow */
+    --color-on-surface: #ffffff;         /* Headings, titles */
+    --color-text: #ffffff;               /* Main body text */
+    --color-text-secondary: hsl(48, 12%, 70%);
+    --color-text-tertiary: #888888;
+  
+    --color-bg: #0b0b0c;
+    --color-bg-dark: #080808;
+    --color-bg-secondary: #1a1a1a;
+    --color-surface: #111111;
+  
+    --color-divider: hsl(48, 12%, 20%);
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --color-highlight: rgba(222, 177, 38, 0.1);
+  
+    --color-green: #21881c;
+    --color-red: #DE5267;
+    --color-yellow: #DEB126;
+    --color-record: #dd3c3c;
+  }
+  
+  /* 2. Base Reset */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+
+  
+  .full-bleed {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow-x: hidden;
+  }
+  
+  /* 4. Typography */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-on-surface);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+  
+  a {
+    color: var(--color-theme);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 5. UI Elements */
+  button {
+    background-color: var(--color-theme);
+    color: var(--color-bg-dark);
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #c39c1f;
+  }
+  
+  input, textarea, select {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-divider);
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--color-theme);
+    box-shadow: 0 0 0 2px var(--color-highlight);
+  }
+  
+  /* 6. Utility Classes */
+  .text-center { text-align: center; }
+  
+  .mt-1 { margin-top: 1rem; }
+  .mt-2 { margin-top: 2rem; }
+  .mb-1 { margin-bottom: 1rem; }
+  .mb-2 { margin-bottom: 2rem; }
+  
+  .p-1 { padding: 1rem; }
+  .p-2 { padding: 2rem; }
+  
+  .card {
+    background: var(--color-bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 4px var(--color-shadow);
+  }
+  
+  /* 7. Accessibility */
+  ::selection {
+    background-color: var(--color-theme);
+    color: var(--color-bg-dark);
+  }
+  
+  

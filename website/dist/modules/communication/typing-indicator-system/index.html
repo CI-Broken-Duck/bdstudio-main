@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Typing Indicator System</title><meta name="description" content="Shows when the other person is composing a message."><meta property="og:title" content="Typing Indicator System"><meta property="og:description" content="Shows when the other person is composing a message."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Typing Indicator System</h1> <div class="module-meta"> <div> <span class="module-category">Communication</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Shows when the other person is composing a message.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"> </div> </section> <article> <h1 id="typing-indicator-system-overview">Typing Indicator System Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Typing Indicator System module is designed to enhance real-time communication experiences by providing immediate feedback on whether the other party is typing or composing a message. This feature enriches user interactions, making them feel more natural and dynamic.</p>
+<h2 id="how-it-works">How It Works</h2>
+<p>The system operates through client-side JavaScript events that detect when text input begins (e.g., pressing ‘a’ key) or specific actions like backspace or paste occur. These triggers initiate a WebSocket connection to the server, periodically sending updates to indicate typing activity. Once typing ceases for a set period (e.g., 1 second), the indicator is removed.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Real-Time Updates</strong>: Instantly informs users when someone starts typing.</li>
+<li><strong>Versatile Triggers</strong>: Detects various actions including text input, backspace, and paste.</li>
+<li><strong>Cross-Platform Compatibility</strong>: Works seamlessly across different devices and platforms.</li>
+<li><strong>Efficient Handling</strong>: Gracefully manages network fluctuations to minimize false indicators.</li>
+</ul>
+<h2 id="why-it-matters">Why It Matters</h2>
+<p>This module significantly enhances user experience by:</p>
+<ul>
+<li>Reducing waiting time anxiety during messaging.</li>
+<li>Providing clear feedback on ongoing interactions.</li>
+<li>Increasing user satisfaction through more natural communication flow.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Instant Messaging Apps</strong>: Real-time indicators improve conversational clarity.</li>
+<li><strong>Social Media Platforms</strong>: Enhances the feel of live interaction among users.</li>
+<li><strong>Customer Service Chats</strong>: Assures users that agents are actively responding, building trust.</li>
+<li><strong>Multi-Device Compatibility</strong>: Ensures consistent experience across desktops, mobile devices, and tablets.</li>
+</ol>
+<p>The Typing Indicator System is a crucial component for creating engaging and intuitive communication experiences in various applications.</p>
+<h1 id="typing-indicator-system">Typing Indicator System</h1>
+<h2 id="feature-real-time-detection-of-user-input">Feature: Real-Time Detection of User Input</h2>
+<p>The module detects when a user begins typing or composing a message, including text input, emoji selection, or formatting changes. This detection happens locally on the client side before any data is sent to the server.</p>
+<h2 id="feature-immediate-server-sent-updates">Feature: Immediate Server-Sent Updates</h2>
+<p>Once detected, the system sends this information to the server in real-time. The updates are transmitted using efficient mechanisms like WebSockets or long polling to ensure minimal latency.</p>
+<h2 id="feature-visual-indication-of-typing-status">Feature: Visual Indication of Typing Status</h2>
+<p>The module provides customizable visual indicators that display the typing status to other users. This can be a simple text message (“User is typing…”), an animated icon, or any other UI element defined by the developer.</p>
+<h2 id="feature-handling-pauses-and-stops">Feature: Handling Pauses and Stops</h2>
+<p>The system includes logic to detect when a user has stopped typing, such as after a brief pause (e.g., 1-2 seconds). It then stops sending typing indicators to avoid unnecessary updates.</p>
+<h2 id="feature-offline-detection-and-handling">Feature: Offline Detection and Handling</h2>
+<p>If either user loses connectivity or the server is temporarily unavailable, the module gracefully handles this scenario. Typing indicators may be disabled or shown as “offline” until the connection is restored.</p>
+<h2 id="feature-privacy-controls">Feature: Privacy Controls</h2>
+<p>Users can choose to enable or disable their typing indicator visibility. This provides an added layer of privacy control for users who prefer not to show when they are composing a message.</p>
+<h2 id="feature-performance-optimization">Feature: Performance Optimization</h2>
+<p>The module is designed with lightweight code and efficient data transmission to minimize performance impact on both the client and server sides. It avoids excessive resource usage while maintaining real-time functionality.</p>
+<h2 id="feature-cross-platform-compatibility">Feature: Cross-Platform Compatibility</h2>
+<p>The system supports multiple platforms, including web browsers, mobile devices, and desktop applications. The indicators are adapted to fit each platform’s UI/UX standards and capabilities.</p>
+<h2 id="feature-customizable-indicators">Feature: Customizable Indicators</h2>
+<p>Developers can customize the appearance and behavior of typing indicators to match their application’s design. This includes changing colors, text, animations, or even implementing entirely new types of indicators.</p>
+<h2 id="feature-integration-with-message-history">Feature: Integration with Message History</h2>
+<p>The module integrates seamlessly with message history systems. If a user starts typing but does not send a message, the system can still record this activity for reference in chat logs or transcripts.</p>
+<h2 id="feature-error-handling-and-logging">Feature: Error Handling and Logging</h2>
+<p>The system includes robust error handling to manage network issues, server errors, or unexpected client-side events. It also provides logging capabilities to help developers troubleshoot integration issues.</p>
+<h1 id="typing-indicator-system-documentation">Typing Indicator System Documentation</h1>
+<p>This module provides functionality to indicate when a user is typing in a communication application. It allows real-time updates on the typing status of users.</p>
+<h2 id="components">Components</h2>
+<h3 id="1-fastapi-endpoint-backend">1. FastAPI Endpoint (Backend)</h3>
+<p>Below is an example of a FastAPI endpoint that handles typing indicators:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TypingStatus</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">bool</span><span style="color:#6A737D">  # True if typing, False otherwise</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Mock database (replace with actual database)</span></span>
+<span class="line"><span style="color:#E1E4E8">typing_status_db </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/typing-status"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">TypingStatusResponse)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> update_typing_status</span><span style="color:#E1E4E8">(typing_status: TypingStatus):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Update the typing status of a user.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        typing_status_db[typing_status.user_id] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> typing_status.status</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Typing status updated successfully"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-component-frontend">2. React UI Component (Frontend)</h3>
+<p>Here’s a React component that displays the typing indicator:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState, useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> TypingIndicator</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">isTyping</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setIsTyping</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // Poll every 3 seconds to check for typing status updates (not ideal in production)</span></span>
+<span class="line"><span style="color:#B392F0">    useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> interval</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> setInterval</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">                const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/typing-status'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">                const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">                setIsTyping</span><span style="color:#E1E4E8">(data.is_typing);</span></span>
+<span class="line"><span style="color:#E1E4E8">            } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">                console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error fetching typing status:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }, </span><span style="color:#79B8FF">3000</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#B392F0"> clearInterval</span><span style="color:#E1E4E8">(interval);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"typing-indicator"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {isTyping </span><span style="color:#F97583">?</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>typing...&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ) </span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>ready to chat&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            )}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> TypingIndicator;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-data-schema-pydantic">3. Data Schema (Pydantic)</h3>
+<p>Here’s the Pydantic schema for the typing status:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TypingStatus</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    is_typing: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TypingStatusResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    error: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span></code></pre>
+<h2 id="features">Features</h2>
+<ol>
+<li><strong>Real-time updates</strong>: The system provides real-time feedback on when a user is typing.</li>
+<li><strong>Efficient resource usage</strong>: Minimal server load due to client-side polling and lightweight data transfers.</li>
+<li><strong>User-friendly interface</strong>: Clear visual indicators for typing status.</li>
+</ol>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>For production use, consider implementing WebSocket connections instead of HTTP polling for better real-time performance.</li>
+<li>The mock database (<code>typing_status_db</code>) should be replaced with an actual database in a production environment.</li>
+</ul>
+<h1 id="typing-indicator-system-module-documentation">Typing Indicator System Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Typing Indicator System module provides a real-time communication feature indicating when another user is composing a message.</p>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>WebSocket Handler</strong>: Manages real-time messaging.</li>
+<li><strong>Message Router</strong>: Routes messages to appropriate recipients.</li>
+<li><strong>User Presence Manager</strong>: Tracks online users and their statuses.</li>
+<li><strong>Notification Service</strong>: Handles user notifications.</li>
+<li><strong>UI Framework</strong>: Manages visual elements for end-users.</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li>
+<p><strong>Initiating Typing Status</strong><br>
+When a user starts typing, the system sends a “typing” event to indicate they are composing a message.</p>
+</li>
+<li>
+<p><strong>Handling Multiple Users</strong><br>
+The system can track and display typing indicators for multiple users simultaneously in a chat interface.</p>
+</li>
+<li>
+<p><strong>Stopping Typing Indicator</strong><br>
+If a user stops typing or pauses for more than 1,000ms, the indicator is removed, and a “stopped typing” event is sent.</p>
+</li>
+<li>
+<p><strong>Network Issues</strong><br>
+The system includes retry logic to handle temporary network disruptions when sending typing indicators.</p>
+</li>
+<li>
+<p><strong>Persistence Beyond Session</strong><br>
+Typing statuses can be persisted beyond a single session using a database or cache for continuity across sessions.</p>
+</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li><strong>WebSocket Integration</strong>: Use WebSocket protocol to enable real-time updates of typing indicators between the server and client.</li>
+<li><strong>Event Handling</strong>: Implement event listeners on the client side to display the typing indicator when receiving “typing” events.</li>
+<li><strong>Database Integration</strong>: Store typing statuses in a database to maintain state across server restarts or for logging purposes.</li>
+<li><strong>Asynchronous Operations</strong>: Use asynchronous programming to handle multiple typing indicators without blocking the main thread.</li>
+<li><strong>UI Considerations</strong>: Design UI components that dynamically show/hide typing indicators based on received events.</li>
+</ol>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td><code>enable_typing_indicator</code></td><td>Enables or disables the typing indicator feature.</td><td>true</td></tr><tr><td><code>typing_timeout</code></td><td>Time (ms) after which typing stops being detected if no new characters are received.</td><td>1000</td></tr><tr><td><code>max_concurrent_typers</code></td><td>Maximum number of users that can be shown as typing simultaneously in a chat.</td><td>5</td></tr><tr><td><code>notification_interval</code></td><td>Frequency (ms) of sending typing status updates to the server.</td><td>300</td></tr><tr><td><code>heartbeat_enabled</code></td><td>Enables periodic heartbeat messages to keep the connection alive.</td><td>true</td></tr></tbody></table>
+<h2 id="example-usage">Example Usage</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Initialize Typing Indicator with default configurations</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> typingIndicator</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> TypingIndicatorSystem</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Start typing</span></span>
+<span class="line"><span style="color:#E1E4E8">typingIndicator.</span><span style="color:#B392F0">startTyping</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// Stop typing after 10 seconds</span></span>
+<span class="line"><span style="color:#B392F0">setTimeout</span><span style="color:#E1E4E8">(typingIndicator.stopTyping, </span><span style="color:#79B8FF">10000</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span></code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Typing Indicator System enhances user communication by providing real-time feedback on message composition. By integrating with related modules and using the provided configurations, developers can efficiently implement this feature in their applications.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

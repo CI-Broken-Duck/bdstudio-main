@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Onboarding Walkthrough</title><meta name="description" content="Step-by-step intro for new users or admins."><meta property="og:title" content="Onboarding Walkthrough"><meta property="og:description" content="Step-by-step intro for new users or admins."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Onboarding Walkthrough</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Step-by-step intro for new users or admins.</p> <div class="module-icons"> <img src="/assets/modules/frontend/framerMotion.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Onboarding Walkthrough Overview</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">The </span><span style="color:#E1E4E8;font-weight:bold">**Onboarding Walkthrough**</span><span style="color:#E1E4E8"> module is a comprehensive guide designed to provide new users or administrators with a structured introduction to the system or application they are joining. This module ensures that all key features, functionalities, and best practices are clearly explained in an easy-to-follow format.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Purpose</span></span>
+<span class="line"><span style="color:#E1E4E8">The primary purpose of this module is to streamline the onboarding process for both new users and administrators. It serves as a single source of truth, guiding individuals through the essential steps required to navigate and utilize the system effectively. By reducing ambiguity and confusion during the initial phase, this module helps new users feel confident in their ability to perform their roles.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Benefits</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Faster Onboarding:**</span><span style="color:#E1E4E8"> Minimizes the time needed for new users or administrators to become proficient with the system.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Consistent Experience:**</span><span style="color:#E1E4E8"> Ensures that everyone follows the same steps and learns the system in a uniform manner, regardless of their background or experience level.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Reduced Errors:**</span><span style="color:#E1E4E8"> By providing clear guidance, this module helps minimize mistakes during the onboarding process.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Improved Productivity:**</span><span style="color:#E1E4E8"> Enables new users to start contributing effectively from day one by eliminating unnecessary trial-and-error learning.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Usage Scenarios</span></span>
+<span class="line"><span style="color:#E1E4E8">The </span><span style="color:#E1E4E8;font-weight:bold">**Onboarding Walkthrough**</span><span style="color:#E1E4E8"> module is particularly useful in the following scenarios:</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **User Onboarding:**</span><span style="color:#E1E4E8"> Introducing new team members or external collaborators to the system's core functionalities.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Administrator Training:**</span><span style="color:#E1E4E8"> Guiding administrators through essential tasks, such as system configuration, user management, and security protocols.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **System Migration:**</span><span style="color:#E1E4E8"> Helping users transition smoothly when migrating to a new version of the software or adopting a completely new system.</span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Self-Learning:**</span><span style="color:#E1E4E8"> Serving as a self-contained resource for developers or users looking to understand the system without direct mentorship.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">By leveraging this module, organizations can ensure that all stakeholders are well-prepared and equipped to contribute effectively from the moment they begin their journey with the system.</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Onboarding Walkthrough Module Documentation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Step-by-Step Introductory Process  </span></span>
+<span class="line"><span style="color:#E1E4E8">The module provides a structured sequence of screens or pages that guide new users or admins through essential tasks and features of the system. This ensures a smooth transition for first-time users, reducing confusion and accelerating productivity.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Role-Based Customization  </span></span>
+<span class="line"><span style="color:#E1E4E8">Content displayed in the walkthrough is tailored based on the user's role (e.g., regular user vs. admin). This ensures that each user sees relevant information and tasks specific to their responsibilities within the system.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Progress Tracking  </span></span>
+<span class="line"><span style="color:#E1E4E8">The module tracks the user’s progress through completion percentages or checkmarks, providing visual feedback on how far they’ve come and what remains. This encourages users to continue and gives them a sense of achievement as they complete steps.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Conditional Logic  </span></span>
+<span class="line"><span style="color:#E1E4E8">Walkthrough content adapts dynamically based on user input or system state. For example, if a user skips a step or selects an option, the module adjusts subsequent screens to reflect this choice, ensuring a personalized experience.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration with User Roles  </span></span>
+<span class="line"><span style="color:#E1E4E8">The walkthrough integrates seamlessly with user role management, displaying features and instructions relevant to the user's permissions. Admins receive detailed guidance on managing system settings, while regular users focus on primary functionalities.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Interactive Elements  </span></span>
+<span class="line"><span style="color:#E1E4E8">Users can interact with elements like tooltips, pop-ups, or buttons within the walkthrough, making the process engaging. For instance, users might click a button to dive deeper into a feature’s functionality or ask questions directly from the guide.</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Onboarding Walkthrough Module Documentation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Overview</span></span>
+<span class="line"><span style="color:#E1E4E8">The Onboarding Walkthrough module provides a structured onboarding process for new users or administrators. It includes step-by-step guidance tailored to user roles.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## API Reference</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 1. FastAPI Endpoint</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">#### 1.1 Register New User (POST)</span></span>
+<span class="line"><span style="color:#E1E4E8">```python</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Annotated</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter(</span><span style="color:#FFAB70">prefix</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/auth"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">tags</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"onboarding"</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> UserCreate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    email: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    password: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/register"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> register</span><span style="color:#E1E4E8">(user: UserCreate):</span></span>
+<span class="line"><span style="color:#6A737D">    # Implement user registration logic here</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">        "status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "message"</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"User </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">user.name</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF"> registered successfully."</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-component">2. React UI Component</h3>
+<h4 id="21-onboarding-form">2.1 Onboarding Form</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> OnboardingForm</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">formData</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setFormData</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        email: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        password: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        name: </span><span style="color:#9ECBFF">''</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">loading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">error</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setError</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">        setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">        setError</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/auth/register'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">                method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                    'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span></span>
+<span class="line"><span style="color:#E1E4E8">                },</span></span>
+<span class="line"><span style="color:#E1E4E8">                body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">(formData)</span></span>
+<span class="line"><span style="color:#E1E4E8">            });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#F97583">                throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Registration failed'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">            alert</span><span style="color:#E1E4E8">(data.message);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (err) {</span></span>
+<span class="line"><span style="color:#B392F0">            setError</span><span style="color:#E1E4E8">(err.message);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">finally</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">            setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Email:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"email"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.email}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, email: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Password:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"password"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.password}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, password: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Name:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.name}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, name: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#B392F0"> disabled</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{loading}></span></span>
+<span class="line"><span style="color:#E1E4E8">                {loading </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'Registering...'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'Complete Onboarding'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {error </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{color: </span><span style="color:#9ECBFF">'red'</span><span style="color:#E1E4E8">}}>{error}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> OnboardingForm;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-data-schema">3. Data Schema</h3>
+<h4 id="31-user-registration-schema-pydantic">3.1 User Registration Schema (Pydantic)</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel, EmailStr, validator</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> re</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> UserCreate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    email: EmailStr</span></span>
+<span class="line"><span style="color:#E1E4E8">    password: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    @validator</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'password'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    def</span><span style="color:#B392F0"> validate_password</span><span style="color:#E1E4E8">(cls, value):</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#79B8FF"> len</span><span style="color:#E1E4E8">(value) </span><span style="color:#F97583">&#x3C;</span><span style="color:#79B8FF"> 8</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">            raise</span><span style="color:#79B8FF"> ValueError</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Password must be at least 8 characters long"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#F97583"> not</span><span style="color:#E1E4E8"> re.search(</span><span style="color:#F97583">r</span><span style="color:#9ECBFF">'</span><span style="color:#79B8FF">[A-Z]</span><span style="color:#9ECBFF">'</span><span style="color:#E1E4E8">, value):</span></span>
+<span class="line"><span style="color:#F97583">            raise</span><span style="color:#79B8FF"> ValueError</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Password must contain at least one uppercase letter"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> value</span></span>
+<span class="line"></span></code></pre>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="1-registering-a-new-user-via-fastapi-endpoint">1. Registering a new user via FastAPI endpoint</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -X</span><span style="color:#9ECBFF"> POST</span><span style="color:#9ECBFF"> "http://localhost:8000/auth/register"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">     -H</span><span style="color:#9ECBFF"> "Content-Type: application/json"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">     -d</span><span style="color:#9ECBFF"> '{"email":"newuser@example.com", "password":"SecurePassword123!", "name":"John Doe"}'</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-handling-onboarding-in-react">2. Handling Onboarding in React</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Example usage in a React component</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> App</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>Onboarding Walkthrough&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#79B8FF">OnboardingForm</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span></code></pre>
+<h2 id="notes-for-developers">Notes for Developers</h2>
+<ul>
+<li>Ensure proper input validation on both client and server sides.</li>
+<li>Implement password hashing before storing user credentials.</li>
+<li>Add additional security measures like rate limiting and CSRF protection.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span># Onboarding Walkthrough Module Documentation</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Summary</span></span>
+<span class="line"><span>The **Onboarding Walkthrough** module provides a step-by-step introduction for new users or administrators. It guides users through essential system features, configurations, and best practices to ensure a smooth onboarding experience.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Related Modules</span></span>
+<span class="line"><span>The following modules are closely related to the Onboarding Walkthrough module:</span></span>
+<span class="line"><span>1. **Identity Management**: Handles user creation and authentication.</span></span>
+<span class="line"><span>2. **Access Control**: Manages permissions and roles for new users.</span></span>
+<span class="line"><span>3. **Notification Service**: Sends automated emails or notifications during the onboarding process.</span></span>
+<span class="line"><span>4. **Usage Analytics**: Tracks user activity and completion rates of the walkthrough.</span></span>
+<span class="line"><span>5. **Session Management**: Manages user sessions during the onboarding process.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Use Cases</span></span>
+<span class="line"><span>1. **User Onboarding**:</span></span>
+<span class="line"><span>   - Guide new users through their first login, profile setup, and basic system navigation.</span></span>
+<span class="line"><span>   - Provide contextual help for critical system features.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. **Admin Onboarding**:</span></span>
+<span class="line"><span>   - Walk admins through system configuration, permission setups, and monitoring tools.</span></span>
+<span class="line"><span>   - Highlight key administrative tasks like user management and security settings.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. **Self-Service Onboarding**:</span></span>
+<span class="line"><span>   - Allow users to restart or skip parts of the walkthrough based on their preferences.</span></span>
+<span class="line"><span>   - Provide a knowledge base or FAQ section for common questions during onboarding.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. **Batch Onboarding**:</span></span>
+<span class="line"><span>   - Process multiple new users at once, with customizable workflows for each batch.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Integration Tips</span></span>
+<span class="line"><span>1. **Hooks and Triggers**:</span></span>
+<span class="line"><span>   - Use hooks in the Identity Management module to trigger the Onboarding Walkthrough after a user is created.</span></span>
+<span class="line"><span>   - Set up triggers based on user roles (e.g., "new admin" or "regular user").</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. **Customizable UI**:</span></span>
+<span class="line"><span>   - Provide a custom UI wrapper for the Onboarding Walkthrough to match your organization's branding.</span></span>
+<span class="line"><span>   - Allow users to toggle between guided and self-service modes.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. **API Integration**:</span></span>
+<span class="line"><span>   - Use the Onboarding Walkthrough API to programmatically start, stop, or skip walkthroughs based on user behavior.</span></span>
+<span class="line"><span>   - Monitor API calls to ensure smooth integration with other modules.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. **Error Handling**:</span></span>
+<span class="line"><span>   - Implement robust error handling for cases where users might skip steps or encounter issues during the walkthrough.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Configuration Options</span></span>
+<span class="line"><span>Below is a table of configuration options for the Onboarding Walkthrough module:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>| **Parameter Name**       | **Type**     | **Default Value** | **Description**                                                                 |</span></span>
+<span class="line"><span>|---------------------------|--------------|-------------------|---------------------------------------------------------------------------------|</span></span>
+<span class="line"><span>| `enableWalkthrough`      | Boolean      | `true`            | Enables or disables the onboarding walkthrough for new users.                   |</span></span>
+<span class="line"><span>| `walkthroughTimeout`     | Integer      | `300`             | Sets the maximum allowed time (in seconds) to complete the walkthrough.          |</span></span>
+<span class="line"><span>| `languagePreference`     | String       | `en-US`           | Specifies the default language for the onboarding content.                       |</span></span>
+<span class="line"><span>| `trackCompletion`        | Boolean      | `true`            | Enables tracking of completion rates for analytics purposes.                     |</span></span>
+<span class="line"><span>| `redirectUrl`             | String       | `null`             | URL to redirect users to after completing the walkthrough.                         |</span></span>
+<span class="line"><span>| `debugMode`               | Boolean      | `false`            | Enables debug mode for developers to test and troubleshoot the module.          |</span></span>
+<span class="line"><span>| `theme`                   | String       | `light`            | Specifies the default theme for the onboarding interface (`light`, `dark`).     |</span></span>
+<span class="line"><span>| `apiRateLimit`           | Integer      | `10`              | Sets the rate limit (requests per minute) for API calls to the Onboarding module. |</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## API Reference</span></span>
+<span class="line"><span>The Onboarding Walkthrough module provides the following endpoints:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 1. `/onboard/start`</span></span>
+<span class="line"><span>- **Method**: POST</span></span>
+<span class="line"><span>- **Description**: Starts the onboarding walkthrough process for a user.</span></span>
+<span class="line"><span>- **Request Body**:</span></span>
+<span class="line"><span>  ```json</span></span>
+<span class="line"><span>  {</span></span>
+<span class="line"><span>    "userId": string,</span></span>
+<span class="line"><span>    "roleId": string,</span></span>
+<span class="line"><span>    "language": string (optional)</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span></code></pre>
+<ul>
+<li><strong>Response</strong>:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Onboarding started successfully."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "walkthroughId"</span><span style="color:#E1E4E8">: </span><span style="color:#FDAEB7;font-style:italic">string</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+</li>
+</ul>
+<h3 id="2-onboardcomplete">2. <code>/onboard/complete</code></h3>
+<ul>
+<li><strong>Method</strong>: POST</li>
+<li><strong>Description</strong>: Marks the onboarding walkthrough as completed.</li>
+<li><strong>Request Body</strong>:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "walkthroughId"</span><span style="color:#E1E4E8">: </span><span style="color:#FDAEB7;font-style:italic">string</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "feedback"</span><span style="color:#E1E4E8">: </span><span style="color:#FDAEB7;font-style:italic">string</span><span style="color:#FDAEB7;font-style:italic"> (optional)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li><strong>Response</strong>:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Onboarding completed successfully."</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+</li>
+</ul>
+<h3 id="3-onboardstatus">3. <code>/onboard/status</code></h3>
+<ul>
+<li><strong>Method</strong>: GET</li>
+<li><strong>Description</strong>: Retrieves the status of a user’s onboarding walkthrough.</li>
+<li><strong>Query Parameters</strong>:
+<ul>
+<li><code>walkthroughId</code>: string (required)</li>
+</ul>
+</li>
+<li><strong>Response</strong>:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "status"</span><span style="color:#E1E4E8">: </span><span style="color:#FDAEB7;font-style:italic">string</span><span style="color:#FDAEB7;font-style:italic"> (</span><span style="color:#9ECBFF">"in-progress"</span><span style="color:#FDAEB7;font-style:italic"> |</span><span style="color:#9ECBFF"> "completed"</span><span style="color:#FDAEB7;font-style:italic"> |</span><span style="color:#9ECBFF"> "expired"</span><span style="color:#FDAEB7;font-style:italic">)</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "step"</span><span style="color:#E1E4E8">: </span><span style="color:#FDAEB7;font-style:italic">integer</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "completionTime"</span><span style="color:#E1E4E8">: </span><span style="color:#FDAEB7;font-style:italic">number</span><span style="color:#FDAEB7;font-style:italic"> (timestamp)</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "errors"</span><span style="color:#E1E4E8">: </span><span style="color:#FDAEB7;font-style:italic">array</span><span style="color:#FDAEB7;font-style:italic"> of</span><span style="color:#FDAEB7;font-style:italic"> strings</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Onboarding Walkthrough module is a critical component for ensuring new users and administrators are prepared to work effectively within the system. By leveraging related modules, implementing use cases, and configuring settings appropriately, developers can create a seamless onboarding experience tailored to their organization’s needs.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

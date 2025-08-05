@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>System Backup Trigger</title><meta name="description" content="Manual initiation of backups for database, user data, or file storage."><meta property="og:title" content="System Backup Trigger"><meta property="og:description" content="Manual initiation of backups for database, user data, or file storage."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>System Backup Trigger</h1> <div class="module-meta"> <div> <span class="module-category">Admin</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Manual initiation of backups for database, user data, or file storage.</p> <div class="module-icons"> <img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h3 id="system-backup-trigger-module-overview">System Backup Trigger Module Overview</h3>
+<p>The <strong>System Backup Trigger</strong> module is designed to provide administrators with precise control over backup operations, ensuring data integrity and security in critical situations. This tool allows manual initiation of backups for databases, user data, and file storage, offering flexibility beyond automated schedules.</p>
+<h4 id="purpose">Purpose</h4>
+<p>The primary purpose of this module is to give administrators the ability to manually trigger backup processes whenever necessary. It serves as a safeguard against potential data loss by providing an immediate response mechanism in critical scenarios where automated backups may not suffice.</p>
+<h4 id="benefits">Benefits</h4>
+<ol>
+<li>
+<p><strong>Enhanced Control and Flexibility</strong>:</p>
+<ul>
+<li>Enables admins to initiate backups at any time, ensuring that data is protected according to specific needs or schedules.</li>
+</ul>
+</li>
+<li>
+<p><strong>Critical Situation Protection</strong>:</p>
+<ul>
+<li>Allows for proactive measures before system changes or hardware maintenance, safeguarding against potential data loss.</li>
+</ul>
+</li>
+<li>
+<p><strong>Testing and Verification</strong>:</p>
+<ul>
+<li>Provides a reliable method for testing backup processes, ensuring they function correctly without waiting for scheduled times.</li>
+</ul>
+</li>
+</ol>
+<h4 id="usage-scenarios">Usage Scenarios</h4>
+<ol>
+<li>
+<p><strong>Pre-Maintenance Backups</strong>:</p>
+<ul>
+<li>Trigger a backup before implementing system updates, patches, or hardware changes to prevent data loss during maintenance.</li>
+</ul>
+</li>
+<li>
+<p><strong>Emergency Data Protection</strong>:</p>
+<ul>
+<li>Use the module to initiate immediate backups in response to unexpected issues like hardware failures or security threats.</li>
+</ul>
+</li>
+<li>
+<p><strong>Process Validation</strong>:</p>
+<ul>
+<li>Manually trigger backups for testing purposes to verify that backup configurations are functioning correctly and data is recoverable.</li>
+</ul>
+</li>
+</ol>
+<p>By leveraging the System Backup Trigger, administrators can ensure data safety, control backup schedules, and maintain system reliability in various operational contexts.</p>
+<h2 id="feature-1-backup-type-selection">Feature 1: Backup Type Selection</h2>
+<p>The module allows users to select the type of backup they want to initiate. This includes options for backing up databases, user data, or file storage. The selection ensures that only the required resources are included in the backup process.</p>
+<h2 id="feature-2-manual-trigger-option">Feature 2: Manual Trigger Option</h2>
+<p>Users can manually trigger a backup at any time by initiating it through the module’s interface or API. This provides flexibility and control over when backups occur, especially for critical updates or before system maintenance.</p>
+<h2 id="feature-3-backup-schedule-configuration">Feature 3: Backup Schedule Configuration</h2>
+<p>Administrators can configure scheduled backups using cron-like expressions to automate the backup process. This feature allows setting up recurring backups at specified intervals without manual intervention.</p>
+<h2 id="feature-4-backup-log-monitoring">Feature 4: Backup Log Monitoring</h2>
+<p>The module provides detailed logs and status reports for each backup operation. Users can view the history of backups, including success/failure statuses, timestamps, and any error messages encountered during the backup process.</p>
+<h2 id="feature-5-cross-environment-compatibility">Feature 5: Cross-Environment Compatibility</h2>
+<p>The backup trigger supports multiple environments (e.g., development, staging, production). It allows users to specify which instances or environments should be included in the backup process, ensuring comprehensive coverage of all critical resources.</p>
+<h1 id="system-backup-trigger-documentation">System Backup Trigger Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>This module provides a mechanism for manually initiating backups of critical system resources such as databases, user data, and file storage. Backups are triggered via an API endpoint and can be accessed by authorized administrators.</p>
+<hr>
+<h2 id="endpoints">Endpoints</h2>
+<h3 id="fastapi-endpoint-apitrigger-backup">FastAPI Endpoint: <code>/api/trigger-backup</code></h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> logging</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Logger setup</span></span>
+<span class="line"><span style="color:#E1E4E8">logger </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> logging.getLogger(</span><span style="color:#79B8FF">__name__</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> BackupRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    type</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "database", "user_data", or "storage"</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    database_name: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span><span style="color:#6A737D">  # Only for database backups</span></span>
+<span class="line"><span style="color:#E1E4E8">    storage_path: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span><span style="color:#6A737D">   # Only for storage backups</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/trigger-backup"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> trigger_backup</span><span style="color:#E1E4E8">(backup_request: BackupRequest):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Initiates a system backup based on the specified type and parameters.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        logger.info(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Backup triggered with request: </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">backup_request</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> backup_request.type </span><span style="color:#F97583">not</span><span style="color:#F97583"> in</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">"database"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"user_data"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"storage"</span><span style="color:#E1E4E8">]:</span></span>
+<span class="line"><span style="color:#F97583">            raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">400</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Invalid backup type"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#6A737D">        # Perform backup based on type</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> backup_request.type </span><span style="color:#F97583">==</span><span style="color:#9ECBFF"> "database"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">            # Database backup logic here</span></span>
+<span class="line"><span style="color:#F97583">            pass</span></span>
+<span class="line"><span style="color:#F97583">        elif</span><span style="color:#E1E4E8"> backup_request.type </span><span style="color:#F97583">==</span><span style="color:#9ECBFF"> "user_data"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">            # User data backup logic here</span></span>
+<span class="line"><span style="color:#F97583">            pass</span></span>
+<span class="line"><span style="color:#F97583">        else</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">            # File storage backup logic here</span></span>
+<span class="line"><span style="color:#F97583">            pass</span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Backup of </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">backup_request.type</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF"> initiated successfully."</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#E1E4E8">        logger.error(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Backup trigger failed: </span><span style="color:#79B8FF">{str</span><span style="color:#E1E4E8">(e)</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="react-ui-snippet">React UI Snippet</h2>
+<p>A simple React component for triggering backups:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> axios </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'axios'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> BackupTrigger</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">backupType</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setBackupType</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'database'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">description</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setDescription</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> triggerBackup</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            await</span><span style="color:#E1E4E8"> axios.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/trigger-backup'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">                type: backupType,</span></span>
+<span class="line"><span style="color:#E1E4E8">                description: description</span></span>
+<span class="line"><span style="color:#E1E4E8">            });</span></span>
+<span class="line"><span style="color:#B392F0">            alert</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Backup triggered successfully!'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Backup trigger failed:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ padding: </span><span style="color:#9ECBFF">'20px'</span><span style="color:#E1E4E8"> }}></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>System Backup Trigger&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{triggerBackup}></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{backupType}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setBackupType</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                    style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ width: </span><span style="color:#9ECBFF">'100%'</span><span style="color:#E1E4E8">, marginBottom: </span><span style="color:#9ECBFF">'10px'</span><span style="color:#E1E4E8"> }}</span></span>
+<span class="line"><span style="color:#E1E4E8">                ></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"database"</span><span style="color:#E1E4E8">>Database Backup&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"user_data"</span><span style="color:#E1E4E8">>User Data Backup&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"storage"</span><span style="color:#E1E4E8">>Storage Backup&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                </span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                    placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Description (optional)"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{description}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setDescription</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                    style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ width: </span><span style="color:#9ECBFF">'100%'</span><span style="color:#E1E4E8">, marginBottom: </span><span style="color:#9ECBFF">'10px'</span><span style="color:#E1E4E8"> }}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">                </span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ background: </span><span style="color:#9ECBFF">'#4CAF50'</span><span style="color:#E1E4E8">, color: </span><span style="color:#9ECBFF">'white'</span><span style="color:#E1E4E8">, padding: </span><span style="color:#9ECBFF">'10px 20px'</span><span style="color:#E1E4E8">, border: </span><span style="color:#9ECBFF">'none'</span><span style="color:#E1E4E8"> }}></span></span>
+<span class="line"><span style="color:#E1E4E8">                    Trigger Backup</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> BackupTrigger;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="data-schema-pydantic">Data Schema (Pydantic)</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> BackupRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    type</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "database", "user_data", or "storage"</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    database_name: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span><span style="color:#6A737D">  # Required only for database backups</span></span>
+<span class="line"><span style="color:#E1E4E8">    storage_path: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span><span style="color:#6A737D">   # Required only for storage backups</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"database"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Nightly database backup"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "database_name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"main_db"</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="error-handling">Error Handling</h2>
+<ul>
+<li><strong>400 Bad Request</strong>: Invalid backup type or missing required parameters.</li>
+<li><strong>500 Internal Server Error</strong>: Backup operation failed due to unexpected errors.</li>
+</ul>
+<hr>
+<h2 id="authentication">Authentication</h2>
+<p>This endpoint requires authentication via JWT tokens. Add the following middleware in your FastAPI app:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi.security </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> HTTPBearer, HTTPAuthorizationCredentials</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi.depends </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Depends</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">security </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> HTTPBearer()</span></span>
+<span class="line"><span style="color:#E1E4E8">auth_credentials </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends(security)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/trigger-backup"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> trigger_backup</span><span style="color:#E1E4E8">(backup_request: BackupRequest, credentials: HTTPAuthorizationCredentials):</span></span>
+<span class="line"><span style="color:#6A737D">    # Add authentication logic here</span></span>
+<span class="line"><span style="color:#F97583">    pass</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="rate-limiting">Rate Limiting</h2>
+<p>To prevent abuse, limit the number of backup triggers per user:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi.middleware </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Middleware</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi.middleware.csrf </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> CSRFMiddleware</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app.add_middleware(</span></span>
+<span class="line"><span style="color:#FFAB70">    type</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">RateLimitMiddleware,</span></span>
+<span class="line"><span style="color:#FFAB70">    key_func</span><span style="color:#F97583">=lambda</span><span style="color:#E1E4E8"> request: </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">request.client.host</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">:</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">request.client.port</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">    rate_limit</span><span style="color:#F97583">=</span><span style="color:#79B8FF">5</span><span style="color:#6A737D">  # 5 requests per minute</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="logging">Logging</h2>
+<p>Log all backup operations for auditing purposes:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">logger.info(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Backup initiated by </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">current_user</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF"> - Type: </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">backup_request.type</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">, Description: </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">backup_request.description</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="example-usage">Example Usage</h2>
+<h3 id="triggering-a-backup-via-curl">Triggering a Backup via curl:</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -X</span><span style="color:#9ECBFF"> POST</span><span style="color:#9ECBFF"> "http://localhost:8000/api/trigger-backup"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">     -H</span><span style="color:#9ECBFF"> "Authorization: Bearer &#x3C;your_token>"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">     -H</span><span style="color:#9ECBFF"> "Content-Type: application/json"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">     -d</span><span style="color:#9ECBFF"> '{"type": "database", "description": "Weekly database backup"}'</span></span>
+<span class="line"></span></code></pre>
+<h3 id="triggering-a-backup-via-react-ui">Triggering a Backup via React UI:</h3>
+<p>The React component will make the API call as shown in the code snippet above.</p>
+<h1 id="system-backup-trigger-module-documentation">System Backup Trigger Module Documentation</h1>
+<h2 id="module-overview">Module Overview</h2>
+<p><strong>Name:</strong> System Backup Trigger<br>
+<strong>Category:</strong> Admin<br>
+<strong>Summary:</strong> This module enables manual initiation of backups for database, user data, or file storage. It provides a centralized interface for triggering backup processes and monitoring their status.<br>
+<strong>Target User:</strong> Developers and system administrators.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ol>
+<li>
+<p><strong>Database Backup Handler</strong></p>
+<ul>
+<li>Manages database backup operations and integrates with the System Backup Trigger module to initiate backups.</li>
+</ul>
+</li>
+<li>
+<p><strong>User Data Exporter</strong></p>
+<ul>
+<li>Handles user data extraction and storage during backup processes, ensuring data integrity.</li>
+</ul>
+</li>
+<li>
+<p><strong>File Storage Manager</strong></p>
+<ul>
+<li>Manages file storage backups and ensures efficient handling of large volumes of data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Log Analyzer</strong></p>
+<ul>
+<li>Analyzes logs generated by the backup process to identify errors or issues.</li>
+</ul>
+</li>
+<li>
+<p><strong>Notifications Service</strong></p>
+<ul>
+<li>Sends notifications (emails, SMS, etc.) after a backup is completed or if an error occurs.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li>
+<p><strong>Scheduled Backups</strong></p>
+<ul>
+<li>Trigger backups at specific intervals (e.g., daily, weekly) to ensure data availability.</li>
+</ul>
+</li>
+<li>
+<p><strong>On-Demand Backups</strong></p>
+<ul>
+<li>Manually initiate backups before deploying critical updates or performing system maintenance.</li>
+</ul>
+</li>
+<li>
+<p><strong>Incremental Backups</strong></p>
+<ul>
+<li>Perform incremental backups to reduce storage requirements and improve backup speed by only capturing changed data since the last backup.</li>
+</ul>
+</li>
+<li>
+<p><strong>Full System Backup</strong></p>
+<ul>
+<li>Trigger a full backup of all system components (database, user data, logs, etc.) for comprehensive data protection.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cross-Platform Compatibility</strong></p>
+<ul>
+<li>Ensure backups are compatible with multiple storage systems (e.g., cloud storage, local disks).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>Scheduling Backups</strong></p>
+<ul>
+<li>Use a cron job or task scheduler to automate backup triggers based on predefined intervals.</li>
+</ul>
+</li>
+<li>
+<p><strong>Dependency Management</strong></p>
+<ul>
+<li>Ensure that the System Backup Trigger module is properly integrated with other modules like Database Backup Handler and File Storage Manager for seamless operation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Logging and Monitoring</strong></p>
+<ul>
+<li>Integrate logging mechanisms to track backup status, success, or failure. Use Log Analyzer to monitor logs in real-time.</li>
+</ul>
+</li>
+<li>
+<p><strong>Testing Integration</strong></p>
+<ul>
+<li>Test the integration of manual backup triggers with other modules to ensure reliability and consistency.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Parameter</strong></th><th><strong>Type</strong></th><th><strong>Default Value</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td><code>backup_schedule</code></td><td>String</td><td><code>"daily"</code></td><td>Schedule for automated backups (e.g., <code>"hourly"</code>, <code>"weekly"</code>, <code>"monthly"</code>).</td></tr><tr><td><code>trigger_type</code></td><td>String</td><td><code>"manual"</code></td><td>Type of backup trigger (e.g., <code>"manual"</code>, <code>"scheduled"</code>).</td></tr><tr><td><code>data_selection</code></td><td>String</td><td><code>"all"</code></td><td>Data to include in the backup (e.g., <code>"database"</code>, <code>"user_data"</code>, <code>"files"</code>).</td></tr><tr><td><code>retention_policy</code></td><td>Integer</td><td><code>30</code></td><td>Number of days to retain backups.</td></tr><tr><td><code>compression_level</code></td><td>Integer</td><td><code>5</code></td><td>Compression level for the backup files (1-9, with 1 being least compression).</td></tr><tr><td><code>notification_enabled</code></td><td>Boolean</td><td><code>true</code></td><td>Enable/disable notifications after backup completion or failure.</td></tr><tr><td><code>log_verbosity</code></td><td>String</td><td><code>"INFO"</code></td><td>Verbosity level for logging (e.g., <code>"DEBUG"</code>, <code>"INFO"</code>, <code>"WARNING"</code>).</td></tr></tbody></table>
+<hr>
+<h2 id="contact-information">Contact Information</h2>
+<ul>
+<li><strong>Developer:</strong> John Doe</li>
+<li><strong>Email:</strong> <a href="mailto:john.doe@example.com">john.doe@example.com</a></li>
+<li><strong>GitHub:</strong> <a href="https://github.com/johndoe/backup-trigger">https://github.com/johndoe/backup-trigger</a></li>
+</ul>
+<hr>
+<p>This documentation provides a comprehensive overview of the System Backup Trigger module, its use cases, and integration tips. For further details or troubleshooting, refer to the official documentation or contact the developer.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

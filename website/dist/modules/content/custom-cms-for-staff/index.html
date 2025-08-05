@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Custom CMS for Staff</title><meta name="description" content="Secure, role-based content management system for internal teams."><meta property="og:title" content="Custom CMS for Staff"><meta property="og:description" content="Secure, role-based content management system for internal teams."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Custom CMS for Staff</h1> <div class="module-meta"> <div> <span class="module-category">Content</span> <span class="module-subcategory"> → Platinum</span> </div> <div class="module-price"> <span>💰</span> $3500 </div> </div> <p class="module-summary">Secure, role-based content management system for internal teams.</p> <div class="module-icons"> <img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-custom-cms-for-staff">Overview: Custom CMS for Staff</h1>
+<p>The <strong>Custom CMS for Staff</strong> module is a role-based, secure content management system (CMS) designed to streamline internal team collaboration and content governance. Built with developers in mind, this modular solution provides a robust framework for managing digital assets, enforcing access controls, and maintaining version history, all while ensuring compliance with organizational security policies.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The Custom CMS for Staff module is intended to serve as an internal tool for managing content that is exclusive to staff members within an organization. Its primary purpose is to provide a secure, centralized repository where employees can create, edit, share, and manage digital assets such as documents, multimedia files, and web content. By leveraging role-based access control (RBAC), the CMS ensures that only authorized users can view, modify, or delete content.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Role-Based Access Control</strong>: Enforces fine-grained permissions based on user roles, ensuring that sensitive content is only accessible to authorized personnel.</li>
+<li><strong>Audit Logs</strong>: Tracks user activity and changes made to content, providing a comprehensive audit trail for compliance and debugging purposes.</li>
+<li><strong>Content Versioning</strong>: Maintains historical versions of all content assets, allowing users to revert to previous states if needed.</li>
+<li><strong>Security Enhancements</strong>: Built with security best practices in mind, including encryption for sensitive data and protection against common web vulnerabilities.</li>
+<li><strong>Scalability</strong>: Designed to handle large volumes of content and multiple user roles without compromising performance.</li>
+<li><strong>Integration Capabilities</strong>: Easily integrates with existing enterprise systems, such as HRMS, LMS, or CRM platforms.</li>
+</ul>
+<h2 id="benefits">Benefits</h2>
+<p>The Custom CMS for Staff module offers several advantages for developers and organizations:</p>
+<ol>
+<li><strong>Enhanced Security</strong>: By implementing RBAC and audit logging, the CMS significantly reduces the risk of unauthorized access to sensitive content.</li>
+<li><strong>Improved Collaboration</strong>: The centralized platform fosters better teamwork by providing a single source of truth for all internal digital assets.</li>
+<li><strong>Streamlined Content Management</strong>: Developers can leverage the module’s built-in features to manage content workflows, approvals, and versioning with minimal effort.</li>
+<li><strong>Flexibility</strong>: The CMS is highly customizable, allowing organizations to tailor it to their specific needs without compromising on functionality.</li>
+</ol>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<p>The Custom CMS for Staff module is ideal for a wide range of use cases within an organization:</p>
+<ul>
+<li><strong>Internal Documentation Management</strong>: Store and manage internal policies, procedures, and guidelines securely.</li>
+<li><strong>Training Materials Repository</strong>: Organize and distribute training content to employees based on their roles and permissions.</li>
+<li><strong>Intranet Content Management</strong>: Use the CMS as the backbone for managing intranet pages, news updates, and employee announcements.</li>
+<li><strong>Project Management Support</strong>: Assign and track project-related documentation, ensuring that only relevant team members have access.</li>
+<li><strong>Secure Knowledge Base</strong>: Create a secure knowledge base where employees can access approved articles, FAQs, and other resources.</li>
+</ul>
+<h2 id="target-audience">Target Audience</h2>
+<p>The Custom CMS for Staff module is primarily designed for:</p>
+<ul>
+<li><strong>Developers</strong>: Who need to integrate or extend the CMS within their organization’s existing IT infrastructure.</li>
+<li><strong>IT Managers</strong>: Responsible for overseeing internal systems and ensuring compliance with security policies.</li>
+<li><strong>Content Administrators</strong>: Charged with managing digital assets and enforcing content governance.</li>
+</ul>
+<p>By adopting the Custom CMS for Staff module, organizations can enhance their internal communication, improve content security, and foster more efficient collaboration among staff members. Its modular design and robust feature set make it a versatile solution for managing internal digital assets in a secure and scalable manner.</p>
+<h2 id="role-based-access-control">Role-Based Access Control</h2>
+<p>Enforces security by allowing only authorized users to access specific content based on their roles within the organization. This ensures that sensitive data remains protected from unauthorized access.</p>
+<h2 id="content-versioning">Content Versioning</h2>
+<p>Automatically tracks changes made to content, enabling developers to revert to previous versions if necessary. This is particularly useful for maintaining content integrity and recovering from accidental edits or malicious attacks.</p>
+<h2 id="scalability-and-performance">Scalability and Performance</h2>
+<p>Designed to handle large volumes of content efficiently, ensuring fast load times and smooth performance even as the system grows with organizational needs.</p>
+<h2 id="customizable-workflows">Customizable Workflows</h2>
+<p>Allows developers to define custom workflows for content creation, approval, and publication processes. This flexibility ensures that the CMS can adapt to varying team requirements and internal processes.</p>
+<h2 id="integration-capabilities">Integration Capabilities</h2>
+<p>Provides APIs for seamless integration with existing systems such as user management, authentication services, and third-party tools, making it easy to plug into a broader software ecosystem.</p>
+<h2 id="search-and-filtering">Search and Filtering</h2>
+<p>Includes advanced search functionality and filtering options, enabling developers to quickly locate specific content or segments of data, improving efficiency when managing large datasets.</p>
+<h2 id="multi-language-support">Multi-Language Support</h2>
+<p>Supports multiple languages, allowing internal teams with diverse linguistic backgrounds to create and manage content in their preferred language(s).</p>
+<h2 id="audit-logging">Audit Logging</h2>
+<p>Tracks user activity within the CMS, providing a detailed audit trail of all actions taken by users. This is essential for compliance, debugging, and monitoring system usage patterns.</p>
+<h2 id="backup-and-recovery">Backup and Recovery</h2>
+<p>Offers built-in mechanisms for regular data backups and recovery processes, ensuring that critical content can be restored in case of hardware failures or other disruptions.</p>
+<h2 id="extensibility">Extensibility</h2>
+<p>Designed to support the addition of custom plugins, modules, and features, allowing developers to extend the functionality of the CMS to meet specific organizational needs.</p>
+<h3 id="module-name-custom-cms-for-staff">Module Name: Custom CMS for Staff</h3>
+<h4 id="category-content-management">Category: Content Management</h4>
+<h4 id="summary-secure-role-based-content-management-system-designed-for-internal-teams-to-manage-and-publish-content">Summary: Secure, role-based content management system designed for internal teams to manage and publish content.</h4>
+<hr>
+<h2 id="api-endpoints-fastapi">API Endpoints (FastAPI)</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FastAPI, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi.security </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> OAuth2PasswordBearer</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> FastAPI()</span></span>
+<span class="line"><span style="color:#E1E4E8">oauth2_scheme </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> OAuth2PasswordBearer(</span><span style="color:#FFAB70">tokenUrl</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"token"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Article</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    author: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    last_updated: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    is_published: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    category: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@app.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/articles"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">List[Article])</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> get_articles</span><span style="color:#E1E4E8">(skip: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">, limit: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">, token: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Depends(oauth2_scheme)):</span></span>
+<span class="line"><span style="color:#6A737D">    # Assume `get_paginated_articles` retrieves articles with pagination</span></span>
+<span class="line"><span style="color:#E1E4E8">    articles </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> get_paginated_articles(skip, limit)</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> articles</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@app.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/articles"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> create_article</span><span style="color:#E1E4E8">(article: Article):</span></span>
+<span class="line"><span style="color:#6A737D">    # Assume `create_article` handles data validation and storage</span></span>
+<span class="line"><span style="color:#E1E4E8">    new_article </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> create_article(article)</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> new_article</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@app.put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/articles/</span><span style="color:#79B8FF">{article_id}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> update_article</span><span style="color:#E1E4E8">(article_id: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, article: </span><span style="color:#79B8FF">dict</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#6A737D">    # Assume `update_article` handles data validation and storage</span></span>
+<span class="line"><span style="color:#E1E4E8">    updated_article </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> update_article(article_id, article)</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> updated_article</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="react-ui-snippet-frontend">React UI Snippet (Frontend)</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useUser } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './auth'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> Article</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  title</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  content</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  author</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  created_at</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  last_updated</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  is_published</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  category</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> ArticlesList</span><span style="color:#F97583">:</span><span style="color:#B392F0"> React</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">FC</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">user</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useUser</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">articles</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setArticles</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> React.</span><span style="color:#B392F0">useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">Article</span><span style="color:#E1E4E8">[]>([]);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">loading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> React.</span><span style="color:#B392F0">useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#B392F0">  useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> fetchArticles</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/articles'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">          headers: { </span><span style="color:#9ECBFF">'Authorization'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">`Bearer ${</span><span style="color:#E1E4E8">user</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">token</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#E1E4E8">        });</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) </span><span style="color:#F97583">throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to fetch articles'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">        setArticles</span><span style="color:#E1E4E8">(data);</span></span>
+<span class="line"><span style="color:#E1E4E8">      } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error fetching articles:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">      } </span><span style="color:#F97583">finally</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#B392F0">    fetchArticles</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, [user.token]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  if</span><span style="color:#E1E4E8"> (loading) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>Loading...&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>;</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      {articles.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">article</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{article.id}></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>{article.title}&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>By {article.author} · {</span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">(article.created_at).</span><span style="color:#B392F0">toLocaleDateString</span><span style="color:#E1E4E8">()}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> dangerouslySetInnerHTML</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ __html: article.content }} /></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> ArticlesList;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="data-schema-pydantic">Data Schema (Pydantic)</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Article</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    author: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: datetime</span></span>
+<span class="line"><span style="color:#E1E4E8">    last_updated: datetime</span></span>
+<span class="line"><span style="color:#E1E4E8">    is_published: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    category: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PaginatedResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    articles: List[Article]</span></span>
+<span class="line"><span style="color:#E1E4E8">    page_info: </span><span style="color:#79B8FF">dict</span><span style="color:#6A737D">  # Contains pagination details like total_pages, current_page, etc.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Example response:</span></span>
+<span class="line"><span style="color:#6A737D"># {</span></span>
+<span class="line"><span style="color:#6A737D">#   "articles": [</span></span>
+<span class="line"><span style="color:#6A737D">#     {</span></span>
+<span class="line"><span style="color:#6A737D">#       "id": "123",</span></span>
+<span class="line"><span style="color:#6A737D">#       "title": "Welcome to the CMS",</span></span>
+<span class="line"><span style="color:#6A737D">#       "content": "This is a sample article...",</span></span>
+<span class="line"><span style="color:#6A737D">#       "author": "admin",</span></span>
+<span class="line"><span style="color:#6A737D">#       "created_at": "2024-01-01T00:00:00Z",</span></span>
+<span class="line"><span style="color:#6A737D">#       "last_updated": "2024-01-01T00:00:00Z",</span></span>
+<span class="line"><span style="color:#6A737D">#       "is_published": true,</span></span>
+<span class="line"><span style="color:#6A737D">#       "category": "Announcement"</span></span>
+<span class="line"><span style="color:#6A737D">#     }</span></span>
+<span class="line"><span style="color:#6A737D">#   ],</span></span>
+<span class="line"><span style="color:#6A737D">#   "page_info": {</span></span>
+<span class="line"><span style="color:#6A737D">#     "total_pages": 10,</span></span>
+<span class="line"><span style="color:#6A737D">#     "current_page": 1</span></span>
+<span class="line"><span style="color:#6A737D">#   }</span></span>
+<span class="line"><span style="color:#6A737D"># }</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="security-considerations">Security Considerations</h2>
+<ol>
+<li><strong>Role-Based Access Control</strong>: Only authorized users with specific roles (e.g., <code>admin</code>, <code>editor</code>) can access certain endpoints.</li>
+<li><strong>Authentication</strong>: Use OAuth2 or JWT for secure authentication and authorization.</li>
+<li><strong>Data Validation</strong>: Pydantic models ensure that input data conforms to defined schemas.</li>
+<li><strong>Secure Data Handling</strong>: Sensitive information should be encrypted and stored securely (e.g., hashed passwords, token storage).</li>
+</ol>
+<hr>
+<h2 id="usage-example">Usage Example</h2>
+<h3 id="creating-an-article">Creating an Article</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/articles'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  headers: { </span></span>
+<span class="line"><span style="color:#9ECBFF">    'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    'Authorization'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">`Bearer ${</span><span style="color:#E1E4E8">token</span><span style="color:#9ECBFF">}`</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#9ECBFF">"New Article"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#9ECBFF">"This is the content of the new article..."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    author: </span><span style="color:#9ECBFF">"user123"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    category: </span><span style="color:#9ECBFF">"Technology"</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<h3 id="updating-an-article">Updating an Article</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/articles/123'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">  method: </span><span style="color:#9ECBFF">'PUT'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  headers: { </span></span>
+<span class="line"><span style="color:#9ECBFF">    'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    'Authorization'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">`Bearer ${</span><span style="color:#E1E4E8">token</span><span style="color:#9ECBFF">}`</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#E1E4E8">  body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#9ECBFF">"Updated Article"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#9ECBFF">"This is the updated content..."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    last_updated: </span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">toISOString</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">  })</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>The CMS follows RESTful API conventions for resource management.</li>
+<li>Data pagination is implemented to handle large datasets efficiently.</li>
+<li>React components are designed to be reusable and maintainable.</li>
+</ul>
+<h1 id="custom-cms-for-staff">Custom CMS for Staff</h1>
+<h2 id="summary">Summary</h2>
+<p>A secure, role-based content management system (CMS) designed for internal teams to manage and publish content securely. This module provides granular access control, versioning, and auditing capabilities.</p>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>User Management Module</strong>: For managing staff accounts and permissions.</li>
+<li><strong>Role-Based Access Control (RBAC)</strong>: Enforces role-based restrictions on content access.</li>
+<li><strong>Content Storage Module</strong>: Handles storage and retrieval of content assets.</li>
+<li><strong>Workflow Engine</strong>: Automates content approval and publishing processes.</li>
+<li><strong>Analytics Dashboard</strong>: Provides insights into content usage and performance.</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li>
+<p><strong>Content Creation &#x26; Versioning</strong></p>
+<ul>
+<li>Staff users create and edit content with version tracking to manage different drafts.</li>
+<li>Multiple contributors can work on the same content, with a history of changes recorded.</li>
+</ul>
+</li>
+<li>
+<p><strong>Role-Based Content Management</strong></p>
+<ul>
+<li>Assign different roles (e.g., Editor, Reviewer, Publisher) to staff members.</li>
+<li>Restrict access to sensitive content based on user roles and permissions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Integration with Existing Systems</strong></p>
+<ul>
+<li>Integrate the CMS with external systems like CRM or HRMS for synchronized data management.</li>
+</ul>
+</li>
+<li>
+<p><strong>Content Auditing &#x26; Reporting</strong></p>
+<ul>
+<li>Track changes made to content, including who made the change and when.</li>
+<li>Generate reports on content activity for auditing purposes.</li>
+</ul>
+</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>Authentication</strong></p>
+<ul>
+<li>Ensure that all API calls are authenticated using tokens or sessions.</li>
+<li>Use HTTPS for secure communication between modules.</li>
+</ul>
+</li>
+<li>
+<p><strong>User Sync</strong></p>
+<ul>
+<li>Synchronize user roles and permissions with the User Management Module regularly.</li>
+<li>Set up hooks in the CMS to update user access when their roles change.</li>
+</ul>
+</li>
+<li>
+<p><strong>Content Storage</strong></p>
+<ul>
+<li>Use a distributed file storage system (e.g., S3) for storing media assets.</li>
+<li>Implement caching mechanisms to improve content retrieval performance.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hooks &#x26; Events</strong></p>
+<ul>
+<li>Use hooks to trigger custom actions after specific events (e.g., content published, user created).</li>
+<li>Set up webhooks for real-time notifications of content changes.</li>
+</ul>
+</li>
+</ol>
+<h2 id="configuration-options">Configuration Options</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#E1E4E8">| Parameter                 | Default Value | Description                                      | Example Value          |</span></span>
+<span class="line"><span style="color:#E1E4E8">|---------------------------|--------------|--------------------------------------------------|-----------------------|</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`base_url`</span><span style="color:#E1E4E8">                | </span><span style="color:#79B8FF">`http://localhost:8080`</span><span style="color:#E1E4E8"> | Base URL of the CMS instance                    | </span><span style="color:#79B8FF">`https://cms.example.com`</span><span style="color:#E1E4E8"> |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`auth_mode`</span><span style="color:#E1E4E8">               | </span><span style="color:#79B8FF">`internal`</span><span style="color:#E1E4E8">   | Authentication mode (internal or external)        | </span><span style="color:#79B8FF">`external`</span><span style="color:#E1E4E8">            |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`log_level`</span><span style="color:#E1E4E8">               | </span><span style="color:#79B8FF">`INFO`</span><span style="color:#E1E4E8">       | Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL) | </span><span style="color:#79B8FF">`WARNING`</span><span style="color:#E1E4E8">             |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`cache_type`</span><span style="color:#E1E4E8">              | </span><span style="color:#79B8FF">`none`</span><span style="color:#E1E4E8">       | Cache type (none, in-memory, redis, memcached)    | </span><span style="color:#79B8FF">`redis`</span><span style="color:#E1E4E8">               |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`audit_trail_status`</span><span style="color:#E1E4E8">      | </span><span style="color:#79B8FF">`enabled`</span><span style="color:#E1E4E8">    | Enable or disable audit trail functionality        | </span><span style="color:#79B8FF">`disabled`</span><span style="color:#E1E4E8">            |</span></span>
+<span class="line"></span></code></pre>
+<h2 id="overview">Overview</h2>
+<p>The Custom CMS for Staff module is a powerful tool for managing internal content securely and efficiently. By leveraging role-based access control, versioning, and auditing features, it ensures that content is managed responsibly while maintaining security and compliance.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

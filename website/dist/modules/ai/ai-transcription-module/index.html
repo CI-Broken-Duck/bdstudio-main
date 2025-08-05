@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>AI Transcription Module</title><meta name="description" content="Converts uploaded or recorded audio/video into accurate written transcripts."><meta property="og:title" content="AI Transcription Module"><meta property="og:description" content="Converts uploaded or recorded audio/video into accurate written transcripts."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>AI Transcription Module</h1> <div class="module-meta"> <div> <span class="module-category">AI</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Converts uploaded or recorded audio/video into accurate written transcripts.</p> <div class="module-icons"> <img src="/assets/modules/ai/openai.png" alt="Technology icon"><img src="/assets/modules/cloudservices/cloudinary.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># AI Transcription Module Overview</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Purpose</span></span>
+<span class="line"><span style="color:#E1E4E8">The AI Transcription Module is designed to convert uploaded or recorded audio and video files into accurate written transcripts. This module leverages advanced artificial intelligence and machine learning algorithms to deliver high-quality text transcriptions, enabling developers to integrate transcription capabilities seamlessly into their applications.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Benefits</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **High Accuracy**</span><span style="color:#E1E4E8">: The module uses state-of-the-art AI models to ensure accurate transcription of speech in various accents and languages.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Versatility**</span><span style="color:#E1E4E8">: Supports a wide range of audio and video formats, making it compatible with diverse use cases.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Real-Time Processing**</span><span style="color:#E1E4E8">: Capable of handling live or recorded media, allowing for immediate transcription during events or post-capture.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Seamless Integration**</span><span style="color:#E1E4E8">: Easily integrates into existing systems, reducing the complexity of implementing transcription features.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Scalability**</span><span style="color:#E1E4E8">: Handles large volumes of data efficiently, making it suitable for both small-scale and enterprise-level applications.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Time-Saving**</span><span style="color:#E1E4E8">: Automates the transcription process, saving developers and users significant time compared to manual transcription.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Usage Scenarios</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Content Creation**</span><span style="color:#E1E4E8">: Developers can use this module to transcribe interviews, podcasts, or meetings into written content for editing or analysis.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Live Transcription**</span><span style="color:#E1E4E8">: Integrate real-time transcription during live events, webinars, or conferences to provide instant text output.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Data Analysis**</span><span style="color:#E1E4E8">: Extract text from audio/video recordings for sentiment analysis, keyword extraction, or other data-driven insights.</span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Accessibility**</span><span style="color:#E1E4E8">: Enhance accessibility by providing written transcripts for audio and video content, making it accessible to individuals with hearing impairments.</span></span>
+<span class="line"><span style="color:#FFAB70">5.</span><span style="color:#E1E4E8;font-weight:bold"> **Internal Tools**</span><span style="color:#E1E4E8">: Developers can build internal tools that automate transcription tasks, such as recording team meetings and generating minutes automatically.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">By incorporating the AI Transcription Module into your development workflow, you can streamline transcription processes, improve efficiency, and deliver enhanced user experiences across various applications.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Features of AI Transcription Module</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 1. Real-Time Transcription</span></span>
+<span class="line"><span style="color:#E1E4E8">The module supports real-time transcription, enabling live audio streams to be converted into text instantly. This feature is ideal for applications requiring immediate feedback, such as voice-controlled systems or live chat applications.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 2. Batch Processing</span></span>
+<span class="line"><span style="color:#E1E4E8">It allows developers to process multiple audio files simultaneously in batch mode. This is particularly useful for large-scale operations where numerous files need transcription without manual intervention.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 3. Customizable Models</span></span>
+<span class="line"><span style="color:#E1E4E8">Developers can choose from various pre-trained models or even train custom models tailored to specific domains or languages, enhancing accuracy and relevance for unique use cases.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 4. High Accuracy and Noise Robustness</span></span>
+<span class="line"><span style="color:#E1E4E8">The module is designed to achieve high transcription accuracy even in noisy environments, ensuring reliable results across diverse settings.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 5. Scalability</span></span>
+<span class="line"><span style="color:#E1E4E8">Integrates seamlessly with cloud services, offering scalability to handle varying loads efficiently, making it suitable for both small-scale applications and large distributed systems.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 6. Multiple File Formats Support</span></span>
+<span class="line"><span style="color:#E1E4E8">Supports a wide range of audio/video formats (e.g., MP3, WAV) without requiring file conversion before processing, streamlining the workflow.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 7. API Integration</span></span>
+<span class="line"><span style="color:#E1E4E8">Offers a flexible and well-documented API for easy integration into existing systems, allowing developers to integrate transcription capabilities effortlessly.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">These features ensure the AI Transcription Module is versatile and robust, catering to diverse developer needs in various applications.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold"># AI Transcription Module Documentation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Overview</span></span>
+<span class="line"><span style="color:#E1E4E8">The AI Transcription Module provides functionality to convert audio/video files into written transcripts using advanced AI models. This module can be integrated with both server-side (FastAPI) and client-side (React) components.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Components</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 1. FastAPI Endpoint</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">```python</span></span>
+<span class="line"><span style="color:#6A737D"># transcription_module.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, UploadFile, File, BackgroundTasks</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> asyncio</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> json</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> os</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> redis</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Initialize Redis for caching</span></span>
+<span class="line"><span style="color:#E1E4E8">redis_cache </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> redis.Redis(</span><span style="color:#FFAB70">host</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">'localhost'</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">port</span><span style="color:#F97583">=</span><span style="color:#79B8FF">6379</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TranscriptionFile</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    file_path: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    duration: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "processing", "completed", "error"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter(</span><span style="color:#FFAB70">prefix</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/api/transcription"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> process_file</span><span style="color:#E1E4E8">(file_path: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, background_tasks: BackgroundTasks):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Process audio file in the background"""</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Simulate transcription process</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> asyncio.sleep(</span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">)  </span><span style="color:#6A737D"># Mock processing time</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Generate transcript ID</span></span>
+<span class="line"><span style="color:#E1E4E8">        transcript_id </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> os.path.splitext(file_path)[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">].replace(</span><span style="color:#9ECBFF">"/"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"-"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Create transcript response</span></span>
+<span class="line"><span style="color:#E1E4E8">        transcript_data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "transcript_id"</span><span style="color:#E1E4E8">: transcript_id,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "content"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Sample transcript text generated from audio file."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "timestamp"</span><span style="color:#E1E4E8">: asyncio.get_event_loop().time()</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#E1E4E8">        background_tasks.add_task(redis_cache.set, </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"transcript:</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">transcript_id</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, json.dumps(transcript_data))</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Transcription started in the background."</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e)}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/upload"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> upload_file</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    file: UploadFile </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> File(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">    background_tasks: BackgroundTasks </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> BackgroundTask()</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Upload and process audio/video file"""</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Save uploaded file</span></span>
+<span class="line"><span style="color:#F97583">        with</span><span style="color:#79B8FF"> open</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">file</span><span style="color:#E1E4E8">.filename, </span><span style="color:#9ECBFF">"wb"</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> f:</span></span>
+<span class="line"><span style="color:#E1E4E8">            f.write(</span><span style="color:#F97583">await</span><span style="color:#FFAB70"> file</span><span style="color:#E1E4E8">.read())</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Process file in the background</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> process_file(</span><span style="color:#FFAB70">file</span><span style="color:#E1E4E8">.filename, background_tasks)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"file_name"</span><span style="color:#E1E4E8">: </span><span style="color:#FFAB70">file</span><span style="color:#E1E4E8">.filename, </span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"processing"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e)}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-snippet">2. React UI Snippet</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// TranscriptionUpload.js</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> TranscriptionUpload</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">isLoading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setIsLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">transcripts</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setTranscripts</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">([]);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">file</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setFile</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleFileChange</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        setFile</span><span style="color:#E1E4E8">(event.target.files[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">]);</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">        setIsLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> formData</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> FormData</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        formData.</span><span style="color:#B392F0">append</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'file'</span><span style="color:#E1E4E8">, file);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/transcription/upload'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">                method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                body: formData</span></span>
+<span class="line"><span style="color:#E1E4E8">            });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#F97583">                throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to upload file'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">            // Poll for transcript status</span></span>
+<span class="line"><span style="color:#F97583">            let</span><span style="color:#E1E4E8"> intervalId </span><span style="color:#F97583">=</span><span style="color:#B392F0"> setInterval</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">                const</span><span style="color:#79B8FF"> statusResponse</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`/api/transcript/${</span><span style="color:#E1E4E8">transcriptId</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">                const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> statusResponse.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">                </span></span>
+<span class="line"><span style="color:#F97583">                if</span><span style="color:#E1E4E8"> (data.completed) {</span></span>
+<span class="line"><span style="color:#B392F0">                    clearInterval</span><span style="color:#E1E4E8">(intervalId);</span></span>
+<span class="line"><span style="color:#B392F0">                    setTranscripts</span><span style="color:#E1E4E8">([</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">transcripts, data]);</span></span>
+<span class="line"><span style="color:#B392F0">                    setIsLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">                }</span></span>
+<span class="line"><span style="color:#E1E4E8">            }, </span><span style="color:#79B8FF">5000</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#B392F0">            setIsLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {isLoading </span><span style="color:#F97583">?</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">>Loading...&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ) </span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                            type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"file"</span></span>
+<span class="line"><span style="color:#B392F0">                            onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleFileChange}</span></span>
+<span class="line"><span style="color:#B392F0">                            accept</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">".wav,.mp3,.avi,.mkv"</span></span>
+<span class="line"><span style="color:#E1E4E8">                        /></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Upload&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    </span></span>
+<span class="line"><span style="color:#E1E4E8">                    {transcripts.</span><span style="color:#79B8FF">length</span><span style="color:#F97583"> ></span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> &#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"transcripts"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                            {transcripts.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">t</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{t.transcript_id}></span></span>
+<span class="line"><span style="color:#E1E4E8">                                    &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>Transcript ID: {t.transcript_id}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                                    &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>{t.content}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                            ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    )}</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/></span></span>
+<span class="line"><span style="color:#E1E4E8">            )}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> TranscriptionUpload;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-data-schema-pydantic">3. Data Schema (Pydantic)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># schemas.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional, List</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> AudioFile</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    file_name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    duration: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#79B8FF">    format</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Transcript</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    transcript_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    timestamp: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TranscriptionResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "success", "error"</span></span>
+<span class="line"><span style="color:#E1E4E8">    result: Optional[Transcript]</span></span>
+<span class="line"><span style="color:#E1E4E8">    error_message: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> BatchTranscriptionResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    files_processed: List[AudioFile]</span></span>
+<span class="line"><span style="color:#E1E4E8">    completed_transcripts: List[Transcript]</span></span>
+<span class="line"></span></code></pre>
+<h2 id="integration-notes">Integration Notes</h2>
+<ol>
+<li>
+<p><strong>Server-Side Requirements</strong>:</p>
+<ul>
+<li>FastAPI installed and configured</li>
+<li>Redis for caching (optional but recommended)</li>
+<li>AI transcription library of your choice (e.g., <code>vosk</code>, <code>google-cloud-speech</code>)</li>
+</ul>
+</li>
+<li>
+<p><strong>Client-Side Requirements</strong>:</p>
+<ul>
+<li>React development environment set up</li>
+<li>Fetch API enabled</li>
+<li>CORS configured if needed</li>
+</ul>
+</li>
+<li>
+<p><strong>Asynchronous Processing</strong>:</p>
+<ul>
+<li>The provided FastAPI endpoint uses background tasks to handle file processing asynchronously.</li>
+<li>Consider implementing a message broker (e.g., RabbitMQ) for larger-scale distributed processing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Handling</strong>:</p>
+<ul>
+<li>Implement proper error handling both on the client and server side</li>
+<li>Use Redis or similar for storing intermediate results</li>
+</ul>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>This documentation provides a comprehensive implementation of an AI transcription module with FastAPI, React, and Pydantic schemas. The code samples can be extended based on specific requirements and scale as needed.</p>
+<h1 id="ai-transcription-module-documentation">AI Transcription Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The AI Transcription Module converts audio and video files into accurate written transcripts using advanced speech-to-text technology.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Audio/Video Processing Module</strong>: Handles the conversion of media formats, ensuring compatibility with transcription requirements.</li>
+<li><strong>Speech-to-Text Engine</strong>: Provides core text generation from audio input.</li>
+<li><strong>Text Normalization Module</strong>: Enhances transcript accuracy by correcting grammar and formatting.</li>
+<li><strong>Multi-Language Support Module</strong>: Enables transcription in various languages.</li>
+<li><strong>Error Handling &#x26; Logging</strong>: Manages exceptions and provides debugging tools.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Real-Time Transcription for Live Events</strong>: Supports simultaneous translation, ideal for webinars or meetings.</li>
+<li><strong>Offline Processing for Pre-recorded Content</strong>: Converts stored media files asynchronously.</li>
+<li><strong>Integration with Chatbots</strong>: Enhances user interaction by providing text-based responses to voice inputs.</li>
+<li><strong>CRM Integration</strong>: Transcribes customer service calls to generate detailed reports and improve insights.</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>File Handling</strong>: Ensure compatibility with supported formats and manage file size constraints.</li>
+<li><strong>Rate Control</strong>: Implement rate limiting to avoid overwhelming the transcription service.</li>
+<li><strong>Error Management</strong>: Handle network issues, timeouts, and corrupted files gracefully.</li>
+<li><strong>Security Practices</strong>: Securely store API keys and encrypt sensitive data during transmission.</li>
+</ul>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Default Value</th><th>Description</th></tr></thead><tbody><tr><td><code>api_key</code></td><td>Required</td><td>Authentication key for API access.</td></tr><tr><td><code>input_format</code></td><td>”wav”</td><td>Supported audio formats: wav, mp3, aac, etc.</td></tr><tr><td><code>output_language</code></td><td>”en-US”</td><td>ISO 639-1 codes for language selection.</td></tr><tr><td><code>include_timestamps</code></td><td>false</td><td>Adds timestamps to the transcript.</td></tr><tr><td><code>speaker_diarization</code></td><td>false</td><td>Enables identification of multiple speakers in the audio.</td></tr><tr><td><code>punctuation</code></td><td>true</td><td>Adds punctuation marks to improve readability.</td></tr><tr><td><code>max_parallel_jobs</code></td><td>5</td><td>Limits concurrent transcription tasks for better resource management.</td></tr><tr><td><code>timeout</code></td><td>60 seconds</td><td>Sets maximum allowed time per transcription request.</td></tr></tbody></table>
+<hr>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li><strong>Optimize Audio Quality</strong>: Use high-quality microphones to enhance transcription accuracy.</li>
+<li><strong>Speaker Diarization</strong>: Provide speaker information for improved accuracy in multi-speaker scenarios.</li>
+<li><strong>Batch Processing</strong>: Utilize asynchronous processing for large volumes of files to reduce latency.</li>
+</ul>
+<hr>
+<h2 id="security-considerations">Security Considerations</h2>
+<ul>
+<li>Store API keys securely, possibly using environment variables or secret management tools.</li>
+<li>Encrypt sensitive data during transmission and storage.</li>
+</ul>
+<hr>
+<h2 id="troubleshooting-tips">Troubleshooting Tips</h2>
+<ul>
+<li><strong>Latency Issues</strong>: Monitor network performance and consider batching requests.</li>
+<li><strong>Accuracy Concerns</strong>: Check audio quality and ensure proper speaker information is provided.</li>
+<li><strong>Error Handling</strong>: Implement comprehensive logging to track exceptions and debug issues effectively.</li>
+</ul>
+<p>This documentation provides a detailed guide for developers integrating the AI Transcription Module, ensuring optimal performance and security.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

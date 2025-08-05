@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Screen Share Support</title><meta name="description" content="Allow instructors or students to share their screens during sessions."><meta property="og:title" content="Screen Share Support"><meta property="og:description" content="Allow instructors or students to share their screens during sessions."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Screen Share Support</h1> <div class="module-meta"> <div> <span class="module-category">Video</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Allow instructors or students to share their screens during sessions.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/cloudservices/daily.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="screen-share-support-module-overview">Screen Share Support Module Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Screen Share Support module is designed to enable real-time screen sharing between instructors and students during classroom sessions. This feature enhances collaborative learning by allowing participants to share their screens, facilitating interactive teaching and immediate feedback.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Enhanced Teaching Methods</strong>: Instructors can visually demonstrate concepts, making lessons more engaging and easier to understand.</li>
+<li><strong>Improved Learning Experience</strong>: Students benefit from visual aids, which can aid in better comprehension of complex topics.</li>
+<li><strong>Remote Classroom Engagement</strong>: Supports distance learning by bringing remote students into the interactive classroom environment.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Instructor-Led Demonstrations</strong>: Instructors share their screens to walk through problems or demonstrate software usage during lectures.</li>
+<li><strong>Student Collaboration</strong>: Students can share their screens to seek help from instructors or discuss work with peers, fostering a collaborative atmosphere.</li>
+<li><strong>Group Work Support</strong>: Multiple participants can simultaneously share their screens, promoting teamwork and idea exchange.</li>
+</ol>
+<p>This module integrates seamlessly into classroom environments, whether in-person or remote, to enrich the educational experience through interactive screen sharing capabilities.</p>
+<h2 id="key-features-of-screen-share-support-module">Key Features of Screen Share Support Module</h2>
+<h3 id="1-screen-sharing-functionality">1. <strong>Screen Sharing Functionality</strong></h3>
+<ul>
+<li>Enables instructors or students to share their entire screen or specific windows/applications during a classroom session.</li>
+<li>Real-time synchronization ensures all participants view the shared content simultaneously.</li>
+</ul>
+<h3 id="2-permission-control">2. <strong>Permission Control</strong></h3>
+<ul>
+<li>Role-based permissions allow only authorized users (e.g., instructors) to initiate or stop screen sharing.</li>
+<li>Restricts unauthorized access, enhancing security and maintaining classroom focus.</li>
+</ul>
+<h3 id="3-user-interface-for-presenters">3. <strong>User Interface for Presenters</strong></h3>
+<ul>
+<li>Provides a user-friendly interface with controls for starting/ending screen sharing and managing shared content.</li>
+<li>Includes options for switching between full-screen mode and specific windows/applications.</li>
+</ul>
+<h3 id="4-viewer-controls">4. <strong>Viewer Controls</strong></h3>
+<ul>
+<li>Viewers can start or stop the screen share session, ensuring active participation.</li>
+<li>Offers the ability to mute/unmute audio, enhancing control over the viewing experience.</li>
+</ul>
+<h3 id="5-low-latency-and-performance-optimization">5. <strong>Low Latency and Performance Optimization</strong></h3>
+<ul>
+<li>Optimized for minimal latency, ensuring a smooth real-time sharing experience.</li>
+<li>Efficient bandwidth usage reduces lag and ensures seamless interaction, even in high-participant environments.</li>
+</ul>
+<h3 id="6-recording-capability">6. <strong>Recording Capability</strong></h3>
+<ul>
+<li>Option to record screen share sessions for later review or distribution.</li>
+<li>Facilitates content retention and allows students to revisit shared material post-session.</li>
+</ul>
+<h3 id="7-access-control">7. <strong>Access Control</strong></h3>
+<ul>
+<li>Restricts access to shared screens based on user roles or permissions, enhancing security in educational settings.</li>
+<li>Prevents unauthorized viewing, maintaining the integrity of classroom discussions.</li>
+</ul>
+<h3 id="8-cross-platform-compatibility">8. <strong>Cross-Platform Compatibility</strong></h3>
+<ul>
+<li>Supports screen sharing across multiple operating systems (Windows, macOS, Linux) and devices, ensuring broad accessibility.</li>
+<li>Enhances inclusivity by accommodating diverse hardware and software environments.</li>
+</ul>
+<h3 id="9-customizable-user-interface">9. <strong>Customizable User Interface</strong></h3>
+<ul>
+<li>Customizable UI elements allow branding to match institutional needs.</li>
+<li>Offers flexibility in appearance, enhancing the user experience with tailored visuals.</li>
+</ul>
+<h3 id="10-session-management">10. <strong>Session Management</strong></h3>
+<ul>
+<li>Logs screen share sessions with timestamps for review and analysis.</li>
+<li>Tracks session history, providing transparency and aiding in troubleshooting if issues arise.</li>
+</ul>
+<h3 id="11-integration-with-other-tools">11. <strong>Integration with Other Tools</strong></h3>
+<ul>
+<li>Seamlessly integrates with other classroom tools like video conferencing platforms.</li>
+<li>Enhances workflow by allowing developers to integrate the module into existing systems via APIs.</li>
+</ul>
+<p>These features collectively ensure a robust, secure, and user-friendly screen sharing experience tailored for educational environments, empowering both instructors and students in collaborative learning.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Screen Share Support Module Documentation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Overview</span></span>
+<span class="line"><span style="color:#E1E4E8">The Screen Share Support module enables real-time screen sharing functionality during classroom sessions. It allows instructors and students to share their screens seamlessly.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## API Reference</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 1. FastAPI Endpoint (Backend)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">This endpoint handles screen sharing requests.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">```python:backend/api/screen_share.py</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ScreenShareRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    session_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_role: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "instructor" or "student"</span></span>
+<span class="line"><span style="color:#E1E4E8">    include_audio: Optional[</span><span style="color:#79B8FF">bool</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> False</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/screen-share"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> handle_screen_share</span><span style="color:#E1E4E8">(request: ScreenShareRequest):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Handle screen sharing request.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Implement your screen sharing logic here</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Screen sharing request received from </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">request.user_role</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="2-react-ui-component-frontend">2. React UI Component (Frontend)</h3>
+<p>This component implements the screen sharing interface.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>import React, { useState } from 'react';</span></span>
+<span class="line"><span>import axios from 'axios';</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const ScreenShareButton = () => {</span></span>
+<span class="line"><span>    const [isSharing, setIsSharing] = useState(false);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const handleScreenShare = async () => {</span></span>
+<span class="line"><span>        try {</span></span>
+<span class="line"><span>            setIsSharing(true);</span></span>
+<span class="line"><span>            const response = await axios.post(</span></span>
+<span class="line"><span>                '/api/screen-share',</span></span>
+<span class="line"><span>                {</span></span>
+<span class="line"><span>                    session_id: 'your-session-id',  // Replace with actual session ID</span></span>
+<span class="line"><span>                    user_role: 'student',  // Replace with actual user role</span></span>
+<span class="line"><span>                    include_audio: true  // Toggle audio inclusion</span></span>
+<span class="line"><span>                }</span></span>
+<span class="line"><span>            );</span></span>
+<span class="line"><span>            console.log('Screen sharing initiated:', response.data);</span></span>
+<span class="line"><span>        } catch (error) {</span></span>
+<span class="line"><span>            console.error('Error initiating screen share:', error);</span></span>
+<span class="line"><span>        } finally {</span></span>
+<span class="line"><span>            setIsSharing(false);</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    return (</span></span>
+<span class="line"><span>        &#x3C;button </span></span>
+<span class="line"><span>            onClick={handleScreenShare}</span></span>
+<span class="line"><span>            disabled={isSharing}</span></span>
+<span class="line"><span>            className={`px-4 py-2 rounded ${isSharing ? 'bg-gray' : 'bg-blue text-white'}`}</span></span>
+<span class="line"><span>        ></span></span>
+<span class="line"><span>            {isSharing ? 'Sharing...' : 'Start Screen Share'}</span></span>
+<span class="line"><span>        &#x3C;/button></span></span>
+<span class="line"><span>    );</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default ScreenShareButton;</span></span>
+<span class="line"><span></span></span></code></pre>
+<hr>
+<h3 id="3-data-schema-pydantic">3. Data Schema (Pydantic)</h3>
+<p>This defines the structure of screen sharing requests.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>from pydantic import BaseModel</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>class ScreenShareRequest(BaseModel):</span></span>
+<span class="line"><span>    session_id: str</span></span>
+<span class="line"><span>    user_role: str  # "instructor" or "student"</span></span>
+<span class="line"><span>    include_audio: Optional[bool] = False</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    class Config:</span></span>
+<span class="line"><span>        json_schema_extra = {</span></span>
+<span class="line"><span>            "example": {</span></span>
+<span class="line"><span>                "session_id": "63b0f4d2-789a-456e-a12b-3c45d6e8f0a1",</span></span>
+<span class="line"><span>                "user_role": "instructor",</span></span>
+<span class="line"><span>                "include_audio": True</span></span>
+<span class="line"><span>            }</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span></span></span></code></pre>
+<hr>
+<h2 id="installation-guide">Installation Guide</h2>
+<h3 id="backend-dependencies-python">Backend Dependencies (Python)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> fastapi</span><span style="color:#9ECBFF"> uvicorn</span><span style="color:#9ECBFF"> python-multipart</span></span>
+<span class="line"></span></code></pre>
+<h3 id="frontend-dependencies-javascriptnodejs">Frontend Dependencies (JavaScript/Node.js)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> react</span><span style="color:#9ECBFF"> react-dom</span><span style="color:#9ECBFF"> axios</span></span>
+<span class="line"></span></code></pre>
+<h2 id="usage-instructions">Usage Instructions</h2>
+<ol>
+<li>Start the FastAPI server.</li>
+<li>Run the React frontend application.</li>
+<li>Use the <code>ScreenShareButton</code> component to initiate screen sharing.</li>
+</ol>
+<hr>
+<p>This documentation provides a comprehensive overview of the Screen Share Support module, including implementation details and usage instructions.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span># Screen Share Support Module Documentation</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Overview</span></span>
+<span class="line"><span>The **Screen Share Support** module enables instructors or students to share their screens during classroom sessions. This feature allows for real-time collaboration and interaction during virtual classes, presentations, or group work.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Related Modules</span></span>
+<span class="line"><span>- **User Management**: Handles authentication and permissions for screen sharing.</span></span>
+<span class="line"><span>- **Session Management**: Manages active classroom sessions and participant roles (instructor vs. student).</span></span>
+<span class="line"><span>- **Notifications**: Sends alerts to participants when someone starts sharing their screen.</span></span>
+<span class="line"><span>- **Recording Module**: Records shared screens for later review (if enabled).</span></span>
+<span class="line"><span>- **Messaging System**: Allows participants to communicate during screen sharing.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Use Cases</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 1. Instructor Initiates Screen Share</span></span>
+<span class="line"><span>- **Description**: The instructor can start sharing their screen during a live session.</span></span>
+<span class="line"><span>- **Steps**:</span></span>
+<span class="line"><span>  1. Open the classroom session.</span></span>
+<span class="line"><span>  2. Click on the "Screen Share" button in the toolbar.</span></span>
+<span class="line"><span>  3. Select the screen or application to share.</span></span>
+<span class="line"><span>  4. Students will see the shared content in their view.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 2. Student Requests Screen Share</span></span>
+<span class="line"><span>- **Description**: A student can request permission to share their screen with the class.</span></span>
+<span class="line"><span>- **Steps**:</span></span>
+<span class="line"><span>  1. Open the classroom session.</span></span>
+<span class="line"><span>  2. Click on the "Request to Share" button.</span></span>
+<span class="line"><span>  3. The instructor receives a notification and can approve or decline the request.</span></span>
+<span class="line"><span>  4. If approved, the student's screen is shared with the class.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 3. Stop Screen Sharing Automatically</span></span>
+<span class="line"><span>- **Description**: If no one is sharing their screen for a configured period (e.g., 5 minutes), the system automatically stops the screen share to conserve resources.</span></span>
+<span class="line"><span>- **Steps**:</span></span>
+<span class="line"><span>  1. The system monitors inactivity during screen sharing.</span></span>
+<span class="line"><span>  2. If inactivity exceeds the threshold, the screen sharing session ends.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Integration Tips</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 1. Real-Time Communication</span></span>
+<span class="line"><span>- Use WebSocket or similar technologies for real-time updates between participants when someone starts or stops sharing their screen.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 2. Permission Handling</span></span>
+<span class="line"><span>- Ensure that only authorized users (e.g., instructors) can grant or revoke screen sharing permissions to students.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### 3. UI Feedback</span></span>
+<span class="line"><span>- Provide visual feedback in the interface (e.g., a status indicator) when someone is sharing their screen.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Configuration Options</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>| **Parameter**               | **Description**                                                                 | **Default Value** | **Acceptable Values**         | **Remarks**                              |</span></span>
+<span class="line"><span>|------------------------------|---------------------------------------------------------------------------------|------------------|-------------------------------|------------------------------------------|</span></span>
+<span class="line"><span>| `enable_screen_share`        | Enable or disable screen sharing functionality.                                 | `true`           | `true`, `false`               | Must be set to `true` for the feature to work. |</span></span>
+<span class="line"><span>| `max_active_shares`          | Maximum number of screens that can be shared simultaneously.                    | `1`              | Integer values >= 0           | Set based on expected class size.        |</span></span>
+<span class="line"><span>| `auto_stop_timeout`          | Time in minutes after which an inactive screen share session stops automatically.| `5`               | Integer values >= 0            | Adjust based on usage patterns.           |</span></span>
+<span class="line"><span>| `record_shared_content`      | Enable or disable recording of shared screens.                                  | `false`          | `true`, `false`                | Requires integration with the Recording Module. |</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>--- </span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>This documentation provides a comprehensive overview of the **Screen Share Support** module, including related modules, use cases, integration tips, and configuration options. Developers can use this information to seamlessly integrate screen sharing functionality into the application.</span></span>
+<span class="line"><span></span></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

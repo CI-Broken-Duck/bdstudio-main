@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>AI-Powered Dashboard Widgets</title><meta name="description" content="Dynamic components that surface insights or tips based on user behavior."><meta property="og:title" content="AI-Powered Dashboard Widgets"><meta property="og:description" content="Dynamic components that surface insights or tips based on user behavior."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>AI-Powered Dashboard Widgets</h1> <div class="module-meta"> <div> <span class="module-category">AI</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Dynamic components that surface insights or tips based on user behavior.</p> <div class="module-icons"> <img src="/assets/modules/ai/openai.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-ai-powered-dashboard-widgets-module">Overview: AI-Powered Dashboard Widgets Module</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The AI-Powered Dashboard Widgets module is designed to dynamically display insights and tips on dashboards using artificial intelligence. These widgets adapt based on user behavior, providing actionable information that enhances decision-making processes.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Real-Time Insights:</strong> Delivers timely data-driven insights, enabling quick informed decisions.</li>
+<li><strong>Personalization:</strong> Uses machine learning to tailor content to individual user needs.</li>
+<li><strong>Efficiency Gains:</strong> Reduces cognitive load by presenting relevant information, streamlining tasks.</li>
+<li><strong>Seamless Integration:</strong> Easily integrates with existing systems without disrupting workflows.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Marketing Dashboard:</strong> Highlights campaign performance trends and engagement metrics in real-time.</li>
+<li><strong>Finance Dashboard:</strong> Identifies spending anomalies and financial trends.</li>
+<li><strong>Analytics Dashboard:</strong> Predicts user behavior patterns for proactive decision-making.</li>
+<li><strong>Customer Support Dashboard:</strong> Offers tailored recommendations based on user interactions.</li>
+</ol>
+<p>This module enhances dashboards by embedding AI-driven insights, making them more interactive and effective for data-driven decisions.</p>
+<h1 id="ai-powered-dashboard-widgets-documentation">AI-Powered Dashboard Widgets Documentation</h1>
+<p>This module provides dynamic, AI-driven components that enhance dashboard functionality by surfacing actionable insights, recommendations, and context-aware tips based on user behavior. Below are the key features of this module.</p>
+<h2 id="real-time-insights-generation">Real-Time Insights Generation</h2>
+<ul>
+<li><strong>Description</strong>: Leverages AI algorithms to analyze live data streams and generate real-time insights or alerts.</li>
+<li><strong>Explanation</strong>: This feature processes current data inputs, identifies trends, anomalies, or patterns, and delivers actionable information directly within the dashboard interface. It empowers users with up-to-the-minute knowledge to make informed decisions.</li>
+</ul>
+<h2 id="personalized-recommendations">Personalized Recommendations</h2>
+<ul>
+<li><strong>Description</strong>: Tailors recommendations based on individual user behavior and preferences.</li>
+<li><strong>Explanation</strong>: By tracking user interactions, such as frequently visited widgets, clicked metrics, or ignored insights, the module adapts its suggestions to align with user interests. This enhances usability and reduces information overload.</li>
+</ul>
+<h2 id="adaptive-learning-engine">Adaptive Learning Engine</h2>
+<ul>
+<li><strong>Description</strong>: Uses machine learning models to continuously improve widget performance over time.</li>
+<li><strong>Explanation</strong>: The AI engine analyzes feedback from user interactions and adjusts how widgets deliver insights. Over time, this results in more accurate and relevant recommendations, making the dashboard smarter with use.</li>
+</ul>
+<h2 id="context-aware-widgets">Context-Aware Widgets</h2>
+<ul>
+<li><strong>Description</strong>: Widgets that adapt their behavior based on the context of where they are placed on the dashboard.</li>
+<li><strong>Explanation</strong>: These widgets dynamically adjust their content or layout based on surrounding elements, ensuring a cohesive and intuitive user experience. For example, a widget might display weather data differently when placed next to a calendar.</li>
+</ul>
+<h2 id="integration-with-third-party-tools">Integration with Third-Party Tools</h2>
+<ul>
+<li><strong>Description</strong>: Ability to integrate seamlessly with external AI tools and data sources.</li>
+<li><strong>Explanation</strong>: The module can connect with third-party APIs, services, or platforms, allowing developers to extend its functionality. This enables users to leverage external data or AI models within their dashboards.</li>
+</ul>
+<h2 id="customizable-rules-engine">Customizable Rules Engine</h2>
+<ul>
+<li><strong>Description</strong>: Allows developers to define custom rules for triggering specific actions or insights.</li>
+<li><strong>Explanation</strong>: Developers can set conditional logic based on user behavior, data thresholds, or time-based criteria. For example, a rule could trigger an alert when a certain metric exceeds predefined limits.</li>
+</ul>
+<h2 id="performance-optimization">Performance Optimization</h2>
+<ul>
+<li><strong>Description</strong>: Optimizes resource usage and improves rendering speed of AI-driven widgets.</li>
+<li><strong>Explanation</strong>: The module includes built-in optimizations to ensure smooth performance even with large datasets or complex computations. This is achieved through efficient data processing pipelines and lightweight AI models.</li>
+</ul>
+<h2 id="security-and-privacy-features">Security and Privacy Features</h2>
+<ul>
+<li><strong>Description</strong>: Implements robust security measures to protect user data and insights.</li>
+<li><strong>Explanation</strong>: Ensures that all AI processes are conducted securely, both in terms of data encryption and access control. User data is protected from unauthorized access, and compliance with relevant regulations (e.g., GDPR) is maintained.</li>
+</ul>
+<h2 id="cross-platform-compatibility">Cross-Platform Compatibility</h2>
+<ul>
+<li><strong>Description</strong>: Works seamlessly across multiple platforms and devices.</li>
+<li><strong>Explanation</strong>: The module supports various operating systems, browsers, and device types, ensuring consistent functionality regardless of where the dashboard is accessed.</li>
+</ul>
+<h2 id="extensible-api-interface">Extensible API Interface</h2>
+<ul>
+<li><strong>Description</strong>: Provides a comprehensive API for developers to extend or customize AI-powered features.</li>
+<li><strong>Explanation</strong>: Developers can interact with the module programmatically, enabling integration with external systems, customization of AI models, or extension of existing functionality.</li>
+</ul>
+<h1 id="ai-powered-dashboard-widgets-documentation-1">AI-Powered Dashboard Widgets Documentation</h1>
+<p>This documentation outlines how to integrate AI-powered dashboard widgets into your application, providing insights based on user behavior.</p>
+<h2 id="1-api-endpoint-fastapi">1. API Endpoint (FastAPI)</h2>
+<p>Here’s an example of a FastAPI endpoint that retrieves user-specific insights:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> ..models.insights </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> InsightRequest, InsightResponse</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> ..database.models </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> UserInteraction</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> sqlalchemy </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> sql</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/insights"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">List[InsightResponse])</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> get_user_insights</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    page_size: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    db: sql.ext.asyncio.AsyncSession </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends(),</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Get AI-powered insights for a specific user."""</span></span>
+<span class="line"><span style="color:#6A737D">    # Validate inputs using Pydantic</span></span>
+<span class="line"><span style="color:#E1E4E8">    request_schema </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> InsightRequest(</span><span style="color:#FFAB70">user_id</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">user_id, </span><span style="color:#FFAB70">page_size</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">page_size)</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Calculate interaction count and generate score</span></span>
+<span class="line"><span style="color:#E1E4E8">        total_interactions </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> db.execute(</span></span>
+<span class="line"><span style="color:#E1E4E8">            sql.select([sql.func.count(UserInteraction.id)]).where(</span></span>
+<span class="line"><span style="color:#E1E4E8">                UserInteraction.user_id </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> user_id</span></span>
+<span class="line"><span style="color:#E1E4E8">            )</span></span>
+<span class="line"><span style="color:#E1E4E8">        )</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#E1E4E8">        insight_score </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (total_interactions </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> page_size) </span><span style="color:#F97583">*</span><span style="color:#79B8FF"> 100</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Return paginated insights</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "insights"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">                {</span></span>
+<span class="line"><span style="color:#9ECBFF">                    "id"</span><span style="color:#E1E4E8">: i.id,</span></span>
+<span class="line"><span style="color:#9ECBFF">                    "title"</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Insight #</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">i.id</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                    "description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"AI-powered user interaction analysis"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                    "score"</span><span style="color:#E1E4E8">: insight_score,</span></span>
+<span class="line"><span style="color:#9ECBFF">                    "is_actionable"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                }</span></span>
+<span class="line"><span style="color:#F97583">                for</span><span style="color:#E1E4E8"> i </span><span style="color:#F97583">in</span><span style="color:#79B8FF"> range</span><span style="color:#E1E4E8">(page_size)</span></span>
+<span class="line"><span style="color:#E1E4E8">            ],</span></span>
+<span class="line"><span style="color:#9ECBFF">            "page_info"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "total_pages"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "current_page"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "items_per_page"</span><span style="color:#E1E4E8">: page_size</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h2 id="2-react-ui-component">2. React UI Component</h2>
+<p>Here’s a React component to display the insights:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState, useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> Insight</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">    id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    title</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    description</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    score</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    is_actionable</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> InsightsResponse</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">    insights</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Insight</span><span style="color:#E1E4E8">[];</span></span>
+<span class="line"><span style="color:#FFAB70">    page_info</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">        total_pages</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">        current_page</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">        items_per_page</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> DashboardWidget</span><span style="color:#F97583">:</span><span style="color:#B392F0"> React</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">FC</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">insights</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setInsights</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">Insight</span><span style="color:#E1E4E8">[]>([]);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">loading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">error</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setError</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">string</span><span style="color:#E1E4E8">>(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#B392F0"> fetchInsights</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">                const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/insights'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">                if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) </span><span style="color:#F97583">throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to fetch insights'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">                </span></span>
+<span class="line"><span style="color:#F97583">                const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583">:</span><span style="color:#B392F0"> InsightsResponse</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">                setInsights</span><span style="color:#E1E4E8">(data.insights);</span></span>
+<span class="line"><span style="color:#E1E4E8">            } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (err) {</span></span>
+<span class="line"><span style="color:#B392F0">                setError</span><span style="color:#E1E4E8">(err </span><span style="color:#F97583">instanceof</span><span style="color:#B392F0"> Error</span><span style="color:#F97583"> ?</span><span style="color:#E1E4E8"> err.message </span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 'Failed to load insights'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            } </span><span style="color:#F97583">finally</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">                setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">        fetchInsights</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (loading) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"h-64 bg-gray-100 rounded-lg animate-pulse"</span><span style="color:#E1E4E8"> />;</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (error) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text-red-500"</span><span style="color:#E1E4E8">>{error}&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"bg-white p-6 rounded-lg shadow-sm"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text-xl font-semibold mb-4"</span><span style="color:#E1E4E8">>User Insights&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"space-y-4"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                {insights.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">insight</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">div</span></span>
+<span class="line"><span style="color:#B392F0">                        key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{insight.id}</span></span>
+<span class="line"><span style="color:#B392F0">                        className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"border rounded p-3 hover:bg-gray-50 transition-colors"</span></span>
+<span class="line"><span style="color:#E1E4E8">                    ></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"font-medium"</span><span style="color:#E1E4E8">>{insight.title}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text-sm text-gray-600"</span><span style="color:#E1E4E8">>{insight.description}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"mt-2 flex items-center"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                            &#x3C;</span><span style="color:#85E89D">span</span></span>
+<span class="line"><span style="color:#B392F0">                                className</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">`px-3 py-1 rounded-full text-sm ${</span></span>
+<span class="line"><span style="color:#E1E4E8">                                    insight</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">score</span><span style="color:#F97583"> >=</span><span style="color:#79B8FF"> 75</span></span>
+<span class="line"><span style="color:#F97583">                                        ?</span><span style="color:#9ECBFF"> 'bg-green-100 text-green-800'</span></span>
+<span class="line"><span style="color:#F97583">                                        :</span><span style="color:#9ECBFF"> 'bg-yellow-100 text-yellow-800'</span></span>
+<span class="line"><span style="color:#9ECBFF">                                }`</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                            ></span></span>
+<span class="line"><span style="color:#E1E4E8">                                Score: {insight.score}%</span></span>
+<span class="line"><span style="color:#E1E4E8">                            &#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> DashboardWidget;</span></span>
+<span class="line"></span></code></pre>
+<h2 id="3-pydantic-data-schema">3. Pydantic Data Schema</h2>
+<p>Here are the Pydantic models for request and response validation:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel, Field</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> InsightRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Schema for validating API requests to get insights."""</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"User ID for which to generate insights."</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    page_size: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span></span>
+<span class="line"><span style="color:#79B8FF">        ...</span><span style="color:#E1E4E8">, </span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Number of insights per page."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        min</span><span style="color:#F97583">=</span><span style="color:#79B8FF">1</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> InsightResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Schema for AI-powered insight responses."""</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Unique identifier for the insight."</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Title of the insight."</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">max_length</span><span style="color:#F97583">=</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span></span>
+<span class="line"><span style="color:#79B8FF">        ...</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Description of the insight."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        max_length</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#E1E4E8">    score: </span><span style="color:#79B8FF">float</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span></span>
+<span class="line"><span style="color:#79B8FF">        ...</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"AI-generated confidence score (0-100)."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        min</span><span style="color:#F97583">=</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        max</span><span style="color:#F97583">=</span><span style="color:#79B8FF">100</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#E1E4E8">    is_actionable: </span><span style="color:#79B8FF">bool</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Whether the insight is actionable."</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> InsightsResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Schema for paginated insights responses."""</span></span>
+<span class="line"><span style="color:#E1E4E8">    insights: List[InsightResponse] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Field(</span></span>
+<span class="line"><span style="color:#79B8FF">        ...</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"List of AI-powered insights."</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#E1E4E8">    page_info: </span><span style="color:#79B8FF">dict</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span></span>
+<span class="line"><span style="color:#79B8FF">        ...</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Pagination information."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        example</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#9ECBFF">            "total_pages"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "current_page"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "items_per_page"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"></span></code></pre>
+<p>These components provide a complete implementation of AI-powered dashboard widgets, from the backend API to the frontend UI and data validation.</p>
+<h1 id="ai-powered-dashboard-widgets-module-documentation">AI-Powered Dashboard Widgets Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>AI-Powered Dashboard Widgets</strong> module provides dynamic, intelligent components that leverage machine learning models to surface insights, recommendations, or tips based on user behavior. These widgets are designed to enhance the user experience of dashboards by delivering context-aware information in real-time.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><a href="https://www.tensorflow.org/js">TensorFlow.js</a>: For integrating machine learning models into JavaScript applications.</li>
+<li><a href="https://langchain.com/">LangChain.js</a>: A framework for building chain-of-thought reasoning in language models.</li>
+<li><a href="https://fast.ai/">Fast.ai</a>: Simplifies training and deploying deep learning models.</li>
+<li><a href="https://plot.ly/">Plotly</a>: For interactive data visualization.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Real-Time Recommendations</strong>: Display personalized suggestions based on user interactions (e.g., product recommendations, content suggestions).</li>
+<li><strong>Behavioral Insights</strong>: Show trends or patterns in user behavior for better decision-making.</li>
+<li><strong>Anomaly Detection</strong>: Highlight unusual activity that may require attention.</li>
+<li><strong>Context-Aware Tips</strong>: Provide actionable tips based on the current state of the dashboard data.</li>
+<li><strong>Dynamic Visualizations</strong>: Automatically update charts and graphs to reflect relevant insights.</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li><strong>Data Collection</strong>:
+<ul>
+<li>Ensure your widget has access to the necessary user interaction data (e.g., clicks, hover events).</li>
+</ul>
+</li>
+<li><strong>Model Compatibility</strong>:
+<ul>
+<li>Use pre-trained models or integrate custom ML pipelines for generating insights.</li>
+</ul>
+</li>
+<li><strong>Performance Optimization</strong>:
+<ul>
+<li>Optimize inference speed by using lightweight models or caching frequent predictions.</li>
+</ul>
+</li>
+<li><strong>Error Handling</strong>:
+<ul>
+<li>Implement fallback mechanisms in case of model failures (e.g., show generic tips).</li>
+</ul>
+</li>
+<li><strong>Customization</strong>:
+<ul>
+<li>Allow users to configure the widget’s behavior (e.g., enable/disable recommendations).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>Below are the configuration options available for the AI-Powered Dashboard Widgets module:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Parameter</strong></th><th><strong>Type</strong></th><th><strong>Default Value</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td><code>apiKey</code></td><td>String</td><td>Required</td><td>API key for accessing ML models or external services.</td></tr><tr><td><code>enableInsights</code></td><td>Boolean</td><td><code>true</code></td><td>Enable/disable the generation of behavioral insights.</td></tr><tr><td><code>samplingRate</code></td><td>Number</td><td><code>0.1</code></td><td>Sampling rate for user interaction data (e.g., 0.1 means 10% of events).</td></tr><tr><td><code>modelEndpoint</code></td><td>String</td><td><code>localhost:5000</code></td><td>URL of the ML model endpoint for predictions.</td></tr><tr><td><code>cacheEnabled</code></td><td>Boolean</td><td><code>true</code></td><td>Enable caching of model results to improve performance.</td></tr><tr><td><code>widgetWidth</code></td><td>Number</td><td><code>300</code></td><td>Width of the widget in pixels.</td></tr><tr><td><code>updateInterval</code></td><td>Number</td><td><code>60000</code></td><td>Interval (in milliseconds) for updating widget content.</td></tr><tr><td><code>authToken</code></td><td>String</td><td><code>null</code></td><td>Authentication token for secured API endpoints.</td></tr><tr><td><code>loggingLevel</code></td><td>String</td><td><code>'INFO'</code></td><td>Logging level (<code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, or <code>ERROR</code>).</td></tr><tr><td><code>theme</code></td><td>String</td><td><code>'light'</code></td><td>Theme of the widget (<code>light</code>, <code>dark</code>, or <code>custom</code>).</td></tr></tbody></table>
+<hr>
+<h2 id="example-configuration">Example Configuration</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> config</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  apiKey: </span><span style="color:#9ECBFF">'your_api_key_here'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  enableInsights: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  samplingRate: </span><span style="color:#79B8FF">0.1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  modelEndpoint: </span><span style="color:#9ECBFF">'https://model-endpoint.example'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  cacheEnabled: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  widgetWidth: </span><span style="color:#79B8FF">300</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  updateInterval: </span><span style="color:#79B8FF">60000</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Configuration files can be stored in <code>src/config/widgetConfig.js</code> or any other location based on your project structure.</li>
+<li>For detailed implementation steps, refer to the <a href="https://example.com/developer-guide">Developer Guide</a>.</li>
+</ul>
+<hr>
+<p>Let me know if you need further details!</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

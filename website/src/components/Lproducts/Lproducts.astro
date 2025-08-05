@@ -1,0 +1,125 @@
+---
+// Lproducts.astro
+import "../Lproducts/Lproducts.css";
+
+const products = [
+  {
+    name: "Tchaikovsky – AI Music Studio",
+    video: "/assets/videos/tchai.mp4",
+    image: "/assets/images/tchai.png",
+    description: `Tchaikovsky is an AI-powered music composition platform we’ve been building since 2024. It runs entirely in the browser and lets users generate and edit music with natural language. Combining a real-time DAW interface with transformer-based MIDI generation, the project blends full-stack web development with cutting-edge AI to reimagine how music is created.`,
+    highlights: [
+      "Text-to-MIDI generation using transformer models",
+      "Real-time SoundFont playback with waveform preview",
+      "Export options for MIDI, MP3, and WAV",
+      "Built with FastAPI, SQLModel, and Astro"
+    ],
+    link: "https://tchaikovsky.cloud"
+  },
+  {
+    name: "Influent Space",
+    video: "/assets/videos/ifluent.mp4",
+    image: "/assets/images/ifspace.png",
+    description: `Influent Space is a platform we’re building for IELTS preparation, blending AI feedback with human tutoring. It’s designed to give learners fast, reliable insights into their performance on speaking and writing tasks.
+
+The system provides band-level scoring, instant feedback, and visual progress tracking through custom dashboards. This solo project merges our background in education, video production, and generative AI tools into a responsive test-prep experience.`,
+    highlights: [
+      "AI scoring for IELTS Writing and Speaking",
+      "Custom dashboards for tracking progress over time",
+      "Mock test system with instant band-level feedback",
+      "Human tutoring integration planned for live coaching"
+    ]
+  },
+  {
+    name: "Reactivid – AI Explainer Generator",
+    image: "/assets/images/reactivid.png",
+    description: `Reactivid is our upcoming platform for instantly generating educational explainer videos using AI. Built for creators, educators, and startups, Reactivid will transform structured input into studio-quality, on-brand animations in minutes.`,
+    highlights: [
+      "Script-to-video pipeline with natural pacing",
+      "AI-powered voiceovers and transitions",
+      "Custom templates for consistent branding",
+      "Coming in 2026"
+    ]
+  }
+];
+---
+
+<section class="products-section">
+  <h1 class="section-heading">Our Flagship Products</h1>
+  <p class="section-blurb">
+    These are the platforms and tools we’re most proud of—real products solving real problems with a mix of AI, software, and storytelling. Thanks for taking a look.
+  </p>
+
+
+  <div class="product-grid">
+    {products.map((product, index) => (
+      <div class="product-card" key={index}>
+        <div class="product-media">
+          {product.videoVerticals && (
+            <div class="video-verticals">
+              {product.videoVerticals.map((src, i) => (
+                <video
+                  key={i}
+                  src={src}
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="vertical-video"
+                ></video>
+              ))}
+            </div>
+          )}
+
+          {product.video && (
+            <video
+              src={product.video}
+              autoplay
+              muted
+              loop
+              playsinline
+              class="landscape-video"
+            ></video>
+          )}
+
+          {product.youtubeEmbed && (
+            <iframe
+              src={product.youtubeEmbed}
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              class="youtube-embed"
+            ></iframe>
+          )}
+
+          {product.image && (
+            <img
+              src={product.image}
+              alt={product.name + ' image'}
+              class="product-image"
+            />
+          )}
+        </div>
+
+        <div class="product-content">
+          <h3 class="product-title">{product.name}</h3>
+          <p class="product-description">{product.description}</p>
+          <ul class="product-highlights">
+            {product.highlights.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+          {product.link && (
+            <a
+              href={product.link}
+              target="_blank"
+              class="product-link"
+            >
+              Sign up for {product.name} beta
+            </a>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

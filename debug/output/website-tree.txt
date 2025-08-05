@@ -1,0 +1,703 @@
+Broken Duck Studio – Website Overview
+
+This site serves as the public-facing website for Broken Duck Studio, a Chiang Mai-based members club and production studio for YouTube creators. The website is adapted from the Broken Duck Media platform and built with Astro to showcase the studio's facilities, events, and membership information.
+
+Key areas of the site:
+- Informational pages about membership, events, and services
+- Facility and amenities overview
+- Member pricing and booking structure
+- Contact and FAQ sections
+- Blog/Resources section for updates and posts
+
+Technologies used include Astro, Markdown, and Vanilla CSS, with performance-focused deployment strategies suitable for static hosting.
+
+To launch locally:
+```bash
+cd ~/Desktop/bdstudio-main/website
+npm install
+npm run dev
+```
+
+# WEBSITE FILE STRUCTURE
+
+../website
+|-- .astro
+|   |-- astro
+|   |   `-- content.d.ts
+|   |-- collections
+|   |-- settings.json
+|   `-- types.d.ts
+|-- .firebase
+|   |-- hosting.ZGlzdA.cache
+|   `-- hosting.ZGxpc3Q.cache
+|-- .firebaserc
+|-- .gitignore
+|-- astro.config.mjs
+|-- dlist
+|   `-- index.html
+|-- firebase.json
+|-- module-catalog.csv
+|-- package-lock.json
+|-- package.json
+|-- public
+|   `-- assets
+|       |-- branding
+|       |   `-- logo.svg
+|       |-- icons
+|       |   |-- facebook.png
+|       |   |-- instagram.png
+|       |   |-- language.png
+|       |   |-- linkedin.png
+|       |   |-- message.png
+|       |   |-- tiktok.png
+|       |   |-- twitter.png
+|       |   `-- youtube.png
+|       |-- images
+|       |   |-- cm.png
+|       |   |-- cm.png.ai
+|       |   |-- daw-bg.png
+|       |   |-- duck-bg.png
+|       |   |-- duck.png
+|       |   |-- header.png
+|       |   |-- IELTS.png
+|       |   |-- ifspace.png
+|       |   |-- placeholder.png
+|       |   |-- reactivid.png
+|       |   |-- target.png
+|       |   |-- tchai.png
+|       |   |-- Tchaikovsky.png
+|       |   |-- Team1.svg
+|       |   |-- Team2.svg
+|       |   |-- Team3.svg
+|       |   `-- temp.png
+|       |-- logo
+|       |   |-- audio
+|       |   |   |-- audacity.png
+|       |   |   |-- audition.png
+|       |   |   |-- garageband.png
+|       |   |   |-- logic.png
+|       |   |   `-- reaper.png
+|       |   |-- certificates
+|       |   |   |-- acx.png
+|       |   |   |-- adobe.png
+|       |   |   |-- hsk3.png
+|       |   |   |-- tefl.png
+|       |   |   |-- tesol.png
+|       |   |   `-- wset.png
+|       |   |-- devops
+|       |   |   |-- aws.png
+|       |   |   |-- circleci.png
+|       |   |   |-- cloudflare.png
+|       |   |   |-- docker.png
+|       |   |   |-- docker.webp
+|       |   |   |-- gcp.png
+|       |   |   |-- githubactions.png
+|       |   |   |-- gitlabci.png
+|       |   |   |-- heroku.png
+|       |   |   |-- netlify.png
+|       |   |   |-- railway.png
+|       |   |   `-- vercel.png
+|       |   |-- digital
+|       |   |   |-- autodesk.png
+|       |   |   |-- canva.png
+|       |   |   |-- illustrator.png
+|       |   |   `-- indesign.png
+|       |   |-- instruction
+|       |   |   |-- captivate.png
+|       |   |   |-- rise.png
+|       |   |   |-- scorm.png
+|       |   |   `-- storyline.png
+|       |   |-- language
+|       |   |   |-- astro.png
+|       |   |   |-- css.png
+|       |   |   |-- express.png
+|       |   |   |-- fastapi.png
+|       |   |   |-- html.png
+|       |   |   |-- java.png
+|       |   |   |-- javascript.png
+|       |   |   |-- jinja2.png
+|       |   |   |-- next.png
+|       |   |   |-- node.png
+|       |   |   |-- postgresql.png
+|       |   |   |-- pydantic.png
+|       |   |   |-- python.png
+|       |   |   |-- react.png
+|       |   |   |-- shell.png
+|       |   |   |-- sql.png
+|       |   |   |-- sqlalchemy.png
+|       |   |   |-- svelte.png
+|       |   |   |-- swift.png
+|       |   |   |-- tailwind.png
+|       |   |   `-- typescript.png
+|       |   |-- photo
+|       |   |   |-- captureone.png
+|       |   |   |-- darktable.png
+|       |   |   |-- dxophotolab.png
+|       |   |   |-- gimp.png
+|       |   |   |-- lightroom.png
+|       |   |   |-- luminameo.png
+|       |   |   |-- on1.png
+|       |   |   `-- photoshop.png
+|       |   |-- social
+|       |   |   |-- discord.png
+|       |   |   |-- doyin.png
+|       |   |   |-- facebook.png
+|       |   |   |-- instagram.png
+|       |   |   |-- linkedin.png
+|       |   |   |-- tiktok.png
+|       |   |   |-- twitter.png
+|       |   |   `-- youtube.png
+|       |   |-- strategy
+|       |   |   |-- ahrefs.png
+|       |   |   |-- analytics.png
+|       |   |   |-- console.png
+|       |   |   |-- semrush.png
+|       |   |   |-- tubebuddy.png
+|       |   |   |-- velio.png
+|       |   |   `-- vidiq.png
+|       |   |-- uiux
+|       |   |   |-- figma.png
+|       |   |   |-- marvel.png
+|       |   |   |-- sketch.png
+|       |   |   `-- xd.png
+|       |   |-- video
+|       |   |   |-- aftereffects.png
+|       |   |   |-- animate.png
+|       |   |   |-- applemotion.png
+|       |   |   |-- blender.png
+|       |   |   |-- camtasia.png
+|       |   |   |-- capcut.png
+|       |   |   |-- characteranimator.png
+|       |   |   |-- davinciresolve.png
+|       |   |   |-- finalcut.png
+|       |   |   |-- obs.png
+|       |   |   |-- premiere.png
+|       |   |   `-- veed.png
+|       |   `-- workflow
+|       |       |-- bitbucket.png
+|       |       |-- clickup.png
+|       |       |-- github.png
+|       |       |-- gitlab.png
+|       |       |-- google.png
+|       |       |-- jira.png
+|       |       |-- microsoft.png
+|       |       |-- notion.png
+|       |       |-- slack.png
+|       |       `-- trello.png
+|       |-- modules
+|       |   |-- ai
+|       |   |   |-- claude.png
+|       |   |   |-- cohere.png
+|       |   |   |-- deepseek.png
+|       |   |   |-- gemini.png
+|       |   |   |-- huggingface.png
+|       |   |   |-- langchain.png
+|       |   |   |-- ollama.png
+|       |   |   |-- openai.png
+|       |   |   |-- pytorch.png
+|       |   |   `-- tensorflow.png
+|       |   |-- cloudservices
+|       |   |   |-- algolia.png
+|       |   |   |-- auth0.png
+|       |   |   |-- aws.png
+|       |   |   |-- cloudflare.png
+|       |   |   |-- cloudinary.png
+|       |   |   |-- daily.png
+|       |   |   |-- facebook.png
+|       |   |   |-- firebase.png
+|       |   |   |-- google.png
+|       |   |   |-- mixpanel.png
+|       |   |   |-- paypal.png
+|       |   |   |-- segment.png
+|       |   |   |-- sendgrid.png
+|       |   |   |-- sentry.png
+|       |   |   |-- stripe.png
+|       |   |   |-- twilio.png
+|       |   |   |-- vercel.png
+|       |   |   |-- vimeo.png
+|       |   |   |-- youtube.png
+|       |   |   |-- zapier.png
+|       |   |   `-- zoom.png
+|       |   |-- databases
+|       |   |   |-- dynamodb.png
+|       |   |   |-- firebase.png
+|       |   |   |-- mongodb.png
+|       |   |   |-- mysql.png
+|       |   |   |-- neo4j.png
+|       |   |   |-- postgresql.png
+|       |   |   |-- redis.png
+|       |   |   `-- sqlite.png
+|       |   |-- devops
+|       |   |   |-- aws.png
+|       |   |   |-- circleci.png
+|       |   |   |-- cloudflare.png
+|       |   |   |-- docker.png
+|       |   |   |-- gcp.png
+|       |   |   |-- github.png
+|       |   |   |-- githubactions.png
+|       |   |   |-- gitlabci.png
+|       |   |   |-- heroku.png
+|       |   |   |-- netlify.png
+|       |   |   |-- railway.png
+|       |   |   `-- vercel.png
+|       |   |-- frontend
+|       |   |   |-- autoprefixer.png
+|       |   |   |-- bootstrap.png
+|       |   |   |-- emotion.png
+|       |   |   |-- framerMotion.png
+|       |   |   |-- materialui.png
+|       |   |   |-- postcss.png
+|       |   |   |-- sass.png
+|       |   |   `-- tailwind.png
+|       |   |-- language
+|       |   |   |-- astro.png
+|       |   |   |-- css.png
+|       |   |   |-- express.png
+|       |   |   |-- fastapi.png
+|       |   |   |-- html.png
+|       |   |   |-- java.png
+|       |   |   |-- javascript.png
+|       |   |   |-- jinja2.png
+|       |   |   |-- next.png
+|       |   |   |-- node.png
+|       |   |   |-- pydantic.png
+|       |   |   |-- python.png
+|       |   |   |-- react.png
+|       |   |   |-- sql.png
+|       |   |   |-- sqlalchemy.png
+|       |   |   |-- svelte.png
+|       |   |   |-- swift.png
+|       |   |   `-- typescript.png
+|       |   `-- tools
+|       |       |-- bash.png
+|       |       |-- eslint.png
+|       |       |-- npm.png
+|       |       |-- pnpm.png
+|       |       |-- prettier.png
+|       |       |-- shell.png
+|       |       |-- tmux.png
+|       |       |-- vim.png
+|       |       |-- vite.png
+|       |       |-- vscode.png
+|       |       |-- webpack.png
+|       |       |-- yarn.png
+|       |       `-- zsh.png
+|       |-- packages
+|       |   |-- Enterprise.png
+|       |   |-- Foundation.png
+|       |   |-- Launch.png
+|       |   `-- Studio.png
+|       |-- reviews
+|       |   |-- Akira Yamamoto.png
+|       |   |-- Anita Mehra.png
+|       |   |-- Aria Singh.png
+|       |   |-- Aylin Demir.png
+|       |   |-- Benjamin Ross.png
+|       |   |-- Chen Wei.png
+|       |   |-- Fatima Al-Sayegh.png
+|       |   |-- Grace Park.png
+|       |   |-- James Nguyen.png
+|       |   |-- Laura Gomez.png
+|       |   |-- Leila Haddad.png
+|       |   |-- Leo Adams.png
+|       |   |-- Marco Silva.png
+|       |   |-- Nina Wu.png
+|       |   |-- Omar Hassan.png
+|       |   |-- Patrick Evans.png
+|       |   |-- Raj Patel.png
+|       |   |-- Samuel Chen.png
+|       |   |-- Sara Bashir.png
+|       |   |-- Sofia D'Angelo.png
+|       |   |-- Tommy Lee.png
+|       |   |-- Yara Khalil.png
+|       |   `-- Zainab M.png
+|       `-- videos
+|           |-- bow.mp4
+|           |-- build.mp4
+|           |-- business.mp4
+|           |-- ifluent.mp4
+|           |-- tchai.mp4
+|           `-- tree.mp4
+|-- README.md
+|-- scripts
+|   `-- export-modules-to-csv.js
+|-- src
+|   |-- components
+|   |   |-- Aabout
+|   |   |   |-- aabout.astro
+|   |   |   |-- aabout.css
+|   |   |   `-- askills
+|   |   |       |-- askills.astro
+|   |   |       `-- askills.css
+|   |   |-- Ahero
+|   |   |   |-- Ahero.astro
+|   |   |   `-- Ahero.css
+|   |   |-- Askills
+|   |   |-- ChatBox.tsx
+|   |   |-- ChatWidget.astro
+|   |   |-- Footer
+|   |   |   |-- Footer.astro
+|   |   |   `-- Footer.css
+|   |   |-- Header
+|   |   |   |-- Header.astro
+|   |   |   `-- Header.css
+|   |   |-- Lhero
+|   |   |   |-- Lhero.astro
+|   |   |   `-- Lhero.css
+|   |   |-- Lproducts
+|   |   |   |-- Lproducts.astro
+|   |   |   `-- Lproducts.css
+|   |   |-- Lreviews
+|   |   |   |-- Lreviews.astro
+|   |   |   `-- Lreviews.css
+|   |   |-- Lservices
+|   |   |   |-- Lservices.astro
+|   |   |   `-- Lservices.css
+|   |   |-- Modules
+|   |   |-- Phero
+|   |   |   |-- Phero.astro
+|   |   |   `-- Phero.css
+|   |   |-- Pinfluent
+|   |   |   |-- Pinfluent.astro
+|   |   |   `-- Pinfluent.css
+|   |   |-- Pintro
+|   |   |   |-- Pintro.astro
+|   |   |   `-- Pintro.css
+|   |   |-- Preactivid
+|   |   |   |-- Preactivid.astro
+|   |   |   `-- Preactivid.css
+|   |   |-- Ptchaikovsky
+|   |   |   |-- Ptchaikovsky.astro
+|   |   |   `-- Ptchaikovsky.css
+|   |   |-- Shero
+|   |   |   |-- Shero.astro
+|   |   |   `-- Shero.css
+|   |   |-- Smodules
+|   |   |   |-- Smodules.astro
+|   |   |   `-- smodules.css
+|   |   |-- Soverview
+|   |   |   |-- Soverview.astro
+|   |   |   `-- Soverview.css
+|   |   `-- Spackages
+|   |       |-- Spackages.astro
+|   |       `-- Spackages.css
+|   |-- content
+|   |   |-- blog
+|   |   |   |-- build-startup-from-southeast-asia.md
+|   |   |   |-- fundraising-in-thailand-foreign-founder.md
+|   |   |   |-- google-cloud-accelerator-thailand.md
+|   |   |   |-- incorporating-a-tech-business-in-thailand.md
+|   |   |   |-- smart-visa-vs-dtv.md
+|   |   |   |-- thailand-internet-startup-speed-tech.md
+|   |   |   |-- why-chiang-mai-ai-startup.md
+|   |   |   `-- why-most-software-startups-shouldnt-raise-money.md
+|   |   |-- case-study
+|   |   |   |-- llm-fine-tuning-vs-prompt-engineering.md
+|   |   |   |-- smart-visa-thailand-guide.md
+|   |   |   |-- tchaikovsky-abc-midi-generation.md
+|   |   |   `-- thailand-ai-startup-funding.md
+|   |   |-- company
+|   |   |   |-- coming-soon-reactivid.md
+|   |   |   |-- introducing-influent-space.md
+|   |   |   |-- introducing-tchaikovsky.md
+|   |   |   `-- what-were-working-on-july-2025
+|   |   |-- config.ts
+|   |   |-- external
+|   |   |   |-- www.greenlightstudio.co.md
+|   |   |   |-- www.influent.space.md
+|   |   |   |-- www.reactivid.com.md
+|   |   |   `-- www.tchaikovsky.cloud.md
+|   |   |-- modules
+|   |   |   |-- admin
+|   |   |   |   |-- activity-heatmap-for-admins.md
+|   |   |   |   |-- admin-notes-&-comments.md
+|   |   |   |   |-- admin-panel-shortcuts.md
+|   |   |   |   |-- admin-quick-actions-toolbar.md
+|   |   |   |   |-- content-staging-controls.md
+|   |   |   |   |-- custom-branding-controls.md
+|   |   |   |   |-- custom-domain-routing.md
+|   |   |   |   |-- data-import-export.md
+|   |   |   |   |-- database-query-interface.md
+|   |   |   |   |-- email-template-editor.md
+|   |   |   |   |-- endpoint-rate-limiter-config.md
+|   |   |   |   |-- environment-variable-manager.md
+|   |   |   |   |-- error-&-crash-reporter.md
+|   |   |   |   |-- event-log-viewer.md
+|   |   |   |   |-- exportable-audit-compliance-logs.md
+|   |   |   |   |-- feature-flag-manager.md
+|   |   |   |   |-- firebase-admin-tools.md
+|   |   |   |   |-- form-to-email-logic.md
+|   |   |   |   |-- localization-key-manager.md
+|   |   |   |   |-- maintenance-mode-toggle.md
+|   |   |   |   |-- multi-tenant-admin-switcher.md
+|   |   |   |   |-- real-time-system-usage-dashboard.md
+|   |   |   |   |-- rest-api-access-toolkit.md
+|   |   |   |   |-- role-&-permission-editor.md
+|   |   |   |   |-- saas-billing-dashboard.md
+|   |   |   |   |-- service-integration-checker.md
+|   |   |   |   |-- support-console-for-admins.md
+|   |   |   |   |-- system-backup-trigger.md
+|   |   |   |   |-- system-health-monitor.md
+|   |   |   |   |-- task-&-cron-scheduler-viewer.md
+|   |   |   |   |-- usage-quota-tracker.md
+|   |   |   |   |-- user-flagging-&-moderation-tools.md
+|   |   |   |   |-- version-control-history-log.md
+|   |   |   |   |-- webhook-integration-panel.md
+|   |   |   |   `-- zapier-integration.md
+|   |   |   |-- ai
+|   |   |   |   |-- ai-assessment-engine.md
+|   |   |   |   |-- ai-based-rubric-grader.md
+|   |   |   |   |-- ai-chat-assistant.md
+|   |   |   |   |-- ai-content-rewriter.md
+|   |   |   |   |-- ai-essay-scorer.md
+|   |   |   |   |-- ai-feedback-on-video-submissions.md
+|   |   |   |   |-- ai-powered-dashboard-widgets.md
+|   |   |   |   |-- ai-powered-flashcard-generator.md
+|   |   |   |   |-- ai-powered-image-generator.md
+|   |   |   |   |-- ai-reading-level-detector.md
+|   |   |   |   |-- ai-text-feedback-generator.md
+|   |   |   |   |-- ai-text-summarizer.md
+|   |   |   |   |-- ai-topic-classifier.md
+|   |   |   |   |-- ai-transcription-module.md
+|   |   |   |   |-- ai-translation-system.md
+|   |   |   |   |-- ai-voice-feedback-tool.md
+|   |   |   |   |-- auto-categorization-pipeline.md
+|   |   |   |   |-- automated-content-tagging.md
+|   |   |   |   |-- automated-report-generator.md
+|   |   |   |   |-- chat-history-semantic-search.md
+|   |   |   |   |-- concept-reinforcement-recommender.md
+|   |   |   |   |-- custom-embedding-generator.md
+|   |   |   |   |-- custom-model-deployment-service.md
+|   |   |   |   |-- custom-nlp-workflow-setup.md
+|   |   |   |   |-- data-driven-personalization-engine.md
+|   |   |   |   |-- diagram-describer-ai.md
+|   |   |   |   |-- document-q&a-engine.md
+|   |   |   |   |-- dynamic-writing-prompter.md
+|   |   |   |   |-- interactive-ai-explainer-tool.md
+|   |   |   |   |-- keyword-highlighter-tool.md
+|   |   |   |   |-- language-polisher.md
+|   |   |   |   |-- learning-style-recognizer.md
+|   |   |   |   |-- model-selection-layer.md
+|   |   |   |   |-- multi-modal-ai-input-handler.md
+|   |   |   |   |-- pdf-ai-analyzer.md
+|   |   |   |   |-- plagiarism-detection-engine.md
+|   |   |   |   |-- prompt-library-manager.md
+|   |   |   |   |-- prompt-optimization-layer.md
+|   |   |   |   |-- question-generator.md
+|   |   |   |   |-- rubric-linked-ai-review-tool.md
+|   |   |   |   |-- script-generator.md
+|   |   |   |   |-- smart-answer-checker.md
+|   |   |   |   |-- speech-emotion-detector.md
+|   |   |   |   |-- speech-to-text-interface.md
+|   |   |   |   |-- structured-output-generator.md
+|   |   |   |   |-- study-plan-optimizer-(llm-powered).md
+|   |   |   |   |-- text-to-speech-player.md
+|   |   |   |   |-- time-tuned-large-language-model-access.md
+|   |   |   |   |-- vector-database-integration.md
+|   |   |   |   `-- voice-controlled-navigation-assistant.md
+|   |   |   |-- authentication
+|   |   |   |   |-- account-verification-workflow.md
+|   |   |   |   |-- email-&-password-sign-in.md
+|   |   |   |   |-- invite-only-registration-flow.md
+|   |   |   |   |-- ip-restriction-tools.md
+|   |   |   |   |-- login-activity-log.md
+|   |   |   |   |-- password-reset-system.md
+|   |   |   |   |-- role-based-access-control.md
+|   |   |   |   |-- social-login-options.md
+|   |   |   |   |-- two-factor-authentication.md
+|   |   |   |   `-- user-ban-&-suspension-controls.md
+|   |   |   |-- communication
+|   |   |   |   |-- announcement-banner-system.md
+|   |   |   |   |-- attachment-support-in-chat.md
+|   |   |   |   |-- automated-reply-templates.md
+|   |   |   |   |-- broadcast-to-role-groups.md
+|   |   |   |   |-- communication-logs-dashboard.md
+|   |   |   |   |-- cross-device-sync.md
+|   |   |   |   |-- custom-notification-preferences.md
+|   |   |   |   |-- escalation-chain-for-unread-messages.md
+|   |   |   |   |-- inbox-management-module.md
+|   |   |   |   |-- message-scheduling-tool.md
+|   |   |   |   |-- message-search-&-filtering.md
+|   |   |   |   |-- moderation-controls.md
+|   |   |   |   |-- private-message-threads.md
+|   |   |   |   |-- read-receipts-&-delivery-status.md
+|   |   |   |   |-- realtime-status-presence.md
+|   |   |   |   |-- thread-tagging-&-labels.md
+|   |   |   |   |-- threaded-email-integration.md
+|   |   |   |   |-- typing-indicator-system.md
+|   |   |   |   |-- user-mention-system.md
+|   |   |   |   `-- voice-message-integration.md
+|   |   |   |-- content
+|   |   |   |   |-- contact-page-integration.md
+|   |   |   |   |-- custom-cms-for-staff.md
+|   |   |   |   |-- form-builder-&-submission-handling.md
+|   |   |   |   |-- markdown-content-engine.md
+|   |   |   |   |-- marketing-website-framework.md
+|   |   |   |   |-- multilingual-routing.md
+|   |   |   |   |-- page-builder-tool.md
+|   |   |   |   |-- seo-meta-tag-manager.md
+|   |   |   |   |-- sitemap-&-robots.txt-generator.md
+|   |   |   |   `-- static-blog-system.md
+|   |   |   |-- core
+|   |   |   |   |-- activity-feed.md
+|   |   |   |   |-- api-key-manager.md
+|   |   |   |   |-- archived-session-viewer.md
+|   |   |   |   |-- assignment-submission-system.md
+|   |   |   |   |-- attendance-tracker.md
+|   |   |   |   |-- auto-save-&-draft-mode.md
+|   |   |   |   |-- badge-&-achievement-tracker.md
+|   |   |   |   |-- bulk-user-import.md
+|   |   |   |   |-- calendar-sync-module.md
+|   |   |   |   |-- certificate-generator.md
+|   |   |   |   |-- class-roster-tool.md
+|   |   |   |   |-- content-visibility-settings.md
+|   |   |   |   |-- course-builder.md
+|   |   |   |   |-- course-duplication-tool.md
+|   |   |   |   |-- cross-course-navigation.md
+|   |   |   |   |-- customizable-homepage.md
+|   |   |   |   |-- dark-mode-toggle.md
+|   |   |   |   |-- discussion-forums.md
+|   |   |   |   |-- document-annotation-tool.md
+|   |   |   |   |-- event-announcement-tool.md
+|   |   |   |   |-- file-upload-module.md
+|   |   |   |   |-- gradebook-system.md
+|   |   |   |   |-- interactive-exercises.md
+|   |   |   |   |-- language-localization-engine.md
+|   |   |   |   |-- learning-path-builder.md
+|   |   |   |   |-- lesson-scheduler.md
+|   |   |   |   |-- live-session-room-launcher.md
+|   |   |   |   |-- media-gallery.md
+|   |   |   |   |-- mobile-optimized-interface.md
+|   |   |   |   |-- multi-institution-support.md
+|   |   |   |   |-- notification-manager.md
+|   |   |   |   |-- onboarding-walkthrough.md
+|   |   |   |   |-- profile-manager.md
+|   |   |   |   |-- progress-analytics.md
+|   |   |   |   |-- quiz-builder.md
+|   |   |   |   |-- resource-locker.md
+|   |   |   |   |-- role-management-panel.md
+|   |   |   |   |-- sandbox-testing-environment.md
+|   |   |   |   |-- session-booking-system.md
+|   |   |   |   |-- support-ticket-submission.md
+|   |   |   |   |-- survey-&-feedback-tool.md
+|   |   |   |   |-- tagging-&-labeling-system.md
+|   |   |   |   |-- terms-&-consent-management.md
+|   |   |   |   |-- time-zone-normalizer.md
+|   |   |   |   `-- timetable-viewer.md
+|   |   |   |-- payment
+|   |   |   |   |-- admin-billing-dashboard.md
+|   |   |   |   |-- api-access-for-billing-events.md
+|   |   |   |   |-- auto-billing-engine.md
+|   |   |   |   |-- billing-address-collection.md
+|   |   |   |   |-- chargeback-management-panel.md
+|   |   |   |   |-- coupon-code-system.md
+|   |   |   |   |-- custom-pricing-plans.md
+|   |   |   |   |-- failed-payment-retry-logic.md
+|   |   |   |   |-- gift-code-redemption.md
+|   |   |   |   |-- installment-payment-option.md
+|   |   |   |   |-- invoice-pdf-exporter.md
+|   |   |   |   |-- invoicing-system.md
+|   |   |   |   |-- manual-invoice-entry-(admin-only).md
+|   |   |   |   |-- multiple-currency-support.md
+|   |   |   |   |-- one-time-purchase-checkout.md
+|   |   |   |   |-- payment-history-viewer.md
+|   |   |   |   |-- payment-reminder-system.md
+|   |   |   |   |-- paypal-integration.md
+|   |   |   |   |-- prepaid-credit-wallet.md
+|   |   |   |   |-- receipt-generation.md
+|   |   |   |   |-- refund-processing-workflow.md
+|   |   |   |   |-- revenue-reporting-tools.md
+|   |   |   |   |-- secure-payment-tokenization.md
+|   |   |   |   |-- stripe-integration.md
+|   |   |   |   |-- subscription-cancellation-survey.md
+|   |   |   |   |-- subscription-pause-&-resume.md
+|   |   |   |   |-- subscription-tier-manager.md
+|   |   |   |   |-- tax-calculation-module.md
+|   |   |   |   |-- trial-period-manager.md
+|   |   |   |   `-- usage-based-billing-system.md
+|   |   |   |-- performance
+|   |   |   |   |-- completion-rate-charts.md
+|   |   |   |   |-- conversion-funnel-tracking.md
+|   |   |   |   |-- custom-export-to-csv.md
+|   |   |   |   |-- daily-usage-reports.md
+|   |   |   |   |-- feedback-collection-forms.md
+|   |   |   |   |-- graph-&-chart-renderer.md
+|   |   |   |   |-- heatmap-interaction-reports.md
+|   |   |   |   |-- real-time-analytics-dashboard.md
+|   |   |   |   |-- session-duration-metrics.md
+|   |   |   |   `-- user-engagement-timeline.md
+|   |   |   `-- video
+|   |   |       |-- audio-file-manager.md
+|   |   |       |-- class-resource-locker.md
+|   |   |       |-- in-browser-video-call-module.md
+|   |   |       |-- media-upload-&-playback.md
+|   |   |       |-- presentation-slideshow-viewer.md
+|   |   |       |-- screen-share-support.md
+|   |   |       |-- session-recording-playback.md
+|   |   |       |-- shared-notepad-for-classes.md
+|   |   |       |-- video-hosting-integration.md
+|   |   |       `-- whiteboard-sharing-tool.md
+|   |   `-- press
+|   |       `-- were-live-broken-duck-media.md
+|   |-- env.d.ts
+|   |-- layouts
+|   |   |-- ArticleLayout.astro
+|   |   |-- BaseLayout.astro
+|   |   `-- ModuleLayout.astro
+|   |-- pages
+|   |   |-- about.astro
+|   |   |-- blog
+|   |   |   `-- [slug].astro
+|   |   |-- blog.astro
+|   |   |-- build.astro
+|   |   |-- careers.astro
+|   |   |-- case-study
+|   |   |   `-- [slug].astro
+|   |   |-- case.astro
+|   |   |-- ccpa.astro
+|   |   |-- company
+|   |   |   `-- [slug].astro
+|   |   |-- company.astro
+|   |   |-- contact.astro
+|   |   |-- cookies.astro
+|   |   |-- external
+|   |   |   `-- [slug].astro
+|   |   |-- external.astro
+|   |   |-- faq.astro
+|   |   |-- foundation.astro
+|   |   |-- gdpr.astro
+|   |   |-- help.astro
+|   |   |-- index.astro
+|   |   |-- launch.astro
+|   |   |-- license.astro
+|   |   |-- maintenance.astro
+|   |   |-- modules
+|   |   |   `-- [...slug].astro
+|   |   |-- press
+|   |   |   `-- [slug].astro
+|   |   |-- press.astro
+|   |   |-- privacy.astro
+|   |   |-- products.astro
+|   |   |-- resources.astro
+|   |   |-- services.astro
+|   |   |-- sitemap.astro
+|   |   |-- studio.astro
+|   |   |-- support.astro
+|   |   |-- team.astro
+|   |   `-- terms.astro
+|   |-- scripts
+|   |   `-- analytics.js
+|   `-- styles
+|       |-- articles.css
+|       |-- ChatWidget.css
+|       |-- contact.css
+|       |-- faq.css
+|       |-- global.css
+|       |-- legal.css
+|       |-- modules.css
+|       |-- package.css
+|       |-- resources.css
+|       `-- variables.css
+`-- tsconfig.json
+
+84 directories, 595 files

@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Message Search &amp; Filtering</title><meta name="description" content="Locate specific messages or conversations quickly."><meta property="og:title" content="Message Search &#38; Filtering"><meta property="og:description" content="Locate specific messages or conversations quickly."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Message Search &amp; Filtering</h1> <div class="module-meta"> <div> <span class="module-category">Communication</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Locate specific messages or conversations quickly.</p> <div class="module-icons"> <img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <h1 id="message-search--filtering-module-overview">Message Search &#x26; Filtering Module Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Message Search &#x26; Filtering module is designed to streamline the process of locating specific messages or conversations within a communication system. It provides developers with efficient tools to enhance message management, ensuring quick access to necessary information.</p>
+<h2 id="key-benefits">Key Benefits</h2>
+<ul>
+<li><strong>Enhanced Efficiency</strong>: Accelerates the retrieval of required messages, reducing time spent on manual searches.</li>
+<li><strong>Reduced Cognitive Load</strong>: Focuses users on relevant content by filtering out unnecessary data.</li>
+<li><strong>Scalability</strong>: Effectively handles large datasets, ensuring performance even as message volumes grow.</li>
+<li><strong>Integration Flexibility</strong>: Offers APIs for seamless integration into various applications, adapting to diverse needs.</li>
+<li><strong>Future-Proofing</strong>: Supports extensibility with new features, keeping the module adaptable over time.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<h3 id="1-search-across-all-messages">1. Search Across All Messages</h3>
+<ul>
+<li><strong>Action</strong>: Developers can search across all messages or specific conversations using keywords, phrases, or metadata.</li>
+<li><strong>Example</strong>: In a chat application, finding all messages containing “urgent” to prioritize critical information.</li>
+</ul>
+<h3 id="2-filter-by-metadata">2. Filter by Metadata</h3>
+<ul>
+<li><strong>Action</strong>: Filters messages based on attributes like sender, timestamp, tags, or message type.</li>
+<li><strong>Example</strong>: Isolating support-related emails sent during off-hours for analysis.</li>
+</ul>
+<h3 id="3-real-time-monitoring">3. Real-Time Monitoring</h3>
+<ul>
+<li><strong>Action</strong>: Enables real-time monitoring and filtering of messages as they arrive.</li>
+<li><strong>Example</strong>: Detecting system alerts in a log management tool to trigger automated responses.</li>
+</ul>
+<h3 id="4-high-traffic-handling">4. High Traffic Handling</h3>
+<ul>
+<li><strong>Action</strong>: Efficiently processes large volumes of messages, ensuring quick search results even during peak traffic.</li>
+<li><strong>Example</strong>: A social media platform identifying trending topics by filtering live posts.</li>
+</ul>
+<h3 id="5-integration-with-third-party-tools">5. Integration with Third-Party Tools</h3>
+<ul>
+<li><strong>Action</strong>: Seamlessly integrates with external systems via APIs for enhanced functionality.</li>
+<li><strong>Example</strong>: Incorporating message filtering into a CRM to prioritize customer inquiries.</li>
+</ul>
+<h3 id="6-pattern-matching-and-regular-expressions">6. Pattern Matching and Regular Expressions</h3>
+<ul>
+<li><strong>Action</strong>: Supports advanced search using regular expressions for complex pattern matching.</li>
+<li><strong>Example</strong>: Extracting specific data formats from messages, like phone numbers or email addresses.</li>
+</ul>
+<h3 id="7-sentiment-analysis-integration-if-applicable">7. Sentiment Analysis Integration (If applicable)</h3>
+<ul>
+<li><strong>Action</strong>: Filters messages based on sentiment to identify positive/negative feedback.</li>
+<li><strong>Example</strong>: Analyzing customer reviews to enhance product development strategies.</li>
+</ul>
+<p>This module is a vital tool for developers seeking efficient and scalable message management solutions, offering both flexibility and robust functionality.</p>
+<h2 id="message-search--filtering-module-features">Message Search &#x26; Filtering Module Features</h2>
+<h3 id="1-full-text-search">1. <strong>Full-Text Search</strong></h3>
+<ul>
+<li>Allows users to search for specific words or phrases within message content.</li>
+<li>Supports case-insensitive and case-sensitive searches.</li>
+</ul>
+<h3 id="2-exact-phrase-matching">2. <strong>Exact Phrase Matching</strong></h3>
+<ul>
+<li>Enables searching for exact sequences of text within messages.</li>
+<li>Useful for finding direct quotes or specific conversations.</li>
+</ul>
+<h3 id="3-regular-expression-search">3. <strong>Regular Expression Search</strong></h3>
+<ul>
+<li>Provides advanced pattern matching using regular expressions.</li>
+<li>Ideal for developers familiar with regex syntax to find complex patterns in messages.</li>
+</ul>
+<h3 id="4-search-by-metadata">4. <strong>Search by Metadata</strong></h3>
+<ul>
+<li>Filters messages based on metadata such as sender, timestamp, or conversation ID.</li>
+<li>Useful for organizing and retrieving messages by specific attributes.</li>
+</ul>
+<h3 id="5-conversational-context-search">5. <strong>Conversational Context Search</strong></h3>
+<ul>
+<li>Groups related messages by conversation context (e.g., email threads).</li>
+<li>Helps in quickly locating specific discussions within larger conversations.</li>
+</ul>
+<h3 id="6-datetime-filtering">6. <strong>Date/Time Filtering</strong></h3>
+<ul>
+<li>Filters messages based on date ranges or specific time periods.</li>
+<li>Useful for reviewing historical data or recent activity.</li>
+</ul>
+<h3 id="7-tagging-support">7. <strong>Tagging Support</strong></h3>
+<ul>
+<li>Allows messages to be tagged and searched by custom tags.</li>
+<li>Facilitates efficient organization and retrieval of messages based on categories.</li>
+</ul>
+<h3 id="8-efficiency-optimizations">8. <strong>Efficiency Optimizations</strong></h3>
+<ul>
+<li>Implements indexing and caching mechanisms to improve search performance.</li>
+<li>Optimized for handling large datasets and complex queries efficiently.</li>
+</ul>
+<p>These features ensure that the Message Search &#x26; Filtering module is both powerful and flexible, catering to a wide range of use cases in communication applications.</p>
+<h3 id="message-search--filtering-module-documentation">Message Search &#x26; Filtering Module Documentation</h3>
+<p>This module provides functionality to search and filter messages or conversations efficiently.</p>
+<hr>
+<h4 id="1-fastapi-endpoint">1. <strong>FastAPI Endpoint</strong></h4>
+<p>This endpoint demonstrates how to implement message searching using FastAPI.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># app/api/routers/search.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> date</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> SearchQuery</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    query: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    subject: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    start_date: Optional[date] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    end_date: Optional[date] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Message</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    subject: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: date</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/search-messages"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">List[Message])</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> search_messages</span><span style="color:#E1E4E8">(query_params: SearchQuery </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends()):</span></span>
+<span class="line"><span style="color:#6A737D">    # Implementation details:</span></span>
+<span class="line"><span style="color:#6A737D">    # 1. Connect to message database</span></span>
+<span class="line"><span style="color:#6A737D">    # 2. Apply query filters based on query_params</span></span>
+<span class="line"><span style="color:#6A737D">    # 3. Return matching messages</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">        Message(</span></span>
+<span class="line"><span style="color:#FFAB70">            id</span><span style="color:#F97583">=</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            content</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Meeting reminder tomorrow at 2 PM."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            sender</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"John Doe"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            subject</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Team Meeting"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            date</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">date.today()</span></span>
+<span class="line"><span style="color:#E1E4E8">        ),</span></span>
+<span class="line"><span style="color:#6A737D">        # Add more results as needed</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="2-react-ui-snippet">2. <strong>React UI Snippet</strong></h4>
+<p>This React component demonstrates a simple search interface for messages.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> MessageSearch</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">searchQuery</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setSearchQuery</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        query: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        sender: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        subject: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        startDate: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        endDate: </span><span style="color:#9ECBFF">''</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#6A737D">        // Implementation details:</span></span>
+<span class="line"><span style="color:#6A737D">        // 1. Make API call to /api/search-messages</span></span>
+<span class="line"><span style="color:#6A737D">        // 2. Handle response and display messages in a results section</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"search-form"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Query:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{searchQuery.query}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSearchQuery</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">searchQuery, query: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Sender:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{searchQuery.sender}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSearchQuery</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">searchQuery, sender: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Subject:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{searchQuery.subject}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSearchQuery</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">searchQuery, subject: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Date Range:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"date"</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{searchQuery.startDate}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSearchQuery</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">searchQuery, startDate: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"date"</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{searchQuery.endDate}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSearchQuery</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">searchQuery, endDate: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Search Messages&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> MessageSearch;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="3-data-schema-pydantic">3. <strong>Data Schema (Pydantic)</strong></h4>
+<p>This schema defines the structure for message search requests and responses.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># app/api/models/search.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> date</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> SearchQuery</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    query: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    subject: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    start_date: Optional[date] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    end_date: Optional[date] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Message</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    subject: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: date</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> SearchResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    results: List[Message]</span></span>
+<span class="line"><span style="color:#E1E4E8">    total_results: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    page: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    per_page: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><strong>FastAPI Endpoint</strong>: <code>/api/search-messages</code> (GET)</li>
+<li><strong>React Component</strong>: <code>MessageSearch</code></li>
+<li><strong>Data Models</strong>: <code>SearchQuery</code>, <code>Message</code>, and <code>SearchResponse</code></li>
+</ul>
+<p>This module allows developers to implement efficient message searching with flexible filtering options.</p>
+<h1 id="technical-documentation-for-message-search--filtering-module">Technical Documentation for Message Search &#x26; Filtering Module</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Message Search &#x26; Filtering</strong> module is designed to efficiently locate specific messages or conversations within a communication system. This module is targeted towards developers aiming to integrate search and filtering functionalities into their applications.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Message Repository</strong>: Manages the storage of all messages, providing access for retrieval and modification.</li>
+<li><strong>User Authentication</strong>: Ensures only authorized users can access sensitive message data.</li>
+<li><strong>Conversation Manager</strong>: Handles ongoing conversations, allowing for organized tracking and management.</li>
+<li><strong>Notification System</strong>: Triggers real-time alerts or updates when specific conditions are met in messages.</li>
+<li><strong>Search Indexer</strong>: Optimizes search operations by maintaining indexed data structures for quick lookups.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li>
+<p><strong>Search by Keywords</strong></p>
+<ul>
+<li><strong>Scenario</strong>: A user wants to find all messages containing a specific keyword.</li>
+<li><strong>Description</strong>: The module scans through the message repository and returns a list of matching conversations or messages.</li>
+</ul>
+</li>
+<li>
+<p><strong>Filter Messages by Sender or Date</strong></p>
+<ul>
+<li><strong>Scenario</strong>: An administrator needs to review messages sent by a particular user during a specific timeframe.</li>
+<li><strong>Description</strong>: Filters are applied based on sender ID and date ranges, returning relevant messages for further action.</li>
+</ul>
+</li>
+<li>
+<p><strong>Real-Time Message Filtering with Notifications</strong></p>
+<ul>
+<li><strong>Scenario</strong>: A system requires immediate alerts when certain keywords appear in new messages.</li>
+<li><strong>Description</strong>: The module integrates with the notification system to trigger alerts as soon as matching criteria are met.</li>
+</ul>
+</li>
+<li>
+<p><strong>Bulk Operations on Messages</strong></p>
+<ul>
+<li><strong>Scenario</strong>: A developer needs to delete multiple messages based on specific criteria, such as being older than a certain date.</li>
+<li><strong>Description</strong>: The module processes bulk operations efficiently, ensuring data integrity and performance.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>Indexing Performance</strong>: Optimize search efficiency by regularly updating the Search Indexer. Consider sharding for large datasets to distribute load across multiple servers.</li>
+<li><strong>Large Datasets Handling</strong>: Implement pagination or lazy loading to manage retrieval of extensive result sets without overwhelming system resources.</li>
+<li><strong>Security Practices</strong>: Enforce strict access controls through User Authentication to prevent unauthorized message access.</li>
+<li><strong>Logging and Monitoring</strong>: Set up logging for all search and filter operations to track usage patterns and identify potential issues.</li>
+<li><strong>Error Handling</strong>: Implement robust error handling mechanisms to manage exceptions such as invalid search queries or temporary service unavailability.</li>
+</ul>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Name</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th><th><strong>Remarks</strong></th></tr></thead><tbody><tr><td>enable_realtime_search</td><td>Boolean</td><td>Enables real-time search functionality.</td><td>false</td><td>Defaults to off for stability; requires proper infrastructure for high traffic.</td></tr><tr><td>max_results</td><td>Integer</td><td>Limits the number of results returned per query.</td><td>100</td><td>Adjust based on system capacity and user requirements.</td></tr><tr><td>search_provider</td><td>String</td><td>Specifies which search providers are used (e.g., Elasticsearch, Solr).</td><td>Elasticsearch</td><td>Multiple providers can be configured for redundancy or load balancing.</td></tr><tr><td>cache_search_queries</td><td>Boolean</td><td>Enables caching of frequently searched queries to improve performance.</td><td>true</td><td>Caching duration can be adjusted via additional configuration parameters.</td></tr></tbody></table>
+<hr>
+<p>This documentation provides a comprehensive guide to integrating and configuring the Message Search &#x26; Filtering module, ensuring efficient and secure message management within your communication system.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

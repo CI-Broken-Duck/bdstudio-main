@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Broadcast to Role Groups</title><meta name="description" content="Target messages to user groups."><meta property="og:title" content="Broadcast to Role Groups"><meta property="og:description" content="Target messages to user groups."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Broadcast to Role Groups</h1> <div class="module-meta"> <div> <span class="module-category">Communication</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Target messages to user groups.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-broadcast-to-role-groups-module">Overview: Broadcast to Role Groups Module</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Broadcast to Role Groups module is designed to streamline communication within an application by enabling efficient message distribution to predefined user groups. This module eliminates the need for manual selection of individual users, allowing administrators or developers to send targeted messages to specific roles such as “All Parents” or “All Tutors”.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li>
+<p><strong>Efficiency</strong>: Automates the process of broadcasting messages to multiple users simultaneously, saving significant time compared to manual sending.</p>
+</li>
+<li>
+<p><strong>Enhanced Communication</strong>: Facilitates effective engagement by enabling tailored messages for different user groups, ensuring relevant information is received by appropriate recipients.</p>
+</li>
+<li>
+<p><strong>Flexibility</strong>: Allows creation and management of custom role groups, adapting to various organizational needs and structures.</p>
+</li>
+<li>
+<p><strong>Predefined Roles Integration</strong>: Supports integration with existing user roles within the application, enhancing workflow efficiency through streamlined processes.</p>
+</li>
+<li>
+<p><strong>Increased Engagement</strong>: By delivering personalized messages, it boosts user interaction and satisfaction, leading to higher engagement rates.</p>
+</li>
+<li>
+<p><strong>Audit Trail</strong>: Provides a comprehensive log of message distribution activities, aiding in tracking and accountability.</p>
+</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li>
+<p><strong>User Group Notifications</strong>: Sending updates or critical information such as meeting reminders or event notifications directly to relevant groups.</p>
+</li>
+<li>
+<p><strong>Communication Coordination</strong>: Coordinating group activities, such as schedule changes for tutors or important announcements for parents.</p>
+</li>
+<li>
+<p><strong>Event Management</strong>: Informing specific groups about events like parent-teacher meetings or special sessions.</p>
+</li>
+<li>
+<p><strong>System-Wide Announcements</strong>: Broadcasting system updates, maintenance alerts, or policy changes to all users or select roles.</p>
+</li>
+<li>
+<p><strong>Bulk Campaigns</strong>: Conducting marketing or promotional campaigns through targeted messaging to specific user segments.</p>
+</li>
+<li>
+<p><strong>Custom Testing and Feedback</strong>: Sending personalized test notifications or gathering feedback from particular groups for product improvement.</p>
+</li>
+</ol>
+<p>This module is a powerful tool for developers looking to enhance communication efficiency within their applications, offering flexibility, scalability, and robust features tailored to meet diverse organizational needs.</p>
+<h2 id="feature-name-user-role-groups">Feature Name: User Role Groups</h2>
+<p>This feature allows administrators to define and manage role groups based on user roles (e.g., Parents, Tutors). Each group can be targeted individually or in combination with others for broadcasts.</p>
+<hr>
+<h2 id="feature-name-message-templates">Feature Name: Message Templates</h2>
+<p>Predefined message templates provide consistent communication across multiple channels. They can include placeholders for dynamic content and are customizable to meet specific needs.</p>
+<hr>
+<h2 id="feature-name-broadcast-history">Feature Name: Broadcast History</h2>
+<p>Maintains a record of all broadcast activities, including date, time, target groups, and message details. This feature is essential for auditing, tracking, and debugging purposes.</p>
+<hr>
+<h2 id="feature-name-targeting-criteria">Feature Name: Targeting Criteria</h2>
+<p>Enables precise targeting by allowing messages to be sent based on user attributes such as location, activity level, or specific tags. This ensures that only relevant users receive the message.</p>
+<hr>
+<h2 id="feature-name-scheduling">Feature Name: Scheduling</h2>
+<p>Messages can be scheduled for future delivery at specified times, allowing for automated and timely communication without manual intervention.</p>
+<hr>
+<h2 id="feature-name-api-integration">Feature Name: API Integration</h2>
+<p>The module offers an API interface to integrate broadcast functionality into external systems or services, enabling programmatic control over message distribution.</p>
+<p>Here’s the technical documentation for the “Broadcast to Role Groups” module:</p>
+<hr>
+<h1 id="broadcast-to-role-groups-module">Broadcast to Role Groups Module</h1>
+<h2 id="overview">Overview</h2>
+<p>This module allows sending targeted messages to specific user role groups such as “Parents”, “Tutors”, or “Admins”. It includes an API endpoint for message broadcasting, a React UI component for message composition and sending, and data validation using Pydantic.</p>
+<h2 id="components">Components</h2>
+<h3 id="1-fastapi-endpoint-python">1. FastAPI Endpoint (Python)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Message</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender_id: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    subject: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    broadcast_type: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # Could be "email", "notification", etc.</span></span>
+<span class="line"><span style="color:#E1E4E8">    recipient_role_groups: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/send-message"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> send_message</span><span style="color:#E1E4E8">(message: Message):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Broadcast message to specified role groups."""</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Implementation logic here (e.g., database interactions)</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"message_id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">123</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-nodejs-endpoint">2. Node.js Endpoint</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> express</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'express'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> router</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> express.</span><span style="color:#B392F0">Router</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/send-message'</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">message</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> req.body;</span></span>
+<span class="line"><span style="color:#6A737D">    // Implementation logic here (e.g., database interactions)</span></span>
+<span class="line"><span style="color:#E1E4E8">    res.</span><span style="color:#B392F0">status</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">({ status: </span><span style="color:#9ECBFF">'success'</span><span style="color:#E1E4E8">, messageId: </span><span style="color:#79B8FF">123</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> router;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-react-ui-component">3. React UI Component</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>import React, { useState } from 'react';</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const BroadcastMessage = () => {</span></span>
+<span class="line"><span>    const [messageContent, setMessageContent] = useState('');</span></span>
+<span class="line"><span>    const [recipientRoleGroups, setRecipientRoleGroups] = useState(['All Parents']);</span></span>
+<span class="line"><span>    const [subject, setSubject] = useState('');</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const handleSubmit = async (e) => {</span></span>
+<span class="line"><span>        e.preventDefault();</span></span>
+<span class="line"><span>        try {</span></span>
+<span class="line"><span>            const response = await fetch('/api/send-message', {</span></span>
+<span class="line"><span>                method: 'POST',</span></span>
+<span class="line"><span>                headers: {</span></span>
+<span class="line"><span>                    'Content-Type': 'application/json',</span></span>
+<span class="line"><span>                },</span></span>
+<span class="line"><span>                body: JSON.stringify({</span></span>
+<span class="line"><span>                    content: messageContent,</span></span>
+<span class="line"><span>                    subject: subject,</span></span>
+<span class="line"><span>                    sender_id: 1, // Example sender ID</span></span>
+<span class="line"><span>                    recipient_role_groups: recipientRoleGroups</span></span>
+<span class="line"><span>                })</span></span>
+<span class="line"><span>            });</span></span>
+<span class="line"><span>            const data = await response.json();</span></span>
+<span class="line"><span>            alert(data.status);</span></span>
+<span class="line"><span>        } catch (error) {</span></span>
+<span class="line"><span>            console.error('Error:', error);</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    return (</span></span>
+<span class="line"><span>        &#x3C;form onSubmit={handleSubmit}></span></span>
+<span class="line"><span>            &#x3C;div></span></span>
+<span class="line"><span>                &#x3C;label>Subject:&#x3C;/label></span></span>
+<span class="line"><span>                &#x3C;input </span></span>
+<span class="line"><span>                    type="text" </span></span>
+<span class="line"><span>                    value={subject}</span></span>
+<span class="line"><span>                    onChange={(e) => setSubject(e.target.value)}</span></span>
+<span class="line"><span>                /></span></span>
+<span class="line"><span>            &#x3C;/div></span></span>
+<span class="line"><span>            &#x3C;div></span></span>
+<span class="line"><span>                &#x3C;label>Message Content:&#x3C;/label></span></span>
+<span class="line"><span>                &#x3C;textarea</span></span>
+<span class="line"><span>                    value={messageContent}</span></span>
+<span class="line"><span>                    onChange={(e) => setMessageContent(e.target.value)}</span></span>
+<span class="line"><span>                >&#x3C;/textarea></span></span>
+<span class="line"><span>            &#x3C;/div></span></span>
+<span class="line"><span>            &#x3C;div></span></span>
+<span class="line"><span>                &#x3C;label>Recipient Role Groups:&#x3C;/label></span></span>
+<span class="line"><span>                &#x3C;select </span></span>
+<span class="line"><span>                    multiple</span></span>
+<span class="line"><span>                    value={recipientRoleGroups}</span></span>
+<span class="line"><span>                    onChange={(e) => setRecipientRoleGroups(Array.from(e.target.selectedOptions, option => option.value))}</span></span>
+<span class="line"><span>                ></span></span>
+<span class="line"><span>                    &#x3C;option value="All Parents">All Parents&#x3C;/option></span></span>
+<span class="line"><span>                    &#x3C;option value="All Tutors">All Tutors&#x3C;/option></span></span>
+<span class="line"><span>                    &#x3C;option value="Admins">Admins&#x3C;/option></span></span>
+<span class="line"><span>                &#x3C;/select></span></span>
+<span class="line"><span>            &#x3C;/div></span></span>
+<span class="line"><span>            &#x3C;button type="submit">Send Message&#x3C;/button></span></span>
+<span class="line"><span>        &#x3C;/form></span></span>
+<span class="line"><span>    );</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default BroadcastMessage;</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="4-pydantic-data-schema">4. Pydantic Data Schema</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Recipient</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    role_group: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_ids: List[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> []  </span><span style="color:#6A737D"># Optional list of specific user IDs</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> MessageSchema</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender_id: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    subject: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    broadcast_type: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # Options like "email", "notification"</span></span>
+<span class="line"><span style="color:#E1E4E8">    recipient_role_groups: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    custom_recipients: List[Recipient] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> []  </span><span style="color:#6A737D"># Optional custom recipients</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="using-the-fastapi-endpoint">Using the FastAPI Endpoint:</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -X</span><span style="color:#9ECBFF"> POST</span><span style="color:#9ECBFF"> "http://localhost:8000/api/send-message"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">-H </span><span style="color:#9ECBFF">"Content-Type: application/json"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">-d </span><span style="color:#9ECBFF">'{"content":"Meeting reminder tomorrow","subject":"Important Update","sender_id":1,"broadcast_type":"notification","recipient_role_groups":["All Tutors"]}'</span></span>
+<span class="line"></span></code></pre>
+<h3 id="using-the-react-component">Using the React Component:</h3>
+<ul>
+<li>Open the React application.</li>
+<li>Fill in the subject, message content, and select recipient role groups.</li>
+<li>Click “Send Message” to broadcast the notification.</li>
+</ul>
+<hr>
+<p>This module provides a robust way to send targeted messages to specific user groups efficiently.</p>
+<h1 id="module-broadcast-to-role-groups">Module: Broadcast to Role Groups</h1>
+<h2 id="summary">Summary</h2>
+<p>The “Broadcast to Role Groups” module enables targeted message distribution based on predefined user roles, such as “Parents” or “Tutors.” It allows sending messages to specific groups efficiently.</p>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>User Management Module</strong>: Manages user roles and group information.</li>
+<li><strong>Notification Engine</strong>: Handles message delivery mechanisms.</li>
+<li><strong>Logging Module</strong>: Tracks broadcast attempts and outcomes.</li>
+<li><strong>Message Template Module</strong>: Provides tailored message formats per role.</li>
+<li><strong>API Gateway Module</strong>: Exposes broadcasting functionality via APIs.</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Automated Reminders</strong>: Sending event reminders to parents.</li>
+<li><strong>Assignment Notifications</strong>: Informing tutors about new assignments.</li>
+<li><strong>System Updates</strong>: Broadcasting updates to all users based on their roles.</li>
+<li><strong>Personalized Messaging</strong>: Delivering varied content based on user roles.</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>Error Handling</strong>: Implement checks for missing role mappings.</li>
+<li><strong>Asynchronous Processing</strong>: Use background tasks to avoid blocking the main thread.</li>
+<li><strong>Logging</strong>: Record each broadcast attempt with timestamps and IDs.</li>
+<li><strong>Configuration Management</strong>: Dynamically adjust notification channels.</li>
+<li><strong>Testing</strong>: Write unit tests covering edge cases like no recipients.</li>
+</ul>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td><code>enabled</code></td><td>Enable/disable broadcasting.</td><td><code>true</code></td></tr><tr><td><code>role_groups</code></td><td>List of predefined role groups (e.g., “parents”).</td><td>[]</td></tr><tr><td><code>message_template_ids</code></td><td>References to message templates for each group.</td><td>{}</td></tr><tr><td><code>notification_channels</code></td><td>Channels for message delivery (email, SMS).</td><td>[“in-app”]</td></tr><tr><td><code>max_retries</code></td><td>Number of retry attempts for failed broadcasts.</td><td>3</td></tr><tr><td><code>retry_delay</code></td><td>Delay between retries in seconds.</td><td>60</td></tr><tr><td><code>log_level</code></td><td>Logging verbosity level.</td><td>”INFO”</td></tr><tr><td><code>api_key</code></td><td>Authentication token for API access.</td><td>""</td></tr><tr><td><code>throttling_limit</code></td><td>Max messages per minute.</td><td>10</td></tr></tbody></table>
+<h2 id="example-handling-retries">Example: Handling Retries</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> time</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> broadcast_message</span><span style="color:#E1E4E8">(message, role_group):</span></span>
+<span class="line"><span style="color:#E1E4E8">    attempt </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#F97583">    while</span><span style="color:#E1E4E8"> attempt </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> max_retries:</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">            # Broadcast logic here</span></span>
+<span class="line"><span style="color:#F97583">            break</span></span>
+<span class="line"><span style="color:#F97583">        except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#E1E4E8">            attempt </span><span style="color:#F97583">+=</span><span style="color:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> attempt </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> max_retries:</span></span>
+<span class="line"><span style="color:#E1E4E8">                delay </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> retry_delay </span><span style="color:#F97583">*</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">2</span><span style="color:#F97583"> **</span><span style="color:#E1E4E8"> attempt)</span></span>
+<span class="line"><span style="color:#E1E4E8">                time.sleep(delay)</span></span>
+<span class="line"></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

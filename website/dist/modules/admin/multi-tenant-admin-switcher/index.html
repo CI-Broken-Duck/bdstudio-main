@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Multi-Tenant Admin Switcher</title><meta name="description" content="If supporting multiple orgs, toggle and impersonate org-level dashboards."><meta property="og:title" content="Multi-Tenant Admin Switcher"><meta property="og:description" content="If supporting multiple orgs, toggle and impersonate org-level dashboards."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Multi-Tenant Admin Switcher</h1> <div class="module-meta"> <div> <span class="module-category">Admin</span> <span class="module-subcategory"> → Platinum</span> </div> <div class="module-price"> <span>💰</span> $3500 </div> </div> <p class="module-summary">If supporting multiple orgs, toggle and impersonate org-level dashboards.</p> <div class="module-icons"> <img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-multi-tenant-admin-switcher-module">Overview: Multi-Tenant Admin Switcher Module</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Multi-Tenant Admin Switcher module is designed to streamline the management of multiple organizations (tenants) within a software system. It enables administrators to toggle between different tenant dashboards and impersonate tenant users, allowing them to view and manage each organization’s data seamlessly without requiring logouts or complex authentication processes.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Efficient Tenant Management</strong>: Allows admins to switch contexts quickly between multiple tenants, reducing the need for repetitive login/logout cycles.</li>
+<li><strong>Enhanced Productivity</strong>: Saves time by providing a direct toggle mechanism, enabling admins to focus on monitoring and managing tenant activities efficiently.</li>
+<li><strong>Impersonation Feature</strong>: Admins can impersonate tenant users to troubleshoot issues or replicate user experiences, enhancing debugging capabilities.</li>
+<li><strong>Contextual Awareness</strong>: Provides a clear view of each tenant’s data, aiding in better decision-making for system-wide policies and updates.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<h3 id="1-daily-tenant-monitoring">1. Daily Tenant Monitoring</h3>
+<ul>
+<li><strong>Scenario</strong>: An admin needs to check the performance metrics of several tenants throughout the day.</li>
+<li><strong>How it helps</strong>: The switcher allows quick context switching, enabling efficient monitoring and analysis across all tenants without delays.</li>
+</ul>
+<h3 id="2-cross-tenant-support-tickets">2. Cross-Tenant Support Tickets</h3>
+<ul>
+<li><strong>Scenario</strong>: Handling support queries that span multiple organizations.</li>
+<li><strong>How it helps</strong>: Admins can switch between tenant dashboards to gather necessary information and resolve issues effectively.</li>
+</ul>
+<h3 id="3-audit-and-troubleshooting">3. Audit and Troubleshooting</h3>
+<ul>
+<li><strong>Scenario</strong>: Investigating discrepancies or performance issues across different tenants.</li>
+<li><strong>How it helps</strong>: The impersonation feature allows admins to view data from the perspective of a tenant user, aiding in pinpointing issues.</li>
+</ul>
+<h3 id="4-system-wide-updates-and-maintenance">4. System-Wide Updates and Maintenance</h3>
+<ul>
+<li><strong>Scenario</strong>: Applying updates that impact all tenants and needing to verify changes across each organization.</li>
+<li><strong>How it helps</strong>: Quick context switching ensures thorough testing without disrupting workflow efficiency.</li>
+</ul>
+<p>The Multi-Tenant Admin Switcher module is an essential tool for developers aiming to enhance the admin experience in multi-tenant environments, offering both time-saving features and powerful impersonation capabilities.</p>
+<h2 id="features-of-multi-tenant-admin-switcher-module">Features of Multi-Tenant Admin Switcher Module</h2>
+<h3 id="1-multi-tenant-support">1. <strong>Multi-Tenant Support</strong></h3>
+<ul>
+<li>Enables administration across multiple organizations, allowing users to manage, view, and switch between different tenant contexts seamlessly.</li>
+</ul>
+<h3 id="2-organization-management">2. <strong>Organization Management</strong></h3>
+<ul>
+<li>Provides a centralized interface for adding, editing, and deleting organizations.</li>
+<li>Includes bulk operations for efficient management of multiple tenants.</li>
+</ul>
+<h3 id="3-quick-switch-functionality">3. <strong>Quick Switch Functionality</strong></h3>
+<ul>
+<li>Allows admins to toggle between different tenant dashboards with ease using a switcher component or dropdown menu.</li>
+</ul>
+<h3 id="4-impersonation-mode">4. <strong>Impersonation Mode</strong></h3>
+<ul>
+<li>Admins can log in as a specific user from another organization to view and interact with their dashboard, facilitating troubleshooting and support tasks.</li>
+</ul>
+<h3 id="5-access-control">5. <strong>Access Control</strong></h3>
+<ul>
+<li>Restricts certain admin actions based on the active tenant context, ensuring that sensitive operations are performed within the correct scope.</li>
+</ul>
+<h3 id="6-audit-logging">6. <strong>Audit Logging</strong></h3>
+<ul>
+<li>Tracks tenant switch attempts and impersonation activities for security and accountability purposes.</li>
+</ul>
+<h3 id="7-uiux-enhancements">7. <strong>UI/UX Enhancements</strong></h3>
+<ul>
+<li>Includes visual indicators to highlight the currently active tenant in dashboards and navigation menus.</li>
+<li>Provides a streamlined user experience with intuitive controls for switching and impersonating tenants.</li>
+</ul>
+<h3 id="8-integration-with-other-modules">8. <strong>Integration with Other Modules</strong></h3>
+<ul>
+<li>Works seamlessly with modules like User Management, Permissions, and Billing to ensure context-aware operations across the application.</li>
+</ul>
+<h3 id="9-performance-optimizations">9. <strong>Performance Optimizations</strong></h3>
+<ul>
+<li>Implements efficient data loading and caching mechanisms to handle multiple tenant contexts without compromising performance.</li>
+</ul>
+<h3 id="10-security-measures">10. <strong>Security Measures</strong></h3>
+<ul>
+<li>Enforces role-based restrictions on tenant switching and impersonation.</li>
+<li>Requires explicit permission for admins to access or switch between certain tenant contexts.</li>
+</ul>
+<h3 id="11-multi-tenant-filtering">11. <strong>Multi-Tenant Filtering</strong></h3>
+<ul>
+<li>Automatically applies data filtering based on the active tenant context in forms, reports, and other UI elements.</li>
+</ul>
+<h1 id="multi-tenant-admin-switcher-documentation">Multi-Tenant Admin Switcher Documentation</h1>
+<h2 id="module-name-multi-tenant-admin-switcher">Module Name: Multi-Tenant Admin Switcher</h2>
+<p><strong>Category:</strong> Admin<br>
+<strong>Summary:</strong> Enables admins to toggle between organization-level dashboards and impersonate users across multiple organizations.</p>
+<hr>
+<h2 id="key-features">Key Features:</h2>
+<ul>
+<li><strong>Organization Switching:</strong> Allow admins to switch context between different tenant/organization dashboards.</li>
+<li><strong>User Impersonation:</strong> Enable admins to temporarily assume the identity of any user within supported organizations for troubleshooting or auditing purposes.</li>
+</ul>
+<hr>
+<h2 id="code-samples">Code Samples</h2>
+<h3 id="1-fastapi-endpoint-python">1. FastAPI Endpoint (Python)</h3>
+<p>This example demonstrates a FastAPI endpoint that handles organization switching and impersonation requests.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> jose </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> JWTError</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi.security </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> OAuth2PasswordBearer</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"><span style="color:#E1E4E8">oauth2_scheme </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> OAuth2PasswordBearer(</span><span style="color:#FFAB70">tokenUrl</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"token"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> SwitchOrganizationRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    organization_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ImpersonateUserRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    organization_id: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> get_current_user</span><span style="color:#E1E4E8">(token: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Depends(oauth2_scheme)):</span></span>
+<span class="line"><span style="color:#6A737D">    # Implementation for token validation and user retrieval</span></span>
+<span class="line"><span style="color:#F97583">    pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/switch-organization"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> switch_organization</span><span style="color:#E1E4E8">(request_data: SwitchOrganizationRequest, current_user</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">Depends(get_current_user)):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Switches the admin context to a different organization.</span></span>
+<span class="line"><span style="color:#9ECBFF">    - Requires valid authentication token.</span></span>
+<span class="line"><span style="color:#9ECBFF">    - Only admins with multi-tenant access can use this endpoint.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#6A737D">    # Implementation logic for switching organizations</span></span>
+<span class="line"><span style="color:#F97583">    pass</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/impersonate-user"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> impersonate_user</span><span style="color:#E1E4E8">(request_data: ImpersonateUserRequest, current_user</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">Depends(get_current_user)):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Allows admin to impersonate another user within supported organizations.</span></span>
+<span class="line"><span style="color:#9ECBFF">    - Requires valid authentication token.</span></span>
+<span class="line"><span style="color:#9ECBFF">    - Admin must have appropriate permissions.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#6A737D">    # Implementation logic for user impersonation</span></span>
+<span class="line"><span style="color:#F97583">    pass</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="2-react-ui-snippet-javascript">2. React UI Snippet (JavaScript)</h3>
+<p>This example shows a simple React component that implements the organization switcher UI.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> axios </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'axios'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> OrganizationSwitcher</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">organizations</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">currentOrg</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setCurrentOrg</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> handleSwitchOrganization</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">orgId</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      await</span><span style="color:#E1E4E8"> axios.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/switch-organization'</span><span style="color:#E1E4E8">, { organization_id: orgId });</span></span>
+<span class="line"><span style="color:#B392F0">      setCurrentOrg</span><span style="color:#E1E4E8">(orgId);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error switching organizations:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> handleImpersonateUser</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">userId</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">orgId</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      await</span><span style="color:#E1E4E8"> axios.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/impersonate-user'</span><span style="color:#E1E4E8">, { user_id: userId, organization_id: orgId });</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error impersonating user:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"organization-switcher"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>Current Organization: {currentOrg </span><span style="color:#F97583">||</span><span style="color:#9ECBFF"> 'None'</span><span style="color:#E1E4E8">}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">currentOrg </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> organizations.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">org</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{org.id} </span><span style="color:#B392F0">onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> handleSwitchOrganization</span><span style="color:#E1E4E8">(org.id)}></span></span>
+<span class="line"><span style="color:#E1E4E8">          Switch to {org.name}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">      {currentOrg </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"impersonation-options"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">>Impersonate User&#x3C;/</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">            type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">            placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"User ID"</span></span>
+<span class="line"><span style="color:#B392F0">            onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setCurrentOrg</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#E1E4E8">          /></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> handleImpersonateUser</span><span style="color:#E1E4E8">(currentOrg, currentOrg.organization_id)}></span></span>
+<span class="line"><span style="color:#E1E4E8">            Impersonate</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      )}</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> OrganizationSwitcher;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="3-data-schema-pydantic">3. Data Schema (Pydantic)</h3>
+<p>This example shows the Pydantic models for request/response validation.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> SwitchOrganizationResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    success: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    current_organization: </span><span style="color:#79B8FF">dict</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ImpersonateUserResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    success: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    impersonated_user: </span><span style="color:#79B8FF">dict</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D"># Example usage:</span></span>
+<span class="line"><span style="color:#6A737D"># {</span></span>
+<span class="line"><span style="color:#6A737D">#     "success": true,</span></span>
+<span class="line"><span style="color:#6A737D">#     "message": "Switched to organization XYZ",</span></span>
+<span class="line"><span style="color:#6A737D">#     "current_organization": {"id": "XYZ", "name": "Organization XYZ"}</span></span>
+<span class="line"><span style="color:#6A737D"># }</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="additional-notes">Additional Notes:</h2>
+<ul>
+<li><strong>Security:</strong> Ensure proper authentication and authorization checks are in place.</li>
+<li><strong>State Management:</strong> Use your preferred state management solution (e.g., Redux, Context API) to persist the current organization context across components.</li>
+<li><strong>Error Handling:</strong> Implement proper error handling for invalid requests or unauthorized access.</li>
+</ul>
+<h1 id="multi-tenant-admin-switcher-module-documentation">Multi-Tenant Admin Switcher Module Documentation</h1>
+<h2 id="summary">Summary</h2>
+<p>The <strong>Multi-Tenant Admin Switcher</strong> module allows administrators to toggle between different tenant organizations and impersonate users within those organizations. This is particularly useful in multi-tenant applications where admins need to manage and access dashboards or data for multiple organizations seamlessly.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ol>
+<li><strong>身份认证 (Authentication)</strong>
+<ul>
+<li>Manages user authentication across multiple tenants.</li>
+</ul>
+</li>
+<li><strong>权限管理 (Authorization)</strong>
+<ul>
+<li>Controls access rights for different tenant organizations.</li>
+</ul>
+</li>
+<li><strong>数据隔离 (Data Isolation)</strong>
+<ul>
+<li>Ensures data from one tenant is isolated from another.</li>
+</ul>
+</li>
+<li><strong>日志记录 (Logging)</strong>
+<ul>
+<li>Tracks admin activities and switches between tenants.</li>
+</ul>
+</li>
+<li><strong>消息通知 (Notifications)</strong>
+<ul>
+<li>Sends notifications when an admin switches to a different tenant.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li>
+<p><strong>System Admin Managing Multiple Tenants</strong></p>
+<ul>
+<li>An admin can switch between different tenant dashboards to monitor performance metrics or troubleshoot issues.</li>
+</ul>
+</li>
+<li>
+<p><strong>Org-Specific Admin Access</strong></p>
+<ul>
+<li>A tenant-specific admin can access only their organization’s dashboard and data without interfering with other tenants.</li>
+</ul>
+</li>
+<li>
+<p><strong>Impersonation for Troubleshooting</strong></p>
+<ul>
+<li>Developers or admins can impersonate users from different tenants to test features or debug issues in a specific context.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cross-Tenant Reporting</strong></p>
+<ul>
+<li>Generate reports across multiple tenants by switching between them and aggregating data.</li>
+</ul>
+</li>
+<li>
+<p><strong>Tenant Migration</strong></p>
+<ul>
+<li>Migrate data or settings between tenants by accessing both tenant dashboards simultaneously.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li>
+<p><strong>Use Cases</strong>:</p>
+<ul>
+<li>Implement the switcher in the admin panel for easy navigation between tenants.</li>
+<li>Use it during development to test cross-tenant functionality.</li>
+<li>Integrate with logging modules to track which admin is working on which tenant at any given time.</li>
+</ul>
+</li>
+<li>
+<p><strong>Best Practices</strong>:</p>
+<ul>
+<li>Always ensure that the switcher has proper authentication and authorization checks before allowing access.</li>
+<li>Use secure tokens or session management to prevent unauthorized access when switching tenants.</li>
+<li>Consider implementing a UI/UX design that clearly indicates the current tenant context (e.g., displaying the tenant name/logo).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Configuration Option</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td><code>enable_multi_tenant</code></td><td>Enable or disable multi-tenant support globally.</td></tr><tr><td><code>default_tenant_id</code></td><td>Set the default tenant ID to use when no specific tenant is selected.</td></tr><tr><td><code>switcher_timeout</code></td><td>Session timeout in minutes for the switcher (e.g., 30 minutes).</td></tr><tr><td><code>impersonation_allowed</code></td><td>Allow or restrict impersonation of other tenants.</td></tr><tr><td><code>multi_tenant_dashboard_url</code></td><td>Custom URL pattern for tenant-specific dashboards.</td></tr><tr><td><code>log_tenant_switches</code></td><td>Enable logging when an admin switches between tenants.</td></tr><tr><td><code>tenant_isolation_mode</code></td><td>Set isolation mode (e.g., database, schema, or flag-based).</td></tr><tr><td><code>max_concurrent_tenants</code></td><td>Maximum number of concurrent tenant sessions allowed for an admin user.</td></tr></tbody></table>
+<hr>
+<h2 id="why-this-module">Why This Module?</h2>
+<p>The Multi-Tenant Admin Switcher module is essential for developers working on large-scale multi-tenant applications. It simplifies managing multiple organizations, provides impersonation capabilities for debugging, and ensures secure access control across tenants.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

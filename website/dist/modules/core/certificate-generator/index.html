@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Certificate Generator</title><meta name="description" content="Auto-generate branded certificates upon course completion."><meta property="og:title" content="Certificate Generator"><meta property="og:description" content="Auto-generate branded certificates upon course completion."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Certificate Generator</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Auto-generate branded certificates upon course completion.</p> <div class="module-icons"> <img src="/assets/modules/language/python.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <h1 id="certificate-generator-module-overview">Certificate Generator Module Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The <strong>Certificate Generator</strong> module is designed to automate the creation of branded certificates upon course completion. It streamlines the process of generating customized certificates by integrating seamlessly with existing systems, ensuring consistency in branding while reducing manual intervention.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Saves Time</strong>: Automates certificate generation, eliminating the need for manual creation.</li>
+<li><strong>Consistent Branding</strong>: Ensures all certificates adhere to your organization’s branding guidelines.</li>
+<li><strong>Scalable</strong>: Handles large volumes of certificates efficiently.</li>
+<li><strong>Customizable</strong>: Supports dynamic content and variable data fields for personalized certificates.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<h3 id="course-completion">Course Completion</h3>
+<p>Automatically generate certificates when learners complete a course or achieve specific milestones.</p>
+<h3 id="api-integration">API Integration</h3>
+<p>Integrate with external systems to trigger certificate generation based on predefined criteria (e.g., API calls).</p>
+<h3 id="custom-events">Custom Events</h3>
+<p>Generate certificates programmatically for custom events or promotions, such as conference attendance or achievement-based rewards.</p>
+<h2 id="installation--setup">Installation &#x26; Setup</h2>
+<p>Follow the <a href="#">Installation Guide</a> to set up the Certificate Generator module in your system. Configure branding details and integration points during setup.</p>
+<h2 id="api-reference">API Reference</h2>
+<p>The module provides a robust API that allows developers to trigger certificate generation programmatically. Refer to the <a href="#">API Documentation</a> for detailed usage instructions, including parameters and response formats.</p>
+<hr>
+<p>This module empowers developers to streamline certificate management while enhancing user experience through personalized and branded recognition of course completion.</p>
+<h2 id="certificate-generator-module-documentation">Certificate Generator Module Documentation</h2>
+<h3 id="features-overview">Features Overview</h3>
+<ol>
+<li>
+<p><strong>Course Completion Integration</strong></p>
+<ul>
+<li>Automatically generates certificates upon successful course completion.</li>
+<li>Integrates seamlessly with learning management systems (LMS) or custom platforms.</li>
+</ul>
+</li>
+<li>
+<p><strong>Customizable Branding Templates</strong></p>
+<ul>
+<li>Supports multiple branded templates for different courses, programs, or organizations.</li>
+<li>Allows customization of colors, fonts, logos, and layouts.</li>
+</ul>
+</li>
+<li>
+<p><strong>Secure Certificate Generation</strong></p>
+<ul>
+<li>Generates certificates securely with encryption during creation and storage.</li>
+<li>Ensures data integrity and authenticity of certificates.</li>
+</ul>
+</li>
+<li>
+<p><strong>Version Control for Templates</strong></p>
+<ul>
+<li>Manages multiple versions of templates to maintain historical records or revert changes.</li>
+<li>Tracks changes and updates to branding elements over time.</li>
+</ul>
+</li>
+<li>
+<p><strong>Export Options</strong>
+-Exports certificates in various formats such as PDF, PNG, JPEG, and SVG.</p>
+<ul>
+<li>Enables customization of export settings like resolution and dimensions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom Fields Integration</strong>
+-Supports dynamic fields for course name, participant details, completion date, and grades.</p>
+<ul>
+<li>Facilitates inclusion of additional metadata or specific information relevant to the certificate.</li>
+</ul>
+</li>
+<li>
+<p><strong>Automation via API/Webhooks</strong></p>
+<ul>
+<li>Provides APIs for programmatic certificate generation.</li>
+<li>Supports webhooks to trigger certificate creation based on predefined events or conditions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Audit Logging and Tracking</strong></p>
+<ul>
+<li>Logs all certificate generations, updates, and exports with timestamps and user IDs.</li>
+<li>Includes detailed tracking of template usage and modifications.</li>
+</ul>
+</li>
+<li>
+<p><strong>Batch Processing</strong>
+-Generates multiple certificates in a single operation.</p>
+<ul>
+<li>Handles large-scale issuance efficiently without compromising performance or security.</li>
+</ul>
+</li>
+<li>
+<p><strong>API Access for Integration</strong></p>
+<ul>
+<li>Offers comprehensive API endpoints for full integration with external systems.</li>
+<li>Supports RESTful and GraphQL interfaces for flexibility.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reporting and Analytics</strong>
+-Generates reports on certificate usage, issuance trends, and system health.</p>
+<ul>
+<li>Provides insights into user activity, export patterns, and potential security issues.</li>
+</ul>
+</li>
+</ol>
+<h3 id="summary">Summary</h3>
+<p>The Certificate Generator module is a robust solution for automating the creation of branded certificates upon course completion. It offers features like customization, secure generation, version control, and extensive API support, ensuring seamless integration and efficient management of digital credentials.</p>
+<h1 id="certificate-generator-module-documentation-1">Certificate Generator Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Certificate Generator module is designed to automate the creation of branded certificates upon course completion. This module integrates seamlessly with learning management systems (LMS) and provides a robust API for generating customized certificates.</p>
+<h2 id="code-samples">Code Samples</h2>
+<h3 id="1-fastapi-endpoint-example">1. FastAPI Endpoint Example</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi.responses </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FileResponse</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> os</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/generate-certificate"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> generate_certificate</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    request: CertificateRequest,</span></span>
+<span class="line"><span style="color:#E1E4E8">    brand_logo: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> File(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Generate certificate logic here</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> FileResponse(</span><span style="color:#9ECBFF">"certificate.pdf"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">media_type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"application/pdf"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-example">2. React UI Example</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useDropzone } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-dropzone'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> CertificateGenerator</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">courseName</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setCourseName</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">userName</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setUserName</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">completionDate</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setCompletionDate</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">brandLogo</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setBrandLogo</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">getRootProps</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">getInputProps</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useDropzone</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        accept: {</span></span>
+<span class="line"><span style="color:#9ECBFF">            'image/*'</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">'.png'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'.jpg'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'.jpeg'</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#B392F0">        onDrop</span><span style="color:#E1E4E8">: </span><span style="color:#FFAB70">files</span><span style="color:#F97583"> =></span><span style="color:#B392F0"> setBrandLogo</span><span style="color:#E1E4E8">(files[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> generateCertificate</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">        // Generate certificate logic here</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"certificate-generator"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>Generate Certificate&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Course Name:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{courseName}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setCourseName</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>User Name:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{userName}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setUserName</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Completion Date:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"date"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{completionDate}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setCompletionDate</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#E1E4E8">                {</span><span style="color:#F97583">...</span><span style="color:#B392F0">getRootProps</span><span style="color:#E1E4E8">()}</span></span>
+<span class="line"><span style="color:#B392F0">                className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"dropzone"</span></span>
+<span class="line"><span style="color:#E1E4E8">            ></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> {</span><span style="color:#F97583">...</span><span style="color:#B392F0">getInputProps</span><span style="color:#E1E4E8">()} /></span></span>
+<span class="line"><span style="color:#E1E4E8">                {brandLogo </span><span style="color:#F97583">?</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Logo: {brandLogo.name}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                ) </span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Drop logo here...&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                )}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{generateCertificate}></span></span>
+<span class="line"><span style="color:#E1E4E8">                Generate Certificate</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> CertificateGenerator;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-pydantic-data-schema-example">3. Pydantic Data Schema Example</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel, Field, validator</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> date</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> CertificateRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    course_name: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">max_length</span><span style="color:#F97583">=</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_name: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">max_length</span><span style="color:#F97583">=</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    completion_date: date </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    brand_id: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">ge</span><span style="color:#F97583">=</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    logo_url: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    @validator</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'course_name'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    def</span><span style="color:#B392F0"> uppercase_course_name</span><span style="color:#E1E4E8">(cls, value):</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> value.upper()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    @validator</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'completion_date'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    def</span><span style="color:#B392F0"> validate_future_dates</span><span style="color:#E1E4E8">(cls, value):</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> value </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> date.today():</span></span>
+<span class="line"><span style="color:#F97583">            raise</span><span style="color:#79B8FF"> ValueError</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Completion date cannot be in the future"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> value</span></span>
+<span class="line"></span></code></pre>
+<h2 id="example-usage">Example Usage</h2>
+<h3 id="api-endpoint">API Endpoint:</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">POST</span><span style="color:#9ECBFF"> http://localhost:8000/generate-certificate</span></span>
+<span class="line"><span style="color:#B392F0">Content-Type:</span><span style="color:#9ECBFF"> multipart/form-data</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">course_name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">Introduction%20to%20AI</span><span style="color:#E1E4E8">&#x26;user_name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">John%20Doe</span><span style="color:#E1E4E8">&#x26;completion_date</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">2023-10-05</span><span style="color:#E1E4E8">&#x26;brand_id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">1</span><span style="color:#E1E4E8">&#x26;logo_url</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">courses/logo.png</span></span>
+<span class="line"></span></code></pre>
+<h3 id="react-component">React Component:</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Example usage in a parent component</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> CertificateGenerator </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './CertificateGenerator'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> App</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"app"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#79B8FF">CertificateGenerator</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>FastAPI: <code>pip install fastapi</code></li>
+<li>Python-Multipart: <code>pip install python-multipart</code></li>
+<li>React-Dropzone: <code>npm install react-dropzone</code></li>
+</ul>
+<h2 id="notes">Notes</h2>
+<ol>
+<li>The endpoint accepts both form data and file uploads for custom branding.</li>
+<li>The React component uses <code>react-dropzone</code> for handling file uploads.</li>
+<li>Pydantic models are used for request validation in the FastAPI endpoint.</li>
+</ol>
+<h2 id="license">License</h2>
+<p>MIT License</p>
+<h2 id="contact">Contact</h2>
+<p>For any questions or issues, please contact <a href="mailto:support@yourcompany.com">support@yourcompany.com</a>.</p>
+<h1 id="technical-documentation-for-certificate-generator-module">Technical Documentation for Certificate Generator Module</h1>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Student Database</strong>: Manages student records for certificate issuance.</li>
+<li><strong>Course Management</strong>: Handles course details and enrollment status.</li>
+<li><strong>Notification System</strong>: Sends certificates via email or SMS.</li>
+<li><strong>Branding Module</strong>: Applies organization-specific branding to certificates.</li>
+<li><strong>API Gateway</strong>: Facilitates programmatic access to certificate generation.</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Onboarding Certificates</strong>: Generate certificates upon student registration.</li>
+<li><strong>Course Completion</strong>: Award certificates after successful course completion.</li>
+<li><strong>Custom Designs</strong>: Allow custom templates for special events or achievements.</li>
+<li><strong>Batch Processing</strong>: Create multiple certificates in a single operation.</li>
+<li><strong>Revocation Management</strong>: Invalidate and revoke certificates as needed.</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>Database Integration</strong>: Ensure seamless data flow with the Student Database and Course Management modules.</li>
+<li><strong>API Setup</strong>: Use the API Gateway to enable programmatic certificate generation.</li>
+<li><strong>Notification Configuration</strong>: Set up notifications via the Notification System for automatic certificate delivery.</li>
+<li><strong>Design Customization</strong>: Integrate with the Branding Module for consistent and branded certificates.</li>
+<li><strong>Revocation Handling</strong>: Implement checks in your system using revocation status data.</li>
+</ul>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td><code>enabled</code></td><td>boolean</td><td>Enables auto-generation.</td><td>true</td></tr><tr><td><code>brandingTheme</code></td><td>string</td><td>Selects the branding theme.</td><td>”default”</td></tr><tr><td><code>templateID</code></td><td>integer</td><td>Specifies the certificate template.</td><td>null</td></tr><tr><td><code>completionThreshold</code></td><td>integer</td><td>Minimum score for certificate issuance.</td><td>70</td></tr><tr><td><code>apiEndpoint</code></td><td>string</td><td>URL for programmatic access.</td><td>”/certificates/api”</td></tr></tbody></table>
+<hr>
+<p>This documentation provides a structured approach to integrating and configuring the Certificate Generator module, ensuring developers can efficiently generate and manage certificates within their systems.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

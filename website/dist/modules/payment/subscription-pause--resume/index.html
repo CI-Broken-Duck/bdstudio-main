@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Subscription Pause &amp; Resume</title><meta name="description" content="Let users freeze billing and reactivate when ready."><meta property="og:title" content="Subscription Pause &#38; Resume"><meta property="og:description" content="Let users freeze billing and reactivate when ready."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Subscription Pause &amp; Resume</h1> <div class="module-meta"> <div> <span class="module-category">Payment</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Let users freeze billing and reactivate when ready.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/stripe.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"> </div> </section> <article> <h1 id="subscription-pause--resume-module-overview">Subscription Pause &#x26; Resume Module Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Subscription Pause &#x26; Resume module provides users with the ability to temporarily halt their subscription billing and easily reactivate it when needed. This feature offers flexibility, allowing users to manage their payment schedule based on their needs.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Enhanced User Control</strong>: Users can pause subscriptions during periods of low usage or budget constraints, avoiding unnecessary charges.</li>
+<li><strong>Reduced Churn</strong>: By giving users control, they are less likely to cancel their subscription entirely, benefiting both the user and the service provider.</li>
+<li><strong>Simplified Reactivation</strong>: The module ensures a seamless process for resuming payments, reducing potential friction points.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<h3 id="pausing-subscriptions">Pausing Subscriptions</h3>
+<ol>
+<li><strong>Temporary Service Break</strong>: Users may pause subscriptions during extended breaks or holidays to avoid charges.</li>
+<li><strong>Cost Management</strong>: Useful for users managing budgets who want to halt payments temporarily without losing access.</li>
+<li><strong>Payment Issues</strong>: Temporarily pausing can resolve payment-related issues, allowing time to address underlying problems.</li>
+</ol>
+<h3 id="resuming-subscriptions">Resuming Subscriptions</h3>
+<ol>
+<li><strong>Return to Service</strong>: After addressing personal reasons or resolving payment issues, users can seamlessly reactivate their subscriptions.</li>
+<li><strong>Budget Planning</strong>: Users might resume payments post-pause to align with new financial plans or service needs.</li>
+<li><strong>Reactivating Due to Errors</strong>: If a pause was due to an error, this module allows easy resumption without affecting service continuity.</li>
+</ol>
+<p>This module is designed to be user-friendly and efficient, ensuring both users and businesses benefit from flexible subscription management.</p>
+<h1 id="subscription-pause--resume-module-documentation">Subscription Pause &#x26; Resume Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Subscription Pause &#x26; Resume</strong> module allows users to temporarily halt billing on their subscriptions and reactivate them when needed. This feature provides flexibility for users who may want to manage their expenses during periods of inactivity, without losing access to their services permanently.</p>
+<h2 id="key-features">Key Features</h2>
+<h3 id="1-subscription-pause">1. Subscription Pause</h3>
+<ul>
+<li>Users can pause their subscription to stop being billed immediately.</li>
+<li>A grace period is applied after the pause, allowing users to resume within a specific timeframe without penalties.</li>
+<li>Pausing does not affect existing service entitlements or usage history.</li>
+</ul>
+<h3 id="2-subscription-resume">2. Subscription Resume</h3>
+<ul>
+<li>Users can reactivate their paused subscriptions at any time.</li>
+<li>Resuming restores the subscription to its previous state, including all associated benefits and access levels.</li>
+<li>No additional fees are applied when resuming a paused subscription.</li>
+</ul>
+<h3 id="3-grace-period">3. Grace Period</h3>
+<ul>
+<li>A configurable grace period is provided after pausing a subscription before it expires or reactivates automatically.</li>
+<li>The grace period ensures users have time to resume their subscription without losing access entirely.</li>
+</ul>
+<h3 id="4-api-integration">4. API Integration</h3>
+<ul>
+<li>The module provides RESTful APIs for programmatic control of subscription pauses and resumes.</li>
+<li>Endpoints include:
+<ul>
+<li><code>POST /subscriptions/{id}/pause</code></li>
+<li><code>POST /subscriptions/{id}/resume</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="5-session-expiration">5. Session Expiration</h3>
+<ul>
+<li>Paused subscriptions that remain inactive for a specified period (e.g., 30 days) are subject to session expiration.</li>
+<li>Expired subscriptions may require reauthentication or a new subscription setup to resume.</li>
+</ul>
+<h3 id="6-audit-logs">6. Audit Logs</h3>
+<ul>
+<li>Detailed logs track all pause and resume actions, including timestamps, user IDs, and subscription details.</li>
+<li>These logs help in auditing user activity and ensuring compliance with policies.</li>
+</ul>
+<p>This module offers developers the tools to provide flexible billing management while maintaining secure and transparent operations.</p>
+<h3 id="subscription-pause--resume-module-documentation-1">Subscription Pause &#x26; Resume Module Documentation</h3>
+<h4 id="1-fastapi-endpoint-example">1. FastAPI Endpoint Example</h4>
+<p>The following code demonstrates how to create endpoints in a FastAPI application to pause and resume subscriptions.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> SubscriptionStatus</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    Active </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Active"</span></span>
+<span class="line"><span style="color:#E1E4E8">    Paused </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Paused"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PauseResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    subscription_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    status_name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ResumeResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    subscription_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    status_name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/subscriptions/</span><span style="color:#79B8FF">{subscription_id}</span><span style="color:#9ECBFF">/pause"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">PauseResponse)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> pause_subscription</span><span style="color:#E1E4E8">(subscription_id: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#6A737D">    # Implementation logic here</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">, </span></span>
+<span class="line"><span style="color:#9ECBFF">            "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Subscription paused successfully"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "subscription_id"</span><span style="color:#E1E4E8">: subscription_id,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "status_name"</span><span style="color:#E1E4E8">: SubscriptionStatus.Paused}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/subscriptions/</span><span style="color:#79B8FF">{subscription_id}</span><span style="color:#9ECBFF">/resume"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">ResumeResponse)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> resume_subscription</span><span style="color:#E1E4E8">(subscription_id: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#6A737D">    # Implementation logic here</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Subscription resumed successfully"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "subscription_id"</span><span style="color:#E1E4E8">: subscription_id,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "status_name"</span><span style="color:#E1E4E8">: SubscriptionStatus.Active}</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<h4 id="2-react-ui-example">2. React UI Example</h4>
+<p>This React component demonstrates a simple UI for pausing and resuming subscriptions.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>import { useState } from 'react';</span></span>
+<span class="line"><span>import toast, { Toaster } from 'react-hot-toast';</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const SubscriptionActions = ({ subscriptionId }: { subscriptionId: string }) => {</span></span>
+<span class="line"><span>    const [isLoading, setIsLoading] = useState(false);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const pauseSubscription = async () => {</span></span>
+<span class="line"><span>        setIsLoading(true);</span></span>
+<span class="line"><span>        try {</span></span>
+<span class="line"><span>            await fetch(`/api/subscriptions/${subscriptionId}/pause`, { method: 'PUT' });</span></span>
+<span class="line"><span>            toast.success('Subscription paused successfully!');</span></span>
+<span class="line"><span>        } catch (error) {</span></span>
+<span class="line"><span>            toast.error('Failed to pause subscription.');</span></span>
+<span class="line"><span>        } finally {</span></span>
+<span class="line"><span>            setIsLoading(false);</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    const resumeSubscription = async () => {</span></span>
+<span class="line"><span>        setIsLoading(true);</span></span>
+<span class="line"><span>        try {</span></span>
+<span class="line"><span>            await fetch(`/api/subscriptions/${subscriptionId}/resume`, { method: 'PUT' });</span></span>
+<span class="line"><span>            toast.success('Subscription resumed successfully!');</span></span>
+<span class="line"><span>        } catch (error) {</span></span>
+<span class="line"><span>            toast.error('Failed to resume subscription.');</span></span>
+<span class="line"><span>        } finally {</span></span>
+<span class="line"><span>            setIsLoading(false);</span></span>
+<span class="line"><span>        }</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    return (</span></span>
+<span class="line"><span>        &#x3C;div className="flex gap-2"></span></span>
+<span class="line"><span>            &#x3C;button </span></span>
+<span class="line"><span>                onClick={pauseSubscription}</span></span>
+<span class="line"><span>                disabled={isLoading}</span></span>
+<span class="line"><span>                className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"</span></span>
+<span class="line"><span>            ></span></span>
+<span class="line"><span>                {isLoading ? 'Pausing...' : 'Pause'}</span></span>
+<span class="line"><span>            &#x3C;/button></span></span>
+<span class="line"><span>            &#x3C;button</span></span>
+<span class="line"><span>                onClick={resumeSubscription}</span></span>
+<span class="line"><span>                disabled={isLoading}</span></span>
+<span class="line"><span>                className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"</span></span>
+<span class="line"><span>            ></span></span>
+<span class="line"><span>                {isLoading ? 'Resuming...' : 'Resume'}</span></span>
+<span class="line"><span>            &#x3C;/button></span></span>
+<span class="line"><span>        &#x3C;/div></span></span>
+<span class="line"><span>    );</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default SubscriptionActions;</span></span>
+<span class="line"><span></span></span></code></pre>
+<h4 id="3-pydantic-data-schema-example">3. Pydantic Data Schema Example</h4>
+<p>This schema defines the expected responses for subscription pause and resume actions.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> SubscriptionStatus</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    Active </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Active"</span></span>
+<span class="line"><span style="color:#E1E4E8">    Paused </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "Paused"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> SubscriptionResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    subscription_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    status_name: SubscriptionStatus</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Example usage in response models:</span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PauseResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">SubscriptionResponse</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#F97583">    pass</span><span style="color:#6A737D">  # Inherit from SubscriptionResponse</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ResumeResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">SubscriptionResponse</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#F97583">    pass</span><span style="color:#6A737D">  # Inherit from SubscriptionResponse</span></span>
+<span class="line"></span></code></pre>
+<p>These code samples provide a foundation for implementing subscription pause and resume functionality in your application.</p>
+<h1 id="subscription-pause--resume-module-documentation-2">Subscription Pause &#x26; Resume Module Documentation</h1>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Subscription Management</strong>: Core functionality for managing subscriptions.</li>
+<li><strong>Payment Gateway Integration</strong>: Handles billing interactions.</li>
+<li><strong>User Notifications</strong>: Ensures users are informed of changes.</li>
+<li><strong>Billing Reports</strong>: Tracks subscription activity and financials.</li>
+<li><strong>Coupon System</strong>: Manages discounts applicable during pauses.</li>
+<li><strong>Webhooks</strong>: Facilitates real-time updates.</li>
+<li><strong>Tax Calculation</strong>: Adjusts for tax implications when subscriptions change.</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Scheduled Maintenance</strong>: Temporarily pause subscriptions to update systems without affecting billing.</li>
+<li><strong>Temporary Service Unsubscription</strong>: Allow users to pause subscriptions for a period, reactivating later.</li>
+<li><strong>Testing Phase</strong>: Enable users to test services with paused billing.</li>
+<li><strong>Payment Failure Handling</strong>: Pause subscriptions when payments fail, giving users time to update info.</li>
+<li><strong>Grace Period Offer</strong>: Provide a grace period after pausing for users to reactivate without penalty.</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>Code Snippets</strong>: Use the provided examples to integrate pause and resume functionality.</li>
+<li><strong>Error Handling</strong>: Implement checks for invalid subscription states or missing parameters.</li>
+<li><strong>Idempotency</strong>: Ensure operations are safe with multiple calls by using idempotent methods.</li>
+<li><strong>Logging</strong>: Track all pause/resume events for auditing purposes.</li>
+<li><strong>Testing</strong>: Validate in staging environments to handle edge cases like duplicate pauses.</li>
+</ul>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code>enabled</code></td><td>Boolean; enables or disables the pause/resume feature.</td></tr><tr><td><code>api_key</code></td><td>String; API key for authenticating with external services.</td></tr><tr><td><code>notification_emails</code></td><td>Array of Strings; emails to notify upon changes.</td></tr><tr><td><code>grace_period_days</code></td><td>Integer; days before reactivation is blocked after a pause.</td></tr><tr><td><code>max_pauses_allowed</code></td><td>Integer; maximum number of pauses allowed per subscription.</td></tr><tr><td><code>prorate_on_pause</code></td><td>Boolean; prorate the remaining billing period when paused.</td></tr><tr><td><code>coupon_handling</code></td><td>String; ‘none’ or ‘apply’; determines coupon usage during pauses.</td></tr><tr><td><code>logging_level</code></td><td>String; level of logging detail: ‘basic’, ‘detailed’.</td></tr></tbody></table>
+<hr>
+<p>This documentation provides a comprehensive guide for integrating and configuring the Subscription Pause &#x26; Resume module, ensuring smooth operation and user experience.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

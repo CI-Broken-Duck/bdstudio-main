@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Failed Payment Retry Logic</title><meta name="description" content="Automatically retry failed charges with smart delays."><meta property="og:title" content="Failed Payment Retry Logic"><meta property="og:description" content="Automatically retry failed charges with smart delays."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Failed Payment Retry Logic</h1> <div class="module-meta"> <div> <span class="module-category">Payment</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Automatically retry failed charges with smart delays.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/stripe.png" alt="Technology icon"><img src="/assets/modules/language/python.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-failed-payment-retry-logic-module">Overview: Failed Payment Retry Logic Module</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The <strong>Failed Payment Retry Logic</strong> module automates the retry of failed payment transactions with intelligent delay strategies. It aims to recover lost or partially failed payments, reduce manual intervention, and improve overall payment success rates by systematically handling retry attempts.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Enhanced Payment Recovery</strong>: Automatically retries failed charges without requiring manual intervention, increasing the chances of successful transaction completion.</li>
+<li><strong>Smart Delay Strategies</strong>: Implements adaptive delays between retry attempts to avoid overwhelming payment gateways or hitting rate limits.</li>
+<li><strong>Minimized Failed Transactions</strong>: Reduces the number of failed transactions by handling retries efficiently and effectively.</li>
+<li><strong>Cost Savings</strong>: Decreases administrative workload and potential revenue loss due to unprocessed payments.</li>
+<li><strong>Improved User Experience</strong>: Ensures customers are not left with unresolved payment issues, maintaining their trust and satisfaction.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>E-commerce Transactions</strong>: Ideal for online stores where payment failures can occur due to network issues, temporary payment gateway outages, or processing errors.</li>
+<li><strong>Subscription Services</strong>: Handles recurring charges by retrying failed payments without manual effort, ensuring uninterrupted service delivery.</li>
+<li><strong>Batch Payments</strong>: Useful for systems processing multiple transactions in batches, where a single failure could disrupt the entire batch.</li>
+<li><strong>Inconsistent Network Conditions</strong>: Automatically retries failed transactions when network conditions improve or payment gateways become available again.</li>
+<li><strong>Payment Gateway Issues</strong>: Mitigates temporary issues on payment provider sides by retrying after appropriate delays.</li>
+</ol>
+<p>This module is designed to seamlessly integrate into existing payment processing workflows, offering developers a robust solution to handle payment failures with minimal effort and maximum efficiency.</p>
+<h1 id="failed-payment-retry-logic-module">Failed Payment Retry Logic Module</h1>
+<p>This module provides a robust mechanism for automatically retrying failed payment charges with intelligent delays to maximize success rates while minimizing unnecessary retries.</p>
+<h2 id="automatic-retry-mechanism">Automatic Retry Mechanism</h2>
+<p>The module automatically detects failed payment attempts and initiates retries based on configurable policies. This ensures that transient failures (e.g., network issues, temporary payment gateway errors) are handled gracefully without manual intervention.</p>
+<h2 id="smart-delay-logic">Smart Delay Logic</h2>
+<p>Failed payments are not retried immediately. Instead, the module introduces strategic delays between retry attempts. These delays increase exponentially with each attempt to avoid overwhelming payment systems or users with repeated failed charges.</p>
+<h2 id="customizable-retry-policies">Customizable Retry Policies</h2>
+<p>Developers can configure retry policies to suit specific use cases:</p>
+<ul>
+<li><strong>Maximum number of retries</strong>: Define how many times a charge should be retried.</li>
+<li><strong>Retry delay intervals</strong>: Set fixed or exponential delays between attempts.</li>
+<li><strong>Backoff multiplier</strong>: Adjust the growth factor for exponential backoff.</li>
+</ul>
+<h2 id="exponential-backoff">Exponential Backoff</h2>
+<p>The module employs exponential backoff to handle transient failures. If a payment fails, subsequent retries are spaced out by increasing intervals (e.g., 1 second, 2 seconds, 4 seconds), reducing the chance of repeated failures due to temporary issues.</p>
+<h2 id="circuit-breaker-integration">Circuit Breaker Integration</h2>
+<p>To prevent endless retry loops and potential system overload, the module integrates with circuit breakers. If a certain number of consecutive failures occurs within a defined timeframe, retries are temporarily halted, allowing time for underlying issues to resolve.</p>
+<h2 id="logging-and-monitoring">Logging and Monitoring</h2>
+<p>All retry attempts and outcomes are logged for auditing and debugging purposes. The module also provides hooks for integration with monitoring systems, enabling proactive issue detection.</p>
+<h2 id="webhook-integration">Webhook Integration</h2>
+<p>The module supports webhook notifications for failed payments. This allows external services (e.g., payment providers) to trigger retries directly, reducing reliance on scheduled jobs or manual intervention.</p>
+<h2 id="failure-analysis">Failure Analysis</h2>
+<p>The module categorizes failure reasons and prioritizes retries based on the type of failure (e.g., temporary vs. permanent failures). This ensures that only transient failures are retried, improving success rates.</p>
+<h2 id="batch-processing">Batch Processing</h2>
+<p>Failed payments can be batched for efficient processing. The module allows developers to process multiple failed charges in bulk, reducing overhead and improving performance.</p>
+<h2 id="rate-limiting">Rate Limiting</h2>
+<p>To avoid overwhelming payment systems with too many retries, the module includes rate limiting functionality. Retries are capped based on defined limits (e.g., number of retries per second or minute).</p>
+<h2 id="usage-example">Usage Example</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Example API call to retry a failed payment</span></span>
+<span class="line"><span style="color:#E1E4E8">failed_payment_id </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 123</span></span>
+<span class="line"><span style="color:#E1E4E8">retry_policy </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">    "max_retries"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "initial_delay"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,  </span><span style="color:#6A737D"># seconds</span></span>
+<span class="line"><span style="color:#9ECBFF">    "backoff_multiplier"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">response </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> retry_logic.retry(failed_payment_id, retry_policy)</span></span>
+<span class="line"></span></code></pre>
+<p>This module provides a comprehensive solution for handling failed payments with minimal developer effort while ensuring robust and reliable retry logic.</p>
+<h1 id="failed-payment-retry-logic-module-documentation">Failed Payment Retry Logic Module Documentation</h1>
+<h2 id="summary">Summary</h2>
+<p>This module provides an automated retry mechanism for failed payment charges with intelligent delay calculation to avoid overwhelming payment gateways.</p>
+<h2 id="target-audience">Target Audience</h2>
+<ul>
+<li>Developers integrating payment processing into their applications</li>
+<li>Operations teams managing payment retries</li>
+<li>System architects designing payment processing pipelines</li>
+</ul>
+<h2 id="code-samples">Code Samples</h2>
+<h3 id="1-fastapi-endpoint-example">1. FastAPI Endpoint Example</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Path, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime, timedelta</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> random</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Mock payment service</span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PaymentService</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">    def</span><span style="color:#B392F0"> attempt_payment</span><span style="color:#E1E4E8">(self, payment_id):</span></span>
+<span class="line"><span style="color:#6A737D">        # Simulate payment processing</span></span>
+<span class="line"><span style="color:#E1E4E8">        success </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> random.choice([</span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">False</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#F97583"> if</span><span style="color:#E1E4E8"> success </span><span style="color:#F97583">else</span><span style="color:#9ECBFF"> "failed"</span><span style="color:#E1E4E8">, </span></span>
+<span class="line"><span style="color:#9ECBFF">                "timestamp"</span><span style="color:#E1E4E8">: datetime.now().isoformat()}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/payments/</span><span style="color:#79B8FF">{payment_id}</span><span style="color:#9ECBFF">/retry"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> retry_failed_payment</span><span style="color:#E1E4E8">(payment_id: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Retry a failed payment charge with intelligent delay.</span></span>
+<span class="line"><span style="color:#9ECBFF">    - Smart delay calculation based on retry count</span></span>
+<span class="line"><span style="color:#9ECBFF">    - Max 5 retries per payment</span></span>
+<span class="line"><span style="color:#9ECBFF">    - Exponential backoff strategy</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#E1E4E8">    max_retries </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 5</span></span>
+<span class="line"><span style="color:#E1E4E8">    retry_count </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> get_retry_count(payment_id)  </span><span style="color:#6A737D"># Hypothetical function to get retry count</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> retry_count </span><span style="color:#F97583">>=</span><span style="color:#E1E4E8"> max_retries:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">429</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Max retries exceeded"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # Calculate smart delay (e.g., exponential backoff)</span></span>
+<span class="line"><span style="color:#E1E4E8">    delay_seconds </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> (retry_count </span><span style="color:#F97583">**</span><span style="color:#79B8FF"> 2</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#E1E4E8"> asyncio.sleep(delay_seconds)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    payment_service </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> PaymentService()</span></span>
+<span class="line"><span style="color:#E1E4E8">    result </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> payment_service.attempt_payment(payment_id)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> result[</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">==</span><span style="color:#9ECBFF"> "success"</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        increment_retry_success_count(payment_id)  </span><span style="color:#6A737D"># Hypothetical function</span></span>
+<span class="line"><span style="color:#F97583">    else</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        increment_retry_failure_count(payment_id)  </span><span style="color:#6A737D"># Hypothetical function</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: result[</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">], </span><span style="color:#9ECBFF">"timestamp"</span><span style="color:#E1E4E8">: result[</span><span style="color:#9ECBFF">"timestamp"</span><span style="color:#E1E4E8">]}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-component-example">2. React UI Component Example</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> PaymentRetryStatus</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">attempts</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">showAllAttempts</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setShowAllAttempts</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"payment-retry-status"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>Payment Retry Status&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setShowAllAttempts</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">showAllAttempts)}></span></span>
+<span class="line"><span style="color:#E1E4E8">                {showAllAttempts </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'Show Recent'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'Show All'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#E1E4E8">            {showAllAttempts </span></span>
+<span class="line"><span style="color:#F97583">                ?</span><span style="color:#E1E4E8"> attempts.</span><span style="color:#B392F0">slice</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">-</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">)  </span><span style="color:#6A737D">// Only show last attempt</span></span>
+<span class="line"><span style="color:#F97583">                :</span><span style="color:#E1E4E8"> attempts}</span></span>
+<span class="line"><span style="color:#E1E4E8">                .map((attempt, index) => (</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{index} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">`attempt ${</span><span style="color:#E1E4E8">attempt</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">status</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">}></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Attempt #{index </span><span style="color:#F97583">+</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Status: {attempt.status}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Amount: ${attempt.amount}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Description: {attempt.description}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Timestamp: {</span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">(attempt.timestamp).</span><span style="color:#B392F0">toLocaleString</span><span style="color:#E1E4E8">()}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> PaymentRetryStatus;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-pydantic-data-schema-example">3. Pydantic Data Schema Example</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel, Field</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PaymentAttempt</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Unique identifier for the payment attempt"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    payment_id: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Identifier of the payment being processed"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span></span>
+<span class="line"><span style="color:#79B8FF">        ...</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Current status of the payment attempt"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        enum</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"pending"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"processing"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"failed"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#E1E4E8">    amount: </span><span style="color:#79B8FF">float</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Amount being charged"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">None</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Description of the charge"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: datetime </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Timestamp when the attempt was made"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    retry_count: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Number of retry attempts so far"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PaymentRetryRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    payment_id: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Identifier for the payment to retry"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    metadata: Optional[</span><span style="color:#79B8FF">dict</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Field(</span></span>
+<span class="line"><span style="color:#79B8FF">        None</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Additional metadata about retry attempts (e.g., reason for failure)"</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"></span></code></pre>
+<h2 id="notes">Notes</h2>
+<ul>
+<li><strong>Exponential Backoff:</strong> The delay increases with each retry attempt to avoid overwhelming payment gateways.</li>
+<li><strong>Retry Limits:</strong> Maximum of 5 retries per payment attempt to prevent infinite loops.</li>
+<li><strong>Smart Delay Calculation:</strong> Delays are calculated based on retry count and other system conditions.</li>
+<li><strong>Monitoring:</strong> System should be monitored for failed attempts and retry success rates.</li>
+</ul>
+<p>These code samples provide a foundation for implementing payment retry logic with smart delays in your application.</p>
+<h1 id="technical-documentation-failed-payment-retry-logic-module">Technical Documentation: Failed Payment Retry Logic Module</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Failed Payment Retry Logic</strong> module is designed to automatically retry failed payment attempts with strategic delays to enhance reliability and efficiency in payment processing systems. This documentation serves as a guide for developers integrating this module into their systems.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Charge Processing</strong>: Handles the initial submission of charges, which feeds into the retry logic upon failure.</li>
+<li><strong>Error Handling</strong>: Captures and categorizes payment failures, distinguishing between transient and terminal errors.</li>
+<li><strong>Queue Management</strong>: Manages the queue of failed charges for retry attempts, ensuring smooth processing without disrupting other tasks.</li>
+<li><strong>Smart Delay Calculation</strong>: Implements an algorithm to determine optimal retry intervals, leveraging exponential backoff.</li>
+<li><strong>Logging</strong>: Tracks all retry attempts, delays, and outcomes for monitoring and debugging purposes.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Retry Failed Charges</strong>: Automatically retry charges that fail due to transient issues like network errors or temporary payment gateway downtime.</li>
+<li><strong>Handle Transient Errors</strong>: Retry charges when failures are likely temporary, such as “gateway unavailable” errors.</li>
+<li><strong>Optimize Retries with Delays</strong>: Use exponential backoff to space out retries, reducing strain on payment systems and improving success rates.</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li><strong>Listener Implementation</strong>: Integrate a listener to capture failed charge events from the Charge Processing module.</li>
+<li><strong>Smart Delay Configuration</strong>: Implement delay calculation logic using parameters like initial delay and delay factors.</li>
+<li><strong>Monitoring &#x26; Logging</strong>: Ensure integration with monitoring tools for real-time alerts on retry attempts and failures.</li>
+<li><strong>Error Thresholds</strong>: Define thresholds to limit retries, avoiding overwhelming payment systems or triggering rate limits.</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Default Value</th><th>Possible Values</th></tr></thead><tbody><tr><td>max_attempts</td><td>Maximum number of retry attempts for a failed charge.</td><td>3</td><td>1-10</td></tr><tr><td>initial_delay</td><td>Initial delay in seconds before the first retry attempt.</td><td>30</td><td>1-60</td></tr><tr><td>delay_factor</td><td>Multiplier for increasing subsequent delays (exponential backoff).</td><td>2</td><td>1-5</td></tr><tr><td>exponential_backoff_max_delay</td><td>Maximum delay in seconds for retries using exponential backoff.</td><td>300</td><td>60-900</td></tr><tr><td>disable_retry_for_error_types</td><td>List of error codes to exclude from retry attempts.</td><td>[]</td><td>[“insufficient_funds”, “invalid_card_details”]</td></tr></tbody></table>
+<hr>
+<h2 id="considerations-and-edge-cases">Considerations and Edge Cases</h2>
+<ul>
+<li><strong>Transient vs Terminal Errors</strong>: Ensure only transient errors are retried, with terminal errors (e.g., insufficient funds) bypassed.</li>
+<li><strong>Time Zone Handling</strong>: Consider time zones when scheduling retries to avoid unnecessary attempts during off-hours.</li>
+<li><strong>Payment Gateway Rate Limits</strong>: Adjust retry strategies to prevent hitting rate limits, possibly by staggering delays or limiting concurrent retries.</li>
+</ul>
+<h2 id="testing-scenarios">Testing Scenarios</h2>
+<ul>
+<li>Simulate network partitions and gateway downtimes to test retry logic effectiveness.</li>
+<li>Use mock payment gateways to isolate and test retry behaviors without live transactions.</li>
+</ul>
+<hr>
+<p>This documentation provides a comprehensive guide for integrating the Failed Payment Retry Logic module. Developers should experiment with configurations, monitor performance, and iterate based on real-world feedback to optimize their payment processing systems.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

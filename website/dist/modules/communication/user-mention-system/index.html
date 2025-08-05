@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>User Mention System</title><meta name="description" content="Tag users in group conversations or discussions."><meta property="og:title" content="User Mention System"><meta property="og:description" content="Tag users in group conversations or discussions."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>User Mention System</h1> <div class="module-meta"> <div> <span class="module-category">Communication</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Tag users in group conversations or discussions.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="user-mention-system-overview">User Mention System Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The User Mention System is designed to enhance communication within group conversations or discussions by allowing users to tag each other explicitly. This feature ensures that specific individuals are notified and can participate in the conversation, improving collaboration and reducing missed context.</p>
+<h2 id="benefits">Benefits</h2>
+<ol>
+<li><strong>Increased Visibility</strong>: By tagging users, their participation is immediately drawn to their attention, ensuring they do not miss important updates or discussions.</li>
+<li><strong>Improved Context</strong>: Mentions provide clarity in conversations by clearly indicating which user is being addressed, making it easier for others to follow the discussion.</li>
+<li><strong>Focus on Important Information</strong>: The system helps prioritize key messages and tasks by highlighting specific users who need to take action or contribute to the conversation.</li>
+<li><strong>Developer-Friendly Integration</strong>: The module is designed to integrate seamlessly with existing communication systems, providing hooks for notifications, database integration, and customization options.</li>
+</ol>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ul>
+<li><strong>Team Collaboration Tools</strong>: In platforms like Slack or Microsoft Teams, mentions help team members stay informed about tasks and discussions relevant to them.</li>
+<li><strong>Social Platforms</strong>: On forums or social media platforms, users can tag friends or community members to draw their attention to posts or updates.</li>
+<li><strong>Customer Support Systems</strong>: Agents can mention specific team members when escalating issues or seeking input from colleagues.</li>
+<li><strong>Community Forums</strong>: Moderators can tag members to notify them of new discussions, achievements, or pending tasks.</li>
+</ul>
+<p>This module is a powerful tool for developers looking to enhance user engagement and collaboration in their communication-based applications.</p>
+<h2 id="user-mention-system-module-features">User Mention System Module Features</h2>
+<h3 id="1-entity-recognition">1. <strong>Entity Recognition</strong></h3>
+<p>The system identifies users based on mentions (e.g., usernames, email addresses, or user IDs). This ensures accurate tagging of individuals in conversations.</p>
+<h3 id="2-notification-and-alerts">2. <strong>Notification and Alerts</strong></h3>
+<p>When a user is mentioned, they receive immediate notifications through the communication platform, ensuring they are aware of being tagged.</p>
+<h3 id="3-real-time-search">3. <strong>Real-Time Search</strong></h3>
+<p>Users can search for other users within the system to mention them, with auto-suggestions to make the process efficient.</p>
+<h3 id="4-conversation-context">4. <strong>Conversation Context</strong></h3>
+<p>Mentions are linked to specific messages or replies, providing context and helping track interactions in discussions.</p>
+<h3 id="5-access-control">5. <strong>Access Control</strong></h3>
+<p>Administrators can manage who can be mentioned and by whom, ensuring security and preventing unauthorized use.</p>
+<h3 id="6-audit-logging">6. <strong>Audit Logging</strong></h3>
+<p>Tracks all mentions for auditing purposes, including the user who was mentioned, the mentioner, and the time of the mention.</p>
+<h3 id="7-cross-platform-compatibility">7. <strong>Cross-Platform Compatibility</strong></h3>
+<p>Works seamlessly across different communication platforms (e.g., chat applications, discussion forums), ensuring consistent functionality.</p>
+<h3 id="8-customizable-mentions">8. <strong>Customizable Mentions</strong></h3>
+<p>Administrators can customize how mentions appear (e.g., badges, tooltips) and who is eligible to be mentioned.</p>
+<h3 id="9-integration-hooks">9. <strong>Integration Hooks</strong></h3>
+<p>Provides APIs and hooks for integrating the mention system into existing platforms or workflows, allowing for flexible deployment.</p>
+<h3 id="technical-documentation-for-user-mention-system">Technical Documentation for User Mention System</h3>
+<h4 id="overview">Overview</h4>
+<p>The User Mention System allows users to tag specific individuals in group conversations or discussions. This feature is essential for drawing attention to particular users and ensuring they are aware of relevant discussions.</p>
+<hr>
+<h2 id="code-samples">Code Samples</h2>
+<h3 id="1-fastapi-endpoint-python">1. FastAPI Endpoint (Python)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi.security </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> OAuth2PasswordBearer</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"><span style="color:#E1E4E8">oauth2_scheme </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> OAuth2PasswordBearer(</span><span style="color:#FFAB70">tokenUrl</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"token"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Mention</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    text: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: datetime</span></span>
+<span class="line"><span style="color:#E1E4E8">    notified_users: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> []</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/mentions"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">dependencies</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[Depends(oauth2_scheme)])</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> create_mention</span><span style="color:#E1E4E8">(mention_data: Mention):</span></span>
+<span class="line"><span style="color:#6A737D">    # Assume a database model exists for storing mentions</span></span>
+<span class="line"><span style="color:#E1E4E8">    mention </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> MentionModel(</span><span style="color:#F97583">**</span><span style="color:#E1E4E8">mention_data.dict())</span></span>
+<span class="line"><span style="color:#E1E4E8">    db.add(mention)</span></span>
+<span class="line"><span style="color:#E1E4E8">    db.commit()</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Mention created successfully"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="2-react-ui-snippet-javascript">2. React UI Snippet (JavaScript)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> axios </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'axios'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Avatar, Box, Flex, Text } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '@chakra-ui/react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> Mention</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  text</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  sender</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  created_at</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  notified_users</span><span style="color:#F97583">?:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">[];</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#B392F0"> MentionList</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">mentions</span><span style="color:#E1E4E8"> }</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">mentions</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Mention</span><span style="color:#E1E4E8">[] }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#79B8FF">Box</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"chat-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      {mentions.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">mention</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#79B8FF">Flex</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{mention.id} </span><span style="color:#B392F0">align</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"start"</span><span style="color:#B392F0"> mb</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">}></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#79B8FF">Avatar</span></span>
+<span class="line"><span style="color:#B392F0">            name</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{mention.sender}</span></span>
+<span class="line"><span style="color:#B392F0">            size</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"sm"</span></span>
+<span class="line"><span style="color:#B392F0">            mr</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#B392F0">            backgroundColor</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"#ebf0ff"</span></span>
+<span class="line"><span style="color:#E1E4E8">          /></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#79B8FF">Text</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"mention"</span><span style="color:#E1E4E8">>@{mention.text}&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">> mentioned you.</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#79B8FF">Text</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#79B8FF">Flex</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#79B8FF">Box</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="3-data-schema-pydantic">3. Data Schema (Pydantic)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> User</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    username: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    email: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    avatar_url: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Mention</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    text: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: datetime</span></span>
+<span class="line"><span style="color:#E1E4E8">    notified_users: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> []</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender: Optional[User]</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="summary">Summary</h2>
+<p>This documentation provides a basic implementation of a User Mention System with:</p>
+<ol>
+<li>A FastAPI endpoint for creating mentions.</li>
+<li>A React UI component for displaying mentions.</li>
+<li>Pydantic models for data validation.</li>
+</ol>
+<p>The system supports:</p>
+<ul>
+<li>Real-time mention creation.</li>
+<li>Notification tracking.</li>
+<li>User profile integration via avatars.</li>
+<li>Security through OAuth2 authentication.</li>
+</ul>
+<p>For full implementation, additional components like a database model and frontend styling may be required.</p>
+<h1 id="user-mention-system-module-documentation">User Mention System Module Documentation</h1>
+<h2 id="overview-1">Overview</h2>
+<p>The User Mention System module enables users to tag others in group conversations or discussions, enhancing communication by alerting specific individuals to relevant content.</p>
+<h2 id="related-modules">Related Modules</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Module Name</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>User Database</td><td>Manages user information and authentication.</td></tr><tr><td>Notifications</td><td>Handles sending alerts and updates to users.</td></tr><tr><td>Authorization</td><td>Enforces permissions and role-based access control.</td></tr><tr><td>Search/Filtering</td><td>Facilitates searching users by username or ID.</td></tr><tr><td>Rate Limiting</td><td>Prevents abuse by limiting mention frequency.</td></tr></tbody></table>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li>
+<p><strong>Basic Mention Functionality</strong></p>
+<ul>
+<li>Users tag others using <code>@username</code> in messages.</li>
+<li>Mentions appear highlighted and notify the tagged user.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mention Notifications</strong></p>
+<ul>
+<li>Tagged users receive real-time or email notifications of mentions.</li>
+</ul>
+</li>
+<li>
+<p><strong>Role-Based Access Control for Mentions</strong></p>
+<ul>
+<li>Admins can restrict mentions to specific roles, like moderators.</li>
+</ul>
+</li>
+<li>
+<p><strong>Search Integration</strong></p>
+<ul>
+<li>Users search profiles by username or ID before tagging.</li>
+</ul>
+</li>
+<li>
+<p><strong>Rate Limiting</strong></p>
+<ul>
+<li>Limits mentions per user/unit time to prevent abuse.</li>
+</ul>
+</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>User Database Integration</strong>: Use existing user databases for verification.</li>
+<li><strong>Asynchronous Notifications</strong>: Implement non-blocking processes to avoid bottlenecks.</li>
+<li><strong>RBAC Implementation</strong>: Ensure proper role checks before allowing mentions.</li>
+<li><strong>Search Functionality</strong>: Integrate search features for easy mention lookup.</li>
+<li><strong>Logging</strong>: Add logging for debugging and monitoring.</li>
+</ul>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Option</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th></tr></thead><tbody><tr><td>enable_mentions</td><td>boolean</td><td>Enable or disable the mention system.</td><td>true</td></tr><tr><td>notification_type</td><td>string</td><td>Notification method (email, push, in-app).</td><td>in-app</td></tr><tr><td>max_mentions_per_day</td><td>integer</td><td>Maximum mentions allowed per user daily.</td><td>100</td></tr><tr><td>search_filter</td><td>boolean</td><td>Enable/disable filtering mentions by specific criteria.</td><td>false</td></tr><tr><td>mention_symbol</td><td>string</td><td>Symbol used for tagging (e.g., <code>@</code> or <code>+</code>).</td><td>@</td></tr><tr><td>debug_mode</td><td>boolean</td><td>Enables debugging mode for detailed logs.</td><td>false</td></tr></tbody></table>
+<h2 id="conclusion">Conclusion</h2>
+<p>The User Mention System module enhances communication by allowing user tagging with comprehensive features and configurations to suit various needs. Developers can integrate it seamlessly, leveraging related modules and adhering to best practices.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

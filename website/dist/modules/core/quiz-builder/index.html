@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Quiz Builder</title><meta name="description" content="Create multiple choice, open response, and timed quizzes."><meta property="og:title" content="Quiz Builder"><meta property="og:description" content="Create multiple choice, open response, and timed quizzes."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Quiz Builder</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Create multiple choice, open response, and timed quizzes.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <h1 id="quiz-builder-module-overview">Quiz Builder Module Overview</h1>
+<p><strong>Category:</strong> Core</p>
+<p>The <strong>Quiz Builder</strong> module is a versatile tool designed to create and manage quizzes of various types, including multiple choice, open response, and timed quizzes. This module provides developers with a robust framework to integrate interactive assessment tools into their applications.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary purpose of the Quiz Builder module is to facilitate the creation of diverse quiz formats, enabling users to assess knowledge effectively. It streamlines the development process by offering pre-built components for question creation, answer validation, and scoring mechanisms. This module is essential for building educational platforms, corporate training systems, or any application requiring user assessment.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Versatility:</strong> Supports multiple question types, catering to different learning and assessment needs.</li>
+<li><strong>Customization:</strong> Allows developers to tailor quizzes to specific requirements, including custom scoring rules and answer validations.</li>
+<li><strong>Time Management:</strong> Features timed quizzes to simulate exam conditions and enhance user engagement.</li>
+<li><strong>Integration:</strong> Easily integrates with other modules such as user authentication, scoring systems, and reporting tools.</li>
+<li><strong>Scalability:</strong> Designed to handle a large number of questions and users, making it suitable for both small and large-scale applications.</li>
+<li><strong>Real-time Analytics:</strong> Provides insights into quiz performance, helping instructors and administrators track user progress.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<p>The Quiz Builder module is ideal for various scenarios:</p>
+<ol>
+<li><strong>E-Learning Platforms:</strong> Create interactive courses with quizzes to test learner understanding.</li>
+<li><strong>Corporate Training:</strong> Assess employee knowledge on company policies or product knowledge through tailored quizzes.</li>
+<li><strong>Online Testing Services:</strong> Build standardized tests and certifications with customizable scoring systems.</li>
+<li><strong>Classroom Tools:</strong> Integrate quizzes into Learning Management Systems (LMS) for实时课堂互动和评估。</li>
+<li><strong>Competitions and Contests:</strong> Host real-time competitions with timed quizzes to engage users.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Quiz Builder module is an essential tool for developers aiming to incorporate interactive assessments into their applications. Its flexibility, customization options, and integration capabilities make it a valuable asset for building engaging and effective quiz-based systems.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Quiz Builder Module Documentation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Multiple Choice Questions (MCQ)</span></span>
+<span class="line"><span style="color:#E1E4E8">The Quiz Builder module allows developers to create multiple choice questions with support for single or multiple correct answers. Each question can have a variety of options, and the system provides immediate feedback on whether the answer is correct or incorrect.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Open Response Questions</span></span>
+<span class="line"><span style="color:#E1E4E8">Open response questions enable users to provide detailed textual answers. These responses are typically evaluated manually by instructors or automatically using predefined grading rubrics, allowing for more nuanced assessment.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Timed Quizzes</span></span>
+<span class="line"><span style="color:#E1E4E8">Quizzes can be set with a timer to add a layer of urgency. This feature includes countdown timers, potential grace periods, and methods to extend time if needed, enhancing the quiz experience under time constraints.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Question Randomization</span></span>
+<span class="line"><span style="color:#E1E4E8">This feature ensures that questions appear in a random order for each user, reducing the chances of collusion or memorization of question sequences, thereby maintaining test integrity.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Answer Validation</span></span>
+<span class="line"><span style="color:#E1E4E8">The module includes robust validation mechanisms to check answers against expected responses. It supports various validation types, including keyword matching and regular expressions, ensuring accurate grading.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Reporting &#x26; Analytics</span></span>
+<span class="line"><span style="color:#E1E4E8">Comprehensive reporting tools track quiz performance, providing insights into user scores, time taken, and incorrect answers. This data helps in assessing learning outcomes and identifying knowledge gaps.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## User Management</span></span>
+<span class="line"><span style="color:#E1E4E8">Administer users with varying roles (admin, instructor, student) to manage quizzes effectively. Access levels are controlled based on roles, ensuring security and appropriate access rights.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration Capabilities</span></span>
+<span class="line"><span style="color:#E1E4E8">The module integrates seamlessly with external systems via APIs, allowing for data exchange and functionality extension across different platforms or Learning Management Systems (LMS).</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Customizable Templates</span></span>
+<span class="line"><span style="color:#E1E4E8">Developers can use predefined templates to design quizzes quickly. These templates allow customization of layout, styling, and structure without extensive coding, saving development time.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## API Support</span></span>
+<span class="line"><span style="color:#E1E4E8">The module provides a RESTful API enabling developers to build custom integrations, extend functionality, or create third-party applications that interact with the Quiz Builder features.</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Quiz Builder Module Documentation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Overview</span></span>
+<span class="line"><span style="color:#E1E4E8">The Quiz Builder module allows developers to create, manage, and deliver various types of quizzes including multiple choice, open response, and timed quizzes. This document provides code examples for integrating the Quiz Builder functionality into your application.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Code Examples</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 1. FastAPI Endpoint Example</span></span>
+<span class="line"><span style="color:#E1E4E8">This example demonstrates a FastAPI endpoint to fetch all quizzes.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">```python</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FastAPI, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> FastAPI()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@app.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/quizzes"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> get_quizzes</span><span style="color:#E1E4E8">():</span></span>
+<span class="line"><span style="color:#E1E4E8">    quizzes </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "title"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Basic Math Quiz"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Test your basic math skills."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "time_limit"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "questions"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">5</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "difficulty"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"easy"</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "title"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Advanced Physics"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Assesses advanced physics concepts."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "time_limit"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">60</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "questions"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "difficulty"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"hard"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> json.loads(json.dumps(quizzes))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-example">2. React UI Example</h3>
+<p>This example shows a React component for displaying and managing quiz questions.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> QuizQuestionBuilder</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">question</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">answer</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setAnswer</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleInputChange</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        setAnswer</span><span style="color:#E1E4E8">(e.target.value);</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"question-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>{question.text}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {question.type </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 'multiple_choice'</span><span style="color:#F97583"> &#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{answer} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleInputChange}></span></span>
+<span class="line"><span style="color:#E1E4E8">                    {question.options.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">option</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">index</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{index} </span><span style="color:#B392F0">value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{option}></span></span>
+<span class="line"><span style="color:#E1E4E8">                            {option}</span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            )}</span></span>
+<span class="line"><span style="color:#E1E4E8">            {question.type </span><span style="color:#F97583">===</span><span style="color:#9ECBFF"> 'open_response'</span><span style="color:#F97583"> &#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{answer}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleInputChange}</span></span>
+<span class="line"><span style="color:#B392F0">                    placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Enter your answer here..."</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            )}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"response-status"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                {answer </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> `Answer: ${</span><span style="color:#E1E4E8">answer</span><span style="color:#9ECBFF">}`</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> "No answer provided"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> QuizQuestionBuilder;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-pydantic-data-schema-example">3. Pydantic Data Schema Example</h3>
+<p>This example defines a data schema for quizzes using Pydantic.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Quiz</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    time_limit: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    questions: List[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    difficulty: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    category: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    is_published: </span><span style="color:#79B8FF">bool</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> False</span></span>
+<span class="line"><span style="color:#E1E4E8">    author: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    last_modified: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Example usage:</span></span>
+<span class="line"><span style="color:#E1E4E8">quiz_data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">    "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "title"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Python Basics"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Introduction to Python programming language."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "time_limit"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">60</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "questions"</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">    "difficulty"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"easy"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "category"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Programming"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "is_published"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "author"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"John Doe"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "created_at"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2023-10-01T12:00:00Z"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "last_modified"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2023-10-05T14:30:00Z"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">quiz </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Quiz(</span><span style="color:#F97583">**</span><span style="color:#E1E4E8">quiz_data)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(quiz.json())</span></span>
+<span class="line"></span></code></pre>
+<h2 id="summary">Summary</h2>
+<p>This documentation provides examples for integrating the Quiz Builder module using FastAPI, React, and Pydantic. The code snippets demonstrate how to create endpoints for quizzes, build interactive quiz components in React, and define data schemas for quiz management.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span># Technical Documentation: Quiz Builder Module</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Related Modules</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- **User Management**: Handles user creation, authentication, and roles.</span></span>
+<span class="line"><span>- **Course Management**: Manages course structure and enrollment.</span></span>
+<span class="line"><span>- **Reporting Tools**: Provides analytics on quiz results and user performance.</span></span>
+<span class="line"><span>- **Notifications**: Sends alerts for quiz deadlines and results.</span></span>
+<span class="line"><span>- **Content Management System (CMS)**: Manages quizzes as part of broader content.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Use Cases</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. **Creating a New Quiz**:</span></span>
+<span class="line"><span>   - Navigate to the quiz creation interface.</span></span>
+<span class="line"><span>   - Select quiz type (multiple choice, open response).</span></span>
+<span class="line"><span>   - Input title, description, and start/end dates.</span></span>
+<span class="line"><span>   - Add questions and configure settings.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>2. **Managing Questions**:</span></span>
+<span class="line"><span>   - Access question bank from the dashboard.</span></span>
+<span class="line"><span>   - Create new questions or reuse existing ones.</span></span>
+<span class="line"><span>   - Edit question text, options, correct answers, and scoring.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. **Running Timed Quizzes**:</span></span>
+<span class="line"><span>   - Set a quiz as timed with a specified duration.</span></span>
+<span class="line"><span>   - Monitor countdown timer during quizzes.</span></span>
+<span class="line"><span>   - Automatically submit upon time expiration.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>4. **Reporting Results**:</span></span>
+<span class="line"><span>   - Access detailed reports post-quiz completion.</span></span>
+<span class="line"><span>   - View performance metrics and generate custom reports.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Integration Tips</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- **APIs**: Use RESTful APIs for programmatic access to quiz data.</span></span>
+<span class="line"><span>- **Asynchronous Events**: Implement webhooks for real-time updates on quiz events.</span></span>
+<span class="line"><span>- **Data Validation**: Ensure robust validation during integration to handle errors gracefully.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Configuration Options</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>| Parameter                 | Description                               | Default Value | Valid Values                          |</span></span>
+<span class="line"><span>|---------------------------|-------------------------------------------|--------------|----------------------------------------|</span></span>
+<span class="line"><span>| `quiz_timeout`           | Quiz duration in minutes                  | 60           | 1-360                                  |</span></span>
+<span class="line"><span>| `question_limit`         | Maximum questions per quiz               | 10            | 1-50                                   |</span></span>
+<span class="line"><span>| `scoring_method`         | Scoring system (points, percentage)       | points        | points, percentage                     |</span></span>
+<span class="line"><span>| `shuffle_questions`      | Randomize question order                  | true          | true, false                            |</span></span>
+<span class="line"><span>| `allow retries`           | Enable retries for failed questions       | false         | true, false                            |</span></span>
+<span class="line"><span>| `show_correct_answers`   | Display correct answers post-submission   | true          | true, false                            |</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Additional Notes</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- **Compatibility**: Works seamlessly with LMS and third-party platforms.</span></span>
+<span class="line"><span>- **Performance**: Optimized for high concurrent usage in large systems.</span></span>
+<span class="line"><span>- **Future Updates**: Stay updated with the latest features and improvements.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>This documentation provides a comprehensive guide to integrating and using the Quiz Builder module effectively within your system.</span></span>
+<span class="line"><span></span></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

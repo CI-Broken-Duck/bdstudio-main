@@ -1,0 +1,313 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>System Health Monitor</title><meta name="description" content="Track uptime, API response times, and performance of core services."><meta property="og:title" content="System Health Monitor"><meta property="og:description" content="Track uptime, API response times, and performance of core services."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>System Health Monitor</h1> <div class="module-meta"> <div> <span class="module-category">Admin</span> <span class="module-subcategory"> → Platinum</span> </div> <div class="module-price"> <span>💰</span> $3500 </div> </div> <p class="module-summary">Track uptime, API response times, and performance of core services.</p> <div class="module-icons"> <img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-of-system-health-monitor-module">Overview of System Health Monitor Module</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The System Health Monitor module is designed to provide developers with a comprehensive tool to proactively manage the health and performance of their system. By tracking key metrics such as uptime, API response times, and core service performance, this module allows for early detection of potential issues, enabling swift resolution before they impact system reliability.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Real-Time Insights</strong>: Offers immediate visibility into system health, allowing developers to respond quickly to emerging issues.</li>
+<li><strong>Comprehensive Monitoring</strong>: Tracks multiple services across the system, ensuring a holistic view of performance and uptime.</li>
+<li><strong>Centralized Data</strong>: Aggregates data from various sources in one interface, reducing the need to toggle between tools.</li>
+<li><strong>Customizable Alerts</strong>: Enables setting specific thresholds for notifications, facilitating proactive management by alerting before issues escalate.</li>
+<li><strong>Reduced Downtime</strong>: Helps minimize unplanned downtime by identifying problems early, ensuring higher system availability.</li>
+<li><strong>Enhanced User Experience</strong>: Supports a stable and responsive system, thereby improving the end-user experience.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Monitoring Service Health</strong>: Track the status and performance of all core services to ensure they are functioning optimally.</li>
+<li><strong>Setting Custom Thresholds</strong>: Define specific alert thresholds for critical metrics like API response times or uptime percentages to suit particular operational needs.</li>
+<li><strong>Analyzing Performance Trends</strong>: Use historical data to identify patterns and trends, aiding in long-term system optimization.</li>
+<li><strong>Integration with Tools</strong>: Integrate seamlessly with incident management tools for automated ticket creation based on detected issues.</li>
+<li><strong>Troubleshooting</strong>: Leverage detailed metrics during troubleshooting sessions to quickly pinpoint the root cause of performance issues.</li>
+</ol>
+<p>This module is essential for maintaining a reliable and efficient system, offering developers the insights they need to make informed decisions and keep their applications running smoothly.</p>
+<h2 id="key-features-of-system-health-monitor">Key Features of System Health Monitor</h2>
+<h3 id="1-real-time-monitoring">1. Real-Time Monitoring</h3>
+<p>The module provides live updates on system performance and health metrics, enabling developers to respond promptly to issues.</p>
+<h3 id="2-uptime-tracking">2. Uptime Tracking</h3>
+<p>Monitors service availability, alerting when downtime occurs, ensuring minimal disruption to operations.</p>
+<h3 id="3-api-response-time-monitoring">3. API Response Time Monitoring</h3>
+<p>Tracks the duration of API responses, helping identify performance bottlenecks and optimize service efficiency.</p>
+<h3 id="4-performance-metrics">4. Performance Metrics</h3>
+<p>Offers insights into CPU usage, memory consumption, and disk I/O, aiding in resource management and optimization.</p>
+<h3 id="5-alerting--notifications">5. Alerting &#x26; Notifications</h3>
+<p>Sends timely alerts via email or integrations with tools like PagerDuty, ensuring no downtime goes unnoticed.</p>
+<h3 id="6-integration-capabilities">6. Integration Capabilities</h3>
+<p>Seamlessly integrates with tools such as Grafana and Prometheus for advanced visualization and analytics.</p>
+<h3 id="7-historical-data-analysis">7. Historical Data Analysis</h3>
+<p>Retains past performance data, facilitating trend analysis and post-incident reviews to enhance future system reliability.</p>
+<h3 id="8-custom-dashboards">8. Custom Dashboards</h3>
+<p>Allow developers to create tailored views focusing on specific metrics or services, enhancing monitoring efficiency.</p>
+<p>These features collectively ensure comprehensive oversight of system health, empowering developers to maintain robust and reliable services.</p>
+<h1 id="system-health-monitor-documentation">System Health Monitor Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The System Health Monitor module tracks the uptime, API response times, and performance metrics of core services. This documentation provides code examples for integrating this functionality into your application.</p>
+<hr>
+<h2 id="code-samples">Code Samples</h2>
+<h3 id="1-fastapi-endpoint-apihealth">1. FastAPI Endpoint (/api/health)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, status</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> HealthCheckResult</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    service_name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    uptime_percent: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    response_time_avg: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    response_time_median: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "ok" or "down"</span></span>
+<span class="line"><span style="color:#E1E4E8">    timestamp: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/health"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">list[HealthCheckResult])</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> get_health</span><span style="color:#E1E4E8">():</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Simulated data retrieval</span></span>
+<span class="line"><span style="color:#E1E4E8">        health_data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "service_name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"AuthService"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "uptime_percent"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">99.8</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "response_time_avg"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.25</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "response_time_median"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.23</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ok"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "timestamp"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">(time.time())</span></span>
+<span class="line"><span style="color:#E1E4E8">            },</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "service_name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"UserService"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "uptime_percent"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">100.0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "response_time_avg"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.45</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "response_time_median"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.42</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ok"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "timestamp"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">(time.time())</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        ]</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> health_data</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e)}, status.</span><span style="color:#79B8FF">HTTP_503_SERVICE_UNAVAILABLE</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-component-health-dashboard">2. React UI Component (Health Dashboard)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>import React, { useState, useEffect } from 'react';</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>const HealthDashboard = () => {</span></span>
+<span class="line"><span>    const [healthData, setHealthData] = useState([]);</span></span>
+<span class="line"><span>    const [loading, setLoading] = useState(true);</span></span>
+<span class="line"><span>    const [error, setError] = useState(null);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    useEffect(() => {</span></span>
+<span class="line"><span>        const fetchHealth = async () => {</span></span>
+<span class="line"><span>            try {</span></span>
+<span class="line"><span>                const response = await fetch('/api/health');</span></span>
+<span class="line"><span>                if (!response.ok) throw new Error('Failed to fetch health data');</span></span>
+<span class="line"><span>                const data = await response.json();</span></span>
+<span class="line"><span>                setHealthData(data);</span></span>
+<span class="line"><span>            } catch (err) {</span></span>
+<span class="line"><span>                setError('Failed to load health data');</span></span>
+<span class="line"><span>            } finally {</span></span>
+<span class="line"><span>                setLoading(false);</span></span>
+<span class="line"><span>            }</span></span>
+<span class="line"><span>        };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        fetchHealth();</span></span>
+<span class="line"><span>    }, []);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    return (</span></span>
+<span class="line"><span>        &#x3C;div className="p-6"></span></span>
+<span class="line"><span>            {loading ? (</span></span>
+<span class="line"><span>                &#x3C;div>Loading...&#x3C;/div></span></span>
+<span class="line"><span>            ) : error ? (</span></span>
+<span class="line"><span>                &#x3C;div className="text-red-500">{error}&#x3C;/div></span></span>
+<span class="line"><span>            ) : (</span></span>
+<span class="line"><span>                &#x3C;div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></span></span>
+<span class="line"><span>                    {healthData.map((service, index) => (</span></span>
+<span class="line"><span>                        &#x3C;div key={index} className="bg-white p-4 rounded-lg shadow"></span></span>
+<span class="line"><span>                            &#x3C;h3 className="text-lg font-semibold mb-2">{service.service_name}&#x3C;/h3></span></span>
+<span class="line"><span>                            &#x3C;div className="space-y-1"></span></span>
+<span class="line"><span>                                &#x3C;p>Uptime: {service.uptime_percent}%&#x3C;/p></span></span>
+<span class="line"><span>                                &#x3C;p>Avg Response Time: {service.response_time_avg}s&#x3C;/p></span></span>
+<span class="line"><span>                                &#x3C;p>Median Response Time: {service.response_time_median}s&#x3C;/p></span></span>
+<span class="line"><span>                                &#x3C;p>Status: </span></span>
+<span class="line"><span>                                    &#x3C;span className={`px-2 py-1 rounded-full text-sm ${</span></span>
+<span class="line"><span>                                        service.status === 'ok' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'</span></span>
+<span class="line"><span>                                    }`}></span></span>
+<span class="line"><span>                                        {service.status}</span></span>
+<span class="line"><span>                                    &#x3C;/span></span></span>
+<span class="line"><span>                                &#x3C;/p></span></span>
+<span class="line"><span>                            &#x3C;/div></span></span>
+<span class="line"><span>                        &#x3C;/div></span></span>
+<span class="line"><span>                    ))}</span></span>
+<span class="line"><span>                &#x3C;/div></span></span>
+<span class="line"><span>            )}</span></span>
+<span class="line"><span>        &#x3C;/div></span></span>
+<span class="line"><span>    );</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>export default HealthDashboard;</span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="3-data-schema-pydantic-model">3. Data Schema (Pydantic Model)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> HealthCheckResult</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    service_name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    uptime_percent: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    response_time_avg: Optional[</span><span style="color:#79B8FF">float</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    response_time_median: Optional[</span><span style="color:#79B8FF">float</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "ok" | "down"</span></span>
+<span class="line"><span style="color:#E1E4E8">    timestamp: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "service_name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"AuthService"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "uptime_percent"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">99.8</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "response_time_avg"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.25</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "response_time_median"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0.23</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"ok"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "timestamp"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1625942400</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="summary">Summary</h2>
+<p>This module provides a comprehensive system health monitoring solution with:</p>
+<ul>
+<li>FastAPI endpoint to fetch health metrics.</li>
+<li>React UI component for visualizing service status and performance data.</li>
+<li>Pydantic models for data validation and serialization.</li>
+</ul>
+<p>The implementation ensures developers can easily integrate and monitor the health of their core services.</p>
+<h1 id="system-health-monitor-module">System Health Monitor Module</h1>
+<h2 id="summary-1">Summary</h2>
+<p>The <strong>System Health Monitor</strong> module is designed to track key system health metrics such as uptime, API response times, and performance of core services. This module provides developers with insights into system behavior, enabling proactive maintenance and troubleshooting.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Log Analysis</strong>: Integrates with log files to provide additional context for health metrics.</li>
+<li><strong>Performance Optimization</strong>: Works seamlessly with performance tuning modules to enhance system efficiency.</li>
+<li><strong>Alarm Management</strong>: Triggers alerts based on predefined thresholds for critical health metrics.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-monitoring-service-uptime">1. Monitoring Service Uptime</h3>
+<ul>
+<li>Track the uptime of core services and receive notifications if any service goes down.</li>
+<li>Example: Monitor web servers, database clusters, or API endpoints.</li>
+</ul>
+<h3 id="2-measuring-api-response-times">2. Measuring API Response Times</h3>
+<ul>
+<li>Measure API response times in real-time and identify performance bottlenecks.</li>
+<li>Example: Analyze latency issues during peak traffic periods.</li>
+</ul>
+<h3 id="3-detecting-performance-bottleneches">3. Detecting Performance Bottleneches</h3>
+<ul>
+<li>Monitor system resource usage (CPU, memory, disk I/O) to detect performance issues.</li>
+<li>Example: Identify memory leaks or CPU spikes in critical services.</li>
+</ul>
+<h3 id="4-incident-management">4. Incident Management</h3>
+<ul>
+<li>Automatically trigger alerts when health metrics fall below predefined thresholds.</li>
+<li>Example: Notify on failed API requests or high error rates in core services.</li>
+</ul>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>Data Collection</strong>:</p>
+<ul>
+<li>Ensure that the module collects data from all relevant services (e.g., APIs, databases, and servers).</li>
+<li>Use lightweight polling mechanisms to avoid performance overhead.</li>
+</ul>
+</li>
+<li>
+<p><strong>Logging</strong>:</p>
+<ul>
+<li>Integrate with a logging module for detailed insights into health metrics.</li>
+<li>Store historical data for trend analysis and troubleshooting.</li>
+</ul>
+</li>
+<li>
+<p><strong>Alerting</strong>:</p>
+<ul>
+<li>Configure the module to send alerts via email, SMS, or messaging queues when critical thresholds are breached.</li>
+<li>Use asynchronous processing for alert notifications to avoid blocking main application logic.</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom Metrics</strong>:</p>
+<ul>
+<li>Allow developers to define custom health metrics based on specific business requirements.</li>
+<li>Example: Track unique metrics like “total API requests per second” or “failed database connections.”</li>
+</ul>
+</li>
+<li>
+<p><strong>Scalability</strong>:</p>
+<ul>
+<li>Ensure that the module can scale horizontally with increasing system load.</li>
+<li>Use distributed monitoring for large-scale systems.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter Name</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td><code>enable_health_monitoring</code></td><td>Enables or disables system health monitoring.</td><td><code>true</code></td></tr><tr><td><code>health_check_interval</code></td><td>Frequency (in seconds) of health checks for services.</td><td><code>60</code></td></tr><tr><td><code>alert_threshold</code></td><td>Threshold percentage for triggering alerts (e.g., 95% CPU usage).</td><td><code>90</code></td></tr><tr><td><code>log_level</code></td><td>Logging level for health monitoring events (<code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>).</td><td><code>INFO</code></td></tr><tr><td><code>enable_notifications</code></td><td>Enables or disables notification features.</td><td><code>true</code></td></tr></tbody></table>
+<hr>
+<h2 id="example-configuration">Example Configuration</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># System Health Monitor Configuration</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Enable Monitoring**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">  ```ini</span></span>
+<span class="line"><span style="color:#E1E4E8">  enable_health_monitoring = true</span></span>
+<span class="line"></span></code></pre>
+<ul>
+<li>
+<p><strong>Set Health Check Interval</strong>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#F97583">health_check_interval</span><span style="color:#E1E4E8"> = 60</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Configure Alert Thresholds</strong>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ini"><code><span class="line"><span style="color:#F97583">alert_threshold</span><span style="color:#E1E4E8"> = 95</span></span>
+<span class="line"></span></code></pre>
+</li>
+</ul>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The System Health Monitor module is a powerful tool for developers to ensure system reliability and performance. By leveraging its features, you can proactively manage system health, optimize resource usage, and minimize downtime.</p>
+<hr> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

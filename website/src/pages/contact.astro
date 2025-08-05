@@ -1,0 +1,63 @@
+---
+// contact.astro
+import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer/Footer.astro";
+import "../styles/contact.css";
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FAQ | Broken Duck Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+<Header />
+
+<main class="contact-page">
+  <section class="contact-hero">
+    <div class="container">
+      <h1>Contact Broken Duck Studio</h1>
+      <p>If you're interested in becoming a member, joining a workshop, booking production time, or just want to ask a question — send us a message below. We’d love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container contact-grid">
+      <div class="contact-form-wrapper">
+        <h2>Send Us a Message</h2>
+        <form class="contact-form" method="POST" netlify>
+          <label>
+            Full Name
+            <input type="text" name="name" placeholder="Jane Doe" required />
+          </label>
+          <label>
+            Email Address
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Your Message
+            <textarea name="message" rows="6" placeholder="Tell us about your channel, content goals, or question..." required></textarea>
+          </label>
+          <button type="submit" class="cta-button">Submit</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h2>Studio Info</h2>
+        <p><strong>Email:</strong> <a href="mailto:admin@brokenduckmedia.com">admin@brokenduckmedia.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+66954508535">+66 95 450 8535</a><br />Available Monday to Friday, 10am – 4pm (Bangkok Time)</p>
+        <p><strong>Studio Address:</strong><br />
+          Broken Duck Studio<br />
+          Mae Pu Kha, San Kamphaeng District<br />
+          Chiang Mai, Thailand 50130<br />
+          (Exact directions provided after registration)
+        </p>
+        <p>We aim to respond within one business day.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<Footer />

@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>AI Translation System</title><meta name="description" content="Automatically translates content between supported languages in real-time."><meta property="og:title" content="AI Translation System"><meta property="og:description" content="Automatically translates content between supported languages in real-time."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>AI Translation System</h1> <div class="module-meta"> <div> <span class="module-category">AI</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Automatically translates content between supported languages in real-time.</p> <div class="module-icons"> <img src="/assets/modules/ai/openai.png" alt="Technology icon"><img src="/assets/modules/cloudservices/google.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-of-ai-translation-system-module">Overview of AI Translation System Module</h1>
+<h2 id="purpose"><strong>Purpose</strong></h2>
+<p>The AI Translation System module is designed to provide real-time translation capabilities for software applications, enabling seamless communication across multiple languages. This module leverages advanced machine learning models to automatically translate text, audio, or visual content into the desired language with high accuracy and speed.</p>
+<h2 id="benefits"><strong>Benefits</strong></h2>
+<ul>
+<li><strong>Real-Time Translation</strong>: Translates content on-the-fly, ensuring immediate results without delays.</li>
+<li><strong>Multi-Language Support</strong>: Supports a wide range of languages, catering to global audiences.</li>
+<li><strong>Contextual Understanding</strong>: Utilizes context-aware translation to handle complex sentences and nuanced meanings accurately.</li>
+<li><strong>Customizable Models</strong>: Allows developers to train the system with custom datasets for domain-specific translations (e.g., technical, legal, or marketing content).</li>
+<li><strong>Integration-Friendly</strong>: Provides APIs and plugins for easy integration into existing systems, websites, or applications.</li>
+</ul>
+<h2 id="usage-scenarios"><strong>Usage Scenarios</strong></h2>
+<p>The AI Translation System module can be used in various scenarios, including:</p>
+<ol>
+<li><strong>Multilingual Websites/Applications</strong>: Translate user interfaces, content, and interactions dynamically based on the user’s language preferences.</li>
+<li><strong>Real-Time Communication Tools</strong>: Enable instant translation of messages, chat, or voice calls between users speaking different languages.</li>
+<li><strong>Content Localization</strong>: Automatically translate text for localization purposes, ensuring culturally relevant and accurate translations.</li>
+<li><strong>Business Applications</strong>: Translate business communications, reports, and documents in real-time to facilitate global collaborations.</li>
+<li><strong>Educational Tools</strong>: Provide instant translation support for educational content, making learning materials accessible to a broader audience.</li>
+<li><strong>Accessibility Features</strong>: Integrate with screen readers or sign language recognition tools to enhance accessibility for users with disabilities.</li>
+</ol>
+<p>By incorporating the AI Translation System module into your applications, you can unlock global communication capabilities and provide a seamless user experience across diverse linguistic boundaries.</p>
+<h2 id="features-of-ai-translation-system-module">Features of AI Translation System Module</h2>
+<h3 id="real-time-translation">Real-Time Translation</h3>
+<p>The module enables instantaneous translation of content, providing immediate results without delay. This feature ensures a seamless user experience, especially in applications requiring quick responses.</p>
+<h3 id="multi-language-support">Multi-Language Support</h3>
+<p>It supports a broad range of languages and provides an extensible framework for adding more language pairs. Developers can easily integrate new languages as needed, enhancing the module’s adaptability across global markets.</p>
+<h3 id="content-type-handling">Content Type Handling</h3>
+<p>The system accommodates various content types, including text, images, audio, and video. APIs are provided to translate embedded text within these media formats, ensuring comprehensive coverage of translation needs.</p>
+<h3 id="customization-options">Customization Options</h3>
+<p>Developers can tailor translations using custom dictionaries and terminology specific to their applications. This feature allows for precise control over translated content, enhancing accuracy and relevance.</p>
+<h3 id="error-handling-and-logging">Error Handling and Logging</h3>
+<p>The module includes robust error handling and logging mechanisms. It gracefully manages issues like unsupported formats or API failures, logging details for later review and system improvement.</p>
+<h3 id="performance-optimization">Performance Optimization</h3>
+<p>Efficient algorithms and caching strategies optimize translation processes. Load balancing distributes requests to prevent bottlenecks, ensuring smooth performance even during peak usage.</p>
+<h3 id="extensibility">Extensibility</h3>
+<p>The module supports integration with third-party APIs and machine learning models. Developers can extend functionality by adding new language models or services, fostering a dynamic and adaptable system.</p>
+<h3 id="security-measures">Security Measures</h3>
+<p>Data encryption ensures secure handling of sensitive information during translation processes, aligning with data protection regulations and enhancing user trust.</p>
+<h3 id="ai-translation-system-documentation">AI Translation System Documentation</h3>
+<p>This document provides technical details and code examples for integrating the AI Translation System module into your application.</p>
+<hr>
+<h4 id="1-fastapi-endpoint">1. FastAPI Endpoint</h4>
+<p>Below is an example of a FastAPI endpoint that handles translation requests:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> TranslationRequest</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> asyncio</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter(</span><span style="color:#FFAB70">prefix</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/translation"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">tags</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"translation"</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> translate_text</span><span style="color:#E1E4E8">(request: TranslationRequest):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Translates text from source language to target language.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Implement actual translation logic here</span></span>
+<span class="line"><span style="color:#E1E4E8">        translated_text </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> perform_translation(</span></span>
+<span class="line"><span style="color:#E1E4E8">            request.text,</span></span>
+<span class="line"><span style="color:#E1E4E8">            request.source_lang,</span></span>
+<span class="line"><span style="color:#E1E4E8">            request.target_lang,</span></span>
+<span class="line"><span style="color:#E1E4E8">            request.include_formatting,</span></span>
+<span class="line"><span style="color:#E1E4E8">            request.include_transliteration</span></span>
+<span class="line"><span style="color:#E1E4E8">        )</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"translated_text"</span><span style="color:#E1E4E8">: translated_text}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> translation_endpoint</span><span style="color:#E1E4E8">(request: TranslationRequest):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    API endpoint for translating text.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#E1E4E8">    result </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> translate_text(request)</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> result</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="2-react-ui-snippet">2. React UI Snippet</h4>
+<p>Here’s a React component that provides a simple translation interface:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> TranslationComponent</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">sourceText</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setSourceText</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">translatedText</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setTranslatedText</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">sourceLang</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setSourceLang</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'en'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">targetLang</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setTargetLang</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'es'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleTranslate</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/translation'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">                method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                    'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                },</span></span>
+<span class="line"><span style="color:#E1E4E8">                body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">                    text: sourceText,</span></span>
+<span class="line"><span style="color:#E1E4E8">                    source_lang: sourceLang,</span></span>
+<span class="line"><span style="color:#E1E4E8">                    target_lang: targetLang</span></span>
+<span class="line"><span style="color:#E1E4E8">                })</span></span>
+<span class="line"><span style="color:#E1E4E8">            });</span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">            setTranslatedText</span><span style="color:#E1E4E8">(data.translated_text);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Translation failed:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"translation-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{sourceLang} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSourceLang</span><span style="color:#E1E4E8">(e.target.value)}></span></span>
+<span class="line"><span style="color:#E1E4E8">                {</span><span style="color:#6A737D">/* Language options */</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{targetLang} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setTargetLang</span><span style="color:#E1E4E8">(e.target.value)}></span></span>
+<span class="line"><span style="color:#E1E4E8">                {</span><span style="color:#6A737D">/* Language options */</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">textarea</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{sourceText}</span></span>
+<span class="line"><span style="color:#B392F0">                onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSourceText</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Enter text to translate..."</span></span>
+<span class="line"><span style="color:#E1E4E8">            /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleTranslate}>Translate&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"result"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                {translatedText </span><span style="color:#F97583">||</span><span style="color:#9ECBFF"> 'Translation result will appear here'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> TranslationComponent;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="3-data-schema-pydantic">3. Data Schema (Pydantic)</h4>
+<p>Below is the Pydantic schema for translation requests:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TranslationRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    text: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    source_lang: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    target_lang: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    include_formatting: Optional[</span><span style="color:#79B8FF">bool</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> False</span></span>
+<span class="line"><span style="color:#E1E4E8">    include_transliteration: Optional[</span><span style="color:#79B8FF">bool</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> False</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Hello, world!"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "source_lang"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"en"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "target_lang"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"es"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "include_formatting"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "include_transliteration"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">False</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="example-usage">Example Usage</h3>
+<h4 id="using-the-fastapi-endpoint">Using the FastAPI endpoint:</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -X</span><span style="color:#9ECBFF"> POST</span><span style="color:#9ECBFF"> "http://localhost:8000/translation"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">     -H</span><span style="color:#9ECBFF"> "Content-Type: application/json"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">     -d</span><span style="color:#9ECBFF"> '{"text":"Hello, world!","source_lang":"en","target_lang":"es"}'</span></span>
+<span class="line"></span></code></pre>
+<p>This will return:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">"translated_text"</span><span style="color:#E1E4E8">:</span><span style="color:#9ECBFF">"¡Hola, mundo!"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<p>For more details on implementing the translation system or integrating with other services, please refer to the full documentation.</p>
+<h1 id="technical-documentation-for-ai-translation-system-module">Technical Documentation for AI Translation System Module</h1>
+<h2 id="module-name-ai-translation-system">Module Name: AI Translation System</h2>
+<p><strong>Category:</strong> AI<br>
+<strong>Summary:</strong> Automatically translates content between supported languages in real-time.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<p>The following modules are closely related to the AI Translation System module and work together to provide a seamless translation experience:</p>
+<ol>
+<li><strong>Text Preprocessing Module</strong>: Handles normalization, tokenization, and cleaning of input text before translation.</li>
+<li><strong>Language Detection Module</strong>: Automatically identifies the source language for untranslated content.</li>
+<li><strong>Neural Machine Translation (NMT) Module</strong>: Uses advanced neural networks to perform high-quality translations.</li>
+<li><strong>Post-Translation Editing Module</strong>: Provides tools for manual or automated review and refinement of translated text.</li>
+<li><strong>API Gateway Module</strong>: Serves as the entry point for integrating translation services into external systems.</li>
+</ol>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-real-time-website-translation">1. Real-Time Website Translation</h3>
+<p><strong>Description:</strong> Translates web content dynamically as users navigate, ensuring they see content in their preferred language.<br>
+<strong>Example Scenario:</strong> A user visits a global e-commerce site and sees product descriptions automatically translated into their native language.</p>
+<h3 id="2-document-batch-processing">2. Document Batch Processing</h3>
+<p><strong>Description:</strong> Processes multiple documents or files for translation offline, ideal for large-scale projects.<br>
+<strong>Example Scenario:</strong> A marketing team uploads a folder of PDFs to be translated into five different languages before distribution.</p>
+<h3 id="3-mobile-app-integration">3. Mobile App Integration</h3>
+<p><strong>Description:</strong> Translates in-app text on-the-fly, ensuring users receive real-time translations within the app interface.<br>
+<strong>Example Scenario:</strong> A user receives an SMS in Spanish and their phone automatically translates it to English using the translation system.</p>
+<h3 id="4-enterprise-communication-tools">4. Enterprise Communication Tools</h3>
+<p><strong>Description:</strong> Integrates with internal communication platforms to translate emails, messages, and reports in real-time.<br>
+<strong>Example Scenario:</strong> A multinational corporation uses the system to translate interdepartmental emails sent in different languages.</p>
+<h3 id="5-dynamic-language-support-addition">5. Dynamic Language Support Addition</h3>
+<p><strong>Description:</strong> Adds support for new languages based on user demand or business needs.<br>
+<strong>Example Scenario:</strong> A startup adds a feature to allow users to request translations in less commonly supported languages, expanding their language library over time.</p>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>Error Handling and Logging</strong>: Implement robust error handling to catch translation failures (e.g., unsupported languages, API errors) and log detailed information for debugging.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    translated_text </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> translate(source_text, target_language)</span></span>
+<span class="line"><span style="color:#F97583">except</span><span style="color:#E1E4E8"> TranslationError </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#E1E4E8">    logging.error(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Translation failed: </span><span style="color:#79B8FF">{str</span><span style="color:#E1E4E8">(e)</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Rate Limiting</strong>: Apply rate limiting to prevent overuse of translation services and ensure fair usage across multiple users or applications.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> limiter </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> rate_limiter</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@rate_limiter</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">max_calls</span><span style="color:#F97583">=</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">period</span><span style="color:#F97583">=</span><span style="color:#79B8FF">60</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> translate_text</span><span style="color:#E1E4E8">(text):</span></span>
+<span class="line"><span style="color:#6A737D">    # Translation logic here</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Logging</strong>: Use logging to track translation requests and responses for auditing, debugging, and monitoring purposes.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">logger.info(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Translation request: </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">source_text</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF"> -> </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">target_language</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Asynchronous Processing</strong>: For high-throughput applications, implement asynchronous processing to handle multiple translation requests concurrently without blocking the main thread.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> asyncio</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> translate_async</span><span style="color:#E1E4E8">(source_text, target_language):</span></span>
+<span class="line"><span style="color:#6A737D">    # Asynchronous translation logic here</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Monitoring and Analytics</strong>: Set up monitoring tools to track translation success rates, error types, and usage patterns for proactive maintenance and optimization.</p>
+</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Parameter</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th><th><strong>Valid Values</strong></th></tr></thead><tbody><tr><td><code>enabled</code></td><td>Enables or disables the translation system</td><td><code>true</code></td><td><code>true</code>, <code>false</code></td></tr><tr><td><code>source_language</code></td><td>Default source language for translation</td><td><code>auto</code></td><td>List of supported languages</td></tr><tr><td><code>target_languages</code></td><td>List of supported target languages</td><td><code>["en"]</code></td><td>List of supported languages</td></tr><tr><td><code>translation_mode</code></td><td>Mode of operation (real-time or batch)</td><td><code>real-time</code></td><td><code>real-time</code>, <code>batch</code></td></tr><tr><td><code>api_key</code></td><td>API key for external translation services</td><td><code>none</code></td><td>String value</td></tr><tr><td><code>model_version</code></td><td>Version of the translation model to use</td><td><code>latest</code></td><td>Available model versions</td></tr><tr><td><code>max_parallel Requests</code></td><td>Maximum number of concurrent translation requests</td><td><code>10</code></td><td>Integer values >= 1</td></tr></tbody></table>
+<hr>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Ensure that the module is configured with appropriate API keys and credentials for external translation services.</li>
+<li>Regularly update the supported language list to keep up with new additions or changes in the system.</li>
+<li>Test the integration thoroughly in a staging environment before deploying it to production.</li>
+</ul>
+<p>This documentation provides a comprehensive overview of the AI Translation System module, its related modules, use cases, and configuration options. For further assistance, refer to the detailed API documentation or contact support.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

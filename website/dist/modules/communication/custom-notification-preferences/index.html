@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Custom Notification Preferences</title><meta name="description" content="Let users opt-in/out of email, SMS, or in-app alerts."><meta property="og:title" content="Custom Notification Preferences"><meta property="og:description" content="Let users opt-in/out of email, SMS, or in-app alerts."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Custom Notification Preferences</h1> <div class="module-meta"> <div> <span class="module-category">Communication</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Let users opt-in/out of email, SMS, or in-app alerts.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/sendgrid.png" alt="Technology icon"><img src="/assets/modules/cloudservices/twilio.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"> </div> </section> <article> <h1 id="custom-notification-preferences-module-overview">Custom Notification Preferences Module Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The “Custom Notification Preferences” module provides a flexible framework enabling users to tailor their notification settings across multiple channels, including email, SMS, and in-app alerts. This module empowers users by allowing them to choose how they receive communications, enhancing their overall experience.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Enhanced User Experience</strong>: Users can select preferred notification methods, ensuring timely and relevant information without unwanted interruptions.</li>
+<li><strong>Scalability</strong>: The module supports various notification channels, making it adaptable to future communication needs.</li>
+<li><strong>Reduced Noise</strong>: By letting users control their notifications, this feature minimizes irrelevant alerts, keeping their inboxes and devices clutter-free.</li>
+<li><strong>Compliance and Consent</strong>: It ensures users provide explicit consent for each type of communication, aiding compliance with data protection regulations.</li>
+<li><strong>Customization</strong>: Users can fine-tune notification preferences based on specific events or categories, offering a personalized experience.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<h3 id="1-user-profile-management">1. User Profile Management</h3>
+<ul>
+<li><strong>Scenario</strong>: A user wants to adjust how they receive notifications about account updates and security alerts.</li>
+<li><strong>Implementation</strong>: The module integrates with the user profile system, allowing users to toggle notification options for emails, SMS, and in-app messages related to their account.</li>
+</ul>
+<h3 id="2-event-based-notifications">2. Event-Based Notifications</h3>
+<ul>
+<li><strong>Scenario</strong>: An application sends event-specific notifications (e.g., payment reminders).</li>
+<li><strong>Implementation</strong>: Users can opt-in or out of receiving these reminders via different channels through the module’s interface.</li>
+</ul>
+<h3 id="3-marketing-campaigns">3. Marketing Campaigns</h3>
+<ul>
+<li><strong>Scenario</strong>: A company wants to notify users about promotional offers.</li>
+<li><strong>Implementation</strong>: The module allows users to choose their preferred channel for marketing notifications, respecting their communication preferences.</li>
+</ul>
+<h3 id="4-system-wide-communication">4. System-Wide Communication</h3>
+<ul>
+<li><strong>Scenario</strong>: An organization needs to send critical updates or service changes.</li>
+<li><strong>Implementation</strong>: Users can manage their notification settings through the module, ensuring they receive important updates via their chosen method.</li>
+</ul>
+<p>This module is a vital tool for developers aiming to create user-centric applications with flexible and personalized notification systems.</p>
+<p>The Custom Notification Preferences module is designed to enhance user experience by allowing personalized notification management. Here’s an organized overview of its key features:</p>
+<ol>
+<li>
+<p><strong>User-Defined Notification Preferences</strong>: Users can select their preferred notification methods (e.g., email, SMS, in-app), ensuring a tailored communication experience.</p>
+</li>
+<li>
+<p><strong>Opt-In/Opt-Out Mechanism</strong>: Users easily manage their subscription status through checkboxes or links within notifications, with real-time updates to prevent sending unwanted messages.</p>
+</li>
+<li>
+<p><strong>Multiple Notification Channels</strong>: Supports diverse channels like email, SMS, push notifications, and in-app messages, requiring integration of various APIs for effective communication.</p>
+</li>
+<li>
+<p><strong>Real-Time Subscription Updates</strong>: Changes take immediate effect, necessitating reliable database handling to ensure consistency.</p>
+</li>
+<li>
+<p><strong>Audit Trail</strong>: Logs user actions for compliance and debugging purposes, with secure implementation to protect data while providing necessary records.</p>
+</li>
+<li>
+<p><strong>Regulatory Compliance</strong>: Adheres to GDPR and CCPA by ensuring clear consent processes and easy opt-out options.</p>
+</li>
+<li>
+<p><strong>Integration with Services</strong>: Interfaces with third-party APIs for sending notifications, requiring error handling and channel-based dispatching based on user preferences.</p>
+</li>
+<li>
+<p><strong>User Interface Customization</strong>: Administered customization options enhance flexibility, needing a robust admin panel for updates without disrupting functionality.</p>
+</li>
+<li>
+<p><strong>Batch Processing</strong>: Efficiently handles bulk updates for large user bases, minimizing performance issues through optimized processing.</p>
+</li>
+<li>
+<p><strong>Testing Framework</strong>: Comprehensive test cases cover various scenarios to ensure feature reliability and edge case handling.</p>
+</li>
+</ol>
+<p>This module offers developers a flexible, scalable solution for effective notification management, prioritizing user-centric design and regulatory compliance.</p>
+<p>Here’s a comprehensive technical documentation for the “Custom Notification Preferences” module:</p>
+<h3 id="1-fastapi-endpoint">1. FastAPI Endpoint</h3>
+<p>This endpoint handles updating user notification preferences.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># notifications.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Dict, Any</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel, EmailStr</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> crud</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> models.user_model </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> User</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> schemas.notification_schema </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> NotificationPreferencesBase</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> UpdateNotificationPreferences</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    email_notifications: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    sms_notifications: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    in_app_notifications: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/users/</span><span style="color:#79B8FF">{user_id}</span><span style="color:#9ECBFF">/notification-preferences"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">NotificationPreferencesBase)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> update_notification_preferences</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, </span></span>
+<span class="line"><span style="color:#E1E4E8">    preferences: UpdateNotificationPreferences,</span></span>
+<span class="line"><span style="color:#E1E4E8">    current_user: User </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends()</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Update notification preferences for a specific user.</span></span>
+<span class="line"><span style="color:#9ECBFF">    </span></span>
+<span class="line"><span style="color:#9ECBFF">    Args:</span></span>
+<span class="line"><span style="color:#9ECBFF">        user_id (str): ID of the user to update</span></span>
+<span class="line"><span style="color:#9ECBFF">        preferences (UpdateNotificationPreferences): Object containing new notification preferences</span></span>
+<span class="line"><span style="color:#9ECBFF">    </span></span>
+<span class="line"><span style="color:#9ECBFF">    Returns:</span></span>
+<span class="line"><span style="color:#9ECBFF">        NotificationPreferencesBase: Updated notification preferences</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#F97583"> not</span><span style="color:#E1E4E8"> current_user </span><span style="color:#F97583">or</span><span style="color:#79B8FF"> str</span><span style="color:#E1E4E8">(current_user.id) </span><span style="color:#F97583">!=</span><span style="color:#E1E4E8"> user_id:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">403</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Not authorized"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#E1E4E8">    db </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> SessionLocal()</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        user </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> crud.get_user(db, user_id)</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#F97583"> not</span><span style="color:#E1E4E8"> user:</span></span>
+<span class="line"><span style="color:#F97583">            raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">404</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"User not found"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Update preferences</span></span>
+<span class="line"><span style="color:#F97583">        for</span><span style="color:#E1E4E8"> key, value </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> preferences.dict().items():</span></span>
+<span class="line"><span style="color:#79B8FF">            setattr</span><span style="color:#E1E4E8">(user, key, value)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#E1E4E8">        db.commit()</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"email_notifications"</span><span style="color:#E1E4E8">: user.email_notifications,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "sms_notifications"</span><span style="color:#E1E4E8">: user.sms_notifications,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "in_app_notifications"</span><span style="color:#E1E4E8">: user.in_app_notifications}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#E1E4E8">        db.rollback()</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-snippet">2. React UI Snippet</h3>
+<p>This component allows users to manage their notification preferences.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// NotificationSettings.js</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useState, useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> axios </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'axios'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> NotificationSettings</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">preferences</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setPreferences</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        email: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        sms: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        inApp: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> saveChanges</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            await</span><span style="color:#E1E4E8"> axios.</span><span style="color:#B392F0">put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`/api/users/${</span><span style="color:#E1E4E8">userId</span><span style="color:#9ECBFF">}/notification-preferences`</span><span style="color:#E1E4E8">, preferences);</span></span>
+<span class="line"><span style="color:#B392F0">            alert</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Preferences saved successfully!'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error saving preferences:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#B392F0">            alert</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to save preferences. Please try again.'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> togglePreference</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">key</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        setPreferences</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">prev</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> ({</span></span>
+<span class="line"><span style="color:#F97583">            ...</span><span style="color:#E1E4E8">prev,</span></span>
+<span class="line"><span style="color:#E1E4E8">            [key]: </span><span style="color:#F97583">!</span><span style="color:#E1E4E8">prev[key]</span></span>
+<span class="line"><span style="color:#E1E4E8">        }));</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        fetchUserPreferences</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> fetchUserPreferences</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> axios.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`/api/users/${</span><span style="color:#E1E4E8">userId</span><span style="color:#9ECBFF">}/notification-preferences`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">            setPreferences</span><span style="color:#E1E4E8">(response.data);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error fetching preferences:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"NotificationSettings"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>Notification Preferences&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"preferences-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"preference-item"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Email Notifications:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> togglePreference</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'email'</span><span style="color:#E1E4E8">)}</span></span>
+<span class="line"><span style="color:#B392F0">                        className</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{preferences.email </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'on'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'off'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    ></span></span>
+<span class="line"><span style="color:#E1E4E8">                        {preferences.email </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'ON'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'OFF'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"preference-item"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>SMS Notifications:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> togglePreference</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'sms'</span><span style="color:#E1E4E8">)}</span></span>
+<span class="line"><span style="color:#B392F0">                        className</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{preferences.sms </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'on'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'off'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    ></span></span>
+<span class="line"><span style="color:#E1E4E8">                        {preferences.sms </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'ON'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'OFF'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"preference-item"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>In-App Notifications:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> togglePreference</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'inApp'</span><span style="color:#E1E4E8">)}</span></span>
+<span class="line"><span style="color:#B392F0">                        className</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{preferences.inApp </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'on'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'off'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    ></span></span>
+<span class="line"><span style="color:#E1E4E8">                        {preferences.inApp </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'ON'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'OFF'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{saveChanges} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"save-button"</span><span style="color:#E1E4E8">>Save Changes&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> NotificationSettings;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-pydantic-data-schema">3. Pydantic Data Schema</h3>
+<p>This schema defines the structure for notification preferences.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># schemas/notification_schema.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> NotificationPreferencesBase</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    email_notifications: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    sms_notifications: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    in_app_notifications: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> EmailPreferences</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">NotificationPreferencesBase</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    marketing_emails: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PushNotificationSettings</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">NotificationPreferencesBase</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    push_notification_sound: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    vibration_pattern: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span></code></pre>
+<h3 id="example-usage">Example Usage:</h3>
+<h4 id="api-call">API Call:</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -X</span><span style="color:#9ECBFF"> PUT</span><span style="color:#9ECBFF"> "http://localhost:8000/api/users/1/notification-preferences"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">-H </span><span style="color:#9ECBFF">"Content-Type: application/json"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#E1E4E8">-d </span><span style="color:#9ECBFF">'{"email_notifications": true, "sms_notifications": false, "in_app_notifications": true}'</span></span>
+<span class="line"></span></code></pre>
+<h4 id="react-component">React Component:</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Example usage in a parent component:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> NotificationSettings </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './components/NotificationSettings'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> App</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userId</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> '1'</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// Replace with actual user ID</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"app"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#79B8FF">NotificationSettings</span><span style="color:#B392F0"> userId</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{userId} /></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="notes">Notes:</h3>
+<ul>
+<li>The API endpoint includes error handling and transaction management.</li>
+<li>The React component is styled using Tailwind CSS classes for a clean look.</li>
+<li>Pydantic models ensure data validation at the API level.</li>
+</ul>
+<h1 id="custom-notification-preferences-module">Custom Notification Preferences Module</h1>
+<h2 id="summary">Summary</h2>
+<p>The <strong>Custom Notification Preferences</strong> module allows users to manage their notification settings across various channels such as email, SMS, and in-app alerts. This module provides a flexible solution for users to opt-in or opt-out of different types of notifications, enhancing user experience by giving them control over communication preferences.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>User Profile Management</strong>: For managing user details and preferences.</li>
+<li><strong>Notification System</strong>: Handles the sending of emails, SMS, and in-app alerts.</li>
+<li><strong>Email Gateway</strong>: Manages email dispatch configurations.</li>
+<li><strong>SMS Gateway</strong>: Manages SMS dispatch configurations.</li>
+<li><strong>In-App Messaging</strong>: Handles in-app notifications within the application.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>User Profile Settings</strong>: Users can customize their notification preferences directly from their profile settings, allowing them to choose which communication channels they want to receive notifications on.</li>
+<li><strong>Subscription Management</strong>: Users can opt-in or out of notifications related to subscription renewals or expirations.</li>
+<li><strong>Custom Alerts for Specific Events</strong>: Users can enable or disable notifications for specific events such as new updates, security alerts, or promotional offers.</li>
+<li><strong>System Messages</strong>: Users can choose how they receive system-generated messages like account verification emails or password reset links.</li>
+<li><strong>Batch Updates</strong>: Administrators can update notification preferences in bulk for multiple users based on certain criteria.</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li><strong>Data Model Considerations</strong>: Ensure that the user entity includes fields to track notification preferences (e.g., <code>notifyByEmail</code>, <code>notifyBySms</code>, <code>notifyInApp</code>).</li>
+<li><strong>Cross-Channel Compatibility</strong>: Design the module to handle cases where a user might opt out of one channel but still use another.</li>
+<li><strong>Testing</strong>: Conduct thorough testing to ensure that notifications are sent only to users who have opted in for each respective channel.</li>
+<li><strong>User Experience</strong>: Provide clear and intuitive UI/UX elements, such as checkboxes or toggle switches, for users to manage their preferences easily.</li>
+<li><strong>Monitoring</strong>: Implement logging and monitoring to track notification preference changes and ensure compliance with user privacy policies.</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Data Type</th><th>Default Value</th><th>Example Values</th></tr></thead><tbody><tr><td><code>enableEmailNotifications</code></td><td>Enable or disable email notifications globally.</td><td>Boolean</td><td>true</td><td>true, false</td></tr><tr><td><code>emailDefaultTemplateId</code></td><td>The default template ID to use for email notifications.</td><td>String</td><td>N/A</td><td>”welcome-email”, “alert-email”</td></tr><tr><td><code>smsEnabledCountries</code></td><td>List of countries where SMS notifications are enabled.</td><td>Array</td><td>[]</td><td>[“US”, “GB”]</td></tr><tr><td><code>inAppNotificationType</code></td><td>Type of in-app notification (e.g., banner, modal).</td><td>String</td><td>”banner"</td><td>"banner”, “modal”</td></tr><tr><td><code>userOptInByDefault</code></td><td>Whether new users are opted in by default for all notifications.</td><td>Boolean</td><td>false</td><td>true, false</td></tr></tbody></table>
+<hr>
+<h2 id="api-references">API References</h2>
+<h3 id="endpoints">Endpoints</h3>
+<ol>
+<li>
+<p><strong>Add Notification Preference</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="http"><code><span class="line"><span style="color:#F97583">POST</span><span style="color:#E1E4E8"> /api/notification-preference</span></span>
+<span class="line"><span style="color:#85E89D">Content-Type</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> application/json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "userId"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"123"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "notificationType"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"email"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">  "enabled"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Update Notification Preference</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="http"><code><span class="line"><span style="color:#F97583">PUT</span><span style="color:#E1E4E8"> /api/notification-preference/{preferenceId}</span></span>
+<span class="line"><span style="color:#85E89D">Content-Type</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> application/json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "enabled"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Retrieve User’s Notification Preferences</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="http"><code><span class="line"><span style="color:#F97583">GET</span><span style="color:#E1E4E8"> /api/notification-preference?userId=123</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Delete Notification Preference</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="http"><code><span class="line"><span style="color:#F97583">DELETE</span><span style="color:#E1E4E8"> /api/notification-preference/{preferenceId}</span></span>
+<span class="line"></span></code></pre>
+</li>
+</ol>
+<hr>
+<p>By following this documentation, developers can seamlessly integrate and manage custom notification preferences within their application, ensuring a personalized user experience while maintaining efficient system operations.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

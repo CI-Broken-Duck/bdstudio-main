@@ -1,0 +1,376 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Feature Flag Manager</title><meta name="description" content="Enable or disable specific features for testing, users, or environments."><meta property="og:title" content="Feature Flag Manager"><meta property="og:description" content="Enable or disable specific features for testing, users, or environments."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Feature Flag Manager</h1> <div class="module-meta"> <div> <span class="module-category">Admin</span> <span class="module-subcategory"> → Platinum</span> </div> <div class="module-price"> <span>💰</span> $3500 </div> </div> <p class="module-summary">Enable or disable specific features for testing, users, or environments.</p> <div class="module-icons"> <img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-feature-flag-manager">Overview: Feature Flag Manager</h1>
+<p>The <strong>Feature Flag Manager</strong> module provides a robust solution for managing feature toggles in software systems. Its purpose is to enable developers to dynamically enable or disable specific features without requiring changes to the underlying codebase. This allows for controlled experimentation, gradual rollouts, and environment-specific feature management.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The Feature Flag Manager serves as an administrative tool to manage feature flags across different environments (e.g., development, staging, production) and user segments. It enables developers to:</p>
+<ul>
+<li>Safely test features in production without impacting end-users.</li>
+<li>Roll out new features or updates in a phased manner.</li>
+<li>Disable problematic features quickly without redeploying code.</li>
+<li>Target specific user groups or regions for feature availability.</li>
+</ul>
+<h2 id="benefits">Benefits</h2>
+<p>The Feature Flag Manager offers several key benefits:</p>
+<ul>
+<li><strong>Rapid Experimentation</strong>: Developers can enable and disable features on-the-fly, allowing for quick testing and iteration.</li>
+<li><strong>Risk Mitigation</strong>: Features can be rolled out incrementally to a small subset of users before full deployment, reducing the risk of introducing bugs or performance issues.</li>
+<li><strong>Environment-Specific Control</strong>: Different environments (e.g., dev, staging, production) can have unique feature configurations, ensuring consistency across workflows.</li>
+<li><strong>User Segmentation</strong>: Features can be targeted based on user attributes (e.g., region, role, or ID), enabling A/B testing and personalized experiences.</li>
+<li><strong>Reduced Deployment Risks</strong>: Bugs or issues in new features can be quickly reverted without the need for redeployment.</li>
+<li><strong>Improved Collaboration</strong>: The module provides a centralized platform for managing feature toggles, fostering better collaboration among developers and admins.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<p>The Feature Flag Manager is ideal for the following scenarios:</p>
+<ol>
+<li><strong>Feature Testing</strong>: Developers can enable a new feature in production to test its behavior without exposing it to all users.</li>
+<li><strong>Phased Rollouts</strong>: New features can be rolled out gradually to specific user groups or regions, allowing for controlled adoption.</li>
+<li><strong>A/B Testing</strong>: Features can be toggled on and off for different segments of users to compare performance or user feedback.</li>
+<li><strong>Bug Fixes</strong>: If a feature introduces a bug in production, the Feature Flag Manager allows developers to disable it quickly without redeploying code.</li>
+<li><strong>Environment-Specific Configurations</strong>: Different environments (e.g., dev, staging, production) can have distinct feature settings to align with their specific needs.</li>
+<li><strong>Feature Deprecation</strong>: Developers can disable deprecated features while maintaining backward compatibility with existing systems.</li>
+</ol>
+<p>By leveraging the Feature Flag Manager, developers gain the flexibility and control needed to manage features effectively throughout the software lifecycle.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Feature Flag Manager</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Overview</span></span>
+<span class="line"><span style="color:#E1E4E8">The </span><span style="color:#E1E4E8;font-weight:bold">**Feature Flag Manager**</span><span style="color:#E1E4E8"> is a module designed to control the enablement or disablement of specific features within a software system. This allows for dynamic management of features without requiring redeployment, making it ideal for testing, user experience optimization, and environment-specific configurations.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Key Features</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 1. Feature Enable/Disable</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Enables or disables specific features based on administrative control.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Use Case**</span><span style="color:#E1E4E8">: Quickly toggle features on or off to test functionality, roll out changes gradually, or fix issues without redeploying code.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 2. Environment-Specific Configuration</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Allows features to be enabled or disabled for different environments (e.g., Development, Staging, Production).</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Use Case**</span><span style="color:#E1E4E8">: Tailor feature availability based on the environment, ensuring that certain features are only accessible in specific contexts.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 3. User Group Targeting</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Enable or disable features for specific user groups.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Use Case**</span><span style="color:#E1E4E8">: A/B testing, where different user segments can access features at varying stages of development or deployment.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 4. Feature Rollout</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Gradually roll out features to a subset of users before full deployment.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Use Case**</span><span style="color:#E1E4E8">: Risk mitigation by starting with small user groups to identify and address issues before a full rollout.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 5. Audit Trail</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Logs changes made to feature flags for auditing purposes.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Use Case**</span><span style="color:#E1E4E8">: Track who made changes, when they were made, and what the changes were, ensuring accountability and compliance.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 6. Permission-Based Access Control</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Restrict access to feature flags based on user roles or permissions.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Use Case**</span><span style="color:#E1E4E8">: Ensure that only authorized personnel can modify feature flags, enhancing security and preventing unintended changes.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 7. Feature State Monitoring</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Monitor the state of features in real-time.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Use Case**</span><span style="color:#E1E4E8">: Quickly identify if a feature is enabled or disabled across different environments or user groups.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 8. Integration with External Systems</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Integrate with external systems, APIs, or services to dynamically update feature states.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Use Case**</span><span style="color:#E1E4E8">: Automatically sync feature flag changes with other components of the system for consistent behavior.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 9. Dependency Management</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Manage dependencies between features to ensure proper functionality when features are toggled.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Use Case**</span><span style="color:#E1E4E8">: Define relationships where enabling one feature may require disabling another, or vice versa, to maintain system integrity.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 10. Historical Data Tracking</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Track historical states of feature flags over time.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Use Case**</span><span style="color:#E1E4E8">: Analyze past changes to identify patterns, issues, or the impact of specific changes on system behavior.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Summary</span></span>
+<span class="line"><span style="color:#E1E4E8">The </span><span style="color:#E1E4E8;font-weight:bold">**Feature Flag Manager**</span><span style="color:#E1E4E8"> provides a robust and flexible solution for managing features in a software system. With capabilities ranging from simple enable/disable operations to environment-specific configurations and user group targeting, this module empowers developers and administrators to control feature availability effectively. The inclusion of features like audit trails, permission-based access control, and historical data tracking ensures transparency, security, and comprehensive oversight.</span></span>
+<span class="line"></span></code></pre>
+<p>Here’s a technical documentation for the Feature Flag Manager module with sample code implementations:</p>
+<h3 id="1-fastapi-endpoint-example">1. FastAPI Endpoint Example</h3>
+<p>This example shows a FastAPI endpoint to manage feature flags.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> os</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> FeatureFlag</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    environment: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    enable_time: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    disable_time: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Sample configuration</span></span>
+<span class="line"><span style="color:#79B8FF">_ENV_PREFIX</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "FEATURE_FLAG_"</span></span>
+<span class="line"><span style="color:#79B8FF">_CONFIG</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">    "development"</span><span style="color:#E1E4E8">: os.getenv(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">{_ENV_PREFIX}</span><span style="color:#9ECBFF">DEVELOPMENT_ENABLED"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"true"</span><span style="color:#E1E4E8">).lower() </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">"true"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"on"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">    "analytics"</span><span style="color:#E1E4E8">: os.getenv(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">{_ENV_PREFIX}</span><span style="color:#9ECBFF">ANALYTICS_ENABLED"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"true"</span><span style="color:#E1E4E8">).lower() </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">"true"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"on"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/feature-flags"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">List[FeatureFlag])</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> get_feature_flags</span><span style="color:#E1E4E8">():</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Get all feature flags"""</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> [</span></span>
+<span class="line"><span style="color:#E1E4E8">        FeatureFlag(</span></span>
+<span class="line"><span style="color:#FFAB70">            name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"development"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Enable development features"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            status</span><span style="color:#F97583">=</span><span style="color:#79B8FF">_CONFIG</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"development"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#FFAB70">            environment</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">os.getenv(</span><span style="color:#9ECBFF">"ENVIRONMENT"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"production"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#FFAB70">            enable_time</span><span style="color:#F97583">=</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">(os.getenv(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">{_ENV_PREFIX}</span><span style="color:#9ECBFF">DEVELOPMENT_ENABLE_TIME"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)),</span></span>
+<span class="line"><span style="color:#FFAB70">            disable_time</span><span style="color:#F97583">=</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">(os.getenv(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">{_ENV_PREFIX}</span><span style="color:#9ECBFF">DEVELOPMENT_DISABLE_TIME"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)),</span></span>
+<span class="line"><span style="color:#FFAB70">            user_id</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">os.getenv(</span><span style="color:#9ECBFF">"USER_ID"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"admin"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">        ),</span></span>
+<span class="line"><span style="color:#E1E4E8">        FeatureFlag(</span></span>
+<span class="line"><span style="color:#FFAB70">            name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"analytics"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Enable analytics features"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            status</span><span style="color:#F97583">=</span><span style="color:#79B8FF">_CONFIG</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"analytics"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#FFAB70">            environment</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">os.getenv(</span><span style="color:#9ECBFF">"ENVIRONMENT"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"production"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#FFAB70">            enable_time</span><span style="color:#F97583">=</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">(os.getenv(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">{_ENV_PREFIX}</span><span style="color:#9ECBFF">ANALYTICS_ENABLE_TIME"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)),</span></span>
+<span class="line"><span style="color:#FFAB70">            disable_time</span><span style="color:#F97583">=</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">(os.getenv(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">{_ENV_PREFIX}</span><span style="color:#9ECBFF">ANALYTICS_DISABLE_TIME"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)),</span></span>
+<span class="line"><span style="color:#FFAB70">            user_id</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">os.getenv(</span><span style="color:#9ECBFF">"USER_ID"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"admin"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">        )</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/feature-flags/</span><span style="color:#79B8FF">{name}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">FeatureFlag)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> toggle_feature_flag</span><span style="color:#E1E4E8">(name: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Toggle a feature flag"""</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> name </span><span style="color:#F97583">not</span><span style="color:#F97583"> in</span><span style="color:#79B8FF"> _CONFIG</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">404</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Feature flag </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">name</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF"> not found"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    # Toggle the status</span></span>
+<span class="line"><span style="color:#E1E4E8">    new_status </span><span style="color:#F97583">=</span><span style="color:#F97583"> not</span><span style="color:#79B8FF"> _CONFIG</span><span style="color:#E1E4E8">[name]</span></span>
+<span class="line"><span style="color:#79B8FF">    _CONFIG</span><span style="color:#E1E4E8">[name] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> new_status</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> FeatureFlag(</span></span>
+<span class="line"><span style="color:#FFAB70">        name</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">name,</span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Enable analytics features"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        status</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">new_status,</span></span>
+<span class="line"><span style="color:#FFAB70">        environment</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">os.getenv(</span><span style="color:#9ECBFF">"ENVIRONMENT"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"production"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#FFAB70">        enable_time</span><span style="color:#F97583">=</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">(os.getenv(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">{_ENV_PREFIX}{</span><span style="color:#E1E4E8">name.upper()</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">_ENABLE_TIME"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)),</span></span>
+<span class="line"><span style="color:#FFAB70">        disable_time</span><span style="color:#F97583">=</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">(os.getenv(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">{_ENV_PREFIX}{</span><span style="color:#E1E4E8">name.upper()</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">_DISABLE_TIME"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">)),</span></span>
+<span class="line"><span style="color:#FFAB70">        user_id</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">os.getenv(</span><span style="color:#9ECBFF">"USER_ID"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"admin"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-component-example">2. React UI Component Example</h3>
+<p>This example shows a simple React component to display and manage feature flags.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> FeatureFlag</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">    name</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    description</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    status</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    environment</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    enableTime</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    disableTime</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    userId</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> FeatureFlagManager</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">featureFlags</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setFeatureFlags</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">FeatureFlag</span><span style="color:#E1E4E8">[]>([</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#E1E4E8">            name: </span><span style="color:#9ECBFF">'development'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            description: </span><span style="color:#9ECBFF">'Enable development features'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            status: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            environment: </span><span style="color:#9ECBFF">'production'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            enableTime: </span><span style="color:#79B8FF">1625937600</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            disableTime: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            userId: </span><span style="color:#9ECBFF">'admin'</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#E1E4E8">            name: </span><span style="color:#9ECBFF">'analytics'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            description: </span><span style="color:#9ECBFF">'Enable analytics features'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            status: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            environment: </span><span style="color:#9ECBFF">'production'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            enableTime: </span><span style="color:#79B8FF">1625937600</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            disableTime: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            userId: </span><span style="color:#9ECBFF">'admin'</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> toggleFeatureFlag</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">name</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`api/feature-flags/${</span><span style="color:#E1E4E8">name</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">, { </span></span>
+<span class="line"><span style="color:#E1E4E8">                method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                    'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                },</span></span>
+<span class="line"><span style="color:#E1E4E8">            });</span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#F97583">                throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to toggle feature flag'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> updatedFlags</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> featureFlags.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">flag</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#E1E4E8">                flag.name </span><span style="color:#F97583">===</span><span style="color:#E1E4E8"> name </span><span style="color:#F97583">?</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> flag</span></span>
+<span class="line"><span style="color:#E1E4E8">            );</span></span>
+<span class="line"><span style="color:#B392F0">            setFeatureFlags</span><span style="color:#E1E4E8">(updatedFlags);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"feature-flag-manager"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>Feature Flag Manager&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"flags-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                {featureFlags.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">flag</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{flag.name}</span></span>
+<span class="line"><span style="color:#B392F0">                        className</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">`flag-item ${</span><span style="color:#E1E4E8">flag</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">status</span><span style="color:#F97583"> ?</span><span style="color:#9ECBFF"> 'enabled'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'disabled'}`</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    ></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"flag-info"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                            &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>{flag.description}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                            &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Status: {</span><span style="color:#9ECBFF">'✓'</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">repeat</span><span style="color:#E1E4E8">(flag.status </span><span style="color:#F97583">?</span><span style="color:#79B8FF"> 1</span><span style="color:#F97583"> :</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">)}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                            &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Environment: {flag.environment}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                            onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> toggleFeatureFlag</span><span style="color:#E1E4E8">(flag.name)}</span></span>
+<span class="line"><span style="color:#B392F0">                            className</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">`toggle-button ${</span><span style="color:#E1E4E8">flag</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">status</span><span style="color:#F97583"> ?</span><span style="color:#9ECBFF"> 'active'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> ''}`</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                        ></span></span>
+<span class="line"><span style="color:#E1E4E8">                            {flag.status </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'Disable'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'Enable'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> FeatureFlagManager;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-pydantic-data-schema-example">3. Pydantic Data Schema Example</h3>
+<p>This example shows the data models for feature flags.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel, Field</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> FeatureFlagCreate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">min_length</span><span style="color:#F97583">=</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">min_length</span><span style="color:#F97583">=</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">bool</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> True</span></span>
+<span class="line"><span style="color:#E1E4E8">    environment: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "production"</span></span>
+<span class="line"><span style="color:#E1E4E8">    enable_time: Optional[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    disable_time: Optional[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">min_length</span><span style="color:#F97583">=</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> FeatureFlagRead</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">bool</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    environment: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    enable_time: Optional[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    disable_time: Optional[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<h3 id="summary">Summary</h3>
+<p>This documentation provides a basic implementation of a Feature Flag Manager module with:</p>
+<ol>
+<li>A FastAPI endpoint for managing feature flags.</li>
+<li>A React UI component for displaying and toggling feature flags.</li>
+<li>Pydantic models for validating feature flag data.</li>
+</ol>
+<p>The implementation includes:</p>
+<ul>
+<li>Environment-based configuration</li>
+<li>Enable/disable timestamps</li>
+<li>User tracking</li>
+<li>Basic error handling</li>
+<li>Toggle functionality</li>
+</ul>
+<p>You can extend this further by adding:</p>
+<ul>
+<li>More granular permissions</li>
+<li>Historical tracking of changes</li>
+<li>Feature flag dependencies</li>
+<li>Webhooks for change notifications</li>
+</ul>
+<h1 id="module-name-feature-flag-manager">Module Name: Feature Flag Manager</h1>
+<h2 id="category">Category</h2>
+<p>Admin</p>
+<h2 id="summary-1">Summary</h2>
+<p>The Feature Flag Manager allows administrators to enable or disable specific features for testing, users, or environments. This module provides fine-grained control over feature availability without requiring code changes.</p>
+<hr>
+<h3 id="related-modules">Related Modules</h3>
+<ol>
+<li><strong>User Management</strong>: For managing user permissions and access levels.</li>
+<li><strong>Environment Configurator</strong>: For configuring environment-specific settings.</li>
+<li><strong>Audit Log</strong>: For tracking changes to feature flags and their impact.</li>
+<li><strong>API Gateway</strong>: For exposing feature flag status via APIs.</li>
+</ol>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-feature-rollout">1. Feature Rollout</h3>
+<ul>
+<li>Enable a new feature in the test environment before rolling it out to production.</li>
+<li>Example: <code>feature.flag.enable("new_feature")</code>.</li>
+</ul>
+<h3 id="2-beta-testing">2. Beta Testing</h3>
+<ul>
+<li>Restrict access to a feature for a subset of users based on user roles or identifiers.</li>
+<li>Example: <code>if is_beta_user(user): feature.flag.enable_for_user(user, "beta-feature")</code>.</li>
+</ul>
+<h3 id="3-feature-experimentation">3. Feature Experimentation</h3>
+<ul>
+<li>Toggle features dynamically during A/B testing without redeploying code.</li>
+<li>Example: <code>feature.flag.toggle("experiment-feature", enabled=True)</code>.</li>
+</ul>
+<h3 id="4-emergency-rollback">4. Emergency Rollback</h3>
+<ul>
+<li>Disable a problematic feature quickly if issues arise in production.</li>
+<li>Example: <code>feature.flag.disable("faulty_feature")</code>.</li>
+</ul>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li><strong>Environment Variables</strong>: Use environment variables to configure default feature flag states.</li>
+<li><strong>CI/CD Pipeline</strong>: Integrate the Feature Flag Manager into your CI/CD pipeline for automated feature rollouts.</li>
+<li><strong>Logging</strong>: Implement logging in the Feature Flag Manager to track changes and their impact on system behavior.</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Configuration Key</th><th>Description</th><th>Default Value</th><th>Example Value</th></tr></thead><tbody><tr><td><code>FEATURE_FLAG_API_KEY</code></td><td>API key for authenticating feature flag requests.</td><td>N/A</td><td>”your_api_key”</td></tr><tr><td><code>DEFAULT_FEATURE_STATE</code></td><td>Default state of new features (enabled or disabled).</td><td>“disabled”</td><td></td></tr><tr><td><code>FEATURE_FLAGS_FILE_PATH</code></td><td>Path to the file storing feature flags configuration.</td><td>”./flags.json”</td><td></td></tr><tr><td><code>ALLOWED_ENVIRONMENTS</code></td><td>List of allowed environments for feature flag changes.</td><td>[“dev”, “prod”]</td><td>[” staging “]</td></tr></tbody></table>
+<hr>
+<h2 id="module-details">Module Details</h2>
+<ul>
+<li><strong>Name</strong>: Feature Flag Manager</li>
+<li><strong>Category</strong>: Admin</li>
+<li><strong>Summary</strong>: Manage the enablement or disablement of features in a controlled manner.</li>
+<li><strong>Target User</strong>: Developers and administrators.</li>
+<li><strong>Version</strong>: 1.0.0</li>
+</ul> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

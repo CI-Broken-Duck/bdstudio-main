@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>PDF AI Analyzer</title><meta name="description" content="Summarizes and explains content from PDF documents."><meta property="og:title" content="PDF AI Analyzer"><meta property="og:description" content="Summarizes and explains content from PDF documents."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>PDF AI Analyzer</h1> <div class="module-meta"> <div> <span class="module-category">AI</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Summarizes and explains content from PDF documents.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/cloudinary.png" alt="Technology icon"><img src="/assets/modules/ai/langchain.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="pdf-ai-analyzer-overview">PDF AI Analyzer Overview</h1>
+<p>The <strong>PDF AI Analyzer</strong> module leverages cutting-edge artificial intelligence (AI) technology to automatically summarize and interpret content extracted from PDF documents. Designed for developers, this module streamlines the process of analyzing complex or lengthy PDFs by providing a powerful toolset for text extraction, natural language processing (NLP), and intelligent summarization.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary purpose of the PDF AI Analyzer is to automate the interpretation of textual and tabular data within PDF documents. It enables developers to:</p>
+<ul>
+<li>Extract meaningful insights from unstructured or semi-structured PDF content.</li>
+<li>Generate concise summaries of PDF contents, reducing the need for manual review.</li>
+<li>Facilitate further processing or integration of extracted information into applications.</li>
+</ul>
+<h2 id="benefits">Benefits</h2>
+<h3 id="1-efficiency">1. <strong>Efficiency</strong></h3>
+<ul>
+<li>Eliminates the need for manual reading and analysis of PDF documents.</li>
+<li>Automates the extraction and summarization process, saving significant time.</li>
+</ul>
+<h3 id="2-accuracy">2. <strong>Accuracy</strong></h3>
+<ul>
+<li>Uses advanced AI models to understand context and generate accurate summaries.</li>
+<li>Handles complex layouts, tables, and multi-language content with high precision.</li>
+</ul>
+<h3 id="3-scalability">3. <strong>Scalability</strong></h3>
+<ul>
+<li>Process large volumes of PDF documents quickly and efficiently.</li>
+<li>Supports batch processing for enterprise-level applications.</li>
+</ul>
+<h3 id="4-flexibility">4. <strong>Flexibility</strong></h3>
+<ul>
+<li>Extracts both text and structured data (e.g., tables) from PDFs.</li>
+<li>Provides customizable summary outputs to meet specific use cases.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<p>The PDF AI Analyzer is ideal for developers working on projects that involve:</p>
+<ol>
+<li>
+<p><strong>Automating Document Processing</strong></p>
+<ul>
+<li>Analyzing invoices, receipts, or contracts automatically.</li>
+<li>Automating data entry tasks by extracting key information from PDFs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Intelligent Content Analysis</strong></p>
+<ul>
+<li>Summarizing technical documents, reports, or articles quickly.</li>
+<li>Identifying key points and trends in large PDF datasets.</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Integration</strong></p>
+<ul>
+<li>Extracting structured data from PDFs for integration into databases or other systems.</li>
+<li>Enriching existing applications with AI-powered insights from PDF content.</li>
+</ul>
+</li>
+<li>
+<p><strong>Multi-Language Support</strong></p>
+<ul>
+<li>Analyzing PDFs in multiple languages, making it suitable for global enterprises.</li>
+</ul>
+</li>
+<li>
+<p><strong>Enhanced Decision Making</strong></p>
+<ul>
+<li>Providing actionable insights by summarizing and categorizing PDF contents.</li>
+<li>Supporting business intelligence tools with structured data extracted from PDFs.</li>
+</ul>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The PDF AI Analyzer module is a developer-friendly solution for automating the analysis of PDF documents. By combining powerful AI capabilities with robust processing features, it empowers developers to extract value from unstructured data efficiently and effectively, enabling smarter applications and workflows.</p>
+<h1 id="pdf-ai-analyzer-module-documentation">PDF AI Analyzer Module Documentation</h1>
+<p>This document outlines the key features of the <strong>PDF AI Analyzer</strong> module, designed to summarize and explain content from PDF documents. The module is targeted at developers who need to integrate AI-powered PDF analysis into their applications.</p>
+<hr>
+<h2 id="1-document-summarization">1. Document Summarization</h2>
+<p>The PDF AI Analyzer can automatically generate concise summaries of PDF documents. It uses advanced natural language processing (NLP) techniques to identify key points, extract important information, and condense the content into a readable summary. This feature is particularly useful for quickly understanding the main ideas of lengthy or complex PDFs.</p>
+<hr>
+<h2 id="2-content-extraction">2. Content Extraction</h2>
+<p>The module enables the extraction of text and data from PDF files, even those with complex layouts or embedded objects (e.g., images, tables). It handles both scanned and searchable PDFs, making it a versatile tool for processing diverse document types.</p>
+<hr>
+<h2 id="3-language-detection--translation">3. Language Detection &#x26; Translation</h2>
+<p>PDF AI Analyzer includes language detection capabilities to identify the language of the text in the PDF. Additionally, it supports translation of extracted text into multiple languages, facilitating accessibility for users who may not read the original language of the document.</p>
+<hr>
+<h2 id="4-customizable-models">4. Customizable Models</h2>
+<p>The module allows developers to train and deploy custom NLP models tailored to specific domains or use cases. This feature is ideal for businesses that require domain-specific insights or need to prioritize certain types of information over others.</p>
+<hr>
+<h2 id="5-integration-with-third-party-tools">5. Integration with Third-Party Tools</h2>
+<p>PDF AI Analyzer integrates seamlessly with third-party tools and services, such as cloud storage platforms (e.g., AWS S3), database systems, and other AI/ML workflows. This makes it easy to incorporate the module into existing software pipelines.</p>
+<hr>
+<h2 id="6-data-security--privacy">6. Data Security &#x26; Privacy</h2>
+<p>The module is designed with robust security features to protect sensitive data within PDFs. It supports encryption, secure processing pipelines, and compliance with data privacy regulations like GDPR and HIPAA.</p>
+<hr>
+<h2 id="7-scalability">7. Scalability</h2>
+<p>PDF AI Analyzer is built to handle large volumes of PDF documents efficiently. It leverages distributed computing and cloud-native architecture to ensure scalability, making it suitable for high-throughput environments.</p>
+<hr>
+<h2 id="8-restful-api-support">8. RESTful API Support</h2>
+<p>The module provides a fully functional RESTful API that allows developers to perform PDF analysis programmatically. This enables easy integration with existing applications and automates repetitive tasks.</p>
+<hr>
+<p>This documentation provides an overview of the <strong>PDF AI Analyzer</strong> module’s features. For detailed implementation guidelines, please refer to the corresponding developer documentation or reach out to support for assistance.</p>
+<h3 id="module-name-pdf-ai-analyzer">Module Name: PDF AI Analyzer</h3>
+<h4 id="category-ai">Category: AI</h4>
+<h4 id="summary-summarizes-and-explains-content-from-pdf-documents">Summary: Summarizes and explains content from PDF documents.</h4>
+<h2 id="overview">Overview</h2>
+<p>The PDF AI Analyzer module is designed to process and analyze content from PDF documents using AI techniques. It provides an API endpoint for uploading PDF files and a user interface for interacting with the analysis results.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>PDF Upload</strong>: Accepts PDF files via REST API.</li>
+<li><strong>AI Analysis</strong>: Uses natural language processing (NLP) to summarize and analyze document content.</li>
+<li><strong>Metadata Extraction</strong>: Extracts metadata from PDF documents.</li>
+<li><strong>Keyword Highlighting</strong>: Identifies and highlights key terms in the text.</li>
+</ul>
+<h2 id="technical-details">Technical Details</h2>
+<h3 id="api-endpoint-fastapi">API Endpoint (FastAPI)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FastAPI, UploadFile, Form, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> pdfplumber</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> FastAPI()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@app.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/analyze-pdf"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> analyze_pdf</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    file: UploadFile </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> File(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Form(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Save uploaded file temporarily</span></span>
+<span class="line"><span style="color:#F97583">        with</span><span style="color:#79B8FF"> open</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">file</span><span style="color:#E1E4E8">.filename, </span><span style="color:#9ECBFF">"wb"</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> f:</span></span>
+<span class="line"><span style="color:#E1E4E8">            content </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#FFAB70"> file</span><span style="color:#E1E4E8">.read()</span></span>
+<span class="line"><span style="color:#E1E4E8">            f.write(content)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Extract text and metadata using pdfplumber</span></span>
+<span class="line"><span style="color:#F97583">        with</span><span style="color:#E1E4E8"> pdfplumber.open(</span><span style="color:#FFAB70">file</span><span style="color:#E1E4E8">.filename) </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> pdf:</span></span>
+<span class="line"><span style="color:#E1E4E8">            text </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> ""</span></span>
+<span class="line"><span style="color:#F97583">            for</span><span style="color:#E1E4E8"> page </span><span style="color:#F97583">in</span><span style="color:#79B8FF"> range</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">len</span><span style="color:#E1E4E8">(pdf.pages)):</span></span>
+<span class="line"><span style="color:#E1E4E8">                page_text </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> pdf.page(page).extract_text()</span></span>
+<span class="line"><span style="color:#F97583">                if</span><span style="color:#E1E4E8"> page_text:</span></span>
+<span class="line"><span style="color:#E1E4E8">                    text </span><span style="color:#F97583">+=</span><span style="color:#9ECBFF"> "</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> page_text</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Perform AI analysis (summarization, keyword extraction)</span></span>
+<span class="line"><span style="color:#E1E4E8">        analysis_result </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "summary"</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">await</span><span style="color:#E1E4E8"> perform_summarization(text),</span></span>
+<span class="line"><span style="color:#9ECBFF">            "metadata"</span><span style="color:#E1E4E8">: extract_metadata(</span><span style="color:#FFAB70">file</span><span style="color:#E1E4E8">.filename),</span></span>
+<span class="line"><span style="color:#9ECBFF">            "keywords"</span><span style="color:#E1E4E8">: extract_keywords(text)</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"result"</span><span style="color:#E1E4E8">: analysis_result}</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="react-ui-component">React UI Component</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useDropzone } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-dropzone'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> PDFAnalyzer</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">isLoading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setIsLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">error</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setError</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">result</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setResult</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> onDrop</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">acceptedFiles</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">acceptedFiles </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> acceptedFiles.</span><span style="color:#79B8FF">length</span><span style="color:#F97583"> ===</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">      setIsLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">      setError</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> formData</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> FormData</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">      formData.</span><span style="color:#B392F0">append</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'file'</span><span style="color:#E1E4E8">, acceptedFiles[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">]);</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/analyze-pdf'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">          'user-id'</span><span style="color:#E1E4E8">: localStorage.</span><span style="color:#B392F0">getItem</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'userId'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        body: formData</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#F97583">        throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to analyze PDF'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">      setResult</span><span style="color:#E1E4E8">(data.result);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (err) {</span></span>
+<span class="line"><span style="color:#B392F0">      setError</span><span style="color:#E1E4E8">(err.message </span><span style="color:#F97583">||</span><span style="color:#9ECBFF"> 'An error occurred while analyzing the PDF.'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">finally</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">      setIsLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">getRootProps</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">getInputProps</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">isDragActive</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useDropzone</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">    onDrop,</span></span>
+<span class="line"><span style="color:#E1E4E8">    accept: {</span><span style="color:#9ECBFF">'application/pdf'</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">'.pdf'</span><span style="color:#E1E4E8">]}</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"analyzer-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8"> {</span><span style="color:#F97583">...</span><span style="color:#B392F0">getRootProps</span><span style="color:#E1E4E8">()}></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> {</span><span style="color:#F97583">...</span><span style="color:#B392F0">getInputProps</span><span style="color:#E1E4E8">()} /></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>{isDragActive </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'Drop the PDF here'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'Drag &#x26; drop a PDF, or click to select'</span><span style="color:#E1E4E8">)}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">      {error </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">>{error}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>}</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">      {result </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"analysis-results"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>Summary:&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>{result.summary}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          </span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>Metadata:&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {Object.</span><span style="color:#B392F0">entries</span><span style="color:#E1E4E8">(result.metadata).</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(([</span><span style="color:#FFAB70">key</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">value</span><span style="color:#E1E4E8">]) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{key} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"metadata-item"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">strong</span><span style="color:#E1E4E8">>{key}:&#x3C;/</span><span style="color:#85E89D">strong</span><span style="color:#E1E4E8">> {value}</span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          </span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>Keywords:&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {result.keywords.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">keyword</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{keyword} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"keyword-item"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">strong</span><span style="color:#E1E4E8">>{keyword}&#x3C;/</span><span style="color:#85E89D">strong</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      )}</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#E1E4E8">      {isLoading </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Analyzing PDF...&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>}</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> PDFAnalyzer;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="data-schema-pydantic">Data Schema (Pydantic)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional, List</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PDFMetadata</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    filename: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    file_size: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    page_count: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    author: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> AIAnalysisResult</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    summary: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    metadata: PDFMetadata</span></span>
+<span class="line"><span style="color:#E1E4E8">    keywords: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> UploadRequestModel</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#FFAB70">    file</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">bytes</span></span>
+<span class="line"><span style="color:#E1E4E8">    filename: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    content_type: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span></code></pre>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="endpoints">Endpoints</h3>
+<ul>
+<li><strong>POST /analyze-pdf</strong>
+<ul>
+<li>Description: Analyzes a PDF document and returns AI-generated insights.</li>
+<li>Request Body:
+<ul>
+<li><code>file</code>: The PDF file to analyze.</li>
+<li><code>user_id</code>: User identifier for tracking purposes.</li>
+</ul>
+</li>
+<li>Response:
+<ul>
+<li><code>summary</code>: A summary of the PDF content.</li>
+<li><code>metadata</code>: Extracted metadata from the PDF.</li>
+<li><code>keywords</code>: Key terms identified in the document.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="user-interface">User Interface</h2>
+<p>The React component provides a drag-and-drop interface for uploading PDF files and displays analysis results, including text summaries, extracted metadata, and highlighted keywords.</p>
+<h1 id="technical-documentation-pdf-ai-analyzer-module">Technical Documentation: PDF AI Analyzer Module</h1>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Image to Text Converter</strong>: Enables OCR (Optical Character Recognition) for converting images in PDFs into editable text.</li>
+<li><strong>Table Extractor</strong>: Specializes in identifying and extracting tabular data from PDF documents.</li>
+<li><strong>Data Enricher</strong>: Enhances extracted data by adding metadata or context using external APIs.</li>
+<li><strong>Search Engine Integrator</strong>: Facilitates integration with search engines for efficient retrieval of summarized data.</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Analyzing Legal Documents</strong>: Extract specific legal clauses and identify key terms to aid in contract reviews.</li>
+<li><strong>Market Research Automation</strong>: Process multiple PDFs from industry reports to extract trends and insights for market analysis.</li>
+<li><strong>Streamlining Academic Research</strong>: Automate the extraction of references and key findings from academic papers.</li>
+<li><strong>Customer Feedback Analysis</strong>: Summarize feedback from various sources to identify common themes and areas for improvement.</li>
+<li><strong>Process Improvement in Manufacturing</strong>: Extract data from maintenance manuals and process documents to streamline operations.</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>File Handling</strong>: Implement checks for different PDF versions (PDF 1.4, PDF/A) to ensure compatibility and optimal processing.</li>
+<li><strong>Large File Management</strong>: Use chunking techniques or parallel processing to manage large files efficiently without overwhelming system resources.</li>
+<li><strong>Asynchronous Processing</strong>: Optimize performance by offloading heavy tasks like OCR to background processes.</li>
+<li><strong>State Management</strong>: Consider session management for maintaining context across multiple analyses, especially in web applications.</li>
+<li><strong>Error Recovery</strong>: Implement logging and retry mechanisms for failed file conversions or API calls during processing.</li>
+</ul>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Default Value</th><th>Description</th></tr></thead><tbody><tr><td><code>ApiKey</code></td><td>String</td><td>None</td><td>API key required for authentication with AI services.</td></tr><tr><td><code>ModelType</code></td><td>String</td><td>”gpt-3.5”</td><td>Specifies the AI model to use (e.g., gpt-4, google-palm).</td></tr><tr><td><code>MaxTokens</code></td><td>Integer</td><td>1024</td><td>Maximum number of tokens allowed in a single analysis request.</td></tr><tr><td><code>EnableOCR</code></td><td>Boolean</td><td>True</td><td>Activates OCR for image-based text extraction in PDFs.</td></tr><tr><td><code>ImageProcessingTool</code></td><td>String</td><td>”tesseract”</td><td>Determines the OCR tool used (e.g., google-vision).</td></tr><tr><td><code>DisableTextExtraction</code></td><td>Boolean</td><td>False</td><td>Disables text extraction, useful for processing only images or metadata.</td></tr><tr><td><code>EnableDataCleaning</code></td><td>Boolean</td><td>True</td><td>Enables cleaning of extracted data to remove noise and irrelevant info.</td></tr><tr><td><code>CustomStopWords</code></td><td>Array<string></string></td><td>[]</td><td>Allows specifying custom stop words to improve keyword extraction accuracy.</td></tr><tr><td><code>SetCustomSummaryLength</code></td><td>Integer</td><td>300</td><td>Sets the desired length in words for generated summaries.</td></tr></tbody></table>
+<p>This configuration ensures flexibility and adaptability, allowing developers to tailor the module’s behavior to their specific needs.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

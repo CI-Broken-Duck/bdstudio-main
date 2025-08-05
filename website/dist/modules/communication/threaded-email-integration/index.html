@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Threaded Email Integration</title><meta name="description" content="Sync internal messages with external email replies."><meta property="og:title" content="Threaded Email Integration"><meta property="og:description" content="Sync internal messages with external email replies."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Threaded Email Integration</h1> <div class="module-meta"> <div> <span class="module-category">Communication</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Sync internal messages with external email replies.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/sendgrid.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-threaded-email-integration-module">Overview: Threaded Email Integration Module</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Threaded Email Integration module is designed to bridge internal messaging systems (such as Slack or Microsoft Teams) with external email accounts. This integration enables users to manage all communications within a single interface, enhancing collaboration and efficiency across teams.</p>
+<h2 id="benefits">Benefits</h2>
+<ol>
+<li><strong>Enhanced Collaboration</strong>: By consolidating both internal messages and external emails, the module fosters better teamwork and ensures no communication is missed.</li>
+<li><strong>Efficient Communication</strong>: Users can respond directly from the internal tool, streamlining workflows and reducing time spent switching between platforms.</li>
+<li><strong>Centralized Access</strong>: All interactions are unified, providing a comprehensive view of conversations regardless of their origin.</li>
+<li><strong>Improved Organization</strong>: Features like tagging, threading, and search make it easier to locate specific messages quickly.</li>
+</ol>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Responding to Emails Internally</strong>: Users can reply directly from the internal messaging platform without leaving the application.</li>
+<li><strong>Tracking Email Threads</strong>: Messages are grouped by thread, allowing for easy follow-up and reference.</li>
+<li><strong>Unified Access</strong>: Replies sent via email are automatically added to the appropriate conversation thread in the internal system.</li>
+</ol>
+<p>This module is a powerful tool for developers aiming to integrate seamless communication within their applications, ensuring that teams can collaborate effectively without juggling multiple platforms.</p>
+<h1 id="threaded-email-integration-module-documentation">Threaded Email Integration Module Documentation</h1>
+<p>This documentation outlines the key features of the Threaded Email Integration module designed to facilitate seamless communication between internal messaging systems and external email platforms.</p>
+<h2 id="thread-synchronization">Thread Synchronization</h2>
+<p>This feature ensures that emails and internal messages are aligned in a single thread, maintaining context and flow. Replies from emails appear as part of the conversation within the internal system and vice versa, preventing fragmented communication.</p>
+<h2 id="rule-based-filtering">Rule-Based Filtering</h2>
+<p>The module allows developers to establish specific criteria for syncing emails, such as sender, subject, or keywords, ensuring only relevant communications are integrated.</p>
+<h2 id="cross-platform-compatibility">Cross-Platform Compatibility</h2>
+<p>Supports various email services (Gmail, Outlook) and internal platforms (Slack, Teams), enabling versatile integration across different communication tools.</p>
+<h2 id="automated-replies">Automated Replies</h2>
+<p>Automatically generates responses on behalf of users, particularly when they’re unavailable, enhancing efficiency without compromising communication continuity.</p>
+<h2 id="message-search-and-archiving">Message Search and Archiving</h2>
+<p>Provides efficient search capabilities and archiving options to manage large volumes of messages effectively, aiding in quick retrieval of information.</p>
+<h2 id="attachment-handling">Attachment Handling</h2>
+<p>Ensures all attachments are synced seamlessly between systems, maintaining data integrity across communications.</p>
+<h2 id="security-and-compliance">Security and Compliance</h2>
+<p>Incorporates encryption, audit logs, and compliance features (GDPR, HIPAA) to protect sensitive data and meet regulatory standards.</p>
+<h2 id="real-time-notifications">Real-Time Notifications</h2>
+<p>Sends instant alerts for new emails or replies, ensuring users stay updated on critical messages without delays.</p>
+<h2 id="customizable-templates">Customizable Templates</h2>
+<p>Offers customizable response templates to streamline communication while maintaining a consistent tone, saving time and effort.</p>
+<h2 id="integration-with-third-party-tools">Integration with Third-Party Tools</h2>
+<p>Seamlessly connects with CRMs (Salesforce) and project management tools, enhancing workflow integration and productivity.</p>
+<p>This module is designed to provide developers with a robust solution for integrated communication, ensuring efficiency and security in their applications.</p>
+<h1 id="threaded-email-integration-documentation">Threaded Email Integration Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>This module provides a threaded email integration system that allows users to sync internal messages with external email replies. The solution includes a FastAPI backend endpoint, a React frontend component, and a Pydantic data model.</p>
+<hr>
+<h2 id="api-endpoint-fastapi">API Endpoint (FastAPI)</h2>
+<p>The following FastAPI endpoint demonstrates how to fetch email threads:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># models.py</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> EmailThread</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    subject: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    body: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    reply_to: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    thread_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    is_external: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    internal_reference: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> |</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    tags: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    cc: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    bcc: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># main.py</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FastAPI, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> motor.motor_asyncio</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> FastAPI()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@app.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/email_threads"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">List[EmailThread])</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> get_email_threads</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    limit: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 10</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    offset: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Assuming `db` is an instance of motor.motor_asyncio.AsyncIOMotorDatabase</span></span>
+<span class="line"><span style="color:#E1E4E8">        result </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> db.emailThreads.find().skip(offset).limit(limit).to_list()</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> [EmailThread(</span><span style="color:#F97583">**</span><span style="color:#E1E4E8">doc) </span><span style="color:#F97583">for</span><span style="color:#E1E4E8"> doc </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> result]</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="react-ui-component">React UI Component</h2>
+<p>The following React component demonstrates a simple email thread viewer:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#6A737D">// EmailThreadsViewer.jsx</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState, useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> EmailThreadsViewer</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">emails</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setEmails</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">([]);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">loading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/email_threads'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">response</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setEmails</span><span style="color:#E1E4E8">(data))</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">error</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error:'</span><span style="color:#E1E4E8">, error))</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">finally</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      {loading </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Loading...&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>}</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">loading </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> emails.</span><span style="color:#79B8FF">length</span><span style="color:#F97583"> ===</span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> &#x26;&#x26;</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>No email threads found.&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>}</span></span>
+<span class="line"><span style="color:#E1E4E8">      {</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">loading </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> emails.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">email</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{email.id} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"email-thread"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"sender"</span><span style="color:#E1E4E8">>{email.sender}&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"subject"</span><span style="color:#E1E4E8">>{email.subject}&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"preview"</span><span style="color:#E1E4E8">>{email.body.</span><span style="color:#B392F0">substring</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">)}...&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> EmailThreadsViewer;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="data-schema-pydantic">Data Schema (Pydantic)</h2>
+<p>The following Pydantic model defines the structure of an email thread:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># models.py</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> EmailThread</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    sender: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    subject: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    body: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    reply_to: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    thread_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    is_external: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    internal_reference: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    tags: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    cc: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    bcc: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"12345"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "sender"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"john.doe@example.com"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "subject"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Meeting Tomorrow"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "body"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Hi, just wanted to confirm our meeting..."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "reply_to"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"external-thread@correo.com"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "date"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2024-03-15T14:30:00Z"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "thread_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"abc123"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "is_external"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">False</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "internal_reference"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">None</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "tags"</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">"work"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"meeting"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">                "cc"</span><span style="color:#E1E4E8">: [],</span></span>
+<span class="line"><span style="color:#9ECBFF">                "bcc"</span><span style="color:#E1E4E8">: []</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>The FastAPI endpoint uses async database operations with MongoDB (via Motor).</li>
+<li>The React component fetches data from the <code>/api/email_threads</code> endpoint and displays it in a clean, minimal interface.</li>
+<li>The Pydantic model ensures proper validation and serialization of email thread data.</li>
+</ul>
+<p>This documentation provides a foundational implementation that can be extended based on specific use cases and requirements.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Threaded Email Integration Module Documentation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Summary</span></span>
+<span class="line"><span style="color:#E1E4E8">The </span><span style="color:#E1E4E8;font-weight:bold">**Threaded Email Integration**</span><span style="color:#E1E4E8"> module enables seamless synchronization between internal communication systems (e.g., messaging platforms) and external email replies. It ensures that all messages, including emails, are displayed in a unified thread for better collaboration.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Related Modules</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Email Gateway**</span><span style="color:#E1E4E8">: Handles incoming and outgoing email communication.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Messaging API**</span><span style="color:#E1E4E8">: Facilitates real-time message exchange between internal systems.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Notifications**</span><span style="color:#E1E4E8">: Sends alerts for new email replies or updates.</span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **CRM System**</span><span style="color:#E1E4E8">: Integrates with customer relationship management tools to sync email interactions.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Use Cases</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Inbound Email Sync**</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Synchronize external emails from sources like Gmail, Outlook, or Exchange into the internal messaging system.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Outbound Integration**</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Send internal messages (e.g., team discussions) as emails to external recipients.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Auto-Reply Management**</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Configure automated responses to email replies based on predefined rules.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Escalation Handling**</span><span style="color:#E1E4E8">  </span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Route unresolved email threads to higher-priority teams or individuals.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration Tips</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Authentication**</span><span style="color:#E1E4E8">: Use OAuth or SMTP credentials for secure email access.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Threading Identification**</span><span style="color:#E1E4E8">: Ensure unique identifiers are used to maintain message thread consistency across systems.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Duplicate Handling**</span><span style="color:#E1E4E8">: Implement checks to avoid duplicate messages in both internal and external platforms.</span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Rate Limiting**</span><span style="color:#E1E4E8">: Be mindful of email providers' API rate limits when syncing large volumes of emails.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Configuration Options</span></span>
+<span class="line"><span style="color:#E1E4E8">| Parameter                | Description                                                                 |</span></span>
+<span class="line"><span style="color:#E1E4E8">|--------------------------|-----------------------------------------------------------------------------|</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`email_provider`</span><span style="color:#E1E4E8">        | Specifies the email service provider (e.g., Gmail, Outlook, Exchange).       |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`api_key`</span><span style="color:#E1E4E8">               | Authentication key for accessing external email services.                   |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`sync_interval`</span><span style="color:#E1E4E8">         | Frequency of syncing emails with internal messages (in minutes or hours).   |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`notification_enabled`</span><span style="color:#E1E4E8">  | Enables or disables email-related notifications.                           |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`max_batch_size`</span><span style="color:#E1E4E8">        | Maximum number of emails processed in a single sync batch.                    |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`logging_level`</span><span style="color:#E1E4E8">         | Sets the logging verbosity (e.g., DEBUG, INFO, ERROR).                      |</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Example Configuration</span></span>
+<span class="line"><span style="color:#E1E4E8">```markdown</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold"># Sample Configuration for Gmail Integration</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">email_provider = "Gmail"</span></span>
+<span class="line"><span style="color:#E1E4E8">api_key = "your_oauth_token_here"</span></span>
+<span class="line"><span style="color:#E1E4E8">sync_interval = 15  # Sync every 15 minutes</span></span>
+<span class="line"><span style="color:#E1E4E8">notification_enabled = true</span></span>
+<span class="line"><span style="color:#E1E4E8">max_batch_size = 50  # Process up to 50 emails per batch</span></span>
+<span class="line"><span style="color:#E1E4E8">logging_level = "INFO"</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <strong>Threaded Email Integration</strong> module bridges the gap between internal communication tools and external email systems, ensuring a unified and efficient workflow. Proper configuration and integration with related modules will enhance productivity and collaboration within your team.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

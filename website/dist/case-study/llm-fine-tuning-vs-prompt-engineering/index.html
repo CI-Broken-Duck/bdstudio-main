@@ -1,0 +1,550 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>LLM Fine-Tuning vs Prompt Engineering: When to Customize, When to Instruct</title><meta name="description" content="Understand the differences between prompt engineering and fine-tuning for large language models. This case study explores use cases, trade-offs, and how to choose the right strategy for your AI application."><meta property="og:title" content="LLM Fine-Tuning vs Prompt Engineering: When to Customize, When to Instruct"><meta property="og:description" content="Understand the differences between prompt engineering and fine-tuning for large language models. This case study explores use cases, trade-offs, and how to choose the right strategy for your AI application."><meta property="og:image" content="/assets/covers/llm-fine-tuning-vs-prompt-engineering.png"><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/articles.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.article-content{max-width:780px;margin:0 auto;padding:4rem 1.5rem;line-height:1.8}.article-header{margin-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:1.5rem}.article-header h1{font-size:2.5rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.article-meta{font-size:.95rem;color:var(--color-text-secondary)}.article{font-size:1.05rem;padding-top:1rem}.article h2,.article h3{color:var(--color-theme);font-weight:600;margin-top:2.5rem;margin-bottom:1rem}.article h4{font-weight:500;margin-top:2rem;color:var(--color-text-secondary)}.article p{margin-bottom:1.5rem}.article a{color:var(--color-theme);text-decoration:underline}.article code{font-family:var(--font-mono);background-color:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.article pre{font-family:var(--font-mono);background-color:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin:2rem 0;font-size:.95rem}.article ul,.article ol{padding-left:1.5rem;margin-bottom:1.5rem}.article li{margin-bottom:.5rem}.article table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.article table th,.article table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.article table th{background-color:var(--color-highlight);color:var(--color-theme);font-weight:600}.article img{max-width:100%;height:auto;margin:2rem 0;border-radius:4px}.article blockquote{margin:2rem 0;padding-left:1rem;border-left:4px solid var(--color-theme);color:var(--color-text-secondary);font-style:italic}@media (max-width: 768px){.article-content{padding:2rem 1rem}.article-header h1{font-size:2rem}.article{font-size:1rem}}.article-cover{width:100%;max-height:420px;object-fit:cover;border-radius:6px;margin-bottom:2rem;box-shadow:0 4px 10px #0000004d}.article-meta{display:flex;gap:1.25rem;font-size:.95rem;color:var(--color-text-secondary);margin-bottom:1rem;flex-wrap:wrap}.article-category{color:var(--color-theme);font-weight:600}.article-summary{color:var(--color-text-secondary);font-size:1.1rem;margin-top:1rem;margin-bottom:2rem;line-height:1.6}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="article-content"> <article class="article"> <header class="article-header"> <img src="/assets/covers/llm-fine-tuning-vs-prompt-engineering.png" alt="LLM Fine-Tuning vs Prompt Engineering: When to Customize, When to Instruct" class="article-cover"> <h1>LLM Fine-Tuning vs Prompt Engineering: When to Customize, When to Instruct</h1> <div class="article-meta"> <span>By Craig</span> <span> June 21, 2025 </span> <span class="article-category">Case Study</span> </div> <p class="article-summary">Understand the differences between prompt engineering and fine-tuning for large language models. This case study explores use cases, trade-offs, and how to choose the right strategy for your AI application.</p> </header> <h2 id="introduction">Introduction</h2>
+<p>As large language models (LLMs) continue to evolve, their ability to generate text, code, analysis, and even creative content has moved from proof-of-concept to production-ready across industries. From AI assistants and customer support agents to content generation, technical research, and creative tasks like symbolic music composition, LLMs are being integrated into tools and workflows at a rapid pace.</p>
+<p>But as these systems grow more powerful and general-purpose, the challenge becomes not just <em>using</em> them—but <em>controlling</em> them. Out of the box, LLMs can respond to a wide variety of inputs, but their outputs are often inconsistent, vague, or too generic for high-stakes or domain-specific applications. Optimizing model behavior becomes essential—especially in contexts that demand precision, reliability, or creative alignment.</p>
+<p>Today, two main strategies are used to align LLM outputs with user goals: <strong>prompt engineering</strong> and <strong>fine-tuning</strong>.</p>
+<p>Prompt engineering involves crafting carefully structured inputs—questions, instructions, examples, and constraints—that guide the model to produce more relevant or useful results. It’s lightweight, flexible, and requires no changes to the model itself. With the right wording, format, or context, prompt engineering can dramatically improve output quality for a wide variety of tasks.</p>
+<p>Fine-tuning, on the other hand, involves retraining or adapting the model’s internal parameters using a curated dataset. This allows the model to develop expertise in a specific domain—legal, medical, financial, technical writing, or even symbolic music generation. Fine-tuning offers precision and depth, but at the cost of time, infrastructure, and reduced generality.</p>
+<p>Both approaches have distinct strengths—and neither is universally better. Prompt engineering is fast and agile, ideal for prototyping, experimentation, and broad tasks. Fine-tuning is more suited to stable, high-accuracy workflows that rely on consistent domain knowledge. Choosing between them depends on your goals, resources, use case, and desired level of control.</p>
+<p>In some systems, especially those involving customer data or real-time updates, a third approach—<strong>retrieval-augmented generation (RAG)</strong>—is emerging as a hybrid alternative. RAG pipelines combine LLMs with live context retrieval from databases or knowledge sources, allowing the model to respond based on updated information without the need for retraining.</p>
+<p>This article explores all of these approaches, focusing primarily on the trade-offs between prompt engineering and fine-tuning. Whether you’re building AI products, integrating LLMs into enterprise software, designing creative workflows, or deciding how to scale generative tools across teams, understanding how and when to use each method will directly impact cost, performance, and usability.</p>
+<h3 id="what-is-prompt-engineering">What Is Prompt Engineering?</h3>
+<p>Prompt engineering is the practice of crafting specific, structured inputs to guide a large language model (LLM) to generate more accurate, relevant, or creative outputs. Instead of modifying the model itself, prompt engineering modifies how we <em>ask</em> the model to do something—effectively shaping its behavior through language alone.</p>
+<p>At its core, a prompt is just a piece of text. But when structured carefully—with the right instructions, context, formatting, or examples—it can dramatically alter the model’s performance. A well-designed prompt can coax a generic model into acting like a helpful assistant, a domain expert, a data analyst, or a creative partner.</p>
+<h4 id="types-of-prompting-techniques">Types of Prompting Techniques</h4>
+<p>There are several common strategies in prompt engineering:</p>
+<ul>
+<li>
+<p><strong>Zero-shot prompting</strong><br>
+Asking the model to complete a task without giving any examples.<br>
+Example:<br>
+<em>“Summarize the following article in one paragraph.”</em></p>
+</li>
+<li>
+<p><strong>Few-shot prompting</strong><br>
+Providing a few examples before asking the model to generate a response in the same format.<br>
+Example:<br>
+<em>“Q: What’s the capital of France? A: Paris.<br>
+Q: What’s the capital of Japan? A: Tokyo.<br>
+Q: What’s the capital of Canada? A:”</em></p>
+</li>
+<li>
+<p><strong>Chain-of-thought (CoT) prompting</strong><br>
+Instructing the model to show its reasoning step by step.<br>
+Example:<br>
+<em>“A student has 3 apples and buys 2 more. How many apples does the student have now? Let’s think step by step.”</em></p>
+</li>
+<li>
+<p><strong>Role-based prompting</strong><br>
+Telling the model to adopt a persona or act as a specific type of assistant.<br>
+Example:<br>
+<em>“You are a senior financial analyst. Explain the risks of inflation to a non-expert.”</em></p>
+</li>
+</ul>
+<p>These strategies can be mixed or adapted based on the task at hand. Many real-world applications use templates or prompt libraries that allow teams to version, test, and iterate on different instructions.</p>
+<h4 id="examples-basic-vs-refined-prompts">Examples: Basic vs Refined Prompts</h4>
+<p>Consider the task of asking an LLM to write a product description.</p>
+<ul>
+<li>
+<p><strong>Basic prompt:</strong><br>
+<em>“Write a description of a new AI tool.”</em></p>
+</li>
+<li>
+<p><strong>Refined prompt:</strong><br>
+<em>“Write a two-paragraph product description for an AI-powered writing assistant. Focus on features, benefits, and tone suitable for a marketing website.”</em></p>
+</li>
+</ul>
+<p>The second version gives the model clear guidance on structure, content, and tone—leading to a more focused and usable output.</p>
+<h4 id="strengths-of-prompt-engineering">Strengths of Prompt Engineering</h4>
+<ul>
+<li>
+<p><strong>Fast to implement</strong><br>
+No retraining is needed. Anyone can test a new prompt in seconds.</p>
+</li>
+<li>
+<p><strong>Cost-efficient</strong><br>
+Since the model remains unchanged, there are no infrastructure or training costs.</p>
+</li>
+<li>
+<p><strong>Model-agnostic</strong><br>
+Prompts can be adapted across different LLMs with minimal changes.</p>
+</li>
+<li>
+<p><strong>Flexible</strong><br>
+Ideal for exploratory tasks, multi-domain applications, or when general-purpose capabilities are sufficient.</p>
+</li>
+</ul>
+<p>Prompt engineering is especially powerful during early-stage product development, prototyping, or experimentation—where teams need to quickly test how an LLM handles different scenarios without committing to costly fine-tuning.</p>
+<h4 id="limitations-and-challenges">Limitations and Challenges</h4>
+<p>Despite its strengths, prompt engineering has constraints:</p>
+<ul>
+<li>
+<p><strong>Unpredictability</strong><br>
+Even well-structured prompts can yield inconsistent results, especially across versions or providers.</p>
+</li>
+<li>
+<p><strong>Trial-and-error overhead</strong><br>
+It often takes multiple iterations to find the right formulation—requiring both intuition and experimentation.</p>
+</li>
+<li>
+<p><strong>Limited to base model capabilities</strong><br>
+Prompting can’t give the model new knowledge. If the base model doesn’t “know” something, no prompt can fix that.</p>
+</li>
+<li>
+<p><strong>Scaling difficulty</strong><br>
+Maintaining dozens of prompt templates across tasks, roles, or use cases can become complex at scale.</p>
+</li>
+</ul>
+<p>Still, for many applications—especially those focused on general reasoning, content generation, or creative workflows—prompt engineering remains the fastest and most accessible way to harness the power of LLMs.</p>
+<p>In the next section, we’ll look at fine-tuning: a more involved approach that allows teams to train the model itself on specific knowledge or behavior.</p>
+<h3 id="what-is-fine-tuning">What Is Fine-Tuning?</h3>
+<p>Fine-tuning is the process of adapting a pre-trained large language model (LLM) to perform better on a specific task, topic, or domain by training it on new data. Unlike prompt engineering, which only adjusts the <em>inputs</em> to the model, fine-tuning changes the <em>model itself</em>—updating its internal weights using a curated dataset to make its behavior more aligned with your goals.</p>
+<p>Fine-tuning allows a general-purpose model to develop expertise. If a base model was trained on a broad internet corpus, fine-tuning teaches it to focus on specific patterns, formats, or content areas that are underrepresented in general training data.</p>
+<h4 id="how-fine-tuning-works">How Fine-Tuning Works</h4>
+<p>In a standard fine-tuning workflow:</p>
+<ol>
+<li>A dataset of high-quality text examples is collected. This might be customer conversations, technical documents, legal texts, or product specifications.</li>
+<li>These examples are formatted into prompt–response pairs or completion sequences.</li>
+<li>The LLM is then trained on this dataset using gradient descent, adjusting its parameters to minimize prediction errors.</li>
+<li>The resulting fine-tuned model is saved and deployed—ready to deliver more accurate results for tasks similar to those seen during training.</li>
+</ol>
+<p>The process typically requires access to the model weights (e.g., open-source models like LLaMA or Mistral), compute resources (usually GPUs), and tuning infrastructure.</p>
+<h4 id="full-fine-tuning-vs-parameter-efficient-fine-tuning">Full Fine-Tuning vs Parameter-Efficient Fine-Tuning</h4>
+<p>There are two main approaches to fine-tuning:</p>
+<ul>
+<li>
+<p><strong>Full fine-tuning</strong><br>
+The entire model is retrained on the new dataset. This gives the most control and deepest adaptation, but it’s expensive and resource-intensive—especially for models with billions of parameters.</p>
+</li>
+<li>
+<p><strong>Parameter-efficient fine-tuning (PEFT)</strong><br>
+Only a small portion of the model is updated—usually by adding new, lightweight components or adapting select layers. Popular PEFT techniques include:</p>
+<ul>
+<li><strong>LoRA (Low-Rank Adaptation)</strong>: Adds small, trainable matrices to the model’s attention layers. Reduces training cost and memory footprint.</li>
+<li><strong>Adapters</strong>: Inserts small neural network modules between layers of the original model. These are trained while the rest of the model remains frozen.</li>
+<li><strong>Prefix-tuning</strong> and <strong>p-tuning</strong>: Adds learnable tokens or embeddings to the input, guiding the model’s behavior without changing its core parameters.</li>
+</ul>
+</li>
+</ul>
+<p>PEFT makes fine-tuning viable for smaller teams and consumer hardware, while still achieving task-specific performance boosts.</p>
+<h4 id="real-world-examples-of-fine-tuning">Real-World Examples of Fine-Tuning</h4>
+<ul>
+<li>
+<p><strong>Legal AI Assistant</strong><br>
+A law firm fine-tunes an open-source LLM on thousands of case summaries, statutes, and contracts. The resulting model is better at interpreting legal language, writing clauses, and citing relevant precedent.</p>
+</li>
+<li>
+<p><strong>Customer Service Chatbot</strong><br>
+A support team fine-tunes a model on historical transcripts across billing, technical, and refund queries. The fine-tuned model handles nuanced, domain-specific customer questions with more accuracy and tone alignment than a general-purpose chatbot.</p>
+</li>
+<li>
+<p><strong>Medical Report Generator</strong><br>
+A clinical research lab fine-tunes a model on de-identified patient notes, lab summaries, and structured diagnosis formats—enabling automated report generation consistent with clinical standards.</p>
+</li>
+</ul>
+<p>In each case, the fine-tuned model delivers higher accuracy, fewer hallucinations, and outputs that match the desired tone, structure, or formatting better than what prompt engineering alone can achieve.</p>
+<h4 id="strengths-of-fine-tuning">Strengths of Fine-Tuning</h4>
+<ul>
+<li>
+<p><strong>Specialization</strong><br>
+Fine-tuned models become experts in their domain. They learn to use terminology correctly, follow formatting rules, and focus on relevant details.</p>
+</li>
+<li>
+<p><strong>Higher output quality</strong><br>
+For narrow or complex tasks, fine-tuned models outperform generic ones guided only by prompts—especially when long, structured outputs are needed.</p>
+</li>
+<li>
+<p><strong>Reduced need for prompt hacking</strong><br>
+Instead of crafting elaborate prompt instructions, users can give simple inputs and get better results because the model already “knows” what to do.</p>
+</li>
+<li>
+<p><strong>Reusability</strong><br>
+Once fine-tuned, a model can be deployed across teams or applications with consistent behavior—no need to re-engineer prompts for each use case.</p>
+</li>
+</ul>
+<h4 id="weaknesses-and-trade-offs">Weaknesses and Trade-Offs</h4>
+<ul>
+<li>
+<p><strong>High cost</strong><br>
+Full fine-tuning requires large datasets, GPUs, and time. Even PEFT methods involve setup and training costs that are non-trivial.</p>
+</li>
+<li>
+<p><strong>Data requirements</strong><br>
+You need a domain-specific corpus that is clean, diverse, and aligned with your intended use case. For many organizations, this data either doesn’t exist or needs significant curation.</p>
+</li>
+<li>
+<p><strong>Reduced flexibility</strong><br>
+A fine-tuned model is optimized for specific tasks. It may perform worse on general tasks or require additional safeguards to avoid overfitting.</p>
+</li>
+<li>
+<p><strong>Versioning and maintenance</strong><br>
+Fine-tuned models are harder to iterate on. Any improvement often requires additional training or retuning. Teams must manage version control, testing, and rollback strategies.</p>
+</li>
+<li>
+<p><strong>Deployment complexity</strong><br>
+Hosting and serving fine-tuned models—especially large ones—adds infrastructure challenges that are less present when using hosted APIs.</p>
+</li>
+</ul>
+<hr>
+<p>In summary, fine-tuning is a powerful tool when general-purpose performance isn’t good enough. It allows teams to build deeply specialized models—but with higher upfront investment and reduced adaptability. In the next section, we’ll compare fine-tuning and prompt engineering directly to help you decide when to use each method.</p>
+<h3 id="head-to-head-comparison">Head-to-Head Comparison</h3>
+<p>Now that we’ve explored prompt engineering and fine-tuning independently, the question becomes: how do they compare in practice?</p>
+<p>While both approaches aim to improve the relevance, accuracy, or consistency of LLM outputs, they operate very differently—and are best suited to different scenarios. Below is a direct comparison across key criteria, followed by real-world examples and practical guidance.</p>
+<h4 id="feature-comparison-table">Feature Comparison Table</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feature</th><th>Prompt Engineering</th><th>Fine-Tuning</th></tr></thead><tbody><tr><td><strong>Cost</strong></td><td>Low – no model retraining required</td><td>High – compute, data, and engineering resources</td></tr><tr><td><strong>Time to Deploy</strong></td><td>Fast – test changes instantly</td><td>Slow – training cycles, testing, deployment</td></tr><tr><td><strong>Flexibility</strong></td><td>High – model can handle many tasks</td><td>Low – optimized for specific domains/tasks</td></tr><tr><td><strong>Output Accuracy</strong></td><td>Moderate – depends on prompt quality</td><td>High – tuned to specific patterns and language</td></tr><tr><td><strong>Data Requirements</strong></td><td>None</td><td>Requires curated, domain-specific dataset</td></tr><tr><td><strong>Tooling Required</strong></td><td>Prompt manager or LLM API</td><td>Training pipeline, compute, and infrastructure</td></tr><tr><td><strong>Scalability</strong></td><td>Easy to scale across models or APIs</td><td>Harder to maintain across projects or domains</td></tr><tr><td><strong>Best For</strong></td><td>Prototyping, creative tasks, wide domains</td><td>Production systems in narrow or regulated areas</td></tr></tbody></table>
+<p>In short, prompt engineering is lightweight and fast-moving. Fine-tuning is heavier but yields deeper control and specialization. The trade-off is between adaptability and precision.</p>
+<hr>
+<h4 id="example-customer-support-bot">Example: Customer Support Bot</h4>
+<p><strong>Use Case:</strong> A company wants to build an AI chatbot that answers customer questions about billing, refunds, and account changes.</p>
+<ul>
+<li>
+<p><strong>Prompt Engineering Approach:</strong><br>
+The team uses a general-purpose LLM like GPT-4 and builds a library of structured prompts:</p>
+<ul>
+<li>“You are a customer support agent. Respond politely and concisely to this refund request.”</li>
+<li>“Here is a past example of how to handle an account closure. Now respond to this message in the same format.”</li>
+</ul>
+<p>Pros:</p>
+<ul>
+<li>Fast to implement</li>
+<li>No training needed</li>
+<li>Easy to adapt for multiple products</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Inconsistent tone or accuracy across interactions</li>
+<li>Repetitive prompt formatting logic in every workflow</li>
+</ul>
+</li>
+<li>
+<p><strong>Fine-Tuning Approach:</strong><br>
+The team fine-tunes an open-source LLM on 10,000 anonymized support transcripts across categories. The model learns how to match company voice, escalate edge cases, and reference policies.</p>
+<p>Pros:</p>
+<ul>
+<li>Reliable, consistent tone</li>
+<li>Responds with fewer prompt constraints</li>
+<li>Easier to integrate into production with fewer hacks</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>Requires data cleaning and infrastructure</li>
+<li>Less adaptable to major product or policy changes</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="example-creative-text-generation">Example: Creative Text Generation</h4>
+<p><strong>Use Case:</strong> A media startup wants to generate promotional blurbs for podcasts, each with a distinct tone and format.</p>
+<ul>
+<li>
+<p><strong>Prompt Engineering Approach:</strong><br>
+The team builds a prompt library for different voice styles:</p>
+<ul>
+<li>“Write a one-paragraph teaser for a true crime episode. Use a suspenseful tone.”</li>
+<li>“Write a fun, casual intro for a pop culture episode. Keep it under 70 words.”</li>
+</ul>
+<p>This approach works well because the task is open-ended and subjective. No fine-tuning is necessary. Iteration happens by adjusting phrasing and temperature.</p>
+</li>
+<li>
+<p><strong>Fine-Tuning Approach:</strong><br>
+Attempting to fine-tune on past descriptions may result in overfitting or loss of variation. Here, the prompt-driven method outperforms fine-tuning in both speed and creative control.</p>
+</li>
+</ul>
+<hr>
+<h4 id="when-to-use-each-method">When to Use Each Method</h4>
+<p><strong>Use Prompt Engineering When:</strong></p>
+<ul>
+<li>You’re exploring or prototyping ideas</li>
+<li>Tasks span multiple domains or change frequently</li>
+<li>The cost or complexity of fine-tuning isn’t justified</li>
+<li>Output quality is acceptable with a few prompt iterations</li>
+<li>You’re using closed APIs (e.g., OpenAI, Claude) where weights are not accessible</li>
+</ul>
+<p><strong>Use Fine-Tuning When:</strong></p>
+<ul>
+<li>Tasks are highly specialized, repetitive, or compliance-sensitive</li>
+<li>You have clean, labeled data representing the exact task</li>
+<li>Prompt engineering no longer improves output consistency</li>
+<li>You’re deploying at scale and want predictable model behavior</li>
+<li>You need to align tone, structure, or domain performance closely</li>
+</ul>
+<hr>
+<p>In many cases, the best solution is to start with prompt engineering, validate whether the LLM can handle the task with good inputs, and only move to fine-tuning when needed. This phased approach allows teams to iterate quickly and avoid over-investing in infrastructure before the task is well-understood.</p>
+<p>In the next section, we’ll look at how these two strategies can work together—and where hybrid approaches like RAG, soft prompts, or adapters come into play.</p>
+<h3 id="hybrid-approaches">Hybrid Approaches</h3>
+<p>While prompt engineering and fine-tuning are often presented as separate strategies, many of the most effective large language model (LLM) systems combine both. Hybrid approaches can offer the speed and flexibility of prompting with the consistency and domain control of fine-tuning—making them particularly useful in real-world deployments.</p>
+<p>Instead of thinking in binary terms—prompt or tune—it’s more useful to consider how these tools can be layered or sequenced to complement each other.</p>
+<hr>
+<h4 id="using-prompt-engineering-with-fine-tuned-models">Using Prompt Engineering with Fine-Tuned Models</h4>
+<p>Even after a model has been fine-tuned, prompts still matter. In fact, fine-tuned models often benefit from well-crafted instructions that further shape output structure, tone, or intent.</p>
+<p>For example, an LLM fine-tuned on legal documents may perform best when paired with task-specific prompts like:</p>
+<ul>
+<li>“Summarize the following contract clause in plain English.”</li>
+<li>“Extract the key obligations of Party A from this agreement.”</li>
+</ul>
+<p>Here, the model has domain expertise baked in through fine-tuning, but the prompt clarifies what to do with that knowledge. This layered approach is especially valuable when building systems that must handle multiple task types or output formats without re-tuning the model for each one.</p>
+<hr>
+<h4 id="prompt-templates-for-deployed-models">Prompt Templates for Deployed Models</h4>
+<p>Many production LLM applications use <strong>prompt templates</strong>: predefined instruction structures with placeholders for dynamic input.</p>
+<p>Example template for a support chatbot:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>You are a helpful assistant for [company_name]. Respond to the customer’s question using a friendly and concise tone.  </span></span>
+<span class="line"><span>Customer Question: [user_input]  </span></span>
+<span class="line"><span>Response:</span></span>
+<span class="line"><span></span></span></code></pre>
+<p>This approach is compatible with both general-purpose and fine-tuned models. Templates:</p>
+<ul>
+<li>Enforce consistency across applications</li>
+<li>Reduce variability caused by user phrasing</li>
+<li>Allow non-technical teams to shape responses without code changes</li>
+</ul>
+<p>When used with a fine-tuned model, templates serve as lightweight modifiers that align each interaction with business logic, tone, or formatting expectations.</p>
+<hr>
+<h4 id="retrieval-augmented-generation-rag">Retrieval-Augmented Generation (RAG)</h4>
+<p><strong>Retrieval-Augmented Generation (RAG)</strong> is another popular hybrid strategy. Instead of embedding all knowledge into the model via fine-tuning, RAG systems retrieve relevant context from external sources (like a database or document index) and inject it into the prompt at runtime.</p>
+<p>For example:</p>
+<ul>
+<li>Query: “What are the current refund terms for Gold tier users?”</li>
+<li>The system retrieves a paragraph from the policy database and prepends it to the prompt:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>[Reference Material: Gold tier users are eligible for full refunds within 30 days...]  </span></span>
+<span class="line"><span>Answer the question using the information above.</span></span>
+<span class="line"><span></span></span></code></pre>
+</li>
+</ul>
+<p>RAG is ideal when:</p>
+<ul>
+<li>The source information changes frequently</li>
+<li>The model needs to reference proprietary or private content</li>
+<li>You want explainable outputs grounded in source data</li>
+</ul>
+<p>RAG reduces the need for frequent fine-tuning while retaining some of its benefits—especially for knowledge-heavy domains like technical support, internal search, and compliance.</p>
+<hr>
+<h4 id="soft-prompting-and-adapters">Soft Prompting and Adapters</h4>
+<p>Emerging techniques like <strong>soft prompting</strong> or <strong>prefix tuning</strong> further blur the line between prompting and fine-tuning. These methods involve learning small, fixed “prompt vectors” that are prepended to model inputs, guiding its behavior without updating the core weights.</p>
+<ul>
+<li>Soft prompts are not natural language—they’re learned embeddings.</li>
+<li>They allow fine-grained behavioral control while keeping the model frozen.</li>
+<li>They can be reused across tasks or domains with minimal cost.</li>
+</ul>
+<p>Soft prompting works well in settings where:</p>
+<ul>
+<li>You want reusable behavior modules (e.g., “answer like a lawyer”)</li>
+<li>Training data is limited</li>
+<li>Full fine-tuning is too expensive or risky</li>
+</ul>
+<hr>
+<h4 id="when-to-combine-techniques">When to Combine Techniques</h4>
+<p>Hybrid strategies are most effective when:</p>
+<ul>
+<li>The task is domain-specific but still requires flexibility (e.g., customer service across product lines)</li>
+<li>The base model performs inconsistently, but you don’t have enough data for full fine-tuning</li>
+<li>You want to serve multiple use cases from the same model</li>
+<li>You’re dealing with changing knowledge or regulations (where RAG outperforms static models)</li>
+</ul>
+<p>In practice, many teams start with prompt engineering, then add fine-tuning or retrieval as needs become clearer. Soft prompting and adapters provide a middle ground when you want better control without full retraining.</p>
+<p>Rather than choosing one method upfront, the most resilient systems allow for <strong>composability</strong>—mixing instructions, data, and techniques to deliver reliable, scalable performance.</p>
+<p>In the next section, we’ll explore common pitfalls and misconceptions when using these approaches—and how to avoid them in real-world systems.</p>
+<h3 id="pitfalls-and-misconceptions">Pitfalls and Misconceptions</h3>
+<p>As teams increasingly adopt large language models (LLMs) in real products and workflows, misconceptions about how to control or optimize these models can lead to poor outcomes, wasted resources, or unrealistic expectations. Whether using prompt engineering, fine-tuning, or both, it’s important to understand the common traps that can limit effectiveness or scalability.</p>
+<hr>
+<h4 id="overestimating-fine-tuning-for-open-ended-tasks">Overestimating Fine-Tuning for Open-Ended Tasks</h4>
+<p>One of the most common misconceptions is believing that fine-tuning will solve all model performance issues—especially in creative or open-ended applications.</p>
+<p>While fine-tuning excels at tightly structured tasks (e.g., form generation, classification, or domain-specific Q&#x26;A), it doesn’t necessarily improve performance on tasks that rely on interpretation, subjectivity, or stylistic variation.</p>
+<p>For example, teams may attempt to fine-tune a model for generating product descriptions or creative writing using a small corpus of examples. The result is often disappointing: the model becomes repetitive, overfits to specific phrasings, or loses the variety and nuance that a general-purpose model could provide with prompt engineering alone.</p>
+<p><strong>Fine-tuning is not a magic fix.</strong> For open-ended outputs, especially those requiring variation or tone flexibility, prompt engineering often delivers better results with less rigidity.</p>
+<hr>
+<h4 id="assuming-prompt-engineering-is-one-and-done">Assuming Prompt Engineering Is One-and-Done</h4>
+<p>Prompt engineering is often seen as quick and simple—but it’s not static. One of the biggest pitfalls is assuming that a good prompt, once written, will work forever.</p>
+<p>In practice, prompts often need:</p>
+<ul>
+<li><strong>Iteration</strong> across use cases, content types, or languages</li>
+<li><strong>Adaptation</strong> for different model versions or providers</li>
+<li><strong>Monitoring</strong> to detect prompt drift as APIs or outputs change</li>
+</ul>
+<p>For example, a prompt that works well on GPT-4 may behave differently on Claude or a fine-tuned LLaMA model. Similarly, formatting changes or API version upgrades may subtly alter output behavior.</p>
+<p>Prompt engineering is not a one-time activity—it’s an ongoing design process. Teams should version, test, and track prompts just as they would any core component of their application logic.</p>
+<hr>
+<h4 id="ignoring-prompt-instability-across-model-versions">Ignoring Prompt Instability Across Model Versions</h4>
+<p>Another overlooked issue is <strong>prompt instability</strong>—where a prompt that works reliably in one version of a model begins producing inconsistent or degraded output in another.</p>
+<p>This can happen due to:</p>
+<ul>
+<li>Internal model updates by the provider (e.g., OpenAI or Anthropic)</li>
+<li>Changes to tokenization, formatting, or sampling defaults</li>
+<li>Model architecture shifts (e.g., transformer depth or attention patterns)</li>
+</ul>
+<p>Teams relying heavily on prompt engineering for business-critical tasks may suddenly find their outputs inconsistent after a model update. This is especially common when using closed APIs without visibility into version changes.</p>
+<p><strong>Mitigation strategies include:</strong></p>
+<ul>
+<li>Regular regression testing of prompts</li>
+<li>Abstracting prompts behind versioned templates</li>
+<li>Monitoring output variance and setting confidence thresholds</li>
+</ul>
+<p>If stability is critical, it may make sense to migrate to a fine-tuned open-source model under your control—accepting more maintenance overhead in exchange for greater consistency.</p>
+<hr>
+<h4 id="assuming-you-must-choose-one-strategy">Assuming You Must Choose One Strategy</h4>
+<p>A final misconception is that teams must pick either fine-tuning or prompt engineering and stick with it. In reality, the best systems often blend both.</p>
+<p>For example:</p>
+<ul>
+<li>Use fine-tuning to encode domain knowledge or tone.</li>
+<li>Use prompting to control task type, formatting, or user-specific context.</li>
+<li>Use retrieval (RAG) to provide real-time factual grounding.</li>
+</ul>
+<p>These approaches are not mutually exclusive—and viewing them as a “versus” decision can limit flexibility. The right question is not <em>which one is better</em>, but <em>what combination gives you the right balance of control, performance, and cost?</em></p>
+<hr>
+<p>In the next section, we’ll look at implementation considerations—what it takes to deploy and maintain either approach in production, and how to think about tooling, cost, and infrastructure.</p>
+<h3 id="practical-implementation-considerations">Practical Implementation Considerations</h3>
+<p>While prompt engineering and fine-tuning are conceptually different, deploying either approach in production requires careful attention to tooling, infrastructure, and performance. Optimizing model behavior is only part of the challenge—delivering that behavior reliably, at scale, and within budget is where real-world complexity begins.</p>
+<hr>
+<h4 id="tooling-and-ecosystem-support">Tooling and Ecosystem Support</h4>
+<p><strong>Prompt Engineering Tooling</strong></p>
+<p>For teams using prompt engineering, popular tools include:</p>
+<ul>
+<li><strong>LangChain</strong>: A Python framework that helps manage chains of prompts, tools, and models. It’s widely used for building agentic systems that use structured prompting across tasks and tools.</li>
+<li><strong>PromptLayer</strong> or <strong>Flowise</strong>: Tools that log, test, and version prompts across models—helpful for tracking changes and performance over time.</li>
+<li><strong>OpenAI Functions / Tool Use APIs</strong>: For workflows where LLMs invoke external tools (e.g., APIs, databases) in response to structured prompts.</li>
+</ul>
+<p>These tools help manage complexity as prompts evolve, and allow non-engineers (product, design, content teams) to contribute effectively to LLM behavior design.</p>
+<p><strong>Fine-Tuning Tooling</strong></p>
+<p>For fine-tuning, more infrastructure is involved. Popular open-source libraries and platforms include:</p>
+<ul>
+<li><strong>Hugging Face Transformers</strong>: The standard ecosystem for training and using open LLMs (e.g., LLaMA, Falcon, Mistral).</li>
+<li><strong>PEFT (Parameter-Efficient Fine-Tuning)</strong>: A library for applying LoRA, prefix-tuning, and adapters to large models with reduced compute and memory costs.</li>
+<li><strong>Weights &#x26; Biases</strong>, <strong>ClearML</strong>, or <strong>MLflow</strong>: Tools for experiment tracking, hyperparameter optimization, and model lifecycle management.</li>
+</ul>
+<p>Teams doing fine-tuning need robust pipelines for data preparation, training orchestration, validation, and deployment—often involving GPUs or cloud-managed training clusters.</p>
+<hr>
+<h4 id="model-monitoring-and-evaluation">Model Monitoring and Evaluation</h4>
+<p>Regardless of method, output quality needs to be measured and monitored.</p>
+<p><strong>Prompt-based systems</strong> require:</p>
+<ul>
+<li>Human evaluation frameworks (e.g., Likert scales, rubric grading)</li>
+<li>Automated metrics like BLEU, ROUGE, or format adherence scores</li>
+<li>A/B testing to evaluate which prompt versions perform better</li>
+</ul>
+<p><strong>Fine-tuned models</strong> require:</p>
+<ul>
+<li>Validation datasets for loss/accuracy measurement</li>
+<li>Regression tests for output format, tone, or classification</li>
+<li>Drift detection if model quality degrades over time</li>
+</ul>
+<p>For both, it’s critical to define clear <strong>success metrics</strong>. Are you optimizing for factual accuracy, speed, tone, user satisfaction, or cost per call? Your evaluation tools should reflect these priorities.</p>
+<hr>
+<h4 id="cost-latency-and-scaling">Cost, Latency, and Scaling</h4>
+<p><strong>Prompt Engineering Costs</strong></p>
+<ul>
+<li>Lower upfront investment—only pay for inference, not training</li>
+<li>Works well with commercial APIs like OpenAI, Anthropic, or Cohere</li>
+<li>Easier to iterate and deploy</li>
+<li>However, complex prompt chains may increase token usage or latency</li>
+</ul>
+<p><strong>Fine-Tuning Costs</strong></p>
+<ul>
+<li>Higher initial cost (compute, data prep, engineering)</li>
+<li>Lower inference cost per call if hosting in-house</li>
+<li>More efficient for repetitive, high-volume tasks</li>
+<li>Requires planning for model versioning, rollback, and re-training</li>
+</ul>
+<p><strong>Latency Considerations</strong></p>
+<ul>
+<li>Hosted API models often have higher latency, especially for complex prompts</li>
+<li>Self-hosted fine-tuned models can achieve lower latency but require GPU inference infrastructure</li>
+<li>Use techniques like prompt compression or caching for high-traffic apps</li>
+</ul>
+<p><strong>Scaling Considerations</strong></p>
+<ul>
+<li>Prompt engineering scales well with API-first architectures but can be brittle without prompt version control</li>
+<li>Fine-tuned models scale well for consistent, repeatable tasks—especially when deployed on edge or dedicated infrastructure</li>
+</ul>
+<hr>
+<p>In production environments, choosing between prompt engineering and fine-tuning isn’t just about model behavior—it’s about trade-offs between cost, complexity, flexibility, and control. Teams should evaluate each method not in isolation, but in terms of how well it supports real-world delivery goals.</p>
+<p>Next, we’ll explore emerging trends in this space—soft prompts, auto-prompting agents, and new ways to combine flexibility with control.</p>
+<h3 id="future-directions">Future Directions</h3>
+<p>The field of LLM optimization is moving fast. While prompt engineering and fine-tuning remain foundational strategies, new methods are emerging that blur the lines between them—offering more granular control, better efficiency, and improved adaptability.</p>
+<hr>
+<h4 id="soft-prompts-and-prefix-tuning">Soft Prompts and Prefix Tuning</h4>
+<p>One of the most promising innovations is <strong>soft prompting</strong> (also called <strong>prefix tuning</strong>). Instead of using natural language instructions, soft prompts are learned embeddings—trainable vectors that steer model behavior without changing its core weights.</p>
+<p>These methods offer:</p>
+<ul>
+<li>Parameter-efficient customization</li>
+<li>Fast training on small datasets</li>
+<li>The ability to “plug in” different behaviors dynamically (e.g., legal mode, marketing mode)</li>
+</ul>
+<p>Soft prompts can act as reusable behavior modules, offering some of the precision of fine-tuning with the deployment simplicity of prompting.</p>
+<hr>
+<h4 id="auto-prompting-and-agents">Auto-Prompting and Agents</h4>
+<p>As LLM workflows become more complex, some systems now use LLMs to generate or improve prompts automatically. These <strong>auto-prompting agents</strong> analyze user inputs, task goals, or past performance to dynamically construct better prompts on the fly.</p>
+<p>This opens the door to:</p>
+<ul>
+<li>Self-correcting prompt pipelines</li>
+<li>Agentic systems that manage their own reasoning steps</li>
+<li>Personalization at runtime based on user history or behavior</li>
+</ul>
+<p>Prompt engineering may become less of a manual task and more of an orchestration process—where prompts are generated, evaluated, and revised by models themselves.</p>
+<hr>
+<h4 id="fine-tuning-on-small-data-with-adapters">Fine-Tuning on Small Data with Adapters</h4>
+<p>On the fine-tuning side, <strong>adapter-based methods</strong> and <strong>LoRA</strong> make it possible to specialize models using far less data than traditional approaches. This democratizes fine-tuning for smaller teams and more specific domains.</p>
+<p>Combined with open-source models like Mistral or LLaMA 3, these tools enable controlled fine-tuning workflows that are efficient and cost-effective—without requiring access to high-end GPU clusters.</p>
+<hr>
+<h4 id="regulatory-and-compliance-considerations">Regulatory and Compliance Considerations</h4>
+<p>As LLMs enter high-stakes domains—finance, healthcare, law—regulatory questions around <strong>model explainability</strong>, <strong>auditing</strong>, and <strong>version control</strong> become more pressing.</p>
+<p>Fine-tuned models must be traceable and reproducible. Prompt-engineered systems must be tested for consistency and fairness. In some sectors, regulators may begin to require model disclosures or usage logs.</p>
+<p>Designing LLM systems with compliance in mind—whether prompt-driven or fine-tuned—will become a key part of operational strategy.</p>
+<hr>
+<h3 id="conclusion">Conclusion</h3>
+<p>Prompt engineering and fine-tuning represent two powerful—but fundamentally different—approaches to optimizing the behavior of large language models. One is lightweight, flexible, and fast. The other is robust, consistent, and deeply customizable.</p>
+<p>Prompt engineering is typically the right place to start. It allows teams to test ideas, iterate quickly, and shape model output without investing in infrastructure or retraining. It works especially well for creative tasks, exploratory workflows, or systems that need to support many use cases with the same model.</p>
+<p>Fine-tuning makes sense when accuracy, structure, or domain-specific knowledge become bottlenecks. It enables stable, repeatable performance in narrow contexts—ideal for regulated environments, high-volume use cases, or applications where tone and behavior must be tightly controlled.</p>
+<p>In practice, the best systems often combine both. Prompt templates layered on top of fine-tuned models. Retrieval-augmented pipelines that inject fresh context. Soft prompts that blend the benefits of structure and adaptability.</p>
+<p>There’s no one-size-fits-all strategy. But understanding the trade-offs—and how to mix methods—puts teams in the best position to deploy reliable, scalable, and maintainable AI systems.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

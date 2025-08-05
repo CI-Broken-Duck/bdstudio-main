@@ -1,0 +1,155 @@
+/* resources.css – Broken Duck Media Theme */
+
+:root {
+  --color-bg: #0b0b0c;
+  --color-text: #ffffff;
+  --color-text-secondary: hsl(48, 12%, 70%);
+  --color-theme: #DEB126;
+  --color-highlight: rgba(0, 0, 0, 0.1);
+  --font-primary: "PT Sans", Inter, system-ui, sans-serif;
+}
+
+.resources {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  min-height: 100vh;
+  font-family: var(--font-primary);
+}
+
+.resources-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.resources-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.resources-title {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+}
+
+.resources-subtitle {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+}
+
+.resources-filter {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--color-theme);
+  color: var(--color-text);
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--color-theme);
+  color: var(--color-bg);
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.resource-card {
+  background-color: #151515;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
+}
+
+.resource-card:hover {
+  border-color: var(--color-theme);
+  box-shadow: 0 4px 10px rgba(222, 177, 38, 0.2);
+}
+
+.resource-cover {
+  width: 100%;
+  height: auto;
+  max-height: 140px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  display: block;
+  object-fit: contain;
+  background-color: var(--color-highlight);
+}
+
+.resource-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.resource-category {
+  font-weight: bold;
+  color: var(--color-theme);
+}
+
+.resource-date {
+  font-style: italic;
+}
+
+.resource-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.resource-title:hover {
+  color: var(--color-theme);
+}
+
+.resource-summary {
+  font-size: 16px;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+#show-more-btn {
+  background: var(--color-theme);
+  border: none;
+  color: var(--color-bg);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#show-more-btn:hover {
+  background: #c79d1d; /* slightly darker yellow */
+}

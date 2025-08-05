@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Custom Model Deployment Service</title><meta name="description" content="Integrate proprietary or fine-tuned models into your platform securely."><meta property="og:title" content="Custom Model Deployment Service"><meta property="og:description" content="Integrate proprietary or fine-tuned models into your platform securely."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Custom Model Deployment Service</h1> <div class="module-meta"> <div> <span class="module-category">AI</span> <span class="module-subcategory"> → Titanium</span> </div> <div class="module-price"> <span>💰</span> $7500 </div> </div> <p class="module-summary">Integrate proprietary or fine-tuned models into your platform securely.</p> <div class="module-icons"> <img src="/assets/modules/ai/huggingface.png" alt="Technology icon"><img src="/assets/modules/devops/aws.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <h1 id="custom-model-deployment-service-overview">Custom Model Deployment Service Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Custom Model Deployment Service is designed to enable developers to deploy custom AI models securely and efficiently without managing the underlying infrastructure. It simplifies the deployment process, allowing focus on model development while handling operational complexities.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Simplified Integration</strong>: Streamline the deployment of proprietary or fine-tuned models with minimal setup.</li>
+<li><strong>Scalability</strong>: Automatically manage traffic and scale resources to meet demand.</li>
+<li><strong>Enhanced Security</strong>: Protect intellectual property by securing APIs against unauthorized access.</li>
+<li><strong>Cost Efficiency</strong>: Reduce operational costs through optimized resource usage and efficient scaling.</li>
+<li><strong>Performance Monitoring</strong>: Gain insights into model performance for continuous improvement.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Machine Learning Models</strong>: Deploy image recognition models, where real-time processing is essential.</li>
+<li><strong>Real-Time Processing Systems</strong>: Integrate models requiring immediate data analysis, such as fraud detection in financial transactions.</li>
+<li><strong>Third-Party Integrations</strong>: Wrap and secure third-party AI models as APIs for seamless integration into existing systems.</li>
+<li><strong>Large-Scale Data Handling</strong>: Utilize distributed processing frameworks to manage high-throughput data efficiently.</li>
+<li><strong>Edge Computing</strong>: Deploy models on edge devices to ensure low latency in applications like autonomous vehicles or IoT devices.</li>
+</ol>
+<p>This service empowers developers by focusing on model performance while managing deployment intricacies, ensuring secure and scalable solutions.</p>
+<h1 id="custom-model-deployment-service-documentation">Custom Model Deployment Service Documentation</h1>
+<h2 id="summary">Summary</h2>
+<p>The Custom Model Deployment Service allows developers to securely integrate proprietary or fine-tuned AI models into their platform. This module offers essential tools for deployment, monitoring, and management, ensuring efficient and secure model integration.</p>
+<h2 id="features">Features</h2>
+<h3 id="1-secure-model-deployment">1. Secure Model Deployment</h3>
+<ul>
+<li><strong>Feature</strong>: Secure Model Deployment ensures that proprietary models are deployed safely.</li>
+<li><strong>Explanation</strong>: Models are encrypted during transit and at rest. Access is controlled through strict permissions and encryption protocols to protect intellectual property.</li>
+</ul>
+<h3 id="2-scalable-infrastructure">2. Scalable Infrastructure</h3>
+<ul>
+<li><strong>Feature</strong>: Scalable Infrastructure handles varying workloads efficiently.</li>
+<li><strong>Explanation</strong>: The service uses auto-scaling to manage traffic spikes, load balancing for even distribution, and horizontal scaling to handle increased demand without performance degradation.</li>
+</ul>
+<h3 id="3-model-compatibility--integration">3. Model Compatibility &#x26; Integration</h3>
+<ul>
+<li><strong>Feature</strong>: Supports various AI frameworks and formats.</li>
+<li><strong>Explanation</strong>: Compatible with TensorFlow, PyTorch, ONNX, and proprietary formats like TFLite and .pb files, ensuring seamless integration into existing workflows.</li>
+</ul>
+<h3 id="4-real-time-monitoring--diagnostics">4. Real-time Monitoring &#x26; Diagnostics</h3>
+<ul>
+<li><strong>Feature</strong>: Tools for real-time monitoring and issue diagnosis.</li>
+<li><strong>Explanation</strong>: Offers dashboards for tracking metrics, API health checks, error logging, and alerts to promptly identify and resolve issues.</li>
+</ul>
+<h3 id="5-version-control--rollback">5. Version Control &#x26; Rollback</h3>
+<ul>
+<li><strong>Feature</strong>: Manages model versions effectively.</li>
+<li><strong>Explanation</strong>: Supports versioning with rollback capabilities in case of deployment issues, maintaining model integrity and reliability.</li>
+</ul>
+<h3 id="6-restful-api-gateway">6. RESTful API Gateway</h3>
+<ul>
+<li><strong>Feature</strong>: Exposes models via scalable APIs.</li>
+<li><strong>Explanation</strong>: Models are accessible through RESTful endpoints, with features like rate limiting, request routing, and authentication to manage traffic effectively.</li>
+</ul>
+<h3 id="7-rbac--access-control">7. RBAC &#x26; Access Control</h3>
+<ul>
+<li><strong>Feature</strong>: Implements role-based access control.</li>
+<li><strong>Explanation</strong>: Enforces RBAC for model access and integrates with standard security protocols (LDAP, OAuth) to ensure secure platform integration.</li>
+</ul>
+<h3 id="8-audit-logs--compliance">8. Audit Logs &#x26; Compliance</h3>
+<ul>
+<li><strong>Feature</strong>: Provides detailed logging and compliance tracking.</li>
+<li><strong>Explanation</strong>: Maintains audit logs for accountability and meets compliance standards by recording all deployment and access activities.</li>
+</ul>
+<h3 id="9-cost-management">9. Cost Management</h3>
+<ul>
+<li><strong>Feature</strong>: Optimizes resource usage and tracks costs.</li>
+<li><strong>Explanation</strong>: Uses efficient resource allocation and provides cost tracking to help manage expenses associated with model deployments.</li>
+</ul>
+<h3 id="10-integration-with-mlops-platforms">10. Integration with MLOps Platforms</h3>
+<ul>
+<li><strong>Feature</strong>: Connects with popular MLOps tools.</li>
+<li><strong>Explanation</strong>: Seamlessly integrates with platforms like Kubeflow, Airflow, and Databricks for pipeline management, enhancing workflow efficiency.</li>
+</ul>
+<p>This documentation provides a comprehensive overview of the Custom Model Deployment Service, offering developers the necessary information to integrate and manage AI models securely and efficiently.</p>
+<h3 id="custom-model-deployment-service-documentation-1">Custom Model Deployment Service Documentation</h3>
+<p>This document provides technical details and code examples for integrating custom AI models into your platform using the Custom Model Deployment Service.</p>
+<hr>
+<h4 id="1-fastapi-endpoint-model-deployment">1. FastAPI Endpoint (Model Deployment)</h4>
+<p>Below is an example of a FastAPI endpoint that handles model deployment requests:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> subprocess</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter(</span><span style="color:#FFAB70">prefix</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/api/v1/models"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">tags</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"model-deployment"</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ModelDeploymentRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    model_file: </span><span style="color:#79B8FF">bytes</span></span>
+<span class="line"><span style="color:#E1E4E8">    framework: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    ports: list[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">8000</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    metadata: Optional[</span><span style="color:#79B8FF">dict</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/deploy"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> deploy_model</span><span style="color:#E1E4E8">(request_data: ModelDeploymentRequest, auth_token: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Depends(authenticationMiddleware)):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Save model file to disk</span></span>
+<span class="line"><span style="color:#F97583">        with</span><span style="color:#79B8FF"> open</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"models/</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">request_data.name</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">.model"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"wb"</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> f:</span></span>
+<span class="line"><span style="color:#E1E4E8">            f.write(request_data.model_file)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Deploy the model using subprocess (simulated deployment process)</span></span>
+<span class="line"><span style="color:#E1E4E8">        subprocess.run([</span><span style="color:#9ECBFF">"deploy-model.sh"</span><span style="color:#E1E4E8">, request_data.name, </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(ports[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">])], </span><span style="color:#FFAB70">check</span><span style="color:#F97583">=</span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Model </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">request_data.name</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF"> deployed successfully"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="2-react-ui-snippet-model-upload-form">2. React UI Snippet (Model Upload Form)</h4>
+<p>Here’s a React component that allows users to upload and deploy custom models:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useDropzone } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-dropzone'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> ModelUploadForm</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">onSubmit</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">modelDetails</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setModelDetails</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        name: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        framework: </span><span style="color:#9ECBFF">'tensorflow'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        port: </span><span style="color:#79B8FF">8000</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        metadata: {}</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">getRootProps</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">getInputProps</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useDropzone</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        accept: {</span></span>
+<span class="line"><span style="color:#9ECBFF">            'application/x-tar'</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">'.tar'</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">            'application/zip'</span><span style="color:#E1E4E8">: [</span><span style="color:#9ECBFF">'.zip'</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#B392F0"> onSubmit</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#F97583">            ...</span><span style="color:#E1E4E8">modelDetails,</span></span>
+<span class="line"><span style="color:#E1E4E8">            model_file: </span><span style="color:#F97583">new</span><span style="color:#B392F0"> FormData</span><span style="color:#E1E4E8">(e.target)</span></span>
+<span class="line"><span style="color:#E1E4E8">        });</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8"> {</span><span style="color:#F97583">...</span><span style="color:#B392F0">getRootProps</span><span style="color:#E1E4E8">()}></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> {</span><span style="color:#F97583">...</span><span style="color:#B392F0">getInputProps</span><span style="color:#E1E4E8">()} /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Drop model file here&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Model Name:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{modelDetails.name}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setModelDetails</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">modelDetails, name: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Framework:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{modelDetails.framework}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setModelDetails</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">modelDetails, framework: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                ></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"tensorflow"</span><span style="color:#E1E4E8">>TensorFlow&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"pytorch"</span><span style="color:#E1E4E8">>PyTorch&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"sklearn"</span><span style="color:#E1E4E8">>Scikit-learn&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Deploy Model&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> ModelUploadForm;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="3-pydantic-data-schema-modeldeploymentrequest">3. Pydantic Data Schema (ModelDeploymentRequest)</h4>
+<p>Define the data schema using Pydantic for validation:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ModelDeploymentRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    model_file: </span><span style="color:#79B8FF">bytes</span></span>
+<span class="line"><span style="color:#E1E4E8">    framework: Literal[</span><span style="color:#9ECBFF">"tensorflow"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"pytorch"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"sklearn"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    ports: list[</span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">8000</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    metadata: </span><span style="color:#79B8FF">dict</span><span style="color:#F97583"> |</span><span style="color:#79B8FF"> None</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"my-custom-model"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "model_file"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"base64_encoded_model_file"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "framework"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"tensorflow"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "ports"</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">8000</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">                "metadata"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"accuracy"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">95</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"model_type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"classification"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ModelResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    deployment_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Model deployed successfully"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "deployment_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"12345"</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="notes">Notes:</h3>
+<ul>
+<li><strong>FastAPI Endpoint</strong>: The endpoint includes authentication middleware and uses Pydantic models for request validation.</li>
+<li><strong>React UI</strong>: The component uses <code>react-dropzone</code> for file uploads and form handling.</li>
+<li><strong>Data Schema</strong>: Pydantic models are used to define the structure of requests and responses.</li>
+</ul>
+<p>For production use, ensure proper error handling, logging, and security measures.</p>
+<p>The Custom Model Deployment Service is designed to securely deploy custom AI models into production environments, offering flexibility and security for developers. Here’s an organized overview of the key aspects:</p>
+<h3 id="overview">Overview:</h3>
+<ul>
+<li><strong>Purpose</strong>: Enables secure deployment of proprietary or fine-tuned models as APIs without exposing sensitive data or code.</li>
+</ul>
+<h3 id="related-modules">Related Modules:</h3>
+<ol>
+<li><strong>Model Training Pipeline</strong>: Facilitates the creation and training of custom models.</li>
+<li><strong>Model Monitoring &#x26; Analytics</strong>: Provides insights into model performance and health.</li>
+<li><strong>Data Processing Pipeline</strong>: Manages data flow for efficient model processing.</li>
+<li><strong>Security &#x26; Compliance Framework</strong>: Ensures secure deployment and regulatory compliance.</li>
+</ol>
+<h3 id="use-cases">Use Cases:</h3>
+<ol>
+<li><strong>Custom NLP Models</strong>: Deploy text classification models as APIs for external use.</li>
+<li><strong>Fine-Tuned Computer Vision Models</strong>: Integrate specific vision tasks into production systems.</li>
+<li><strong>Proprietary Recommendation Systems</strong>: Deliver personalized suggestions securely.</li>
+</ol>
+<h3 id="integration-tips">Integration Tips:</h3>
+<ul>
+<li><strong>API Protocols</strong>: Use REST or gRPC for communication.</li>
+<li><strong>Security</strong>: Implement OAuth2 and API keys for endpoint protection.</li>
+<li><strong>Containerization</strong>: Utilize Docker to package models and dependencies.</li>
+<li><strong>Reliability</strong>: Incorporate retries and timeouts in client code.</li>
+</ul>
+<h3 id="configuration-options">Configuration Options:</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Model Path</td><td>Specifies the location of the model file (e.g., local or cloud storage).</td></tr><tr><td>API Port</td><td>The port number for API communication.</td></tr><tr><td>SSL Enable</td><td>Enables HTTPS for secure communication.</td></tr><tr><td>Authentication Mode</td><td>Chooses between OAuth2 and API keys for access control.</td></tr><tr><td>Batch Processing</td><td>Activates processing of multiple requests at once.</td></tr><tr><td>Timeout Seconds</td><td>Sets the request timeout duration to prevent bottlenecks.</td></tr></tbody></table>
+<h3 id="considerations">Considerations:</h3>
+<ul>
+<li><strong>Model Compatibility</strong>: Check framework support (TensorFlow, PyTorch) for specific configurations.</li>
+<li><strong>Scalability</strong>: Service may offer load balancing or auto-scaling; confirm requirements with infrastructure.</li>
+<li><strong>Error Handling</strong>: Implement logging and callbacks to manage prediction failures.</li>
+<li><strong>Compliance</strong>: Utilize the Security &#x26; Compliance Framework for regulatory adherence.</li>
+</ul>
+<h3 id="implementation-steps">Implementation Steps:</h3>
+<ol>
+<li>Upload your model via the provided interface.</li>
+<li>Configure API settings, including security protocols.</li>
+<li>Test functionality and performance.</li>
+<li>Monitor metrics and adjust as needed.</li>
+</ol>
+<p>This structured approach ensures a robust and secure deployment of custom models, leveraging related modules and best practices for optimal performance.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

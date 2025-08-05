@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Calendar Sync Module</title><meta name="description" content="Sync events to Google, Apple, or Outlook calendars."><meta property="og:title" content="Calendar Sync Module"><meta property="og:description" content="Sync events to Google, Apple, or Outlook calendars."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Calendar Sync Module</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Sync events to Google, Apple, or Outlook calendars.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/google.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="calendar-sync-module-overview">Calendar Sync Module Overview</h1>
+<h2 id="summary">Summary</h2>
+<p>The <strong>Calendar Sync Module</strong> enables seamless synchronization of calendar events between various platforms such as Google, Apple, and Outlook. Designed for developers seeking to integrate robust calendar management into their applications, this module offers flexibility, customization, and real-time updates.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The purpose of the Calendar Sync Module is to provide a versatile tool for syncing calendar data across multiple services. It streamlines event management by allowing developers to connect different calendars and ensure that events are synchronized in real-time. This module simplifies integration processes, making it easier to maintain up-to-date calendars across various platforms.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Seamless Integration:</strong> Easily connect with major calendar providers (Google Calendar, Apple Calendar, Outlook) without extensive code.</li>
+<li><strong>Customizable Event Mapping:</strong> Define how events map between different calendars, ensuring data consistency and accuracy.</li>
+<li><strong>Real-Time Synchronization:</strong> Keep all connected calendars in sync with real-time updates for instant changes across platforms.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Application Integration:</strong> Developers can integrate the module into their apps to allow users to sync their personal calendars without hassle.</li>
+<li><strong>Cross-Platform Automation:</strong> Businesses can automate event synchronization between Google, Apple, and Outlook, eliminating manual updates.</li>
+<li><strong>Custom Solutions:</strong> Tailor the module’s functionality for specific business needs, such as synchronizing events with custom calendar services.</li>
+</ol>
+<p>This module is a powerful tool for developers aiming to enhance their applications’ calendar management capabilities efficiently and effectively.</p>
+<h2 id="integration-support">Integration Support</h2>
+<p>The Calendar Sync Module provides seamless integration with Google, Apple, and Outlook calendars through REST APIs. This allows users to sync events between their local system and these calendar platforms.</p>
+<h2 id="oauth-authentication">OAuth Authentication</h2>
+<p>The module supports OAuth 2.0 for secure authentication with third-party calendar services. It handles token generation, refresh, and storage securely, ensuring compliance with API provider requirements.</p>
+<h2 id="event-synchronization">Event Synchronization</h2>
+<p>Events can be synced in both directions (local to cloud and cloud to local). The module ensures that all events, including titles, descriptions, dates, and recurrence rules, are accurately mirrored across platforms.</p>
+<h2 id="bulk-operations">Bulk Operations</h2>
+<p>The module supports bulk event operations, such as adding, updating, or deleting multiple events at once. This improves efficiency when dealing with large numbers of calendar entries.</p>
+<h2 id="two-way-sync">Two-Way Sync</h2>
+<p>Two-way synchronization ensures that changes made on either the local system or the third-party calendar service are reflected in real-time. This eliminates data duplication and ensures consistency across platforms.</p>
+<h2 id="calendar-subscriptions">Calendar Subscriptions</h2>
+<p>The module allows users to subscribe to public or shared calendars without requiring direct access to the source account. This is useful for tracking events from shared calendars, such as team meetings or holidays.</p>
+<h2 id="conflict-resolution">Conflict Resolution</h2>
+<p>The module includes logic to handle conflicts when the same event exists on both local and cloud platforms with different details. It provides options to merge events, overwrite one version, or notify the user for manual resolution.</p>
+<h2 id="frequency-scheduling">Frequency Scheduling</h2>
+<p>Users can set custom sync frequencies (e.g., hourly, daily, weekly) to control how often events are synced. This is useful for minimizing API calls while ensuring up-to-date calendar data.</p>
+<h2 id="error-handling-and-logging">Error Handling and Logging</h2>
+<p>The module includes robust error handling and logging mechanisms to track failed sync attempts, invalid tokens, or API rate limits. This helps in troubleshooting issues and maintaining reliable operation.</p>
+<h2 id="custom-fields-support">Custom Fields Support</h2>
+<p>The module supports custom fields for events, allowing developers to extend the functionality with additional metadata such as location details, event categories, or tags.</p>
+<h2 id="metadata-management">Metadata Management</h2>
+<p>The module stores metadata about each calendar sync operation, including success/failure status, timestamps, and error messages. This is useful for auditing and debugging purposes.</p>
+<h2 id="rate-limiting">Rate Limiting</h2>
+<p>To avoid exceeding API rate limits imposed by third-party services, the module includes built-in rate limiting functionality that enforces quotas per service provider.</p>
+<h2 id="event-status-tracking">Event Status Tracking</h2>
+<p>The module tracks the sync status of each event (e.g., “synced,” “error,” “pending”). This provides developers with visibility into which events have been successfully synced and which ones require attention.</p>
+<h1 id="calendar-sync-module-documentation">Calendar Sync Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Calendar Sync Module enables synchronization of calendar events with popular providers such as Google, Apple, or Outlook. This module is designed to be integrated into existing systems requiring seamless calendar event management.</p>
+<hr>
+<h2 id="code-samples">Code Samples</h2>
+<h3 id="1-fastapi-endpoint-event-synchronization">1. FastAPI Endpoint (Event Synchronization)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> google_auth, apple_auth, outlook_auth</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Event</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    start_date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    end_date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> SyncSettings</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    provider: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "google", "apple", or "outlook"</span></span>
+<span class="line"><span style="color:#E1E4E8">    frequency: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "daily", "weekly", or "monthly"</span></span>
+<span class="line"><span style="color:#E1E4E8">    events: List[Event]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/sync/calendar"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> sync_calendar</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    sync_settings: SyncSettings,</span></span>
+<span class="line"><span style="color:#E1E4E8">    auth_provider: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Depends([google_auth, apple_auth, outlook_auth])</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Synchronizes calendar events with the specified provider.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Implement synchronization logic here</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Events synced successfully"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-calendar-settings-form">2. React UI (Calendar Settings Form)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> CalendarSettings</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">syncProvider</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setSyncProvider</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">syncFrequency</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setSyncFrequency</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'daily'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">error</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setError</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">            // Implement API call to sync calendar here</span></span>
+<span class="line"><span style="color:#B392F0">            setError</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (err) {</span></span>
+<span class="line"><span style="color:#B392F0">            setError</span><span style="color:#E1E4E8">(err.message);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Sync Provider:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{syncProvider}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSyncProvider</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                    required</span></span>
+<span class="line"><span style="color:#E1E4E8">                ></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">>Select a provider&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"google"</span><span style="color:#E1E4E8">>Google Calendar&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"apple"</span><span style="color:#E1E4E8">>Apple Calendar&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"outlook"</span><span style="color:#E1E4E8">>Outlook Calendar&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Sync Frequency:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{syncFrequency}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSyncFrequency</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                    required</span></span>
+<span class="line"><span style="color:#E1E4E8">                ></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"daily"</span><span style="color:#E1E4E8">>Daily&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"weekly"</span><span style="color:#E1E4E8">>Weekly&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"monthly"</span><span style="color:#E1E4E8">>Monthly&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            {error </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">>{error}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Sync Calendar&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> CalendarSettings;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-pydantic-data-schema-event-model">3. Pydantic Data Schema (Event Model)</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional, List</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> OAuthConfig</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    client_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    client_secret: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    token_expiry: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    scopes: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Event</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    start_date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    end_date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> SyncSettings</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    provider: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "google", "apple", or "outlook"</span></span>
+<span class="line"><span style="color:#E1E4E8">    frequency: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "daily", "weekly", or "monthly"</span></span>
+<span class="line"><span style="color:#E1E4E8">    events: List[Event]</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="explanation">Explanation</h2>
+<ol>
+<li>
+<p><strong>FastAPI Endpoint</strong>: The <code>/sync/calendar</code> endpoint accepts a <code>SyncSettings</code> object and authenticates using OAuth2 (Google, Apple, Outlook). It handles event synchronization based on the provider and frequency specified.</p>
+</li>
+<li>
+<p><strong>React UI</strong>: A simple form component that allows users to select their calendar provider and sync frequency. It includes basic error handling for API calls.</p>
+</li>
+<li>
+<p><strong>Pydantic Data Schema</strong>: Defines the data structures (<code>OAuthConfig</code>, <code>Event</code>, <code>SyncSettings</code>) used throughout the module, ensuring consistent and validated data formats.</p>
+</li>
+</ol>
+<p>This documentation provides a comprehensive overview of integrating calendar synchronization into your application using FastAPI, React, and Pydantic.</p>
+<h1 id="calendar-sync-module">Calendar Sync Module</h1>
+<h2 id="overview-1">Overview</h2>
+<p>The Calendar Sync Module is a core component designed to synchronize events between your application and external calendar services such as Google Calendar, Apple Calendar, or Microsoft Outlook. This module enables developers to integrate calendar functionality seamlessly into their applications.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Event Manager</strong>: Handles the creation, modification, and deletion of events within your application.</li>
+<li><strong>Notification System</strong>: Triggers alerts or notifications when sync operations succeed or fail.</li>
+<li><strong>OAuth Handler</strong>: Manages authentication with external calendar services (e.g., Google OAuth, Apple ID).</li>
+<li><strong>Log System</strong>: Tracks sync operations and errors for debugging purposes.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Automated Event Sync</strong>: Synchronize events from your application’s database to external calendars in real-time.</li>
+<li><strong>User-Specific Calendar Sync</strong>: Allow users to choose which calendar service (e.g., Google, Apple, or Outlook) they want to sync with.</li>
+<li><strong>Two-Way Sync</strong>: Enable bidirectional synchronization where changes on the external calendar are reflected back in your application.</li>
+<li><strong>Batch Sync</strong>: Synchronize multiple events at once, such as after a bulk update operation.</li>
+<li><strong>Error Handling and Retry</strong>: Gracefully handle failed sync attempts and retry them based on predefined rules.</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>OAuth Configuration</strong>:</p>
+<ul>
+<li>Ensure proper OAuth2.0 integration with Google, Apple, or Microsoft accounts.</li>
+<li>Store API keys securely in your environment variables or secret management system.</li>
+</ul>
+</li>
+<li>
+<p><strong>Calendar Service Providers</strong>:</p>
+<ul>
+<li>Use the official APIs provided by Google Calendar, Apple Calendar, and Outlook for reliable sync operations.</li>
+<li>Handle rate limits and quota restrictions imposed by these services.</li>
+</ul>
+</li>
+<li>
+<p><strong>Event Transformation</strong>:</p>
+<ul>
+<li>Map your application’s event structure to the format required by external calendar providers.</li>
+<li>Ensure that all necessary fields (e.g., title, date, location) are correctly transformed.</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Handling</strong>:</p>
+<ul>
+<li>Implement robust error handling for cases like invalid tokens, network failures, or API errors.</li>
+<li>Log errors and provide feedback to users if sync operations fail.</li>
+</ul>
+</li>
+<li>
+<p><strong>Testing</strong>:</p>
+<ul>
+<li>Test the module across all supported calendar services to ensure compatibility.</li>
+<li>Use test accounts or sandbox environments during development.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td><code>CALENDAR_PROVIDER</code></td><td>Specifies the calendar provider (e.g., google, apple, outlook).</td><td><code>google</code></td></tr><tr><td><code>GOOGLE_CALENDAR_ID</code></td><td>The ID of the Google Calendar to sync with.</td><td><code>null</code></td></tr><tr><td><code>APPLE_APP_ID</code></td><td>Apple Developer App ID for OAuth authentication.</td><td><code>null</code></td></tr><tr><td><code>MICROSOFT_CLIENT_ID</code></td><td>Microsoft Outlook client ID for OAuth authentication.</td><td><code>null</code></td></tr><tr><td><code>SYNC_ENABLED</code></td><td>Enables or disables calendar sync functionality.</td><td><code>true</code></td></tr><tr><td><code>LOG_LEVEL</code></td><td>Sets the logging level (e.g., debug, info, error).</td><td><code>info</code></td></tr></tbody></table>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Calendar Sync Module provides a robust solution for integrating external calendar services into your application. By leveraging OAuth authentication and event transformation logic, developers can easily sync events across multiple platforms while ensuring reliability and security.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

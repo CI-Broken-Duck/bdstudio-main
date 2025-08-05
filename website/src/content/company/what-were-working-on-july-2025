@@ -1,0 +1,49 @@
+---
+title: "What We’re Working on in July 2025"
+slug: what-were-working-on-july-2025
+author: Craig
+date: 2025-07-01
+updated: 2025-07-01
+category: /company/
+keywords: ['Broken Duck Media', 'Tchaikovsky beta', 'Influent Space', 'AI startup updates', 'product roadmap']
+meta_title: "What We’re Working on in July 2025"
+meta_description: "A quick look at what the Broken Duck Media team is focused on this month—Tchaikovsky beta onboarding, debugging, and foundational improvements across our music and EdTech products."
+cover: /assets/covers/july-2025-roadmap.png
+internal_links: ['/company/introducing-tchaikovsky', '/company/influent-space']
+external_links: []
+media_files:
+---
+
+# What We’re Working on in July 2025
+
+We're keeping things focused this month. Two products, two core objectives: stabilize and scale.
+
+## Tchaikovsky: Beta Access and Feedback Loop
+
+Our AI music platform **Tchaikovsky** officially opened beta access in late June, and July is all about iterating with our first cohort of 50 testers. We're working closely with composers, indie game devs, and YouTube creators to gather real-world feedback on the prompt-to-MIDI system, the web sequencer, and overall performance.
+
+**What we're debugging:**
+
+- Text-to-MIDI edge cases (e.g., complex chord voicings, mixed genres)
+- Project autosave reliability
+- Browser-based latency with larger arrangements
+- Account creation and session management across devices
+
+We're also running daily model regression tests as we refine instrument mapping and velocity dynamics.
+
+## Influent Space: Cleanup and Core Stability
+
+Our second product, **Influent Space**, is undergoing backend and UI stabilization. While it's already live in alpha for IELTS prep, we're now focused on reducing technical debt and preparing the system for upcoming test modules beyond IELTS.
+
+**This month’s targets:**
+
+- Reducing cold start latency for AI evaluation endpoints
+- Fixing scoring inconsistencies in speaking module
+- Updating classroom permissions for teacher dashboards
+- First steps toward multi-test support (TOEFL and Duolingo in R&D)
+
+We're also documenting test logic and writing internal QA tools to automate result validation across speaking, writing, and reading sections.
+
+---
+
+Expect more detailed product announcements in August, including a full breakdown of new features coming to both platforms. If you're interested in collaborating, joining the beta, or discussing EdTech/AI partnerships in Southeast Asia, reach out to us at **admin@brokenduckmedia.com**.

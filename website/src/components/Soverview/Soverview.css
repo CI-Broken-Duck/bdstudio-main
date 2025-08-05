@@ -1,0 +1,66 @@
+.soverview-section {
+  background-color: var(--color-bg, #0b0b0c);
+  color: var(--color-text, #ffffff);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.soverview-container {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.soverview-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-theme, #DEB126);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.soverview-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary, #ccc);
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
+.soverview-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.soverview-feature {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #ccc;
+  text-align: left;
+  gap: 0.5rem;
+}
+
+.soverview-feature::before {
+  content: "✔";
+  color: var(--color-theme, #DEB126);
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.soverview-button {
+  background-color: var(--color-theme, #DEB126);
+  color: #0b0b0c;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.soverview-button:hover {
+  background-color: #c99c20;
+}

@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>AI-Powered Image Generator</title><meta name="description" content="Creates illustrations, icons, or diagrams on demand."><meta property="og:title" content="AI-Powered Image Generator"><meta property="og:description" content="Creates illustrations, icons, or diagrams on demand."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>AI-Powered Image Generator</h1> <div class="module-meta"> <div> <span class="module-category">AI</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Creates illustrations, icons, or diagrams on demand.</p> <div class="module-icons"> <img src="/assets/modules/ai/openai.png" alt="Technology icon"><img src="/assets/modules/cloudservices/cloudinary.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="ai-powered-image-generator-module">AI-Powered Image Generator Module</h1>
+<p>The <strong>AI-Powered Image Generator</strong> module leverages advanced artificial intelligence to create high-quality visual content such as illustrations, icons, diagrams, and more directly from text prompts. Designed with developers in mind, this module streamlines the creation of visually appealing assets, enabling seamless integration into applications, tools, or workflows that require on-demand graphical content.</p>
+<h2 id="overview">Overview</h2>
+<p>This module harnesses cutting-edge AI algorithms to interpret textual descriptions and generate corresponding images. It is optimized for speed, accuracy, and flexibility, making it an invaluable tool for developers seeking to automate or enhance their image generation processes.</p>
+<h3 id="benefits">Benefits</h3>
+<ul>
+<li><strong>Efficient Content Creation</strong>: Automate the process of generating visual assets, saving time and effort compared to manual design.</li>
+<li><strong>Customization</strong>: Generate unique images tailored to specific requirements, ensuring your output matches your vision or brand guidelines.</li>
+<li><strong>Real-Time Editing</strong>: Experiment with different styles, colors, and compositions in real-time by tweaking text prompts.</li>
+<li><strong>Scalability</strong>: Easily scale up production of graphical content without the need for additional design resources.</li>
+</ul>
+<h3 id="usage-scenarios">Usage Scenarios</h3>
+<p>The AI-Powered Image Generator module is versatile and can be applied across a wide range of scenarios:</p>
+<ol>
+<li><strong>Application Development</strong>: Integrate image generation directly into your application to provide users with personalized visual outputs.</li>
+<li><strong>Prototyping</strong>: Quickly generate diagrams, flowcharts, or mockups for efficient prototyping and design exploration.</li>
+<li><strong>Marketing &#x26; Design Tools</strong>: Embed this module into design or marketing platforms to offer AI-driven image creation as a core feature.</li>
+<li><strong>Game Development</strong>: Generate in-game assets, character designs, or environmental visuals on the fly.</li>
+<li><strong>Custom Branding</strong>: Create brand-specific icons, logos, and graphical elements that align with your branding guidelines.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The AI-Powered Image Generator module empowers developers to unlock the full potential of AI-driven creativity, transforming text into high-quality visual content with ease. By integrating this module, you can streamline your workflow, reduce costs, and deliver stunning visuals tailored to your needs.</p>
+<h2 id="features-of-the-ai-powered-image-generator-module">Features of the AI-Powered Image Generator Module</h2>
+<h3 id="1-customizable-input-prompts">1. Customizable Input Prompts</h3>
+<ul>
+<li><strong>Description</strong>: Developers can input detailed text prompts or code parameters to define image requirements, supporting multiple programming languages and integrating with popular tools for flexible customization.</li>
+</ul>
+<h3 id="2-multiple-file-formats">2. Multiple File Formats</h3>
+<ul>
+<li><strong>Description</strong>: Generates images in various formats (PNG, JPEG, SVG) and supports vector graphics for scalability without quality loss.</li>
+</ul>
+<h3 id="3-integration-capabilities">3. Integration Capabilities</h3>
+<ul>
+<li><strong>Description</strong>: Seamlessly integrates with external systems via APIs, supports containerization (Docker), and cross-platform compatibility across Windows, Linux, and macOS.</li>
+</ul>
+<h3 id="4-real-time-editing--preview">4. Real-Time Editing &#x26; Preview</h3>
+<ul>
+<li><strong>Description</strong>: Offers real-time editing and instant previews, allowing quick iterations without redeployment. Includes version control integration for efficient tracking.</li>
+</ul>
+<h3 id="5-performance-optimization">5. Performance Optimization</h3>
+<ul>
+<li><strong>Description</strong>: Utilizes caching mechanisms and load balancing to ensure high performance, even during peak loads, with optimized resource usage.</li>
+</ul>
+<h3 id="6-scalability--flexibility">6. Scalability &#x26; Flexibility</h3>
+<ul>
+<li><strong>Description</strong>: Adaptable to varying workloads, supports batch processing for efficiency, and allows model customization to adjust AI parameters as needed.</li>
+</ul>
+<h3 id="7-error-handling--validation">7. Error Handling &#x26; Validation</h3>
+<ul>
+<li><strong>Description</strong>: Robust error handling and validation mechanisms prevent crashes and ensure smooth integration, reducing debugging time.</li>
+</ul>
+<h3 id="8-security--compliance">8. Security &#x26; Compliance</h3>
+<ul>
+<li><strong>Description</strong>: Implements security measures like encryption and compliance with regulations (e.g., GDPR) to protect sensitive data and adhere to legal standards.</li>
+</ul>
+<h3 id="9-version-control--history">9. Version Control &#x26; History</h3>
+<ul>
+<li><strong>Description</strong>: Tracks image versions alongside code changes using Git, allowing for effective collaboration and rollback in case of issues.</li>
+</ul>
+<h3 id="10-documentation--support">10. Documentation &#x26; Support</h3>
+<ul>
+<li><strong>Description</strong>: Provides comprehensive documentation and support channels (forums, help desks) to facilitate quick integration and troubleshooting.</li>
+</ul>
+<h3 id="11-model-customization">11. Model Customization</h3>
+<ul>
+<li><strong>Description</strong>: Enables developers to tweak AI model parameters for image style, resolution, and color schemes, ensuring tailored outputs without major overhauls.</li>
+</ul>
+<h3 id="12-logging--monitoring">12. Logging &#x26; Monitoring</h3>
+<ul>
+<li><strong>Description</strong>: Offers detailed logging and integrates with monitoring tools, aiding in tracking usage, errors, and performance metrics.</li>
+</ul>
+<h3 id="13-community--collaboration-features">13. Community &#x26; Collaboration Features</h3>
+<ul>
+<li><strong>Description</strong>: Supports sharing configurations and collaborating on projects through cloud storage and version control systems, fostering teamwork.</li>
+</ul>
+<p>This feature set addresses the diverse needs of developers, ensuring the module is versatile, efficient, and secure for various AI-powered image generation tasks.</p>
+<p>Here’s a comprehensive technical documentation for the AI-Powered Image Generator module:</p>
+<h3 id="fastapi-endpoint">FastAPI Endpoint</h3>
+<p>This endpoint accepts image generation requests and returns the generated image data.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> asyncio</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Body</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> generate_image</span><span style="color:#E1E4E8">(prompt: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, width: </span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">, height: </span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">, style: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#6A737D">    # Simulate AI processing time</span></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#E1E4E8"> asyncio.sleep(</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    # In a real implementation, you would call your AI image generation service here</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">        "prompt"</span><span style="color:#E1E4E8">: prompt,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "width"</span><span style="color:#E1E4E8">: width,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "height"</span><span style="color:#E1E4E8">: height,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "style"</span><span style="color:#E1E4E8">: style,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "image_data"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"base64_encoded_image_string"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/generate-image"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> generate_image_endpoint</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    prompt: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Body(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">    width: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Body(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">    height: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Body(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">    style: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Body(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        image_data </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> generate_image(prompt, width, height, style)</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"data"</span><span style="color:#E1E4E8">: image_data}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="react-ui-component">React UI Component</h3>
+<p>This React component provides a simple interface for generating images.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> ImageGenerator</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">prompt</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setPrompt</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">width</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setWidth</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">512</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">height</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setHeight</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">512</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">style</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setStyle</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'realistic'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">generatedImage</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setGeneratedImage</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/generate-image'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">          'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">          prompt,</span></span>
+<span class="line"><span style="color:#E1E4E8">          width,</span></span>
+<span class="line"><span style="color:#E1E4E8">          height,</span></span>
+<span class="line"><span style="color:#E1E4E8">          style</span></span>
+<span class="line"><span style="color:#E1E4E8">        })</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#F97583">        throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to generate image'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">      setGeneratedImage</span><span style="color:#E1E4E8">(data.data.image_data);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error:'</span><span style="color:#E1E4E8">, error.message);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"image-generator"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>AI Image Generator&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"input-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Prompt:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">            type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">            value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{prompt}</span></span>
+<span class="line"><span style="color:#B392F0">            onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setPrompt</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">            placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Enter your image prompt..."</span></span>
+<span class="line"><span style="color:#B392F0">            required</span></span>
+<span class="line"><span style="color:#E1E4E8">          /></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"input-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Width:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{width} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setWidth</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">parseInt</span><span style="color:#E1E4E8">(e.target.value))}></span></span>
+<span class="line"><span style="color:#E1E4E8">            {[</span><span style="color:#79B8FF">512</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">768</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1024</span><span style="color:#E1E4E8">].</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">w</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{w} </span><span style="color:#B392F0">value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{w}>{w}px&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"input-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Height:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{height} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setHeight</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">parseInt</span><span style="color:#E1E4E8">(e.target.value))}></span></span>
+<span class="line"><span style="color:#E1E4E8">            {[</span><span style="color:#79B8FF">512</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">768</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1024</span><span style="color:#E1E4E8">].</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">h</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{h} </span><span style="color:#B392F0">value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{h}>{h}px&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"input-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Style:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{style} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setStyle</span><span style="color:#E1E4E8">(e.target.value)}></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"realistic"</span><span style="color:#E1E4E8">>Realistic&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"artistic"</span><span style="color:#E1E4E8">>Artistic&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"cartoon"</span><span style="color:#E1E4E8">>Cartoon&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"minimalist"</span><span style="color:#E1E4E8">>Minimalist&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Generate Image&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      {generatedImage </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"image-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>Generated Image:&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"image-wrapper"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">img</span><span style="color:#B392F0"> src</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">`data:image/png;base64,${</span><span style="color:#E1E4E8">generatedImage</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">} </span><span style="color:#B392F0">alt</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Generated"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      )}</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> ImageGenerator;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="pydantic-data-schema">Pydantic Data Schema</h3>
+<p>This schema defines the request model for generating images.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> GenerateImageRequest</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    prompt: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    width: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    height: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    style: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "prompt"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"A beautiful sunset over mountains"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "width"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">512</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "height"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">768</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "style"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"realistic"</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span></code></pre>
+<h3 id="summary">Summary</h3>
+<p>This documentation provides a complete implementation of an AI-powered image generator with:</p>
+<ul>
+<li>A FastAPI endpoint for handling image generation requests</li>
+<li>A React UI component for accepting user input and displaying results</li>
+<li>Pydantic models for request validation</li>
+</ul>
+<p>The implementation demonstrates:</p>
+<ol>
+<li>Asynchronous image generation using FastAPI</li>
+<li>Responsive frontend interface using React</li>
+<li>Proper error handling and state management</li>
+<li>Integration of AI-generated content into a web application</li>
+</ol>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># AI-Powered Image Generator Module Documentation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Summary</span></span>
+<span class="line"><span style="color:#E1E4E8">The AI-Powered Image Generator module enables developers to create illustrations, icons, and diagrams on demand using artificial intelligence. This module is designed to integrate seamlessly into applications requiring dynamic visual content generation.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Related Modules</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Text-to-Image Converter**</span><span style="color:#E1E4E8">: Converts textual descriptions into visual images.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **AI Art Style Transfer**</span><span style="color:#E1E4E8">: Applies a specific artistic style to generated images.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Data Management Module**</span><span style="color:#E1E4E8">: Handles storage and retrieval of generated images.</span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Version Control Module**</span><span style="color:#E1E4E8">: Tracks changes in image generation processes.</span></span>
+<span class="line"><span style="color:#FFAB70">5.</span><span style="color:#E1E4E8;font-weight:bold"> **Task Orchestration Module**</span><span style="color:#E1E4E8">: Manages workflows involving multiple AI modules.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Use Cases</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 1. Generating UI/UX Elements</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Create icons, buttons, and other interface elements dynamically based on design specifications.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Example: Generate a logo for a new application using a textual description of the desired style.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 2. Technical Diagram Generation</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Automatically generate diagrams such as flowcharts, mind maps, or system architecture layouts.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Example: Generate a network topology diagram based on input parameters.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 3. Branding Asset Creation</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Produce brand-related visuals like logos, banners, and social media graphics.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Example: Create multiple color variations of a logo for different use cases.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### Bonus Use Case:</span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Marketing Collateral Generation**</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Generate high-quality images for marketing campaigns, such as product screenshots or promotional materials.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration Tips</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Installation**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Clone the repository and install dependencies using </span><span style="color:#79B8FF">`pip install ai-image-generator`</span><span style="color:#E1E4E8">.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **API Integration**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">   ```python</span></span>
+<span class="line"><span style="color:#F97583">   from</span><span style="color:#E1E4E8"> ai_image_generator </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> ImageGenerator</span></span>
+<span class="line"><span style="color:#E1E4E8">   generator </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ImageGenerator()</span></span>
+<span class="line"><span style="color:#E1E4E8">   image </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> generator.generate(</span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"A futuristic robot"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">width</span><span style="color:#F97583">=</span><span style="color:#79B8FF">800</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">height</span><span style="color:#F97583">=</span><span style="color:#79B8FF">600</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<ol start="3">
+<li>
+<p><strong>Configuration</strong>:</p>
+<ul>
+<li>Use environment variables or configuration files for API keys and preferences.</li>
+<li>Example: Set <code>IMAGE_QUALITY</code> to “high” for better output.</li>
+</ul>
+</li>
+<li>
+<p><strong>Memory Management</strong>:</p>
+<ul>
+<li>Be mindful of memory usage when generating large images. Use the <code>max_memory</code> parameter to limit resource consumption.</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Handling</strong>:</p>
+<ul>
+<li>Implement try-except blocks to handle cases where generation fails due to invalid inputs or API errors.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">    image </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> generator.generate(</span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Invalid input"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">except</span><span style="color:#79B8FF"> ValueError</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#79B8FF">    print</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Error: </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">e</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Logging and Monitoring</strong>:</p>
+<ul>
+<li>Log generation times and resource usage for monitoring and optimization.</li>
+</ul>
+</li>
+<li>
+<p><strong>Security</strong>:</p>
+<ul>
+<li>Ensure that API keys and sensitive configurations are not exposed in the codebase.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td><code>model_type</code></td><td>AI model to use (e.g., Stable Diffusion)</td><td>“stable”</td></tr><tr><td><code>image_width</code></td><td>Width of generated image in pixels</td><td>512</td></tr><tr><td><code>image_height</code></td><td>Height of generated image in pixels</td><td>512</td></tr><tr><td><code>quality</code></td><td>Output quality (“low”, “medium”, “high”)</td><td>“medium”</td></tr><tr><td><code>output_format</code></td><td>Format of the output image (PNG, JPEG)</td><td>“PNG”</td></tr><tr><td><code>api_endpoint</code></td><td>URL for external AI services</td><td>None</td></tr><tr><td><code>max_attempts</code></td><td>Maximum retry attempts</td><td>3</td></tr><tr><td><code>auth_token</code></td><td>Authentication token for API access</td><td>None</td></tr></tbody></table>
+<hr>
+<h2 id="conclusion-1">Conclusion</h2>
+<p>The AI-Powered Image Generator module is a versatile tool for developers seeking to integrate dynamic visual content into their applications. By leveraging its capabilities, you can streamline the creation of icons, diagrams, and illustrations while maintaining control over quality and performance.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

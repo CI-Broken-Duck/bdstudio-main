@@ -1,0 +1,99 @@
+---
+import "../styles/global.css";
+import "../styles/package.css";
+import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Production Packages | Broken Duck Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <Header />
+
+    <main class="package-section">
+      <div class="package-container">
+        <!-- Hero Section -->
+        <section class="package-row">
+          <div class="package-text">
+            <h1 class="package-heading">Production Packages</h1>
+            <p class="package-paragraph">
+              Full-day or half-day access to studio facilities — with or without a camera operator — provided by our partner, <strong>Green Light Studio</strong>. Whether you're filming a new series, recording client work, or need creative direction on set, these sessions are designed to help you produce efficiently.
+            </p>
+          </div>
+          <img
+            src="/assets/packages/Foundation.png"
+            alt="Production illustration"
+            class="package-image"
+          />
+        </section>
+
+        <!-- DIY Package -->
+        <section>
+          <h2 class="package-heading" style="text-align: left;">DIY Package</h2>
+          <p class="package-paragraph">
+            For creators who want to bring their own camera and record independently in a prepared studio space.
+          </p>
+          <ul class="package-list">
+            <li>Use of studio, lights, mic, and teleprompter</li>
+            <li>Bring your own camera, SD card, and laptop</li>
+            <li>Quiet, pre-lit space with high-quality audio capture</li>
+            <li>Unidirectional mic and AI noise reduction (no guarantees on outdoor noise)</li>
+          </ul>
+          <p class="package-paragraph"><strong>Pricing:</strong></p>
+          <ul class="package-list">
+            <li>Half Day (3.5 hours): <strong>1,000 THB</strong></li>
+            <li>Full Day (7 hours): <strong>1,500 THB</strong></li>
+          </ul>
+        </section>
+
+        <!-- Studio+ Package -->
+        <section>
+          <h2 class="package-heading" style="text-align: left;">Studio+ Package</h2>
+          <p class="package-paragraph">
+            For creators who want full production support — including a dedicated camera operator, setup guidance, and direction while filming.
+          </p>
+          <ul class="package-list">
+            <li>Everything in the DIY package</li>
+            <li>Camera + operator provided</li>
+            <li>Assistance throughout shoot: lighting tweaks, framing, shot direction</li>
+            <li>Optional consultation for scripting, shot lists, or brand consistency</li>
+          </ul>
+          <p class="package-paragraph"><strong>Pricing:</strong></p>
+          <ul class="package-list">
+            <li>Half Day (3.5 hours): <strong>2,000 THB</strong></li>
+            <li>Full Day (7 hours): <strong>3,500 THB</strong></li>
+          </ul>
+        </section>
+
+        <!-- Booking Instructions -->
+        <section>
+          <h2 class="package-heading" style="text-align: left;">Booking Details</h2>
+          <p class="package-paragraph">
+            All sessions must be paid in advance to confirm. No refunds — rescheduling only. Please bring:
+          </p>
+          <ul class="package-list">
+            <li>SD card (standard format)</li>
+            <li>Laptop (if using teleprompter)</li>
+            <li>Extra clothes if filming multiple looks</li>
+          </ul>
+          <p class="package-paragraph"><strong>Payment:</strong> Bangkok Bank – 613-0-418665</p>
+          <p class="package-paragraph">Book at least 2 days in advance to reserve your slot. Once payment is confirmed, we’ll prepare the studio and send final setup details.</p>
+        </section>
+
+        <!-- Footer Note -->
+        <section>
+          <p class="package-paragraph" style="margin-top: 2rem;">
+            These services are provided in partnership with <strong>Green Light Studio</strong>. If you need help with editing, publishing, or content strategy after the shoot, let us know — full production packages are available on request.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

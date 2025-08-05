@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Event Announcement Tool</title><meta name="description" content="Highlight school events on dashboards."><meta property="og:title" content="Event Announcement Tool"><meta property="og:description" content="Highlight school events on dashboards."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Event Announcement Tool</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Highlight school events on dashboards.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <p><strong>Overview</strong></p>
+<p>The Event Announcement Tool is a robust module designed to streamline event management and communication within educational institutions. By centralizing event announcements on dashboards, it ensures that all stakeholders stay informed and engaged with school activities.</p>
+<p><strong>Purpose</strong>
+This module aims to provide an efficient and scalable solution for announcing and managing school events, enabling timely and effective communication across the school community.</p>
+<p><strong>Benefits</strong></p>
+<ul>
+<li><strong>Efficient Event Management</strong>: Handles large volumes of events with ease, ensuring timely updates.</li>
+<li><strong>Seamless Integration</strong>: Offers APIs and hooks for easy integration with other school management systems or learning platforms.</li>
+<li><strong>Customizable Notifications</strong>: Users can set preferences for event notifications through multiple channels (email, SMS, in-app), enhancing user experience.</li>
+<li><strong>Enhanced User Experience</strong>: An intuitive dashboard interface allows users to view upcoming events, filter by category, and access detailed information effortlessly.</li>
+</ul>
+<p><strong>Usage Scenarios</strong></p>
+<ol>
+<li><strong>Event Creation and Management</strong>: School administrators use the tool to create, update, and manage school events, ensuring accuracy and relevance of information.</li>
+<li><strong>Customizable Notifications</strong>: Students, parents, and staff can set up personalized notification preferences to receive event reminders via their preferred channels.</li>
+<li><strong>Interactive Dashboard Experience</strong>: The dashboard provides a calendar view of upcoming events with filtering options, making it easy for users to find relevant information quickly.</li>
+<li><strong>API Integration</strong>: Developers can integrate the Event Announcement Tool with other school management systems or learning platforms, leveraging APIs to create a seamless experience across tools.</li>
+</ol>
+<p>This module is a vital component for educational institutions looking to enhance communication and engagement through efficient event management and integration capabilities.</p>
+<h2 id="event-creation--management">Event Creation &#x26; Management</h2>
+<p>This feature allows users to create, update, and delete events programmatically. Events can be defined with attributes such as title, date, time, location, description, and type (e.g., school assembly, sports day). The module provides APIs for batch operations and supports recurring events.</p>
+<h2 id="customizable-templates">Customizable Templates</h2>
+<p>The tool includes a template system where users can design event announcements with custom text, images, colors, and layouts. These templates can be saved and reused for different events, ensuring consistent branding and formatting.</p>
+<h2 id="dashboard-integration">Dashboard Integration</h2>
+<p>Events are displayed on school dashboards in real-time. The module supports integration with various dashboarding tools and provides APIs to fetch event data for display. Events can appear as cards, lists, or other formats depending on the dashboard configuration.</p>
+<h2 id="search--filtering">Search &#x26; Filtering</h2>
+<p>Users can search for events by title, date, location, or type using a built-in query interface. Filters allow users to narrow down events based on multiple criteria, making it easy to find specific events quickly.</p>
+<h2 id="notifications">Notifications</h2>
+<p>The module provides APIs to send push notifications or emails when new events are added or when an event is approaching. Developers can configure notification rules and channels (e.g., in-app alerts, SMS) to ensure users stay informed.</p>
+<h2 id="exportimport-functionality">Export/Import Functionality</h2>
+<p>Events and templates can be exported as JSON or XML files for backup, migration, or sharing across systems. The import functionality allows developers to restore events from exported files, ensuring data consistency and ease of use.</p>
+<h3 id="module-name-event-announcement-tool">Module Name: Event Announcement Tool</h3>
+<p><strong>Category:</strong> Core<br>
+<strong>Summary:</strong> A tool to manage and display school events on dashboards.</p>
+<p>This module provides APIs and UI components for creating, updating, and displaying school events.</p>
+<hr>
+<h2 id="code-samples">Code Samples</h2>
+<h3 id="1-fastapi-endpoint-python">1. FastAPI Endpoint (Python)</h3>
+<p>Here’s an example of a FastAPI endpoint to create a new event:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Annotated</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> EventCreate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    location: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    is_featured: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    category: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # e.g., "sports", "academic", "cultural"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Example database model (simplified)</span></span>
+<span class="line"><span style="color:#E1E4E8">events_db </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> []</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/events/"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">EventCreate)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> create_event</span><span style="color:#E1E4E8">(event: EventCreate):</span></span>
+<span class="line"><span style="color:#E1E4E8">    events_db.append(event.dict())</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> event</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="2-react-ui-snippet">2. React UI Snippet</h3>
+<p>Here’s a React component for displaying upcoming events in a dashboard:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> EventsDashboard</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">events</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setEvents</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">([</span></span>
+<span class="line"><span style="color:#E1E4E8">        { id: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, title: </span><span style="color:#9ECBFF">"Annual Sports Day"</span><span style="color:#E1E4E8">, date: </span><span style="color:#9ECBFF">"2023-10-15"</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">        { id: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, title: </span><span style="color:#9ECBFF">"Science Fair"</span><span style="color:#E1E4E8">, date: </span><span style="color:#9ECBFF">"2023-11-01"</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#6A737D">        // ... more events</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> filteredEvents</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> events.</span><span style="color:#B392F0">sort</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">a</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">b</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">(a.date).</span><span style="color:#B392F0">getTime</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">-</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">(b.date).</span><span style="color:#B392F0">getTime</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"events-dashboard"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>Upcoming Events&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"event-grid"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                {filteredEvents.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{event.id} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"event-card"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>{event.title}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Date: {</span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">(event.date).</span><span style="color:#B392F0">toLocaleDateString</span><span style="color:#E1E4E8">()}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> EventsDashboard;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="3-data-schema-pydantic">3. Data Schema (Pydantic)</h3>
+<p>Here’s the Pydantic schema for event data:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Event</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    location: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    is_featured: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    category: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # Use enum or predefined categories</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    updated_at: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> EventCreate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">Event</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> EventUpdate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">Event</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="usage-notes">Usage Notes</h3>
+<ul>
+<li><strong>FastAPI Endpoint:</strong> Use the <code>/api/events/</code> endpoint to create new events. Send a POST request with an <code>EventCreate</code> model in the request body.</li>
+<li><strong>React UI:</strong> The <code>EventsDashboard</code> component displays upcoming events in a grid layout, sorted by date.</li>
+<li><strong>Data Schema:</strong> Use Pydantic models for request validation and response handling.</li>
+</ul>
+<p>For more details, refer to the <a href="https://example.com/docs">开发者文档</a>.</p>
+<h1 id="event-announcement-tool-documentation">Event Announcement Tool Documentation</h1>
+<h2 id="module-name-event-announcement-tool-1">Module Name: Event Announcement Tool</h2>
+<p><strong>Category:</strong> Core<br>
+<strong>Summary:</strong> A module designed to display school events on dashboards for students, faculty, and staff.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<p>The following modules are related to or integrate with the Event Announcement Tool:</p>
+<ul>
+<li><strong>Dashboard Framework</strong>: Manages the layout and components of school dashboards.</li>
+<li><strong>Notification Service</strong>: Sends event-related notifications to users.</li>
+<li><strong>Event Data Store</strong>: Stores event data securely and efficiently.</li>
+<li><strong>Single Sign-On (SSO)</strong>: Handles user authentication for accessing events.</li>
+<li><strong>Schedule Manager</strong>: Manages recurring events and integrates with calendars.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-displaying-upcoming-events">1. Displaying Upcoming Events</h3>
+<ul>
+<li><strong>Description:</strong> Show a list of upcoming school events on dashboards.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>Fetch event data from the Event Data Store.</li>
+<li>Sort events by date/time.</li>
+<li>Display events on the dashboard in a user-friendly format.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-sending-event-notifications">2. Sending Event Notifications</h3>
+<ul>
+<li><strong>Description:</strong> Notify users when new or updated events are added.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>Use Notification Service to send push notifications, emails, or SMS messages.</li>
+<li>Trigger notifications based on event creation or updates.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-user-authentication-for-events">3. User Authentication for Events</h3>
+<ul>
+<li><strong>Description:</strong> Ensure only authenticated users can view or interact with events.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>Integrate Single Sign-On (SSO) for user authentication.</li>
+<li>Restrict access to unauthorized users.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-customizing-event-announcements">4. Customizing Event Announcements</h3>
+<ul>
+<li><strong>Description:</strong> Allow customization of event announcements based on user roles and permissions.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>Use the Dashboard Framework to customize the appearance of events per user role.</li>
+<li>Provide admins with options to modify event details.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-managing-events">5. Managing Events</h3>
+<ul>
+<li><strong>Description:</strong> Administer events through a dashboard or API.</li>
+<li><strong>Steps:</strong>
+<ul>
+<li>Use Schedule Manager for recurring events.</li>
+<li>Allow admins to create, update, or delete events via the Event Data Store.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>Dependency Management</strong>:</p>
+<ul>
+<li>Ensure that the Dashboard Framework is properly integrated to display event data.</li>
+<li>Coordinate with Notification Service for real-time notifications.</li>
+</ul>
+</li>
+<li>
+<p><strong>Event Storage</strong>:</p>
+<ul>
+<li>Use the Event Data Store to manage event data securely and efficiently.</li>
+<li>Implement proper indexing for fast retrieval of upcoming events.</li>
+</ul>
+</li>
+<li>
+<p><strong>SSO Integration</strong>:</p>
+<ul>
+<li>Set up Single Sign-On (SSO) to ensure secure access to event-related features.</li>
+</ul>
+</li>
+<li>
+<p><strong>API Endpoints</strong>:</p>
+<ul>
+<li>Create RESTful or GraphQL API endpoints for accessing event data programmatically.</li>
+</ul>
+</li>
+<li>
+<p><strong>Customization</strong>:</p>
+<ul>
+<li>Allow customization of event displays based on user preferences and roles.</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Handling</strong>:</p>
+<ul>
+<li>Implement robust error handling for cases where events cannot be displayed or notifications fail.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>The following configuration options are available:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Option Name</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th></tr></thead><tbody><tr><td><code>enable_event_announcements</code></td><td>Enables or disables the Event Announcement Tool.</td><td><code>true</code></td></tr><tr><td><code>dashboard_event_display</code></td><td>Specifies the dashboard where events are displayed.</td><td><code>main_dashboard</code></td></tr><tr><td><code>notification_frequency</code></td><td>Sets the frequency of event notifications (e.g., daily, weekly).</td><td><code>daily</code></td></tr><tr><td><code>event_theme</code></td><td>Allows customization of the theme for event displays.</td><td><code>default</code></td></tr><tr><td><code>sync_external_calendars</code></td><td>Enables synchronization with external calendar services (e.g., Google Calendar).</td><td><code>false</code></td></tr><tr><td><code>api_endpoint</code></td><td>Configures API endpoints for programmatic access to events.</td><td><code>/events</code></td></tr><tr><td><code>logging_level</code></td><td>Sets the logging level for debugging and monitoring.</td><td><code>INFO</code></td></tr><tr><td><code>error_handling</code></td><td>Configures error handling mechanisms (e.g., email notifications for failures).</td><td><code>basic</code></td></tr></tbody></table>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Event Announcement Tool is a crucial module for efficiently managing and displaying school events on dashboards. By integrating with related modules and customizing configurations, developers can ensure seamless event management and user interaction.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

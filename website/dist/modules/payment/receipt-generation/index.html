@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Receipt Generation</title><meta name="description" content="Provide official digital receipts for every transaction."><meta property="og:title" content="Receipt Generation"><meta property="og:description" content="Provide official digital receipts for every transaction."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Receipt Generation</h1> <div class="module-meta"> <div> <span class="module-category">Payment</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Provide official digital receipts for every transaction.</p> <div class="module-icons"> <img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="module-overview-receipt-generation">Module Overview: Receipt Generation</h1>
+<h2 id="title">Title</h2>
+<p>Receipt Generation Module: Automating Digital Transaction Receipts</p>
+<h2 id="purpose">Purpose</h2>
+<p>The Receipt Generation module is designed to automate the creation of digital receipts for every transaction. This module streamlines the process of providing official proof of transactions, ensuring compliance with financial regulations and enhancing user trust.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Efficiency</strong>: Eliminates manual tasks by automatically generating receipts.</li>
+<li><strong>Transparency</strong>: Offers real-time access to transaction records for users.</li>
+<li><strong>Security</strong>: Ensures receipts are secure and tamper-proof, safeguarding sensitive information.</li>
+<li><strong>Customization</strong>: Allows branding and multiple formats (PDF, email) for diverse user needs.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ul>
+<li><strong>E-commerce Platforms</strong>: Automates receipt generation post-purchase.</li>
+<li><strong>Subscription Services</strong>: Provides payment confirmation receipts with detailed billing info.</li>
+<li><strong>In-Person Transactions</strong>: Generates QR-based receipts for cashless payments.</li>
+<li><strong>API Integration</strong>: Facilitates receipt creation through APIs, enhancing third-party applications.</li>
+</ul>
+<p>This module is a versatile tool for developers seeking to integrate seamless and secure transaction tracking into their systems.</p>
+<h1 id="module-receipt-generation">Module: Receipt Generation</h1>
+<p>This module is designed to generate official digital receipts for transactions within a payment system. It provides essential tools for creating secure, customizable, and efficiently distributable receipts.</p>
+<h2 id="customizable-templates">Customizable Templates</h2>
+<p>The module allows developers to create and customize receipt templates using predefined variables (e.g., amount, date). This flexibility ensures that receipts align with brand guidelines and provide necessary transaction details.</p>
+<h2 id="digital-signing">Digital Signing</h2>
+<p>Receipts are digitally signed to ensure authenticity and tamper-proofing. Developers can integrate secure signing mechanisms, such as cryptographic hashing, to validate receipts programmatically.</p>
+<h2 id="integration-capabilities">Integration Capabilities</h2>
+<p>The module supports seamless integration with external payment gateways and systems via APIs or hooks. This ensures that receipts are generated automatically post-transaction, maintaining a streamlined workflow.</p>
+<h2 id="transaction-history-api">Transaction History API</h2>
+<p>A dedicated API provides access to past transactions for tracking and reporting. Developers can retrieve data in formats suitable for their needs, enhancing record-keeping efficiency.</p>
+<h2 id="download-options">Download Options</h2>
+<p>Receipts can be downloaded in various formats like PDF or CSV. This caters to different user preferences and ensures compatibility across devices and platforms.</p>
+<h2 id="multiple-formats-support">Multiple Formats Support</h2>
+<p>Support for multiple formats (PDF, XML) allows flexibility in how receipts are stored and transmitted, accommodating diverse system requirements.</p>
+<h2 id="offline-functionality">Offline Functionality</h2>
+<p>Receipt generation works offline, enabling transactions even without internet access. Developers can implement local storage solutions to generate receipts and sync later.</p>
+<h2 id="security-compliance">Security Compliance</h2>
+<p>The module adheres to security standards, ensuring data protection and compliance with regulations like GDPR or PCI DSS. This is crucial for maintaining user trust and legal adherence.</p>
+<h2 id="configuration-management">Configuration Management</h2>
+<p>Administrative settings allow easy adjustments, such as changing default templates or signing keys. This empowers developers to adapt the module without extensive code changes.</p>
+<h1 id="receipt-generation-module-documentation">Receipt Generation Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Receipt Generation module is designed to provide official digital receipts for every transaction. This module integrates seamlessly with payment systems to generate standardized receipt formats that can be downloaded or shared via email.</p>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="fastapi-endpoint">FastAPI Endpoint</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> uuid</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter(</span><span style="color:#FFAB70">prefix</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/receipts"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">tags</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"receipts"</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#E1E4E8"> receipts are stored </span><span style="color:#F97583">and</span><span style="color:#E1E4E8"> can be retrieved by their unique </span><span style="color:#79B8FF">ID</span><span style="color:#E1E4E8">.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">## React UI Snippet</span></span>
+<span class="line"><span style="color:#E1E4E8">Here</span><span style="color:#9ECBFF">'s a sample React component that demonstrates how to interact with the receipt generation API:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">```javascript</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">const ReceiptGenerator </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  const [formData, setFormData] = useState({</span></span>
+<span class="line"><span style="color:#E1E4E8">    amount: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    customerName: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    email: </span><span style="color:#9ECBFF">''</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  const handleSubmit = </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> (e) =</span><span style="color:#F97583">></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.preventDefault();</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">      const response = </span><span style="color:#F97583">await</span><span style="color:#E1E4E8"> fetch(</span><span style="color:#9ECBFF">'/api/receipts'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">          'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span></span>
+<span class="line"><span style="color:#E1E4E8">        },</span></span>
+<span class="line"><span style="color:#E1E4E8">        body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.stringify(formData)</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#F97583">      if</span><span style="color:#E1E4E8"> (</span><span style="color:#FDAEB7;font-style:italic">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        throw new Error(</span><span style="color:#9ECBFF">'Failed to generate receipt'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">      const data = </span><span style="color:#F97583">await</span><span style="color:#E1E4E8"> response.json();</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.log(</span><span style="color:#9ECBFF">'Receipt generated:'</span><span style="color:#E1E4E8">, data.receiptUrl);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } catch (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.error(</span><span style="color:#9ECBFF">'Error:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;</span><span style="color:#E1E4E8">form </span><span style="color:#FFAB70">onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#E1E4E8">label</span><span style="color:#F97583">></span><span style="color:#E1E4E8">Amount:</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">label</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#79B8FF">input</span></span>
+<span class="line"><span style="color:#FFAB70">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"number"</span></span>
+<span class="line"><span style="color:#FFAB70">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.amount}</span></span>
+<span class="line"><span style="color:#FFAB70">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(e) =</span><span style="color:#F97583">></span><span style="color:#E1E4E8"> setFormData({</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">formData, amount: e.target.value})}</span></span>
+<span class="line"><span style="color:#F97583">        /></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#E1E4E8">label</span><span style="color:#F97583">></span><span style="color:#E1E4E8">Description:</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">label</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#79B8FF">input</span></span>
+<span class="line"><span style="color:#FFAB70">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#FFAB70">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.description}</span></span>
+<span class="line"><span style="color:#FFAB70">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(e) =</span><span style="color:#F97583">></span><span style="color:#E1E4E8"> setFormData({</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">formData, description: e.target.value})}</span></span>
+<span class="line"><span style="color:#F97583">        /></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#E1E4E8">label</span><span style="color:#F97583">></span><span style="color:#E1E4E8">Customer Name:</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">label</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#79B8FF">input</span></span>
+<span class="line"><span style="color:#FFAB70">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#FFAB70">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.customerName}</span></span>
+<span class="line"><span style="color:#FFAB70">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(e) =</span><span style="color:#F97583">></span><span style="color:#E1E4E8"> setFormData({</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">formData, customerName: e.target.value})}</span></span>
+<span class="line"><span style="color:#F97583">        /></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#E1E4E8">label</span><span style="color:#F97583">></span><span style="color:#E1E4E8">Email:</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">label</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">        &#x3C;</span><span style="color:#79B8FF">input</span></span>
+<span class="line"><span style="color:#FFAB70">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"email"</span></span>
+<span class="line"><span style="color:#FFAB70">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.email}</span></span>
+<span class="line"><span style="color:#FFAB70">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(e) =</span><span style="color:#F97583">></span><span style="color:#E1E4E8"> setFormData({</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">formData, email: e.target.value})}</span></span>
+<span class="line"><span style="color:#F97583">        /></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">      &#x3C;</span><span style="color:#E1E4E8">button </span><span style="color:#FFAB70">type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#F97583">></span><span style="color:#E1E4E8">Generate Receipt</span><span style="color:#F97583">&#x3C;/</span><span style="color:#E1E4E8">button</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#F97583">    &#x3C;/</span><span style="color:#E1E4E8">form</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span><span style="color:#FDAEB7;font-style:italic">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">export default ReceiptGenerator</span><span style="color:#FDAEB7;font-style:italic">;</span></span>
+<span class="line"></span></code></pre>
+<h2 id="data-schema-pydantic">Data Schema (Pydantic)</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ReceiptCreate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    amount: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    customer_name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    email: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    transaction_id: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    include_vat: </span><span style="color:#79B8FF">bool</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> False</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        orm_mode </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> True</span></span>
+<span class="line"></span></code></pre>
+<h2 id="summary">Summary</h2>
+<p>The Receipt Generation module provides a robust API for creating and managing digital receipts. The FastAPI endpoint handles receipt generation, while the React component demonstrates how to integrate with the API in a user-friendly way. The Pydantic model ensures data consistency and validation.</p>
+<h1 id="module-name-receipt-generation">Module Name: Receipt Generation</h1>
+<p><strong>Category:</strong> Payment<br>
+<strong>Summary:</strong> Provide official digital receipts for every transaction.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Payment Processing</strong>: Handles the core payment transactions.</li>
+<li><strong>Transaction Management</strong>: Manages and tracks all financial transactions.</li>
+<li><strong>Customer Notifications</strong>: Sends notifications to customers post-transaction.</li>
+<li><strong>Queue Processing</strong>: Ensures asynchronous processing of receipt generation tasks.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-generate-receipt-for-successful-payment">1. Generate Receipt for Successful Payment</h3>
+<p><strong>Description:</strong> After a successful payment, generate a digital receipt and send it to the customer via email or SMS.<br>
+<strong>Steps:</strong></p>
+<ol>
+<li>Call the <code>generate_receipt</code> API with transaction details.</li>
+<li>The module creates a PDF/JSON receipt.</li>
+<li>Notifications are triggered for the customer.</li>
+</ol>
+<h3 id="2-generate-refund-receipt">2. Generate Refund Receipt</h3>
+<p><strong>Description:</strong> When a refund is processed, generate an updated receipt reflecting the refund amount.<br>
+<strong>Steps:</strong></p>
+<ol>
+<li>Call <code>generate_refund_receipt</code> with transaction and refund details.</li>
+<li>The module updates the receipt with refund information.</li>
+<li>Notifications are sent to the customer.</li>
+</ol>
+<h3 id="3-generate-subscription-based-receipts">3. Generate Subscription-Based Receipts</h3>
+<p><strong>Description:</strong> For recurring payments, generate periodic receipts for each billing cycle.<br>
+<strong>Steps:</strong></p>
+<ol>
+<li>Trigger <code>generate_subscription_receipt</code> at the start/end of the subscription period.</li>
+<li>The module generates and saves the receipt in the database.</li>
+<li>Notifications are sent to the customer.</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>API Integration</strong>: Use the provided API endpoints for generating receipts (<code>POST /api/receipt/generate</code>). Ensure proper error handling is implemented.</li>
+<li><strong>Asynchronous Processing</strong>: For large volumes of transactions, use queue processing to handle receipt generation asynchronously.</li>
+<li><strong>Customization</strong>: Customize receipt templates using the template ID parameter in the API requests.</li>
+<li><strong>Compliance</strong>: Ensure that all receipts comply with local tax and financial regulations.</li>
+</ul>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Parameter</strong></th><th><strong>Description</strong></th><th><strong>Example Value</strong></th></tr></thead><tbody><tr><td><code>RECEIPT_API_ENDPOINT</code></td><td>URL for the receipt generation API.</td><td><code>"http://receipt-service"</code></td></tr><tr><td><code>SEND_EMAIL_ENABLED</code></td><td>Enable/disable email notifications.</td><td><code>true/false</code></td></tr><tr><td><code>DEFAULT_RECEIPT_TEMPLATE</code></td><td>ID of the default template to use.</td><td><code>1,2,3</code></td></tr><tr><td><code>RECEIPT_DATE_FORMAT</code></td><td>Format for date and time in receipts.</td><td><code>"YYYY-MM-DD HH:mm:ss"</code></td></tr><tr><td><code>ENCRYPTION_KEY</code></td><td>Encryption key for secure data handling.</td><td><code>"your-secret-key"</code></td></tr></tbody></table>
+<hr>
+<p>This documentation provides a comprehensive guide to integrating and configuring the Receipt Generation module effectively.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Learning Path Builder</title><meta name="description" content="Sequence multiple courses or modules into tracks."><meta property="og:title" content="Learning Path Builder"><meta property="og:description" content="Sequence multiple courses or modules into tracks."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Learning Path Builder</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Platinum</span> </div> <div class="module-price"> <span>💰</span> $3500 </div> </div> <p class="module-summary">Sequence multiple courses or modules into tracks.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/frontend/materialui.png" alt="Technology icon"> </div> </section> <article> <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold">## Overview: Learning Path Builder Module</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">The </span><span style="color:#E1E4E8;font-weight:bold">**Learning Path Builder**</span><span style="color:#E1E4E8"> module is designed to streamline the process of creating and managing structured learning paths by sequencing multiple courses, modules, or educational content into cohesive tracks. This tool empowers developers to build dynamic, personalized learning experiences that cater to diverse user needs.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### Purpose:</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> The primary purpose of this module is to provide a robust framework for constructing learning paths, enabling users to organize and sequence educational content in a logical manner.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> It allows for the creation of tailored learning journeys, ensuring that learners can progress through material in a structured and guided way.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> By automating the sequencing process, the module reduces manual effort and enhances efficiency in curriculum development.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### Benefits:</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Streamlined Curriculum Design**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Enables developers to quickly assemble courses and modules into tracks without starting from scratch.</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Reduces time spent on manually organizing content.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Customizable Learning Experiences**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Offers flexibility to adapt learning paths based on user roles, skill levels, or specific educational goals.</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Supports conditional logic for personalized pathways.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Enhanced User Engagement**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Provides a clear and intuitive path for learners, improving their ability to follow and complete courses.</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Increases retention by offering relevant and guided content.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Simplified Updates and Maintenance**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Facilitates easy updates to learning paths without disrupting the entire structure.</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Allows for version control and rollbacks if changes impact user experiences.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">5.</span><span style="color:#E1E4E8;font-weight:bold"> **Data-Driven Insights**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Integrates with analytics tools to track learner progress and performance across different paths.</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Provides actionable insights for refining curriculum design.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### Usage Scenarios:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Course Integration in Learning Management Systems (LMS)**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Developers can integrate the module into existing LMS platforms to offer structured learning paths alongside traditional course offerings.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Customized Training Programs**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Ideal for enterprises needing to create specialized training programs for different departments or roles.</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Enables the creation of tailored onboarding processes or skill development tracks.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Personalized Learning Experiences**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Use conditional logic and user data (e.g., skills, goals) to dynamically generate unique learning paths for individual users.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Dynamic Content Updates**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Update or modify existing learning paths without disrupting ongoing courses.</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Roll out new content incrementally while maintaining a seamless experience for learners.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">5.</span><span style="color:#E1E4E8;font-weight:bold"> **Competency-Based Learning**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Design pathways that align with specific skill mastery objectives, allowing learners to demonstrate competence at each stage before progressing.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">6.</span><span style="color:#E1E4E8;font-weight:bold"> **Analytics and Reporting**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">   -</span><span style="color:#E1E4E8"> Leverage integration with analytics tools to track learner progress, identify knowledge gaps, and refine learning paths over time.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">The </span><span style="color:#E1E4E8;font-weight:bold">**Learning Path Builder**</span><span style="color:#E1E4E8"> module is a powerful tool for developers aiming to create scalable, flexible, and engaging educational experiences that adapt to the evolving needs of learners and institutions.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold"># Learning Path Builder Module Features</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Track Creation</span></span>
+<span class="line"><span style="color:#E1E4E8">The module enables the creation of custom learning tracks by allowing users to define sequences of courses or modules tailored to specific educational goals.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Module Management</span></span>
+<span class="line"><span style="color:#E1E4E8">Users can add, remove, or reorder modules within a track to dynamically adjust the learning path based on updates or changes in curriculum requirements.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Dependency Handling</span></span>
+<span class="line"><span style="color:#E1E4E8">This feature ensures that learners must complete prerequisite modules before accessing dependent content, enforcing educational dependencies for a structured learning experience.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Progress Tracking</span></span>
+<span class="line"><span style="color:#E1E4E8">The module tracks learner progress through each module and updates their completion status, providing insights into how far along they are in the track.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Customizable Sequencing</span></span>
+<span class="line"><span style="color:#E1E4E8">Instructors can tailor the order of modules to align with teaching strategies or learning objectives, offering flexibility in curriculum design.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration Capabilities</span></span>
+<span class="line"><span style="color:#E1E4E8">Seamless integration with external systems like Learning Management Systems (LMS) allows for automated enrollment and progress tracking without manual intervention.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Analytics and Reporting</span></span>
+<span class="line"><span style="color:#E1E4E8">The module provides detailed reports on learner performance, including completion rates and areas where additional support may be needed, aiding in instructional improvements.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Assessment and Certification</span></span>
+<span class="line"><span style="color:#E1E4E8">Integrated assessment tools allow learners to complete quizzes or exams within the track, with certificates awarded upon successful completion of all modules.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Version Control</span></span>
+<span class="line"><span style="color:#E1E4E8">Users can create and manage different versions of learning paths, enabling updates without affecting ongoing courses by branching tracks as needed.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### Module Name: Learning Path Builder</span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Category:**</span><span style="color:#E1E4E8"> Core  </span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Summary:**</span><span style="color:#E1E4E8"> A module for sequencing multiple courses or modules into cohesive learning tracks.  </span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Target User:**</span><span style="color:#E1E4E8"> Developers</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## API Reference (FastAPI)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">The following FastAPI endpoint allows the creation of new learning paths:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">```python</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> ..models.learning_path </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> LearningPathCreate, LearningPathResponse</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> ..database </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> SessionLocal, engine</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> sqlalchemy </span><span style="color:#F97583">as</span><span style="color:#E1E4E8"> sql</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># SQLAlchemy model for learning path (assumed to exist)</span></span>
+<span class="line"><span style="color:#E1E4E8">learning_path_table </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> sql.Table(</span></span>
+<span class="line"><span style="color:#9ECBFF">    "learning_paths"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    engine.metadata,</span></span>
+<span class="line"><span style="color:#E1E4E8">    sql.Column(</span><span style="color:#9ECBFF">"id"</span><span style="color:#E1E4E8">, sql.Integer, </span><span style="color:#FFAB70">primary_key</span><span style="color:#F97583">=</span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">    sql.Column(</span><span style="color:#9ECBFF">"course_id"</span><span style="color:#E1E4E8">, sql.String),</span></span>
+<span class="line"><span style="color:#E1E4E8">    sql.Column(</span><span style="color:#9ECBFF">"module_id"</span><span style="color:#E1E4E8">, sql.String),</span></span>
+<span class="line"><span style="color:#E1E4E8">    sql.Column(</span><span style="color:#9ECBFF">"title"</span><span style="color:#E1E4E8">, sql.String),</span></span>
+<span class="line"><span style="color:#E1E4E8">    sql.Column(</span><span style="color:#9ECBFF">"description"</span><span style="color:#E1E4E8">, sql.Text),</span></span>
+<span class="line"><span style="color:#E1E4E8">    sql.Column(</span><span style="color:#9ECBFF">"modules"</span><span style="color:#E1E4E8">, sql.</span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> get_db</span><span style="color:#E1E4E8">():</span></span>
+<span class="line"><span style="color:#E1E4E8">    db </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> SessionLocal()</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">        yield</span><span style="color:#E1E4E8"> db</span></span>
+<span class="line"><span style="color:#F97583">    finally</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        db.close()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/learning-paths/"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">LearningPathResponse)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> create_learning_path</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    learning_path: LearningPathCreate,</span></span>
+<span class="line"><span style="color:#E1E4E8">    db: SessionLocal </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends(get_db),</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Create a new learning path by sequencing multiple courses/modules.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Insert into the database</span></span>
+<span class="line"><span style="color:#E1E4E8">        insert_stmt </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> sql.insert(learning_path_table).values(</span><span style="color:#F97583">**</span><span style="color:#E1E4E8">learning_path.dict())</span></span>
+<span class="line"><span style="color:#E1E4E8">        result </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> db.execute(insert_stmt)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Get the inserted ID</span></span>
+<span class="line"><span style="color:#E1E4E8">        created_id </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> result.inserted_primary_key[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "id"</span><span style="color:#E1E4E8">: created_id,</span></span>
+<span class="line"><span style="color:#F97583">            **</span><span style="color:#E1E4E8">learning_path.dict(),</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span></span>
+<span class="line"><span style="color:#FFAB70">            status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e),</span></span>
+<span class="line"><span style="color:#E1E4E8">        )</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="client-side-integration-react">Client-Side Integration (React)</h2>
+<p>Here’s a React component snippet for displaying learning paths:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState, useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> LearningPath</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  title</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  description</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  modules</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Module</span><span style="color:#E1E4E8">[];</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> Module</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  moduleId</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  title</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  description</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  prerequisites</span><span style="color:#F97583">?:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">[];</span></span>
+<span class="line"><span style="color:#FFAB70">  difficulty</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 'Beginner'</span><span style="color:#F97583"> |</span><span style="color:#9ECBFF"> 'Intermediate'</span><span style="color:#F97583"> |</span><span style="color:#9ECBFF"> 'Advanced'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> LearningPathsList</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">learningPaths</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLearningPaths</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">LearningPath</span><span style="color:#E1E4E8">[]>([]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">    // Replace with your API call</span></span>
+<span class="line"><span style="color:#B392F0">    fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/learning-paths/'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">response</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setLearningPaths</span><span style="color:#E1E4E8">(data))</span></span>
+<span class="line"><span style="color:#E1E4E8">      .</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">error</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error fetching learning paths:'</span><span style="color:#E1E4E8">, error));</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"container mx-auto p-4"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text-3xl font-bold mb-6"</span><span style="color:#E1E4E8">>Learning Paths&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        {learningPaths.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">path</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{path.id} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300"</span><span style="color:#FDAEB7;font-style:italic">):</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">            &#x3C;h2</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text-xl font-semibold mb-2"</span><span style="color:#E1E4E8">>{path.title}&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text-gray-600 mb-4"</span><span style="color:#E1E4E8">>{path.description}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"space-y-2"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">              {path.modules.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">module</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.moduleId} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"bg-blue-50 p-3 rounded"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                  &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"font-medium text-blue-800"</span><span style="color:#E1E4E8">>{</span><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.title}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                  &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text-sm text-gray-600"</span><span style="color:#E1E4E8">>{</span><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.description}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">              ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#F97583">          &#x3C;/</span><span style="color:#E1E4E8">div</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#E1E4E8">        ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> LearningPathsList;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="data-models-pydantic">Data Models (Pydantic)</h2>
+<p>Here’s the Pydantic schema for learning paths:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel, Field</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> CourseModule</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    moduleId: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Unique identifier of the module"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Title of the module"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Description of the module"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    prerequisites</span><span style="color:#FDAEB7;font-style:italic">?</span><span style="color:#E1E4E8">: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Field(</span></span>
+<span class="line"><span style="color:#79B8FF">        None</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"List of prerequisite modules (optional)"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"><span style="color:#E1E4E8">    difficulty: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span></span>
+<span class="line"><span style="color:#79B8FF">        ...</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Difficulty level"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        enum</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"Beginner"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Intermediate"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Advanced"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> LearningPathCreate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    course_id: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Course identifier"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    module_id: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Module identifier"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Title of the learning path"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Description of the learning path"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    modules: List[CourseModule] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Field(</span></span>
+<span class="line"><span style="color:#79B8FF">        ...</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"List of modules in the learning path"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> LearningPathResponse</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">LearningPathCreate</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Field(</span><span style="color:#79B8FF">...</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">description</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Unique identifier of the learning path"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<p>This documentation provides a comprehensive overview of how to create and manage learning paths using the Learning Path Builder module. The FastAPI endpoint handles creating new sequences, while the React component demonstrates how to display these learning paths in a user-friendly manner.</p>
+<h1 id="learning-path-builder-module-documentation">Learning Path Builder Module Documentation</h1>
+<h2 id="summary">Summary</h2>
+<p>The <strong>Learning Path Builder</strong> module allows you to sequence multiple courses or modules into tracks. It is designed to help users create structured learning paths, manage prerequisites, and track user progress through a series of courses.</p>
+<h2 id="target-user">Target User</h2>
+<ul>
+<li>Developers integrating educational content management systems.</li>
+<li>Curriculum designers building structured learning pathways.</li>
+<li>Platform administrators managing course dependencies.</li>
+</ul>
+<h2 id="related-modules">Related Modules</h2>
+<p>The <strong>Learning Path Builder</strong> module integrates with the following modules:</p>
+<ol>
+<li><strong>Course Catalog</strong>: Manages the list of available courses and modules.</li>
+<li><strong>User Progress Tracker</strong>: Tracks user progress through various courses and modules.</li>
+<li><strong>Enrollment System</strong>: Handles user enrollment in courses and learning paths.</li>
+<li><strong>Reporting Tools</strong>: Provides analytics on user completion rates and path progression.</li>
+<li><strong>Certificate Manager</strong>: Issues certificates upon successful completion of learning paths.</li>
+</ol>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-creating-a-basic-learning-path">1. Creating a Basic Learning Path</h3>
+<ul>
+<li><strong>Scenario</strong>: A user wants to create a simple learning path with multiple courses.</li>
+<li><strong>Steps</strong>:
+<ul>
+<li>Add courses from the Course Catalog to the learning path.</li>
+<li>Save the sequence in the Learning Path Builder.</li>
+<li>Users can then enroll in the path through the Enrollment System.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-adding-prerequisites">2. Adding Prerequisites</h3>
+<ul>
+<li><strong>Scenario</strong>: A user wants to enforce prerequisites for advanced courses.</li>
+<li><strong>Steps</strong>:
+<ul>
+<li>Use the Learning Path Builder to set prerequisite courses or modules.</li>
+<li>When a user tries to enroll, the Enrollment System checks if they have completed the prerequisites.</li>
+<li>If not, enrollment is blocked.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-dynamic-content-delivery">3. Dynamic Content Delivery</h3>
+<ul>
+<li><strong>Scenario</strong>: A user completes one learning path and automatically enrolls in another.</li>
+<li><strong>Steps</strong>:
+<ul>
+<li>Set up completion triggers in the Learning Path Builder.</li>
+<li>Integrate with the Enrollment System to automatically enroll users in new paths upon completion.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-tracking-completion-across-platforms">4. Tracking Completion Across Platforms</h3>
+<ul>
+<li><strong>Scenario</strong>: Users complete courses on different platforms but need a centralized completion record.</li>
+<li><strong>Steps</strong>:
+<ul>
+<li>Use the User Progress Tracker to sync completion data across platforms.</li>
+<li>The Reporting Tools can then generate comprehensive reports.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-third-party-integration">5. Third-party Integration</h3>
+<ul>
+<li><strong>Scenario</strong>: Integrate with external Learning Management Systems (LMS) or Customer Relationship Management (CRM) tools.</li>
+<li><strong>Steps</strong>:
+<ul>
+<li>Set up webhooks in the Learning Path Builder to notify third-party systems of progress updates.</li>
+<li>Use REST APIs provided by the third-party tools for user authentication and enrollment.</li>
+</ul>
+</li>
+</ul>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>Webhook Setup</strong>:</p>
+<ul>
+<li>Integrate webhooks between the Learning Path Builder and other modules (e.g., Enrollment System) to handle events like course completion or enrollment changes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Middleware Implementation</strong>:</p>
+<ul>
+<li>Implement a middleware service to mediate requests between different modules, ensuring smooth communication and data flow.</li>
+</ul>
+</li>
+<li>
+<p><strong>Environment Variables</strong>:</p>
+<ul>
+<li>Use environment variables to store configuration settings for the Learning Path Builder, such as API keys or database connections.</li>
+</ul>
+</li>
+<li>
+<p><strong>RESTful APIs</strong>:</p>
+<ul>
+<li>Develop RESTful APIs for module-to-module communication, adhering to standards like HTTP methods (GET, POST, PUT, DELETE) and JSON payloads.</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Handling</strong>:</p>
+<ul>
+<li>Implement robust error handling in APIs to manage unexpected scenarios, such as failed prerequisite checks or invalid enrollments.</li>
+</ul>
+</li>
+</ol>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>The following configuration options are available for the Learning Path Builder module:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Option Name</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th><th><strong>Example Usage</strong></th></tr></thead><tbody><tr><td><code>enable_prerequisites</code></td><td>Enables or disables prerequisite checks for courses in learning paths.</td><td><code>true</code></td><td>Set to <code>false</code> if prerequisites are not required.</td></tr><tr><td><code>max_concurrent_enrollments</code></td><td>Sets the maximum number of concurrent enrollments allowed per user.</td><td><code>10</code></td><td>Adjust based on platform capacity or course availability.</td></tr><tr><td><code>completion_tracking</code></td><td>Enables tracking of completion status for each course in a learning path.</td><td><code>true</code></td><td>Set to <code>false</code> if completion tracking is not required.</td></tr><tr><td><code>certificate_template_id</code></td><td>Specifies the certificate template to use upon successful completion.</td><td><code>default-template</code></td><td>Use custom templates by setting this option during configuration.</td></tr><tr><td><code>prerequisite_evaluation_frequency</code></td><td>Sets how often prerequisite checks are evaluated (e.g., real-time or batch processing).</td><td><code>real-time</code></td><td>Set to <code>batch</code> if real-time evaluation is not feasible due to system constraints.</td></tr></tbody></table>
+<h2 id="summary-1">Summary</h2>
+<p>The <strong>Learning Path Builder</strong> module is a powerful tool for creating and managing structured learning paths. By integrating with related modules like the Course Catalog, User Progress Tracker, and Enrollment System, it provides a robust solution for curriculum design and user progression tracking. With features like prerequisite management and dynamic content delivery, it enhances the educational experience while ensuring seamless integration with third-party tools and platforms.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

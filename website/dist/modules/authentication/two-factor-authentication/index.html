@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Two-Factor Authentication</title><meta name="description" content="Enhance account security with optional 2FA via email or authenticator app."><meta property="og:title" content="Two-Factor Authentication"><meta property="og:description" content="Enhance account security with optional 2FA via email or authenticator app."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Two-Factor Authentication</h1> <div class="module-meta"> <div> <span class="module-category">Authentication</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Enhance account security with optional 2FA via email or authenticator app.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/sendgrid.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"> </div> </section> <article> <p><strong>Two-Factor Authentication Module Overview</strong></p>
+<p>The Two-Factor Authentication (2FA) module enhances account security by requiring an additional verification step beyond passwords, significantly reducing unauthorized access risks. This module offers flexibility, allowing users to choose between email or authenticator app methods for their second factor of authentication.</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li><strong>Enhanced Security:</strong> Safeguards accounts even if primary credentials are compromised.</li>
+<li><strong>Compliance:</strong> Meets industry security standards and regulations.</li>
+<li><strong>User Trust:</strong> Increases confidence in your platform’s safety, fostering user satisfaction.</li>
+</ul>
+<p><strong>Usage Scenarios:</strong></p>
+<ul>
+<li>Implement during registration or login to protect new users.</li>
+<li>Secure sensitive actions such as account modifications or financial transactions.</li>
+<li>Integrate into multi-layered security strategies for comprehensive protection.</li>
+</ul>
+<p>This optional module provides developers with an easy-to-implement solution to bolster security, offering peace of mind for both users and your system.</p>
+<h2 id="key-features-of-the-two-factor-authentication-module">Key Features of the Two-Factor Authentication Module</h2>
+<h3 id="two-factor-authentication-2fa-support"><strong>Two-Factor Authentication (2FA) Support</strong></h3>
+<p>The module provides the core functionality to enable 2FA for user accounts. It integrates seamlessly into existing authentication workflows, requiring both a password and an additional verification factor during login.</p>
+<h3 id="email-based-2fa"><strong>Email-Based 2FA</strong></h3>
+<p>This feature allows users to receive a one-time verification code via email. The module securely handles code generation, distribution, and validation, ensuring that only the intended recipient can use the code.</p>
+<h3 id="authenticator-app-integration"><strong>Authenticator App Integration</strong></h3>
+<p>Supports authenticator apps like Google Authenticator and Authy for TOTP-based 2FA. This feature enhances security by enabling time-based codes, which are more secure than static codes.</p>
+<h3 id="optional-enablement"><strong>Optional Enablement</strong></h3>
+<p>Administrators can optionally enforce 2FA for specific user groups or roles. Users with the option enabled must complete the second verification step during login.</p>
+<h3 id="security-best-practices"><strong>Security Best Practices</strong></h3>
+<p>The module incorporates best practices such as rate-limiting to prevent brute force attacks, logging failed attempts, and encrypting sensitive data to protect against unauthorized access.</p>
+<h3 id="integration-hooks"><strong>Integration Hooks</strong></h3>
+<p>Offers hooks and APIs for developers to integrate 2FA into their applications. This includes callbacks for login events, allowing enforcement of 2FA at appropriate points in the authentication process.</p>
+<h3 id="session-management"><strong>Session Management</strong></h3>
+<p>Manages sessions securely after successful 2FA verification. Features include session expiration handling and secure storage mechanisms to prevent session hijacking and maintain user security post-authentication.</p>
+<h3 id="module-name-two-factor-authentication">Module Name: Two-Factor Authentication</h3>
+<p><strong>Category:</strong> Authentication<br>
+<strong>Summary:</strong> Enhance account security by adding optional two-factor authentication (2FA) using email or an authenticator app.</p>
+<hr>
+<h4 id="1-fastapi-endpoint-example">1. <strong>FastAPI Endpoint Example</strong></h4>
+<p>This endpoint handles enabling 2FA for a user and verifying the 2FA code.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> RequestTwoFactor</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    code: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Mock database to store users and their 2FA status</span></span>
+<span class="line"><span style="color:#E1E4E8">users_db </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">    "12345"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"email"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"user@example.com"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"two_factor_enabled"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">False</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"two_factor_secret"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">None</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.put</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/users/</span><span style="color:#79B8FF">{user_id}</span><span style="color:#9ECBFF">/enable-2fa"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> enable_two_factor</span><span style="color:#E1E4E8">(user_id: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, request: RequestTwoFactor):</span></span>
+<span class="line"><span style="color:#E1E4E8">    user </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> users_db.get(user_id)</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#F97583"> not</span><span style="color:#E1E4E8"> user:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">404</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"User not found"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    # Verify 2FA code</span></span>
+<span class="line"><span style="color:#E1E4E8">    secret </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> user.get(</span><span style="color:#9ECBFF">"two_factor_secret"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#F97583"> not</span><span style="color:#E1E4E8"> secret:</span></span>
+<span class="line"><span style="color:#6A737D">        # Generate and store the secret (for authenticator app) or send via email</span></span>
+<span class="line"><span style="color:#E1E4E8">        secret </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "mock-secret-123"</span></span>
+<span class="line"><span style="color:#E1E4E8">        users_db[user_id][</span><span style="color:#9ECBFF">"two_factor_secret"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> secret</span></span>
+<span class="line"><span style="color:#E1E4E8">        users_db[user_id][</span><span style="color:#9ECBFF">"two_factor_enabled"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> True</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2FA enabled successfully. Use the generated secret in your authenticator app."</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> request.code </span><span style="color:#F97583">==</span><span style="color:#9ECBFF"> "123456"</span><span style="color:#E1E4E8">:  </span><span style="color:#6A737D"># Mock verification</span></span>
+<span class="line"><span style="color:#E1E4E8">        users_db[user_id][</span><span style="color:#9ECBFF">"two_factor_enabled"</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> True</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2FA enabled successfully"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">    else</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">401</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Invalid verification code"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="2-react-ui-snippet">2. <strong>React UI Snippet</strong></h4>
+<p>This component handles the 2FA verification form.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> TwoFactorVerification</span><span style="color:#E1E4E8">({ </span><span style="color:#FFAB70">userId</span><span style="color:#E1E4E8"> }</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">userId</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8"> }) {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">code</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setCode</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">error</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setError</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#F97583">:</span><span style="color:#B392F0"> React</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">FormEvent</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`/api/users/${</span><span style="color:#E1E4E8">userId</span><span style="color:#9ECBFF">}/enable-2fa`</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">                method: </span><span style="color:#9ECBFF">'PUT'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                    'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                },</span></span>
+<span class="line"><span style="color:#E1E4E8">                body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">({ user_id: userId, code }),</span></span>
+<span class="line"><span style="color:#E1E4E8">            });</span></span>
+<span class="line"><span style="color:#B392F0">            alert</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'2FA enabled successfully!'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            window.location.href </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> '/dashboard'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (err) {</span></span>
+<span class="line"><span style="color:#B392F0">            setError</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to enable 2FA. Please try again.'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>Verify 2FA Code&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"number"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{code}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setCode</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                    placeholder</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Enter 6-digit code"</span></span>
+<span class="line"><span style="color:#B392F0">                    required</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">                {error </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">>{error}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>}</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Enable 2FA&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> TwoFactorVerification;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="3-pydantic-data-schema">3. <strong>Pydantic Data Schema</strong></h4>
+<p>This schema defines the request body for enabling 2FA.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> RequestTwoFactor</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    code: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#6A737D">    # Optional fields for additional validation (e.g., verifying it's a numeric code)</span></span>
+<span class="line"><span style="color:#79B8FF">    __annotations__</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">        "user_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Required string representing the user ID"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "code"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Required string representing the 6-digit verification code"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Example usage:</span></span>
+<span class="line"><span style="color:#6A737D"># request_data = {"user_id": "12345", "code": "123456"}</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<p><strong>Summary:</strong><br>
+This module provides a secure way to enable two-factor authentication for user accounts. The FastAPI endpoint handles the 2FA verification process, while the React component provides a simple UI for users to input their verification code. Pydantic ensures proper request validation and type safety.</p>
+<h1 id="two-factor-authentication-integration-guide">Two-Factor Authentication Integration Guide</h1>
+<h2 id="overview">Overview</h2>
+<p>Two-Factor Authentication (2FA) enhances account security by requiring two forms of verification: something the user knows (password) and something they have (mobile app or code). This guide provides step-by-step instructions for integrating 2FA into your application using email or an authenticator app.</p>
+<h2 id="integration-steps">Integration Steps</h2>
+<h3 id="step-1-decide-on-2fa-requirements">Step 1: Decide on 2FA Requirements</h3>
+<ul>
+<li><strong>Optional or Required</strong>: Determine if 2FA will be optional during registration or mandatory for all users.</li>
+<li><strong>Method Selection</strong>: Choose between email-based codes and/or authenticator apps (e.g., Google Authenticator).</li>
+</ul>
+<h3 id="step-2-integrate-with-authentication-flow">Step 2: Integrate with Authentication Flow</h3>
+<ol>
+<li><strong>Post-Password Verification</strong>: After a user logs in with their password, check if 2FA is enabled.</li>
+<li><strong>Prompt for 2FA Code</strong>: If enabled, redirect or prompt the user to enter the 2FA code.</li>
+</ol>
+<h3 id="step-3-implement-code-generation-and-validation">Step 3: Implement Code Generation and Validation</h3>
+<ul>
+<li><strong>TOTP Libraries</strong>:
+<ul>
+<li><strong>Python</strong>: Use <code>python-dototp</code> for TOTP generation.</li>
+<li><strong>JavaScript</strong>: Use <code>OTP-Auth</code> for authenticator app integration.</li>
+</ul>
+</li>
+<li><strong>Email Setup</strong>: Integrate with email services (e.g., SendGrid) to send codes via email.</li>
+</ul>
+<h3 id="step-4-configure-settings">Step 4: Configure Settings</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Setting</th><th>Description</th></tr></thead><tbody><tr><td>Enable 2FA</td><td>Toggle 2FA requirement.</td></tr><tr><td>Method Options</td><td>Email, authenticator app, or both.</td></tr><tr><td>Session Timeout (days)</td><td>Default: 14 days; adjust based on security needs.</td></tr><tr><td>Code Expiration (minutes)</td><td>Default: 5 minutes; ensures timely verification.</td></tr><tr><td>SMS Fallback</td><td>Enable/disable SMS as a backup method.</td></tr></tbody></table>
+<h3 id="step-5-handle-errors-and-fallbacks">Step 5: Handle Errors and Fallbacks</h3>
+<ul>
+<li><strong>Error Handling</strong>: Gracefully manage incorrect codes and multiple failed attempts.</li>
+<li><strong>Fallback Options</strong>: Provide SMS as an alternative if primary methods fail.</li>
+</ul>
+<h3 id="step-6-test-scenarios">Step 6: Test Scenarios</h3>
+<ul>
+<li>Simulate scenarios including:
+<ul>
+<li>Successful 2FA entry.</li>
+<li>Expired or invalid codes.</li>
+<li>Fallback to SMS.</li>
+<li>Multiple failed attempts to prevent brute force attacks.</li>
+</ul>
+</li>
+</ul>
+<h3 id="step-7-user-education-and-monitoring">Step 7: User Education and Monitoring</h3>
+<ul>
+<li><strong>User Instructions</strong>: Provide clear setup guides for authenticator apps, possibly with QR codes.</li>
+<li><strong>Monitoring</strong>: Watch for suspicious activities and enhance alerts if detected.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Integrating Two-Factor Authentication is a multi-step process involving careful configuration, error handling, and user education. By following these steps, you can significantly enhance your application’s security.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

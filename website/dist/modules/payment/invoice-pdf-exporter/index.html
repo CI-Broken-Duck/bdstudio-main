@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Invoice PDF Exporter</title><meta name="description" content="Downloadable PDFs for printing or accounting."><meta property="og:title" content="Invoice PDF Exporter"><meta property="og:description" content="Downloadable PDFs for printing or accounting."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Invoice PDF Exporter</h1> <div class="module-meta"> <div> <span class="module-category">Payment</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Downloadable PDFs for printing or accounting.</p> <div class="module-icons"> <img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-of-the-invoice-pdf-exporter-module">Overview of the Invoice PDF Exporter Module</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The <strong>Invoice PDF Exporter</strong> module is designed to automate the generation of downloadable PDF files from invoice data. These PDFs serve as standardized digital documents that users can print or integrate into accounting systems, ensuring consistency and reliability in financial records.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Saves Time</strong>: Eliminates manual effort required to create invoices, allowing businesses to quickly provide customers with downloadable versions.</li>
+<li><strong>Consistency</strong>: Ensures all invoices follow a professional, uniform format, reducing errors and enhancing credibility.</li>
+<li><strong>Efficiency for Developers</strong>: Streamlines integration processes by automating PDF generation, making it easier to develop solutions that require standardized invoice outputs.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Customer Invoices</strong>: Businesses can offer customers the ability to download PDF invoices directly from their portal or system, improving convenience.</li>
+<li><strong>Programmatic Generation</strong>: Developers can programmatically generate PDFs and store them in databases or send them via email, enhancing workflow automation.</li>
+<li><strong>Accounting Integration</strong>: Enables seamless integration with accounting software by providing standardized PDF outputs for further processing.</li>
+<li><strong>Audit and Record-Keeping</strong>: Facilitates the creation of records required for auditing purposes, ensuring accurate and accessible documentation.</li>
+</ol>
+<p>This module is a powerful tool for businesses aiming to streamline their financial processes while maintaining professional standards in invoice management.</p>
+<h2 id="features-of-invoice-pdf-exporter-module">Features of Invoice PDF Exporter Module</h2>
+<h3 id="1-customizable-layout">1. Customizable Layout</h3>
+<p>Users can design unique PDF layouts with adjustable fonts, colors, logos, margins, spacing, and templates to match their branding or specific requirements.</p>
+<h3 id="2-multiple-invoice-formats">2. Multiple Invoice Formats</h3>
+<p>Supports multiple predefined formats (e.g., standard, detailed, simplified) for different needs. Users can export single or bulk invoices efficiently.</p>
+<h3 id="3-export-history">3. Export History</h3>
+<p>Maintains a record of past exports, including date, invoice IDs, and settings, aiding in tracking and auditing.</p>
+<h3 id="4-integration-with-existing-systems">4. Integration with Existing Systems</h3>
+<p>Seamlessly integrates with third-party tools via APIs, enabling data exchange and automation without manual intervention.</p>
+<h3 id="5-watermark-and-security-features">5. Watermark and Security Features</h3>
+<p>Adds watermarks like “VOID” or logos for security. Includes password protection and authentication to prevent unauthorized access.</p>
+<h3 id="6-billing-information-management">6. Billing Information Management</h3>
+<p>Enables management of customer and product/service details, ensuring accuracy and quick updates when needed.</p>
+<h3 id="7-support-for-additional-fields">7. Support for Additional Fields</h3>
+<p>Allows inclusion of custom fields (e.g., project codes) for tailored invoice content.</p>
+<h3 id="8-batch-processing">8. Batch Processing</h3>
+<p>Facilitates exporting multiple invoices at once, enhancing efficiency.</p>
+<h3 id="9-version-control">9. Version Control</h3>
+<p>Tracks different invoice versions for audits or modifications without affecting the original document.</p>
+<h3 id="10-error-handling-and-logging">10. Error Handling and Logging</h3>
+<p>Provides detailed error logs with timestamps and codes to aid in troubleshooting and ensuring reliable operation.</p>
+<h1 id="invoice-pdf-exporter-module">Invoice PDF Exporter Module</h1>
+<p>This module provides functionality to generate downloadable PDF invoices for accounting and printing purposes. The solution includes both a backend API endpoint and a frontend UI snippet for integration.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Generate PDF invoices from structured data</li>
+<li>Customize templates and layouts</li>
+<li>Add watermarks or logos</li>
+<li>Multiple output format support (PDF, etc.)</li>
+<li>Integration via REST API or Web Interface</li>
+</ul>
+<h2 id="output-format">Output Format</h2>
+<ul>
+<li>Standard PDF document</li>
+<li>A4 paper size</li>
+<li>Customizable margins and fonts</li>
+</ul>
+<hr>
+<h2 id="1-fastapi-endpoint-code-sample">1. FastAPI Endpoint Code Sample</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi.responses </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FileResponse</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> pdfkit</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Mock database query (replace with your data source)</span></span>
+<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> get_invoice</span><span style="color:#E1E4E8">(invoice_id: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">) -> </span><span style="color:#79B8FF">dict</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">        "id"</span><span style="color:#E1E4E8">: invoice_id,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "customer_name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"John Doe"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">        "date"</span><span style="color:#E1E4E8">: datetime.now().isoformat(),</span></span>
+<span class="line"><span style="color:#9ECBFF">        "items"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span><span style="color:#9ECBFF">"description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Service A"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"quantity"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"price"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span><span style="color:#9ECBFF">"description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Service B"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"quantity"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"price"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">        ],</span></span>
+<span class="line"><span style="color:#9ECBFF">        "total"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">200</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/invoices/</span><span style="color:#79B8FF">{invoice_id}</span><span style="color:#9ECBFF">/pdf"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> export_invoice_to_pdf</span><span style="color:#E1E4E8">(invoice_id: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        invoice_data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> get_invoice(invoice_id)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Generate PDF content (simplified example using pdfkit)</span></span>
+<span class="line"><span style="color:#E1E4E8">        options </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            'encoding'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'UTF-8'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            'quiet'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">''</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        pdf_content </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> pdfkit.from_dict(invoice_data, </span><span style="color:#79B8FF">False</span><span style="color:#E1E4E8">, options)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> FileResponse(</span></span>
+<span class="line"><span style="color:#FFAB70">            content</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">pdf_content,</span></span>
+<span class="line"><span style="color:#FFAB70">            media_type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"application/pdf"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            filename</span><span style="color:#F97583">=</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"invoice_</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">invoice_id</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">.pdf"</span></span>
+<span class="line"><span style="color:#E1E4E8">        )</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="2-react-ui-code-sample">2. React UI Code Sample</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { PDFGenerator } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './pdf-generator'</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// Assume this exists</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> InvoiceEditor</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">templateFile</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setTemplateFile</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">watermarkText</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setWatermarkText</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">showPreview</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setShowPreview</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleDownload</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">            template: templateFile,</span></span>
+<span class="line"><span style="color:#E1E4E8">            watermark: watermarkText,</span></span>
+<span class="line"><span style="color:#E1E4E8">            items: [</span></span>
+<span class="line"><span style="color:#E1E4E8">                { description: </span><span style="color:#9ECBFF">'Service A'</span><span style="color:#E1E4E8">, quantity: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, price: </span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">                { description: </span><span style="color:#9ECBFF">'Service B'</span><span style="color:#E1E4E8">, quantity: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, price: </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#E1E4E8">            ]</span></span>
+<span class="line"><span style="color:#E1E4E8">        };</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#E1E4E8">        PDFGenerator.</span><span style="color:#B392F0">generate</span><span style="color:#E1E4E8">(data)</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">blob</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">                const</span><span style="color:#79B8FF"> url</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> URL</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">createObjectURL</span><span style="color:#E1E4E8">(blob);</span></span>
+<span class="line"><span style="color:#F97583">                const</span><span style="color:#79B8FF"> a</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">createElement</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'a'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">                a.href </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> url;</span></span>
+<span class="line"><span style="color:#E1E4E8">                a.download </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'invoice.pdf'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">                document.body.</span><span style="color:#B392F0">appendChild</span><span style="color:#E1E4E8">(a);</span></span>
+<span class="line"><span style="color:#E1E4E8">                a.</span><span style="color:#B392F0">click</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">                document.body.</span><span style="color:#B392F0">removeChild</span><span style="color:#E1E4E8">(a);</span></span>
+<span class="line"><span style="color:#E1E4E8">            })</span></span>
+<span class="line"><span style="color:#E1E4E8">            .</span><span style="color:#B392F0">catch</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">error</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error generating PDF:'</span><span style="color:#E1E4E8">, error));</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"file"</span></span>
+<span class="line"><span style="color:#B392F0">                onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setTemplateFile</span><span style="color:#E1E4E8">(e.target.files[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">])}</span></span>
+<span class="line"><span style="color:#B392F0">                accept</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">".pdf,.html"</span></span>
+<span class="line"><span style="color:#B392F0">                style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ marginBottom: </span><span style="color:#9ECBFF">'1rem'</span><span style="color:#E1E4E8"> }}</span></span>
+<span class="line"><span style="color:#E1E4E8">            /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ marginBottom: </span><span style="color:#9ECBFF">'1rem'</span><span style="color:#E1E4E8"> }}></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Watermark Text:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{watermarkText}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setWatermarkText</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleDownload}></span></span>
+<span class="line"><span style="color:#E1E4E8">                Generate and Download PDF</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            {showPreview </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ marginTop: </span><span style="color:#9ECBFF">'2rem'</span><span style="color:#E1E4E8"> }}></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>PDF Preview:&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    {</span><span style="color:#6A737D">/* Add your preview component here */</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            )}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="3-pydantic-data-schema-code-sample">3. Pydantic Data Schema Code Sample</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> InvoiceItem</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    quantity: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    price: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Invoice</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    customer_name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    items: List[InvoiceItem]</span></span>
+<span class="line"><span style="color:#E1E4E8">    total: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "pending"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Example usage:</span></span>
+<span class="line"><span style="color:#E1E4E8">invoice_data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">    "id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"INV-001"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "customer_name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Jane Smith"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "date"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2023-10-05T14:30:00Z"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "items"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span><span style="color:#9ECBFF">"description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Consulting Service"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"quantity"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"price"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span><span style="color:#9ECBFF">"description"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Report Generation"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"quantity"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"price"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#9ECBFF">    "total"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">250</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"paid"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">invoice </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Invoice(</span><span style="color:#F97583">**</span><span style="color:#E1E4E8">invoice_data)</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="usage-example">Usage Example</h2>
+<h3 id="api-endpoint">API Endpoint:</h3>
+<p>Use the following <code>curl</code> command to test the FastAPI endpoint:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> http://localhost:8000/api/invoices/INV-001/pdf</span></span>
+<span class="line"></span></code></pre>
+<h3 id="react-ui">React UI:</h3>
+<p>Integrate the provided React component into your web application and use it to generate invoices by selecting templates and customizing watermarks.</p>
+<p>This module provides a comprehensive solution for generating standardized PDF invoices, with both backend and frontend components.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Invoice PDF Exporter Module Documentation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Summary</span></span>
+<span class="line"><span style="color:#E1E4E8">The </span><span style="color:#E1E4E8;font-weight:bold">**Invoice PDF Exporter**</span><span style="color:#E1E4E8"> module allows users to generate downloadable PDF files from invoice data. These PDFs can be used for printing, accounting, or sharing with clients. The module is designed to integrate seamlessly with existing payment processing workflows.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Related Modules</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Payment Processor**</span><span style="color:#E1E4E8">: Handles the core logic for processing payments and transactions.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Customer Information Manager**</span><span style="color:#E1E4E8">: Manages customer data required for generating invoices.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Product Catalogue**</span><span style="color:#E1E4E8">: Provides product details needed for invoice line items.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Sales Order Management**</span><span style="color:#E1E4E8">: Integrates sales order data with invoice generation.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Use Cases</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 1. Generate Invoice PDF from Scratch</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Create a new invoice PDF using custom or predefined templates.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Steps**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Pass customer, product, and payment details to the module.</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Specify template parameters (e.g., logo, company name).</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Export the PDF for download.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 2. Generate PDF from Existing Sales Order</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Convert an existing sales order into a formatted invoice PDF.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Steps**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Retrieve the sales order data.</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Pass it to the Invoice PDF Exporter module.</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Generate and export the PDF.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 3. Customize PDF Templates</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Use custom templates for branding or specific formatting requirements.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Steps**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Upload a template file (e.g., </span><span style="color:#79B8FF">`.docx`</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">`.xlsx`</span><span style="color:#E1E4E8">).</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Map data fields to the template.</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Export the filled PDF.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 4. Batch Process Invoices</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Description**</span><span style="color:#E1E4E8">: Generate multiple invoices at once for bulk processing.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Steps**</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Provide a list of invoice IDs or order details.</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Set batch processing parameters (e.g., output directory).</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Export all invoices as individual PDFs.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration Tips</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 1. Data Normalization</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Ensure that the data passed to the module is normalized and validated before processing.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Example: Use the </span><span style="color:#E1E4E8;font-weight:bold">**Payment Processor**</span><span style="color:#E1E4E8"> module to standardize payment details.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 2. Error Handling</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Implement error handling for cases where:</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> PDF generation fails (e.g., invalid template paths).</span></span>
+<span class="line"><span style="color:#FFAB70">  -</span><span style="color:#E1E4E8"> Data fields are missing or incomplete.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 3. Logging</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Log errors and warnings during PDF generation for debugging purposes.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Example: Use the </span><span style="color:#E1E4E8;font-weight:bold">**Customer Information Manager**</span><span style="color:#E1E4E8"> to track customer-specific issues.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 4. Performance Optimization</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Cache frequently used templates to reduce processing time.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Optimize image files in templates to avoid large file sizes.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">### 5. Security</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Secure sensitive data (e.g., API keys) when integrating with external services like template storage or email gateways.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Configuration Options</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#E1E4E8;font-weight:bold">**Parameter Name**</span><span style="color:#E1E4E8"> | </span><span style="color:#E1E4E8;font-weight:bold">**Description**</span><span style="color:#E1E4E8">                     | </span><span style="color:#E1E4E8;font-weight:bold">**Data Type**</span><span style="color:#E1E4E8"> | </span><span style="color:#E1E4E8;font-weight:bold">**Default Value**</span><span style="color:#E1E4E8"> | </span><span style="color:#E1E4E8;font-weight:bold">**Notes**</span><span style="color:#E1E4E8">                                                                 |</span></span>
+<span class="line"><span style="color:#E1E4E8">|---------------------|-------------------------------------|---------------|-------------------|---------------------------------------------------------------------------|</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`enabled`</span><span style="color:#E1E4E8">           | Enable/disable the module.          | Boolean       | true              | Set to </span><span style="color:#79B8FF">`false`</span><span style="color:#E1E4E8"> to disable PDF export functionality.                             |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`output_directory`</span><span style="color:#E1E4E8">  | Path for storing generated PDFs.     | String        | </span><span style="color:#79B8FF">`/var/invoice_pdfs`</span><span style="color:#E1E4E8"> | Use absolute paths for clarity and consistency.                                  |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`pdf_margin`</span><span style="color:#E1E4E8">        | Margin (in inches) for the PDF.     | Integer       | 0.5               | Adjust to match your template's design requirements.                             |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`template_path`</span><span style="color:#E1E4E8">     | Path to custom templates.            | String        | </span><span style="color:#79B8FF">`templates/invoice`</span><span style="color:#E1E4E8"> | Use a default template if none is specified.                                      |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`brand_colors`</span><span style="color:#E1E4E8">      | Brand colors for PDF generation.    | Object        | </span><span style="color:#79B8FF">`{}`</span><span style="color:#E1E4E8">              | Example: </span><span style="color:#79B8FF">`{"primary": "#2196F3", "secondary": "#FF5722"}`</span><span style="color:#E1E4E8">.                   |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`font_family`</span><span style="color:#E1E4E8">       | Font family for PDF text.           | String        | "Arial"           | Ensure the font is available on the system.                                       |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`api_key`</span><span style="color:#E1E4E8">           | API key for external services.      | String        | null              | Required for integrations like email sending or cloud storage.                    |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`max_file_size`</span><span style="color:#E1E4E8">     | Maximum PDF file size (in MB).      | Integer       | 5                 | Prevents excessively large files from being generated.                          |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`debug_mode`</span><span style="color:#E1E4E8">        | Enable debug logging.               | Boolean       | false             | Set to </span><span style="color:#79B8FF">`true`</span><span style="color:#E1E4E8"> for detailed error and performance logs.                           |</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Conclusion</span></span>
+<span class="line"><span style="color:#E1E4E8">The </span><span style="color:#E1E4E8;font-weight:bold">**Invoice PDF Exporter**</span><span style="color:#E1E4E8"> module is a powerful tool for generating formatted invoices as PDFs. By integrating it with related modules like </span><span style="color:#E1E4E8;font-weight:bold">**Payment Processor**</span><span style="color:#E1E4E8"> or </span><span style="color:#E1E4E8;font-weight:bold">**Sales Order Management**</span><span style="color:#E1E4E8">, you can streamline your payment processing workflows. Use the configuration options and integration tips provided to optimize performance, customize templates, and ensure secure data handling.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">For further assistance, refer to the official documentation or contact support.</span></span>
+<span class="line"></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

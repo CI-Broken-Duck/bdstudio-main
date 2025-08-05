@@ -1,0 +1,970 @@
+---
+
+import "./askills.css";
+
+const services = [
+  
+  {
+    title: "Final Cut Pro",
+    type: "Video Production",
+    meta1: "Editing",
+    meta2: "Narrative",
+    image: "/assets/logo/video/finalcut.png",
+    summary: "My primary NLE for fast-paced narrative and instructional editing, especially for long-form YouTube and curriculum content.",
+    proficiency: 5
+  },
+  {
+    title: "Apple Motion",
+    type: "Video Production",
+    meta1: "Motion Graphics",
+    meta2: "Titles",
+    image: "/assets/logo/video/applemotion.png",
+    summary: "Used for building animated titles and simple lower thirds within Final Cut Pro projects.",
+    proficiency: 5
+  },
+  {
+    title: "Adobe Animate",
+    type: "Video Production",
+    meta1: "Animation",
+    meta2: "2D Rigging",
+    image: "/assets/logo/video/animate.png",
+    summary: "Applied in early EdTech projects for 2D character rigging and frame-by-frame educational animations.",
+    proficiency: 4
+  },
+  {
+    title: "Adobe Character Animator",
+    type: "Video Production",
+    meta1: "Animation",
+    meta2: "Lip-Sync",
+    image: "/assets/logo/video/characteranimator.png",
+    summary: "Utilized for real-time puppet performance and automated lip-sync in explainer and kids’ content.",
+    proficiency: 5
+  },
+  {
+    title: "Adobe Premiere Pro",
+    type: "Video Production",
+    meta1: "Editing",
+    meta2: "Workflow",
+    image: "/assets/logo/video/premiere.png",
+    summary: "Former primary editor for freelance and agency workflows; skilled in timeline nesting, transitions, and export presets.",
+    proficiency: 5
+  },
+  {
+    title: "Adobe After Effects",
+    type: "Video Production",
+    meta1: "VFX",
+    meta2: "Typography",
+    image: "/assets/logo/video/aftereffects.png",
+    summary: "Used extensively for motion graphics, kinetic typography, and compositing effects in commercial and educational video.",
+    proficiency: 5
+  },
+  {
+    title: "DaVinci Resolve",
+    type: "Video Production",
+    meta1: "Color",
+    meta2: "Grading",
+    image: "/assets/logo/video/davinciresolve.png",
+    summary: "Used mostly for color correction and grading, especially when delivering polished YouTube or branded projects.",
+    proficiency: 4
+  },
+  {
+    title: "Blender",
+    type: "Video Production",
+    meta1: "3D",
+    meta2: "Visuals",
+    image: "/assets/logo/video/blender.png",
+    summary: "Used for basic modeling, animated logos, and product visualizations in pitch videos and YouTube intros.",
+    proficiency: 4
+  },
+  {
+    title: "CapCut",
+    type: "Video Production",
+    meta1: "Editing",
+    meta2: "Mobile",
+    image: "/assets/logo/video/capcut.png",
+    summary: "Go-to app for mobile-first vertical content and fast turnaround TikTok-style edits.",
+    proficiency: 5
+  },
+  {
+    title: "Camtasia",
+    type: "Video Production",
+    meta1: "Screencasting",
+    meta2: "Tutorials",
+    image: "/assets/logo/video/camtasia.png",
+    summary: "Frequently used for educational voiceovers, screen recordings, and on-screen annotations in tutorials.",
+    proficiency: 5
+  },
+  {
+    title: "OBS Studio",
+    type: "Video Production",
+    meta1: "Recording",
+    meta2: "Livestreams",
+    image: "/assets/logo/video/obs.png",
+    summary: "Used for live screen capture, YouTube livestreams, and cam overlay production.",
+    proficiency: 5
+  },
+  {
+    title: "VEED.IO",
+    type: "Video Production",
+    meta1: "Editing",
+    meta2: "Subtitles",
+    image: "/assets/logo/video/veed.png",
+    summary: "Quick web-based edits, subtitles, and audio cleanup for lean turnaround projects.",
+    proficiency: 5
+  },
+
+  {
+    title: "Adobe Illustrator",
+    type: "Digital Art & Design",
+    meta1: "Vector",
+    meta2: "Branding",
+    image: "/assets/logo/digital/illustrator.png",
+    summary: "My primary tool for branding, logo design, and scalable vector graphics used in print and screen-based media.",
+    proficiency: 5
+  },
+  {
+    title: "Canva",
+    type: "Digital Art & Design",
+    meta1: "Design",
+    meta2: "Layouts",
+    image: "/assets/logo/digital/canva.png",
+    summary: "Used for quick layout prototyping and client-facing social graphics with fast turnaround and team templates.",
+    proficiency: 5
+  },
+  {
+    title: "Adobe InDesign",
+    type: "Digital Art & Design",
+    meta1: "Layout",
+    meta2: "Print",
+    image: "/assets/logo/digital/indesign.png",
+    summary: "Used for print-ready materials like brochures, workbooks, and multi-page PDF layouts across brand campaigns.",
+    proficiency: 5
+  },
+  {
+    title: "Autodesk",
+    type: "Digital Art & Design",
+    meta1: "3D",
+    meta2: "Modeling",
+    image: "/assets/logo/digital/autodesk.png",
+    summary: "Basic experience using Autodesk tools for modeling references and design exploration on technical layouts.",
+    proficiency: 3
+  },
+  {
+    title: "Adobe Lightroom",
+    type: "Photography",
+    meta1: "Editing",
+    meta2: "RAW",
+    image: "/assets/logo/photo/lightroom.png",
+    summary: "Used for photo batch processing, color grading, and RAW workflow across event and product shoots.",
+    proficiency: 4
+  },
+  {
+    title: "Adobe Photoshop",
+    type: "Photography",
+    meta1: "Retouching",
+    meta2: "Composites",
+    image: "/assets/logo/photo/photoshop.png",
+    summary: "My go-to tool for high-detail retouching, composites, and layered image enhancements across media types.",
+    proficiency: 5
+  },
+  {
+    title: "Capture One",
+    type: "Photography",
+    meta1: "Tethering",
+    meta2: "Studio",
+    image: "/assets/logo/photo/captureone.png",
+    summary: "Used primarily for tethered shooting and color-accurate RAW development in studio workflows.",
+    proficiency: 4
+  },
+  {
+    title: "Darktable",
+    type: "Photography",
+    meta1: "RAW",
+    meta2: "Open Source",
+    image: "/assets/logo/photo/darktable.png",
+    summary: "Open-source RAW editor I’ve used for color-correcting, noise reduction, and non-destructive workflows.",
+    proficiency: 4
+  },
+  {
+    title: "Luminar Neo",
+    type: "Photography",
+    meta1: "Enhancement",
+    meta2: "AI Tools",
+    image: "/assets/logo/photo/luminameo.png",
+    summary: "Used for one-click AI enhancements, sky replacements, and stylized final treatments in creative sets.",
+    proficiency: 4
+  },
+  {
+    title: "DxO PhotoLab",
+    type: "Photography",
+    meta1: "Correction",
+    meta2: "Recovery",
+    image: "/assets/logo/photo/dxophotolab.png",
+    summary: "Used for lens correction, noise cleanup, and detail recovery on client and portfolio imagery.",
+    proficiency: 4
+  },
+  {
+    title: "ON1 Photo RAW",
+    type: "Photography",
+    meta1: "Workflow",
+    meta2: "Batch",
+    image: "/assets/logo/photo/on1.png",
+    summary: "All-in-one RAW editor I’ve used for local adjustments and plugin integration across batch jobs.",
+    proficiency: 4
+  },
+  {
+    title: "GIMP",
+    type: "Photography",
+    meta1: "Editing",
+    meta2: "Linux",
+    image: "/assets/logo/photo/gimp.png",
+    summary: "Free and open-source editor I’ve used for basic photo manipulation and lightweight graphics on Linux systems.",
+    proficiency: 4
+  },
+
+  {
+    title: "Python",
+    type: "Languages",
+    meta1: "Backend",
+    meta2: "Automation",
+    image: "/assets/logo/language/python.png",
+    summary: "Used for building APIs, automating workflows, and powering AI-related services using FastAPI and scripting libraries.",
+    proficiency: 4
+  },
+  {
+    title: "JavaScript",
+    type: "Languages",
+    meta1: "Frontend",
+    meta2: "Browser",
+    image: "/assets/logo/language/javascript.png",
+    summary: "Core language for UI interactivity, browser behavior, and integrating client-side logic across web apps.",
+    proficiency: 4
+  },
+  {
+    title: "TypeScript",
+    type: "Languages",
+    meta1: "Frontend",
+    meta2: "Typed",
+    image: "/assets/logo/language/typescript.png",
+    summary: "Used for maintaining safety and clarity in scalable frontend projects with React, Astro, and component libraries.",
+    proficiency: 4
+  },
+  {
+    title: "HTML",
+    type: "Languages",
+    meta1: "Markup",
+    meta2: "Semantic",
+    image: "/assets/logo/language/html.png",
+    summary: "Proficient in semantic markup, accessibility structure, and static scaffolding across full web stacks.",
+    proficiency: 5
+  },
+  {
+    title: "CSS",
+    type: "Languages",
+    meta1: "Styling",
+    meta2: "Responsive",
+    image: "/assets/logo/language/css.png",
+    summary: "Used for responsive design, custom layouts, and cross-browser interfaces using raw and utility-first approaches.",
+    proficiency: 5
+  },
+  {
+    title: "SQL",
+    type: "Languages",
+    meta1: "Data",
+    meta2: "Queries",
+    image: "/assets/logo/language/sql.png",
+    summary: "Used for querying PostgreSQL databases, managing table joins, filters, and writing seed/migration scripts.",
+    proficiency: 3
+  },
+  {
+    title: "Shell",
+    type: "Languages",
+    meta1: "Scripting",
+    meta2: "Zsh",
+    image: "/assets/logo/language/shell.png",
+    summary: "Comfortable writing Bash/Zsh scripts for environment setup, deployment, and task automation.",
+    proficiency: 4
+  },
+  {
+    title: "React",
+    type: "Languages",
+    meta1: "UI",
+    meta2: "Components",
+    image: "/assets/logo/language/react.png",
+    summary: "Used to build interactive component-based frontends with hooks, router, and API-connected state.",
+    proficiency: 4
+  },
+  {
+    title: "Astro",
+    type: "Languages",
+    meta1: "Web",
+    meta2: "Static",
+    image: "/assets/logo/language/astro.png",
+    summary: "My preferred static-site generator for content-focused sites with island-based interactivity and speed.",
+    proficiency: 4
+  },
+  {
+    title: "FastAPI",
+    type: "Languages",
+    meta1: "API",
+    meta2: "Async",
+    image: "/assets/logo/language/fastapi.png",
+    summary: "Backend framework used for async REST APIs with OpenAPI docs, typing, and integration with SQLModel.",
+    proficiency: 4
+  },
+  {
+    title: "Node.js",
+    type: "Languages",
+    meta1: "Server",
+    meta2: "CLI",
+    image: "/assets/logo/language/node.png",
+    summary: "Used to build CLI tools, script infrastructure, and lightweight backend services for React and Astro apps.",
+    proficiency: 4
+  },
+  {
+    title: "Express.js",
+    type: "Languages",
+    meta1: "Server",
+    meta2: "API",
+    image: "/assets/logo/language/express.png",
+    summary: "Lightweight API framework I've used in prototyping full-stack JS apps and serving JSON data layers.",
+    proficiency: 4
+  },
+  {
+    title: "Next.js",
+    type: "Languages",
+    meta1: "Web",
+    meta2: "Hybrid",
+    image: "/assets/logo/language/next.png",
+    summary: "Used for server-rendered and statically generated sites, API routes, and hybrid deployment strategies.",
+    proficiency: 4
+  },
+  {
+    title: "Svelte",
+    type: "Languages",
+    meta1: "UI",
+    meta2: "Reactive",
+    image: "/assets/logo/language/svelte.png",
+    summary: "Explored as a lean alternative to React for reactive interfaces with minimal boilerplate.",
+    proficiency: 4
+  },
+  {
+    title: "Jinja2",
+    type: "Languages",
+    meta1: "Templating",
+    meta2: "Python",
+    image: "/assets/logo/language/jinja2.png",
+    summary: "Used for rendering HTML dynamically in Python backend projects and form-based systems.",
+    proficiency: 4
+  },
+  {
+    title: "Tailwind CSS",
+    type: "Languages",
+    meta1: "Styling",
+    meta2: "Utility",
+    image: "/assets/logo/language/tailwind.png",
+    summary: "Preferred for utility-first styling and consistent responsive designs across web projects.",
+    proficiency: 4
+  },
+  {
+    title: "SQLAlchemy",
+    type: "Languages",
+    meta1: "ORM",
+    meta2: "Schema",
+    image: "/assets/logo/language/sqlalchemy.png",
+    summary: "Used as a core ORM for relational database access with query construction and schema mapping.",
+    proficiency: 4
+  },
+  {
+    title: "PostgreSQL",
+    type: "Languages",
+    meta1: "Database",
+    meta2: "Relational",
+    image: "/assets/logo/language/postgresql.png",
+    summary: "My go-to relational DB for local and hosted apps, schema design, and structured querying.",
+    proficiency: 4
+  },
+  {
+    title: "Pydantic",
+    type: "Languages",
+    meta1: "Validation",
+    meta2: "Models",
+    image: "/assets/logo/language/pydantic.png",
+    summary: "Used to structure and validate Python data models, especially with FastAPI and SQLModel.",
+    proficiency: 4
+  },
+  {
+    title: "Java",
+    type: "Languages",
+    meta1: "Backend",
+    meta2: "OOP",
+    image: "/assets/logo/language/java.png",
+    summary: "Working knowledge for object-oriented design, Android foundations, and compile-time structure.",
+    proficiency: 4
+  },
+  {
+    title: "Swift",
+    type: "Languages",
+    meta1: "iOS",
+    meta2: "UI",
+    image: "/assets/logo/language/swift.png",
+    summary: "Basic usage for iOS development and exploration of app layout, syntax, and SwiftUI elements.",
+    proficiency: 4
+  },
+
+    {
+    title: "Figma",
+    type: "UI/UX Design",
+    meta1: "Design",
+    meta2: "Prototyping",
+    image: "/assets/logo/uiux/figma.png",
+    summary: "My go-to tool for wireframing, prototyping, and real-time collaboration on interface designs.",
+    proficiency: 5
+  },
+  {
+    title: "Adobe XD",
+    type: "UI/UX Design",
+    meta1: "Prototyping",
+    meta2: "Mockups",
+    image: "/assets/logo/uiux/xd.png",
+    summary: "Used for UI flows, low/high-fidelity design mockups, and interactive clickthrough demos.",
+    proficiency: 5
+  },
+  {
+    title: "Sketch",
+    type: "UI/UX Design",
+    meta1: "Vector",
+    meta2: "Symbols",
+    image: "/assets/logo/uiux/sketch.png",
+    summary: "Used for early-stage interface design and reusable symbols in app interface work.",
+    proficiency: 5
+  },
+  {
+    title: "Marvel",
+    type: "UI/UX Design",
+    meta1: "Testing",
+    meta2: "Mobile",
+    image: "/assets/logo/uiux/marvel.png",
+    summary: "Used for fast mobile prototyping and usability testing on early app ideas.",
+    proficiency: 5
+  },
+
+    {
+    title: "Articulate Storyline",
+    type: "Instructional Design",
+    meta1: "Authoring",
+    meta2: "eLearning",
+    image: "/assets/logo/instruction/storyline.png",
+    summary: "Used for building interactive e-learning modules with branching scenarios and quizzes.",
+    proficiency: 4
+  },
+  {
+    title: "Articulate Rise",
+    type: "Instructional Design",
+    meta1: "Responsive",
+    meta2: "Modules",
+    image: "/assets/logo/instruction/rise.png",
+    summary: "My preferred tool for creating clean, mobile-friendly instructional content quickly.",
+    proficiency: 5
+  },
+  {
+    title: "Adobe Captivate",
+    type: "Instructional Design",
+    meta1: "Simulation",
+    meta2: "Screen Recording",
+    image: "/assets/logo/instruction/captivate.png",
+    summary: "Used for software tutorials, screen recordings, and scenario-based learning modules.",
+    proficiency: 4
+  },
+  {
+    title: "SCORM Cloud",
+    type: "Instructional Design",
+    meta1: "Testing",
+    meta2: "Compliance",
+    image: "/assets/logo/instruction/scorm.png",
+    summary: "Used to test SCORM compliance and track learning object performance across platforms.",
+    proficiency: 4
+  },
+
+    {
+    title: "Ahrefs",
+    type: "Content Strategy",
+    meta1: "SEO",
+    meta2: "Backlinks",
+    image: "/assets/logo/strategy/ahrefs.png",
+    summary: "Used for keyword research, backlink analysis, and competitive site audits across content campaigns.",
+    proficiency: 4
+  },
+  {
+    title: "SEMrush",
+    type: "Content Strategy",
+    meta1: "Marketing",
+    meta2: "SERP Audit",
+    image: "/assets/logo/strategy/semrush.png",
+    summary: "Helpful for tracking SERP changes, auditing technical SEO, and improving content visibility over time.",
+    proficiency: 4
+  },
+  {
+    title: "Google Analytics",
+    type: "Content Strategy",
+    meta1: "Insights",
+    meta2: "Behavior",
+    image: "/assets/logo/strategy/analytics.png",
+    summary: "Used for measuring traffic, user behavior, and conversion funnels across web properties.",
+    proficiency: 4
+  },
+  {
+    title: "Google Search Console",
+    type: "Content Strategy",
+    meta1: "Monitoring",
+    meta2: "Indexing",
+    image: "/assets/logo/strategy/console.png",
+    summary: "Used to track indexed pages, search visibility, and site health from Google’s perspective.",
+    proficiency: 4
+  },
+  {
+    title: "TubeBuddy",
+    type: "Content Strategy",
+    meta1: "YouTube",
+    meta2: "SEO Tools",
+    image: "/assets/logo/strategy/tubebuddy.png",
+    summary: "Used for YouTube SEO, A/B testing thumbnails, and managing bulk video metadata.",
+    proficiency: 5
+  },
+  {
+    title: "vidIQ",
+    type: "Content Strategy",
+    meta1: "Optimization",
+    meta2: "Trends",
+    image: "/assets/logo/strategy/vidiq.png",
+    summary: "Supports keyword research, trend tracking, and channel growth strategies for video content.",
+    proficiency: 5
+  },
+  {
+    title: "Velio",
+    type: "Content Strategy",
+    meta1: "Analytics",
+    meta2: "Growth",
+    image: "/assets/logo/strategy/velio.png",
+    summary: "Best YouTube analytics suite I’ve used—supported video growth strategies that achieved over 100M views.",
+    proficiency: 5
+  },
+
+
+  {
+    title: "Audacity",
+    type: "Audio & Voice Work",
+    meta1: "Editing",
+    meta2: "Cleanup",
+    image: "/assets/logo/audio/audacity.png",
+    summary: "Used for fast, destructive audio editing and quick cleanup tasks on VO and narration tracks.",
+    proficiency: 4
+  },
+  {
+    title: "Adobe Audition",
+    type: "Audio & Voice Work",
+    meta1: "Mastering",
+    meta2: "Multitrack",
+    image: "/assets/logo/audio/audition.png",
+    summary: "Used for precise multitrack mixing, vocal cleanup, and broadcast-quality mastering workflows.",
+    proficiency: 4
+  },
+  {
+    title: "GarageBand",
+    type: "Audio & Voice Work",
+    meta1: "Recording",
+    meta2: "Podcasting",
+    image: "/assets/logo/audio/garageband.png",
+    summary: "Used for quick voiceover tracking, audio mockups, and podcast editing on macOS.",
+    proficiency: 5
+  },
+  {
+    title: "Logic Pro X",
+    type: "Audio & Voice Work",
+    meta1: "Production",
+    meta2: "Voiceover",
+    image: "/assets/logo/audio/logic.png",
+    summary: "Used for music production, advanced voiceover processing, and layered audio arrangements.",
+    proficiency: 4
+  },
+  {
+    title: "Reaper",
+    type: "Audio & Voice Work",
+    meta1: "Workflow",
+    meta2: "Automation",
+    image: "/assets/logo/audio/reaper.png",
+    summary: "Used for modular DAW setups, scripting automation, and detailed post-production editing.",
+    proficiency: 5
+  },
+
+  {
+    title: "Git / GitHub",
+    type: "Project & Workflow Tools",
+    meta1: "Versioning",
+    meta2: "Collaboration",
+    image: "/assets/logo/workflow/github.png",
+    summary: "Used for source control, team collaboration, and deployment workflows across all projects.",
+    proficiency: 4
+  },
+  {
+    title: "GitLab",
+    type: "Project & Workflow Tools",
+    meta1: "DevOps",
+    meta2: "CI/CD",
+    image: "/assets/logo/workflow/gitlab.png",
+    summary: "Used for CI/CD pipeline integration and internal repo hosting for private deployments.",
+    proficiency: 4
+  },
+  {
+    title: "Bitbucket",
+    type: "Project & Workflow Tools",
+    meta1: "Repos",
+    meta2: "Versioning",
+    image: "/assets/logo/workflow/bitbucket.png",
+    summary: "Used for Atlassian-integrated source control and legacy project versioning.",
+    proficiency: 4
+  },
+  {
+    title: "Notion",
+    type: "Project & Workflow Tools",
+    meta1: "Docs",
+    meta2: "Dashboards",
+    image: "/assets/logo/workflow/notion.png",
+    summary: "Used for documentation, database-driven dashboards, and personal productivity workflows.",
+    proficiency: 4
+  },
+  {
+    title: "Trello",
+    type: "Project & Workflow Tools",
+    meta1: "Planning",
+    meta2: "Boards",
+    image: "/assets/logo/workflow/trello.png",
+    summary: "Used extensively as a project manager to structure multi-team editorial and dev workflows.",
+    proficiency: 5
+  },
+  {
+    title: "ClickUp",
+    type: "Project & Workflow Tools",
+    meta1: "Tasks",
+    meta2: "Sprints",
+    image: "/assets/logo/workflow/clickup.png",
+    summary: "Used to manage sprints, tickets, and long-form planning with remote production teams.",
+    proficiency: 5
+  },
+  {
+    title: "Slack",
+    type: "Project & Workflow Tools",
+    meta1: "Comms",
+    meta2: "Automation",
+    image: "/assets/logo/workflow/slack.png",
+    summary: "Used extensively for team communication, integrated bot workflows, and ops coordination.",
+    proficiency: 5
+  },
+  {
+    title: "Google Workspace",
+    type: "Project & Workflow Tools",
+    meta1: "Suite",
+    meta2: "Collaboration",
+    image: "/assets/logo/workflow/google.png",
+    summary: "Used daily for collaborative documents, sheets, meetings, and team file management.",
+    proficiency: 5
+  },
+  {
+    title: "Microsoft 365",
+    type: "Project & Workflow Tools",
+    meta1: "Office",
+    meta2: "Documents",
+    image: "/assets/logo/workflow/microsoft.png",
+    summary: "Used for business correspondence, document formatting, and client communication tasks.",
+    proficiency: 5
+  },
+  {
+    title: "Jira",
+    type: "Project & Workflow Tools",
+    meta1: "Scrum",
+    meta2: "Backlog",
+    image: "/assets/logo/workflow/jira.png",
+    summary: "Used for agile sprint management, backlog tracking, and cross-functional team planning.",
+    proficiency: 4
+  },
+
+
+  {
+    title: "Vercel",
+    type: "Deployment & DevOps",
+    meta1: "Deploy",
+    meta2: "Frontend",
+    image: "/assets/logo/devops/vercel.png",
+    summary: "Used to deploy frontend Astro/Next.js sites with automated previews and git-based rollbacks.",
+    proficiency: 4
+  },
+  {
+    title: "Railway",
+    type: "Deployment & DevOps",
+    meta1: "Backend",
+    meta2: "APIs",
+    image: "/assets/logo/devops/railway.png",
+    summary: "Used to quickly stand up dev APIs and databases with CLI deployment and environment syncing.",
+    proficiency: 4
+  },
+  {
+    title: "Netlify",
+    type: "Deployment & DevOps",
+    meta1: "Static",
+    meta2: "Serverless",
+    image: "/assets/logo/devops/netlify.png",
+    summary: "Used for quick static site hosting, including form handlers, serverless functions, and previews.",
+    proficiency: 3
+  },
+  {
+    title: "Heroku",
+    type: "Deployment & DevOps",
+    meta1: "Apps",
+    meta2: "Scaling",
+    image: "/assets/logo/devops/heroku.png",
+    summary: "Used for quick deployment of full-stack apps and microservices with dyno-based scaling.",
+    proficiency: 3
+  },
+  {
+    title: "Cloudflare",
+    type: "Deployment & DevOps",
+    meta1: "DNS",
+    meta2: "CDN",
+    image: "/assets/logo/devops/cloudflare.png",
+    summary: "Used for domain routing, SSL setup, CDN caching, and performance/security tuning.",
+    proficiency: 4
+  },
+  {
+    title: "Docker",
+    type: "Deployment & DevOps",
+    meta1: "Containers",
+    meta2: "Isolation",
+    image: "/assets/logo/devops/docker.png",
+    summary: "Used to containerize dev environments and deploy AI services in isolated stacks.",
+    proficiency: 4
+  },
+  {
+    title: "GitHub Actions",
+    type: "Deployment & DevOps",
+    meta1: "CI/CD",
+    meta2: "Workflows",
+    image: "/assets/logo/devops/githubactions.png",
+    summary: "Used to automate build/test/deploy pipelines on commit using workflow YAMLs.",
+    proficiency: 4
+  },
+  {
+    title: "GitLab CI",
+    type: "Deployment & DevOps",
+    meta1: "CI",
+    meta2: "Automation",
+    image: "/assets/logo/devops/gitlabci.png",
+    summary: "Used to configure internal runners for build/test workflows in private repos.",
+    proficiency: 3
+  },
+  {
+    title: "CircleCI",
+    type: "Deployment & DevOps",
+    meta1: "Pipelines",
+    meta2: "Automation",
+    image: "/assets/logo/devops/circleci.png",
+    summary: "Used for Docker-based test automation and production branch deployment.",
+    proficiency: 3
+  },
+  {
+    title: "AWS",
+    type: "Deployment & DevOps",
+    meta1: "Cloud",
+    meta2: "Services",
+    image: "/assets/logo/devops/aws.png",
+    summary: "Used EC2 for server instances, S3 for asset storage, and Route 53 for domain routing.",
+    proficiency: 4
+  },
+  {
+    title: "Google Cloud Platform",
+    type: "Deployment & DevOps",
+    meta1: "Infra",
+    meta2: "Hosting",
+    image: "/assets/logo/devops/gcp.png",
+    summary: "Used Firebase Hosting, App Engine, and GCS buckets for AI/EdTech projects.",
+    proficiency: 4
+  },
+
+
+  {
+    title: "HSK3",
+    type: "Certificates",
+    meta1: "Language",
+    meta2: "Chinese",
+    image: "/assets/logo/certificates/hsk3.png",
+    summary: "Certified HSK3 Chinese speaker since 2018; used fluently while living and working across China.",
+    proficiency: 4
+  },
+  {
+    title: "Adobe Creative Cloud",
+    type: "Certificates",
+    meta1: "Design",
+    meta2: "Cross-Platform",
+    image: "/assets/logo/certificates/adobe.png",
+    summary: "Completed Adobe Creative Cloud training program with emphasis on cross-platform media production.",
+    proficiency: 5
+  },
+  {
+    title: "ACX Certified",
+    type: "Certificates",
+    meta1: "Voice",
+    meta2: "Audiobooks",
+    image: "/assets/logo/certificates/acx.png",
+    summary: "Produced and published multiple audiobooks (incl. erotica) on Amazon ACX with full mastering and narration.",
+    proficiency: 5
+  },
+  {
+    title: "WSET4",
+    type: "Certificates",
+    meta1: "Wine",
+    meta2: "Viticulture",
+    image: "/assets/logo/certificates/wset.png",
+    summary: "Advanced WSET Level 4 training; worked in vineyards and cellars across several wineries in NOTL Ontario.",
+    proficiency: 4
+  },
+  {
+    title: "TESOL",
+    type: "Certificates",
+    meta1: "Teaching",
+    meta2: "English",
+    image: "/assets/logo/certificates/tesol.png",
+    summary: "TESOL-certified educator specializing in teaching English to non-native speakers in immersive environments.",
+    proficiency: 5
+  },
+  {
+    title: "TEFL",
+    type: "Certificates",
+    meta1: "Teaching",
+    meta2: "English",
+    image: "/assets/logo/certificates/tefl.png",
+    summary: "TEFL-certified with years of experience teaching English across China, with a focus on young learners.",
+    proficiency: 5
+  },
+
+  {
+    title: "Instagram",
+    type: "Social Media",
+    meta1: "Marketing",
+    meta2: "Stories",
+    image: "/assets/logo/social/instagram.png",
+    summary: "Used to build brand presence through short-form video, story-based promotion, and visual campaign strategy.",
+    proficiency: 5
+  },
+  {
+    title: "Facebook",
+    type: "Social Media",
+    meta1: "Community",
+    meta2: "Pages",
+    image: "/assets/logo/social/facebook.png",
+    summary: "Used to manage public-facing brand pages, group engagement, and ad campaign deployment across multiple regions.",
+    proficiency: 4
+  },
+  {
+    title: "TikTok",
+    type: "Social Media",
+    meta1: "Shortform",
+    meta2: "Trends",
+    image: "/assets/logo/social/tiktok.png",
+    summary: "Used for rapid-growth short video campaigns and trend-based content strategy, targeting Gen Z and millennial users.",
+    proficiency: 5
+  },
+  {
+    title: "YouTube",
+    type: "Social Media",
+    meta1: "Video",
+    meta2: "Channels",
+    image: "/assets/logo/social/youtube.png",
+    summary: "Used to publish, optimize, and grow long-form educational and promotional video content across multiple channels.",
+    proficiency: 5
+  },
+  {
+    title: "LinkedIn",
+    type: "Social Media",
+    meta1: "Professional",
+    meta2: "Networking",
+    image: "/assets/logo/social/linkedin.png",
+    summary: "Used for portfolio presentation, industry engagement, and targeted outreach in EdTech and creative fields.",
+    proficiency: 4
+  },
+  {
+    title: "Twitter",
+    type: "Social Media",
+    meta1: "Outreach",
+    meta2: "Tech",
+    image: "/assets/logo/social/twitter.png",
+    summary: "Used for direct messaging, thought leadership, and connecting with dev/design communities across tech.",
+    proficiency: 4
+  },
+  {
+    title: "Discord",
+    type: "Social Media",
+    meta1: "Community",
+    meta2: "Ops",
+    image: "/assets/logo/social/discord.png",
+    summary: "Used to manage servers, automate onboarding, and coordinate chat ops for projects and private communities.",
+    proficiency: 5
+  },
+  {
+    title: "Douyin",
+    type: "Social Media",
+    meta1: "China",
+    meta2: "Localization",
+    image: "/assets/logo/social/doyin.png",
+    summary: "Used to publish short-form Chinese-language content for Mainland audiences; focused on localization and cultural sync.",
+    proficiency: 4
+  },
+
+];
+---
+
+
+<section class="lservices-section">
+
+
+  <div class="scroll-wrapper">
+    <button class="scroll-arrow left" data-direction="left" aria-label="Scroll left">&#10094;</button>
+
+    <div class="scroll-container" id="services-scroll">
+      {services.map((svc, index) => (
+        <div class="card" key={index}>
+          <div class={`course-banner category-${svc.type ? svc.type.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-') : 'unknown'}
+`}>
+            <img src={svc.image} alt={svc.title} class="service-logo" />
+          </div>
+          <div class="course-info">
+            <div class="course-title">{svc.title}</div>
+            <div class="course-level">{svc.type}</div>
+            <div class="course-meta">
+              <span>{svc.meta1}</span>
+              <span>{svc.meta2}</span>
+            </div>
+            <div class="course-summary">{svc.summary}</div>
+            <div class="course-proficiency">
+              {"★".repeat(svc.proficiency) + "☆".repeat(5 - svc.proficiency)}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <button class="scroll-arrow right" data-direction="right" aria-label="Scroll right">&#10095;</button>
+  </div>
+
+  <script is:client>
+    document.querySelectorAll(".scroll-arrow").forEach(button => {
+      button.addEventListener("click", () => {
+        const container = document.getElementById("services-scroll");
+        const direction = button.dataset.direction === "left" ? -1 : 1;
+        const scrollAmount = 260;
+        container.scrollBy({
+          left: direction * scrollAmount,
+          behavior: "smooth"
+        });
+      });
+    });
+  </script>
+</section>

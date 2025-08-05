@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Session Recording Playback</title><meta name="description" content="Access and replay past classes with built-in player."><meta property="og:title" content="Session Recording Playback"><meta property="og:description" content="Access and replay past classes with built-in player."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Session Recording Playback</h1> <div class="module-meta"> <div> <span class="module-category">Video</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Access and replay past classes with built-in player.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/cloudinary.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <h3 id="overview-of-session-recording-playback-module">Overview of Session Recording Playback Module</h3>
+<p><strong>Purpose</strong>:<br>
+The Session Recording Playback module provides developers with the ability to access and replay past classroom sessions, offering flexibility in reviewing content anytime. This feature supports comprehensive learning, efficient knowledge retention, and effective collaboration among team members.</p>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li><strong>Comprehensive Review</strong>: Enables detailed examination of past classes to reinforce understanding or address gaps.</li>
+<li><strong>Efficient Learning</strong>: Facilitates quick access to specific session segments for targeted study.</li>
+<li><strong>Enhanced Knowledge Retention</strong>: Supports long-term recall by allowing repeated review of complex topics.</li>
+<li><strong>Collaborative Environment</strong>: Promotes teamwork and shared learning through accessible session playback.</li>
+</ul>
+<p><strong>Usage Scenarios</strong>:</p>
+<ol>
+<li><strong>Debugging Past Issues</strong>: Reviewing sessions to identify and resolve technical challenges or bugs.</li>
+<li><strong>Training New Developers</strong>: Utilizing historical training sessions to onboard new team members effectively.</li>
+<li><strong>Revisiting Feature Demonstrations</strong>: Studying past feature showcases to understand implementation details.</li>
+<li><strong>Collaborative Troubleshooting</strong>: Using session replays for team discussions on complex issues during development.</li>
+<li><strong>Documentation Creation</strong>: Extracting insights from past sessions to create accurate and comprehensive documentation.</li>
+</ol>
+<p>This module is designed to enhance the developer experience by providing robust tools for learning, collaboration, and problem-solving in a technical environment.</p>
+<h2 id="session-recording-playback-module-documentation">Session Recording Playback Module Documentation</h2>
+<h3 id="1-session-recording">1. <strong>Session Recording</strong></h3>
+<ul>
+<li>Enables capturing and storing classroom sessions in real-time.</li>
+<li>Records audio, video, and shared content (e.g., slides, screens).</li>
+<li>Supports multiple recording formats for compatibility.</li>
+</ul>
+<h3 id="2-playback-functionality">2. <strong>Playback Functionality</strong></h3>
+<ul>
+<li>Allows replaying recorded sessions at any time.</li>
+<li>Provides adjustable playback speed (e.g., slow, fast forward).</li>
+<li>Includes pause, rewind, and resume features.</li>
+</ul>
+<h3 id="3-session-search--navigation">3. <strong>Session Search &#x26; Navigation</strong></h3>
+<ul>
+<li>Offers search functionality to quickly locate specific sessions.</li>
+<li>Supports timestamp navigation for direct access to key moments.</li>
+<li>Enables keyword-based searching within session transcripts.</li>
+</ul>
+<h3 id="4-multi-device-sync-playback">4. <strong>Multi-Device Sync Playback</strong></h3>
+<ul>
+<li>Synchronizes playback across multiple devices in real-time.</li>
+<li>Ensures all participants view the same content simultaneously.</li>
+<li>Handles varying network conditions gracefully.</li>
+</ul>
+<h3 id="5-data-storage-management">5. <strong>Data Storage Management</strong></h3>
+<ul>
+<li>Manages recorded sessions with efficient storage solutions.</li>
+<li>Supports both local and cloud-based storage options.</li>
+<li>Implements data compression to reduce storage requirements without compromising quality.</li>
+</ul>
+<h3 id="6-integration-capabilities">6. <strong>Integration Capabilities</strong></h3>
+<ul>
+<li>Provides APIs for seamless integration with video conferencing tools, LMS platforms, and other classroom software.</li>
+<li>Enables embedding playback functionality into third-party applications.</li>
+</ul>
+<h3 id="7-session-analytics">7. <strong>Session Analytics</strong></h3>
+<ul>
+<li>Tracks user engagement metrics during playback (e.g., session duration, replay frequency).</li>
+<li>Offers insights into content effectiveness based on interaction data.</li>
+<li>Generates reports for educators to improve teaching strategies.</li>
+</ul>
+<h3 id="8-real-time-collaboration-features">8. <strong>Real-Time Collaboration Features</strong></h3>
+<ul>
+<li>Facilitates real-time annotations and comments during playback.</li>
+<li>Supports collaborative note-taking among participants.</li>
+<li>Enables live discussion forums tied to specific session segments.</li>
+</ul>
+<p>Here’s the technical documentation for the Session Recording Playback module:</p>
+<h3 id="session-recording-playback-module">Session Recording Playback Module</h3>
+<h4 id="fastapi-endpoint"><strong>FastAPI Endpoint</strong></h4>
+<p>This endpoint retrieves past classroom sessions and allows playback of recordings.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># src/api/sessions.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> database </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> get_db</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> models</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Session</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    instructor: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    duration: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    recording_url: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/sessions"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">List[Session])</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> get_sessions</span><span style="color:#E1E4E8">(db</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">Depends(get_db)):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Get all past sessions with their details and playback URLs."""</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        sessions </span><span style="color:#F97583">=</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> db.query(models.Session).all()</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> sessions</span></span>
+<span class="line"></span></code></pre>
+<h4 id="nodejs-endpoint"><strong>Node.js Endpoint</strong></h4>
+<p>This is a Node.js alternative implementation of the same functionality.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// src/api/sessions.js</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> express</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'express'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> router</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> express.</span><span style="color:#B392F0">Router</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> Joi</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'joi'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> sessionSchema</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Joi.</span><span style="color:#B392F0">object</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">    id: Joi.</span><span style="color:#B392F0">string</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">required</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: Joi.</span><span style="color:#B392F0">string</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">required</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">    instructor: Joi.</span><span style="color:#B392F0">string</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">required</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: Joi.</span><span style="color:#B392F0">string</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">required</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">    duration: Joi.</span><span style="color:#B392F0">string</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">required</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">    recording_url: Joi.</span><span style="color:#B392F0">string</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">uri</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">required</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/sessions'</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> sessions</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> db.</span><span style="color:#B392F0">query</span><span style="color:#E1E4E8">(models.Session).</span><span style="color:#B392F0">all</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        res.</span><span style="color:#B392F0">status</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">(sessions);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        res.</span><span style="color:#B392F0">status</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">).</span><span style="color:#B392F0">send</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error retrieving sessions'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<h4 id="react-ui-component"><strong>React UI Component</strong></h4>
+<p>This component displays a list of past sessions with playback functionality.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#6A737D">// src/components/SessionsPlayer.js</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState, useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> MediaPlayer </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-media-player'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> SessionsPlayer</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">sessions</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">selectedSession</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setSelectedSession</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> (sessions.</span><span style="color:#79B8FF">length</span><span style="color:#F97583"> ></span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">            setSelectedSession</span><span style="color:#E1E4E8">(sessions[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">]);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }, [sessions]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"sessions-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>Classroom Sessions&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"session-list"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                {sessions.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">session</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{session.id}</span></span>
+<span class="line"><span style="color:#B392F0">                        className</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">`session-item ${</span><span style="color:#E1E4E8">selectedSession</span><span style="color:#9ECBFF">?.</span><span style="color:#E1E4E8">id</span><span style="color:#F97583"> ===</span><span style="color:#E1E4E8"> session</span><span style="color:#9ECBFF">.</span><span style="color:#E1E4E8">id</span><span style="color:#F97583"> ?</span><span style="color:#9ECBFF"> 'active'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> ''}`</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#B392F0">                        onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{() </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSelectedSession</span><span style="color:#E1E4E8">(session)}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    ></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>{session.title}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Instructor: {session.instructor}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Date: {session.date}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            {selectedSession </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"player-container"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#79B8FF">MediaPlayer</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        src</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{selectedSession.recording_url}</span></span>
+<span class="line"><span style="color:#B392F0">                        customAdditionalControls</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{[</span></span>
+<span class="line"><span style="color:#E1E4E8">                            {</span></span>
+<span class="line"><span style="color:#E1E4E8">                                id: </span><span style="color:#9ECBFF">'quality'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                                label: </span><span style="color:#9ECBFF">'Quality'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                                value: [</span><span style="color:#9ECBFF">'1080p'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'720p'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'480p'</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#E1E4E8">                                type: </span><span style="color:#9ECBFF">'select'</span></span>
+<span class="line"><span style="color:#E1E4E8">                            }</span></span>
+<span class="line"><span style="color:#E1E4E8">                        ]}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            )}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> SessionsPlayer;</span></span>
+<span class="line"></span></code></pre>
+<h4 id="data-schema-pydantic"><strong>Data Schema (Pydantic)</strong></h4>
+<p>Define the data structure for session recordings.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># src/schemas/session.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Session</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    instructor: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    duration: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    recording_url: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        orm_mode </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> True</span></span>
+<span class="line"></span></code></pre>
+<h4 id="summary"><strong>Summary</strong></h4>
+<p>This module provides a robust way to access and replay past classroom sessions through a FastAPI or Node.js endpoint, with配套 React UI for playback. The Pydantic schema ensures data consistency and validation.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Session Recording Playback Module</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Category:**</span><span style="color:#E1E4E8"> Classroom  </span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Summary:**</span><span style="color:#E1E4E8"> Access and replay past classes with built-in player.  </span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Target User:**</span><span style="color:#E1E4E8"> Developer  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Related Modules</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Class Management**</span><span style="color:#E1E4E8">: Manages classroom sessions, including scheduling, attendance tracking, and session status.  </span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Student Tracking**</span><span style="color:#E1E4E8">: Tracks student participation and engagement during sessions.  </span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Assignment Submission**</span><span style="color:#E1E4E8">: Handles submission of assignments and grading within the classroom module.  </span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Reporting**</span><span style="color:#E1E4E8">: Generates reports on session activity, student performance, and system usage.  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Use Cases</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Session Playback for Review**</span><span style="color:#E1E4E8">: Developers can access recorded sessions to review class activities, teacher-student interactions, and content delivery.  </span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Replay for Training**</span><span style="color:#E1E4E8">:structors can replay past sessions to train new teachers or improve teaching methods.  </span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Troubleshooting Student Issues**</span><span style="color:#E1E4E8">: Students or parents can request session replays to resolve academic disputes or clarify doubts.  </span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Export Session Data**</span><span style="color:#E1E4E8">: Export recorded sessions as video/audio files or transcripts for further analysis.  </span></span>
+<span class="line"><span style="color:#FFAB70">5.</span><span style="color:#E1E4E8;font-weight:bold"> **Integration with Third-Party Tools**</span><span style="color:#E1E4E8">: Integrate session recordings with external tools like Learning Management Systems (LMS) or analytics platforms.  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration Tips</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **API Integration**</span><span style="color:#E1E4E8">: Use the provided REST APIs to integrate session recording and playback functionalities into your application.  </span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Storage Handling**</span><span style="color:#E1E4E8">: Ensure that the storage system can handle large video/audio files efficiently without impacting performance.  </span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Timestamp Synchronization**</span><span style="color:#E1E4E8">: Maintain accurate timestamps for session recordings to ensure seamless playback alignment with classroom activities.  </span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Security**</span><span style="color:#E1E4E8">: Implement proper authentication and authorization mechanisms to restrict access to sensitive session recordings.  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Configuration Options</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#E1E4E8;font-weight:bold">**Parameter**</span><span style="color:#E1E4E8">              | </span><span style="color:#E1E4E8;font-weight:bold">**Description**</span><span style="color:#E1E4E8">                                                                 | </span><span style="color:#E1E4E8;font-weight:bold">**Default Value**</span><span style="color:#E1E4E8"> | </span><span style="color:#E1E4E8;font-weight:bold">**Data Type**</span><span style="color:#E1E4E8">      | </span><span style="color:#E1E4E8;font-weight:bold">**Valid Range**</span><span style="color:#E1E4E8">          |</span></span>
+<span class="line"><span style="color:#E1E4E8">|----------------------------|---------------------------------------------------------------------------------|------------------|--------------------|--------------------------|</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`recordings_enabled`</span><span style="color:#E1E4E8">       | Enable or disable session recording functionality.                             | </span><span style="color:#79B8FF">`true`</span><span style="color:#E1E4E8">           | Boolean            | </span><span style="color:#79B8FF">`true`</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">`false`</span><span style="color:#E1E4E8">         |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`recording_storage_path`</span><span style="color:#E1E4E8">   | Path to store recorded sessions.                                                 | </span><span style="color:#79B8FF">`/var/session/`</span><span style="color:#E1E4E8">  | String             | Any valid file path     |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`session_retention_policy`</span><span style="color:#E1E4E8"> | Define the retention policy for old recordings (e.g., days, months).            | </span><span style="color:#79B8FF">`30 days`</span><span style="color:#E1E4E8">        | String or Integer  | Customizable timeframe   |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`audio_codec`</span><span style="color:#E1E4E8">              | Audio encoding codec for recordings.                                            | </span><span style="color:#79B8FF">`opus`</span><span style="color:#E1E4E8">           | String             | </span><span style="color:#79B8FF">`aac`</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">`mp3`</span><span style="color:#E1E4E8">, etc.     |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`video_quality`</span><span style="color:#E1E4E8">            | Video recording quality (e.g., high, medium, low).                             | </span><span style="color:#79B8FF">`medium`</span><span style="color:#E1E4E8">         | String or Integer  | </span><span style="color:#79B8FF">`1080p`</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">`720p`</span><span style="color:#E1E4E8">, etc.   |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`session_id_format`</span><span style="color:#E1E4E8">       | Format for session IDs (e.g., UUID, timestamp-based).                          | </span><span style="color:#79B8FF">`uuid_v4`</span><span style="color:#E1E4E8">        | String             | Customizable formats     |</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Notes</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> This module requires proper handling of system resources to ensure smooth operation during high traffic or concurrent playback requests.  </span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8"> Regular updates and maintenance are recommended to keep the recording and playback functionalities optimized.  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">For further assistance, refer to the [</span><span style="color:#DBEDFF;text-decoration:underline">Developer Documentation</span><span style="color:#E1E4E8">](</span><span style="color:#E1E4E8;text-decoration:underline">#</span><span style="color:#E1E4E8">) or contact support at [support@company.com).  </span></span>
+<span class="line"></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

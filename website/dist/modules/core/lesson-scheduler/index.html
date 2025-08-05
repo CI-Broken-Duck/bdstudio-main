@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Lesson Scheduler</title><meta name="description" content="Schedule live sessions, deadlines, and availability."><meta property="og:title" content="Lesson Scheduler"><meta property="og:description" content="Schedule live sessions, deadlines, and availability."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Lesson Scheduler</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Schedule live sessions, deadlines, and availability.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <h1 id="lesson-scheduler-module-overview">Lesson Scheduler Module Overview</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The <strong>Lesson Scheduler</strong> module is designed to streamline the planning and management of live sessions, deadlines, and availability across various educational platforms. This core component empowers developers to create efficient scheduling systems that enhance user experience and operational efficiency.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary purpose of the Lesson Scheduler module is to automate and manage the scheduling process for live sessions, assignment deadlines, and resource availability. It ensures that all components are synced in real-time, reducing conflicts and improving overall planning accuracy.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Automated Scheduling</strong>: Efficiently assigns timeslots based on availability and constraints.</li>
+<li><strong>Real-Time Availability Management</strong>: Keeps track of user and resource availability for instant updates.</li>
+<li><strong>Deadline Coordination</strong>: Manages assignment deadlines to prevent overlaps and ensure timely submission.</li>
+<li><strong>Customizable Templates</strong>: Offers flexibility with pre-defined templates for recurring sessions.</li>
+<li><strong>Integration Capabilities</strong>: Seamlessly integrates with third-party systems like CRMs or Learning Management Systems (LMS).</li>
+<li><strong>Analytics and Reporting</strong>: Provides insights into scheduling trends and user behavior.</li>
+</ul>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Enhanced Efficiency</strong>: Reduces manual effort by automating complex scheduling tasks.</li>
+<li><strong>Conflict Minimization</strong>: Identifies potential overlaps early to avoid scheduling issues.</li>
+<li><strong>Improved Resource Utilization</strong>: Maximizes the effective use of resources through intelligent allocation.</li>
+<li><strong>Data-Driven Decisions</strong>: Offers analytics for optimizing schedules and improving user engagement.</li>
+<li><strong>Seamless Integration</strong>: Facilitates compatibility with existing systems, enhancing workflow.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Academic Institutions</strong>: Scheduling classes, exams, and assignment deadlines for students and faculty.</li>
+<li><strong>Corporate Training Programs</strong>: Coordinating workshops, webinars, and employee training sessions.</li>
+<li><strong>Online Learning Platforms</strong>: Managing live lectures, discussion forums, and assessment deadlines.</li>
+<li><strong>Event Management</strong>: Organizing meetings, conferences, and other scheduled events efficiently.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Lesson Scheduler module is an essential tool for developers aiming to enhance scheduling efficiency in various educational and corporate settings. By automating tasks, providing real-time data, and integrating with external systems, it significantly improves user experience and operational effectiveness.</p>
+<h1 id="lesson-scheduler-module-documentation">Lesson Scheduler Module Documentation</h1>
+<h2 id="session-scheduling">Session Scheduling</h2>
+<p>The Session Scheduling feature enables users to create and manage live sessions with detailed parameters such as dates, times, durations, and session types (e.g., lectures, office hours). It supports multiple time zones and recurring schedules, allowing flexible and efficient planning.</p>
+<h2 id="recurrence-rules">Recurrence Rules</h2>
+<p>This feature allows the setup of repeating sessions based on defined intervals—weekly, bi-weekly, or monthly. It automatically generates session entries while considering school holidays or breaks if integrated with other modules, reducing manual workload and ensuring consistent scheduling.</p>
+<h2 id="conflict-detection">Conflict Detection</h2>
+<p>The system checks for time overlaps when creating a new session, preventing conflicts for the same user (student or instructor). If a conflict is detected, it alerts the user and prevents scheduling, ensuring smooth coordination of schedules.</p>
+<h2 id="availability-slots">Availability Slots</h2>
+<p>Instructors can define blocks of available time for meetings or consultations. This feature streamlines the arrangement of office hours or one-on-one sessions without manual back-and-forth, enhancing efficient communication.</p>
+<h2 id="assignment-deadlines">Assignment Deadlines</h2>
+<p>Linked to specific lessons, this feature sets due dates for assignments, helping students stay organized and instructors manage their workload effectively by tracking task deadlines.</p>
+<h2 id="notifications">Notifications</h2>
+<p>Automated reminders are sent via email or in-app notifications about upcoming sessions and approaching deadlines. This reduces last-minute rushes and ensures all parties are prepared.</p>
+<h2 id="resource-management">Resource Management</h2>
+<p>Assign learning materials to specific sessions, making it easier for students to access necessary resources at the right time, thereby enhancing their learning experience.</p>
+<h2 id="reporting--analytics">Reporting &#x26; Analytics</h2>
+<p>This feature collects data on session attendance and student performance metrics. It provides reports that help instructors assess teaching effectiveness, identify trends, and make informed decisions about course structure and content.</p>
+<h1 id="lesson-scheduler-module-documentation-1">Lesson Scheduler Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Lesson Scheduler module is responsible for managing live sessions, deadlines, and availability. It provides an API endpoint for scheduling lessons and a corresponding React UI for easy interaction.</p>
+<hr>
+<h2 id="fastapi-endpoint">FastAPI Endpoint</h2>
+<h3 id="description">Description:</h3>
+<p>A POST endpoint to create a new lesson schedule.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Annotated</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> date, time</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter(</span><span style="color:#FFAB70">prefix</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"/schedule"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Lesson</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: date</span></span>
+<span class="line"><span style="color:#E1E4E8">    time: time</span></span>
+<span class="line"><span style="color:#E1E4E8">    topic: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    duration: </span><span style="color:#79B8FF">int</span><span style="color:#6A737D">  # in minutes</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">Lesson)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> create_lesson</span><span style="color:#E1E4E8">(lesson: Lesson):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Create a new lesson schedule."""</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Here you would typically save the lesson to your database</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> lesson</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="react-ui-snippet">React UI Snippet</h2>
+<h3 id="description-1">Description:</h3>
+<p>A simple form component for scheduling lessons.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="jsx"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> axios </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'axios'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> ScheduleLesson</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">title</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setTitle</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">date</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setDate</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">time</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setTime</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">topic</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setTopic</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">duration</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setDuration</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> handleSchedule</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      await</span><span style="color:#E1E4E8"> axios.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'http://localhost:8000/schedule/'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        title,</span></span>
+<span class="line"><span style="color:#E1E4E8">        date,</span></span>
+<span class="line"><span style="color:#E1E4E8">        time,</span></span>
+<span class="line"><span style="color:#E1E4E8">        topic,</span></span>
+<span class="line"><span style="color:#E1E4E8">        duration,</span></span>
+<span class="line"><span style="color:#E1E4E8">        status: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"><span style="color:#B392F0">      alert</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Lesson scheduled successfully!'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">      // Reset form</span></span>
+<span class="line"><span style="color:#B392F0">      setTitle</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">      setDate</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">      setTime</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">      setTopic</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">      setDuration</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error scheduling lesson:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#B392F0">      alert</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to schedule lesson. Please try again.'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSchedule}></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"mb-3"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-label"</span><span style="color:#E1E4E8">>Title:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">          className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-control"</span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{title}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setTitle</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">          required</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"mb-3"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-label"</span><span style="color:#E1E4E8">>Date:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"date"</span></span>
+<span class="line"><span style="color:#B392F0">          className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-control"</span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{date}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setDate</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">          required</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"mb-3"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-label"</span><span style="color:#E1E4E8">>Time:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"time"</span></span>
+<span class="line"><span style="color:#B392F0">          className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-control"</span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{time}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setTime</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">          required</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"mb-3"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-label"</span><span style="color:#E1E4E8">>Topic:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">textarea</span></span>
+<span class="line"><span style="color:#B392F0">          className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-control"</span></span>
+<span class="line"><span style="color:#B392F0">          rows</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"3"</span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{topic}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setTopic</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">          required</span></span>
+<span class="line"><span style="color:#E1E4E8">        >&#x3C;/</span><span style="color:#85E89D">textarea</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"mb-3"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-label"</span><span style="color:#E1E4E8">>Duration (minutes):&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"number"</span></span>
+<span class="line"><span style="color:#B392F0">          className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-control"</span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{duration}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setDuration</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">          required</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"btn btn-primary"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        Schedule Lesson</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> ScheduleLesson;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="data-schema">Data Schema</h2>
+<h3 id="description-2">Description:</h3>
+<p>Pydantic model for lesson scheduling data.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> date, time</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> LessonSchema</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    date: date</span></span>
+<span class="line"><span style="color:#E1E4E8">    time: time</span></span>
+<span class="line"><span style="color:#E1E4E8">    topic: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    duration: </span><span style="color:#79B8FF">int</span><span style="color:#6A737D">  # in minutes</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "title"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Mathematics Basics"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "date"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2023-10-05"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "time"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"14:00"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "topic"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Introduction to Algebra"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "duration"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">60</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "status"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">True</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="dependencies">Dependencies</h2>
+<h3 id="fastapi">FastAPI:</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">uvicorn,</span><span style="color:#9ECBFF"> fastapi,</span><span style="color:#9ECBFF"> python-multipart,</span><span style="color:#9ECBFF"> pydantic</span></span>
+<span class="line"></span></code></pre>
+<h3 id="react">React:</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">axios,</span><span style="color:#9ECBFF"> @react-bootstrap/bootstrap</span></span>
+<span class="line"></span></code></pre>
+<p>This documentation provides a complete implementation of the Lesson Scheduler module with API endpoints and a user-friendly interface.</p>
+<h1 id="lesson-scheduler-module-documentation-2">Lesson Scheduler Module Documentation</h1>
+<h2 id="overview-1">Overview</h2>
+<p>The <strong>Lesson Scheduler</strong> module is designed to manage live session scheduling, deadlines, and availability tracking within a software system. It provides essential functionalities for developers to integrate lesson planning and management.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Date/Time Module</strong>: Manages date/time operations and conversions.</li>
+<li><strong>Notifications Module</strong>: Handles alerting users about upcoming events.</li>
+<li><strong>User Availability Module</strong>: Tracks instructor/student availability.</li>
+<li><strong>API Module</strong>: Exposes scheduling services via APIs.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<h3 id="1-scheduling-a-live-session">1. Scheduling a Live Session</h3>
+<p><strong>Description</strong>: Developers can schedule live sessions with start/end times and associated details.
+<strong>Steps</strong>:</p>
+<ol>
+<li>Call <code>scheduleLiveSession()</code> with session data.</li>
+<li>Receive confirmation or error response.</li>
+</ol>
+<h3 id="2-sending-deadline-reminders">2. Sending Deadline Reminders</h3>
+<p><strong>Description</strong>: Automatically notifies users before deadlines.
+<strong>Steps</strong>:</p>
+<ol>
+<li>Set a deadline using <code>setDeadline()</code>.</li>
+<li>Module triggers reminders via the Notifications Module.</li>
+</ol>
+<h3 id="3-checking-availability">3. Checking Availability</h3>
+<p><strong>Description</strong>: Verifies instructor availability for a proposed time slot.
+<strong>Steps</strong>:</p>
+<ol>
+<li>Use <code>checkAvailability()</code> with desired date/time.</li>
+<li>Get availability status.</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>Notifications</strong>: Ensure session and deadline events are synced with the Notifications Module for timely alerts.</li>
+<li><strong>Time Zones</strong>: Handle conversions internally to prevent scheduling conflicts.</li>
+<li><strong>API Endpoints</strong>: Expose endpoints for external systems to interact with scheduling functionalities.</li>
+</ul>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Option</strong></th><th><strong>Data Type</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th></tr></thead><tbody><tr><td><code>TIME_ZONE</code></td><td>String</td><td>Sets the default time zone for scheduling.</td><td>”UTC”</td></tr><tr><td><code>SESSION_DURATION_LIMIT</code></td><td>Integer</td><td>Maximum allowed session duration in minutes.</td><td>60</td></tr><tr><td><code>REMINDER_TIMING</code></td><td>Integer</td><td>Minutes before deadline to send reminder (e.g., 30 = 30 minutes prior).</td><td>60</td></tr><tr><td><code>AVAILABILITY_WINDOW</code></td><td>Integer</td><td>Duration in hours to check for availability.</td><td>24</td></tr><tr><td><code>API_ENDPOINTS_ENABLED</code></td><td>Boolean</td><td>Enables or disables public API endpoints.</td><td>true</td></tr></tbody></table>
+<hr>
+<p>This documentation provides a comprehensive overview of the <strong>Lesson Scheduler</strong> module, enabling developers to effectively integrate and utilize its features within their applications.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

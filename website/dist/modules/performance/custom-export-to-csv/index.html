@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Custom Export to CSV</title><meta name="description" content="Allow users or admins to export selected data fields for offline analysis."><meta property="og:title" content="Custom Export to CSV"><meta property="og:description" content="Allow users or admins to export selected data fields for offline analysis."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Custom Export to CSV</h1> <div class="module-meta"> <div> <span class="module-category">Performance</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Allow users or admins to export selected data fields for offline analysis.</p> <div class="module-icons"> <img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"> </div> </section> <article> <h1 id="custom-export-to-csv-module-overview">Custom Export to CSV Module Overview</h1>
+<p>The <strong>Custom Export to CSV</strong> module provides a flexible and powerful tool for users and administrators to export selected data fields from your system into Comma-Separated Values (CSV) format. This feature empowers users to work with specific datasets offline, enabling them to analyze, manipulate, or integrate the data into third-party tools as needed.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary purpose of this module is to allow selective and controlled extraction of data for offline analysis. By giving users the ability to choose which fields they want to export, the module enhances data utility while ensuring that only relevant information is handled. This functionality is particularly useful for reporting, auditing, or integrating with external systems.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>User Empowerment</strong>: Users can tailor exports to their specific needs, reducing the complexity of dealing with large datasets and focusing on the most critical information.</li>
+<li><strong>Efficiency</strong>: By exporting only required fields, users save time and reduce storage requirements, making data handling more efficient.</li>
+<li><strong>Flexibility</strong>: The module supports a wide range of use cases, from simple reporting tasks to complex data migration or integration scenarios.</li>
+<li><strong>Compliance</strong>: Admins can control which fields are available for export, ensuring that sensitive or restricted data remains protected.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Data Reporting</strong>: Users can generate custom reports by selecting specific fields (e.g., date, user ID, revenue) to analyze trends and metrics offline.</li>
+<li><strong>Offline Analysis</strong>: Exported CSV files can be used with spreadsheet applications (e.g., Excel or Google Sheets) for advanced data visualization, filtering, or calculations.</li>
+<li><strong>Data Migration</strong>: Users can export selected fields to migrate data to another system or platform, ensuring a smooth transition.</li>
+<li><strong>Troubleshooting and Debugging</strong>: Support teams can use this feature to extract detailed logs or user activity data for diagnosing issues.</li>
+<li><strong>Custom Integration</strong>: Developers can leverage the exported CSV files to integrate specific datasets with external tools, APIs, or third-party systems.</li>
+</ol>
+<p>By providing a robust and customizable export mechanism, the Custom Export to CSV module enhances the functionality of your system, offering users and admins greater control over their data while ensuring flexibility and efficiency in handling offline tasks.</p>
+<h1 id="technical-documentation-custom-export-to-csv-module">Technical Documentation: Custom Export to CSV Module</h1>
+<h2 id="overview">Overview</h2>
+<p>The Custom Export to CSV module allows users or admins to export selected data fields for offline analysis. This module is designed for technical audiences, including developers, system administrators, and data analysts.</p>
+<h2 id="features">Features</h2>
+<h3 id="1-data-selection">1. Data Selection</h3>
+<ul>
+<li><strong>Custom Field Mapping</strong>: Users can select specific fields from the dataset and define how these fields are mapped in the CSV output.</li>
+<li><strong>Dynamic Schema</strong>: The module supports a dynamic schema where users can choose from available fields based on their requirements.</li>
+</ul>
+<h3 id="2-file-format-and-delimiters">2. File Format and Delimiters</h3>
+<ul>
+<li><strong>Delimiter Options</strong>: Supports various delimiters such as commas, tabs, or semicolons to accommodate different regional standards.</li>
+<li><strong>Encoding Standards</strong>: Ensures proper encoding of characters, especially for non-ASCII data, using UTF-8 by default.</li>
+<li><strong>Headers Inclusion</strong>: Users can choose whether to include header rows in the exported CSV file.</li>
+</ul>
+<h3 id="3-filters-and-conditions">3. Filters and Conditions</h3>
+<ul>
+<li><strong>Advanced Filtering</strong>: Users can apply complex filters using expressions combining multiple conditions (e.g., date ranges, specific IDs).</li>
+<li><strong>Query Parameters</strong>: Filters are implemented through query parameters or filter objects in API calls for programmatic access.</li>
+</ul>
+<h3 id="4-batch-processing">4. Batch Processing</h3>
+<ul>
+<li><strong>Efficient Handling</strong>: The module processes large datasets efficiently, with options for pagination and chunking to manage data size.</li>
+<li><strong>Asynchronous Processing</strong>: Supports asynchronous operations to avoid blocking other system tasks and allows resuming failed exports.</li>
+</ul>
+<h3 id="5-error-handling">5. Error Handling</h3>
+<ul>
+<li><strong>Robust Management</strong>: Implements comprehensive error handling with specific error codes (e.g., HTTP status codes) and recovery options.</li>
+<li><strong>Error Reporting</strong>: Provides detailed error messages for quick identification and resolution of issues.</li>
+</ul>
+<h3 id="6-security--permissions">6. Security &#x26; Permissions</h3>
+<ul>
+<li><strong>Authentication Methods</strong>: Supports token-based authentication, OAuth2, and other secure methods to protect data access.</li>
+<li><strong>Role-Based Access Control (RBAC)</strong>: Ensures that only authorized users or roles can export specific datasets.</li>
+<li><strong>Data Encryption</strong>: Uses encryption for data in transit (HTTPS) and at rest if stored securely.</li>
+</ul>
+<h3 id="7-logging--auditing">7. Logging &#x26; Auditing</h3>
+<ul>
+<li><strong>Comprehensive Tracking</strong>: Logs all export activities, including user ID, timestamp, and data fields exported, for accountability.</li>
+<li><strong>Retention Policies</strong>: Adheres to log retention policies and compliance standards, ensuring secure storage and management of logs.</li>
+</ul>
+<h3 id="8-integration">8. Integration</h3>
+<ul>
+<li><strong>API Support</strong>: Offers programmatic access with well-documented REST APIs, including endpoints and request/response formats.</li>
+<li><strong>Third-Party Tools</strong>: Integrates seamlessly with ETL tools and BI platforms, providing examples for configuration and usage.</li>
+</ul>
+<h3 id="9-performance-optimizations">9. Performance Optimizations</h3>
+<ul>
+<li><strong>Efficient Data Retrieval</strong>: Uses optimized database queries to minimize latency and improve performance.</li>
+<li><strong>Parallel Processing Limits</strong>: Manages parallel processing based on server resources to ensure efficient data handling without overload.</li>
+</ul>
+<h3 id="10-api-support">10. API Support</h3>
+<ul>
+<li><strong>Programmatic Access</strong>: Mirrors UI functionality in the API, with clear documentation on authentication headers, request parameters, and response formats.</li>
+<li><strong>Examples Provided</strong>: Includes code snippets and configuration examples for integrating with external systems.</li>
+</ul>
+<p>This documentation provides a detailed guide to understanding and utilizing the Custom Export to CSV module effectively.</p>
+<h1 id="custom-export-to-csv-module-documentation">Custom Export to CSV Module Documentation</h1>
+<h2 id="summary">Summary</h2>
+<p>This module provides functionality for exporting selected data fields from a database to a CSV file format. This allows users or admins to analyze the data offline.</p>
+<h2 id="features-1">Features</h2>
+<ul>
+<li>Select specific data fields to export</li>
+<li>Option to include additional metadata</li>
+<li>Support for custom delimiters and headers in CSV output</li>
+<li>Error handling for invalid selections</li>
+<li>Logging of export activities</li>
+</ul>
+<h2 id="code-samples">Code Samples</h2>
+<h3 id="fastapi-endpoint">FastAPI Endpoint</h3>
+<p>This endpoint demonstrates how to create a CSV export functionality using FastAPI.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> csv</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> io</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ExportData</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    userId: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    selectedFields: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    delimiter: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> ','</span></span>
+<span class="line"><span style="color:#E1E4E8">    includeHeaders: </span><span style="color:#79B8FF">bool</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> True</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/export/csv"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_class</span><span style="color:#F97583">=</span><span style="color:#79B8FF">bytes</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> export_to_csv</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    params: ExportData </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends()</span></span>
+<span class="line"><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Simulated database query (replace with actual data retrieval logic)</span></span>
+<span class="line"><span style="color:#E1E4E8">        data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> get_data_from_db(params.userId, params.selectedFields)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#6A737D">        # Create a CSV file in memory</span></span>
+<span class="line"><span style="color:#E1E4E8">        csv_file </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> io.StringIO()</span></span>
+<span class="line"><span style="color:#E1E4E8">        writer </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> csv.writer(csv_file, </span><span style="color:#FFAB70">delimiter</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">params.delimiter)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        if</span><span style="color:#E1E4E8"> params.includeHeaders:</span></span>
+<span class="line"><span style="color:#E1E4E8">            headers </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">'field1'</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">'field2'</span><span style="color:#E1E4E8">]  </span><span style="color:#6A737D"># Replace with actual field names</span></span>
+<span class="line"><span style="color:#E1E4E8">            writer.writerow(headers)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        for</span><span style="color:#E1E4E8"> row </span><span style="color:#F97583">in</span><span style="color:#E1E4E8"> data:</span></span>
+<span class="line"><span style="color:#E1E4E8">            writer.writerow(row)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> csv_file.getvalue().encode(</span><span style="color:#9ECBFF">'utf-8'</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="react-ui-snippet">React UI Snippet</h3>
+<p>This React component demonstrates how to create a form for exporting data.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> ExportForm</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">selectedFields</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setSelectedFields</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">([]);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">delimiter</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setDelimiter</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">','</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">includeHeaders</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setIncludeHeaders</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/export/csv'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        method: </span><span style="color:#9ECBFF">'GET'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        params: {</span></span>
+<span class="line"><span style="color:#E1E4E8">          userId: localStorage.</span><span style="color:#B392F0">getItem</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'userId'</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">          selectedFields,</span></span>
+<span class="line"><span style="color:#E1E4E8">          delimiter,</span></span>
+<span class="line"><span style="color:#E1E4E8">          includeHeaders</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">      });</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> blob</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">blob</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> downloadUrl</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> window.</span><span style="color:#79B8FF">URL</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">createObjectURL</span><span style="color:#E1E4E8">(blob);</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> a</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> document.</span><span style="color:#B392F0">createElement</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'a'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      a.href </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> downloadUrl;</span></span>
+<span class="line"><span style="color:#E1E4E8">      a.download </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> 'export.csv'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">      document.body.</span><span style="color:#B392F0">appendChild</span><span style="color:#E1E4E8">(a);</span></span>
+<span class="line"><span style="color:#E1E4E8">      a.</span><span style="color:#B392F0">click</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">      document.body.</span><span style="color:#B392F0">removeChild</span><span style="color:#E1E4E8">(a);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Export failed:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Selected Fields:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#B392F0"> multiple</span><span style="color:#B392F0"> onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSelectedFields</span><span style="color:#E1E4E8">(Array.</span><span style="color:#B392F0">from</span><span style="color:#E1E4E8">(e.target.selectedOptions, </span><span style="color:#FFAB70">option</span><span style="color:#F97583"> =></span><span style="color:#E1E4E8"> option.value))}></span></span>
+<span class="line"><span style="color:#E1E4E8">          {</span><span style="color:#6A737D">/* Replace with actual field options */</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"field1"</span><span style="color:#E1E4E8">>Field 1&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"field2"</span><span style="color:#E1E4E8">>Field 2&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Delimiter:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{delimiter} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setDelimiter</span><span style="color:#E1E4E8">(e.target.value)} /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Include Headers:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"checkbox"</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">          checked</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{includeHeaders}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setIncludeHeaders</span><span style="color:#E1E4E8">(e.target.checked)}</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Export to CSV&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> ExportForm;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="data-schema-pydantic">Data Schema (Pydantic)</h3>
+<p>This Pydantic model defines the input parameters for the export functionality.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ExportData</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    userId: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    selectedFields: List[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    delimiter: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> ','</span></span>
+<span class="line"><span style="color:#E1E4E8">    includeHeaders: </span><span style="color:#79B8FF">bool</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> True</span></span>
+<span class="line"></span></code></pre>
+<h2 id="usage-instructions">Usage Instructions</h2>
+<ol>
+<li>
+<p>Install required dependencies:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> fastapi</span><span style="color:#9ECBFF"> python-multipart</span><span style="color:#9ECBFF"> uvicorn</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p>Create the API route in your FastAPI application:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FastAPI</span></span>
+<span class="line"><span style="color:#E1E4E8">app </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> FastAPI()</span></span>
+<span class="line"><span style="color:#E1E4E8">app.include_router(router)</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p>Implement the React component in your frontend application.</p>
+</li>
+<li>
+<p>Set environment variables for authentication if required.</p>
+</li>
+</ol>
+<h2 id="considerations">Considerations</h2>
+<ul>
+<li>Add proper error handling and validation based on your use case.</li>
+<li>Consider implementing rate limiting for multiple exports.</li>
+<li>Add proper logging for export activities.</li>
+<li>Ensure that large exports are handled efficiently to avoid memory issues.</li>
+</ul>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li>Use pagination for large datasets.</li>
+<li>Validate all user inputs before processing.</li>
+<li>Handle different character encodings properly when writing CSV files.</li>
+<li>Provide clear error messages to the users.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Custom Export to CSV Module Documentation</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Summary</span></span>
+<span class="line"><span style="color:#E1E4E8">The Custom Export to CSV module enables users or admins to export selected data fields for offline analysis.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Related Modules</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Data Visualization Tools**</span><span style="color:#E1E4E8">: Integrate with tools like Tableau or Power BI for advanced data analysis.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **User Authentication**</span><span style="color:#E1E4E8">: Manage user access and permissions for data exports.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Activity Logging**</span><span style="color:#E1E4E8">: Track export activities for auditing purposes.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Data Filtering**</span><span style="color:#E1E4E8">: Allow users to filter data before exporting specific fields.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Use Cases</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **User Data Export**</span><span style="color:#E1E4E8">: Users can download their personal data for offline use.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Admin Bulk Exports**</span><span style="color:#E1E4E8">: Admins export large datasets, such as user lists or logs.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Scheduled Exports**</span><span style="color:#E1E4E8">: Automate exports of selected data at predefined intervals.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration Tips</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Data Validation**</span><span style="color:#E1E4E8">: Ensure data accuracy before exporting by integrating with validation modules.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Activity Logging**</span><span style="color:#E1E4E8">: Log each export activity for auditing and security purposes.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **User Feedback**</span><span style="color:#E1E4E8">: Provide status notifications or messages upon completion of exports to enhance user experience.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Configuration Options</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#E1E4E8;font-weight:bold">**Option Name**</span><span style="color:#E1E4E8">              | </span><span style="color:#E1E4E8;font-weight:bold">**Description**</span><span style="color:#E1E4E8">                                                                 | </span><span style="color:#E1E4E8;font-weight:bold">**Example Values**</span><span style="color:#E1E4E8">                     |</span></span>
+<span class="line"><span style="color:#E1E4E8">|------------------------------|-------------------------------------------------------------------------------|---------------------------------------|</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`enable_user_exports`</span><span style="color:#E1E4E8">        | Toggle user export functionality.                                             | true, false                          |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`allowed_export_formats`</span><span style="color:#E1E4E8">     | Define the file formats allowed for export.                                   | CSV, JSON, XLSX                      |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`max_export_limit`</span><span style="color:#E1E4E8">           | Set maximum number of records that can be exported at once.                   | 1000, 5000                           |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`available_fields`</span><span style="color:#E1E4E8">           | Specify which fields are available for selection in exports.                  | ["name", "email", "date"]            |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`role_based_access`</span><span style="color:#E1E4E8">          | Configure access permissions based on user roles.                            | {"admin": true, "user": false}        |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`scheduled_export_enabled`</span><span style="color:#E1E4E8">   | Enable or disable scheduled export functionality.                             | true, false                          |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`api_integration`</span><span style="color:#E1E4E8">            | Allow integration with external APIs for triggering exports programmatically.| enabled, disabled                    |</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Conclusion</span></span>
+<span class="line"><span style="color:#E1E4E8">The Custom Export to CSV module provides flexible and secure data export capabilities, supporting various use cases and integration needs.</span></span>
+<span class="line"></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

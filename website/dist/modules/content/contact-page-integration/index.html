@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Contact Page Integration</title><meta name="description" content="Easily embed and route contact form messages to admins."><meta property="og:title" content="Contact Page Integration"><meta property="og:description" content="Easily embed and route contact form messages to admins."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Contact Page Integration</h1> <div class="module-meta"> <div> <span class="module-category">Content</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Easily embed and route contact form messages to admins.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/cloudservices/sendgrid.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="contact-page-integration-module-overview">Contact Page Integration Module Overview</h1>
+<h2 id="purpose"><strong>Purpose</strong></h2>
+<p>The Contact Page Integration module simplifies the process of embedding contact forms on your website while ensuring seamless routing of user messages directly to designated administrators. Designed with flexibility in mind, this module allows developers to easily integrate and customize contact form functionality without the need for complex backend configurations.</p>
+<h2 id="benefits"><strong>Benefits</strong></h2>
+<ul>
+<li><strong>Simplified Integration:</strong> Quickly add a contact form to any page or section of your website.</li>
+<li><strong>Centralized Message Routing:</strong> Automatically direct all user inquiries to your team’s inbox or specific admins, reducing the hassle of managing multiple communication channels.</li>
+<li><strong>Customizable Form Fields:</strong> Define and modify form fields based on your organization’s needs (e.g., name, email, message, phone number).</li>
+<li><strong>Error Handling &#x26; Validation:</strong> Built-in validation ensures that users provide accurate information, reducing spam and invalid submissions.</li>
+<li><strong>Cross-Platform Compatibility:</strong> Works seamlessly across various web frameworks and CMS platforms.</li>
+<li><strong>Scalable Solution:</strong> Easily manage multiple contact forms on different pages or for different use cases (e.g., sales inquiries, support requests).</li>
+</ul>
+<h2 id="usage-scenarios"><strong>Usage Scenarios</strong></h2>
+<ol>
+<li>
+<p><strong>E-commerce Websites:</strong></p>
+<ul>
+<li>Embed a contact form on product pages or in the checkout process to allow customers to reach out with questions about products or orders.</li>
+</ul>
+</li>
+<li>
+<p><strong>Corporate Websites:</strong></p>
+<ul>
+<li>Add a contact form to “Contact Us” pages, service pages, or career pages for easy communication with potential clients or job applicants.</li>
+</ul>
+</li>
+<li>
+<p><strong>Membership Platforms:</strong></p>
+<ul>
+<li>Provide members with an efficient way to report issues, request support, or share feedback directly through the platform.</li>
+</ul>
+</li>
+<li>
+<p><strong>Landing Pages:</strong></p>
+<ul>
+<li>Integrate a simple contact form on landing pages to capture leads and direct inquiries to your sales team for follow-up.</li>
+</ul>
+</li>
+<li>
+<p><strong>Support Portals:</strong></p>
+<ul>
+<li>Streamline customer support by offering a dedicated contact form for users to submit technical issues or product-related concerns.</li>
+</ul>
+</li>
+</ol>
+<p>By leveraging the Contact Page Integration module, developers can save time while delivering an intuitive and effective communication tool for their users.</p>
+<h2 id="features-of-contact-page-integration-module">Features of Contact Page Integration Module</h2>
+<h3 id="1-form-embedding">1. Form Embedding</h3>
+<p>Easily embed a contact form on any page using provided code snippets or plugins. Customize placement to fit your website design seamlessly.</p>
+<h3 id="2-message-routing">2. Message Routing</h3>
+<p>Route messages to specified recipients such as support or sales teams, ensuring timely and appropriate responses.</p>
+<h3 id="3-configuration-settings">3. Configuration Settings</h3>
+<p>Access settings to manage email recipients, subject lines, CC/BC options, and custom fields for data capture.</p>
+<h3 id="4-spam-prevention">4. Spam Prevention</h3>
+<p>Integrate CAPTCHA or Akismet to filter spam submissions and maintain a clean contact form.</p>
+<h3 id="5-notifications-and-alerts">5. Notifications and Alerts</h3>
+<p>Receive real-time notifications via email, SMS, or webhooks upon submission for quick response handling.</p>
+<h3 id="6-message-analytics">6. Message Analytics</h3>
+<p>Track form performance with metrics like submission count, response time, bounce rates, and data exports for analysis.</p>
+<h3 id="7-security-features">7. Security Features</h3>
+<p>Protect against XSS attacks and ensure GDPR compliance with robust security measures.</p>
+<h3 id="8-customization-options">8. Customization Options</h3>
+<p>Stylistic customization to match your site’s design, including language support and custom validation rules.</p>
+<h3 id="9-api-integration">9. API Integration</h3>
+<p>Use APIs for advanced functionality, handling submissions programmatically via JSON/XML endpoints with authentication.</p>
+<h3 id="10-error-handling-and-logging">10. Error Handling and Logging</h3>
+<p>Log errors and submission statuses for troubleshooting issues like failed emails or server errors, ensuring smooth operation.</p>
+<p>This documentation provides developers with clear, concise information on each feature, aiding in effective integration and use of the Contact Page Integration module.</p>
+<h1 id="contact-page-integration-module">Contact Page Integration Module</h1>
+<p>This module provides a seamless way to integrate and manage contact forms on your website. It allows developers to easily embed contact forms and route messages to designated administrators.</p>
+<h2 id="overview">Overview</h2>
+<p>The Contact Page Integration module consists of:</p>
+<ol>
+<li><strong>API Endpoint</strong>: A FastAPI endpoint to handle incoming contact form submissions.</li>
+<li><strong>React UI Component</strong>: A reusable React component for rendering the contact form.</li>
+<li><strong>Data Schema</strong>: Pydantic model defining the structure of contact form data.</li>
+</ol>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="contact-form-data-schema-pydantic">Contact Form Data Schema (Pydantic)</h3>
+<p>The following schema defines the structure of contact form data:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel, EmailStr</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ContactForm</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    email: EmailStr</span></span>
+<span class="line"><span style="color:#E1E4E8">    subject: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    metadata: </span><span style="color:#79B8FF">dict</span><span style="color:#F97583"> |</span><span style="color:#79B8FF"> None</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    # Validations</span></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        arbitrary_types_allowed </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> True</span></span>
+<span class="line"><span style="color:#E1E4E8">        extra </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "ignore"</span></span>
+<span class="line"></span></code></pre>
+<h2 id="api-endpoint-fastapi">API Endpoint (FastAPI)</h2>
+<p>Example FastAPI endpoint to handle contact form submissions:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> FastAPI, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> FastAPI()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@app.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/contact"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> contact_form</span><span style="color:#E1E4E8">(data: ContactForm) -> </span><span style="color:#79B8FF">dict</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#9ECBFF">    Handles contact form submissions.</span></span>
+<span class="line"><span style="color:#9ECBFF">    </span></span>
+<span class="line"><span style="color:#9ECBFF">    Args:</span></span>
+<span class="line"><span style="color:#9ECBFF">        data (ContactForm): Form data containing name, email, subject, and message.</span></span>
+<span class="line"><span style="color:#9ECBFF">        </span></span>
+<span class="line"><span style="color:#9ECBFF">    Returns:</span></span>
+<span class="line"><span style="color:#9ECBFF">        dict: Success response with submitted data.</span></span>
+<span class="line"><span style="color:#9ECBFF">    """</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Process the contact form data here</span></span>
+<span class="line"><span style="color:#6A737D">        # (e.g., send to admin, log, etc.)</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "data"</span><span style="color:#E1E4E8">: data.dict()</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h2 id="react-ui-component">React UI Component</h2>
+<p>Example React component for rendering the contact form:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> ContactForm</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">formData</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setFormData</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        name: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        email: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        subject: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        message: </span><span style="color:#9ECBFF">''</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">isLoading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setIsLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">error</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setError</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">        setIsLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">        setError</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/contact'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">                method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                    'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span></span>
+<span class="line"><span style="color:#E1E4E8">                },</span></span>
+<span class="line"><span style="color:#E1E4E8">                body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">(formData)</span></span>
+<span class="line"><span style="color:#E1E4E8">            });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">            if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) {</span></span>
+<span class="line"><span style="color:#F97583">                throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Network response was not ok'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">            alert</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Message sent successfully!'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (err) {</span></span>
+<span class="line"><span style="color:#B392F0">            setError</span><span style="color:#E1E4E8">(err.message </span><span style="color:#F97583">||</span><span style="color:#9ECBFF"> 'Failed to send message'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">finally</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">            setIsLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"contact-form"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>Contact Us&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> htmlFor</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"name"</span><span style="color:#E1E4E8">>Name:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                        type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                        id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"name"</span></span>
+<span class="line"><span style="color:#B392F0">                        required</span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.name}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, name: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> htmlFor</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"email"</span><span style="color:#E1E4E8">>Email:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                        type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"email"</span></span>
+<span class="line"><span style="color:#B392F0">                        id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"email"</span></span>
+<span class="line"><span style="color:#B392F0">                        required</span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.email}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, email: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> htmlFor</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"subject"</span><span style="color:#E1E4E8">>Subject:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                        type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                        id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"subject"</span></span>
+<span class="line"><span style="color:#B392F0">                        required</span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.subject}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, subject: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> htmlFor</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">>Message:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">textarea</span></span>
+<span class="line"><span style="color:#B392F0">                        id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"message"</span></span>
+<span class="line"><span style="color:#B392F0">                        required</span></span>
+<span class="line"><span style="color:#B392F0">                        rows</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"4"</span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.message}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, message: e.target.value})}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    >&#x3C;/</span><span style="color:#85E89D">textarea</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#B392F0"> disabled</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{isLoading}></span></span>
+<span class="line"><span style="color:#E1E4E8">                    {isLoading </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'Sending...'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'Send Message'</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            {error </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    {error}</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            )}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> ContactForm;</span></span>
+<span class="line"></span></code></pre>
+<h2 id="usage">Usage</h2>
+<ol>
+<li>
+<p><strong>Install Dependencies</strong>:</p>
+<ul>
+<li>For FastAPI: <code>pip install fastapi uvicorn</code></li>
+<li>For React: Install required packages (e.g., Axios, etc.) as needed.</li>
+</ul>
+</li>
+<li>
+<p><strong>Run the API</strong>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">uvicorn</span><span style="color:#9ECBFF"> main:app</span><span style="color:#79B8FF"> --reload</span></span>
+<span class="line"></span></code></pre>
+</li>
+<li>
+<p><strong>Integrate React Component</strong>:
+Import and use the <code>ContactForm</code> component in your React application.</p>
+</li>
+<li>
+<p><strong>Configure Backend</strong>:</p>
+<ul>
+<li>Modify the <code>/api/contact</code> endpoint to handle actual message routing (e.g., send email, log data, etc.)</li>
+<li>Add error handling and appropriate responses as needed.</li>
+</ul>
+</li>
+</ol>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>The Pydantic model ensures that all contact form fields are validated before processing.</li>
+<li>The React component includes basic form validation and loading states.</li>
+<li>Customize the UI styling in the <code>ContactForm</code> component to match your design requirements.</li>
+</ul>
+<h1 id="contact-page-integration-module-documentation">Contact Page Integration Module Documentation</h1>
+<h2 id="summary">Summary</h2>
+<p>The Contact Page Integration module simplifies embedding contact forms into your application and routing messages to administrators efficiently. It provides developers with tools to integrate seamlessly, ensuring effective communication between users and admins.</p>
+<h2 id="target-user">Target User</h2>
+<ul>
+<li><strong>Developers</strong>: This module is designed for developers who need to integrate contact forms into their applications.</li>
+</ul>
+<h2 id="related-modules">Related Modules</h2>
+<ol>
+<li>
+<p><strong>Form Builder</strong></p>
+<ul>
+<li>Module: Form Builder</li>
+<li>Description: Enables the creation of custom forms that can be integrated with Contact Page Integration, allowing flexible form design and functionality.</li>
+</ul>
+</li>
+<li>
+<p><strong>Notifications</strong></p>
+<ul>
+<li>Module: Notifications</li>
+<li>Description: Manages sending notifications via email or other channels when a contact form is submitted, enhancing user engagement.</li>
+</ul>
+</li>
+<li>
+<p><strong>Routing Engine</strong></p>
+<ul>
+<li>Module: Routing Engine</li>
+<li>Description: Determines the correct recipient(s) of the contact message based on predefined rules, ensuring messages reach the right team members efficiently.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analytics</strong></p>
+<ul>
+<li>Module: Analytics</li>
+<li>Description: Tracks form usage and submission data, providing insights into user behavior and form performance for informed decision-making.</li>
+</ul>
+</li>
+<li>
+<p><strong>Security</strong></p>
+<ul>
+<li>Module: Security</li>
+<li>Description: Provides security measures to protect contact forms from spam and other malicious activities, ensuring reliable communication channels.</li>
+</ul>
+</li>
+</ol>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Basic Form Integration</strong>: Integrate a simple contact form on your website or application for user inquiries.</li>
+<li><strong>Dynamic Routing</strong>: Route messages based on user input (e.g., selecting support type) to the appropriate department.</li>
+<li><strong>Multi-Channel Notifications</strong>: Send notifications via email, SMS, or push alerts to admins when a new message arrives.</li>
+<li><strong>Analytics Tracking</strong>: Monitor form submissions and user interactions to optimize your contact system’s effectiveness.</li>
+<li><strong>Compliance</strong>: Ensure that all messages meet security and data protection standards.</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>Configuration Steps</strong>:</p>
+<ul>
+<li>Set up the Contact Page Integration module in your application.</li>
+<li>Configure form settings using Form Builder, specifying fields and validation rules.</li>
+</ul>
+</li>
+<li>
+<p><strong>Compatibility Notes</strong>:</p>
+<ul>
+<li>Ensure compatibility with other modules (e.g., Routing Engine) for seamless integration.</li>
+</ul>
+</li>
+<li>
+<p><strong>Performance Considerations</strong>:</p>
+<ul>
+<li>Optimize form load times by minimizing unnecessary scripts or stylesheets.</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Handling</strong>:</p>
+<ul>
+<li>Implement proper error handling to catch and resolve issues like missing fields or server errors.</li>
+</ul>
+</li>
+<li>
+<p><strong>Testing Guidelines</strong>:</p>
+<ul>
+<li>Test all routing rules, notification channels, and security features thoroughly before deployment.</li>
+</ul>
+</li>
+</ol>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Name</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th><th><strong>Notes</strong></th></tr></thead><tbody><tr><td>Form ID</td><td>Unique identifier for the contact form.</td><td>None</td><td>Must be set to a valid form ID from Form Builder.</td></tr><tr><td>Destination Email</td><td>Primary email where all messages are sent.</td><td><a href="mailto:admin@example.com">admin@example.com</a></td><td>Can be changed via the Notifications module’s settings.</td></tr><tr><td>Routing Priority</td><td>Determines message handling order (e.g., support first).</td><td>High</td><td>Higher priority routes to admins faster.</td></tr><tr><td>Enable Notifications</td><td>Toggle notification system on/off for new messages.</td><td>Yes</td><td>Notifications can be disabled if not required.</td></tr><tr><td>Notification Recipients</td><td>List of emails or channels to send notifications to.</td><td>[]</td><td>Use comma-separated values for multiple recipients.</td></tr><tr><td>Analytics Tracking</td><td>Track form interactions and submission data.</td><td>Enabled</td><td>Disabling tracking may affect analytics reporting.</td></tr><tr><td>Security Settings</td><td>Configure CAPTCHA, rate limiting, and other security features.</td><td>Moderate</td><td>Adjust based on your application’s security needs.</td></tr></tbody></table>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><strong>Form ID Usage</strong>: Include the form ID as a URL parameter, e.g., <code>/contact?form_id=123</code>.</li>
+<li><strong>Notification Setup</strong>: Set recipients in Notifications module, e.g., <code>admin@example.com, support@example.com</code>.</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>Common issues include:</p>
+<ul>
+<li><strong>Forms Not Submitting</strong>: Check network console for errors.</li>
+<li><strong>Notifications Not Sent</strong>: Verify notification settings and ensure recipients are valid.</li>
+<li><strong>Routing Errors</strong>: Review routing rules and check logs for exceptions.</li>
+</ul>
+<p>By following these guidelines, you can efficiently integrate the Contact Page Integration module into your application, ensuring effective communication with users.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

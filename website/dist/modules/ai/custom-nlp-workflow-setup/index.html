@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Custom NLP Workflow Setup</title><meta name="description" content="Tailored pipelines for processing domain-specific language and inputs."><meta property="og:title" content="Custom NLP Workflow Setup"><meta property="og:description" content="Tailored pipelines for processing domain-specific language and inputs."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Custom NLP Workflow Setup</h1> <div class="module-meta"> <div> <span class="module-category">AI</span> <span class="module-subcategory"> → Platinum</span> </div> <div class="module-price"> <span>💰</span> $3500 </div> </div> <p class="module-summary">Tailored pipelines for processing domain-specific language and inputs.</p> <div class="module-icons"> <img src="/assets/modules/ai/huggingface.png" alt="Technology icon"><img src="/assets/modules/language/python.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="custom-nlp-workflow-setup-transforming-industry-specific-language-processing">Custom NLP Workflow Setup: Transforming Industry-Specific Language Processing</h1>
+<p><strong>Category:</strong> AI<br>
+<strong>Summary:</strong> Customize your Natural Language Processing (NLP) workflows to tackle unique challenges in specialized domains.</p>
+<p><strong>Target User:</strong> Developers seeking tailored solutions for specific industries.</p>
+<h2 id="overview">Overview</h2>
+<p>In today’s data-driven world, Natural Language Processing (NLP) is pivotal across various sectors, from healthcare to finance. However, the generic NLP models often fall short of addressing the nuanced requirements of these industries. The Custom NLP Workflow Setup module is designed to empower developers by enabling them to craft specialized pipelines that cater to the unique needs of specific domains and data types.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary goal of this module is to provide developers with a robust framework for creating domain-specific NLP solutions. It addresses the limitations of off-the-shelf models, which may not capture industry-specific terminology or context effectively. This module allows for the customization of workflows to enhance accuracy, efficiency, and relevance in processing text data.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Enhanced Flexibility:</strong> Tailor your NLP workflows to adapt to evolving business needs and industry standards.</li>
+<li><strong>Improved Efficiency:</strong> Streamline processes by reducing post-processing steps with domain-aware models.</li>
+<li><strong>Greater Customization:</strong> Integrate seamlessly with existing tools and workflows, offering a personalized approach to text processing.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<h3 id="1-text-heavy-domains">1. Text-Heavy Domains</h3>
+<ul>
+<li><strong>Healthcare:</strong> Analyze medical records for patient outcomes or drug safety monitoring.</li>
+<li><strong>Finance:</strong> Detect fraud patterns in transactional data or assess credit risk using sentiment analysis on financial reports.</li>
+<li><strong>E-commerce:</strong> Enhance customer experience through personalized recommendations by analyzing product reviews and feedback.</li>
+</ul>
+<h3 id="2-specialized-data-formats">2. Specialized Data Formats</h3>
+<ul>
+<li><strong>Legal Documents:</strong> Extract clauses from contracts, identify key terms, and automate compliance checks.</li>
+<li><strong>Medical Records:</strong> Process structured data like lab results or appointment notes for predictive analytics.</li>
+<li><strong>Log Analysis:</strong> Automate incident detection and troubleshooting in IT operations by parsing log files.</li>
+</ul>
+<h3 id="3-real-time-vs-batch-processing">3. Real-Time vs. Batch Processing</h3>
+<ul>
+<li><strong>Real-Time Applications:</strong> Implement live customer support systems to provide instant responses based on sentiment analysis of user queries.</li>
+<li><strong>Batch Processing:</strong> Analyze historical sales data or social media trends over extended periods for insights and trend analysis.</li>
+</ul>
+<p>By leveraging the Custom NLP Workflow Setup module, developers can unlock the full potential of NLP in their specific domains, driving innovation and efficiency across industries.</p>
+<h3 id="custom-pipeline-creation">Custom Pipeline Creation</h3>
+<p>This feature allows developers to create customized NLP workflows by selecting specific tasks such as tokenization or sentiment analysis and arranging them in a sequence tailored to their project’s needs.</p>
+<h3 id="domain-specific-preprocessing">Domain-Specific Preprocessing</h3>
+<p>The module includes tools designed to handle unique jargon and requirements of various industries. This might involve custom stopword lists or specialized tokenizers that understand industry-specific terms, ensuring accurate processing of domain-specific language.</p>
+<h3 id="flexible-input-handling">Flexible Input Handling</h3>
+<p>The workflow supports a variety of input types, including structured data from databases and unstructured data like social media posts. It formats these inputs appropriately for NLP processing, accommodating different data sources seamlessly.</p>
+<h3 id="integration-capabilities">Integration Capabilities</h3>
+<p>The module offers APIs and connectors that enable smooth interaction with existing systems. This allows for easy data flow between the workflow and other application components, facilitating integration into broader software ecosystems.</p>
+<h3 id="extensible-architecture">Extensible Architecture</h3>
+<p>Designed to be adaptable, the module supports the addition of new models or algorithms without requiring significant changes to the existing structure. This extensibility ensures it can evolve to meet future needs efficiently.</p>
+<h1 id="custom-nlp-workflow-setup-module">Custom NLP Workflow Setup Module</h1>
+<p>This module provides tools for creating and managing custom Natural Language Processing (NLP) workflows tailored to specific domains and languages.</p>
+<h2 id="overview-1">Overview</h2>
+<p>The Custom NLP Workflow Setup module allows developers to create domain-specific NLP pipelines using FastAPI or Node.js. It includes a React-based user interface for easy configuration and monitoring of workflows.</p>
+<hr>
+<h2 id="code-samples">Code Samples</h2>
+<h3 id="1-fastapi-endpoint-example">1. <strong>FastAPI Endpoint Example</strong></h3>
+<p>This example shows how to create a FastAPI endpoint that processes text data based on custom NLP rules.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TextInput</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    text: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    language: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "en"</span></span>
+<span class="line"><span style="color:#E1E4E8">    processing_rules: Optional[</span><span style="color:#79B8FF">dict</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/process-text"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> process_text</span><span style="color:#E1E4E8">(text_input: TextInput):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Example processing logic</span></span>
+<span class="line"><span style="color:#E1E4E8">        processed_data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "word_count"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">len</span><span style="color:#E1E4E8">(text_input.text.split()),</span></span>
+<span class="line"><span style="color:#9ECBFF">            "unique_words"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">len</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">set</span><span style="color:#E1E4E8">(text_input.text.split())),</span></span>
+<span class="line"><span style="color:#9ECBFF">            "language_detected"</span><span style="color:#E1E4E8">: text_input.language </span><span style="color:#F97583">if</span><span style="color:#E1E4E8"> text_input.language </span><span style="color:#F97583">else</span><span style="color:#9ECBFF"> "en"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Text processed successfully"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">**</span><span style="color:#E1E4E8">processed_data}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-snippet">2. <strong>React UI Snippet</strong></h3>
+<p>A React component snippet for configuring NLP workflows:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState, useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> WorkflowConfiguration</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">workflowConfig</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setWorkflowConfig</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        name: </span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        rules: {},</span></span>
+<span class="line"><span style="color:#E1E4E8">        language: </span><span style="color:#9ECBFF">"en"</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#6A737D">        // API call to save workflow</span></span>
+<span class="line"><span style="color:#B392F0">        fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/save-workflow'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">            method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            },</span></span>
+<span class="line"><span style="color:#E1E4E8">            body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">(workflowConfig)</span></span>
+<span class="line"><span style="color:#E1E4E8">        });</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> htmlFor</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"name"</span><span style="color:#E1E4E8">>Workflow Name:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                    id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"name"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{workflowConfig.name}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setWorkflowConfig</span><span style="color:#E1E4E8">({</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">workflowConfig, name: e.target.value})}</span></span>
+<span class="line"><span style="color:#B392F0">                    required</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Save Workflow&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> WorkflowConfiguration;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-pydantic-data-schema">3. <strong>Pydantic Data Schema</strong></h3>
+<p>Example of a Pydantic model for NLP workflow configuration:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ProcessingRule</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#79B8FF">    type</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # e.g., "stop-words", "lemmatization", "pos-tagging"</span></span>
+<span class="line"><span style="color:#E1E4E8">    parameters: </span><span style="color:#79B8FF">dict</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> WorkflowConfig</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    name: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    language: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    rules: list[ProcessingRule]</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Example usage:</span></span>
+<span class="line"><span style="color:#E1E4E8">workflow_config </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> WorkflowConfig(</span></span>
+<span class="line"><span style="color:#FFAB70">    id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"123"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">    name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Custom English Text Processing"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">    language</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"en"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">    rules</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span></span>
+<span class="line"><span style="color:#E1E4E8">        ProcessingRule(</span><span style="color:#FFAB70">name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Remove Stop Words"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"stop-words"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">parameters</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#9ECBFF">"language"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"english"</span><span style="color:#E1E4E8">}),</span></span>
+<span class="line"><span style="color:#E1E4E8">        ProcessingRule(</span><span style="color:#FFAB70">name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Lemmatize Words"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"lemmatization"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">parameters</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{})</span></span>
+<span class="line"><span style="color:#E1E4E8">    ],</span></span>
+<span class="line"><span style="color:#FFAB70">    created_at</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"2023-10-05"</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="usage-notes">Usage Notes</h2>
+<ol>
+<li>
+<p><strong>FastAPI Setup</strong>:</p>
+<ul>
+<li>Install dependencies: <code>pip install fastapi uvicorn pydantic</code></li>
+<li>Run the FastAPI server with <code>uvicorn main:app --reload</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>React UI Setup</strong>:</p>
+<ul>
+<li>Set up a React project using Create React App or Vite.</li>
+<li>Include necessary state management and API call handling.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pydantic Models</strong>:</p>
+<ul>
+<li>Use Pydantic models for request validation in FastAPI endpoints.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>This module provides a robust foundation for building custom NLP workflows, with extensible code examples and clear documentation.</p>
+<h1 id="custom-nlp-workflow-setup-module-documentation">Custom NLP Workflow Setup Module Documentation</h1>
+<h2 id="summary">Summary</h2>
+<p>The <strong>Custom NLP Workflow Setup</strong> module allows developers to create tailored natural language processing (NLP) pipelines for domain-specific language and input types. This module provides flexibility to design custom workflows that cater to specific business needs, such as sentiment analysis, text classification, or entity extraction.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ol>
+<li><strong>Data Preprocessing Module</strong>: Handles text normalization, tokenization, and feature extraction.</li>
+<li><strong>Model Training Module</strong>: Enables fine-tuning of pre-trained NLP models for domain-specific tasks.</li>
+<li><strong>Text Analysis Module</strong>: Performs advanced NLP tasks like topic modeling, summarization, and keyword extraction.</li>
+<li><strong>Result Visualization Module</strong>: Provides tools to visualize and interpret NLP workflow outputs.</li>
+<li><strong>Workflow Deployment Module</strong>: Deploys custom NLP pipelines as APIs or batch processes.</li>
+</ol>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li>
+<p><strong>Domain-Specific Language Processing</strong>:</p>
+<ul>
+<li>Example: Medical texts, legal documents, or technical reports require specialized tokenization and parsing rules.</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom Tokenization</strong>:</p>
+<ul>
+<li>Use case: Extracting specific tokens (e.g., drug names, model numbers) from unstructured text.</li>
+</ul>
+</li>
+<li>
+<p><strong>Aspect-Based Sentiment Analysis</strong>:</p>
+<ul>
+<li>Example: Analyzing customer feedback to identify sentiment toward specific product features or services.</li>
+</ul>
+</li>
+<li>
+<p><strong>Multi-Language NLP Workflows</strong>:</p>
+<ul>
+<li>Use case: Processing texts in multiple languages with custom language-specific rules.</li>
+</ul>
+</li>
+<li>
+<p><strong>Event Extraction from Text</strong>:</p>
+<ul>
+<li>Example: Identifying dates, locations, and entities in news articles for automated event tracking.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ol>
+<li>
+<p><strong>Versioning and Dependency Management</strong>:</p>
+<ul>
+<li>Ensure that all dependencies (e.g., pre-trained models, libraries) are properly versioned to avoid compatibility issues.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configuration Best Practices</strong>:</p>
+<ul>
+<li>Use configuration files (e.g., YAML or JSON) for workflow settings.</li>
+<li>Avoid hardcoding values; instead, use environment variables or command-line arguments for flexibility.</li>
+</ul>
+</li>
+<li>
+<p><strong>Performance Optimization</strong>:</p>
+<ul>
+<li>Optimize tokenization and preprocessing steps to handle large datasets efficiently.</li>
+<li>Cache frequently used data or precomputed results to reduce redundant computations.</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Handling and Logging</strong>:</p>
+<ul>
+<li>Implement robust error handling and logging mechanisms to track issues during workflow execution.</li>
+<li>Use structured logging formats (e.g., JSON) for easier parsing and analysis.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>The following configuration options are available for the Custom NLP Workflow Setup module:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th>Default Value</th><th>Description</th></tr></thead><tbody><tr><td><code>model_name</code></td><td>String</td><td>”bert-base-uncased”</td><td>Name of the pre-trained model to use.</td></tr><tr><td><code>tokenizer_type</code></td><td>String</td><td>”BertTokenizer”</td><td>Type of tokenizer to use for text processing.</td></tr><tr><td><code>batch_size</code></td><td>Integer</td><td>32</td><td>Number of samples processed per batch during inference or training.</td></tr><tr><td><code>max_sequence_length</code></td><td>Integer</td><td>512</td><td>Maximum length of input sequences in tokens.</td></tr><tr><td><code>use_cuda</code></td><td>Boolean</td><td>True</td><td>Enable/disable GPU acceleration for faster processing.</td></tr><tr><td><code>output_format</code></td><td>String</td><td>”json”</td><td>Format of the output (e.g., JSON, CSV, or custom formats).</td></tr><tr><td><code>custom_token_patterns</code></td><td>List</td><td>[]</td><td>Regular expressions or patterns for custom tokenization rules.</td></tr></tbody></table>
+<hr>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-custom-tokenization">Example 1: Custom Tokenization</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Define custom tokenization patterns</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> re</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> tokenize</span><span style="color:#E1E4E8">(text):</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> re.findall(</span><span style="color:#F97583">r</span><span style="color:#9ECBFF">'</span><span style="color:#79B8FF">\b\w</span><span style="color:#F97583">+</span><span style="color:#79B8FF">\b</span><span style="color:#9ECBFF">'</span><span style="color:#E1E4E8">, text)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Set up the workflow with custom tokenizer</span></span>
+<span class="line"><span style="color:#E1E4E8">workflow </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> CustomNLPWorkflowSetup(</span><span style="color:#FFAB70">tokenizer</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">tokenize)</span></span>
+<span class="line"></span></code></pre>
+<h3 id="example-2-aspect-based-sentiment-analysis">Example 2: Aspect-Based Sentiment Analysis</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Define aspects of interest</span></span>
+<span class="line"><span style="color:#E1E4E8">aspects </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [</span><span style="color:#9ECBFF">"price"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"quality"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"delivery"</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Configure the workflow to focus on specific aspects</span></span>
+<span class="line"><span style="color:#E1E4E8">workflow.set_aspect(aspects)</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <strong>Custom NLP Workflow Setup</strong> module provides developers with the flexibility to design and deploy domain-specific NLP pipelines. By leveraging related modules and following best practices for configuration and integration, developers can efficiently build robust NLP workflows tailored to their needs.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

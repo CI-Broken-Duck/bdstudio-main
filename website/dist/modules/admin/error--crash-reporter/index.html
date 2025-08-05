@@ -1,0 +1,360 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Error &amp; Crash Reporter</title><meta name="description" content="Automatically capture frontend or backend errors with stack trace summaries."><meta property="og:title" content="Error &#38; Crash Reporter"><meta property="og:description" content="Automatically capture frontend or backend errors with stack trace summaries."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Error &amp; Crash Reporter</h1> <div class="module-meta"> <div> <span class="module-category">Admin</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Automatically capture frontend or backend errors with stack trace summaries.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/sentry.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"> </div> </section> <article> <h1 id="error--crash-reporter-module-overview">Error &#x26; Crash Reporter Module Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The <strong>Error &#x26; Crash Reporter</strong> module is designed to streamline the detection, reporting, and analysis of errors and crashes in both frontend and backend systems. Its primary goal is to provide developers with comprehensive insights into issues that occur within the application, enabling faster identification and resolution of bugs.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Real-time Monitoring</strong>: Automatically captures errors and crashes as they occur, allowing developers to respond promptly.</li>
+<li><strong>Detailed Insights</strong>: Provides stack trace summaries and contextual data for every error, making it easier to pinpoint the root cause.</li>
+<li><strong>Efficient Debugging</strong>: Reduces the time spent on tracking down issues by offering a centralized platform for error management.</li>
+<li><strong>Customizable Filters</strong>: Enables developers to focus on specific types of errors or patterns, improving debugging efficiency.</li>
+<li><strong>Minimized Downtime</strong>: Helps resolve issues quickly, reducing downtime and enhancing user experience.</li>
+<li><strong>Historical Data</strong>: Stores past errors for analysis, enabling trend identification and proactive issue resolution.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<p>The Error &#x26; Crash Reporter is particularly useful in the following scenarios:</p>
+<ol>
+<li><strong>Real-time Development</strong>: Detecting and addressing bugs during active development cycles.</li>
+<li><strong>Production Environments</strong>: Monitoring live applications to ensure smooth operation and quick recovery from crashes.</li>
+<li><strong>Post-release Analysis</strong>: Reviewing historical data to identify recurring issues or patterns.</li>
+<li><strong>Compliance &#x26; Auditing</strong>: Ensuring that all errors are logged and available for review, meeting compliance requirements.</li>
+</ol>
+<p>By leveraging this module, developers can significantly enhance their ability to maintain robust, error-free software systems.</p>
+<h2 id="features-of-error--crash-reporter-module">Features of Error &#x26; Crash Reporter Module</h2>
+<h3 id="automatic-error-detection">Automatic Error Detection</h3>
+<p>The module automatically identifies errors and crashes in both frontend and backend environments without requiring manual intervention. This ensures that issues are detected promptly, reducing downtime and improving system reliability.</p>
+<h3 id="stack-trace-capture">Stack Trace Capture</h3>
+<p>When an error occurs, the module captures detailed stack traces. These traces provide a clear view of where the error originated, including function calls and line numbers, aiding developers in quickly locating and resolving the issue.</p>
+<h3 id="custom-error-categories">Custom Error Categories</h3>
+<p>Errors can be categorized into predefined or custom types (e.g., critical, warning, info). This categorization helps prioritize issues based on severity, making it easier for developers to manage and address them efficiently.</p>
+<h3 id="error-rate-tracking">Error Rate Tracking</h3>
+<p>The module tracks how frequently each error occurs. By monitoring error rates over time, developers can identify recurring issues that may require long-term fixes or optimizations.</p>
+<h3 id="data-privacy-compliance">Data Privacy Compliance</h3>
+<p>Sensitive user data is excluded from error reports to ensure compliance with privacy regulations. This prevents exposure of personal information or API keys in error logs.</p>
+<h3 id="integration-with-issue-tracker">Integration with Issue Tracker</h3>
+<p>The module integrates with issue tracking systems (e.g., Jira, GitHub Issues) to automatically create tickets for new errors. This integration streamlines the bug reporting process and helps manage issues within existing workflows.</p>
+<h3 id="backend--frontend-support">Backend &#x26; Frontend Support</h3>
+<p>The module works seamlessly across both backend (server-side) and frontend (client-side) environments. It captures errors from server logs as well as client-side JavaScript exceptions, providing comprehensive coverage of all potential issues.</p>
+<h3 id="customizable-notifications">Customizable Notifications</h3>
+<p>Notifications can be configured to send alerts based on error type, severity, or frequency. Developers can set thresholds for notifications, ensuring that they only receive relevant and critical information without being overwhelmed by less severe issues.</p>
+<h3 id="silent-fail-mode">Silent Fail Mode</h3>
+<p>In the event of a failure while attempting to report an error (e.g., network issues), the module operates in silent fail mode. This prevents the application from crashing due to reporting errors, maintaining system stability.</p>
+<h3 id="diagnostics-collection">Diagnostics Collection</h3>
+<p>The module collects additional diagnostic information, such as environment variables, request headers, and session data, when capturing errors. This extra context helps developers understand the circumstances surrounding an error, facilitating faster resolution.</p>
+<h3 id="cross-platform-support">Cross-Platform Support</h3>
+<p>The module is compatible with multiple operating systems and architectures, ensuring that it can be used across diverse deployment environments without modification.</p>
+<h3 id="performance-optimization">Performance Optimization</h3>
+<p>The module is designed with minimal overhead to ensure it does not impact application performance. This allows for robust error reporting while maintaining smooth operation of the software.</p>
+<p>These features collectively make the Error &#x26; Crash Reporter a powerful tool for developers to monitor, detect, and resolve issues efficiently, enhancing overall software reliability and user experience.</p>
+<h1 id="error--crash-reporter-module-documentation">Error &#x26; Crash Reporter Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Error &#x26; Crash Reporter module provides automatic error capture for both frontend and backend environments. It collects detailed error information along with stack traces to aid in debugging and monitoring system health.</p>
+<h2 id="components">Components</h2>
+<h3 id="1-backend-api-fastapi">1. Backend API (FastAPI)</h3>
+<p>This FastAPI endpoint handles incoming error reports from the frontend or other services.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> logging</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"><span style="color:#E1E4E8">logger </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> logging.getLogger(</span><span style="color:#79B8FF">__name__</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> RequestErrorModel</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    error_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    timestamp: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    level: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # e.g., "error", "warning", "critical"</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    context: </span><span style="color:#79B8FF">dict</span></span>
+<span class="line"><span style="color:#E1E4E8">    stack_trace: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    metadata: Optional[</span><span style="color:#79B8FF">dict</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/v1/error-reporter/report"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> report_error</span><span style="color:#E1E4E8">(error_data: RequestErrorModel):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        logger.error(</span></span>
+<span class="line"><span style="color:#F97583">            f</span><span style="color:#9ECBFF">"Reported error: </span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">error_data.message</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">            extra</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#9ECBFF">                "context"</span><span style="color:#E1E4E8">: error_data.context,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "stack_trace"</span><span style="color:#E1E4E8">: error_data.stack_trace </span><span style="color:#F97583">if</span><span style="color:#E1E4E8"> error_data.stack_trace </span><span style="color:#F97583">else</span><span style="color:#79B8FF"> None</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "metadata"</span><span style="color:#E1E4E8">: error_data.metadata</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        )</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Error reported successfully"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#E1E4E8">        logger.error(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Failed to process error report: </span><span style="color:#79B8FF">{str</span><span style="color:#E1E4E8">(e)</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Internal server error while processing the error report."</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-frontend-ui-react">2. Frontend UI (React)</h3>
+<p>This React component provides a simple form for manual error reporting.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> ErrorReporter</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">errorId</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setErrorId</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">timestamp</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setTimestamp</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(Date.</span><span style="color:#B392F0">now</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">level</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLevel</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'error'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">message</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setMessage</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">context</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setContext</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'{}'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">stackTrace</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setStackTrace</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">metadata</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setMetadata</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'{}'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> errorData</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">                error_id: errorId,</span></span>
+<span class="line"><span style="color:#E1E4E8">                timestamp: </span><span style="color:#B392F0">parseInt</span><span style="color:#E1E4E8">(timestamp),</span></span>
+<span class="line"><span style="color:#E1E4E8">                level: level,</span></span>
+<span class="line"><span style="color:#E1E4E8">                message: message,</span></span>
+<span class="line"><span style="color:#E1E4E8">                context: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">parse</span><span style="color:#E1E4E8">(context),</span></span>
+<span class="line"><span style="color:#E1E4E8">                stack_trace: stackTrace,</span></span>
+<span class="line"><span style="color:#E1E4E8">                metadata: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">parse</span><span style="color:#E1E4E8">(metadata)</span></span>
+<span class="line"><span style="color:#E1E4E8">            };</span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#F97583">            await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/v1/error-reporter/report'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">                method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                    'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span></span>
+<span class="line"><span style="color:#E1E4E8">                },</span></span>
+<span class="line"><span style="color:#E1E4E8">                body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">(errorData)</span></span>
+<span class="line"><span style="color:#E1E4E8">            });</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (err) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error submitting error report:'</span><span style="color:#E1E4E8">, err);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"error-reporter"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>Report Error&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Error ID:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{errorId} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setErrorId</span><span style="color:#E1E4E8">(e.target.value)} /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Timestamp:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"number"</span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{timestamp}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setTimestamp</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Level:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{level} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setLevel</span><span style="color:#E1E4E8">(e.target.value)}></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">>Error&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"warning"</span><span style="color:#E1E4E8">>Warning&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"critical"</span><span style="color:#E1E4E8">>Critical&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Message:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">textarea</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{message}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setMessage</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                        rows</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Context:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">textarea</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{context}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setContext</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                        rows</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Stack Trace:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">textarea</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{stackTrace}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setStackTrace</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                        rows</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-group"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Metadata:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">textarea</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">                        value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{metadata}</span></span>
+<span class="line"><span style="color:#B392F0">                        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setMetadata</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">                        rows</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    /></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Submit Error Report&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> ErrorReporter;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-data-schema-pydantic">3. Data Schema (Pydantic)</h3>
+<p>The Pydantic model defines the structure of an error report.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional, Dict</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> ErrorReport</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    error_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    timestamp: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    level: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    context: Dict[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">any</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    stack_trace: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    metadata: Optional[Dict[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">any</span><span style="color:#E1E4E8">]] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    class</span><span style="color:#B392F0"> Config</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        json_schema_extra </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "example"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#9ECBFF">                "error_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"12345"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "timestamp"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1678901234</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "level"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"error"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Critical error occurred during API call"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "context"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"request_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"abc123"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"user_id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">123</span><span style="color:#E1E4E8">},</span></span>
+<span class="line"><span style="color:#9ECBFF">                "stack_trace"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Traceback (most recent call last):</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">  File ..."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">                "metadata"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"environment"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"production"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"version"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"1.0.0"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"></span></code></pre>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="example-1-reporting-a-backend-error">Example 1: Reporting a Backend Error</h3>
+<p>A backend service can automatically capture errors and send them to the reporter:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">    # your code that might throw an error</span></span>
+<span class="line"><span style="color:#E1E4E8">    some_function_that_might_fail()</span></span>
+<span class="line"><span style="color:#F97583">except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#E1E4E8">    logger.error(</span></span>
+<span class="line"><span style="color:#F97583">        f</span><span style="color:#9ECBFF">"Backend error occurred: </span><span style="color:#79B8FF">{str</span><span style="color:#E1E4E8">(e)</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#FFAB70">        extra</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#9ECBFF">            "context"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"request_id"</span><span style="color:#E1E4E8">: request.id},</span></span>
+<span class="line"><span style="color:#9ECBFF">            "stack_trace"</span><span style="color:#E1E4E8">: traceback.format_exc(),</span></span>
+<span class="line"><span style="color:#9ECBFF">            "metadata"</span><span style="color:#E1E4E8">: {</span><span style="color:#9ECBFF">"service"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"backend"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    )</span></span>
+<span class="line"></span></code></pre>
+<h3 id="example-2-frontend-error-submission">Example 2: Frontend Error Submission</h3>
+<p>A frontend developer can manually test the error reporter:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> mockError</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    error_id: Date.</span><span style="color:#B392F0">now</span><span style="color:#E1E4E8">().</span><span style="color:#B392F0">toString</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">    timestamp: Date.</span><span style="color:#B392F0">now</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">    level: </span><span style="color:#9ECBFF">'error'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: </span><span style="color:#9ECBFF">'Failed to fetch data from API'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    context: { component: </span><span style="color:#9ECBFF">'DataFetcher'</span><span style="color:#E1E4E8">, method: </span><span style="color:#9ECBFF">'fetchData'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    stack_trace: </span><span style="color:#9ECBFF">'Error: network error</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">    at fetchData (/components/DataFetcher.js:123)'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    metadata: { environment: </span><span style="color:#9ECBFF">'development'</span><span style="color:#E1E4E8">, version: </span><span style="color:#9ECBFF">'1.0.0'</span><span style="color:#E1E4E8"> }</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/v1/error-reporter/report'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">        'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">    body: </span><span style="color:#79B8FF">JSON</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">stringify</span><span style="color:#E1E4E8">(mockError)</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<h2 id="notes">Notes</h2>
+<ul>
+<li><strong>Customization</strong>: The module can be extended to include custom error types and additional metadata fields.</li>
+<li><strong>Logging Integration</strong>: Supports integration with various logging services (e.g., Sentry, Datadog).</li>
+<li><strong>Rate Limiting</strong>: Implement rate limiting to prevent abuse or excessive reporting.</li>
+<li><strong>Security</strong>: Ensure sensitive data in stack traces and metadata is sanitized before being sent over the network.</li>
+</ul>
+<h1 id="error--crash-reporter-module-documentation-1">Error &#x26; Crash Reporter Module Documentation</h1>
+<h2 id="overview-1">Overview</h2>
+<p>The <strong>Error &#x26; Crash Reporter</strong> module is designed to automatically capture and report errors or crashes from both frontend and backend systems. It provides detailed stack trace summaries and error context to help developers quickly identify and resolve issues.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Monitoring Tools</strong>: For comprehensive system health monitoring.</li>
+<li><strong>Logging Systems</strong>: To integrate with existing logging infrastructure.</li>
+<li><strong>Notification Services</strong>: To send alerts for critical errors.</li>
+<li><strong>Performance Analytics</strong>: For analyzing error trends over time.</li>
+<li><strong>Security Auditing</strong>: To track security-related errors and vulnerabilities.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li>
+<p><strong>Real-Time Error Monitoring</strong><br>
+Capture and display errors in real-time to identify issues as they occur.</p>
+</li>
+<li>
+<p><strong>Error Reporting and Logging</strong><br>
+Automatically log errors with stack traces, timestamps, and contextual data for post-mortem analysis.</p>
+</li>
+<li>
+<p><strong>Crash Analytics</strong><br>
+Generate reports on application crashes, including frequency, trends, and affected versions.</p>
+</li>
+<li>
+<p><strong>Integration with DevTools</strong><br>
+Provide developers with actionable insights directly in their IDE or debugging tools.</p>
+</li>
+<li>
+<p><strong>Custom Error Handling</strong><br>
+Define custom error categories and priorities based on business logic.</p>
+</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>Centralized Logging</strong>: Integrate with a centralized logging system (e.g., ELK Stack, Splunk) for unified error tracking.</li>
+<li><strong>Correlation ID</strong>: Use a correlation ID to link errors across frontend and backend logs.</li>
+<li><strong>Minimal Overhead</strong>: Optimize the module to minimize performance overhead in production environments.</li>
+<li><strong>Metadata Context</strong>: Include contextual metadata (e.g., user IDs, session details) with reported errors for better debugging.</li>
+<li><strong>Feedback Loop</strong>: Implement a feedback mechanism to track error resolution status and share insights with stakeholders.</li>
+</ul>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>Below are the key configuration options for the Error &#x26; Crash Reporter module:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Data Type</th><th>Default Value</th><th>Description</th></tr></thead><tbody><tr><td><code>enableCaptureFrontendErrors</code></td><td>boolean</td><td>true</td><td>Enable or disable error capturing from frontend components.</td></tr><tr><td><code>logLevel</code></td><td>string</td><td>”error”</td><td>Set the logging level (e.g., “debug”, “info”, “warning”, “error”).</td></tr><tr><td><code>maxStackTraceDepth</code></td><td>integer</td><td>10</td><td>Maximum depth for stack trace capturing to optimize performance.</td></tr><tr><td><code>reportInterval</code></td><td>integer</td><td>60</td><td>Interval in seconds for error reporting to the backend.</td></tr><tr><td><code>notificationEnabled</code></td><td>boolean</td><td>false</td><td>Enable or disable notifications for critical errors.</td></tr><tr><td><code>errorBufferSize</code></td><td>integer</td><td>100</td><td>Maximum number of recent errors to store in memory before flushing to disk.</td></tr></tbody></table>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Error &#x26; Crash Reporter module is a vital tool for developers to monitor and resolve issues efficiently. By integrating it with related modules and configuring it according to the needs of your application, you can ensure robust error handling and improved system reliability.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Auto-Billing Engine</title><meta name="description" content="Automatically charge renewing subscriptions at interval."><meta property="og:title" content="Auto-Billing Engine"><meta property="og:description" content="Automatically charge renewing subscriptions at interval."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Auto-Billing Engine</h1> <div class="module-meta"> <div> <span class="module-category">Payment</span> <span class="module-subcategory"> → Platinum</span> </div> <div class="module-price"> <span>💰</span> $3500 </div> </div> <p class="module-summary">Automatically charge renewing subscriptions at interval.</p> <div class="module-icons"> <img src="/assets/modules/cloudservices/stripe.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-of-auto-billing-engine-module">Overview of Auto-Billing Engine Module</h1>
+<p>The <strong>Auto-Billing Engine</strong> module is designed to automate the billing process for recurring subscriptions, ensuring seamless and reliable payment processing for businesses and consumers. This module streamlines subscription-based revenue models by handling the complexities of renewals, payments, and customer notifications with minimal manual intervention.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary purpose of this module is to eliminate the need for manual oversight in managing subscription renewals and billing. It automates the process of charging customers at predefined intervals (e.g., monthly, quarterly, or annually) based on their subscription plans. This reduces administrative burden, minimizes payment failures, and ensures a consistent cash flow for businesses.</p>
+<h2 id="benefits">Benefits</h2>
+<p>The Auto-Billing Engine offers several key benefits:</p>
+<ul>
+<li><strong>Efficiency</strong>: Reduces manual workload by automating recurring billing tasks.</li>
+<li><strong>Reliability</strong>: Ensures that subscriptions are billed accurately and on time, reducing the risk of missed payments or overbilling.</li>
+<li><strong>Customer Satisfaction</strong>: Provides a seamless experience for customers, avoiding disruptions caused by payment issues.</li>
+<li><strong>Scalability</strong>: Handles large volumes of transactions efficiently, making it suitable for businesses of all sizes.</li>
+<li><strong>Flexibility</strong>: Supports multiple payment methods, subscription plans, and billing intervals.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<p>The Auto-Billing Engine is ideal for the following scenarios:</p>
+<ol>
+<li><strong>SaaS Platforms</strong>: Automating recurring payments for software-as-a-service (SaaS) products.</li>
+<li><strong>Subscription-Based Services</strong>: Managing subscriptions for media, content, or membership-based services.</li>
+<li><strong>E-commerce</strong>: Handling recurring billing for digital products or physical goods sold on an e-commerce platform.</li>
+<li><strong>Gaming and Apps</strong>: Processing in-app purchases and subscription renewals within gaming platforms or mobile apps.</li>
+<li><strong>Membership Sites</strong>: Automating payments for memberships, courses, or exclusive content.</li>
+</ol>
+<h2 id="when-to-use">When to Use</h2>
+<ul>
+<li><strong>When you need recurring revenue</strong>: If your business relies on subscription-based income, this module ensures consistent payment processing.</li>
+<li><strong>When manual billing is inefficient</strong>: Automate the process to save time and reduce errors.</li>
+<li><strong>When you want to focus on core business</strong>: Let the Auto-Billing Engine handle payments while you concentrate on growth and innovation.</li>
+</ul>
+<p>By integrating the Auto-Billing Engine into your system, you can streamline subscription management, improve customer satisfaction, and drive business efficiency.</p>
+<h1 id="auto-billing-engine-technical-documentation">Auto-Billing Engine Technical Documentation</h1>
+<h2 id="subscription-management">Subscription Management</h2>
+<p>The module handles subscription creation, renewal, and cancellation seamlessly. It integrates with your existing user database to manage active subscriptions and track subscription history.</p>
+<h2 id="recurring-charges-scheduling">Recurring Charges Scheduling</h2>
+<p>Automatically schedules recurring payments at predefined intervals (daily, weekly, monthly). Developers can configure custom billing cycles and adjust payment due dates as needed.</p>
+<h2 id="payment-integration">Payment Integration</h2>
+<p>Interfaces with popular payment gateways (e.g., Stripe, PayPal) to process transactions. Supports multiple payment methods and allows for easy integration of new payment providers.</p>
+<h2 id="failed-payments-handling">Failed Payments Handling</h2>
+<p>Manages scenarios where payments fail by retrying failed charges, sending reminders, or triggering custom hooks for manual intervention.</p>
+<h2 id="invoicing-system">Invoicing System</h2>
+<p>Generates and manages invoices automatically. Provides APIs to retrieve historical invoices, send email notifications, or download PDF versions for accounting purposes.</p>
+<h2 id="api-access">API Access</h2>
+<p>Exposes a RESTful API for programmatic control of subscriptions, payments, and billing events. Allows developers to integrate with external systems or build custom workflows.</p>
+<h2 id="reporting--analytics">Reporting &#x26; Analytics</h2>
+<p>Tracks billing activity and provides detailed reports on subscription metrics, payment success rates, and revenue trends.</p>
+<h2 id="subscription-management-tools">Subscription Management Tools</h2>
+<p>Enables management of subscription tiers, discounts, coupons, and promotional offers. Supports dynamic updates to subscription plans without disrupting active users.</p>
+<h2 id="webhooks">Webhooks</h2>
+<p>Triggers customizable webhooks for key billing events (e.g., successful payment, subscription renewal, payment failure). Enables real-time notifications and automated responses to billing changes.</p>
+<h2 id="system-health-monitoring">System Health Monitoring</h2>
+<p>Includes built-in monitoring for system performance and transaction success rates. Provides alerts for critical issues such as gateway outages or high payment failure rates.</p>
+<h1 id="auto-billing-engine-documentation">Auto-Billing Engine Documentation</h1>
+<h2 id="summary">Summary</h2>
+<p>The Auto-Billing Engine is a payment module designed to automatically charge renewing subscriptions at specified intervals. This documentation provides code samples for integrating the engine into your system.</p>
+<hr>
+<h2 id="api-endpoints-fastapi">API Endpoints (FastAPI)</h2>
+<h3 id="trigger-manual-billing">Trigger Manual Billing</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Subscription</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    subscription_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    payment_method_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    amount: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    currency_code: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "USD"</span></span>
+<span class="line"><span style="color:#E1E4E8">    billing_date: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/billing/trigger"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> trigger_billing</span><span style="color:#E1E4E8">(subscriptions: List[Subscription]):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Manually charge one or more subscriptions."""</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Implement your billing logic here</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"Successfully queued </span><span style="color:#79B8FF">{len</span><span style="color:#E1E4E8">(subscriptions)</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF"> subscriptions for billing."</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="react-ui-integration">React UI Integration</h2>
+<h3 id="subscription-management-form">Subscription Management Form</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> axios </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'axios'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> BillingTrigger</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">subscriptionId</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setSubscriptionId</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">paymentMethod</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setPaymentMethod</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'pm_123456789'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> handleFormSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">      await</span><span style="color:#E1E4E8"> axios.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/billing/trigger'</span><span style="color:#E1E4E8">, [</span></span>
+<span class="line"><span style="color:#E1E4E8">        { </span></span>
+<span class="line"><span style="color:#E1E4E8">          subscription_id: subscriptionId,</span></span>
+<span class="line"><span style="color:#E1E4E8">          payment_method_id: paymentMethod</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">      ]);</span></span>
+<span class="line"><span style="color:#B392F0">      alert</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Billing triggered successfully!'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleFormSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Subscription ID:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">input</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">          type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">          value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{subscriptionId}</span></span>
+<span class="line"><span style="color:#B392F0">          onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setSubscriptionId</span><span style="color:#E1E4E8">(e.target.value)}</span></span>
+<span class="line"><span style="color:#B392F0">          required</span></span>
+<span class="line"><span style="color:#E1E4E8">        /></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">>Payment Method:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">select</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{paymentMethod} </span><span style="color:#B392F0">onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setPaymentMethod</span><span style="color:#E1E4E8">(e.target.value)}></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"pm_123456789"</span><span style="color:#E1E4E8">>Default Card&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"bank_abcdefgh"</span><span style="color:#E1E4E8">>Bank Account&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Trigger Billing&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> BillingTrigger;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="data-schema-pydantic">Data Schema (Pydantic)</h2>
+<h3 id="subscription-request-model">Subscription Request Model</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Subscription</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    subscription_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    payment_method_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    amount: </span><span style="color:#79B8FF">float</span></span>
+<span class="line"><span style="color:#E1E4E8">    currency_code: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "USD"</span></span>
+<span class="line"><span style="color:#E1E4E8">    billing_date: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Example usage:</span></span>
+<span class="line"><span style="color:#6A737D"># {</span></span>
+<span class="line"><span style="color:#6A737D">#   "subscription_id": "sub_123456789",</span></span>
+<span class="line"><span style="color:#6A737D">#   "payment_method_id": "pm_abcdefghij",</span></span>
+<span class="line"><span style="color:#6A737D">#   "amount": 9.99,</span></span>
+<span class="line"><span style="color:#6A737D">#   "currency_code": "EUR"</span></span>
+<span class="line"><span style="color:#6A737D"># }</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>The Auto-Billing Engine supports multiple payment methods and currencies.</li>
+<li>Billing can be scheduled at regular intervals (daily, weekly, monthly).</li>
+<li>Failed payments are retried with exponential backoff.</li>
+<li>Transaction history is logged for auditing purposes.</li>
+</ul>
+<h1 id="auto-billing-engine-module-documentation">Auto-Billing Engine Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Auto-Billing Engine</strong> module is designed to automate the charging of renewing subscriptions at specified intervals. This module handles subscription management, payment processing, and scheduling to ensure seamless recurring billing.</p>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>Subscription Management</strong>: Manages active and expired subscriptions.</li>
+<li><strong>Payment Processing</strong>: Handles transactions with various payment gateways (e.g., Stripe, PayPal).</li>
+<li><strong>Notification Services</strong>: Sends notifications for upcoming charges or failed payments.</li>
+<li><strong>Customer Data Management</strong>: Stores customer information securely for billing purposes.</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li>
+<p><strong>Automated Recurring Charges</strong></p>
+<ul>
+<li>The system automatically recharges a subscription based on the defined interval (e.g., monthly, yearly).</li>
+</ul>
+</li>
+<li>
+<p><strong>Pre-Billing Notifications</strong></p>
+<ul>
+<li>Sends reminders to customers before their next charge, allowing them to update payment details if necessary.</li>
+</ul>
+</li>
+<li>
+<p><strong>Handling Failed Payments</strong></p>
+<ul>
+<li>Retries failed transactions and sends notifications if multiple attempts fail.</li>
+</ul>
+</li>
+<li>
+<p><strong>Manual Billing Adjustments</strong></p>
+<ul>
+<li>Allows administrators to manually adjust billing for specific subscriptions (e.g., applying discounts or refunds).</li>
+</ul>
+</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>Scheduler Setup</strong>: Ensure the module is integrated with a reliable task scheduler to handle recurring tasks.</li>
+<li><strong>Error Handling</strong>: Implement robust error handling and logging to capture issues during payment processing.</li>
+<li><strong>Payment Gateway Integration</strong>: Integrate with third-party payment gateways and ensure secure data transmission.</li>
+<li><strong>Notifications</strong>: Configure notification services to send timely updates about billing status changes.</li>
+</ul>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>The following table outlines the configuration options for the Auto-Billing Engine module:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Option</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th></tr></thead><tbody><tr><td><code>enabled</code></td><td>Enables or disables the auto-billing functionality.</td><td><code>true</code></td></tr><tr><td><code>default_payment_method</code></td><td>Sets the default payment method for new subscriptions.</td><td><code>credit_card</code></td></tr><tr><td><code>max_retry_attempts</code></td><td>Specifies the maximum number of retry attempts for failed payments.</td><td><code>3</code></td></tr><tr><td><code>billing_interval</code></td><td>Defines the interval between billing periods (e.g., monthly, yearly).</td><td><code>monthly</code></td></tr><tr><td><code>notification_time</code></td><td>Sets the time when notifications are sent (e.g., 1 day before billing).</td><td><code>24:00:00</code></td></tr><tr><td><code>trial_period</code></td><td>Specifies the duration of a trial period for new subscriptions.</td><td><code>7 days</code></td></tr><tr><td><code>tax_inclusive</code></td><td>Determines if taxes are included in the billing amount.</td><td><code>false</code></td></tr><tr><td><code>currency</code></td><td>Sets the default currency for billing.</td><td><code>USD</code></td></tr><tr><td><code>invoice_prefix</code></td><td>Configures a custom prefix for generated invoices.</td><td><code>BILLING-XXXXXX</code></td></tr><tr><td><code>fraud_detection</code></td><td>Enables or disables fraud detection checks during payment processing.</td><td><code>true</code></td></tr></tbody></table>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Auto-Billing Engine module is essential for managing recurring subscriptions and payments efficiently. By integrating it with related modules, setting up proper notifications, and configuring appropriate options, organizations can streamline their billing processes and enhance customer satisfaction.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

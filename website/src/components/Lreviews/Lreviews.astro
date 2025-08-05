@@ -1,0 +1,152 @@
+---
+// Lreviews.astro
+import "./Lreviews.css";
+
+const testimonials = [
+  {
+    name: "James Nguyen",
+    role: "Startup Founder",
+    quote: "Broken Duck Media delivered our entire web app in under 6 weeks. <mark>The admin tools saved us months of dev time.</mark>",
+    avatar: "/assets/reviews/James Nguyen.png"
+  },
+  {
+    name: "Aria Singh",
+    role: "Tutoring Center Director",
+    quote: "They built a complete platform for our instructors and students. <mark>The AI chat assistant is a game changer for us.</mark>",
+    avatar: "/assets/reviews/Aria Singh.png"
+  },
+  {
+    name: "Marco Silva",
+    role: "Education Tech Lead",
+    quote: "<mark>Seamless integration with Firebase and Stripe</mark>. Very impressed with their backend stability.",
+    avatar: "/assets/reviews/Marco Silva.png"
+  },
+  {
+    name: "Fatima Al-Sayegh",
+    role: "Operations Manager",
+    quote: "Their dashboard UI is sleek and intuitive. <mark>Everything runs fast — even on mobile.</mark>",
+    avatar: "/assets/reviews/Fatima Al-Sayegh.png"
+  },
+  {
+    name: "Leo Adams",
+    role: "Academy Owner",
+    quote: "They localized our site in Thai and English with ease. <mark>The team really understood our user base.</mark>",
+    avatar: "/assets/reviews/Leo Adams.png"
+  },
+  {
+    name: "Nina Wu",
+    role: "Curriculum Coordinator",
+    quote: "Custom content builder works exactly how we imagined. <mark>Rich media, quizzes, and drag-and-drop modules.</mark>",
+    avatar: "/assets/reviews/Nina Wu.png"
+  },
+  {
+    name: "Omar Hassan",
+    role: "Tech Consultant",
+    quote: "<mark>Best small dev team I’ve worked with.</mark> Scalable APIs, real-time features, and clear documentation.",
+    avatar: "/assets/reviews/Omar Hassan.png"
+  },
+  {
+    name: "Anita Mehra",
+    role: "Language School Manager",
+    quote: "We needed LMS tools tailored to Thai education. <mark>Broken Duck delivered exactly what we needed.</mark>",
+    avatar: "/assets/reviews/Anita Mehra.png"
+  },
+  {
+    name: "Tommy Lee",
+    role: "Remote Program Lead",
+    quote: "Built us a full video lesson + messaging system. <mark>No Zoom required.</mark>",
+    avatar: "/assets/reviews/Tommy Lee.png"
+  },
+  {
+    name: "Sofia D'Angelo",
+    role: "Education Advisor",
+    quote: "The branding and UI across pages was consistent and sharp. <mark>Super professional work.</mark>",
+    avatar: "/assets/reviews/Sofia D'Angelo.png"
+  },
+  {
+    name: "Akira Yamamoto",
+    role: "Freelance Educator",
+    quote: "Support was responsive and iterative. <mark>They listened and improved features quickly.</mark>",
+    avatar: "/assets/reviews/Akira Yamamoto.png"
+  },
+  {
+    name: "Laura Gomez",
+    role: "Business Owner",
+    quote: "<mark>Custom CRM and messaging system</mark> built right into our student platform. Just what we needed.",
+    avatar: "/assets/reviews/Laura Gomez.png"
+  },
+  {
+    name: "Zainab M.",
+    role: "Nonprofit Program Lead",
+    quote: "Simple admin panel. <mark>Accessible to our team with no tech background.</mark>",
+    avatar: "/assets/reviews/Zainab M.png"
+  },
+  {
+    name: "Chen Wei",
+    role: "Instructor",
+    quote: "They even added attendance tracking and reports. <mark>Everything we wanted and more.</mark>",
+    avatar: "/assets/reviews/Chen Wei.png"
+  },
+  {
+    name: "Benjamin Ross",
+    role: "Software Engineer",
+    quote: "I’ve worked with dev agencies before, but this one <mark>understood the educational context best.</mark>",
+    avatar: "/assets/reviews/Benjamin Ross.png"
+  },
+  {
+    name: "Yara Khalil",
+    role: "EdTech Consultant",
+    quote: "<mark>Great attention to UX details</mark>. The student experience was clearly a top priority.",
+    avatar: "/assets/reviews/Yara Khalil.png"
+  },
+  {
+    name: "Patrick Evans",
+    role: "Training Manager",
+    quote: "Our booking + calendar system was custom-built. <mark>Flawless integration and reliability.</mark>",
+    avatar: "/assets/reviews/Patrick Evans.png"
+  },
+  {
+    name: "Leila Haddad",
+    role: "Academy Director",
+    quote: "They helped digitize our entire workflow. <mark>No more spreadsheets!</mark>",
+    avatar: "/assets/reviews/Leila Haddad.png"
+  },
+  {
+    name: "Samuel Chen",
+    role: "Operations Lead",
+    quote: "<mark>Every module worked exactly as scoped.</mark> Reliable, clear communication, and delivered on time.",
+    avatar: "/assets/reviews/Samuel Chen.png"
+  },
+  {
+    name: "Grace Park",
+    role: "Tech-Savvy Educator",
+    quote: "Love that I can update lessons myself. <mark>Really flexible system design.</mark>",
+    avatar: "/assets/reviews/Grace Park.png"
+  }
+];
+---
+
+<section class="about-section">
+  <h1 class="about-heading">What Clients Say About Us</h1>
+  <p class="about-subheading">From tutoring centers to startups, we build the tools they need</p>
+
+  <div class="testimonial-scroll-mask">
+    <div class="testimonial-grid">
+      {testimonials.map((user, index) => (
+        <div class="testimonial-card" key={index}>
+          <p class="testimonial-quote" set:html={user.quote}></p>
+          <div class="testimonial-footer">
+            <img src={user.avatar} alt={user.name} class="testimonial-avatar" />
+            <div>
+              <div class="testimonial-name">{user.name}</div>
+              <div class="testimonial-role">{user.role}</div>
+            </div>
+          </div>
+          <div class="testimonial-stars" aria-label="5 stars">
+            &#9733;&#9733;&#9733;&#9733;&#9733;
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

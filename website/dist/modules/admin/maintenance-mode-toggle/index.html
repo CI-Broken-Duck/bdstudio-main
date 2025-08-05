@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Maintenance Mode Toggle</title><meta name="description" content="Temporarily disable user access during upgrades or downtime."><meta property="og:title" content="Maintenance Mode Toggle"><meta property="og:description" content="Temporarily disable user access during upgrades or downtime."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Maintenance Mode Toggle</h1> <div class="module-meta"> <div> <span class="module-category">Admin</span> <span class="module-subcategory"> → Standard</span> </div> <div class="module-price"> <span>💰</span> $500 </div> </div> <p class="module-summary">Temporarily disable user access during upgrades or downtime.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <h1 id="maintenance-mode-toggle-overview">Maintenance Mode Toggle Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Maintenance Mode Toggle module is designed to allow administrators to temporarily disable user access during scheduled upgrades, downtimes, or critical system changes. This feature ensures that users cannot interact with the system during maintenance periods, preventing potential disruptions and ensuring a smooth operation.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Ensures Uninterrupted Operations</strong>: By disabling user access, the module allows for seamless maintenance without user interference.</li>
+<li><strong>Prevents Errors During Downtime</strong>: Users are blocked from causing issues that could arise if they accessed an unstable system during updates.</li>
+<li><strong>Facilitates Safe System Changes</strong>: Enables administrators to implement changes securely, knowing users cannot interfere with ongoing processes.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<p>The module is particularly useful in the following scenarios:</p>
+<ul>
+<li><strong>Scheduled Maintenance</strong>: Ideal for tasks like software updates or security patches where downtime is planned.</li>
+<li><strong>Emergency Outages</strong>: Allows quick response during unforeseen critical issues by swiftly blocking user access.</li>
+<li><strong>Testing and Development</strong>: Provides a controlled environment for testing new features or bug fixes without external interference.</li>
+</ul>
+<p>This module offers a straightforward solution to manage user access efficiently, ensuring system stability during necessary maintenance.</p>
+<h1 id="maintenance-mode-toggle-module-documentation">Maintenance Mode Toggle Module Documentation</h1>
+<h2 id="enable-maintenance-mode">Enable Maintenance Mode</h2>
+<p>This feature allows admins to activate maintenance mode, blocking all user access except for admin operations. It ensures that the system is unavailable during planned upgrades or downtimes.</p>
+<h2 id="disable-maintenance-mode">Disable Maintenance Mode</h2>
+<p>Admins can deactivate maintenance mode to restore full user access after maintenance activities are complete. This feature re-enables all services and functionalities previously disabled during maintenance.</p>
+<h2 id="graceful-shutdown-mechanism">Graceful Shutdown Mechanism</h2>
+<p>The module includes a mechanism to gracefully shut down user sessions before entering maintenance mode. Users receive warnings and are logged out automatically, ensuring a smooth transition to downtime.</p>
+<h2 id="role-based-access-control-rbac">Role-Based Access Control (RBAC)</h2>
+<p>Only authorized admin users with the appropriate permissions can toggle maintenance mode. RBAC ensures that non-admin users cannot interfere with system availability.</p>
+<h2 id="scheduled-maintenance-support">Scheduled Maintenance Support</h2>
+<p>Admins can schedule maintenance periods in advance. The module supports notifications and warnings to users before the scheduled downtime begins.</p>
+<h2 id="downtime-handling">Downtime Handling</h2>
+<p>During maintenance mode, all user requests are denied with a generic message indicating planned downtime. This prevents confusion and ensures users understand the temporary unavailability.</p>
+<h2 id="audit-logging">Audit Logging</h2>
+<p>The module logs all attempts to toggle maintenance mode, including successful and failed operations. These logs help in auditing and troubleshooting issues related to system availability.</p>
+<h2 id="session-management">Session Management</h2>
+<p>Active user sessions are invalidated when maintenance mode is activated. This ensures that no users can access the system using old session tokens during downtime.</p>
+<h1 id="maintenance-mode-toggle-documentation">Maintenance Mode Toggle Documentation</h1>
+<p>This document provides comprehensive documentation for the Maintenance Mode Toggle module, including code examples in FastAPI, React, and Pydantic. This module allows administrators to temporarily disable user access during system upgrades or downtimes.</p>
+<hr>
+<h2 id="1-fastapi-endpoint">1. FastAPI Endpoint</h2>
+<p>The FastAPI endpoint handles enabling and disabling maintenance mode.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># endpoints/maintenance.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, status</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> ..auth </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> get_current_user</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> ..models.maintenance </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> MaintenanceMessage</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter(</span></span>
+<span class="line"><span style="color:#FFAB70">    tags</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">"Admin"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Maintenance"</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#FFAB70">    dependencies</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">[Depends(get_current_user)]</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/maintenance"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">Dict[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">bool</span><span style="color:#E1E4E8">])</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> enable_maintenance_mode</span><span style="color:#E1E4E8">(message: Optional[MaintenanceMessage] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Enable maintenance mode to disable user access temporarily."""</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> message:</span></span>
+<span class="line"><span style="color:#E1E4E8">        maintenance_message </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> message.message</span></span>
+<span class="line"><span style="color:#F97583">    else</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        maintenance_message </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "System under maintenance"</span></span>
+<span class="line"><span style="color:#6A737D">    # Implementation logic here</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maintenance mode enabled"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">True</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.delete</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/maintenance"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> disable_maintenance_mode</span><span style="color:#E1E4E8">():</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Disable maintenance mode to allow user access."""</span></span>
+<span class="line"><span style="color:#6A737D">    # Implementation logic here</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maintenance mode disabled"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">False</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="explanation">Explanation:</h3>
+<ul>
+<li><strong>Enables Maintenance Mode:</strong> POST request with an optional message.</li>
+<li><strong>Disables Maintenance Mode:</strong> DELETE request.</li>
+</ul>
+<hr>
+<h2 id="2-react-ui-component">2. React UI Component</h2>
+<p>The React component provides a toggle button for maintenance mode.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8"># components</span><span style="color:#F97583">/</span><span style="color:#E1E4E8">MaintenanceToggle.jsx</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useState, useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> useSWR </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'swr'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> fetcher</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">url</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(url).</span><span style="color:#B392F0">then</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> res.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> MaintenanceToggle</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">isMaintenanceActive</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setIsMaintenanceActive</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">loading</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setLoading</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">data</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">maintenanceMode</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useSWR</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/maintenance'</span><span style="color:#E1E4E8">, fetcher)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (maintenanceMode) {</span></span>
+<span class="line"><span style="color:#B392F0">      setIsMaintenanceActive</span><span style="color:#E1E4E8">(maintenanceMode.is_active)</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#B392F0">    setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, [maintenanceMode])</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> toggleMaintenance</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">      setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> responseEnable</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/maintenance'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        method: </span><span style="color:#9ECBFF">'POST'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">          'Content-Type'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">'application/json'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">          'Authorization'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">`Bearer ${</span><span style="color:#E1E4E8">localStorage</span><span style="color:#9ECBFF">.</span><span style="color:#B392F0">getItem</span><span style="color:#9ECBFF">(</span><span style="color:#9ECBFF">'token'</span><span style="color:#9ECBFF">)</span><span style="color:#9ECBFF">}`</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">      })</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> responseDisable</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/maintenance'</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">        method: </span><span style="color:#9ECBFF">'DELETE'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">          'Authorization'</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">`Bearer ${</span><span style="color:#E1E4E8">localStorage</span><span style="color:#9ECBFF">.</span><span style="color:#B392F0">getItem</span><span style="color:#9ECBFF">(</span><span style="color:#9ECBFF">'token'</span><span style="color:#9ECBFF">)</span><span style="color:#9ECBFF">}`</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">      })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">      // Handle responses</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">      console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error toggling maintenance mode:'</span><span style="color:#E1E4E8">, error)</span></span>
+<span class="line"><span style="color:#E1E4E8">    } </span><span style="color:#F97583">finally</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">      setLoading</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ textAlign: </span><span style="color:#9ECBFF">'center'</span><span style="color:#E1E4E8">, marginTop: </span><span style="color:#9ECBFF">'20px'</span><span style="color:#E1E4E8"> }}></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8"> </span></span>
+<span class="line"><span style="color:#B392F0">        onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{toggleMaintenance}</span></span>
+<span class="line"><span style="color:#B392F0">        disabled</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{loading}</span></span>
+<span class="line"><span style="color:#B392F0">        style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{</span></span>
+<span class="line"><span style="color:#E1E4E8">          padding: </span><span style="color:#9ECBFF">'10px 20px'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          fontSize: </span><span style="color:#9ECBFF">'16px'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          cursor: </span><span style="color:#9ECBFF">'pointer'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          backgroundColor: isMaintenanceActive </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> '#ff4444'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> '#4CAF50'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          color: </span><span style="color:#9ECBFF">'white'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          border: </span><span style="color:#9ECBFF">'none'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">          borderRadius: </span><span style="color:#9ECBFF">'5px'</span></span>
+<span class="line"><span style="color:#E1E4E8">        }}</span></span>
+<span class="line"><span style="color:#E1E4E8">      ></span></span>
+<span class="line"><span style="color:#E1E4E8">        {loading </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'Toggling...'</span><span style="color:#F97583"> :</span><span style="color:#E1E4E8"> (isMaintenanceActive </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> 'Disable Maintenance Mode'</span><span style="color:#F97583"> :</span><span style="color:#9ECBFF"> 'Enable Maintenance Mode'</span><span style="color:#E1E4E8">)}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  )</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="explanation-1">Explanation:</h3>
+<ul>
+<li>Uses SWR for real-time data fetching.</li>
+<li>Toggles maintenance mode with a button that changes state and color based on whether maintenance is active.</li>
+</ul>
+<hr>
+<h2 id="3-pydantic-data-schema">3. Pydantic Data Schema</h2>
+<p>The Pydantic schema defines the maintenance message structure.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># models/maintenance.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> MaintenanceMessage</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """Schema for maintenance mode messages."""</span></span>
+<span class="line"><span style="color:#E1E4E8">    is_active: </span><span style="color:#79B8FF">bool</span></span>
+<span class="line"><span style="color:#E1E4E8">    message: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "System under maintenance"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # Example usage:</span></span>
+<span class="line"><span style="color:#6A737D">    # >>> MaintenanceMessage(is_active=True)</span></span>
+<span class="line"><span style="color:#6A737D">    # MaintenanceMessage(is_active=True, message='System under maintenance')</span></span>
+<span class="line"><span style="color:#6A737D">    # </span></span>
+<span class="line"><span style="color:#6A737D">    # >>> MaintenanceMessage(</span></span>
+<span class="line"><span style="color:#6A737D">    # ...     is_active=False,</span></span>
+<span class="line"><span style="color:#6A737D">    # ...     message="Scheduled maintenance completed"</span></span>
+<span class="line"><span style="color:#6A737D">    # ... )</span></span>
+<span class="line"><span style="color:#6A737D">    # MaintenanceMessage(is_active=False, message='Scheduled maintenance completed')</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # Validation examples:</span></span>
+<span class="line"><span style="color:#6A737D">    # >>> try:</span></span>
+<span class="line"><span style="color:#6A737D">    # ...     MaintenanceMessage(is_active=True)</span></span>
+<span class="line"><span style="color:#6A737D">    # ... except ValueError as e:</span></span>
+<span class="line"><span style="color:#6A737D">    # ...     print(e)</span></span>
+<span class="line"><span style="color:#6A737D">    # None</span></span>
+<span class="line"><span style="color:#6A737D">    # </span></span>
+<span class="line"><span style="color:#6A737D">    # >>> try:</span></span>
+<span class="line"><span style="color:#6A737D">    # ...     MaintenanceMessage(is_active=True, message=123)</span></span>
+<span class="line"><span style="color:#6A737D">    # ... except ValueError as e:</span></span>
+<span class="line"><span style="color:#6A737D">    # ...     print(e)</span></span>
+<span class="line"><span style="color:#6A737D">    # "message must be a string"</span></span>
+<span class="line"></span></code></pre>
+<h3 id="explanation-2">Explanation:</h3>
+<ul>
+<li><code>is_active</code> is mandatory and indicates maintenance mode status.</li>
+<li><code>message</code> is optional with a default value.</li>
+</ul>
+<hr>
+<h2 id="4-usage-examples">4. Usage Examples</h2>
+<h3 id="enabling-maintenance-mode">Enabling Maintenance Mode:</h3>
+<p><strong>Request:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">POST</span><span style="color:#9ECBFF"> /maintenance</span><span style="color:#9ECBFF"> HTTP/1.1</span></span>
+<span class="line"><span style="color:#B392F0">Authorization:</span><span style="color:#9ECBFF"> Bearer</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">toke</span><span style="color:#E1E4E8">n</span><span style="color:#F97583">></span></span>
+<span class="line"><span style="color:#B392F0">Content-Type:</span><span style="color:#9ECBFF"> application/json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">    "message"</span><span style="color:#79B8FF">:</span><span style="color:#9ECBFF"> "System under maintenance for updates."</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p><strong>Response:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maintenance mode enabled"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "status"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="disabling-maintenance-mode">Disabling Maintenance Mode:</h3>
+<p><strong>Request:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">DELETE</span><span style="color:#9ECBFF"> /maintenance</span><span style="color:#9ECBFF"> HTTP/1.1</span></span>
+<span class="line"><span style="color:#B392F0">Authorization:</span><span style="color:#9ECBFF"> Bearer</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">toke</span><span style="color:#E1E4E8">n</span><span style="color:#F97583">></span></span>
+<span class="line"></span></code></pre>
+<p><strong>Response:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Maintenance mode disabled"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "status"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">false</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="5-error-handling">5. Error Handling</h2>
+<ul>
+<li><strong>401 Unauthorized:</strong> Missing or invalid authentication token.</li>
+<li><strong>403 Forbidden:</strong> Insufficient permissions to toggle maintenance mode.</li>
+</ul>
+<hr>
+<p>This documentation provides a complete implementation of the Maintenance Mode Toggle module, including code examples for FastAPI, React, and Pydantic.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Maintenance Mode Toggle Module</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Summary</span></span>
+<span class="line"><span style="color:#E1E4E8">The Maintenance Mode Toggle module allows administrators to temporarily disable user access to the system during planned upgrades, downtimes, or emergency maintenance. This ensures smooth operations and minimizes disruptions.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Related Modules</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **System Health Check**</span><span style="color:#E1E4E8">: Monitors system performance and can integrate with Maintenance Mode to trigger automatic disabling of access if health metrics drop below a threshold.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Notifications Module**</span><span style="color:#E1E4E8">: Sends alerts to users when maintenance mode is activated or deactivated.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Session Management**</span><span style="color:#E1E4E8">: Handles user sessions during maintenance mode, preventing new logins while allowing existing sessions to continue until they expire.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Activity Log**</span><span style="color:#E1E4E8">: Tracks all toggles and changes made to the maintenance mode settings.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Use Cases</span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Scheduled Maintenance**</span><span style="color:#E1E4E8">: Temporarily disable access during planned software upgrades or system maintenance to prevent users from accessing outdated or unstable versions.</span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Emergency Downtime**</span><span style="color:#E1E4E8">: Quickly disable user access in case of unexpected issues like server crashes or security breaches.</span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Automated Maintenance Triggers**</span><span style="color:#E1E4E8">: Integrate with monitoring tools to automatically enable maintenance mode when specific conditions (e.g., high CPU usage, low memory) are met.</span></span>
+<span class="line"><span style="color:#FFAB70">4.</span><span style="color:#E1E4E8;font-weight:bold"> **Graceful Shutdown**</span><span style="color:#E1E4E8">: Allow existing users to complete their tasks while preventing new logins during a planned shutdown.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration Tips</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Health Check Integration**</span><span style="color:#E1E4E8">: Use the System Health Check module to monitor system performance and automatically trigger maintenance mode if critical thresholds are exceeded.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Notifications**</span><span style="color:#E1E4E8">: Integrate with the Notifications Module to send email, SMS, or in-app alerts to users when maintenance mode is activated or deactivated.</span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Session Handling**</span><span style="color:#E1E4E8">: Ensure that the Session Management module properly handles existing sessions during maintenance mode while preventing new user logins.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Configuration Options</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">| Parameter               | Description                                         | Default Value | Example Usage                                                                 |</span></span>
+<span class="line"><span style="color:#E1E4E8">|-------------------------|---------------------------------------------------|--------------|------------------------------------------------------------------------------|</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`maintenance_enabled`</span><span style="color:#E1E4E8">  | Enables or disables maintenance mode.              | </span><span style="color:#79B8FF">`false`</span><span style="color:#E1E4E8">      | Set to </span><span style="color:#79B8FF">`true`</span><span style="color:#E1E4E8"> to enable maintenance mode during scheduled downtimes.                |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`maintenance_start_time`</span><span style="color:#E1E4E8"> | Start time for maintenance mode in UTC format.     | -            | </span><span style="color:#79B8FF">`"2023-10-05T04:00:00Z"`</span><span style="color:#E1E4E8">                                                       |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`maintenance_end_time`</span><span style="color:#E1E4E8">  | End time for maintenance mode in UTC format.       | -            | </span><span style="color:#79B8FF">`"2023-10-05T06:00:00Z"`</span><span style="color:#E1E4E8">                                                       |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`alert_threshold`</span><span style="color:#E1E4E8">      | Percentage of system health below which maintenance is triggered automatically. | </span><span style="color:#79B8FF">`50`</span><span style="color:#E1E4E8">          | Set to </span><span style="color:#79B8FF">`30`</span><span style="color:#E1E4E8"> if you want maintenance to activate when system health drops below 30%.|</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`maintenance_message`</span><span style="color:#E1E4E8">   | Custom message displayed to users when access is denied. | "System Under Maintenance" | Customize to "We are currently undergoing scheduled maintenance. Please try again later." |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`grace_period`</span><span style="color:#E1E4E8">         | Time in minutes before full restrictions apply after maintenance mode starts. | </span><span style="color:#79B8FF">`30`</span><span style="color:#E1E4E8">          | Set to </span><span style="color:#79B8FF">`60`</span><span style="color:#E1E4E8"> for a one-hour grace period.                                       |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`log_failed_attempts`</span><span style="color:#E1E4E8">   | Log failed login attempts during maintenance mode.  | </span><span style="color:#79B8FF">`true`</span><span style="color:#E1E4E8">       | Set to </span><span style="color:#79B8FF">`false`</span><span style="color:#E1E4E8"> if you want to disable logging during maintenance.                  |</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Example Usage</span></span>
+<span class="line"><span style="color:#E1E4E8">```markdown</span></span>
+<span class="line"><span style="color:#E1E4E8">To enable maintenance mode with custom start and end times:</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#9ECBFF">  "maintenance_enabled"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">  "maintenance_start_time"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2023-10-05T04:00:00Z"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">  "maintenance_end_time"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2023-10-05T06:00:00Z"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>To customize the maintenance message:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#9ECBFF">  "maintenance_message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"We are currently undergoing scheduled maintenance. Please try again later."</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Maintenance Mode Toggle module is a critical tool for system administrators to ensure smooth operations during upgrades, downtimes, or emergencies. By integrating with related modules and customizing configuration options, you can tailor the behavior to meet your specific needs.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

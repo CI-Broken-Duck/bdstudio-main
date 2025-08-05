@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Document Annotation Tool</title><meta name="description" content="Highlight or comment on PDFs and documents."><meta property="og:title" content="Document Annotation Tool"><meta property="og:description" content="Highlight or comment on PDFs and documents."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Document Annotation Tool</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Gold</span> </div> <div class="module-price"> <span>💰</span> $2000 </div> </div> <p class="module-summary">Highlight or comment on PDFs and documents.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-of-document-annotation-tool-module">Overview of Document Annotation Tool Module</h1>
+<p>The <strong>Document Annotation Tool</strong> is a core module designed to provide robust functionality for highlighting and commenting on PDFs and other document formats. This module enables users to annotate documents efficiently, facilitating collaboration, feedback gathering, and documentation management.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary purpose of this module is to allow developers to integrate annotation capabilities into their applications. It serves as a powerful utility for adding comments, highlights, notes, and tags directly onto documents, making it an essential tool for workflows involving document review, analysis, and modification.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Enhanced Collaboration:</strong> Enables real-time or asynchronous feedback on documents, fostering better teamwork.</li>
+<li><strong>Improved Efficiency:</strong> Streamlines the process of reviewing and annotating documents by providing a centralized platform for comments and highlights.</li>
+<li><strong>Versatility:</strong> Supports multiple document formats, including PDFs, making it suitable for a wide range of use cases.</li>
+<li><strong>Seamless Integration:</strong> Designed to integrate effortlessly into existing workflows, allowing developers to enhance their applications with annotation features without disrupting current processes.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li>
+<p><strong>Code Review and Feedback:</strong></p>
+<ul>
+<li>Developers can annotate source code documentation or design documents to provide feedback during the review process.</li>
+<li>Example: A developer reviews a colleague’s code and highlights potential bugs or areas for improvement directly in the document.</li>
+</ul>
+</li>
+<li>
+<p><strong>API Documentation Annotation:</strong></p>
+<ul>
+<li>API developers can use this tool to add comments and notes to API documentation, ensuring clarity and consistency across team members.</li>
+<li>Example: Annotating API endpoints with additional details about expected inputs or outputs.</li>
+</ul>
+</li>
+<li>
+<p><strong>Technical Writing Collaboration:</strong></p>
+<ul>
+<li>Technical writers can collaborate on documents by adding annotations for peer review or stakeholder feedback.</li>
+<li>Example: Highlighting sections of a technical manual that require further clarification or editing.</li>
+</ul>
+</li>
+<li>
+<p><strong>Project Management and Documentation Review:</strong></p>
+<ul>
+<li>Project managers can use this tool to gather feedback from stakeholders on critical project documentation.</li>
+<li>Example: Annotating a project plan to identify risks or areas for improvement before final approval.</li>
+</ul>
+</li>
+<li>
+<p><strong>Debugging and Issue Tracking:</strong></p>
+<ul>
+<li>Developers can annotate error logs, stack traces, or debug outputs to track issues and their resolutions.</li>
+<li>Example: Highlighting specific lines of code that caused a bug and adding comments to explain the fix.</li>
+</ul>
+</li>
+</ol>
+<p>By incorporating the Document Annotation Tool module into your application, you can significantly enhance document-based workflows, making collaboration more efficient and documentation processes more effective.</p>
+<h2 id="customizable-annotation-types">Customizable Annotation Types</h2>
+<p>This module allows users to create and apply custom annotation types such as highlights, comments, stamps, and notes. Annotations can be configured with specific colors, shapes, and text formatting to suit various use cases.</p>
+<hr>
+<h2 id="integration-with-external-systems">Integration with External Systems</h2>
+<p>The tool provides APIs for seamless integration with external systems, enabling developers to automate document processing workflows and extend functionality to third-party applications.</p>
+<hr>
+<h2 id="batch-processing-capabilities">Batch Processing Capabilities</h2>
+<p>Users can process multiple documents simultaneously, making it efficient for large-scale operations. This feature is particularly useful for automating repetitive tasks in development environments.</p>
+<hr>
+<h2 id="real-time-collaboration">Real-time Collaboration</h2>
+<p>Multiple users can annotate the same document in real-time without conflicts. Changes are reflected instantly across all connected devices, promoting teamwork and efficiency.</p>
+<hr>
+<h2 id="search-and-filter-annotations">Search and Filter Annotations</h2>
+<p>Annotations can be searched or filtered based on keywords, metadata, or other criteria. This feature enhances usability by allowing developers to quickly locate specific annotations within large documents.</p>
+<hr>
+<h2 id="version-control-integration">Version Control Integration</h2>
+<p>The module integrates with version control systems like Git, enabling tracking of document changes over time. This is crucial for maintaining a history of annotations and ensuring accountability in collaborative environments.</p>
+<hr>
+<h2 id="exportimport-annotations">Export/Import Annotations</h2>
+<p>Annotations can be exported in various formats (e.g., JSON) and imported back into the system. This feature is useful for migrating annotations between different instances or systems.</p>
+<hr>
+<h2 id="security-and-access-control">Security and Access Control</h2>
+<p>The tool includes role-based access control, allowing developers to restrict document access and annotation permissions to specific users or groups. Data encryption ensures sensitive information remains protected.</p>
+<hr>
+<h2 id="support-for-multiple-file-formats">Support for Multiple File Formats</h2>
+<p>The module supports a wide range of file formats, including PDF, Word, PowerPoint, Excel, and image files. This makes it versatile for handling different types of documents in various development scenarios.</p>
+<hr>
+<h2 id="api-monitoring-and-analytics">API Monitoring and Analytics</h2>
+<p>Developers can monitor API usage and track key metrics such as request volume, response times, and error rates. This helps optimize performance and troubleshoot issues effectively.</p>
+<p>Here’s an example technical documentation for the Document Annotation Tool:</p>
+<h1 id="document-annotation-tool-documentation">Document Annotation Tool Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Document Annotation Tool is a module designed to allow developers to add annotation capabilities to their applications. It enables users to highlight or comment on PDFs and other document types.</p>
+<h2 id="api-endpoints-fastapi">API Endpoints (FastAPI)</h2>
+<h3 id="create-annotation-endpoint">Create Annotation Endpoint</h3>
+<p>This endpoint creates a new annotation for a document.</p>
+<p><strong>Endpoint:</strong> <code>/api/annotations</code></p>
+<p><strong>Method:</strong> POST</p>
+<p><strong>Request Body:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#9ECBFF">    "document_id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "annotator_name"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "annotations"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "id"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "coordinates"</span><span style="color:#E1E4E8">: List[</span><span style="color:#79B8FF">float</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "color"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "comment"</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p><strong>Example Request:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="http"><code><span class="line"><span style="color:#F97583">POST</span><span style="color:#E1E4E8"> /api/annotations </span><span style="color:#F97583">HTTP</span><span style="color:#E1E4E8">/</span><span style="color:#79B8FF">1.1</span></span>
+<span class="line"><span style="color:#85E89D">Content-Type</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> application/json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "document_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"12345"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "annotator_name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"John Doe"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "annotations"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#79B8FF">            "id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"abc123"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "coordinates"</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#79B8FF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Important point"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "color"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"#FF0000"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">            "comment"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"This is a key insight"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p><strong>Response:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#9ECBFF">    "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Annotation created successfully"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "annotation_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"abc123"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h2 id="react-ui-component">React UI Component</h2>
+<h3 id="annotationform-component">AnnotationForm Component</h3>
+<p>A simple React component that allows users to create and view annotations.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> Annotation</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  coordinates</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> number</span><span style="color:#E1E4E8">[];</span></span>
+<span class="line"><span style="color:#FFAB70">  text</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  color</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  comment</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> AnnotationForm</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">selectedFile</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setSelectedFile</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">File</span><span style="color:#F97583"> |</span><span style="color:#79B8FF"> null</span><span style="color:#E1E4E8">>(</span><span style="color:#79B8FF">null</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">annotations</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setAnnotations</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">Annotation</span><span style="color:#E1E4E8">[]>([]);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">preview</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setPreview</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">string</span><span style="color:#E1E4E8">>(</span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> handleFileSelect</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">event</span><span style="color:#F97583">:</span><span style="color:#B392F0"> React</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">ChangeEvent</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">HTMLInputElement</span><span style="color:#E1E4E8">>) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> file</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> event.target.files?.[</span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">];</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (file) {</span></span>
+<span class="line"><span style="color:#B392F0">      setSelectedFile</span><span style="color:#E1E4E8">(file);</span></span>
+<span class="line"><span style="color:#F97583">      const</span><span style="color:#79B8FF"> reader</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> FileReader</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">      reader.</span><span style="color:#B392F0">onloadend</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        setPreview</span><span style="color:#E1E4E8">(reader.result </span><span style="color:#F97583">as</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">      };</span></span>
+<span class="line"><span style="color:#E1E4E8">      reader.</span><span style="color:#B392F0">readAsDataURL</span><span style="color:#E1E4E8">(file);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> addAnnotation</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">    // Add annotation logic here</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"annotation-form"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">        type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"file"</span></span>
+<span class="line"><span style="color:#B392F0">        onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleFileSelect}</span></span>
+<span class="line"><span style="color:#B392F0">        accept</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">".pdf,.docx,.png,.jpg"</span></span>
+<span class="line"><span style="color:#B392F0">        className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"form-control"</span></span>
+<span class="line"><span style="color:#E1E4E8">      /></span></span>
+<span class="line"><span style="color:#E1E4E8">      {preview </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"preview"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          {selectedFile?.type.</span><span style="color:#B392F0">includes</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'pdf'</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">?</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">iframe</span><span style="color:#B392F0"> src</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{preview} </span><span style="color:#B392F0">style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ width: </span><span style="color:#9ECBFF">'100%'</span><span style="color:#E1E4E8">, height: </span><span style="color:#9ECBFF">'500px'</span><span style="color:#E1E4E8"> }}>&#x3C;/</span><span style="color:#85E89D">iframe</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">          ) </span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">img</span><span style="color:#B392F0"> src</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{preview} </span><span style="color:#B392F0">alt</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Document preview"</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ maxWidth: </span><span style="color:#9ECBFF">'100%'</span><span style="color:#E1E4E8"> }} /></span></span>
+<span class="line"><span style="color:#E1E4E8">          )}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      )}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> onClick</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{addAnnotation} </span><span style="color:#B392F0">className</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"btn btn-primary"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        Add Annotation</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h2 id="data-schema-pydantic">Data Schema (Pydantic)</h2>
+<h3 id="documentannotationschema">DocumentAnnotationSchema</h3>
+<p>A Pydantic model for document annotations.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Annotation</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    coordinates: List[</span><span style="color:#79B8FF">float</span><span style="color:#E1E4E8">]</span></span>
+<span class="line"><span style="color:#E1E4E8">    text: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    color: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    comment: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> DocumentMetadata</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    document_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    author: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span><span style="color:#6A737D">  # ISO 8601 format</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> DocumentAnnotationSchema</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    metadata: DocumentMetadata</span></span>
+<span class="line"><span style="color:#E1E4E8">    annotations: List[Annotation]</span></span>
+<span class="line"></span></code></pre>
+<h2 id="example-usage">Example Usage</h2>
+<h3 id="creating-an-annotation">Creating an Annotation</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Using the API endpoint</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> requests</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">    "document_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"12345"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "annotator_name"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"John Doe"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "annotations"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#E1E4E8">        {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"abc123"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "coordinates"</span><span style="color:#E1E4E8">: [</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">30</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">40</span><span style="color:#E1E4E8">],</span></span>
+<span class="line"><span style="color:#9ECBFF">            "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Important point"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "color"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"#FF0000"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "comment"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"This is a key insight"</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">response </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> requests.post(</span><span style="color:#9ECBFF">"http://localhost:8000/api/annotations"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">json</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">data)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(response.json())</span></span>
+<span class="line"></span></code></pre>
+<h3 id="updating-an-annotation">Updating an Annotation</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Using the API endpoint</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> requests</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">    "text"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Updated important point"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    "comment"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"This is a key insight"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">response </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> requests.put(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"http://localhost:8000/api/annotations/</span><span style="color:#79B8FF">{</span><span style="color:#E1E4E8">annotation_id</span><span style="color:#79B8FF">}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">json</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">data)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(response.json())</span></span>
+<span class="line"></span></code></pre>
+<h3 id="getting-all-annotations-for-a-document">Getting All Annotations for a Document</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># Using the API endpoint</span></span>
+<span class="line"><span style="color:#E1E4E8">response </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> requests.get(</span><span style="color:#F97583">f</span><span style="color:#9ECBFF">"http://localhost:8000/api/annotations?document_id=12345"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#E1E4E8">(response.json())</span></span>
+<span class="line"></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#79B8FF;font-weight:bold"># Document Annotation Tool</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Module Name: Document Annotation Tool  </span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Category:**</span><span style="color:#E1E4E8"> Core  </span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Summary:**</span><span style="color:#E1E4E8"> Enables developers to highlight, comment on, or annotate PDFs and other document formats.  </span></span>
+<span class="line"><span style="color:#E1E4E8;font-weight:bold">**Target User:**</span><span style="color:#E1E4E8"> Developer  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Related Modules  </span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **OCR Processing Module**</span><span style="color:#E1E4E8">: Integrates with text recognition for annotated documents.  </span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Text Extraction Module**</span><span style="color:#E1E4E8">: Extracts text from annotated sections for further processing.  </span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **PDF Conversion Module**</span><span style="color:#E1E4E8">: Converts annotated documents to different formats (e.g., DOCX, PPTX).  </span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Search &#x26; Filter Module**</span><span style="color:#E1E4E8">: Filters and searches annotated content within large document repositories.  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Use Cases  </span></span>
+<span class="line"><span style="color:#FFAB70">1.</span><span style="color:#E1E4E8;font-weight:bold"> **Commenting on Documents**</span><span style="color:#E1E4E8">: Allow users to add comments or notes to specific sections of a PDF or document.  </span></span>
+<span class="line"><span style="color:#FFAB70">2.</span><span style="color:#E1E4E8;font-weight:bold"> **Highlighting Key Sections**</span><span style="color:#E1E4E8">: Enable developers to highlight important text passages for review purposes.  </span></span>
+<span class="line"><span style="color:#FFAB70">3.</span><span style="color:#E1E4E8;font-weight:bold"> **Tracking Changes**</span><span style="color:#E1E4E8">: Implement version control for annotations, allowing teams to track changes over time.  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Integration Tips  </span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Performance Optimization**</span><span style="color:#E1E4E8">: Use lightweight libraries for annotation rendering to ensure fast performance even with large documents.  </span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **File Format Handling**</span><span style="color:#E1E4E8">: Ensure compatibility with multiple document formats (PDF, DOCX, PPTX) by leveraging existing file conversion tools.  </span></span>
+<span class="line"><span style="color:#FFAB70">-</span><span style="color:#E1E4E8;font-weight:bold"> **Annotation Versioning**</span><span style="color:#E1E4E8">: Integrate with a version control system to manage different annotation versions and prevent data conflicts.  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">## Configuration Options  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#E1E4E8;font-weight:bold">**Option**</span><span style="color:#E1E4E8">               | </span><span style="color:#E1E4E8;font-weight:bold">**Description**</span><span style="color:#E1E4E8">                                                                 | </span><span style="color:#E1E4E8;font-weight:bold">**Default Value**</span><span style="color:#E1E4E8">       |</span></span>
+<span class="line"><span style="color:#E1E4E8">|---------------------------|---------------------------------------------------------------------------------|-------------------------|</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`enable_ocr`</span><span style="color:#E1E4E8">             | Enable OCR processing for text extraction from annotated images.                   | </span><span style="color:#79B8FF">`false`</span><span style="color:#E1E4E8">                |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`default_annotation_color`</span><span style="color:#E1E4E8"> | Set the default color for new annotations (e.g., red, blue, green).               | </span><span style="color:#79B8FF">`yellow`</span><span style="color:#E1E4E8">               |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`max_file_size`</span><span style="color:#E1E4E8">          | Maximum allowed file size in MB for annotation processing.                       | </span><span style="color:#79B8FF">`50`</span><span style="color:#E1E4E8">                   |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`annotation_storage_type`</span><span style="color:#E1E4E8"> | Storage type for annotations (local/remote/cloud).                              | </span><span style="color:#79B8FF">`local`</span><span style="color:#E1E4E8">                |</span></span>
+<span class="line"><span style="color:#E1E4E8">| </span><span style="color:#79B8FF">`enable_versioning`</span><span style="color:#E1E4E8">      | Enable version control for annotations.                                           | </span><span style="color:#79B8FF">`true`</span><span style="color:#E1E4E8">                 |</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">This documentation provides a comprehensive overview of the Document Annotation Tool, including its related modules, use cases, integration tips, and configuration options.</span></span>
+<span class="line"></span></code></pre> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

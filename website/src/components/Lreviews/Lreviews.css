@@ -1,0 +1,115 @@
+/* === LandingReviews.css — Broken Duck Media === */
+
+.about-section {
+    background-color: var(--color-bg); /* Dark background */
+    color: var(--color-text);          /* White text */
+    padding: 5rem 2rem;
+    text-align: center;
+    font-family: var(--font-body);
+  }
+  
+  .about-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--color-theme); /* Yellow heading */
+  }
+  
+  .about-subheading {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+  
+  /* Scroll fade mask */
+  .testimonial-scroll-mask {
+    position: relative;
+    max-height: 700px;
+    overflow: hidden;
+    mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%);
+  }
+  
+  /* Auto-scroll animation */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    max-width: 960px;
+    margin: 0 auto;
+    gap: 2rem;
+    animation: scroll-up 60s linear infinite;
+  }
+  
+  @keyframes scroll-up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+  
+  .testimonial-card {
+    background-color: var(--color-surface); /* Dark surface */
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--color-divider);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .testimonial-quote {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .testimonial-quote mark {
+    background-color: transparent;
+    color: var(--color-theme); /* Yellow emphasis */
+    font-weight: 600;
+  }
+  
+  .testimonial-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+  
+  .testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-divider);
+  }
+  
+  .testimonial-name {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 0.95rem;
+  }
+  
+  .testimonial-role {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+  
+  .testimonial-stars {
+    color: var(--color-theme);
+    font-size: 1rem;
+    margin-top: 0.75rem;
+  }
+  

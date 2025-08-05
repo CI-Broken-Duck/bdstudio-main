@@ -1,0 +1,33 @@
+---
+const { title, description, cover } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title ?? 'Untitled Article'}</title>
+    <meta name="description" content={description ?? ''} />
+    {cover && <meta property="og:image" content={cover} />}
+    <meta property="og:title" content={title ?? 'Untitled Article'} />
+    <meta property="og:description" content={description ?? ''} />
+    
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/styles/articles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">← Home</a>
+        <a href="/resources">All Articles</a>
+      </nav>
+    </header>
+
+    <main class="article-content">
+      <slot />
+    </main>
+
+    <footer>
+      <p>© {new Date().getFullYear()} Broken Duck Media</p>
+    </footer>
+  </body>
+</html>

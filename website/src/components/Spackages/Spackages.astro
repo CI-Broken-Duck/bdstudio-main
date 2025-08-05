@@ -1,0 +1,118 @@
+---
+import "./Spackages.css";
+
+import foundationImg from "public/assets/packages/Foundation.png";
+import studioImg from "public/assets/packages/Studio.png";
+
+const plans = [
+  {
+    name: "Non-Monetized Membership",
+    note: "For YouTubers actively working toward monetization.",
+    prices: {
+      monthly: "2,500 THB",
+      sixMonth: "13,500 THB",
+      yearly: "16,000 THB"
+    },
+    description:
+      "This membership is for creators who are building their channels and want a consistent, supportive environment. You'll have access to all studio spaces, workshops, events, and mentorship from monetized members.",
+    features: [
+      "24/7 access to all production spaces",
+      "Booking system for studios, booths, and meeting rooms",
+      "Workshops every Sunday morning",
+      "Monthly networking events",
+      "Locker storage and fast internet",
+      "4 guest passes per month",
+      "Matched with a mentor from a monetized member",
+      "Access to the private online community"
+    ],
+    image: foundationImg
+  },
+  {
+    name: "Monetized Membership",
+    note: "For YouTubers with an active monetized channel.",
+    prices: {
+      monthly: "1,500 THB",
+      sixMonth: "8,000 THB",
+      yearly: "12,000 THB"
+    },
+    description:
+      "This membership is for creators who have reached monetization and want reliable studio access and opportunities to support other members. All studio access is included, and you'll have the option to mentor new creators and participate in upcoming partner services.",
+    features: [
+      "24/7 access to all production spaces",
+      "Booking system for studios, booths, and meeting rooms",
+      "Workshops every Sunday morning",
+      "Monthly networking events",
+      "Locker storage and fast internet",
+      "4 guest passes per month",
+      "Serve as a mentor to non-monetized members",
+      "Access to the private online community",
+      "Eligibility for future partner/MCN programs"
+    ],
+    image: studioImg
+  }
+];
+---
+
+<section class="pricing-intro">
+  <h1 class="pricing-heading">Membership Packages</h1>
+</section>
+
+<section class="pricing-section">
+  <div class="pricing-header-row">
+    <div class="pricing-header">
+      <p class="pricing-description">
+        Broken Duck Studio offers two membership plans: one for creators with monetized channels, and one for those still growing. All members get full access to our production spaces, workshops, community events, and booking system. Pricing is available monthly, every 6 months, or yearly.
+      </p>
+    </div>
+    <div class="pricing-video">
+      <video src="/assets/videos/business.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+
+  <div class="pricing-grid">
+    {plans.map((plan) => (
+      <div class="pricing-card">
+        <h2 class="plan-name">{plan.name}</h2>
+
+        <img
+          src={plan.image.src}
+          alt={`${plan.name} package illustration`}
+          class="plan-image"
+        />
+
+        <p class="plan-note">{plan.note}</p>
+
+        <div class="plan-pricing-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Monthly</th>
+                <th>6 Months</th>
+                <th>Yearly</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{plan.prices.monthly}</td>
+                <td>{plan.prices.sixMonth}</td>
+                <td>{plan.prices.yearly}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <ul class="plan-features">
+          {plan.features.map((feature) => (
+            <li class="feature available">{feature}</li>
+          ))}
+        </ul>
+
+        <p class="plan-description">{plan.description}</p>
+
+        <div class="plan-footer">
+          <a href="/membership" class="subscribe-button">Join Now</a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

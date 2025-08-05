@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Support Ticket Submission</title><meta name="description" content="Internal help desk with ticket tracking."><meta property="og:title" content="Support Ticket Submission"><meta property="og:description" content="Internal help desk with ticket tracking."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Support Ticket Submission</h1> <div class="module-meta"> <div> <span class="module-category">Core</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Internal help desk with ticket tracking.</p> <div class="module-icons"> <img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/devops/vercel.png" alt="Technology icon"> </div> </section> <article> <h1 id="support-ticket-submission-module-overview">Support Ticket Submission Module Overview</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Support Ticket Submission module serves as a centralized platform for creating, managing, and tracking support tickets within an internal help desk system. Its primary function is to facilitate efficient communication and resolution of user issues or requests, ensuring that all interactions are documented and tracked systematically.</p>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Streamlined Process</strong>: Enables users to submit support requests through a structured interface, reducing the need for ad-hoc communication channels.</li>
+<li><strong>Enhanced Visibility</strong>: Provides real-time tracking of ticket status (e.g., open, in progress, resolved), allowing stakeholders to monitor resolution progress.</li>
+<li><strong>Improved Collaboration</strong>: Fosters better teamwork by assigning tickets to specific teams or individuals and providing a centralized location for updates.</li>
+<li><strong>Reduced Resolution Time</strong>: By categorizing and prioritizing tickets, the module helps in addressing issues more efficiently, minimizing downtime or user inconvenience.</li>
+<li><strong>Audit and Reporting</strong>: Maintains a complete history of each ticket, including all interactions, which is valuable for internal audits and generating reports.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ul>
+<li><strong>User Submissions</strong>: Employees or clients can submit support requests by filling out forms that capture necessary details (e.g., issue description, priority level).</li>
+<li><strong>Ticket Assignment</strong>: The module allows assigning tickets to specific teams or developers based on predefined criteria, ensuring responsibilities are clearly defined.</li>
+<li><strong>Tracking and Updates</strong>: Users can view the status of their tickets and receive notifications about updates. Developers can update ticket statuses, add comments, and attach relevant files.</li>
+<li><strong>Reporting and Analysis</strong>: Managers can generate reports based on ticket data (e.g., resolution times, issue categories) to identify trends and areas for improvement.</li>
+</ul>
+<p>This module is integral to maintaining efficient internal communication and ensuring timely resolution of support requests, thereby enhancing overall user satisfaction and operational efficiency.</p>
+<h2 id="key-features-of-support-ticket-submission-module">Key Features of Support Ticket Submission Module</h2>
+<h3 id="1-ticket-submission">1. <strong>Ticket Submission</strong></h3>
+<ul>
+<li>Allows users to create new support tickets through a web-based interface or API.</li>
+<li>Provides form fields for capturing ticket details such as title, description, priority, and category.</li>
+</ul>
+<h3 id="2-ticket-categorization">2. <strong>Ticket Categorization</strong></h3>
+<ul>
+<li>Enables classification of tickets into predefined categories (e.g., technical issues, feature requests).</li>
+<li>Supports subcategories for more granular categorization.</li>
+</ul>
+<h3 id="3-ticket-assignment">3. <strong>Ticket Assignment</strong></h3>
+<ul>
+<li>Automatically assigns tickets to support agents based on rules or team structure.</li>
+<li>Allows manual reassignment by administrators or support leads.</li>
+</ul>
+<h3 id="4-ticket-status-tracking">4. <strong>Ticket Status Tracking</strong></h3>
+<ul>
+<li>Tracks the status of each ticket (e.g., open, in progress, resolved, closed).</li>
+<li>Provides a history log of all status changes and comments.</li>
+</ul>
+<h3 id="5-priority-based-ticket-handling">5. <strong>Priority-Based Ticket Handling</strong></h3>
+<ul>
+<li>Assigns priority levels to tickets (e.g., low, medium, high, critical) based on predefined criteria.</li>
+<li>Ensures high-priority tickets are addressed first.</li>
+</ul>
+<h3 id="6-escalation-rules">6. <strong>Escalation Rules</strong></h3>
+<ul>
+<li>Implements escalation rules for unresolved tickets after a specific time frame or number of attempts.</li>
+<li>Notifies higher-level support or managers when escalations occur.</li>
+</ul>
+<h3 id="7-custom-fields">7. <strong>Custom Fields</strong></h3>
+<ul>
+<li>Allows the creation and management of custom fields to capture additional ticket information (e.g., environment, version).</li>
+<li>Supports different field types such as text, dropdown, date, and multiple choice.</li>
+</ul>
+<h3 id="8-ticket-search-and-filtering">8. <strong>Ticket Search and Filtering</strong></h3>
+<ul>
+<li>Provides advanced search capabilities to filter tickets based on various criteria (e.g., status, category, priority).</li>
+<li>Enables bulk actions on filtered ticket sets.</li>
+</ul>
+<h3 id="9-reporting-and-analytics">9. <strong>Reporting and Analytics</strong></h3>
+<ul>
+<li>Generates reports on ticket volume, resolution times, and agent performance.</li>
+<li>Offers dashboards for real-time monitoring of key metrics.</li>
+</ul>
+<h3 id="10-integration-with-external-systems">10. <strong>Integration with External Systems</strong></h3>
+<ul>
+<li>Integrates with third-party tools like CRM, email systems, or issue trackers via APIs or webhooks.</li>
+<li>Supports single sign-on (SSO) for seamless user authentication.</li>
+</ul>
+<h3 id="11-user-notifications">11. <strong>User Notifications</strong></h3>
+<ul>
+<li>Sends automated notifications to users and agents regarding ticket updates, escalations, or resolution.</li>
+<li>Allows customization of notification triggers and delivery methods (e.g., email, Slack).</li>
+</ul>
+<h3 id="12-role-based-access-control">12. <strong>Role-Based Access Control</strong></h3>
+<ul>
+<li>Implements role-based access control (RBAC) to restrict access to tickets based on user roles (e.g., end-user, agent, admin).</li>
+<li>Provides audit logs for all access attempts and modifications.</li>
+</ul>
+<p>These features ensure efficient ticket management, improved support team collaboration, and enhanced user experience.</p>
+<p>Here’s an example of technical documentation for the “Support Ticket Submission” module:</p>
+<h3 id="module-name-support-ticket-submission">Module Name: Support Ticket Submission</h3>
+<p><strong>Category:</strong> Core<br>
+<strong>Summary:</strong> Internal help desk with ticket tracking.<br>
+<strong>Target User:</strong> Developer</p>
+<hr>
+<h2 id="1-api-endpoint-fastapi">1. API Endpoint (FastAPI)</h2>
+<p>This FastAPI endpoint handles support ticket submission and retrieval.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># endpoints.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> models </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> TicketCreate, Ticket, User</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> database </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> SessionLocal</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> crud</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">def</span><span style="color:#B392F0"> get_db</span><span style="color:#E1E4E8">():</span></span>
+<span class="line"><span style="color:#E1E4E8">    db </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> SessionLocal()</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">        yield</span><span style="color:#E1E4E8"> db</span></span>
+<span class="line"><span style="color:#F97583">    finally</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        db.close()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/tickets"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">Ticket)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> create_ticket</span><span style="color:#E1E4E8">(ticket: TicketCreate, db: Session </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends(get_db)):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """ Create a new support ticket """</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> crud.create_ticket(</span><span style="color:#FFAB70">db</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">db, </span><span style="color:#FFAB70">ticket</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">ticket)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/tickets"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">List[Ticket])</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> get_tickets</span><span style="color:#E1E4E8">(db: Session </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends(get_db)):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """ Retrieve all support tickets """</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> crud.get_tickets(</span><span style="color:#FFAB70">db</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">db)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/tickets/</span><span style="color:#79B8FF">{ticket_id}</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">response_model</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">Ticket)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> get_ticket</span><span style="color:#E1E4E8">(ticket_id: </span><span style="color:#79B8FF">int</span><span style="color:#E1E4E8">, db: Session </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Depends(get_db)):</span></span>
+<span class="line"><span style="color:#9ECBFF">    """ Get a single ticket by ID """</span></span>
+<span class="line"><span style="color:#E1E4E8">    ticket </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> crud.get_ticket(</span><span style="color:#FFAB70">db</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">db, </span><span style="color:#FFAB70">ticket_id</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">ticket_id)</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#F97583"> not</span><span style="color:#E1E4E8"> ticket:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">404</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"Ticket not found"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> ticket</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="2-react-ui-component">2. React UI Component</h2>
+<p>This React component handles the submission of support tickets and displays existing tickets.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// components/TicketForm.js</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> axios </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'axios'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> TicketForm</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">tickets</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setTickets</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">([]);</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">formData</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setFormData</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">        subject: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        description: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        priority: </span><span style="color:#9ECBFF">'medium'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        status: </span><span style="color:#9ECBFF">'open'</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> handleSubmit</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">        e.</span><span style="color:#B392F0">preventDefault</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            await</span><span style="color:#E1E4E8"> axios.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/tickets'</span><span style="color:#E1E4E8">, formData);</span></span>
+<span class="line"><span style="color:#B392F0">            setFormData</span><span style="color:#E1E4E8">({ subject: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">, description: </span><span style="color:#9ECBFF">''</span><span style="color:#E1E4E8">, priority: </span><span style="color:#9ECBFF">'medium'</span><span style="color:#E1E4E8">, status: </span><span style="color:#9ECBFF">'open'</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"><span style="color:#F97583">            await</span><span style="color:#B392F0"> loadTickets</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error submitting ticket:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> loadTickets</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> axios.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/tickets'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">            setTickets</span><span style="color:#E1E4E8">(response.data);</span></span>
+<span class="line"><span style="color:#E1E4E8">        } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">            console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error loading tickets:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    React.</span><span style="color:#B392F0">useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">        loadTickets</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>Support Ticket System&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            </span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">form</span><span style="color:#B392F0"> onSubmit</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{handleSubmit}></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> htmlFor</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"subject"</span><span style="color:#E1E4E8">>Subject:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">input</span></span>
+<span class="line"><span style="color:#B392F0">                    type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"text"</span></span>
+<span class="line"><span style="color:#B392F0">                    id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"subject"</span></span>
+<span class="line"><span style="color:#B392F0">                    name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"subject"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.subject}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({ </span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, subject: e.target.value })}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">                </span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">label</span><span style="color:#B392F0"> htmlFor</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"description"</span><span style="color:#E1E4E8">>Description:&#x3C;/</span><span style="color:#85E89D">label</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">textarea</span></span>
+<span class="line"><span style="color:#B392F0">                    id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"description"</span></span>
+<span class="line"><span style="color:#B392F0">                    name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"description"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.description}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({ </span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, description: e.target.value })}</span></span>
+<span class="line"><span style="color:#E1E4E8">                /></span></span>
+<span class="line"><span style="color:#E1E4E8">                </span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">select</span></span>
+<span class="line"><span style="color:#B392F0">                    id</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"priority"</span></span>
+<span class="line"><span style="color:#B392F0">                    name</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"priority"</span></span>
+<span class="line"><span style="color:#B392F0">                    value</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{formData.priority}</span></span>
+<span class="line"><span style="color:#B392F0">                    onChange</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{(</span><span style="color:#FFAB70">e</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#B392F0"> setFormData</span><span style="color:#E1E4E8">({ </span><span style="color:#F97583">...</span><span style="color:#E1E4E8">formData, priority: e.target.value })}</span></span>
+<span class="line"><span style="color:#E1E4E8">                ></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"low"</span><span style="color:#E1E4E8">>Low&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"medium"</span><span style="color:#E1E4E8">>Medium&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">option</span><span style="color:#B392F0"> value</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"high"</span><span style="color:#E1E4E8">>High&#x3C;/</span><span style="color:#85E89D">option</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">select</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">button</span><span style="color:#B392F0"> type</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"submit"</span><span style="color:#E1E4E8">>Submit Ticket&#x3C;/</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;/</span><span style="color:#85E89D">form</span><span style="color:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>Existing Tickets:&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {tickets.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">ticket</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{ticket.id}></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">>{ticket.subject}&#x3C;/</span><span style="color:#85E89D">h4</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Status: {ticket.status}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Priority: {ticket.priority}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Description: {ticket.description}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> TicketForm;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="3-data-schema-pydantic">3. Data Schema (Pydantic)</h2>
+<p>This Pydantic schema defines the structure of a support ticket.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D"># models.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> TicketCreate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    subject: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    description: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    priority: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "medium"</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "open"</span></span>
+<span class="line"><span style="color:#E1E4E8">    assigned_to: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> Ticket</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">TicketCreate</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    created_at: datetime</span></span>
+<span class="line"><span style="color:#E1E4E8">    updated_at: datetime</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> User</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">int</span></span>
+<span class="line"><span style="color:#E1E4E8">    username: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    email: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h3 id="notes">Notes:</h3>
+<ol>
+<li>The FastAPI endpoint includes basic CRUD operations for tickets.</li>
+<li>The React component provides a form for ticket submission and displays existing tickets.</li>
+<li>Pydantic models ensure data validation on both the API and client sides.</li>
+</ol>
+<p>This documentation provides a complete implementation of the support ticket system with clear separation between backend (FastAPI), frontend (React), and data schema (Pydantic).</p>
+<h1 id="module-support-ticket-submission">Module: Support Ticket Submission</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Support Ticket Submission</strong> module is an internal help desk tool designed to manage and track support tickets within an organization. It allows developers and administrators to create, assign, prioritize, and resolve tickets efficiently.</p>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>User Management</strong>: For authentication and user roles.</li>
+<li><strong>Notifications</strong>: To send email or chat notifications for ticket updates.</li>
+<li><strong>Issue Tracking</strong>: To monitor the status of open tickets.</li>
+<li><strong>Reporting</strong>: To generate reports on ticket resolution trends.</li>
+<li><strong>API Gateway</strong>: To integrate with external systems.</li>
+</ul>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Submit a Ticket</strong>: Users can submit new support requests through a web interface or API.</li>
+<li><strong>Assign Tickets</strong>: Administrators can assign tickets to specific developers or teams.</li>
+<li><strong>Track Ticket Status</strong>: Users can view the current status of their tickets and receive updates via notifications.</li>
+<li><strong>Categorize Issues</strong>: Tickets can be categorized by priority (e.g., critical, high, medium, low) or issue type (e.g., bug, feature request).</li>
+<li><strong>Escalate Tickets</strong>: Automatically escalate unresolved tickets after a certain period.</li>
+<li><strong>Comment on Tickets</strong>: Developers and users can leave comments on tickets to provide updates or additional information.</li>
+<li><strong>Resolve Tickets</strong>: Mark tickets as resolved once the issue is fixed.</li>
+<li><strong>Close Tickets</strong>: Archive resolved tickets for future reference.</li>
+</ol>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>User Authentication</strong>: Integrate with the User Management module to enforce role-based access control.</li>
+<li><strong>Notification Hooks</strong>: Use the Notifications module to send email or chat alerts when a ticket is created, updated, or escalated.</li>
+<li><strong>Activity Logging</strong>: Log all changes made to tickets (e.g., comments, status updates) for auditing purposes.</li>
+<li><strong>Data Export</strong>: Provide an option to export ticket data in CSV or JSON format for reporting and analysis.</li>
+<li><strong>Retry Mechanisms</strong>: Implement retry logic for failed notifications or API calls to ensure reliability.</li>
+<li><strong>Monitoring</strong>: Use the Monitoring module to track ticket resolution times and identify bottlenecks.</li>
+</ul>
+<h2 id="configuration-options">Configuration Options</h2>
+<p>Below is a table of configuration options for the Support Ticket Submission module:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Option Name</strong></th><th><strong>Description</strong></th><th><strong>Default Value</strong></th><th><strong>Valid Values</strong></th></tr></thead><tbody><tr><td><code>enable_email_notifications</code></td><td>Enable or disable email notifications for ticket updates.</td><td><code>true</code></td><td><code>true</code>, <code>false</code></td></tr><tr><td><code>default_priority</code></td><td>Set the default priority level for new tickets.</td><td><code>medium</code></td><td><code>critical</code>, <code>high</code>, <code>medium</code>, <code>low</code></td></tr><tr><td><code>ticket_expiration_days</code></td><td>The number of days after which a ticket is considered expired if unresolved.</td><td><code>7</code></td><td>Any positive integer</td></tr><tr><td><code>status_transitions</code></td><td>Define allowed transitions between ticket statuses (e.g., open → in-progress).</td><td><code>{}</code></td><td>JSON object with allowed status changes.</td></tr><tr><td><code>enable_escalation</code></td><td>Enable or disable automatic ticket escalation based on predefined rules.</td><td><code>true</code></td><td><code>true</code>, <code>false</code></td></tr><tr><td><code>audit_log_interval</code></td><td>Frequency of generating audit logs for ticket activities.</td><td><code>1</code></td><td>Any positive integer (in days)</td></tr></tbody></table>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <strong>Support Ticket Submission</strong> module is a robust tool for managing internal support requests. By integrating with related modules and customizing configuration options, it can be tailored to meet the specific needs of your organization.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

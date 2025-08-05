@@ -1,0 +1,84 @@
+---
+// Lservices.astro
+import "../Lservices/Lservices.css";
+
+const services = [
+  { title: "Admin Dashboard", type: "Control Panel", meta1: "Roles", meta2: "Secure" },
+  { title: "Student Portal", type: "Access Layer", meta1: "Progress", meta2: "Chat" },
+  { title: "AI Chat Assistant", type: "Conversational UI", meta1: "Thai/Eng", meta2: "Custom" },
+  { title: "Lesson Scheduler", type: "Booking System", meta1: "SMS", meta2: "Email" },
+  { title: "Internal Messaging", type: "Communication", meta1: "Realtime", meta2: "Private" },
+  { title: "Video Sessions", type: "Live Class", meta1: "Zoom-free", meta2: "Browser-based" },
+  { title: "Payment Integration", type: "Finance", meta1: "Invoices", meta2: "Stripe" },
+  { title: "Analytics & Progress", type: "Insights", meta1: "Graphs", meta2: "CSV" },
+  { title: "Content Builder", type: "LMS Core", meta1: "DragDrop", meta2: "Rich Media" },
+  { title: "Marketing Website", type: "Public Site", meta1: "Astro", meta2: "SEO" },
+  { title: "Multilang Support", type: "Language Layer", meta1: "Thai", meta2: "English" },
+  { title: "AI Evaluation Tools", type: "Scoring System", meta1: "Writing", meta2: "Speaking" },
+];
+---
+
+<section class="lservices-section">
+
+  <div class="services-intro-row">
+    <div class="intro-media-left">
+      <video
+        class="intro-video"
+        src="/assets/videos/bow.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+      ></video>
+    </div>
+
+    <div class="services-header">
+      <h2 class="features-heading">Software Built to Hit the Mark.</h2>
+      <p class="spotlight-subheading">
+        Over 500 modular software solutions are designed to align precisely with your goals—from education tools to automation systems, we help you launch with accuracy.
+      </p>
+    </div>
+
+    <div class="intro-media-right">
+      <img src="/assets/images/target.png" alt="Target Icon" class="intro-image" />
+    </div>
+  </div>
+
+  <div class="scroll-wrapper">
+    <button class="scroll-arrow left" data-direction="left" aria-label="Scroll left">&#10094;</button>
+
+    <div class="scroll-container" id="services-scroll">
+      {services.map((svc, index) => (
+        <div class="card" key={index}>
+          <div class="course-banner">
+            <span>{svc.title.split(" ").slice(0, 2).map(w => w[0]).join("")}</span>
+          </div>
+          <div class="course-info">
+            <div class="course-title">{svc.title}</div>
+            <div class="course-level">{svc.type}</div>
+            <div class="course-meta">
+              <span>{svc.meta1}</span>
+              <span>{svc.meta2}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <button class="scroll-arrow right" data-direction="right" aria-label="Scroll right">&#10095;</button>
+  </div>
+
+  <script is:client>
+    document.querySelectorAll(".scroll-arrow").forEach(button => {
+      button.addEventListener("click", () => {
+        const container = document.getElementById("services-scroll");
+        const direction = button.dataset.direction === "left" ? -1 : 1;
+        const scrollAmount = 260;
+        container.scrollBy({
+          left: direction * scrollAmount,
+          behavior: "smooth"
+        });
+      });
+    });
+  </script>
+</section>

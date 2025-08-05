@@ -1,0 +1,63 @@
+---
+// Shero.astro
+import "./Ahero.css";
+---
+
+<section id="hero" class="hero">
+  <!-- Rain Layers -->
+  <div class="rain rain-back"></div>
+  <div class="rain rain-front"></div>
+
+  <!-- Main Content -->
+  <div class="hero-inner">
+    <h1 class="hero-left-heading">
+      YouTubers that could keep ducks dry in the rain
+    </h1>
+    <img src="/assets/images/duck.png" alt="Duck Illustration" class="hero-duck" />
+  </div>
+</section>
+
+<!-- Spotlight + Rain Logic -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.getElementById('hero');
+    const rainFront = document.querySelector('.rain-front');
+    const rainBack = document.querySelector('.rain-back');
+    const totalDrops = 100;
+
+    // Spotlight mask
+    if (hero) {
+      hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        hero.style.setProperty('--cursor-x', `${e.clientX - rect.left}px`);
+        hero.style.setProperty('--cursor-y', `${e.clientY - rect.top}px`);
+      });
+    }
+
+    // Rain generator
+    function createRain(container, isBackRow = false) {
+      for (let i = 0; i < totalDrops; i++) {
+        const drop = document.createElement('div');
+        drop.className = 'drop';
+
+        const left = Math.random() * 100;
+        const delay = Math.random() * 4;
+        const duration = 0.6 + Math.random() * 0.7;
+
+        drop.style.left = `${left}%`;
+        drop.style.animationDelay = `${delay}s`;
+        drop.style.animationDuration = `${duration}s`;
+
+        if (isBackRow) {
+          drop.style.opacity = "0.4";
+          drop.style.height = "80px";
+        }
+
+        container.appendChild(drop);
+      }
+    }
+
+    if (rainFront) createRain(rainFront);
+    if (rainBack) createRain(rainBack, true);
+  });
+</script>

@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Realtime Status Presence</title><meta name="description" content="Indicates online, away, or offline status of users in communication tools."><meta property="og:title" content="Realtime Status Presence"><meta property="og:description" content="Indicates online, away, or offline status of users in communication tools."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Realtime Status Presence</h1> <div class="module-meta"> <div> <span class="module-category">Communication</span> <span class="module-subcategory"> → Silver</span> </div> <div class="module-price"> <span>💰</span> $1000 </div> </div> <p class="module-summary">Indicates online, away, or offline status of users in communication tools.</p> <div class="module-icons"> <img src="/assets/modules/devops/vercel.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"> </div> </section> <article> <h1 id="overview-of-realtime-status-presence-module">Overview of Realtime Status Presence Module</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The Realtime Status Presence module is designed to provide real-time tracking and communication of user availability and status within various communication tools and platforms. This module enables developers to integrate a feature that allows users to indicate their online, away, or offline status, facilitating better engagement, resource management, and collaboration.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Real-time Updates</strong>: Provides instantaneous updates on user availability.</li>
+<li><strong>Status Detection</strong>: Automatically detects changes in user connectivity or activity.</li>
+<li><strong>Integration Capabilities</strong>: Seamlessly integrates with communication tools, chat applications, and collaboration platforms.</li>
+<li><strong>Customizable Status Messages</strong>: Allows users to set personalized status messages for different scenarios (e.g., “Away from desk,” “In a meeting”).</li>
+<li><strong>Logging &#x26; Analytics</strong>: Tracks status changes for auditing and analytics purposes.</li>
+</ul>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><strong>Improved User Experience</strong>: Enables better interaction by providing context on user availability.</li>
+<li><strong>Enhanced Resource Management</strong>: Helps in efficient allocation of tasks or resources based on real-time availability.</li>
+<li><strong>Proactive Engagement</strong>: Allows users to set expectations for communication, reducing missed messages or delays.</li>
+<li><strong>Better Collaboration</strong>: Facilitates team coordination by providing clear insights into who is available for immediate collaboration.</li>
+<li><strong>Data-Driven Insights</strong>: Offers analytics on user activity patterns and trends for informed decision-making.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<ol>
+<li><strong>Real-time Chat Applications</strong>: Integrating presence indicators in instant messaging apps to show which users are online or offline.</li>
+<li><strong>Presence-based Notifications</strong>: Triggering notifications based on user status changes (e.g., sending a message when a user comes online).</li>
+<li><strong>Team Collaboration Tools</strong>: Displaying team member availability in project management platforms for efficient task assignment.</li>
+<li><strong>Resource Management Systems</strong>: Using presence data to allocate tasks dynamically based on user availability.</li>
+<li><strong>Customer Support Platforms</strong>: Showing agent availability in helpdesk systems to prioritize support requests accordingly.</li>
+</ol>
+<h2 id="summary">Summary</h2>
+<p>The Realtime Status Presence module is a powerful tool for developers aiming to enhance communication and collaboration within their applications. By providing real-time status updates, customizable messages, and integration capabilities, this module empowers users to engage more effectively while enabling efficient resource management and better team coordination. Its flexibility makes it suitable for a wide range of scenarios, from instant messaging to enterprise-level collaboration platforms.</p>
+<h2 id="online-presence-detection">Online Presence Detection</h2>
+<p>This feature allows users to check if another user is currently online or available. It provides real-time status updates by detecting active sessions or heartbeat signals, ensuring users know when others are ready to communicate.</p>
+<h2 id="status-indicators">Status Indicators</h2>
+<p>Users can view, set, and manage their own status, which can include “Online,” “Away,” or “Offline.” The module supports custom status messages, potentially with rich text elements like emojis, enhancing personalization.</p>
+<h2 id="away-detection">Away Detection</h2>
+<p>Automatically detects inactivity after a set period (e.g., 15 minutes) and updates the user’s status to “Away.” This helps others understand when someone is temporarily unreachable but might return soon.</p>
+<h2 id="offline-handling">Offline Handling</h2>
+<p>When a user disconnects or logs out, their status is updated to “Offline.” The module may notify other users or applications, ensuring smooth communication flow.</p>
+<h2 id="custom-status">Custom Status</h2>
+<p>Users can set personalized messages for different statuses. These customizations are stored and retrieved efficiently, allowing dynamic updates based on user preferences.</p>
+<h2 id="realtime-presence-updates">Realtime Presence Updates</h2>
+<p>Updates are pushed in real-time using mechanisms like webhooks or event-driven architectures to ensure accurate and timely status changes across devices.</p>
+<h2 id="device-tracking">Device Tracking</h2>
+<p>Tracks the number of devices a user is logged into. New device logins trigger alerts or status updates, enhancing security by monitoring unusual activity.</p>
+<h2 id="user-activity-monitoring">User Activity Monitoring</h2>
+<p>Monitors actions such as typing or mouse movements to determine engagement levels, refining presence detection accuracy for more context-aware interactions.</p>
+<h2 id="cross-platform-compatibility">Cross-Platform Compatibility</h2>
+<p>Ensures seamless operation across platforms and devices, with robust synchronization methods to maintain consistent user statuses wherever they log in.</p>
+<h2 id="integrations">Integrations</h2>
+<p>Works seamlessly with existing communication tools like chat applications or video conferencing systems, enhancing their functionality by providing real-time status updates during interactions.</p>
+<h1 id="realtime-status-presence-module-documentation">Realtime Status Presence Module Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Realtime Status Presence module provides functionality to track and update user availability (online/away/offline) status in communication tools. It includes an API endpoint for updating statuses and a simple UI component for displaying these statuses.</p>
+<hr>
+<h2 id="1-fastapi-endpoint">1. FastAPI Endpoint</h2>
+<p>Here’s a sample FastAPI endpoint that handles status updates:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> StatusUpdate</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # "online", "away", or "offline"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/update_status"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> update_status</span><span style="color:#E1E4E8">(data: StatusUpdate):</span></span>
+<span class="line"><span style="color:#F97583">    try</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D">        # Store the status update in your database here</span></span>
+<span class="line"><span style="color:#E1E4E8">        status_data </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#9ECBFF">            "user_id"</span><span style="color:#E1E4E8">: data.user_id,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "status"</span><span style="color:#E1E4E8">: data.status,</span></span>
+<span class="line"><span style="color:#9ECBFF">            "timestamp"</span><span style="color:#E1E4E8">: datetime.now().isoformat()</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Status updated successfully"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"data"</span><span style="color:#E1E4E8">: status_data}</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    except</span><span style="color:#79B8FF"> Exception</span><span style="color:#F97583"> as</span><span style="color:#E1E4E8"> e:</span></span>
+<span class="line"><span style="color:#F97583">        raise</span><span style="color:#E1E4E8"> HTTPException(</span><span style="color:#FFAB70">status_code</span><span style="color:#F97583">=</span><span style="color:#79B8FF">500</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">detail</span><span style="color:#F97583">=</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">(e))</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="2-react-ui-component">2. React UI Component</h2>
+<p>Here’s a simple React component to display user statuses:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> React, { useEffect } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> Status</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">    id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    user_id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    status</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 'online'</span><span style="color:#F97583"> |</span><span style="color:#9ECBFF"> 'away'</span><span style="color:#F97583"> |</span><span style="color:#9ECBFF"> 'offline'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    timestamp</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#B392F0"> StatusDisplay</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">userId</span><span style="color:#E1E4E8"> }</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">userId</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">statuses</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setStatuses</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> React.</span><span style="color:#B392F0">useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">Status</span><span style="color:#E1E4E8">[]>([]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">    useEffect</span><span style="color:#E1E4E8">(() </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">        // Poll every 5 seconds (replace with WebSocket for real-time)</span></span>
+<span class="line"><span style="color:#F97583">        const</span><span style="color:#79B8FF"> interval</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> setInterval</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">            try</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">                const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/status'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">                if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">response.ok) </span><span style="color:#F97583">throw</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Failed to fetch statuses'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">                const</span><span style="color:#79B8FF"> data</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">                setStatuses</span><span style="color:#E1E4E8">(data.statuses);</span></span>
+<span class="line"><span style="color:#E1E4E8">            } </span><span style="color:#F97583">catch</span><span style="color:#E1E4E8"> (error) {</span></span>
+<span class="line"><span style="color:#E1E4E8">                console.</span><span style="color:#B392F0">error</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Error fetching statuses:'</span><span style="color:#E1E4E8">, error);</span></span>
+<span class="line"><span style="color:#E1E4E8">            }</span></span>
+<span class="line"><span style="color:#E1E4E8">        }, </span><span style="color:#79B8FF">5000</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#B392F0"> clearInterval</span><span style="color:#E1E4E8">(interval);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#B392F0"> getStatusDisplay</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">status</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Status</span><span style="color:#E1E4E8">[</span><span style="color:#9ECBFF">'status'</span><span style="color:#E1E4E8">]) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        switch</span><span style="color:#E1E4E8"> (status) {</span></span>
+<span class="line"><span style="color:#F97583">            case</span><span style="color:#9ECBFF"> 'online'</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">                return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ color: </span><span style="color:#9ECBFF">'green'</span><span style="color:#E1E4E8"> }}>Online&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>;</span></span>
+<span class="line"><span style="color:#F97583">            case</span><span style="color:#9ECBFF"> 'away'</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">                return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ color: </span><span style="color:#9ECBFF">'yellow'</span><span style="color:#E1E4E8"> }}>Away&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>;</span></span>
+<span class="line"><span style="color:#F97583">            default</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#F97583">                return</span><span style="color:#E1E4E8"> &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#B392F0"> style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ color: </span><span style="color:#9ECBFF">'red'</span><span style="color:#E1E4E8"> }}>Offline&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>;</span></span>
+<span class="line"><span style="color:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#E1E4E8">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            {statuses.</span><span style="color:#79B8FF">length</span><span style="color:#F97583"> ===</span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> ?</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Loading statuses...&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ) </span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">>Current Status for User {userId}&#x3C;/</span><span style="color:#85E89D">h3</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        {statuses.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">status</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                            &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{status.id}></span></span>
+<span class="line"><span style="color:#E1E4E8">                                &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Status: {</span><span style="color:#B392F0">getStatusDisplay</span><span style="color:#E1E4E8">(status.status)}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                                &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Updated at: {</span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">(status.timestamp).</span><span style="color:#B392F0">toLocaleTimeString</span><span style="color:#E1E4E8">()}&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                            &#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                        ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            )}</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> StatusDisplay;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="3-data-schema-pydantic">3. Data Schema (Pydantic)</h2>
+<p>Here’s the Pydantic schema for the status update request:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> datetime </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> datetime</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> StatusUpdateSchema</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    user_id: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # Literal["online", "away", "offline"]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> StatusResponseSchema</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    timestamp: datetime</span></span>
+<span class="line"><span style="color:#E1E4E8">    status: </span><span style="color:#79B8FF">str</span><span style="color:#6A737D">  # Literal["online", "away", "offline"]</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="usage-example">Usage Example</h2>
+<h3 id="api-request">API Request:</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">POST</span><span style="color:#9ECBFF"> /update_status</span><span style="color:#9ECBFF"> HTTP/1.1</span></span>
+<span class="line"><span style="color:#B392F0">Content-Type:</span><span style="color:#9ECBFF"> application/json</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">    "user_id"</span><span style="color:#79B8FF">:</span><span style="color:#9ECBFF"> "12345",</span></span>
+<span class="line"><span style="color:#B392F0">    "status"</span><span style="color:#79B8FF">:</span><span style="color:#9ECBFF"> "online"</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="api-response">API Response:</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">    "message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Status updated successfully"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">    "data"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">        "user_id"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"12345"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"online"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">        "timestamp"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"2023-10-26T14:30:00.000Z"</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="react-component-usage">React Component Usage:</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> StatusDisplay </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> './StatusDisplay'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">function</span><span style="color:#B392F0"> App</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">>Realtime Status Presence&#x3C;/</span><span style="color:#85E89D">h1</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            &#x3C;</span><span style="color:#79B8FF">StatusDisplay</span><span style="color:#B392F0"> userId</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"12345"</span><span style="color:#E1E4E8"> /></span></span>
+<span class="line"><span style="color:#E1E4E8">        &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> App;</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h2 id="notes">Notes:</h2>
+<ul>
+<li>For real-time updates, consider using WebSocket instead of polling.</li>
+<li>The React component currently uses polling (every 5 seconds) as a simple workaround due to FastAPI’s limitations in supporting Server-Sent Events natively.</li>
+</ul>
+<p><strong>Realtime Status Presence Module: Developer’s Guide</strong></p>
+<p>The Realtime Status Presence module is essential for tracking user statuses (online, away, offline) in communication tools. Below is a structured guide to help developers integrate and configure this module effectively.</p>
+<h3 id="related-modules">Related Modules</h3>
+<ul>
+<li><strong>User Presence Manager</strong>: Manages overall user presence.</li>
+<li><strong>Online Status Monitor</strong>: Tracks real-time online status.</li>
+<li><strong>Availability Checker</strong>: Checks user availability for features like auto-replies.</li>
+<li><strong>User Activity Tracker</strong>: Logs login/out events for analytics.</li>
+<li><strong>Connection Health Monitor</strong>: Ensures stable connections and handles reconnections.</li>
+</ul>
+<h3 id="use-cases">Use Cases</h3>
+<ol>
+<li><strong>Real-time User Availability</strong>: Display statuses in chat applications for instant messaging.</li>
+<li><strong>Away Message System</strong>: Automatically respond to messages when users are away.</li>
+<li><strong>Offline Detection</strong>: Trigger notifications or updates when a user goes offline.</li>
+<li><strong>User Activity Tracking</strong>: Collect login/out data for application analytics.</li>
+<li><strong>Connection Health Monitoring</strong>: Maintain stable connections and handle reconnections.</li>
+</ol>
+<h3 id="integration-tips">Integration Tips</h3>
+<ul>
+<li><strong>Asynchronous Updates</strong>: Efficiently manage real-time status changes without server overload.</li>
+<li><strong>Webhooks</strong>: Integrate with external services to trigger actions on status changes.</li>
+<li><strong>Session Affinity</strong>: Store user preferences locally to avoid inconsistencies across devices.</li>
+</ul>
+<h3 id="configuration-options">Configuration Options</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Description</th><th>Default Value</th></tr></thead><tbody><tr><td>refresh_interval</td><td>Frequency of status checks (seconds)</td><td>30 seconds</td></tr><tr><td>presence_timeout</td><td>Time before marking as offline (minutes)</td><td>5 minutes</td></tr><tr><td>event_frequency</td><td>Rate of event dispatching (events/second)</td><td>1-2 events/sec</td></tr></tbody></table>
+<h3 id="considerations">Considerations</h3>
+<ul>
+<li><strong>Scalability</strong>: Ensure the module can handle high traffic with efficient data handling and load balancing.</li>
+<li><strong>Documentation</strong>: Access clear API references and examples for effective integration.</li>
+</ul>
+<p>By understanding these aspects, developers can efficiently integrate the Realtime Status Presence module to enhance their applications’ functionality.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>

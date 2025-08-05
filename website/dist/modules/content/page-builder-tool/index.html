@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><title>Page Builder Tool</title><meta name="description" content="Drag-and-drop interface to create and edit web pages without code."><meta property="og:title" content="Page Builder Tool"><meta property="og:description" content="Drag-and-drop interface to create and edit web pages without code."><link rel="stylesheet" href="/styles/global.css"><link rel="stylesheet" href="/styles/modules.css"><style>.site-header{width:100%;background-color:var(--color-theme);border-bottom:1px solid #000;padding:.75rem 1.5rem;position:sticky;top:0;z-index:1000}.header-container{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto}.left-group{display:flex;align-items:center;gap:1rem}.logo-block{display:flex;align-items:center}.logo-img{height:40px;width:auto;display:block}.language-toggle{display:flex;align-items:center;gap:.4rem;color:#000;font-size:.9rem}.language-icon{width:20px;height:20px;filter:none}.nav-right{display:flex;align-items:center;gap:1.25rem;font-weight:500}.nav-right a{color:#000;text-decoration:none;transition:opacity .2s ease,transform .2s ease}.nav-right a:hover{opacity:.8;transform:translateY(-1px);border-bottom:2px solid #000}.brand-name{font-size:1.5rem;font-weight:600;color:#000;white-space:nowrap}:root{--color-theme: #DEB126;--font-body: "PT Sans", Inter, system-ui, sans-serif}.site-footer{background-color:var(--color-theme);color:#000;padding:2.5rem 1.5rem;font-size:.875rem;font-family:var(--font-body);border-top:1px solid #000}.site-footer,.site-footer *{color:#000!important;fill:#000!important;stroke:#000!important}.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;margin-bottom:1rem}.footer-left{flex:1 1 200px;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}.footer-brand{display:flex;align-items:center;gap:1rem}.footer-logo{height:48px;width:auto}.footer-slogan{font-size:1.2rem;line-height:1.2;font-weight:700;margin:0;text-align:left}.footer-slogan strong{display:block;font-weight:400;font-size:.85rem;color:#222;margin-top:.2rem}.social-icons{display:flex;gap:.75rem}.social-icons a img{height:22px;width:22px;filter:brightness(0) opacity(.8);transition:filter .3s ease}.social-icons a:hover img{filter:brightness(.2) opacity(1)}.footer-links{display:flex;flex:4 1 800px;flex-wrap:wrap;justify-content:space-between;gap:2rem}.footer-column{min-width:140px;flex:1 1 140px;display:flex;flex-direction:column;gap:.5rem}.footer-column h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}.footer-column a{text-decoration:none;transition:opacity .2s ease}.footer-column a:hover{opacity:.7;text-decoration:underline}hr{border:none;border-top:1px solid #000;margin:1rem 0}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:.85rem}.footer-bottom p{margin:0}@media (max-width: 768px){.footer-top{flex-direction:column;align-items:center;gap:2rem}.footer-left{align-items:center;text-align:center}.footer-brand,.social-icons{justify-content:center}.footer-links{justify-content:center;gap:2rem}.footer-column{min-width:45%;margin-bottom:1.5rem}.footer-bottom{flex-direction:column;text-align:center;gap:.5rem}}
+:root{--color-theme: #DEB126;--color-bg: #0b0b0c;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-highlight: rgba(222, 177, 38, .1);--color-red: #DE5267;--color-green: #21881c;--font-body: "PT Sans", Inter, system-ui, sans-serif;--font-mono: "Roboto Mono", monospace}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);margin:0;padding:0}.module-page{max-width:960px;margin:0 auto;padding:4rem 1.5rem;line-height:1.75}.module-header{margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}.module-page h1{font-size:2.75rem;font-weight:600;color:var(--color-theme);margin-bottom:.75rem}.module-meta{font-size:.95rem;color:var(--color-text-secondary);margin-bottom:.5rem;display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}.module-meta .module-category,.module-meta .module-subcategory,.module-meta .module-price{display:flex;align-items:center;gap:.4rem}.module-summary{font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:1.5rem}.module-price{font-size:1rem;color:var(--color-theme);margin-bottom:1rem}.module-icons{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}.module-icons img{height:28px;width:auto;opacity:.85;transition:transform .2s ease}.module-icons img:hover{transform:scale(1.05)}.module-page article{border-top:1px solid rgba(255,255,255,.08);padding-top:2rem;font-size:1.05rem}.module-page article h2,.module-page article h3{color:var(--color-theme);margin-top:2.5rem;font-weight:600}.module-page article code{font-family:var(--font-mono);background:var(--color-highlight);padding:.2rem .4rem;border-radius:4px;font-size:.95rem}.module-page article pre{background:var(--color-highlight);padding:1rem;overflow-x:auto;border-radius:6px;border:1px solid rgba(255,255,255,.08);margin-top:1.5rem;margin-bottom:1.5rem}.module-page table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.95rem}.module-page table th,.module-page table td{border:1px solid rgba(255,255,255,.1);padding:.75rem;text-align:left}.module-page table th{background:var(--color-highlight);color:var(--color-theme);font-weight:600}.module-page ul{padding-left:1.5rem;margin-bottom:2rem}.module-page a{color:var(--color-theme);text-decoration:underline}@media (max-width: 768px){.module-page{padding:2rem 1rem}.module-page h1{font-size:2.1rem}.module-summary{font-size:1rem}.module-page article{font-size:1rem}}
+:root{--font-body: "PT Sans", "PT Sans Caption", Inter, -apple-system, BlinkMacSystemFont, Avenir, Lato, sans-serif;--font-mono: "Roboto Mono", monospace;--font-canvas: "PT Sans", Arial, sans-serif;--color-theme: #DEB126;--color-on-surface: #ffffff;--color-text: #ffffff;--color-text-secondary: hsl(48, 12%, 70%);--color-text-tertiary: #888888;--color-bg: #0b0b0c;--color-bg-dark: #080808;--color-bg-secondary: #1a1a1a;--color-surface: #111111;--color-divider: hsl(48, 12%, 20%);--color-shadow: rgba(0, 0, 0, .2);--color-highlight: rgba(222, 177, 38, .1);--color-green: #21881c;--color-red: #DE5267;--color-yellow: #DEB126;--color-record: #dd3c3c}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;width:100%;font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.6;font-size:16px;scroll-behavior:smooth;overflow-x:hidden}.full-bleed{width:100vw;margin-left:calc(-50vw + 50%);overflow-x:hidden}h1,h2,h3,h4,h5,h6{color:var(--color-on-surface);font-weight:600;margin-bottom:1rem}p{margin-bottom:1rem;color:var(--color-text)}a{color:var(--color-theme);text-decoration:none;transition:color .2s ease-in-out}a:hover{text-decoration:underline}button{background-color:var(--color-theme);color:var(--color-bg-dark);font-weight:600;padding:.6rem 1.2rem;border:none;border-radius:6px;cursor:pointer;transition:background-color .2s ease-in-out}button:hover{background-color:#c39c1f}input,textarea,select{background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-divider);padding:.5rem;border-radius:4px;width:100%}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--color-theme);box-shadow:0 0 0 2px var(--color-highlight)}.text-center{text-align:center}.mt-1{margin-top:1rem}.mt-2{margin-top:2rem}.mb-1{margin-bottom:1rem}.mb-2{margin-bottom:2rem}.p-1{padding:1rem}.p-2{padding:2rem}.card{background:var(--color-bg-secondary);padding:1.5rem;border-radius:8px;box-shadow:0 0 4px var(--color-shadow)}::selection{background-color:var(--color-theme);color:var(--color-bg-dark)}
+</style></head> <body> <header class="site-header"> <div class="header-container"> <!-- Left section: logo + brand + language --> <div class="left-group"> <a href="/" class="logo-block"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="logo-img"> </a> <span class="brand-name">Broken Duck</span> <br><br> </div> <!-- Right section: navigation --> <div class="nav-right"> <a href="/about">About</a> <a href="/services">Services</a> <a href="/products">Products</a> <a href="/resources">Resources</a> </div> </div> </header> <main class="module-page"> <section class="module-header"> <h1>Page Builder Tool</h1> <div class="module-meta"> <div> <span class="module-category">Content</span> <span class="module-subcategory"> → Platinum</span> </div> <div class="module-price"> <span>💰</span> $3500 </div> </div> <p class="module-summary">Drag-and-drop interface to create and edit web pages without code.</p> <div class="module-icons"> <img src="/assets/modules/frontend/materialui.png" alt="Technology icon"><img src="/assets/modules/language/react.png" alt="Technology icon"><img src="/assets/modules/databases/postgresql.png" alt="Technology icon"><img src="/assets/modules/tools/vscode.png" alt="Technology icon"> </div> </section> <article> <h1 id="page-builder-tool-overview">Page Builder Tool Overview</h1>
+<p>The <strong>Page Builder Tool</strong> is a powerful drag-and-drop interface designed to streamline web page creation and editing without requiring extensive coding knowledge. This tool empowers developers to build visually appealing and functional web pages efficiently, while maintaining full control over the final output.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The primary purpose of the Page Builder Tool is to provide a user-friendly environment for constructing and modifying web pages. By leveraging drag-and-drop functionality, the tool allows users to assemble page elements (e.g., text blocks, images, forms, and custom components) into a cohesive layout. This approach significantly reduces the time and complexity associated with traditional coding methods.</p>
+<h2 id="benefits">Benefits</h2>
+<p>The Page Builder Tool offers several key benefits:</p>
+<ul>
+<li><strong>Rapid Development</strong>: Speed up the creation of web pages by dragging and dropping pre-designed elements.</li>
+<li><strong>Visual Editing</strong>: Preview and edit page layouts in real-time, ensuring a consistent end result.</li>
+<li><strong>Reusable Components</strong>: Save frequently used blocks or components for reuse across multiple projects.</li>
+<li><strong>Collaboration</strong>: Enable seamless teamwork by allowing multiple users to work on the same page simultaneously.</li>
+<li><strong>Flexibility</strong>: Customize elements to match specific design requirements, including styling and functionality.</li>
+</ul>
+<h2 id="usage-scenarios">Usage Scenarios</h2>
+<p>The Page Builder Tool is ideal for:</p>
+<ol>
+<li><strong>New Projects</strong>: Quickly assembling a web page from scratch using pre-built components.</li>
+<li><strong>Existing Pages</strong>: Modifying or updating an existing page layout without re-writing code.</li>
+<li><strong>Design Collaboration</strong>: Working alongside designers to translate mockups into functional web pages.</li>
+<li><strong>Prototyping</strong>: Building interactive prototypes for client review and feedback.</li>
+</ol>
+<p>By integrating the Page Builder Tool into your workflow, you can enhance productivity, improve consistency, and deliver high-quality web pages faster than ever before.</p>
+<h2 id="visual-editing-interface">Visual Editing Interface</h2>
+<p>The tool offers a real-time visual editor where changes are reflected immediately, allowing developers to preview and adjust layouts without switching between code and design views.</p>
+<h2 id="drag-and-drop-content-building">Drag-and-Drop Content Building</h2>
+<p>This feature enables quick assembly of page components using drag-and-drop, saving time on manual coding for common elements like text blocks or images.</p>
+<h2 id="responsive-design-support">Responsive Design Support</h2>
+<p>Automatically adapts layouts across devices, ensuring compatibility with various screen sizes without developers needing to write responsive code from scratch.</p>
+<h2 id="collaboration-features">Collaboration Features</h2>
+<p>Real-time collaboration allows multiple users to edit simultaneously and track changes, enhancing team productivity in agile environments.</p>
+<h2 id="prebuilt-templates">Prebuilt Templates</h2>
+<p>Provides a library of professional templates that can be customized, reducing development time for common page structures like landing pages or contact forms.</p>
+<h2 id="custom-cssjs-integration">Custom CSS/JS Integration</h2>
+<p>Allows embedding custom code snippets, giving developers control over complex functionalities that prebuilt templates might not cover.</p>
+<h2 id="version-control-integration">Version Control Integration</h2>
+<p>Seamlessly integrates with version control systems, enabling tracking of changes and facilitating collaboration within development workflows.</p>
+<h2 id="analytics-integration">Analytics Integration</h2>
+<p>Easily embed analytics tools to monitor page performance without developers having to set up tracking from scratch each time.</p>
+<h2 id="exportimport-functionality">Export/Import Functionality</h2>
+<p>Exports code in various formats for integration into existing projects, ensuring compatibility with broader development environments.</p>
+<h2 id="security--compliance-features">Security &#x26; Compliance Features</h2>
+<p>Includes measures to prevent vulnerabilities and ensure compliance with regulations like GDPR, crucial for developer workflows focused on secure coding practices.</p>
+<h1 id="page-builder-tool-documentation">Page Builder Tool Documentation</h1>
+<h2 id="overview">Overview</h2>
+<p>The Page Builder Tool is a drag-and-drop interface designed for developers to create and edit web pages without writing code. It provides a powerful yet intuitive way to design dynamic web content.</p>
+<h2 id="module-details">Module Details</h2>
+<h3 id="1-fastapi-endpoint-example">1. FastAPI Endpoint Example</h3>
+<p>This example demonstrates how to integrate the Page Builder Tool with a FastAPI backend to handle page creation.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> fastapi </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> APIRouter, Depends, HTTPException</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> APIRouter()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PageItem</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#79B8FF">    type</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    style: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    script: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PageData</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    items: List[PageItem]</span></span>
+<span class="line"><span style="color:#E1E4E8">    layout: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    theme: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#B392F0">@router.post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/create-page"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">async</span><span style="color:#F97583"> def</span><span style="color:#B392F0"> create_page</span><span style="color:#E1E4E8">(page_data: PageData):</span></span>
+<span class="line"><span style="color:#6A737D">    # Here you would typically save the page data to a database or another storage system</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#E1E4E8"> {</span><span style="color:#9ECBFF">"status"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"success"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"message"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"Page created successfully"</span><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="2-react-ui-example">2. React UI Example</h3>
+<p>This snippet shows how to implement the drag-and-drop functionality in a React application using the <code>react-beautiful-dnd</code> library.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { DragDropContext, Droppable, Draggable } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react-beautiful-dnd'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { useState } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> 'react'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">interface</span><span style="color:#B392F0"> PageItem</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  id</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  content</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  style</span><span style="color:#F97583">?:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  script</span><span style="color:#F97583">?:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> PageBuilder</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> [</span><span style="color:#79B8FF">items</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">setItems</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#B392F0"> useState</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">PageItem</span><span style="color:#E1E4E8">[]>([</span></span>
+<span class="line"><span style="color:#E1E4E8">    {</span></span>
+<span class="line"><span style="color:#E1E4E8">      id: </span><span style="color:#9ECBFF">'1'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      content: </span><span style="color:#9ECBFF">'Welcome to my page!'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      style: </span><span style="color:#9ECBFF">'text-align: center; font-size: 24px;'</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#B392F0"> onDragEnd</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">result</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">result.destination) </span><span style="color:#F97583">return</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">    const</span><span style="color:#79B8FF"> items</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Array.</span><span style="color:#B392F0">from</span><span style="color:#E1E4E8">(items);</span></span>
+<span class="line"><span style="color:#E1E4E8">    items.</span><span style="color:#B392F0">splice</span><span style="color:#E1E4E8">(result.source.index, </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    items.</span><span style="color:#B392F0">splice</span><span style="color:#E1E4E8">(result.destination.index, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, items[result.source.index]);</span></span>
+<span class="line"><span style="color:#B392F0">    setItems</span><span style="color:#E1E4E8">(items);</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#79B8FF">DragDropContext</span><span style="color:#B392F0"> onDragEnd</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{onDragEnd}></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#79B8FF">Droppable</span><span style="color:#B392F0"> droppableId</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"content"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        {(</span><span style="color:#FFAB70">provided</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;</span><span style="color:#85E89D">div</span></span>
+<span class="line"><span style="color:#E1E4E8">            {</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">provided.droppableProps}</span></span>
+<span class="line"><span style="color:#B392F0">            ref</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{provided.innerRef}</span></span>
+<span class="line"><span style="color:#B392F0">            style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{</span></span>
+<span class="line"><span style="color:#E1E4E8">              minHeight: </span><span style="color:#9ECBFF">'500px'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">              border: </span><span style="color:#9ECBFF">'1px solid #ddd'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">              padding: </span><span style="color:#9ECBFF">'20px'</span></span>
+<span class="line"><span style="color:#E1E4E8">            }}</span></span>
+<span class="line"><span style="color:#E1E4E8">          ></span></span>
+<span class="line"><span style="color:#E1E4E8">            {items.</span><span style="color:#B392F0">map</span><span style="color:#E1E4E8">((</span><span style="color:#FFAB70">item</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">index</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;</span><span style="color:#79B8FF">Draggable</span><span style="color:#B392F0"> key</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{item.id} </span><span style="color:#B392F0">draggableId</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{item.id} </span><span style="color:#B392F0">index</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{index}></span></span>
+<span class="line"><span style="color:#E1E4E8">                {(</span><span style="color:#FFAB70">provided</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                  &#x3C;</span><span style="color:#85E89D">div</span></span>
+<span class="line"><span style="color:#B392F0">                    ref</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{provided.innerRef}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    {</span><span style="color:#F97583">...</span><span style="color:#E1E4E8">provided.draggableProps}</span></span>
+<span class="line"><span style="color:#B392F0">                    style</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{</span></span>
+<span class="line"><span style="color:#E1E4E8">                      marginBottom: </span><span style="color:#9ECBFF">'20px'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                      padding: </span><span style="color:#9ECBFF">'15px'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                      backgroundColor: </span><span style="color:#9ECBFF">'#f9f9f9'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">                      borderRadius: </span><span style="color:#9ECBFF">'4px'</span></span>
+<span class="line"><span style="color:#E1E4E8">                    }}</span></span>
+<span class="line"><span style="color:#E1E4E8">                  ></span></span>
+<span class="line"><span style="color:#E1E4E8">                    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> dangerouslySetInnerHTML</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">{{ __html: item.content }} /></span></span>
+<span class="line"><span style="color:#E1E4E8">                    {item.style </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                      &#x3C;</span><span style="color:#85E89D">pre</span><span style="color:#E1E4E8">>{item.style}&#x3C;/</span><span style="color:#85E89D">pre</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    )}</span></span>
+<span class="line"><span style="color:#E1E4E8">                    {item.script </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#E1E4E8">                      &#x3C;</span><span style="color:#85E89D">pre</span><span style="color:#E1E4E8">>{item.script}&#x3C;/</span><span style="color:#85E89D">pre</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                    )}</span></span>
+<span class="line"><span style="color:#E1E4E8">                  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">                )}</span></span>
+<span class="line"><span style="color:#E1E4E8">              &#x3C;/</span><span style="color:#79B8FF">Draggable</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">            ))}</span></span>
+<span class="line"><span style="color:#E1E4E8">            {provided.placeholder}</span></span>
+<span class="line"><span style="color:#E1E4E8">          &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">        )}</span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;/</span><span style="color:#79B8FF">Droppable</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#79B8FF">DragDropContext</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="3-data-schema-example-pydantic">3. Data Schema Example (Pydantic)</h3>
+<p>This schema defines the structure of page data used by both the FastAPI endpoint and the React component.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> pydantic </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> BaseModel</span></span>
+<span class="line"><span style="color:#F97583">from</span><span style="color:#E1E4E8"> typing </span><span style="color:#F97583">import</span><span style="color:#E1E4E8"> List, Optional</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PageItem</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#79B8FF">    id</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#79B8FF">    type</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    content: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    style: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    script: Optional[</span><span style="color:#79B8FF">str</span><span style="color:#E1E4E8">] </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> None</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> PageData</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">BaseModel</span><span style="color:#E1E4E8">):</span></span>
+<span class="line"><span style="color:#E1E4E8">    title: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    items: List[PageItem]</span></span>
+<span class="line"><span style="color:#E1E4E8">    layout: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#E1E4E8">    theme: </span><span style="color:#79B8FF">str</span></span>
+<span class="line"><span style="color:#6A737D">    # Additional fields like seo, analytics can be added here</span></span>
+<span class="line"></span></code></pre>
+<h2 id="summary">Summary</h2>
+<p>The Page Builder Tool provides developers with a robust solution to create and manage web pages through both backend API endpoints (using FastAPI) and frontend drag-and-drop interfaces (using React). The provided code samples demonstrate how to integrate these components into your application.</p>
+<h1 id="page-builder-tool-technical-documentation">Page Builder Tool Technical Documentation</h1>
+<h2 id="module-name-page-builder-tool">Module Name: Page Builder Tool</h2>
+<p><strong>Category:</strong> Content<br>
+<strong>Summary:</strong> A drag-and-drop interface for creating and editing web pages without code.</p>
+<hr>
+<h2 id="related-modules">Related Modules</h2>
+<ul>
+<li><strong>UI Components</strong>: Offers pre-built UI elements like buttons, forms, and cards to use in the page builder.</li>
+<li><strong>Layout Manager</strong>: Manages page templates and layouts for consistent design across applications.</li>
+<li><strong>Content Management System (CMS)</strong>: Integrates with CMS platforms for managing dynamic content within pages.</li>
+<li><strong>API Gateway</strong>: Enables integration with external APIs to fetch data dynamically on rendered pages.</li>
+</ul>
+<hr>
+<h2 id="use-cases">Use Cases</h2>
+<ol>
+<li><strong>Building Static Websites</strong>: Developers can create and deploy static web pages quickly using pre-designed templates and drag-and-drop functionality.</li>
+<li><strong>Creating Landing Pages</strong>: Design custom landing pages for marketing campaigns without writing code.</li>
+<li><strong>Developing E-commerce Pages</strong>: Build product pages, shopping carts, and checkout workflows efficiently.</li>
+<li><strong>Dynamic Content Integration</strong>: Use APIs to pull real-time data (e.g., product listings or user information) into web pages.</li>
+<li><strong>Dashboard Design</strong>: Create customizable dashboards for internal tools or customer portals.</li>
+</ol>
+<hr>
+<h2 id="integration-tips">Integration Tips</h2>
+<ul>
+<li><strong>Version Compatibility</strong>: Ensure the Page Builder Tool is compatible with your existing frameworks and libraries.</li>
+<li><strong>Configuration Management</strong>: Use configuration files to manage themes, layouts, and default settings across projects.</li>
+<li><strong>Performance Optimization</strong>: Implement lazy loading for images and optimize CSS/JavaScript to ensure fast page loads.</li>
+<li><strong>API Integration</strong>: Follow API documentation guidelines when integrating external services for data retrieval or updates.</li>
+<li><strong>Security Best Practices</strong>: Sanitize user inputs and outputs to prevent vulnerabilities like XSS attacks.</li>
+</ul>
+<hr>
+<h2 id="configuration-options">Configuration Options</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Option</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td><code>theme</code></td><td>Sets the default theme for newly created pages.</td></tr><tr><td><code>default_layout</code></td><td>Specifies the layout template used when creating new pages.</td></tr><tr><td><code>enable_drag_and_drop</code></td><td>Enables or disables drag-and-drop functionality in the editor.</td></tr><tr><td><code>show_preview</code></td><td>Controls whether a live preview is shown while editing a page.</td></tr><tr><td><code>auto_save_interval</code></td><td>Sets the interval (in minutes) for automatic saving of changes to pages.</td></tr></tbody></table>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Page Builder Tool simplifies web development by providing a user-friendly drag-and-drop interface, enabling developers to create and edit web pages efficiently without writing code. Its integration with related modules like UI Components and Layout Manager ensures seamless functionality across various projects.</p> </article> </main> <footer class="site-footer"> <div class="footer-top"> <div class="footer-left"> <div class="footer-brand"> <img src="/assets/branding/logo.svg" alt="Broken Duck Media Logo" class="footer-logo"> <p class="footer-slogan">
+Broken Duck<br> <strong>AI-First Software Solutions</strong> </p> </div> </div> <div class="footer-links"> <div class="footer-column"> <h4>Company</h4> <a href="/about">About Us</a> <a href="/products">Products</a> <a href="/license">Licenses</a> <a href="/careers">Careers</a> <a href="/resources">Resources</a> <a href="/contact">Contact</a> </div> <div class="footer-column"> <h4>Services</h4> <a href="/services">Services</a> <a href="/services">Foundation</a> <a href="/services">Launch</a> <a href="/services">Studio</a> <a href="/services">Build</a> <a href="/services">Maintenance</a> </div> <div class="footer-column"> <h4>Legal</h4> <a href="/privacy">Privacy Policy</a> <a href="/terms">Terms of Service</a> <a href="/cookies">Cookies Policy</a> <a href="/gdpr">GDPR</a> <a href="/ccpa">CCPA</a> </div> <div class="footer-column"> <h4>Help</h4> <a href="/faq">FAQ</a> <a href="/support">Support</a> <a href="/sitemap">Sitemap</a> </div> <div class="footer-column"> <h4>Our Network</h4> <a href="https://www.greenlightstudio.co/" target="_blank" rel="noopener">Green Light Studio</a> <a href="https://www.tchaikovsky.cloud/" target="_blank" rel="noopener">Tchaikovsky</a> <a href="https://www.influent.space/" target="_blank" rel="noopener">Influent Space</a> <a href="https://www.reactivid.com/" target="_blank" rel="noopener">Reactivid</a> </div> </div> </div> <hr> <div class="footer-bottom"> <p>&copy; 2025 Broken Duck Media — All rights reserved</p> </div> </footer> </body></html>
